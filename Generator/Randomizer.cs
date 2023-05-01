@@ -432,11 +432,6 @@ namespace TPRandomizer
                 part2Settings.Add("increaseSpinnerSpeed", SSettings.increaseSpinnerSpeed);
             if (SSettings.openDot)
                 part2Settings.Add("openDot", SSettings.openDot);
-                 if (SSettings.hcKeysy)
-                part2Settings.Add("hcKeysy", SSettings.hcKeysy);
-                 if (SSettings.magicArmorCost)
-                part2Settings.Add("magicArmorCost", SSettings.magicArmorCost);
-               
 
             // Complex fields
             if (SSettings.startingItems?.Count > 0)
