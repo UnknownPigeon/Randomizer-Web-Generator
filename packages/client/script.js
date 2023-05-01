@@ -359,15 +359,12 @@ document
   document
   .getElementById('openDotCheckbox')
   .addEventListener('click', setSettingsString);
-<<<<<<< HEAD
   document
   .getElementById('hcKeysyCheckbox')
   .addEventListener('click', setSettingsString);
   document
   .getElementById('magicArmorCostCheckbox')
   .addEventListener('click', setSettingsString);
-=======
->>>>>>> 40dde579663bcb47d1d34c2129929b19cbded01a
 document
   .getElementById('importSettingsStringButton')
   .addEventListener('click', importSettingsString);
@@ -504,15 +501,12 @@ function setSettingsString() {
   settingsStringRaw[40] = document.getElementById(
     'openDotCheckbox'
   ).checked;
-<<<<<<< HEAD
   settingsStringRaw[41] = document.getElementById(
     'hcKeysyCheckbox'
   ).checked;
   settingsStringRaw[42] = document.getElementById(
     'magicArmorCostCheckbox'
   ).checked;
-=======
->>>>>>> 40dde579663bcb47d1d34c2129929b19cbded01a
   // document.getElementById('settingsStringTextbox').value =
   document.getElementById('settingsStringTextbox').textContent =
     getSettingsString(settingsStringRaw);
@@ -674,13 +668,9 @@ var arrayOfSettingsItems = [
   'instantTextCheckbox',
   'openMapCheckbox',
   'spinnerSpeedCheckbox',
-<<<<<<< HEAD
   'openDotCheckbox',
   'hcKeysyCheckbox',
   'magicArmorCostCheckbox'
-=======
-  'openDotCheckbox'
->>>>>>> 40dde579663bcb47d1d34c2129929b19cbded01a
 ];
 
 function parseSettingsString(settingsString) {
@@ -1234,11 +1224,8 @@ function populateSSettings(s) {
   $('#openMapCheckbox').prop('checked', s.openMap);
   $('#spinnerSpeedCheckbox').prop('checked', s.increaseSpinnerSpeed);
   $('#openDotCheckbox').prop('checked', s.openDot);
-<<<<<<< HEAD
   $('#hcKeysyCheckbox').prop('checked', s.hcKeysy);
   $('#magicArmorCostCheckbox').prop('checked', s.magicArmorCost);
-=======
->>>>>>> 40dde579663bcb47d1d34c2129929b19cbded01a
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

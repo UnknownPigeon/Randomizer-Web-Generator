@@ -50,11 +50,8 @@ namespace TPRandomizer
         public bool openMap { get; set; }
         public bool increaseSpinnerSpeed { get; set; }
         public bool openDot { get; set; }
-<<<<<<< HEAD
         public bool hcKeysy { get; set; }
         public bool magicArmorCost {get; set;}
-=======
->>>>>>> 40dde579663bcb47d1d34c2129929b19cbded01a
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
 
@@ -100,11 +97,8 @@ namespace TPRandomizer
             openMap = processor.NextBool();
             increaseSpinnerSpeed = processor.NextBool();
             openDot = processor.NextBool();
-<<<<<<< HEAD
             hcKeysy = processor.NextBool();
             magicArmorCost = processor.NextBool();
-=======
->>>>>>> 40dde579663bcb47d1d34c2129929b19cbded01a
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();
