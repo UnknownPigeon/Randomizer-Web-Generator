@@ -421,6 +421,7 @@ namespace TPRandomizer.Assets
         /// </summary>
         public static readonly byte[,] BaseRandomizerEventFlags = new byte[,]
         {
+            { 0x3, 0x2 }, // Gave wooden sword to Talo.
             { 0x6, 0x9 }, // Tame Epona, KB1 trigger activated
             { 0x14, 0x10 }, // Put Bo outside, ready to wrestle
             { 0xA, 0x2F }, // Bridge of Eldin Stolen, KB1 defeated, KB1 started
@@ -444,6 +445,9 @@ namespace TPRandomizer.Assets
             { 0x22, 0x8 }, // Talked to Yeto on top of the mountain after clearing SPR
             { 0x3B, 0x40 }, // Won Snowboard race against Yeto.
             { 0x2F, 0x80 }, // Talked to Goron outside East Castle Town
+            { 0x1C, 0x10 }, //Win Sumo round 1 against Bo
+            { 0x39, 0x2 }, // Released first caught fish in Ordon Day 2
+            { 0x10, 0x2 }, // Talked to Jaggle after climbing vines.
             { 0x1C, 0x10}, //Win Sumo round 1 against Bo
         };
 
@@ -455,7 +459,6 @@ namespace TPRandomizer.Assets
             { 0x5, 0x7F }, // Midna Charge Unlocked, Finished Sewers, Midna text after entering Faron Twilight, Met Zelda in sewers, Midna cut prison chain, Watched Sewers intro CS, Escaped cell in sewers.
             { 0x6, 0x10 }, // Cleared Faron Twilight
             { 0xC, 0x18 }, // Midna accompanies Wolf, sword and shield removed from wolf's back.
-            { 0x3, 0x2 }, // Gave Wooden Sword to Talo
             { 0x43, 0x8 }, // Senses unlocked
         };
 
@@ -485,8 +488,6 @@ namespace TPRandomizer.Assets
         {
             { 0x4, 0x4 }, // Talked to Uli Day 1.
             { 0x45, 0x10 }, // Saved Talo
-            { 0x10, 0x1 }, // Cat got Fish
-            { 0x3, 0x2 }, // Gave Wooden Sword to Talo
             { 0x4A, 0x60 }, // Completed Ordon Day 1 and Finished Sword Training.
             { 0x16, 0x1 }, // Completed Ordon Day 2.
             { 0x15, 0x80 }, // Watched CS for Goats 2 Done.
@@ -500,7 +501,7 @@ namespace TPRandomizer.Assets
             { 0x3, 0x90 }, // Jaggle Calls out to Link, talked to Squirrel as Wolf in Ordon.
             { 0x6, 0xC0 }, // CS After beating Ordon Shadow, CS after entering Faron Twilight.
             { 0x7, 0x2 }, // First Time Talking to Gor Coron in Sumo Hall
-            { 0x10, 0x2 }, // Talked to Jaggle after climbing vines.
+            { 0x15, 0x1 }, // Talked to Agitha for the first time.
             { 0xF, 0x40 }, // Talked to Doctor for the first time.
             { 0x5E, 0x10 }, // Midna text after beating Forest Temple.
             { 0x1D, 0x40 }, // Listened to Fyer at drained lake.
