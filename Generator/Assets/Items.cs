@@ -965,20 +965,16 @@ namespace TPRandomizer
                             Item.Snowpeak_Ruins_Bedroom_Key,
                             Item.Piece_of_Heart,
                         };
-                        HashSet<Item> DungeonItemsToRemove =
-                        new()
-                        {
-                            Item.Snowpeak_Ruins_Bedroom_Key,
-                        };
-
-
+                        
                     // Filter out certain items
                     this.alwaysItems = this.alwaysItems
                         .Where(item => !alwaysItemsToRemove.Contains(item))
                         .ToList();
 
                     // Add Heart Containers
-                    updateItemToCount(this.alwaysItems, Item.Heart_Container, 17);
+                    updateItemToCount(this.alwaysItems, Item.Heart_Container, 15);
+                    updateItemToCount(this.ImportantItems,Item.Heart_Container, 15);
+                    updateItemToCount(this.RandomizedDungeonRegionItems,Item.Snowpeak_Ruins_Bedroom_Key,0);               
 
                     break;
                 }
