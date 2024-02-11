@@ -953,6 +953,8 @@ namespace TPRandomizer
 
                     // Add Heart Containers
                     updateItemToCount(this.alwaysItems, Item.Heart_Container, 17);
+                    // Remove Snowpeak boss key becuase no one need such that key
+                    updateItemToCount(this.alwaysItems,Item.Snowpeak_Ruins_Bedroom_Key,0);
 
                     break;
                 }
