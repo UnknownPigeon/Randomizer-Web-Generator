@@ -296,6 +296,8 @@ namespace TPRandomizer
         public List<Item> JunkItems = new(); // Extra junk items that are put in the pool if there are checks left and all items have been placed..
         public List<Item> BaseItemPool = new(); // The list of Items that have yet to be randomized..
         public List<Item> heldItems = new(); // The list of items that the player currently has. This is to be used when emulating the playthrough..
+
+        public List<Item> AllItems = new(); // A list of all of the items that Link can have. This is necessary for Entrance Randomization logic checking.
         public List<Item> ItemWheelItems =
             new()
             {
@@ -761,8 +763,11 @@ namespace TPRandomizer
         {
             SharedSettings parseSetting = Randomizer.SSettings;
             Randomizer.Items.RandomizedImportantItems.AddRange(this.ImportantItems);
+            Randomizer.Items.AllItems.AddRange(this.ImportantItems);
             Randomizer.Items.BaseItemPool.AddRange(this.VanillaDungeonRewards);
             Randomizer.Items.ShuffledDungeonRewards.AddRange(this.VanillaDungeonRewards);
+            Randomizer.Items.AllItems.AddRange(this.VanillaDungeonRewards);
+            Randomizer.Items.AllItems.AddRange(Enumerable.Repeat(Item.Poe_Soul, 60));
 
             switch (parseSetting.shufflePoes)
             {
@@ -798,10 +803,14 @@ namespace TPRandomizer
             {
                 this.RandomizedDungeonRegionItems.AddRange(this.RegionSmallKeys);
                 Randomizer.Items.BaseItemPool.AddRange(this.RegionSmallKeys);
+
+                Randomizer.Items.AllItems.AddRange(this.RegionSmallKeys);
             }
             else if (parseSetting.smallKeySettings == SmallKeySettings.Anywhere)
             {
                 this.RandomizedImportantItems.AddRange(this.RegionSmallKeys);
+
+                Randomizer.Items.AllItems.AddRange(this.RegionSmallKeys);
             }
             else if (parseSetting.smallKeySettings == SmallKeySettings.Keysy)
             {
@@ -816,10 +825,14 @@ namespace TPRandomizer
             {
                 this.RandomizedDungeonRegionItems.AddRange(this.DungeonBigKeys);
                 Randomizer.Items.BaseItemPool.AddRange(this.DungeonBigKeys);
+
+                Randomizer.Items.AllItems.AddRange(this.DungeonBigKeys);
             }
             else if (parseSetting.bigKeySettings == BigKeySettings.Anywhere)
             {
                 this.RandomizedImportantItems.AddRange(this.DungeonBigKeys);
+
+                Randomizer.Items.AllItems.AddRange(this.DungeonBigKeys);
             }
 
             // Check Map and Compass settings before adding to pool
@@ -953,7 +966,7 @@ namespace TPRandomizer
 
                     // Add Heart Containers
                     updateItemToCount(this.alwaysItems, Item.Heart_Container, 17);
-                    // Remove Snowpeak boss key becuase no one need such that key
+                    // Remove Snowpeak boss key because no one need such that key
                     updateItemToCount(this.alwaysItems,Item.Snowpeak_Ruins_Bedroom_Key,0);
 
                     break;
@@ -1039,9 +1052,12 @@ namespace TPRandomizer
             Randomizer.Items.BaseItemPool.AddRange(this.RandomizedImportantItems);
             return;
         }
-         private void AddGoldenBugs(SharedSettings sSettings)
+
+        private void AddGoldenBugs(SharedSettings sSettings)
         {
-            Dictionary<string, Item> bugRewardCheckToItem =
+            // Only add bugs to pool if their corresponding Agitha check is not
+            // excluded.
+            Dictionary<string, Item> agithaCheckToItem =
                 new()
                 {
                     { "Agitha Female Ant Reward", Item.Female_Ant },
@@ -1072,11 +1088,11 @@ namespace TPRandomizer
 
             foreach (string excludedCheckName in sSettings.excludedChecks)
             {
-                if (bugRewardCheckToItem.ContainsKey(excludedCheckName))
-                    bugRewardCheckToItem.Remove(excludedCheckName);
+                if (agithaCheckToItem.ContainsKey(excludedCheckName))
+                    agithaCheckToItem.Remove(excludedCheckName);
             }
 
-            foreach (KeyValuePair<string, Item> pair in bugRewardCheckToItem)
+            foreach (KeyValuePair<string, Item> pair in agithaCheckToItem)
             {
                 Item bug = pair.Value;
                 this.RandomizedImportantItems.Add(bug);
