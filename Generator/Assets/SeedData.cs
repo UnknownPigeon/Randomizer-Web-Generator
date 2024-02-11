@@ -997,6 +997,11 @@ namespace TPRandomizer.Assets
             listOfStaticReplacements.Add(new ARCReplacement("1A84", "00000064", 1, 3, 53, 0)); // Set Charlo Donation to increase donated amount by 100 rupees.
 
             listOfStaticReplacements.Add(new ARCReplacement("1ACC", "00000064", 1, 3, 53, 0)); // Set Charlo Donation to remove 100 rupees from Link's wallet.
+
+            listOfStaticReplacements.Add(new ARCReplacement("305A", "00060064", 1, 3, 73, 0)); // Change magic armor price to 100 rupees.
+
+            listOfStaticReplacements.Add(new ARCReplacement("307C", "00000064", 1, 3, 73, 0)); // Set Malo mart to remove 100 rupees from Link's wallet.
+            
             return listOfStaticReplacements;
         }
 
