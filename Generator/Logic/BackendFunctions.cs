@@ -560,7 +560,7 @@ namespace TPRandomizer
                     );
                 }
             }
-            currentPlaythrough.Add("    Ganondorf Castle: Ganondorf Defeated");
+            currentPlaythrough.Add("Snowpeak Ruins : Blizetta Defeated");
 
             result.Add(currentSpherePairs);
 
@@ -713,7 +713,7 @@ namespace TPRandomizer
                 Randomizer.Items.heldItems.Add(startingItem);
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!Randomizer.Rooms.RoomDict["Snowpeak Ruins Boss Room"].Visited)
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -728,7 +728,7 @@ namespace TPRandomizer
                     foreach (Room graphRoom in currentPlaythroughGraph)
                     {
                         // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                        if (graphRoom.RoomName == "Ganondorf Castle")
+                        if (graphRoom.RoomName == "Snowpeak Ruins Boss Room")
                         {
                             graphRoom.Visited = true;
                             hasConcludedPlaythrough = true;
