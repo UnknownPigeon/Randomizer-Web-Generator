@@ -17,7 +17,7 @@
         //Don't require gate to be unlocked for cannonballs if we have Cheese since we can get to the other side by going through Yeta's room.
 
         "Ball_and_Chain or ((((Snowpeak_Ruins_Small_Key, 2) or Snowpeak_Ruins_Ordon_Goat_Cheese) or (Setting.smallKeySettings equals Keysy)) and hasBombs)",
-        "(((Snowpeak_Ruins_Small_Key, 4) and Snowpeak_Ruins_Ordon_Goat_Cheese) or (Setting.smallKeySettings equals Keysy)) and Ball_and_Chain and hasBombs and ((Heart_Container, 14) or (Setting.bigKeySettings equals Keysy))"
+        "(((Snowpeak_Ruins_Small_Key, 4) and Snowpeak_Ruins_Ordon_Goat_Cheese) or (Setting.smallKeySettings equals Keysy)) and Ball_and_Chain and hasBombs and (CanGetLove or (Setting.bigKeySettings equals Keysy))"
     ],
     "Checks": 
     [

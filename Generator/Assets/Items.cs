@@ -959,15 +959,26 @@ namespace TPRandomizer
                 // Some items get extra copies; no Pieces of Heart
                 case ItemScarcity.Plentiful:
                 {
-                    // Remove all Pieces of Heart
+                     HashSet<Item> alwaysItemsToRemove =
+                        new()
+                        {
+                            Item.Snowpeak_Ruins_Bedroom_Key,
+                            Item.Piece_of_Heart,
+                        };
+                        HashSet<Item> DungeonItemsToRemove =
+                        new()
+                        {
+                            Item.Snowpeak_Ruins_Bedroom_Key,
+                        };
+
+
+                    // Filter out certain items
                     this.alwaysItems = this.alwaysItems
-                        .Where(item => item != Item.Piece_of_Heart)
+                        .Where(item => !alwaysItemsToRemove.Contains(item))
                         .ToList();
 
                     // Add Heart Containers
                     updateItemToCount(this.alwaysItems, Item.Heart_Container, 17);
-                    // Remove Snowpeak boss key because no one need such that key
-                    updateItemToCount(this.alwaysItems,Item.Snowpeak_Ruins_Bedroom_Key,0);
 
                     break;
                 }

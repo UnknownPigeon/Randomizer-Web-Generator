@@ -248,7 +248,7 @@ namespace TPRandomizer
                 playthroughDictionary.Add("Starting Item: " + startingItem.ToString(), null);
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!Randomizer.Rooms.RoomDict["Snowpeak Ruins Boss Room"].Visited)
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -263,7 +263,7 @@ namespace TPRandomizer
                 foreach (Room graphRoom in currentPlaythroughGraph)
                 {
                     // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                    if (graphRoom.RoomName == "Ganondorf Castle")
+                    if (graphRoom.RoomName == "Snowpeak Ruins Boss Room")
                     {
                         graphRoom.Visited = true;
                         hasConcludedPlaythrough = true;
@@ -371,7 +371,7 @@ namespace TPRandomizer
                 }
             }
 
-            currentPlaythrough.Add("    Ganondorf Castle: Ganondorf Defeated");
+            currentPlaythrough.Add("    Snowpeak Ruins Boss Room: Love Found");
 
             return currentPlaythrough;
         }
@@ -421,7 +421,7 @@ namespace TPRandomizer
                 startingItemCount++;
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!Randomizer.Rooms.RoomDict["Snowpeak Ruins Boss Room"].Visited)
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -438,7 +438,7 @@ namespace TPRandomizer
                 foreach (Room graphRoom in currentPlaythroughGraph)
                 {
                     //Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
-                    if (graphRoom.RoomName == "Ganondorf Castle")
+                    if (graphRoom.RoomName == "Snowpeak Ruins Boss Room")
                     {
                         graphRoom.Visited = true;
                         hasConcludedPlaythrough = true;
@@ -601,7 +601,7 @@ namespace TPRandomizer
                 Randomizer.Items.heldItems.Add(startingItem);
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!Randomizer.Rooms.RoomDict["Snowpeak Ruins Boss Room"].Visited)
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -616,7 +616,7 @@ namespace TPRandomizer
                     foreach (Room graphRoom in currentPlaythroughGraph)
                     {
                         // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                        if (graphRoom.RoomName == "Ganondorf Castle")
+                        if (graphRoom.RoomName == "Snowpeak Ruins Boss Room")
                         {
                             graphRoom.Visited = true;
                             hasConcludedPlaythrough = true;

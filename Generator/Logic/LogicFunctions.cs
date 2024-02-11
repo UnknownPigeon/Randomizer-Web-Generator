@@ -1452,6 +1452,20 @@ namespace TPRandomizer
 
             return (int)playerHealth;
         }
+         public static bool CanGetLove()
+        {
+            bool canHaveLove = false;
+            double playerHealth = 3.0; // start at 3 since we have 3 hearts.
+
+            playerHealth += getItemCount(Item.Heart_Container);
+            if(playerHealth > 2)
+            {
+                canHaveLove = true;
+            }
+            Console.WriteLine(playerHealth);
+
+            return canHaveLove;
+        }
 
         /// <summary>
         /// summary text.
