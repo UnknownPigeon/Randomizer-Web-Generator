@@ -1457,7 +1457,7 @@ namespace TPRandomizer
             bool canHaveLove = false;
             double playerHealth = 3.0; // start at 3 since we have 3 hearts.
             playerHealth = playerHealth + getItemCount(Item.Heart_Container);
-            if(getItemCount(Item.Heart_Container) >= 14 )
+            if(getItemCount(Item.Heart_Container) >= 11 )
             {
                 canHaveLove = true;
             }
