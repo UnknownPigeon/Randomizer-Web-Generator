@@ -972,8 +972,8 @@ namespace TPRandomizer
                         .ToList();
 
                     // Add Heart Containers
-                    updateItemToCount(this.alwaysItems, Item.Heart_Container, 15);
-                    updateItemToCount(this.ImportantItems,Item.Heart_Container, 15);
+                    updateItemToCount(this.alwaysItems, Item.Heart_Container, 17);
+                    updateItemToCount(this.ImportantItems,Item.Heart_Container, 17);
                     updateItemToCount(this.RandomizedDungeonRegionItems,Item.Snowpeak_Ruins_Bedroom_Key,0);               
 
                     break;

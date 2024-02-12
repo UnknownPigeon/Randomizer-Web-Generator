@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPRandomizer", "Generator\TPRandomizer.csproj", "{FED25CC8-87EA-4298-8F85-882229AC2AAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FED25CC8-87EA-4298-8F85-882229AC2AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED25CC8-87EA-4298-8F85-882229AC2AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED25CC8-87EA-4298-8F85-882229AC2AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED25CC8-87EA-4298-8F85-882229AC2AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EB9FBF2-C2C4-4E7F-96A4-15E126B60A33}
+	EndGlobalSection
+EndGlobal
