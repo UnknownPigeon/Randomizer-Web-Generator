@@ -18,11 +18,12 @@ namespace TPRandomizer
         /// <summary>
         /// summary text.
         /// </summary>
-        public static bool ValidatePlaythrough(Room startingRoom)
+        public static bool ValidatePlaythrough(Room startingRoom, bool printResults = false)
         {
-            bool areAllChecksReachable = true;
+            bool failedToReachDesiredCheck = false;
             bool areAllRoomsReachable = true;
             List<Item> playthroughItems = new();
+            List<Item> validationItems = new();
             SharedSettings parseSetting = Randomizer.SSettings;
 
             // Console.WriteLine("Item to place: " + itemToPlace);
@@ -33,10 +34,17 @@ namespace TPRandomizer
                 Randomizer.Checks.CheckDict[currentCheck.checkName] = currentCheck;
             }
 
+            HashSet<string> allowedUnreachableChecks = CalcAllowedUnreachableChecks(parseSetting);
+
             foreach (Item startingItem in parseSetting.startingItems)
             {
                 Randomizer.Items.heldItems.Add(startingItem);
             }
+
+            /*foreach (Item item in Randomizer.Items.heldItems)
+            {
+                Console.WriteLine(item);
+            }*/
 
             // Walk through the current graph and get a list of rooms that we can currently access
             // If we collect any items during the playthrough, we add them to the player's inventory
@@ -49,7 +57,8 @@ namespace TPRandomizer
                 );
                 foreach (Room graphRoom in currentPlaythroughGraph)
                 {
-                    // Console.WriteLine("Currently Exploring: " + graphRoom.name);
+                    graphRoom.Visited = true;
+                    //Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
                     for (int i = 0; i < graphRoom.Checks.Count; i++)
                     {
                         // Create reference to the dictionary entry of the check whose logic we are evaluating
@@ -79,7 +88,9 @@ namespace TPRandomizer
                                 {
                                     playthroughItems.Add(currentCheck.itemId);
 
-                                    // Console.WriteLine("Added " + currentCheck.itemId + " to item list.");
+                                    /*Console.WriteLine(
+                                        "Added " + currentCheck.itemId + " to item list."
+                                    );*/
                                 }
 
                                 currentCheck.hasBeenReached = true;
@@ -89,6 +100,7 @@ namespace TPRandomizer
                 }
 
                 Randomizer.Items.heldItems.AddRange(playthroughItems);
+                validationItems.AddRange(playthroughItems);
             } while (playthroughItems.Count > 0);
 
             foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
@@ -96,8 +108,22 @@ namespace TPRandomizer
                 Check listedCheck = checkList.Value;
                 if (!listedCheck.hasBeenReached)
                 {
-                    areAllChecksReachable = false;
-                    Console.WriteLine(listedCheck.checkName + " is not reachable!");
+                    if (allowedUnreachableChecks.Contains(listedCheck.checkName))
+                    {
+                        if (printResults)
+                            Console.WriteLine(
+                                listedCheck.checkName
+                                    + " is not reachable, and this is allowed for this check."
+                            );
+                    }
+                    else
+                    {
+                        failedToReachDesiredCheck = true;
+                        if (printResults)
+                            Console.WriteLine(
+                                listedCheck.checkName + " is not reachable! (unexpected)"
+                            );
+                    }
                 }
             }
 
@@ -107,18 +133,82 @@ namespace TPRandomizer
                 if (!currentRoom.Visited)
                 {
                     areAllRoomsReachable = false;
-                    Console.WriteLine(currentRoom.RoomName + " is not reachable!");
+                    if (printResults)
+                    {
+                        Console.WriteLine(currentRoom.RoomName + " is not reachable!");
+                    }
                 }
             }
 
-            if (areAllChecksReachable && areAllRoomsReachable)
+            foreach (Item item in validationItems)
             {
+                Randomizer.Items.heldItems.Remove(item);
+            }
+
+            if (!failedToReachDesiredCheck && areAllRoomsReachable)
+            {
+                if (printResults)
+                {
+                    Console.WriteLine("Playthrough Validated");
+                }
                 return true;
             }
             else
             {
                 return false;
             }
+        }
+
+        private static HashSet<string> CalcAllowedUnreachableChecks(SharedSettings sSettings)
+        {
+            // Can revisit where this code lives once we develop a "Guarantee
+            // Reachable Locations" feature.
+            HashSet<string> allowedUnreachableChecks = new();
+
+            if (sSettings.shuffleGoldenBugs)
+            {
+                // Any Agitha check which is excluded is unreachable since the
+                // corresponding bug is not in the pool. This allows us to
+                // include any number of Agitha checks (not just 0 or 24)
+                // without having to memorize which bugs are valid or invalid.
+
+                HashSet<string> agithaChecks =
+                    new()
+                    {
+                        "Agitha Female Ant Reward",
+                        "Agitha Female Beetle Reward",
+                        "Agitha Female Butterfly Reward",
+                        "Agitha Female Dayfly Reward",
+                        "Agitha Female Dragonfly Reward",
+                        "Agitha Female Grasshopper Reward",
+                        "Agitha Female Ladybug Reward",
+                        "Agitha Female Mantis Reward",
+                        "Agitha Female Phasmid Reward",
+                        "Agitha Female Pill Bug Reward",
+                        "Agitha Female Snail Reward",
+                        "Agitha Female Stag Beetle Reward",
+                        "Agitha Male Ant Reward",
+                        "Agitha Male Beetle Reward",
+                        "Agitha Male Butterfly Reward",
+                        "Agitha Male Dayfly Reward",
+                        "Agitha Male Dragonfly Reward",
+                        "Agitha Male Grasshopper Reward",
+                        "Agitha Male Ladybug Reward",
+                        "Agitha Male Mantis Reward",
+                        "Agitha Male Phasmid Reward",
+                        "Agitha Male Pill Bug Reward",
+                        "Agitha Male Snail Reward",
+                        "Agitha Male Stag Beetle Reward",
+                    };
+
+                foreach (string excludedCheckName in sSettings.excludedChecks)
+                {
+                    if (agithaChecks.Contains(excludedCheckName))
+                        allowedUnreachableChecks.Add(excludedCheckName);
+                }
+            }
+
+            return allowedUnreachableChecks;
         }
 
         /// <summary>
@@ -347,7 +437,7 @@ namespace TPRandomizer
                 sphereItems.Clear();
                 foreach (Room graphRoom in currentPlaythroughGraph)
                 {
-                    // Console.WriteLine("Currently Exploring: " + graphRoom.name);
+                    //Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
                     if (graphRoom.RoomName == "Ganondorf Castle")
                     {
                         graphRoom.Visited = true;
@@ -402,6 +492,7 @@ namespace TPRandomizer
                                             + currentCheck.itemId,
                                         currentCheck
                                     );
+                                    //Console.WriteLine("Picked up: " + currentCheck.itemId);
                                     hasCompletedSphere = true;
                                     currentCheck.isRequired = true;
                                 }
@@ -715,7 +806,10 @@ namespace TPRandomizer
             foreach (KeyValuePair<string, Check> check in Randomizer.Checks.CheckDict)
             {
                 currentCheck = check.Value;
-                if (currentCheck.itemWasPlaced && currentCheck.category.Contains("Dungeon Reward"))
+                if (
+                    currentCheck.itemWasPlaced
+                    && currentCheck.checkCategory.Contains("Dungeon Reward")
+                )
                 {
                     file.WriteLine(currentCheck.checkName + ": " + currentCheck.itemId);
                 }
@@ -871,6 +965,12 @@ namespace TPRandomizer
                 list[k] = list[n];
                 list[n] = value;
             }
+        }
+
+        public static void Append<K, V>(this Dictionary<K, V> first, Dictionary<K, V> second)
+        {
+            List<KeyValuePair<K, V>> pairs = second.ToList();
+            pairs.ForEach(pair => first.Add(pair.Key, pair.Value));
         }
     }
 }

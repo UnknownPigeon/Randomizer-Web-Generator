@@ -259,6 +259,7 @@ img.flag {
 
 .checkboxFieldset {
   max-height: 300px;
+  width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -368,6 +369,7 @@ ul {
 
 .settingsStringValue {
   padding: 4px 0;
+  overflow-wrap: anywhere;
 }
 
 .primaryButton {
@@ -520,7 +522,7 @@ ul {
   /* position: absolute;
   top: 50%;
   left: 100%; */
-  margin-left: 8px;
+  margin-right: 8px;
 }
 
 /* Temp basic modal start */
@@ -1703,4 +1705,28 @@ header .navbar ul li:hover > ul {
 
 tr td select {
   width: 100%;
+}
+
+.liSlider {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.liSlider-inputRow {
+  display: flex;
+  align-items: center;
+}
+
+.liSlider-inputRowText {
+  margin-left: 4px;
+}
+
+.plandoListItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em
+}
+
+.select2-results__options {
+  color: #444 !important;
 }

@@ -21,7 +21,7 @@ COPY ./packages/client/ ./packages/client
 
 #####
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
 WORKDIR /usr/app/generatorSrc
 
 # copy csproj and restore as distinct layers
@@ -36,9 +36,14 @@ RUN cp -R World /app/generator/World
 RUN cp -R Glitched-World /app/generator/Glitched-World
 RUN mkdir -p /app/generator/Assets/Sound
 RUN cp -R Assets/Sound/BackgroundMusic.jsonc /app/generator/Assets/Sound/BackgroundMusic.jsonc
+RUN mkdir -p /app/generator/Assets/Entrances
+RUN cp -R Assets/Entrances/EntranceTable.jsonc /app/generator/Assets/Entrances/EntranceTable.jsonc
+RUN mkdir -p /app/generator/Assets/CheckMetadata
+RUN cp -R Assets/CheckMetadata/Gamecube /app/generator/Assets/CheckMetadata
+RUN cp -R Assets/CheckMetadata/Wii1.0 /app/generator/Assets/CheckMetadata
 
 FROM node:lts-alpine as node_base
-FROM mcr.microsoft.com/dotnet/runtime:6.0-alpine
+FROM mcr.microsoft.com/dotnet/runtime:8.0-alpine
 COPY --from=node_base . .
 
 # Install nginx. Maybe don't need curl and vim, though vim could potentially be handy.
