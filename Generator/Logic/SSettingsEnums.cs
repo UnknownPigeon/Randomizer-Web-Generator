@@ -18,6 +18,7 @@ namespace TPRandomizer.SSettings.Enums
         Mirror_Shards = 2,
         All_Dungeons = 3,
         Vanilla = 4,
+        Papy_Birthday = 5,
     }
 
     public enum PalaceRequirements
