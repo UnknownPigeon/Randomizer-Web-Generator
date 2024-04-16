@@ -124,7 +124,7 @@ namespace TPRandomizer.Assets
             {
                 stageIDX = (byte)StageIDs.Ordon_Village_Interiors,
                 roomIDX = 1,
-                messageID = 0x5AE, // Slingshot Confirmation - Not enough money
+                messageID = 0x5B3, // Slingshot Confirmation - Not enough money
                 message =
                     "You don't have enough money!"
             },
@@ -296,7 +296,7 @@ namespace TPRandomizer.Assets
             {
                 stageIDX = (byte)StageIDs.Ordon_Village_Interiors,
                 roomIDX = 1,
-                messageID = 0x5AD, // Slingshot Check
+                messageID = 0x5AE, // Slingshot Check
                 message =
                     getShortenedItemName(Randomizer.Checks.CheckDict["Sera Shop Slingshot"].itemId)
                     + ": "
