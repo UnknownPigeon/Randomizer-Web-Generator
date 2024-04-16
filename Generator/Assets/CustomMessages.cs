@@ -314,7 +314,7 @@ namespace TPRandomizer.Assets
                     getShortenedItemName(Randomizer.Checks.CheckDict["Castle Town Malo Mart Magic Armor"].itemId)
                     + ": "
                     + messageColorPurple
-                    + "598 Rupees\n"
+                    + "100 Rupees\n"
                     + messageColorWhite
                     + "     LIMITED SUPPLY!\nDon't let them sell out before you\nbuy one!"
             },         

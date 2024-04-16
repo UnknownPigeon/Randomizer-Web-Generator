@@ -1193,7 +1193,23 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     0
                 ), // Set Charlo Donation to remove 100 rupees from Link's wallet.
-
+                new ARCReplacement(
+                    "305A",
+                    "00060064",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    73,
+                    0
+                ),  // Change magic armor price to 100 rupees.
+                new ARCReplacement(
+                    "307C",
+                    "00000064",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction, 
+                    73, 
+                    0
+                ), // Set Malo mart to remove 100 rupees from Link's wallet.
+                
                 new ARCReplacement(
                     "1324",
                     "00000181",
