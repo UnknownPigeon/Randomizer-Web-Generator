@@ -1010,6 +1010,9 @@ namespace TPRandomizer
                     RemoveItem(Item.Progressive_Sky_Book);
                 }
             }
+            if(parseSetting.castleRequirements == CastleRequirements.Papy_Birthday){
+                RemoveItem(Item.Hyrule_Castle_Big_Key);
+            }
 
             foreach (Item startingItem in parseSetting.startingItems)
             {
