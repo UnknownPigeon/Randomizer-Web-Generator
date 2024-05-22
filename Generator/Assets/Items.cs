@@ -1,5 +1,6 @@
 namespace TPRandomizer
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Newtonsoft.Json;
@@ -296,6 +297,7 @@ namespace TPRandomizer
         public List<Item> JunkItems = new(); // Extra junk items that are put in the pool if there are checks left and all items have been placed..
         public List<Item> BaseItemPool = new(); // The list of Items that have yet to be randomized..
         public List<Item> heldItems = new(); // The list of items that the player currently has. This is to be used when emulating the playthrough..
+
         public List<Item> ItemWheelItems =
             new()
             {
@@ -333,6 +335,7 @@ namespace TPRandomizer
                 Item.Progressive_Mirror_Shard,
                 Item.Progressive_Mirror_Shard,
                 Item.Progressive_Mirror_Shard,
+                Item.Progressive_Mirror_Shard
             };
 
         internal List<Item> RegionSmallKeys =
@@ -651,7 +654,7 @@ namespace TPRandomizer
                 Item.Hawkeye,
             };
 
-        private readonly List<Item> vanillaJunkItems =
+        public readonly List<Item> vanillaJunkItems =
             new() // Junk items from the vanilla pool
             {
                 Item.Bombs_5,
@@ -761,33 +764,14 @@ namespace TPRandomizer
         {
             SharedSettings parseSetting = Randomizer.SSettings;
             Randomizer.Items.RandomizedImportantItems.AddRange(this.ImportantItems);
-            Randomizer.Items.BaseItemPool.AddRange(this.VanillaDungeonRewards);
             Randomizer.Items.ShuffledDungeonRewards.AddRange(this.VanillaDungeonRewards);
 
-            switch (parseSetting.shufflePoes)
-            {
-                case PoeSettings.Overworld:
-                {
-                    this.RandomizedImportantItems.AddRange(Enumerable.Repeat(Item.Poe_Soul, 49));
-                    break;
-                }
-
-                case PoeSettings.Dungeons:
-                {
-                    this.RandomizedImportantItems.AddRange(Enumerable.Repeat(Item.Poe_Soul, 11));
-                    break;
-                }
-
-                case PoeSettings.All:
-                {
-                    this.RandomizedImportantItems.AddRange(Enumerable.Repeat(Item.Poe_Soul, 60));
-                    break;
-                }
-            }
+            // Handle poes
+            int numPoesForBaseItemPool = SetupItemPoolPoes(parseSetting);
 
             if (parseSetting.shuffleGoldenBugs)
             {
-                this.RandomizedImportantItems.AddRange(this.goldenBugs);
+                this.AddGoldenBugs(parseSetting);
             }
 
             // Check Small Key settings before adding them to the rando pool
@@ -797,7 +781,6 @@ namespace TPRandomizer
             )
             {
                 this.RandomizedDungeonRegionItems.AddRange(this.RegionSmallKeys);
-                Randomizer.Items.BaseItemPool.AddRange(this.RegionSmallKeys);
             }
             else if (parseSetting.smallKeySettings == SmallKeySettings.Anywhere)
             {
@@ -815,7 +798,6 @@ namespace TPRandomizer
             )
             {
                 this.RandomizedDungeonRegionItems.AddRange(this.DungeonBigKeys);
-                Randomizer.Items.BaseItemPool.AddRange(this.DungeonBigKeys);
             }
             else if (parseSetting.bigKeySettings == BigKeySettings.Anywhere)
             {
@@ -829,7 +811,6 @@ namespace TPRandomizer
             )
             {
                 this.RandomizedDungeonRegionItems.AddRange(this.DungeonMapsAndCompasses);
-                Randomizer.Items.BaseItemPool.AddRange(this.DungeonMapsAndCompasses);
             }
             else if (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Anywhere)
             {
@@ -1006,68 +987,15 @@ namespace TPRandomizer
                     break;
             }
 
-            foreach (Item startingItem in parseSetting.startingItems)
+            if (parseSetting.skipPrologue)
             {
-                bool didRemoveItem = RandomizedImportantItems.Remove(startingItem);
-                if (!didRemoveItem)
-                {
-                    alwaysItems.Remove(startingItem);
-                }
-            }
-
-            // If a poe is excluded, we still want to place the item that was in its location.
-            foreach (string excludedCheck in parseSetting.excludedChecks)
-            {
-                if (Randomizer.Checks.CheckDict[excludedCheck].itemId == Item.Poe_Soul)
-                {
-                    switch (parseSetting.shufflePoes)
-                    {
-                        case PoeSettings.Vanilla:
-                        {
-                            Randomizer.Checks.CheckDict[excludedCheck].checkStatus = "Vanilla";
-                            break;
-                        }
-
-                        case PoeSettings.Overworld:
-                        {
-                            if (
-                                !Randomizer.Checks.CheckDict[excludedCheck].category.Contains(
-                                    "Overworld"
-                                )
-                            )
-                            {
-                                Randomizer.Checks.CheckDict[excludedCheck].checkStatus = "Vanilla";
-                            }
-                            break;
-                        }
-
-                        case PoeSettings.Dungeons:
-                        {
-                            if (
-                                !Randomizer.Checks.CheckDict[excludedCheck].category.Contains(
-                                    "Dungeon"
-                                )
-                            )
-                            {
-                                Randomizer.Checks.CheckDict[excludedCheck].checkStatus = "Vanilla";
-                            }
-                            break;
-                        }
-                    }
-                }
+                RemoveItem(Item.North_Faron_Woods_Gate_Key);
             }
 
             // Remove the bulblin camp key from the item pool if we have the setting to skip Bulblin Camp enabled.
             if (parseSetting.skipArbitersEntrance)
             {
-                if (parseSetting.smallKeySettings == SmallKeySettings.Anywhere)
-                {
-                    this.RandomizedImportantItems.Remove(Item.Gerudo_Desert_Bulblin_Camp_Key);
-                }
-                else
-                {
-                    this.RandomizedDungeonRegionItems.Remove(Item.Gerudo_Desert_Bulblin_Camp_Key);
-                }
+                RemoveItem(Item.Gerudo_Desert_Bulblin_Camp_Key);
             }
 
             //
@@ -1075,12 +1003,152 @@ namespace TPRandomizer
             {
                 for (int i = 0; i < 7; i++)
                 {
-                    this.RandomizedImportantItems.Remove(Item.Progressive_Sky_Book);
+                    RemoveItem(Item.Progressive_Sky_Book);
                 }
             }
 
+            foreach (Item startingItem in parseSetting.startingItems)
+            {
+                RemoveItem(startingItem);
+            }
+
+            foreach ((string checkName, Item item) in parseSetting.plandoChecks)
+            {
+                RemoveItem(item);
+
+                //We want to remove all of the hidden skills from the pool if someone has plandoed them in on a minimal setting.
+                if (
+                    (item == Item.Progressive_Hidden_Skill)
+                    && (parseSetting.itemScarcity == ItemScarcity.Minimal)
+                )
+                {
+                    updateItemToCount(RandomizedImportantItems, Item.Progressive_Hidden_Skill, 0);
+                }
+            }
+
+            Randomizer.Items.BaseItemPool.AddRange(this.ShuffledDungeonRewards);
             Randomizer.Items.BaseItemPool.AddRange(this.RandomizedImportantItems);
+            Randomizer.Items.BaseItemPool.AddRange(this.RandomizedDungeonRegionItems);
+            // Adjust Poe souls for BaseItemPool to match calculated value
+            updateItemToCount(Randomizer.Items.BaseItemPool, Item.Poe_Soul, numPoesForBaseItemPool);
             return;
+        }
+
+        private void RemoveItem(Item item)
+        {
+            List<List<Item>> lists =
+                new()
+                {
+                    RandomizedImportantItems,
+                    alwaysItems,
+                    RandomizedDungeonRegionItems,
+                    ShuffledDungeonRewards
+                };
+
+            for (int i = 0; i < lists.Count; i++)
+            {
+                if (lists[i].Remove(item))
+                    break;
+            }
+        }
+
+        private void AddGoldenBugs(SharedSettings sSettings)
+        {
+            // Only add bugs to pool if their corresponding Agitha check is not
+            // excluded.
+            Dictionary<string, Item> agithaCheckToItem =
+                new()
+                {
+                    { "Agitha Female Ant Reward", Item.Female_Ant },
+                    { "Agitha Female Beetle Reward", Item.Female_Beetle },
+                    { "Agitha Female Butterfly Reward", Item.Female_Butterfly },
+                    { "Agitha Female Dayfly Reward", Item.Female_Dayfly },
+                    { "Agitha Female Dragonfly Reward", Item.Female_Dragonfly },
+                    { "Agitha Female Grasshopper Reward", Item.Female_Grasshopper },
+                    { "Agitha Female Ladybug Reward", Item.Female_Ladybug },
+                    { "Agitha Female Mantis Reward", Item.Female_Mantis },
+                    { "Agitha Female Phasmid Reward", Item.Female_Phasmid },
+                    { "Agitha Female Pill Bug Reward", Item.Female_Pill_Bug },
+                    { "Agitha Female Snail Reward", Item.Female_Snail },
+                    { "Agitha Female Stag Beetle Reward", Item.Female_Stag_Beetle },
+                    { "Agitha Male Ant Reward", Item.Male_Ant },
+                    { "Agitha Male Beetle Reward", Item.Male_Beetle },
+                    { "Agitha Male Butterfly Reward", Item.Male_Butterfly },
+                    { "Agitha Male Dayfly Reward", Item.Male_Dayfly },
+                    { "Agitha Male Dragonfly Reward", Item.Male_Dragonfly },
+                    { "Agitha Male Grasshopper Reward", Item.Male_Grasshopper },
+                    { "Agitha Male Ladybug Reward", Item.Male_Ladybug },
+                    { "Agitha Male Mantis Reward", Item.Male_Mantis },
+                    { "Agitha Male Phasmid Reward", Item.Male_Phasmid },
+                    { "Agitha Male Pill Bug Reward", Item.Male_Pill_Bug },
+                    { "Agitha Male Snail Reward", Item.Male_Snail },
+                    { "Agitha Male Stag Beetle Reward", Item.Male_Stag_Beetle }
+                };
+
+            foreach (string excludedCheckName in sSettings.excludedChecks)
+            {
+                if (agithaCheckToItem.ContainsKey(excludedCheckName))
+                    agithaCheckToItem.Remove(excludedCheckName);
+            }
+
+            foreach (KeyValuePair<string, Item> pair in agithaCheckToItem)
+            {
+                Item bug = pair.Value;
+                this.RandomizedImportantItems.Add(bug);
+            }
+        }
+
+        private int SetupItemPoolPoes(SharedSettings parseSetting)
+        {
+            int vanillaPoes = 60;
+            switch (parseSetting.shufflePoes)
+            {
+                case PoeSettings.Overworld:
+                    vanillaPoes -= 49;
+                    break;
+                case PoeSettings.Dungeons:
+                    vanillaPoes -= 11;
+                    break;
+                case PoeSettings.All:
+                    vanillaPoes = 0;
+                    break;
+            }
+
+            int startingPoes = 0;
+            foreach (Item item in parseSetting.startingItems)
+            {
+                if (item == Item.Poe_Soul)
+                    startingPoes += 1;
+            }
+
+            int poesToShuffle = 60 - vanillaPoes - startingPoes;
+            if (poesToShuffle > 0)
+            {
+                // Add in startingPoes since GenerateItemPool automatically
+                // reduces by this amount.
+                this.RandomizedImportantItems.AddRange(
+                    Enumerable.Repeat(Item.Poe_Soul, poesToShuffle + startingPoes)
+                );
+            }
+            else
+            {
+                poesToShuffle = 0;
+            }
+
+            // Return how many Poes should be put in the BaseItemPool. We
+            // include extra souls for the vanilla Poes since they are removed
+            // from the BaseItemPool when they are placed. Starting Poes are
+            // added automatically in Randomizer.cs, so they are not added here.
+            return vanillaPoes + poesToShuffle;
+        }
+
+        public static bool IsSmallKeyOnBossCheck(Item item, Check check)
+        {
+            return Randomizer.Items.RegionSmallKeys.Contains(item)
+                && (
+                    check.checkCategory.Contains("Heart Container")
+                    || check.checkCategory.Contains("Dungeon Reward")
+                );
         }
     }
 }
