@@ -488,6 +488,8 @@ namespace TPRandomizer
                 part2Settings.Add("increaseSpinnerSpeed", SSettings.increaseSpinnerSpeed);
             if (SSettings.openDot)
                 part2Settings.Add("openDot", SSettings.openDot);
+                if (SSettings.skipHc)
+                part2Settings.Add("skipHc", SSettings.skipHc);
 
             // Complex fields
             if (SSettings.startingItems?.Count > 0)

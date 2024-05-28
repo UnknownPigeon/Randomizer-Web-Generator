@@ -14,5 +14,5 @@
     "server:debug-b": "yarn workspace server debug-b",
     "sort": "yarn workspace translations-manager sort"
   },
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@1.22.22."
 }

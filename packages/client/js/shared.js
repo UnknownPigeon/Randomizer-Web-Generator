@@ -408,6 +408,7 @@
       { id: 'openMapCheckbox' },
       { id: 'spinnerSpeedCheckbox' },
       { id: 'openDotCheckbox' },
+      { id: 'skipHcCheckbox' },
       { id: 'itemScarcityFieldset', bitLength: 2 },
       { id: 'damageMagFieldset', bitLength: 3 },
       { id: 'bonksDoDamageCheckbox' },
@@ -856,11 +857,13 @@
       processBasic({ id: 'noSmallKeysOnBosses' });
       processBasic({ id: 'startingToD', bitLength: 3 });
       processBasic({ id: 'hintDistribution', bitLength: 5 });
+      processBasic({ id: 'skipHc' });
     } else {
       res.skipMajorCutscenes = 1; // Vanilla
       res.noSmallKeysOnBosses = false;
       res.startingToD = 1; // Noon, which the previous rando versions used.
       res.hintDistribution = 0; // None
+      res.skipHc = false;
     }
 
     res.startingItems = processor.nextEolList(9);

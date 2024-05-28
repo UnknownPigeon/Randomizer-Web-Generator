@@ -816,6 +816,7 @@ namespace TPRandomizer
             {
                 this.RandomizedImportantItems.AddRange(this.DungeonMapsAndCompasses);
             }
+            
 
             // Modifying Item Pool based on ice trap settings
             // If we have Ice Trap Mayhem or Nightmare, all extra junk items are replaced with Foolish Items
@@ -1005,6 +1006,11 @@ namespace TPRandomizer
                 {
                     RemoveItem(Item.Progressive_Sky_Book);
                 }
+            }
+            if(parseSetting.skipHc)
+            {
+                updateItemToCount(this.RandomizedDungeonRegionItems, Item.Hyrule_Castle_Big_Key,0);
+                updateItemToCount(this.RandomizedDungeonRegionItems, Item.Hyrule_Castle_Small_Key,0);
             }
 
             foreach (Item startingItem in parseSetting.startingItems)

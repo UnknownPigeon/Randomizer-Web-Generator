@@ -56,6 +56,7 @@ namespace TPRandomizer
         public bool skipMajorCutscenes { get; set; }
         public bool increaseSpinnerSpeed { get; set; }
         public bool openDot { get; set; }
+        public bool skipHc {get; set; }
         public bool noSmallKeysOnBosses { get; set; }
         public StartingToD startingToD { get; set; }
         public HintDistribution hintDistribution { get; set; }
@@ -105,6 +106,7 @@ namespace TPRandomizer
             openMap = processor.NextBool();
             increaseSpinnerSpeed = processor.NextBool();
             openDot = processor.NextBool();
+            skipHc = processor.NextBool();
             itemScarcity = (ItemScarcity)processor.NextInt(2);
             damageMagnification = (DamageMagnification)processor.NextInt(3);
             bonksDoDamage = processor.NextBool();
