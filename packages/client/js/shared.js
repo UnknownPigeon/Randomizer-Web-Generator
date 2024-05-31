@@ -408,7 +408,6 @@
       { id: 'openMapCheckbox' },
       { id: 'spinnerSpeedCheckbox' },
       { id: 'openDotCheckbox' },
-      { id: 'skipHcCheckbox' },
       { id: 'itemScarcityFieldset', bitLength: 2 },
       { id: 'damageMagFieldset', bitLength: 3 },
       { id: 'bonksDoDamageCheckbox' },
@@ -417,6 +416,7 @@
       { id: 'noSmallKeysOnBossesCheckbox' },
       { id: 'todFieldset', bitLength: 3 },
       { id: 'hintDistributionFieldset', bitLength: 5 },
+      { id: 'skipHcCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
