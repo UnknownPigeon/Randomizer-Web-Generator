@@ -374,7 +374,6 @@ document
   .getElementById('openDotCheckbox')
   .addEventListener('click', setSettingsString);
 document
-document
   .getElementById('skipHcCheckbox')
   .addEventListener('click', setSettingsString);
 document
@@ -680,6 +679,7 @@ var arrayOfSettingsItems = [
   'openMapCheckbox',
   'spinnerSpeedCheckbox',
   'openDotCheckbox',
+  'skipHcCheckBox',
 ];
 
 function parseSettingsString(settingsString) {

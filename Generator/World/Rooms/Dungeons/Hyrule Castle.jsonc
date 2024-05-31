@@ -121,7 +121,7 @@
         },
         {
             "ConnectedArea": "Hyrule Castle Graveyard",
-            "Requirements": "Shadow_Crystal and true"
+            "Requirements": "Shadow_Crystal"
         }
         ],
         "Checks": 
