@@ -1,5 +1,5 @@
 {
-  // Pigeon distribution
+  // Test distribution for drehen
   "starting": {
     "spot": "ordon_sign",
     "excludeFromGroups": true
@@ -14,8 +14,8 @@
   },
   "beyondPointZones": ["alias:all"],
   "barren": {
-    "ownZoneBehavior": "monopolize",
-    "ownZoneShowsAsJunkHint": true
+    "ownZoneBehavior": "Off",
+    "ownZoneShowsAsJunkHint": false
   },
   "always": {
     "monopolizeSpots": true,
@@ -25,15 +25,15 @@
   },
   //
   "addChecks": {
-    "Lake Hylia Shell Blade Grotto Chest": ["always"]
+    "Death Mountain Alcove Chest": ["always"]
   },
   "removeChecks": {
-    "Herding Goats Reward": ["sometimes"],
-    "Wrestling With Bo": ["sometimes"],
     "Forest Temple Gale Boomerang": ["sometimes"],
+    "Goron Mines Main Magnet Room Top Chest": ["sometimes"],
     "Arbiters Grounds Death Sword Chest": ["sometimes"],
-    "Temple of Time Darknut Chest": ["sometimes"],
-    "City in The Sky Aeralfos Chest": ["sometimes"]
+    "Temple of Time Armogohma Heart Container": ["sometimes"],
+    "City in The Sky Aeralfos Chest": ["sometimes"],
+    "City in The Sky West Wing First Chest": ["sometimes"]
   },
   "removeItems": {
   },
@@ -45,17 +45,18 @@
     {
       "groupId": "overworld",
       "hintDef": {
-        "copies": 2,
+        "copies": 3,
         "hintDef": [
           {
             "hintType": "barren",
             "iterations": 4,
-            "starting": 4
+            "starting": 4,
+            "maxCopies": 1
           },
           {
             "hintType": "path",
-            "iterations": 4,
-            "starting": 1
+            "iterations": 3,
+            "starting": 0
           },
           {
             "starting": 0,
@@ -70,9 +71,10 @@
                   "order": "desc"
                 }
               },
-              { 
-                "hintType": "itemToItemPath"
-            },
+            //  {
+            //    "hintType": "itemToItemPath",
+            //    "minCopies": 2
+            //},
               {
                 // Ex: Owl Statues are junk
                 "hintType": "barren",
@@ -89,35 +91,28 @@
       // 2nd layer is "sometimes" hints
       "groupId": "overworld",
       "hintDef": {
-        "starting": 1,
-        "copies": 2,
+        "starting": 0,
         "hintDef": [
+          //{
+          //  "hintType": "location",
+          //  "options": {
+          //    "markAsSometimes": true,
+          //    "namedChecks": ["City in The Sky West Wing First Chest"],
+          //    "namedProbability": 0.5
+          //  }
+          //},
           {
             "hintType": "location",
-            "options": {
-              "markAsSometimes": true,
-              "validChecks": ["Wrestling With Bo", "Herding Goats Reward"],
-              "namedProbability": 0.5
-              
-            }
-          },
-          {
-            "hintType": "location",
-            "options": {
-              "markAsSometimes": true,
-              "namedChecks": ["City in The Sky West Wing First Chest"],
-              "namedProbability": 0.5
-            }
-          },
-          {
-            "hintType": "location",
+            "copies": 3,
             "options": {
               "markAsSometimes": true,
               "namedChecks": [
                 "Forest Temple Gale Boomerang",
+                "Goron Mines Main Magnet Room Top Chest",
                 "Arbiters Grounds Death Sword Chest",
-                "Temple of Time Darknut Chest",
-                "City in The Sky Aeralfos Chest"
+                "Temple of Time Armogohma Heart Container",
+                "City in The Sky Aeralfos Chest",
+                "City in The Sky West Wing First Chest"
               ],
               "namedOrder": "random",
               "checkStatusDisplay": "required_or_not",
@@ -127,7 +122,8 @@
           },
           {
             "hintType": "sometimes",
-            "iterations": 99
+            "iterations": 6,
+            "copies":2
           }
         ]
       }

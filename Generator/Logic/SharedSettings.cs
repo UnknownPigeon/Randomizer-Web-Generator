@@ -115,6 +115,7 @@ namespace TPRandomizer
             startingToD = (StartingToD)processor.NextInt(3);
             hintDistribution = (HintDistribution)processor.NextInt(5);
             skipHc = processor.NextBool();
+            
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

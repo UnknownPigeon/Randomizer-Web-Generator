@@ -1,0 +1,137 @@
+{
+  // Pigeon distribution
+  "starting": {
+    "spot": "ordon_sign",
+    "excludeFromGroups": true
+  },
+  "agitha": false,
+  "jovani": {
+    "minFoundSoulsForHint": 10
+  },
+  "caveOfOrdeals": false,
+  "dungeons": {
+    "bigKeyHints": false
+  },
+  "beyondPointZones": ["alias:all"],
+  "barren": {
+    "ownZoneBehavior": "monopolize",
+    "ownZoneShowsAsJunkHint": true
+  },
+  "always": {
+    "monopolizeSpots": true,
+    "idealNumSpots": 5,
+    "copies": 2,
+    "groupId": "overworld"
+  },
+  //
+  "addChecks": {
+    "Lake Hylia Shell Blade Grotto Chest": ["always"]
+  },
+  "removeChecks": {
+    "Herding Goats Reward": ["sometimes"],
+    "Wrestling With Bo": ["sometimes"],
+    "Forest Temple Gale Boomerang": ["sometimes"],
+    "Arbiters Grounds Death Sword Chest": ["sometimes"],
+    "Temple of Time Darknut Chest": ["sometimes"],
+    "City in The Sky Aeralfos Chest": ["sometimes"]
+  },
+  "removeItems": {
+  },
+  //
+  "groups": {
+    "overworld": ["alias:overworldZones"]
+  },
+  "hints": [
+    {
+      "groupId": "overworld",
+      "hintDef": {
+        "copies": 2,
+        "hintDef": [
+          {
+            "hintType": "barren",
+            "iterations": 4,
+            "starting": 4
+          },
+          {
+            "hintType": "path",
+            "iterations": 4,
+            "starting": 1
+          },
+          {
+            "starting": 0,
+            "hintDef": [
+              {
+                // Num swords in province with most swords (or tied for most).
+                "hintType": "numItemInArea",
+                "saveToVar": "mostSwordsProvince",
+                "options": {
+                  "item": "Progressive_Sword",
+                  "areaType": "province",
+                  "order": "desc"
+                }
+              },
+              { 
+                "hintType": "itemToItemPath",
+                "minCopies":2
+            },
+              {
+                // Ex: Owl Statues are junk
+                "hintType": "barren",
+                "options": {
+                  "areaType": "category"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      // 2nd layer is "sometimes" hints
+      "groupId": "overworld",
+      "hintDef": {
+        "starting": 1,
+        "copies": 2,
+        "hintDef": [
+          {
+            "hintType": "location",
+            "options": {
+              "markAsSometimes": true,
+              "validChecks": ["Wrestling With Bo", "Herding Goats Reward"],
+              "namedProbability": 0.5
+              
+            }
+          },
+          {
+            "hintType": "location",
+            "options": {
+              "markAsSometimes": true,
+              "namedChecks": ["City in The Sky West Wing First Chest"],
+              "namedProbability": 0.5
+            }
+          },
+          {
+            "hintType": "location",
+            "options": {
+              "markAsSometimes": true,
+              "namedChecks": [
+                "Forest Temple Gale Boomerang",
+                "Arbiters Grounds Death Sword Chest",
+                "Temple of Time Darknut Chest",
+                "City in The Sky Aeralfos Chest"
+              ],
+              "namedOrder": "random",
+              "checkStatusDisplay": "required_or_not",
+              "vague": false,
+              "namedProbability": 1
+            }
+          },
+          {
+            "hintType": "sometimes",
+            "iterations": 3
+          }
+        ]
+      }
+    }
+  ]
+}

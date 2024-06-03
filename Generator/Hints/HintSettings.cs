@@ -1015,13 +1015,13 @@ namespace TPRandomizer.Hints.Settings
                 { "Castle Town", SpotId.Castle_Town_Sign },
                 { "Great Bridge of Hylia", SpotId.Great_Bridge_of_Hylia_Sign },
                 { "Lake Hylia", SpotId.Lake_Hylia_Sign },
-                { "Lake Lantern Cave", SpotId.Lake_Lantern_Cave_Sign },
+                //  { "Lake Lantern Cave", SpotId.Lake_Lantern_Cave_Sign },
                 { "Lanayru Spring", SpotId.Lanayru_Spring_Sign },
                 { "Zora's Domain", SpotId.Zoras_Domain_Sign },
                 { "Upper Zora's River", SpotId.Upper_Zoras_River_Sign },
                 { "Gerudo Desert", SpotId.Gerudo_Desert_Sign },
                 { "Bulblin Camp", SpotId.Bulblin_Camp_Sign },
-                { "Snowpeak", SpotId.Snowpeak_Sign },
+                // { "Snowpeak", SpotId.Snowpeak_Sign },
                 { "Cave of Ordeals", SpotId.Cave_of_Ordeals_Sign },
             };
 
@@ -1320,8 +1320,10 @@ namespace TPRandomizer.Hints.Settings
                     return Path.Combine(basePath, "balanced.jsonc");
                 case HintDistribution.Blossom:
                     return Path.Combine(basePath, "blossom.jsonc");
-                case HintDistribution.Pigeon:
-                    return Path.Combine(basePath, "Pigeon.jsonc");
+                case HintDistribution.DrehenTest:
+                    return Path.Combine(basePath, "drehenTest.jsonc");
+                case HintDistribution.Showcase:
+                    return Path.Combine(basePath, "showcase.jsonc");
                 case HintDistribution.Strong:
                     return Path.Combine(basePath, "strong.jsonc");
                 case HintDistribution.Very_Strong:
