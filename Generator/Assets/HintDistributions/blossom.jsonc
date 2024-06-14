@@ -39,6 +39,67 @@
     "overworld": ["alias:overworldZones"],
     "requiredDungeons": ["alias:requiredDungeons"]
   },
+  // Special hints generated right after Always hints are generated. These are
+  // created even if the dungeon is hinted barren or the check is already hinted
+  // barren by a BeyondThisPoint hint.
+  "specialHintDefs": [
+    {
+      "spot": "forest_temple_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "markAsSometimes": true,
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Forest Temple Gale Boomerang"]
+        }
+      }
+    },
+    {
+      "spot": "snowpeak_ruins_sign",
+      "hintDef": {
+        "selectionType": "randomOrder",
+        "maxPicks": 1,
+        "hintDef": [
+          {
+            "hintType": "location",
+            "options": {
+              "markAsSometimes": true,
+              "canHintHintedBarrenChecks": true,
+              "validChecks": [
+                "Snowpeak Ruins Chapel Chest",
+                "Snowpeak Ruins Lobby Chandelier Chest",
+                "Snowpeak Ruins Northeast Chandelier Chest"
+              ],
+              "validStatuses": ["required", "good"]
+            }
+          },
+          {
+            "hintType": "location",
+            "options": {
+              "markAsSometimes": true,
+              "canHintHintedBarrenChecks": true,
+              "validChecks": [
+                "Snowpeak Ruins Chapel Chest",
+                "Snowpeak Ruins Lobby Chandelier Chest",
+                "Snowpeak Ruins Northeast Chandelier Chest"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "spot": "temple_of_time_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "markAsSometimes": true,
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Temple of Time Darknut Chest"]
+        }
+      }
+    }
+  ],
   "hints": [
     {
       "groupId": "overworld",
@@ -51,13 +112,26 @@
             "starting": 1
           },
           {
+            "hintType": "itemToItemPath",
+            "starting": 1
+          },
+          {
             "hintType": "path",
             "iterations": 2,
             "starting": 1
           },
           {
+            // Num swords in province with most swords (or tied for most).
+            "hintType": "numItemInArea",
+            "saveToVar": "mostSwordsProvince",
+            "options": {
+              "item": "Progressive_Sword",
+              "areaType": "province",
+              "order": "desc"
+            }
+          },
+          {
             "hintDef": [
-              { "hintType": "itemToItemPath" },
               {
                 "selectionType": "randomOrder",
                 "maxPicks": 2,
@@ -138,68 +212,53 @@
     },
     {
       "groupId": "requiredDungeons",
-      "hintDef": [
-        {
-          // Num swords in province with most swords (or tied for most).
-          "hintType": "numItemInArea",
-          "saveToVar": "mostSwordsProvince",
-          "options": {
-            "item": "Progressive_Sword",
-            "areaType": "province",
-            "order": "desc"
-          }
-        },
-        {
-          "hintType": "numItemInArea",
-          "options": {
-            "item": "Boomerang",
-            "areaType": "province",
-            "validAreas": ["Dungeon"]
-          }
-        },
-        {
-          "selectionType": "randomOrder",
-          "maxPicks": 1,
-          "hintDef": [
-            {
-              "hintType": "location",
-              "options": {
-                "markAsSometimes": true,
-                "namedChecks": [
-                  "Forest Temple Gale Boomerang",
-                  "Goron Mines Main Magnet Room Top Chest",
-                  "Lakebed Temple Deku Toad Chest",
-                  "Arbiters Grounds Death Sword Chest",
-                  "Snowpeak Ruins Chapel Chest",
-                  "Temple of Time Darknut Chest",
-                  "City in The Sky Aeralfos Chest"
-                  // North fan is an idea, but feels like this hint could
-                  // randomly save someone 10 minutes in some cases, so holding
-                  // off for now.
-                  // "City in The Sky Chest Behind North Fan"
-                ],
-                "validStatuses": ["required", "good"]
+      "hintDef": {
+        "selectionType": "randomOrder",
+        "hintDef": [
+          {
+            "iterations": 99,
+            "hintDef": [
+              {
+                "hintType": "numItemInArea",
+                "options": {
+                  "item": "Boomerang",
+                  "areaType": "province",
+                  "validAreas": ["Dungeon"]
+                }
+              },
+              {
+                "hintType": "numItemInArea",
+                "options": {
+                  "item": "Progressive_Clawshot",
+                  "areaType": "province",
+                  "validAreas": ["Dungeon"]
+                }
               }
-            },
-            {
-              "hintType": "location",
-              "options": {
-                "markAsSometimes": true,
-                "namedChecks": [
-                  "Forest Temple Gale Boomerang",
-                  "Goron Mines Main Magnet Room Top Chest",
-                  "Lakebed Temple Deku Toad Chest",
-                  "Arbiters Grounds Death Sword Chest",
-                  "Snowpeak Ruins Chapel Chest",
-                  "Temple of Time Darknut Chest",
-                  "City in The Sky Aeralfos Chest"
-                  // "City in The Sky Chest Behind North Fan"
-                ]
+            ]
+          },
+          {
+            "iterations": 99,
+            "hintDef": [
+              {
+                "hintType": "numItemInArea",
+                "options": {
+                  "item": "Progressive_Clawshot",
+                  "areaType": "province",
+                  "validAreas": ["Dungeon"]
+                }
+              },
+              {
+                "hintType": "numItemInArea",
+                "options": {
+                  "item": "Boomerang",
+                  "areaType": "province",
+                  "validAreas": ["Dungeon"]
+                }
               }
-            }
-          ]
-        }
-      ]
+            ]
+          }
+        ]
+      }
     },
     {
       // 2nd layer is "sometimes" hints
