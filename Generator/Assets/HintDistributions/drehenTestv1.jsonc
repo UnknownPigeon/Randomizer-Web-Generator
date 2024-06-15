@@ -25,11 +25,10 @@
   },
   //
   "addChecks": {
-    "Lake Hylia Shell Blade Grotto Chest": ["always"]
+    "Lake Hylia Shell Blade Grotto Chest": ["always"],
+    "Death Mountain Alcove Chest": ["sometimes"]
   },
   "removeChecks": {
-    "Herding Goats Reward": ["sometimes"],
-    "Wrestling With Bo": ["sometimes"],
     "Forest Temple Gale Boomerang": ["sometimes"],
     "Arbiters Grounds Death Sword Chest": ["sometimes"],
     "Temple of Time Darknut Chest": ["sometimes"],
@@ -42,92 +41,82 @@
     "overworld": ["alias:overworldZones"]
   },
   "hints": [
-    {
-      "groupId": "overworld",
-      "hintDef": {
-        "copies": 2,
-        "hintDef": [
-          {
-            "hintType": "barren",
-            "iterations": 4,
-            "starting": 4
-          },
-          {
-            "hintType": "path",
-            "iterations": 4,
-            "starting": 1
-          },
-          {
-            "starting": 0,
-            "hintDef": [
-              {
-                // Num swords in province with most swords (or tied for most).
-                "hintType": "numItemInArea",
-                "saveToVar": "mostSwordsProvince",
-                "options": {
-                  "item": "Progressive_Sword",
-                  "areaType": "province",
-                  "order": "desc"
-                }
-              },
-              { 
-                "hintType": "itemToItemPath",
-                "minCopies":2
-            },
-              {
-                // Ex: Owl Statues are junk
-                "hintType": "barren",
-                "options": {
-                  "areaType": "category"
-                }
-              }
-            ]
+  {
+    "groupId": "overworld",
+    "hintDef": {
+      "copies": 2,
+      "hintDef": [
+        {
+          "hintType": "barren",
+          "iterations": 4,
+          "starting": 4
+        },
+        {
+          "hintType": "path",
+          "iterations": 4,
+          "starting": 1
+        },
+        {
+          "hintType": "numItemInArea",
+          "saveToVar": "mostSwordsProvince",
+          "options": {
+            "item": "Progressive_Sword",
+            "areaType": "province",
+            "order": "desc"
           }
-        ]
-      }
-    },
+        },
+        {
+          "hintType": "barren",
+          "options": {
+            "areaType": "category"
+          }
+        },
+        {
+          "hintType": "sometimes",
+          "iterations": 1,
+          "minCopies": 1
+        }
+      ]
+    }
+  },
     {
-      // 2nd layer is "sometimes" hints
       "groupId": "overworld",
       "hintDef": {
         "copies": 2,
         "hintDef": [
-          {
-            "hintType": "location",
-            "options": {
-              "markAsSometimes": true,
-              "validChecks": ["Wrestling With Bo", "Herding Goats Reward"],
-              "namedProbability": 0.5
-              
-            }
-          },
-          {
-            "hintType": "location",
-            "options": {
-              "markAsSometimes": true,
-              "namedChecks": ["City in The Sky West Wing First Chest"],
-              "namedProbability": 0.5
-            }
-          },
-          {
-            "hintType": "location",
-            "options": {
-              "markAsSometimes": true,
+        {
+          "hintType": "location",
+          "options": {
+            "markAsSometimes": true,
               "namedChecks": [
-                "Forest Temple Gale Boomerang",
-                "Arbiters Grounds Death Sword Chest",
-                "Temple of Time Darknut Chest",
-                "City in The Sky Aeralfos Chest"
+                "City in The Sky West Wing First Chest"
               ],
-              "namedOrder": "random",
-              "checkStatusDisplay": "required_or_not",
-              "vague": false,
-              "namedProbability": 1
-            }
-          },
+              "namedOrder":"random",
+              "namedProbability": 0.5,
+              "minCopies": 1
+          }
+      },
+          {
+             "hintType": "location",
+             "options": {
+               "markAsSometimes": true,
+               "namedChecks": [
+                 "Forest Temple Gale Boomerang",
+                 "Arbiters Grounds Death Sword Chest",
+                 "Temple of Time Darknut Chest",
+                 "City in The Sky Aeralfos Chest"
+               ],
+               "namedProbability": 1,
+               "namedOrder": "random",
+               "checkStatusDisplay": "required_or_not",
+               "vague": false,
+               "minCopies": 1
+             }
+           },
           {
             "hintType": "sometimes",
-            "iterations": 99
+            "iterations": 99,
+            "minCopies": 1
           }
         ]
       }
