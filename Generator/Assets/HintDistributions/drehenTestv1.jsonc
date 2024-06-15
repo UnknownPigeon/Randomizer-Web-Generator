@@ -90,7 +90,6 @@
       // 2nd layer is "sometimes" hints
       "groupId": "overworld",
       "hintDef": {
-        "starting": 1,
         "copies": 2,
         "hintDef": [
           {
