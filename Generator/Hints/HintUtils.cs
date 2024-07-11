@@ -317,6 +317,13 @@ namespace TPRandomizer.Hints
                     & HintConstants.dungeonZonesToRequiredMaskMap[dungeonHintZoneName]
                 ) != 0;
         }
+         public static bool DungeonIsOptional(string dungeonHintZoneName)
+        {
+            return (
+                    Randomizer.UnrequiredDungeons
+                    & HintConstants.dungeonZonesToRequiredMaskMap[dungeonHintZoneName]
+                ) != 0;
+        }
 
         public static HashSet<string> getRequiredDungeonZones()
         {

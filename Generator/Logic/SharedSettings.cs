@@ -57,6 +57,7 @@ namespace TPRandomizer
         public bool increaseSpinnerSpeed { get; set; }
         public bool openDot { get; set; }
         public bool skipHc {get; set; }
+        public bool optionalDungeons { get; set; }
         public bool noSmallKeysOnBosses { get; set; }
         public StartingToD startingToD { get; set; }
         public HintDistribution hintDistribution { get; set; }
@@ -115,6 +116,7 @@ namespace TPRandomizer
             startingToD = (StartingToD)processor.NextInt(3);
             hintDistribution = (HintDistribution)processor.NextInt(5);
             skipHc = processor.NextBool();
+            optionalDungeons = processor.NextBool();
             
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.

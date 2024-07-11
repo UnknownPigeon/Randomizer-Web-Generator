@@ -29,6 +29,7 @@ namespace TPRandomizer
         public string wiiPlaythroughName { get; set; }
         public Dictionary<int, byte> itemPlacements { get; }
         public byte requiredDungeons { get; set; }
+        public byte unrequiredDungeons { get; set; }
         public List<List<KeyValuePair<int, Item>>> spheres { get; }
         public string entrances { get; }
         public CustomMsgData customMsgData { get; }
@@ -68,6 +69,7 @@ namespace TPRandomizer
             this.wiiPlaythroughName = (string)output["wiiName"];
             this.itemPlacements = DecodeItemPlacements((string)output["itemPlacement"]);
             this.requiredDungeons = (byte)output["reqDungeons"];
+            this.unrequiredDungeons = (byte)output["unreqDungeons"];
             this.spheres = DecodeSpheres((string)output["spheres"]);
             this.entrances = DecodeEntrances((string)output["entrances"]);
             this.customMsgData = CustomMsgData.Decode(
@@ -315,6 +317,7 @@ namespace TPRandomizer
             if (!isRaceSeed || dangerouslyPrintFullRaceSpoiler)
             {
                 root.Add("requiredDungeons", GetRequiredDungeonsStringList());
+                root.Add("UnrequiredDungeons", GetUnRequiredDungeonsStringList());
                 root.Add("shuffledEntrances", GetShuffledEntrancesStringList());
                 root.Add("itemPlacements", sortedCheckNameToItemNameDict);
                 root.Add("hints", customMsgData.GetDictForSpoiler());
@@ -356,6 +359,21 @@ namespace TPRandomizer
             }
 
             return reqDungeonsList;
+        }
+
+        private List<string> GetUnRequiredDungeonsStringList()
+        {
+            List<string> unreqDungeonsList = new();
+
+            foreach (RequiredDungeon unreqDungeonEnum in Enum.GetValues(typeof(RequiredDungeon)))
+            {
+                if (((1 << (byte)unreqDungeonEnum) & unrequiredDungeons) != 0)
+                {
+                    unreqDungeonsList.Add(unreqDungeonEnum.ToString());
+                }
+            }
+
+            return unreqDungeonsList;
         }
 
         private List<string> GetShuffledEntrancesStringList()
@@ -544,6 +562,7 @@ namespace TPRandomizer
             result.Add("increaseSpinnerSpeed", sSettings.increaseSpinnerSpeed);
             result.Add("openDot", sSettings.openDot);
             result.Add("skipHc", sSettings.skipHc);
+            result.Add("optionalDungeons",sSettings.optionalDungeons);
             result.Add("noSmallKeysOnBosses", sSettings.noSmallKeysOnBosses);
             result.Add("startingToD", sSettings.startingToD.ToString());
             result.Add("hintDistribution", sSettings.hintDistribution.ToString());
@@ -563,6 +582,7 @@ namespace TPRandomizer
             public string playthroughName { get; set; }
             public string wiiPlaythroughName { get; set; }
             public byte requiredDungeons { get; set; }
+            public byte unrequiredDungeon { get; set; }
             private string itemPlacement;
             private string spheres;
             public string entrances;
@@ -622,6 +642,7 @@ namespace TPRandomizer
                 outputObj.Add("wiiName", wiiPlaythroughName);
                 outputObj.Add("itemPlacement", itemPlacement);
                 outputObj.Add("reqDungeons", requiredDungeons);
+                outputObj.Add("unreqDungeons", unrequiredDungeon);
                 outputObj.Add("spheres", spheres);
                 outputObj.Add("entrances", entrances);
                 outputObj.Add("customMsg", customMsgData);

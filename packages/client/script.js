@@ -377,6 +377,9 @@ document
   .getElementById('skipHcCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('optDungeonsCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('increaseWalletCheckbox')
   .addEventListener('click', setSettingsString);
 document
@@ -516,6 +519,7 @@ function setSettingsString() {
   ).checked;
   settingsStringRaw[40] = document.getElementById('openDotCheckbox').checked;
   settingsStringRaw[41] = document.getElementById('skipHcCheckbox').checked;
+  settingsStringRaw[42] = document.getElementById('optDungeonsCheckbox').checked;
 
   // document.getElementById('settingsStringTextbox').value =
   document.getElementById('settingsStringTextbox').textContent =
@@ -680,6 +684,7 @@ var arrayOfSettingsItems = [
   'spinnerSpeedCheckbox',
   'openDotCheckbox',
   'skipHcCheckBox',
+  'optDungeonsCheckbox',
 ];
 
 function parseSettingsString(settingsString) {
@@ -1242,6 +1247,8 @@ function populateSSettings(s) {
   $('#todFieldset').val(s.startingToD);
   $('#hintDistributionFieldset').val(s.hintDistribution);
   $('#skipHcCheckbox').prop('checked', s.skipHc);
+  $('#optDungeonsCheckbox').prop('checked', s.optionalDungeons);
+
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

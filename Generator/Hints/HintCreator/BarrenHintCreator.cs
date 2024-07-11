@@ -325,7 +325,7 @@ namespace TPRandomizer.Hints.HintCreator
                     )
                     {
                         string zoneName = kv.Key;
-                        if (!HintUtils.DungeonIsRequired(zoneName))
+                        if (!HintUtils.DungeonIsRequired(zoneName) && !HintUtils.DungeonIsOptional(zoneName))
                             result.Remove(AreaId.ZoneStr(zoneName));
                     }
                 }

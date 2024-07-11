@@ -201,6 +201,7 @@ namespace TPRandomizer.Hints
             && (
                 !genData.sSettings.barrenDungeons
                 || HintUtils.DungeonIsRequired(ZoneUtils.IdToString(zone))
+                || HintUtils.DungeonIsOptional(ZoneUtils.IdToString(zone))
             );
 
         public Zone zone { get; private set; }

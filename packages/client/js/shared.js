@@ -417,6 +417,7 @@
       { id: 'todFieldset', bitLength: 3 },
       { id: 'hintDistributionFieldset', bitLength: 5 },
       { id: 'skipHcCheckbox' },
+      { id: 'optDungeonsCheckbox' },     
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -858,12 +859,14 @@
       processBasic({ id: 'startingToD', bitLength: 3 });
       processBasic({ id: 'hintDistribution', bitLength: 5 });
       processBasic({ id: 'skipHc' });
+      processBasic({ id: 'optionalDungeons' });
     } else {
       res.skipMajorCutscenes = 1; // Vanilla
       res.noSmallKeysOnBosses = false;
       res.startingToD = 1; // Noon, which the previous rando versions used.
       res.hintDistribution = 0; // None
       res.skipHc = false;
+      res.optionalDungeons = false;
     }
 
     res.startingItems = processor.nextEolList(9);

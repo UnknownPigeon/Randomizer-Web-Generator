@@ -52,6 +52,8 @@ namespace TPRandomizer
         public static SharedSettings SSettings = new();
 
         public static int RequiredDungeons = 0;
+        public static int UnrequiredDungeons = 0;
+        public static int nbUnrequiredDungeon = 0;
 
         public static bool CreateInputJson(
             string idParam,
@@ -383,6 +385,7 @@ namespace TPRandomizer
             builder.playthroughName = playthroughNames[0];
             builder.wiiPlaythroughName = playthroughNames[1];
             builder.requiredDungeons = (byte)Randomizer.RequiredDungeons;
+            builder.unrequiredDungeon = (byte)Randomizer.UnrequiredDungeons;
             builder.SetItemPlacements(checkNumIdToItemId);
             builder.SetSpheres(spheres);
             builder.SetEntrances();
@@ -490,6 +493,8 @@ namespace TPRandomizer
                 part2Settings.Add("openDot", SSettings.openDot);
             if (SSettings.skipHc)
                 part2Settings.Add("skipHc", SSettings.skipHc);
+            if (SSettings.optionalDungeons)
+                part2Settings.Add("optionalDungeons", SSettings.optionalDungeons);
 
             // Complex fields
             if (SSettings.startingItems?.Count > 0)
@@ -1359,10 +1364,14 @@ namespace TPRandomizer
 
             // Finally set the required dungeons to 0 since the value may change during the next attempt.
             Randomizer.RequiredDungeons = 0;
+            Randomizer.nbUnrequiredDungeon = 0;
+            Randomizer.UnrequiredDungeons = 0;
         }
 
         private static void CheckUnrequiredDungeons()
         {
+            Random random = new Random();
+            List<int> indexList = new List<int>();
             int palace = 0;
             int city = 1;
             int tot = 2;
@@ -1384,15 +1393,20 @@ namespace TPRandomizer
             };
 
             // Create the dungeon entries
-            requiredDungeons forestTemple = new("Forest Temple Dungeon Reward", false, null);
-            requiredDungeons goronMines = new("Goron Mines Dungeon Reward", false, null);
-            requiredDungeons lakebedTemple = new("Lakebed Temple Dungeon Reward", false, null);
-            requiredDungeons arbitersGrounds = new("Arbiters Grounds Dungeon Reward", false, null);
-            requiredDungeons snowpeakRuins = new("Snowpeak Ruins Dungeon Reward", false, null);
-            requiredDungeons templeOfTime = new("Temple of Time Dungeon Reward", false, null);
-            requiredDungeons cityInTheSky = new("City in The Sky Dungeon Reward", false, null);
+            requiredDungeons forestTemple = new("Forest Temple Dungeon Reward", false, null, false);
+            requiredDungeons goronMines = new("Goron Mines Dungeon Reward", false, null, false);
+            requiredDungeons lakebedTemple =
+                new("Lakebed Temple Dungeon Reward", false, null, false);
+            requiredDungeons arbitersGrounds =
+                new("Arbiters Grounds Dungeon Reward", false, null, false);
+            requiredDungeons snowpeakRuins =
+                new("Snowpeak Ruins Dungeon Reward", false, null, false);
+            requiredDungeons templeOfTime =
+                new("Temple of Time Dungeon Reward", false, null, false);
+            requiredDungeons cityInTheSky =
+                new("City in The Sky Dungeon Reward", false, null, false);
             requiredDungeons palaceOfTwilight =
-                new("Palace of Twilight Zant Heart Container", false, null);
+                new("Palace of Twilight Zant Heart Container", false, null, false);
 
             requiredDungeons[] listOfRequiredDungeons = new requiredDungeons[]
             {
@@ -1405,7 +1419,6 @@ namespace TPRandomizer
                 goronMines,
                 forestTemple,
             };
-
             for (int i = 0; i < listOfRequiredDungeons.GetLength(0); i++)
             {
                 listOfRequiredDungeons[i].requirementChecks = listOfAffectedChecks[i];
@@ -1570,6 +1583,40 @@ namespace TPRandomizer
             {
                 listOfRequiredDungeons[lakebed].isRequired = true;
             }
+            if (
+                Randomizer.SSettings.barrenDungeons
+                && Randomizer.SSettings.optionalDungeons
+                && (
+                    Randomizer.SSettings.castleRequirements == CastleRequirements.Fused_Shadows
+                    || Randomizer.SSettings.castleRequirements == CastleRequirements.Mirror_Shards
+                )
+            )
+            {
+                Item dungeonreward =
+                    Randomizer.SSettings.castleRequirements == CastleRequirements.Mirror_Shards
+                        ? Item.Progressive_Fused_Shadow
+                        : Item.Progressive_Mirror_Shard;
+
+                for (int i = 0; i < listOfRequiredDungeons.GetLength(0); i++)
+                {
+                    foreach (string dungeonCheck in listOfRequiredDungeons[i].requirementChecks)
+                    {
+                        Check currentCheck = Checks.CheckDict[dungeonCheck];
+                        if (currentCheck.itemId == dungeonreward && currentCheck.itemWasPlaced)
+                        {
+                            indexList.Add(i);
+                            break;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < 2; i++)
+                {
+                    int rnd = random.Next(0, indexList.Count);
+                    listOfRequiredDungeons[indexList[rnd]].isOptional = true;
+                    indexList.RemoveAt(rnd);
+                }
+            }
 
             if (Randomizer.SSettings.logicRules == LogicRules.Glitchless)
             {
@@ -1592,7 +1639,7 @@ namespace TPRandomizer
 
             for (int i = 0; i < listOfRequiredDungeons.GetLength(0); i++)
             {
-                if (!listOfRequiredDungeons[i].isRequired)
+                if (!listOfRequiredDungeons[i].isRequired && !listOfRequiredDungeons[i].isOptional)
                 {
                     if (Randomizer.SSettings.barrenDungeons)
                     {
@@ -1616,10 +1663,20 @@ namespace TPRandomizer
                 }
                 else
                 {
-                    Randomizer.RequiredDungeons |= 0x80 >> i;
-                    Console.WriteLine(
-                        listOfRequiredDungeons[i].dungeonReward + " is a required Dungeon!"
-                    );
+                    if (!listOfRequiredDungeons[i].isOptional)
+                    {
+                        Randomizer.RequiredDungeons |= 0x80 >> i;
+                        Console.WriteLine(
+                            listOfRequiredDungeons[i].dungeonReward + " is a required Dungeon!"
+                        );
+                    }
+                    else
+                    {
+                        Randomizer.UnrequiredDungeons |= 0x80 >> i;
+                        Console.WriteLine(
+                            listOfRequiredDungeons[i].dungeonReward + " is a optional Dungeon!"
+                        );
+                    }
                 }
             }
         }
@@ -1842,17 +1899,20 @@ namespace TPRandomizer
         {
             public string dungeonReward;
             public bool isRequired;
+            public bool isOptional;
             public List<String> requirementChecks;
 
             public requiredDungeons(
                 string dungeonReward,
                 bool isRequired,
-                List<string> requirementChecks
+                List<string> requirementChecks,
+                bool isOptional
             )
             {
                 this.dungeonReward = dungeonReward;
                 this.isRequired = isRequired;
                 this.requirementChecks = requirementChecks;
+                this.isOptional = isOptional;
             }
         };
 
@@ -1987,7 +2047,6 @@ namespace TPRandomizer
                         {
                             continue;
                         }
-
                         if (
                             Randomizer.SSettings.palaceRequirements
                                 == PalaceRequirements.Mirror_Shards
@@ -2009,11 +2068,29 @@ namespace TPRandomizer
                             numAttemptsRemaining--;
                             continue;
                         }
+                        if (
+                            Randomizer.SSettings.castleRequirements
+                                == CastleRequirements.Fused_Shadows
+                            && (currentItem == Item.Progressive_Mirror_Shard)
+                        )
+                        {
+                            numAttemptsRemaining--;
+                            continue;
+                        }
 
                         if (
                             Randomizer.SSettings.castleRequirements
                                 == CastleRequirements.Mirror_Shards
                             && (currentItem == Item.Progressive_Mirror_Shard)
+                        )
+                        {
+                            numAttemptsRemaining--;
+                            continue;
+                        }
+                        if (
+                            Randomizer.SSettings.castleRequirements
+                                == CastleRequirements.Mirror_Shards
+                            && (currentItem == Item.Progressive_Fused_Shadow)
                         )
                         {
                             numAttemptsRemaining--;
