@@ -393,6 +393,10 @@
     <value>(obligatoire)</value>
     <comment></comment>
   </data>
+  <data name="description.skippable-check" xml:space="preserve">
+    <value>(optionnel)</value>
+    <comment></comment>
+  </data>
   <data name="description.unrequired-check" xml:space="preserve">
     <value>(non obligatoire)</value>
     <comment></comment>
@@ -1107,6 +1111,14 @@
   </data>
   <data name="item.60-empty_bottle#other@ac(m)" xml:space="preserve">
     <value>flacons</value>
+    <comment></comment>
+  </data>
+  <data name="item.61-red_potion_shop@ac(f)" xml:space="preserve">
+    <value>potion rouge</value>
+    <comment></comment>
+  </data>
+  <data name="item.61-red_potion_shop#other@ac(f)" xml:space="preserve">
+    <value>potions rouges</value>
     <comment></comment>
   </data>
   <data name="item.65-sera_bottle@ac(f)" xml:space="preserve">

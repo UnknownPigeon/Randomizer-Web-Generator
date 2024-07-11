@@ -386,15 +386,19 @@
     <comment></comment>
   </data>
   <data name="description.bad-check" xml:space="preserve">
-    <value>(bad)</value>
+    <value>(not useful)</value>
     <comment></comment>
   </data>
   <data name="description.good-check" xml:space="preserve">
-    <value>(good)</value>
+    <value>(useful)</value>
     <comment></comment>
   </data>
   <data name="description.required-check" xml:space="preserve">
     <value>(required)</value>
+    <comment></comment>
+  </data>
+  <data name="description.skippable-check" xml:space="preserve">
+    <value>(skippable)</value>
     <comment></comment>
   </data>
   <data name="description.unrequired-check" xml:space="preserve">
@@ -747,6 +751,10 @@
   </data>
   <data name="item.60-empty_bottle@ac(t,an,b,s)" xml:space="preserve">
     <value>empty bottle</value>
+    <comment></comment>
+  </data>
+  <data name="item.61-red_potion_shop@ac(t,a,b,s)" xml:space="preserve">
+    <value>Red Potion</value>
     <comment></comment>
   </data>
   <data name="item.65-sera_bottle@ac(t,a,b,s)" xml:space="preserve">
