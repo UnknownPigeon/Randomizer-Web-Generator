@@ -117,7 +117,7 @@
                ],
                "namedProbability": 1,
                "namedOrder": "random",
-               "checkStatusDisplay": "required_or_not",
+               "checkStatusDisplay": "Required_Info",
                "vague": false,
                "minCopies": 1
              }
