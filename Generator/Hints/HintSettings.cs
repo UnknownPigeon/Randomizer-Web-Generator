@@ -1219,6 +1219,15 @@ namespace TPRandomizer.Hints.Settings
                         }
                         break;
                     }
+                    case "unrequireddungeons":
+                    {
+                        HashSet<string> unrequiredDungeonsZones = HintUtils.getOptionalDungeonZones();
+                        foreach (string zoneName in unrequiredDungeonsZones)
+                        {
+                            ret.Add(zoneToSpot[zoneName]);
+                        }
+                        break;
+                    }
                     default:
                         throw new Exception($"Failed to resolve group entry alias '{alias}'.");
                 }
