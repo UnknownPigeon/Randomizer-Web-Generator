@@ -157,6 +157,11 @@
             ]
           },
           {
+            "hintType": "itemToItemPath",
+            "saveToVar": "HintCopies",
+            "minCopies": 1
+          },
+          {
             "hintType": "path",
             "saveToVar": "HintCopies",
             "iterations": 3
