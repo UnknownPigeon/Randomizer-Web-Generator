@@ -1081,7 +1081,12 @@ namespace TPRandomizer
             }
 
             // Always add the fallback text
-            results.Add(CustomMsgUtils.GetEntry(MsgEntryId.Custom_Sign_Fallback, "..."));
+            results.Add(
+                CustomMsgUtils.GetEntry(
+                    MsgEntryId.Custom_Sign_Fallback,
+                    Res.LangSpecificNormalize(Res.SimpleMsg("hint.none-placed-here"))
+                )
+            );
         }
 
         private void AddShopSlotMsg(

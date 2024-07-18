@@ -117,6 +117,16 @@
           "validChecks": ["Temple of Time Darknut Chest"]
         }
       }
+    },
+    {
+      "spot": "hyrule_castle_sign",
+      "hintDef": {
+        "hintType": "item",
+        "options": {
+          "validItems": ["Purple_Rupee_Links_House"],
+          "areaType": "zone"
+        }
+      }
     }
   ],
   "hints": [
@@ -167,35 +177,16 @@
             "selectionType": "randomOrder",
             "hintDef": [
               {
-                "selectionType": "randomOrder",
-                "weight": 1.5,
-                "hintDef": [
-                  {
-                    // Ex: male bugs lead to nothing
-                    "hintType": "tradeGroup",
-                    "weight": 3,
-                    "options": {
-                      "validGroups": ["male_bugs", "female_bugs"],
-                      "validStatuses": ["bad"],
-                      "smartHinting": false
-                    }
-                  },
-                  {
-                    // Ex: bug in Faron Province leads to a sword
-                    "hintType": "tradeChain",
-                    "weight": 2,
-                    "options": {
-                      "vagueSourceItem": true,
-                      "areaType": "province",
-                      "validCheckStatuses": ["required", "good"],
-                      "validChainStartItems": ["alias:bugs"]
-                    }
-                  }
-                ]
+                // Ex: male bugs lead to nothing
+                "hintType": "tradeGroup",
+                "options": {
+                  "validGroups": ["male_bugs", "female_bugs"],
+                  "validStatuses": ["bad"],
+                  "smartHinting": false
+                }
               },
               {
                 "hintType": "barren",
-                "weight": 1.25,
                 "options": {
                   "areaType": "category",
                   "validAreas": ["Mist", "Upper_Desert", "Lower_Desert"]
@@ -223,9 +214,6 @@
                     }
                   }
                 ]
-              },
-              {
-                "hintType": "sometimes"
               }
             ]
           },
