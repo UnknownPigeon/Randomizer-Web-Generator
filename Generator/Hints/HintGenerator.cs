@@ -34,7 +34,11 @@ namespace TPRandomizer.Hints
         public CustomMsgData Generate()
         {
             CustomMsgData.Builder customMsgDataBuilder =
-                new(genData, (byte)Randomizer.RequiredDungeons);
+                new(
+                    genData,
+                    (byte)Randomizer.RequiredDungeons,
+                    (byte)Randomizer.UnrequiredDungeons
+                );
 
             // If user specified that there are no hintSettings, then we should
             // return the default customMsgData settings.
@@ -1120,8 +1124,8 @@ namespace TPRandomizer.Hints
                                         false,
                                         true,
                                         areaId.type == AreaId.AreaType.Province
-                                          ? TradeChainHint.AreaType.Province
-                                          : TradeChainHint.AreaType.Zone,
+                                            ? TradeChainHint.AreaType.Province
+                                            : TradeChainHint.AreaType.Zone,
                                         CheckStatus.Good,
                                         CheckStatusDisplay.None
                                     );
@@ -1395,8 +1399,8 @@ namespace TPRandomizer.Hints
         private void UpdateHintedForAlwaysHints(List<string> checksToHint)
         {
             HashSet<string> checksToHintSet = ListUtils.isEmpty(checksToHint)
-              ? new()
-              : new(checksToHint);
+                ? new()
+                : new(checksToHint);
 
             foreach (string checkName in hintSettings.always.checks)
             {
@@ -1446,6 +1450,7 @@ namespace TPRandomizer.Hints
                 {
                     foreach (HintDefResult result in recHintResults.HintDefResults)
                     {
+                        if(HintUtils.DungeonIsOptionalSpotId(specialHintDef.spotId) && Randomizer.SSettings.hintDistribution  == HintDistribution.DrehenTestv1)
                         specialSpotToHints.addHintToSpot(specialHintDef.spotId, result.hint);
                     }
                 }
@@ -1580,24 +1585,48 @@ namespace TPRandomizer.Hints
             // spots to fill.
             if (genData.sSettings.barrenDungeons)
             {
-                if (!HintUtils.DungeonIsRequired("Forest Temple"))
+                if (
+                    !HintUtils.DungeonIsRequired("Forest Temple")
+                    && !HintUtils.DungeonIsOptional("Forest Temple")
+                )
                     possibleSpotsToFill.Remove(SpotId.Forest_Temple_Sign);
-                if (!HintUtils.DungeonIsRequired("Goron Mines"))
+                if (
+                    !HintUtils.DungeonIsRequired("Goron Mines")
+                    && !HintUtils.DungeonIsOptional("Goron Mines")
+                )
                     possibleSpotsToFill.Remove(SpotId.Goron_Mines_Sign);
-                if (!HintUtils.DungeonIsRequired("Lakebed Temple"))
+                if (
+                    !HintUtils.DungeonIsRequired("Lakebed Temple")
+                    && !HintUtils.DungeonIsOptional("Lakebed Temple")
+                )
                     possibleSpotsToFill.Remove(SpotId.Lakebed_Temple_Sign);
-                if (!HintUtils.DungeonIsRequired("Arbiter's Grounds"))
+                if (
+                    !HintUtils.DungeonIsRequired("Arbiter's Grounds")
+                    && !HintUtils.DungeonIsOptional("Arbiter's Grounds")
+                )
                     possibleSpotsToFill.Remove(SpotId.Arbiters_Grounds_Sign);
-                if (!HintUtils.DungeonIsRequired("Snowpeak Ruins"))
+                if (
+                    !HintUtils.DungeonIsRequired("Snowpeak Ruins")
+                    && !HintUtils.DungeonIsOptional("Snowpeak Ruins")
+                )
                     possibleSpotsToFill.Remove(SpotId.Snowpeak_Ruins_Sign);
-                if (!HintUtils.DungeonIsRequired("Temple of Time"))
+                if (
+                    !HintUtils.DungeonIsRequired("Temple of Time")
+                    && !HintUtils.DungeonIsOptional("Temple of Time")
+                )
                 {
                     possibleSpotsToFill.Remove(SpotId.Temple_of_Time_Sign);
                     possibleSpotsToFill.Remove(SpotId.Temple_of_Time_Beyond_Point_Sign);
                 }
-                if (!HintUtils.DungeonIsRequired("City in the Sky"))
+                if (
+                    !HintUtils.DungeonIsRequired("City in the Sky")
+                    && !HintUtils.DungeonIsOptional("City in the Sky")
+                )
                     possibleSpotsToFill.Remove(SpotId.City_in_the_Sky_Sign);
-                if (!HintUtils.DungeonIsRequired("Palace of Twilight"))
+                if (
+                    !HintUtils.DungeonIsRequired("Palace of Twilight")
+                    && !HintUtils.DungeonIsOptional("Palace of Twilight")
+                )
                     possibleSpotsToFill.Remove(SpotId.Palace_of_Twilight_Sign);
             }
 

@@ -25,6 +25,7 @@ namespace TPRandomizer
         private static readonly ushort latestEncodingVersion = 0;
 
         private byte requiredDungeons;
+        private byte unrequiredDungeons;
         private bool updateShopText;
 
         // checkName to useDefArticle
@@ -43,6 +44,7 @@ namespace TPRandomizer
         private CustomMsgData(Builder builder, SharedSettings sSettings)
         {
             requiredDungeons = builder.requiredDungeons;
+            unrequiredDungeons = builder.unrequiredDungeons;
             updateShopText = builder.updateShopText;
             selfHinterChecks = builder.GetSelfHinterChecks();
             hintSpots = builder.hintSpots;
@@ -59,6 +61,7 @@ namespace TPRandomizer
 
             // Encode required dungeons
             result += SettingsEncoder.EncodeNumAsBits(requiredDungeons, 8);
+            result += SettingsEncoder.EncodeNumAsBits(unrequiredDungeons, 8);
 
             // Encode updateShopText
             result += updateShopText ? "1" : "0";
@@ -133,6 +136,7 @@ namespace TPRandomizer
 
             // Decode requiredDungeons
             inst.requiredDungeons = processor.NextByte();
+            inst.unrequiredDungeons = processor.NextByte();
 
             // Decode updateShopText
             inst.updateShopText = processor.NextBool();
@@ -209,8 +213,8 @@ namespace TPRandomizer
             // );
 
             // return hintResults;
-
-        }
+            
+            }
 
         // function here for generating the MessageEntry stuff!!!!
 
@@ -219,16 +223,18 @@ namespace TPRandomizer
             private HintGenData genData;
             private List<Item> selfHinterTrapReplacements;
             public byte requiredDungeons { get; private set; }
+            public byte unrequiredDungeons { get; private set; }
             public bool updateShopText { get; private set; } = true;
             private bool forceNotUpdateShopText = false;
             private HashSet<string> selfHinterChecks =
                 new() { "Barnes Bomb Bag", "Charlo Donation Blessing", "Fishing Hole Bottle" };
             public List<HintSpot> hintSpots { get; private set; } = new();
 
-            public Builder(HintGenData genData, byte requiredDungeons)
+            public Builder(HintGenData genData, byte requiredDungeons, byte unrequiredDungeons)
             {
                 this.genData = genData;
                 this.requiredDungeons = requiredDungeons;
+                this.unrequiredDungeons = unrequiredDungeons;
                 if (!genData.sSettings.modifyShopModels)
                 {
                     updateShopText = false;
@@ -655,6 +661,15 @@ namespace TPRandomizer
                     if (sb.Length > 0)
                         sb.Append('\n');
                     sb.Append(Res.Msg(tuple.Item1, null).ResolveWithColor(tuple.Item3));
+                }
+                else if ((unrequiredDungeons & tuple.Item2) != 0)
+                {
+                    if (sb.Length > 0)
+                        sb.Append('\n');
+                    sb.Append(
+                        Res.Msg(tuple.Item1, null)
+                            .ResolveWithColor(CustomMessages.messageColorWhite)
+                    );
                 }
             }
 

@@ -318,6 +318,21 @@ namespace TPRandomizer.Hints
                 ) != 0;
         }
 
+        public static bool DungeonIsOptional(string dungeonHintZoneName)
+        {
+            return (
+                    Randomizer.UnrequiredDungeons
+                    & HintConstants.dungeonZonesToRequiredMaskMap[dungeonHintZoneName]
+                ) != 0;
+        }
+         public static bool DungeonIsOptionalSpotId(SpotId spot)
+        {
+            return (
+                    Randomizer.UnrequiredDungeons
+                    & HintConstants.dungeonSpotIdToRequiredMaskMap[spot]
+                ) != 0;
+        }
+
         public static HashSet<string> getRequiredDungeonZones()
         {
             HashSet<string> result = new();
@@ -325,6 +340,21 @@ namespace TPRandomizer.Hints
             foreach (KeyValuePair<string, byte> pair in HintConstants.dungeonZonesToRequiredMaskMap)
             {
                 if ((Randomizer.RequiredDungeons & pair.Value) != 0)
+                {
+                    result.Add(pair.Key);
+                }
+            }
+
+            return result;
+        }
+
+        public static HashSet<string> getOptionalDungeonZones()
+        {
+            HashSet<string> result = new();
+
+            foreach (KeyValuePair<string, byte> pair in HintConstants.dungeonZonesToRequiredMaskMap)
+            {
+                if ((Randomizer.UnrequiredDungeons & pair.Value) != 0)
                 {
                     result.Add(pair.Key);
                 }

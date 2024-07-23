@@ -3152,6 +3152,20 @@
             "State": "FF"
         }
     },
+    {
+        "Type": "Boss Room",
+        "SourceRoomSpawn":
+        {
+            "SourceRoom": "Hyrule Castle Tower Climb",
+            "TargetRoom": "Ganondorf Castle",
+            "Stage": 21,
+            "Room": 51,
+            "Spawn": "A",
+            "SpawnType": "00",
+            "Parameters": "F01F",
+            "State": "FF"
+        }
+    },
 	// Boss Room Second Exit
     {
         "Type": "Boss Room Second Exit",

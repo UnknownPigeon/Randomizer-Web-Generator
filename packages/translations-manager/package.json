@@ -1,6 +1,6 @@
 {
   "name": "translations-manager",
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@1.22.22.",
   "scripts": {
     "sort": "tsx src/translations-manager.ts"
   },

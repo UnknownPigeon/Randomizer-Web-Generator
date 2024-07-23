@@ -195,12 +195,14 @@ namespace TPRandomizer.Hints
             && genData.sSettings.shufflePoes != PoeSettings.All
             && genData.sSettings.shufflePoes != PoeSettings.Overworld
             && genData.sSettings.barrenDungeons
-            && !HintUtils.DungeonIsRequired(ZoneUtils.IdToString(Zone.Snowpeak_Ruins));
+            && !HintUtils.DungeonIsRequired(ZoneUtils.IdToString(Zone.Snowpeak_Ruins))
+            && !HintUtils.DungeonIsOptional(ZoneUtils.IdToString(Zone.Snowpeak_Ruins));
         private static readonly Func<HintGenData, Zone, bool> dungeonFn = (genData, zone) =>
             ZoneUtils.IsDungeonZone(zone)
             && (
                 !genData.sSettings.barrenDungeons
                 || HintUtils.DungeonIsRequired(ZoneUtils.IdToString(zone))
+                || HintUtils.DungeonIsOptional(ZoneUtils.IdToString(zone))
             );
 
         public Zone zone { get; private set; }
@@ -444,6 +446,18 @@ namespace TPRandomizer.Hints
                 { "Temple of Time", 0x20 },
                 { "City in the Sky", 0x40 },
                 { "Palace of Twilight", 0x80 },
+            };
+        public static readonly Dictionary<SpotId, byte> dungeonSpotIdToRequiredMaskMap =
+            new()
+            {
+                { SpotId.Forest_Temple_Sign, 0x01 },
+                { SpotId.Goron_Mines_Sign, 0x02 },
+                { SpotId.Lakebed_Temple_Sign, 0x04 },
+                { SpotId.Arbiters_Grounds_Sign, 0x08 },
+                { SpotId.Snowpeak_Ruins_Sign, 0x10 },
+                { SpotId.Temple_of_Time_Sign, 0x20 },
+                { SpotId.City_in_the_Sky_Sign, 0x40 },
+                { SpotId.Palace_of_Twilight_Sign, 0x80 },
             };
 
         public static readonly Dictionary<string, string> jsonCategoryToDungeonZoneName =

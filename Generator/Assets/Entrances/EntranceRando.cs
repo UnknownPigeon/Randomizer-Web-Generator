@@ -338,6 +338,25 @@ namespace TPRandomizer
 
             // Once all of the entrances have been shuffled correctly, we want to update the connections on all of the paired entrances.
             ShufflePairedEntrances();
+            
+            if (Randomizer.SSettings.skipHc)
+            {
+                Randomizer.Rooms.RoomDict["Castle Town North Inside Barrier"].Exits[
+                    1
+                ].SetAsShuffled();
+                Randomizer.Rooms.RoomDict["Castle Town North Inside Barrier"].Exits[
+                    1
+                ].SetOriginalName();
+                Randomizer.Rooms.RoomDict["Castle Town North Inside Barrier"].Exits[
+                    1
+                ].SetReplacedEntrance(
+                    Randomizer.Rooms.RoomDict["Hyrule Castle Tower Climb"].Exits[2]
+                );
+                Randomizer.Rooms.RoomDict["Castle Town North Inside Barrier"].Exits[1] = Randomizer
+                    .Rooms
+                    .RoomDict["Hyrule Castle Tower Climb"].Exits[2];
+            }
+            
 
             // Validate the world one last time to ensure that everything went okay
             err = ValidateWorld();

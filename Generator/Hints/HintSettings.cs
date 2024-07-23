@@ -1017,13 +1017,13 @@ namespace TPRandomizer.Hints.Settings
                 { "Castle Town", SpotId.Castle_Town_Sign },
                 { "Great Bridge of Hylia", SpotId.Great_Bridge_of_Hylia_Sign },
                 { "Lake Hylia", SpotId.Lake_Hylia_Sign },
-                { "Lake Lantern Cave", SpotId.Lake_Lantern_Cave_Sign },
+                //  { "Lake Lantern Cave", SpotId.Lake_Lantern_Cave_Sign },
                 { "Lanayru Spring", SpotId.Lanayru_Spring_Sign },
                 { "Zora's Domain", SpotId.Zoras_Domain_Sign },
                 { "Upper Zora's River", SpotId.Upper_Zoras_River_Sign },
                 { "Gerudo Desert", SpotId.Gerudo_Desert_Sign },
                 { "Bulblin Camp", SpotId.Bulblin_Camp_Sign },
-                { "Snowpeak", SpotId.Snowpeak_Sign },
+                // { "Snowpeak", SpotId.Snowpeak_Sign },
                 { "Cave of Ordeals", SpotId.Cave_of_Ordeals_Sign },
             };
 
@@ -1221,6 +1221,15 @@ namespace TPRandomizer.Hints.Settings
                         }
                         break;
                     }
+                    case "unrequireddungeons":
+                    {
+                        HashSet<string> unrequiredDungeonsZones = HintUtils.getOptionalDungeonZones();
+                        foreach (string zoneName in unrequiredDungeonsZones)
+                        {
+                            ret.Add(zoneToSpot[zoneName]);
+                        }
+                        break;
+                    }
                     default:
                         throw new Exception($"Failed to resolve group entry alias '{alias}'.");
                 }
@@ -1367,6 +1376,10 @@ namespace TPRandomizer.Hints.Settings
                     return Path.Combine(basePath, "balanced.jsonc");
                 case HintDistribution.Season_1:
                     return Path.Combine(basePath, "season-1.jsonc");
+                case HintDistribution.DrehenTestv2:
+                    return Path.Combine(basePath, "drehenTestv2.jsonc");
+                case HintDistribution.DrehenTestv1:
+                    return Path.Combine(basePath, "drehenTestv1.jsonc");
                 case HintDistribution.Strong:
                     return Path.Combine(basePath, "strong.jsonc");
                 case HintDistribution.Very_Strong:
