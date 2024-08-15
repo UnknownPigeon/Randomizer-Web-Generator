@@ -1,4 +1,4 @@
-snamespace TPRandomizer.Hints.Settings
+namespace TPRandomizer.Hints.Settings
 {
     using System;
     using System.Collections.Generic;
