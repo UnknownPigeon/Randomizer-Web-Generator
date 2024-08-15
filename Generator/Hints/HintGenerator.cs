@@ -1124,8 +1124,8 @@ namespace TPRandomizer.Hints
                                         false,
                                         true,
                                         areaId.type == AreaId.AreaType.Province
-                                            ? TradeChainHint.AreaType.Province
-                                            : TradeChainHint.AreaType.Zone,
+                                          ? TradeChainHint.AreaType.Province
+                                          : TradeChainHint.AreaType.Zone,
                                         CheckStatus.Good,
                                         CheckStatusDisplay.None
                                     );
@@ -1399,8 +1399,8 @@ namespace TPRandomizer.Hints
         private void UpdateHintedForAlwaysHints(List<string> checksToHint)
         {
             HashSet<string> checksToHintSet = ListUtils.isEmpty(checksToHint)
-                ? new()
-                : new(checksToHint);
+              ? new()
+              : new(checksToHint);
 
             foreach (string checkName in hintSettings.always.checks)
             {
@@ -1567,7 +1567,7 @@ namespace TPRandomizer.Hints
                     SpotId.Upper_Zoras_River_Sign,
                     SpotId.Gerudo_Desert_Sign,
                     SpotId.Bulblin_Camp_Sign,
-                    SpotId.Snowpeak_Sign,
+                    SpotId.Snowpeak_Mountain_Sign,
                     SpotId.Cave_of_Ordeals_Sign,
                     SpotId.Forest_Temple_Sign,
                     SpotId.Goron_Mines_Sign,

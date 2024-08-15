@@ -1,6 +1,5 @@
 namespace TPRandomizer
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Newtonsoft.Json;
@@ -1163,6 +1162,15 @@ namespace TPRandomizer
                     startingPoes += 1;
             }
 
+            int plandoPoes = 0;
+            foreach ((string checkName, Item item) in parseSetting.plandoChecks)
+            {
+                if (item == Item.Poe_Soul)
+                {
+                    plandoPoes++;
+                }
+            }
+
             int poesToShuffle = 60 - vanillaPoes - startingPoes;
             if (poesToShuffle > 0)
             {
@@ -1181,7 +1189,7 @@ namespace TPRandomizer
             // include extra souls for the vanilla Poes since they are removed
             // from the BaseItemPool when they are placed. Starting Poes are
             // added automatically in Randomizer.cs, so they are not added here.
-            return vanillaPoes + poesToShuffle;
+            return vanillaPoes + poesToShuffle - plandoPoes;
         }
 
         public static bool IsSmallKeyOnBossCheck(Item item, Check check)

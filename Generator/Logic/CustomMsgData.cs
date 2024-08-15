@@ -213,8 +213,8 @@ namespace TPRandomizer
             // );
 
             // return hintResults;
-            
-            }
+
+        }
 
         // function here for generating the MessageEntry stuff!!!!
 

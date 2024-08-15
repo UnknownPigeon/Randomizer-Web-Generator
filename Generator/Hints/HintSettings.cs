@@ -1,4 +1,4 @@
-namespace TPRandomizer.Hints.Settings
+snamespace TPRandomizer.Hints.Settings
 {
     using System;
     using System.Collections.Generic;
@@ -747,7 +747,7 @@ namespace TPRandomizer.Hints.Settings
                     SpotId.Upper_Zoras_River_Sign,
                     SpotId.Gerudo_Desert_Sign,
                     SpotId.Bulblin_Camp_Sign,
-                    SpotId.Snowpeak_Sign,
+                    SpotId.Snowpeak_Mountain_Sign,
                     SpotId.Cave_of_Ordeals_Sign,
                     SpotId.Forest_Temple_Sign,
                     SpotId.Goron_Mines_Sign,
@@ -1017,13 +1017,13 @@ namespace TPRandomizer.Hints.Settings
                 { "Castle Town", SpotId.Castle_Town_Sign },
                 { "Great Bridge of Hylia", SpotId.Great_Bridge_of_Hylia_Sign },
                 { "Lake Hylia", SpotId.Lake_Hylia_Sign },
-                //  { "Lake Lantern Cave", SpotId.Lake_Lantern_Cave_Sign },
+                { "Lake Lantern Cave", SpotId.Lake_Lantern_Cave_Sign },
                 { "Lanayru Spring", SpotId.Lanayru_Spring_Sign },
                 { "Zora's Domain", SpotId.Zoras_Domain_Sign },
                 { "Upper Zora's River", SpotId.Upper_Zoras_River_Sign },
                 { "Gerudo Desert", SpotId.Gerudo_Desert_Sign },
                 { "Bulblin Camp", SpotId.Bulblin_Camp_Sign },
-                // { "Snowpeak", SpotId.Snowpeak_Sign },
+                { "Snowpeak Mountain", SpotId.Snowpeak_Mountain_Sign },
                 { "Cave of Ordeals", SpotId.Cave_of_Ordeals_Sign },
             };
 
@@ -1073,7 +1073,7 @@ namespace TPRandomizer.Hints.Settings
                 { "upperzorasriver", "Upper Zora's River" },
                 { "gerudodesert", "Gerudo Desert" },
                 { "bulblincamp", "Bulblin Camp" },
-                { "snowpeak", "Snowpeak" },
+                { "snowpeakmountain", "Snowpeak Mountain" },
                 { "caveofordeals", "Cave of Ordeals" },
                 { "foresttemple", "Forest Temple" },
                 { "goronmines", "Goron Mines" },
@@ -1576,7 +1576,7 @@ namespace TPRandomizer.Hints.Settings
                                     new HashSet<Zone>()
                                     {
                                         Zone.Lake_Lantern_Cave,
-                                        Zone.Snowpeak,
+                                        Zone.Snowpeak_Mountain,
                                         Zone.Goron_Mines,
                                         Zone.Lakebed_Temple,
                                         Zone.Arbiters_Grounds,
@@ -1587,7 +1587,11 @@ namespace TPRandomizer.Hints.Settings
                                 break;
                             case "overworld":
                                 result.UnionWith(
-                                    new HashSet<Zone>() { Zone.Lake_Lantern_Cave, Zone.Snowpeak, }
+                                    new HashSet<Zone>()
+                                    {
+                                        Zone.Lake_Lantern_Cave,
+                                        Zone.Snowpeak_Mountain,
+                                    }
                                 );
                                 break;
                             case "dungeons":
