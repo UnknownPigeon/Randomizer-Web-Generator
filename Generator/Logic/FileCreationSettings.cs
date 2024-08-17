@@ -13,6 +13,7 @@ namespace TPRandomizer
         public RandomizeBgm randomizeBgm { get; }
         public bool randomizeFanfares { get; }
         public bool disableEnemyBgm { get; }
+        public bool InvertCameraXAxis { get; }
 
         public Clr0Entry hTunicHatColor { get; }
         public Clr0Entry hTunicBodyColor { get; }
@@ -63,6 +64,8 @@ namespace TPRandomizer
             randomizeBgm = (RandomizeBgm)processor.NextInt(2);
             randomizeFanfares = processor.NextBool();
             disableEnemyBgm = processor.NextBool();
+            InvertCameraXAxis = processor.NextBool();
+
 
             hTunicHatColor = processor.NextClr0Entry(RecolorId.CMPR);
             hTunicBodyColor = processor.NextClr0Entry(RecolorId.CMPR);

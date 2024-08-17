@@ -253,6 +253,10 @@
         buttonId: 'audioTabBtn',
         contentId: 'audioTab',
       },
+      {
+        buttonId: 'otherTabBtn',
+        contentId: 'otherTab',
+      },
 
       // ['mainTab', 'cosmeticsTab', 'audioTab'].forEach((id) => {
     ]);
@@ -1311,6 +1315,7 @@
         { id: 'bgmFieldset', bitLength: 2 },
         { id: 'randomizeFanfaresCheckbox' },
         { id: 'disableEnemyBGMCheckbox' },
+        { id: 'InvertXCameraCheckbox' },
 
         { id: 'hTunicHatColorFieldset', rgb: true },
         { id: 'hTunicBodyColorFieldset', rgb: true },

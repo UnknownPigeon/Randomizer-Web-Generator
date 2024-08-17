@@ -373,6 +373,8 @@ namespace TPRandomizer.Assets
                 randomizerSettings.instantText,
                 randomizerSettings.increaseSpinnerSpeed,
                 randomizerSettings.skipMajorCutscenes,
+                fcSettings.InvertCameraXAxis,
+                
             };
             int patchOptions = 0x0;
             int bitwiseOperator = 0;
