@@ -1,6 +1,5 @@
 {
     "requirements": "Boomerang",
-    "glitchedRequirements": "Boomerang",
-    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle"],
+    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle", "ARC"],
     "itemId": "Yellow_Rupee"
 }

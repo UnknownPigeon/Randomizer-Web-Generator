@@ -1,6 +1,5 @@
 {
     "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Chest", "Dungeon", "Lakebed Temple", "Dungeon Items", "Dungeon Map"],
+    "checkCategory": ["Chest", "Dungeon", "Lakebed Temple", "Dungeon Items", "Dungeon Map", "ARC"],
     "itemId": "Lakebed_Temple_Dungeon_Map"
 }

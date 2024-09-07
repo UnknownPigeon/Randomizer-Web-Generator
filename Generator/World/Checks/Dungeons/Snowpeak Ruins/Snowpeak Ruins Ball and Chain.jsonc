@@ -1,6 +1,5 @@
 {
     "requirements": "CanDefeatDarkhammer",
-    "glitchedRequirements": "CanDefeatDarkhammer",
-    "checkCategory": ["Dungeon", "Snowpeak Ruins"],
+    "checkCategory": ["Dungeon", "Snowpeak Ruins", "REL"],
     "itemId": "Ball_and_Chain"
 }

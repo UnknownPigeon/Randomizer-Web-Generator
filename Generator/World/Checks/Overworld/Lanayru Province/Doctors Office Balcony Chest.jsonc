@@ -1,6 +1,5 @@
 {
     "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Chest", "Castle Town"],
+    "checkCategory": ["Overworld", "Chest", "Castle Town", "ARC"],
     "itemId": "Red_Rupee"
 }

@@ -1,6 +1,5 @@
 {
     "requirements": "canSmash and Lantern",
-    "glitchedRequirements": "canSmash and Lantern",
-    "checkCategory": ["Overworld", "Chest", "Gerudo Desert"],
+    "checkCategory": ["Overworld", "Chest", "Gerudo Desert", "DZX"],
     "itemId": "Orange_Rupee"
 }

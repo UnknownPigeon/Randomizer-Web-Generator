@@ -1,6 +1,5 @@
 {
     "requirements": "(Progressive_Clawshot, 2)",
-    "glitchedRequirements": "(Progressive_Clawshot, 2)",
-    "checkCategory": ["Chest", "Dungeon", "City in The Sky"],
+    "checkCategory": ["Chest", "Dungeon", "City in The Sky", "ARC"],
     "itemId": "Arrows_20"
 }

@@ -1,6 +1,5 @@
 {
   "requirements": "true",
-  "glitchedRequirements": "true",
-  "checkCategory": [ "Overworld", "Chest", "Ordona Province"],
+  "checkCategory": [ "Overworld", "Chest", "Ordona Province", "ARC" ],
   "itemId": "Iron_Boots"
 }

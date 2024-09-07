@@ -1,6 +1,5 @@
 {
     "requirements": "CanDefeatBulblin",
-    "glitchedRequirements": "CanDefeatBulblin",
-    "checkCategory": ["Overworld", "Bulblin Camp", "Small Key"],
+    "checkCategory": ["Overworld", "Bulblin Camp", "Small Key", "DZX"],
     "itemId": "Gerudo_Desert_Bulblin_Camp_Key"
 }

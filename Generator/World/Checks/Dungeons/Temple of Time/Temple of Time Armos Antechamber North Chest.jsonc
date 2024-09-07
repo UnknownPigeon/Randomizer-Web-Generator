@@ -1,6 +1,5 @@
 {
     "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Chest", "Dungeon", "Temple of Time"],
+    "checkCategory": ["Chest", "Dungeon", "Temple of Time", "ARC"],
     "itemId": "Red_Rupee"
 }

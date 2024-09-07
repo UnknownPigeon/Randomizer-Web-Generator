@@ -1,6 +1,5 @@
 {
     "requirements": "CanDefeatIceKeese",
-    "glitchedRequirements": "CanDefeatIceKeese",
-    "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins"],
+    "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins", "ARC"],
     "itemId": "Red_Rupee"
 }

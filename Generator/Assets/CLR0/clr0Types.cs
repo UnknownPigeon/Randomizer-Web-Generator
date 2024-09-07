@@ -134,7 +134,6 @@ namespace TPRandomizer.Assets.CLR0
         Link = 0,
         ZoraArmor = 1,
         ZoraArmorField = 2,
-        LinkMS = 3,
     }
 
     public class ColorArrays

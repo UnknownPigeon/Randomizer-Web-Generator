@@ -1,6 +1,5 @@
 {
     "requirements": "Lantern",
-    "glitchedRequirements": "Lantern",
-    "checkCategory": ["Overworld", "Chest", "Sacred Grove"],
+    "checkCategory": ["Overworld", "Chest", "Sacred Grove", "ARC"],
     "itemId": "Bombs_30"
 }

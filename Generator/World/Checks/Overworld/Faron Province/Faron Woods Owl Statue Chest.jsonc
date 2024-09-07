@@ -1,6 +1,5 @@
 {
   "requirements": "true",
-  "glitchedRequirements": "true",
-  "checkCategory": [ "Overworld", "Chest", "Faron Woods" ],
+  "checkCategory": [ "Overworld", "Chest", "Faron Woods", "ARC" ],
   "itemId": "Piece_of_Heart"
 }

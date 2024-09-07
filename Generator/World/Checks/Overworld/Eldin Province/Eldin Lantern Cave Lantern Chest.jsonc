@@ -1,6 +1,5 @@
 {
     "requirements": "Lantern",
-    "glitchedRequirements": "Lantern",
-    "checkCategory": ["Overworld", "Chest", "Eldin Lantern Cave"],
+    "checkCategory": ["Overworld", "Chest", "Eldin Lantern Cave", "ARC"],
     "itemId": "Piece_of_Heart"
 }

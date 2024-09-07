@@ -1,6 +1,5 @@
 {
     "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Kakariko Village", "Shop"],
+    "checkCategory": ["Overworld", "Kakariko Village", "ARC", "Shop"],
     "itemId": "Hylian_Shield"
 }

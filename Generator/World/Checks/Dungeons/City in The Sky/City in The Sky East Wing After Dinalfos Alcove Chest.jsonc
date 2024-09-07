@@ -1,6 +1,5 @@
 {
     "requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and CanDefeatDinalfos",
-    "glitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or Iron_Boots)",
-    "checkCategory": ["Chest", "Dungeon", "City in The Sky"],
+    "checkCategory": ["Chest", "Dungeon", "City in The Sky", "ARC"],
     "itemId": "Red_Rupee"
 }

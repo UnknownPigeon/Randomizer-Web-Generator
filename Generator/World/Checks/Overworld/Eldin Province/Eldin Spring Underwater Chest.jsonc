@@ -1,6 +1,5 @@
 {
     "requirements": "canSmash and Iron_Boots",
-    "glitchedRequirements": "HasHeavyMod and (canSmash or CanDoMapGlitch)",
-    "checkCategory": ["Overworld", "Chest", "Kakariko Village"],
+    "checkCategory": ["Overworld", "Chest", "Kakariko Village", "ARC"],
     "itemId": "Piece_of_Heart"
 }

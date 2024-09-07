@@ -1,6 +1,5 @@
 {
     "requirements": "CanDefeatDiababa",
-    "glitchedRequirements": "CanDefeatDiababa",
-    "checkCategory": ["Dungeon", "Forest Temple", "Dungeon Reward"],
+    "checkCategory": ["Dungeon", "Forest Temple", "Dungeon Reward", "REL", "ARC"],
     "itemId": "Progressive_Fused_Shadow"
 }

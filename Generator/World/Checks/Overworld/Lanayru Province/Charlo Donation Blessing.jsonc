@@ -1,6 +1,5 @@
 {
     "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Npc", "Castle Town"],
+    "checkCategory": ["Overworld", "Npc", "Castle Town", "ObjectARC", "Boss"],
     "itemId": "Piece_of_Heart"
 }

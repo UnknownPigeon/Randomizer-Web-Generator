@@ -1,6 +1,5 @@
 {
     "requirements": "canSmash",
-    "glitchedRequirements": "canSmash",
-    "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins"],
+    "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins", "ARC"],
     "itemId": "Bombs_5"
 }
