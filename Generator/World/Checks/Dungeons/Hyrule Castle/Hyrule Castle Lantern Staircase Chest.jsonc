@@ -1,6 +1,5 @@
 {
     "requirements": "CanDefeatDarknut and Boomerang and CanDefeatBokoblin and  CanDefeatLizalfos and (Progressive_Clawshot, 2)",
-    "glitchedRequirements": "CanDefeatDarknut and Boomerang and CanDefeatBokoblin and  CanDefeatLizalfos and Progressive_Clawshot",
-    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle"],
+    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle", "ARC"],
     "itemId": "Purple_Rupee"
 }

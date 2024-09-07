@@ -1,6 +1,5 @@
 {
     "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Golden Bug", "Zoras Domain"],
+    "checkCategory": ["Overworld", "Golden Bug", "Zoras Domain", "DZX"],
     "itemId": "Male_Dragonfly"
 }

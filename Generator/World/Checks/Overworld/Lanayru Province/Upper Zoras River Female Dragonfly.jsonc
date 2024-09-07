@@ -1,6 +1,5 @@
 {
     "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Golden Bug", "Upper Zoras River"],
+    "checkCategory": ["Overworld", "Golden Bug", "Upper Zoras River", "DZX"],
     "itemId": "Female_Dragonfly"
 }

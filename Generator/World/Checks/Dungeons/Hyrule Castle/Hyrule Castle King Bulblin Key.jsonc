@@ -1,6 +1,5 @@
 {
     "requirements": "CanDefeatKingBulblinCastle",
-    "glitchedRequirements": "CanDefeatKingBulblinCastle",
-    "checkCategory": ["Npc", "Small Key", "Dungeon", "Hyrule Castle"],
+    "checkCategory": ["Npc", "Small Key", "Dungeon", "Hyrule Castle", "REL"],
     "itemId": "Hyrule_Castle_Small_Key"
 }

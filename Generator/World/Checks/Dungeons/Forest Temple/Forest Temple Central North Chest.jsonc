@@ -1,6 +1,5 @@
 {
     "requirements": "Lantern",
-    "glitchedRequirements": "Lantern or (CanDoLJA and Room.Forest_Temple_West_Wing)",
-    "checkCategory": ["Chest", "Dungeon", "Forest Temple", "Dungeon Items", "Dungeon Map"],
+    "checkCategory": ["Chest", "Dungeon", "Forest Temple", "Dungeon Items", "Dungeon Map", "ARC"],
     "itemId": "Forest_Temple_Dungeon_Map"
 }

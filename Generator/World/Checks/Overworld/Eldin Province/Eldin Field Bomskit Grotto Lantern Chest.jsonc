@@ -1,6 +1,5 @@
 {
     "requirements": "CanDefeatBomskit and Lantern",
-    "glitchedRequirements": "CanDefeatBomskit and Lantern",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Eldin Province"],
+    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Eldin Province", "DZX"],
     "itemId": "Purple_Rupee"
 }

@@ -1,6 +1,5 @@
 {
     "requirements": "Boomerang",
-    "glitchedRequirements": "Boomerang and (CanDefeatBombling or canSmash)",
-    "checkCategory": ["Chest", "Dungeon", "Forest Temple"],
+    "checkCategory": ["Chest", "Dungeon", "Forest Temple", "ARC"],
     "itemId": "Piece_of_Heart"
 }

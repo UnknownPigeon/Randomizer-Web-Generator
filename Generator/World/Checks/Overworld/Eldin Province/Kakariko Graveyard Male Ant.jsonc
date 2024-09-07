@@ -1,6 +1,5 @@
 {
     "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Golden Bug", "Kakariko Graveyard"],
+    "checkCategory": ["Overworld", "Golden Bug", "Kakariko Graveyard", "DZX"],
     "itemId": "Male_Ant"
 }

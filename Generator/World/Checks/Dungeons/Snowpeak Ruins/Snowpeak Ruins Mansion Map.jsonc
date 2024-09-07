@@ -1,6 +1,5 @@
 {
     "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Npc", "Dungeon", "Snowpeak Ruins", "Dungeon Items", "Dungeon Map"],
+    "checkCategory": ["Npc", "Dungeon", "Snowpeak Ruins", "Dungeon Items", "Dungeon Map", "ARC"],
     "itemId": "Snowpeak_Ruins_Dungeon_Map"
 }

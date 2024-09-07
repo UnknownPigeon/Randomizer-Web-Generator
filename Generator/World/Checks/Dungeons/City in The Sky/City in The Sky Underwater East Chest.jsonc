@@ -1,6 +1,5 @@
 {
     "requirements": "Iron_Boots",
-    "glitchedRequirements": "Iron_Boots",
-    "checkCategory": ["Chest", "Dungeon", "City in The Sky"],
+    "checkCategory": ["Chest", "Dungeon", "City in The Sky", "ARC"],
     "itemId": "Red_Rupee"
 }

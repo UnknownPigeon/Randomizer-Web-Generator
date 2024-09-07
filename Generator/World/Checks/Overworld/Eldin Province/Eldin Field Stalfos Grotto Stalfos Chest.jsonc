@@ -1,6 +1,5 @@
 {
     "requirements": "CanDefeatStalfos",
-    "glitchedRequirements": "CanDefeatStalfos",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province"],
+    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province", "DZX"],
     "itemId": "Piece_of_Heart"
 }

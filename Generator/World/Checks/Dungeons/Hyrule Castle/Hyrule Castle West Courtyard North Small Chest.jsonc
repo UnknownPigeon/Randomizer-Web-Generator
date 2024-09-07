@@ -1,6 +1,5 @@
 {
     "requirements": "CanDefeatBokoblin",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle"],
+    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle", "ARC"],
     "itemId": "Red_Rupee"
 }

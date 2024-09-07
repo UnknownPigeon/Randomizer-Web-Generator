@@ -1,6 +1,5 @@
 {
     "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Npc", "Snowpeak Province"],
+    "checkCategory": ["Overworld", "Npc", "Snowpeak Province", "ARC"],
     "itemId": "Asheis_Sketch"
 }

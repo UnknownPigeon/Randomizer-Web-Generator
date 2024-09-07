@@ -1,6 +1,5 @@
 {
     "requirements": "canCompleteSnowpeakRuins and CanDefeatShadowBeast",
-    "glitchedRequirements": "canCompleteSnowpeakRuins",
-    "checkCategory": ["Overworld", "Npc", "Snowpeak Province"],
+    "checkCategory": ["Overworld", "Npc", "Snowpeak Province", "ARC"],
     "itemId": "Piece_of_Heart"
 }

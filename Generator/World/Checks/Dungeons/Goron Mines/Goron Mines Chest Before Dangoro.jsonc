@@ -1,6 +1,5 @@
 {
     "requirements": "Iron_Boots",
-    "glitchedRequirements": "Iron_Boots or CanDoLJA",
-    "checkCategory": ["Chest", "Dungeon", "Goron Mines"],
+    "checkCategory": ["Chest", "Dungeon", "Goron Mines", "ARC"],
     "itemId": "Yellow_Rupee"
 }

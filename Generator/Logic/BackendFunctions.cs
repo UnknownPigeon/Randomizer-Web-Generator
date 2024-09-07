@@ -78,7 +78,11 @@ namespace TPRandomizer
 
                         if (!currentCheck.hasBeenReached)
                         {
-                            if (currentCheck.CachedRequirements().Evaluate())
+                            var areCheckRequirementsMet = Randomizer.Logic.EvaluateRequirements(
+                                currentCheck.checkName,
+                                currentCheck.requirements
+                            );
+                            if ((bool)areCheckRequirementsMet == true)
                             {
                                 if (currentCheck.itemWasPlaced)
                                 {
@@ -285,7 +289,11 @@ namespace TPRandomizer
 
                         if (!currentCheck.hasBeenReached)
                         {
-                            if (currentCheck.CachedRequirements().Evaluate())
+                            var areCheckRequirementsMet = Randomizer.Logic.EvaluateRequirements(
+                                currentCheck.checkName,
+                                currentCheck.requirements
+                            );
+                            if ((bool)areCheckRequirementsMet == true)
                             {
                                 sphereItems.Add(currentCheck.itemId);
                                 currentCheck.hasBeenReached = true;
@@ -455,7 +463,11 @@ namespace TPRandomizer
 
                         if (!currentCheck.hasBeenReached)
                         {
-                            if (currentCheck.CachedRequirements().Evaluate())
+                            var areCheckRequirementsMet = Randomizer.Logic.EvaluateRequirements(
+                                currentCheck.checkName,
+                                currentCheck.requirements
+                            );
+                            if ((bool)areCheckRequirementsMet == true)
                             {
                                 playthroughDictionaryAll.Add(
                                     "    " + currentCheck.checkName + ": " + currentCheck.itemId,
@@ -656,7 +668,11 @@ namespace TPRandomizer
 
                             if (!currentCheck.hasBeenReached && currentCheck.itemWasPlaced)
                             {
-                                if (currentCheck.CachedRequirements().Evaluate())
+                                var areCheckRequirementsMet = Randomizer.Logic.EvaluateRequirements(
+                                    currentCheck.checkName,
+                                    currentCheck.requirements
+                                );
+                                if ((bool)areCheckRequirementsMet == true)
                                 {
                                     currentCheck.hasBeenReached = true;
                                     if (
@@ -816,7 +832,11 @@ namespace TPRandomizer
 
                             if (!currentCheck.hasBeenReached && currentCheck.itemWasPlaced)
                             {
-                                if (currentCheck.CachedRequirements().Evaluate())
+                                var areCheckRequirementsMet = Randomizer.Logic.EvaluateRequirements(
+                                    currentCheck.checkName,
+                                    currentCheck.requirements
+                                );
+                                if ((bool)areCheckRequirementsMet == true)
                                 {
                                     currentCheck.hasBeenReached = true;
                                     if (
@@ -965,7 +985,11 @@ namespace TPRandomizer
                                 && currentCheck.isRequired
                             )
                             {
-                                if (currentCheck.CachedRequirements().Evaluate())
+                                var areCheckRequirementsMet = Randomizer.Logic.EvaluateRequirements(
+                                    currentCheck.checkName,
+                                    currentCheck.requirements
+                                );
+                                if ((bool)areCheckRequirementsMet == true)
                                 {
                                     currentCheck.hasBeenReached = true;
 
@@ -1152,22 +1176,6 @@ namespace TPRandomizer
             }
             // Dispose of the object when we are done
             zip.Dispose();
-        }
-
-        /// <summary>
-        /// Reverses the bytes in a byte list by a specified number of bytes
-        /// Example: ({ 0, 1, 2, 3, 4, 5, 6, 7}, 0x2)
-        /// Output: { 1, 0, 3, 2, 5, 4, 7, 6 }
-        /// </summary>
-        public static List<byte> ReverseBytes(List<byte> input, int bytes)
-        {
-            // Want to reverse to match the correct endianness
-            for (int i = 0; i < input.Count; i += bytes)
-            {
-                input.Reverse(i, bytes);
-            }
-
-            return input;
         }
     }
 

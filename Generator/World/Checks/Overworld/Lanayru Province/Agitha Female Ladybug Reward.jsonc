@@ -1,6 +1,5 @@
 {
     "requirements": "Female_Ladybug",
-    "glitchedRequirements": "Female_Ladybug",
     "checkCategory": ["Overworld", "Npc", "Castle Town", "Bug Reward"],
     "itemId": "Orange_Rupee"
 }

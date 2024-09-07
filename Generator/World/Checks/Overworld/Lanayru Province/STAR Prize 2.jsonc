@@ -1,6 +1,5 @@
 {
     "requirements": "(Progressive_Clawshot, 2)",
-    "glitchedRequirements": "(Progressive_Clawshot, 2)",
-    "checkCategory": ["Overworld", "Npc", "Castle Town"],
+    "checkCategory": ["Overworld", "Npc", "Castle Town", "ARC"],
     "itemId": "Progressive_Bow"
 }
