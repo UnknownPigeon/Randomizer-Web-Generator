@@ -566,7 +566,9 @@ namespace TPRandomizer
                         string langTag = fcSettings.GetLanguageTagString(gameRegion);
                         Res.UpdateCultureInfo(langTag);
 
-                        fileDefs.Add(GenGciFileDef(id, seedGenResults, fcSettings, gameRegion));
+                        fileDefs.Add(
+                            GenGciFileDef(id, seedGenResults, fcSettings, gameRegion, true)
+                        );
                     }
                 }
             }
@@ -577,8 +579,18 @@ namespace TPRandomizer
                 Res.UpdateCultureInfo(langTag);
 
                 // Create file for one region
-                fileDefs.Add(GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion));
+                fileDefs.Add(
+                    GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, true)
+                );
             }
+
+            // Generate seed .bin file
+            fileDefs.Add(
+                GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, false)
+            );
+
+            // Generate patch file
+            fileDefs.Add(GenPatchFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion));
 
             if (!seedGenResults.isRaceSeed && fcSettings.includeSpoilerLog)
             {
@@ -632,17 +644,135 @@ namespace TPRandomizer
             return true;
         }
 
-        private static Tuple<Dictionary<string, object>, byte[]> GenGciFileDef(
+        public static Tuple<Dictionary<string, object>, byte[]> GenPatchFileDef(
             string seedId,
             SeedGenResults seedGenResults,
             FileCreationSettings fcSettings,
             GameRegion gameRegionOverride
         )
         {
+            byte[] seedBytes = SeedData.GenerateSeedDataBytes(
+                seedGenResults,
+                fcSettings,
+                gameRegionOverride,
+                false
+            );
+
+            string region = "us";
+            switch (gameRegionOverride)
+            {
+                case GameRegion.GC_USA:
+                    region = "us";
+                    break;
+                case GameRegion.GC_EUR:
+                    region = "eu";
+                    break;
+                case GameRegion.GC_JAP:
+                    region = "jp";
+                    break;
+                case GameRegion.WII_10_USA:
+                    region = "wus0";
+                    break;
+                case GameRegion.WII_10_EU:
+                    region = "weu";
+                    break;
+                case GameRegion.WII_10_JP:
+                    region = "wjp";
+                    break;
+                default:
+                    throw new Exception("Did not specify output region");
+            }
+
+            List<byte> patchBytes = new();
+            using (var memoryStream = new MemoryStream())
+            {
+                using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
+                {
+                    archive.CreateEntryFromFile(
+                        "/app/generator/Assets/patch/RomHack.toml",
+                        "RomHack.toml"
+                    );
+                    archive.CreateEntryFromFile(
+                        "/app/generator/Assets/rels/Randomizer." + region + ".rel",
+                        "mod.rel"
+                    );
+                    archive.CreateEntryFromFile(
+                        "/app/generator/Assets/rels/boot." + region + ".rel",
+                        "boot.rel"
+                    );
+
+                    var asmFile = archive.CreateEntry("patch.asm");
+                    using (StreamWriter sw = new StreamWriter(asmFile.Open()))
+                    {
+                        var bootloaderAddr = "0x80005BF4:";
+                        var jumpAddr = "0x800063f8:";
+                        var jumpInsr = "u32 0x4Bffe920";
+                        switch (gameRegionOverride)
+                        {
+                            case GameRegion.GC_USA:
+                            case GameRegion.GC_JAP:
+                            case GameRegion.GC_EUR:
+                                bootloaderAddr = "0x80004D18:";
+                                jumpAddr = "0x800063f8:";
+                                jumpInsr = "u32 0x4Bffe920";
+                                break;
+                            case GameRegion.WII_10_USA:
+                            case GameRegion.WII_10_EU:
+                            case GameRegion.WII_10_JP:
+                                bootloaderAddr = "0x80005BF4:";
+                                jumpAddr = "0x80008644:";
+                                jumpInsr = "u32 0x4Bffd5b0";
+                                break;
+                            default:
+                                throw new Exception("Did not specify output region");
+                        }
+                        ;
+                        sw.WriteLine(jumpAddr);
+                        sw.WriteLine(jumpInsr);
+                        sw.WriteLine(bootloaderAddr);
+                        var bootloaderBytes = File.ReadAllBytes(
+                            "/app/generator/Assets/bootloader/" + region + ".bin"
+                        );
+                        var bootloaderHex = string.Join(
+                            "",
+                            bootloaderBytes.Select(b => b.ToString("X2").PadLeft(2, '0'))
+                        );
+                        var regex = new Regex(@"([0-9a-fA-F]{1,8})");
+                        sw.Write(regex.Replace(bootloaderHex, "u32 0x$1\n"));
+                    }
+
+                    var seedFile = archive.CreateEntry("seed.bin");
+                    using (var seedStream = seedFile.Open())
+                    {
+                        seedStream.Write(seedBytes, 0, seedBytes.Length);
+                    }
+                }
+
+                patchBytes.AddRange(memoryStream.ToArray());
+            }
+
+            var filename =
+                "Tpr-" + region + "-" + seedGenResults.playthroughName + "-" + seedId + ".patch";
+
+            Dictionary<string, object> dict =
+                new() { { "name", filename }, { "length", patchBytes.Count } };
+
+            return new(dict, patchBytes.ToArray());
+        }
+
+        private static Tuple<Dictionary<string, object>, byte[]> GenGciFileDef(
+            string seedId,
+            SeedGenResults seedGenResults,
+            FileCreationSettings fcSettings,
+            GameRegion gameRegionOverride,
+            bool isGci
+        )
+        {
             byte[] bytes = SeedData.GenerateSeedDataBytes(
                 seedGenResults,
                 fcSettings,
-                gameRegionOverride
+                gameRegionOverride,
+                isGci
             );
 
             Dictionary<string, object> dict = new();
@@ -663,10 +793,17 @@ namespace TPRandomizer
                     throw new Exception("Did not specify output region");
             }
 
-            string fileName =
-                "Tpr-" + gameVer + "-" + seedGenResults.playthroughName + "-" + seedId;
+            string fileName = "";
 
-            fileName += ".gci";
+            if (isGci)
+            {
+                fileName =
+                    "Tpr-" + gameVer + "-" + seedGenResults.playthroughName + "-" + seedId + ".gci";
+            }
+            else
+            {
+                fileName = "seed.bin";
+            }
 
             dict.Add("name", fileName);
             dict.Add("length", bytes.Length);
@@ -866,7 +1003,7 @@ namespace TPRandomizer
                 }
                 while (roomsToExplore.Count > 0)
                 {
-                    //Console.WriteLine("Currently Exploring: " + roomsToExplore[0].RoomName);
+                    // Console.WriteLine("Currently Exploring: " + roomsToExplore[0].RoomName);
                     for (int i = 0; i < roomsToExplore[0].Exits.Count; i++)
                     {
                         // If you can access the neighbour and it hasnt been visited yet.
@@ -880,26 +1017,16 @@ namespace TPRandomizer
                             )
                             {
                                 // Parse the neighbour's requirements to find out if we can access it
-                                var areNeighbourRequirementsMet = false;
                                 /*Console.WriteLine(
                                     "Checking neighbor: "
                                         + Randomizer.Rooms.RoomDict[
                                             roomsToExplore[0].Exits[i].ConnectedArea
                                         ].RoomName
                                 );*/
-                                if (SSettings.logicRules == LogicRules.No_Logic)
-                                {
-                                    areNeighbourRequirementsMet = true;
-                                }
-                                else
-                                {
-                                    areNeighbourRequirementsMet = Logic.EvaluateRequirements(
-                                        roomsToExplore[0].RoomName,
-                                        roomsToExplore[0].Exits[i].Requirements
-                                    );
-                                }
-
-                                if ((bool)areNeighbourRequirementsMet == true)
+                                if (
+                                    SSettings.logicRules == LogicRules.No_Logic
+                                    || roomsToExplore[0].Exits[i].CachedRequirements().Evaluate()
+                                )
                                 {
                                     if (
                                         !Randomizer.Rooms.RoomDict[
@@ -1170,20 +1297,10 @@ namespace TPRandomizer
                                 }
                                 if (!currentCheck.hasBeenReached)
                                 {
-                                    var areCheckRequirementsMet = false;
-                                    if (SSettings.logicRules == LogicRules.No_Logic)
-                                    {
-                                        areCheckRequirementsMet = true;
-                                    }
-                                    else
-                                    {
-                                        areCheckRequirementsMet = Logic.EvaluateRequirements(
-                                            currentCheck.checkName,
-                                            currentCheck.requirements
-                                        );
-                                    }
-
-                                    if ((bool)areCheckRequirementsMet == true)
+                                    if (
+                                        SSettings.logicRules == LogicRules.No_Logic
+                                        || currentCheck.CachedRequirements().Evaluate()
+                                    )
                                     {
                                         if (currentCheck.itemWasPlaced)
                                         {
@@ -1706,22 +1823,12 @@ namespace TPRandomizer
             string[] files;
 
             // We keep the logic files seperate based on their logic. GC and Wii should use the same logic.
-            if (SSettings.logicRules == LogicRules.Glitchless)
-            {
-                files = System.IO.Directory.GetFiles(
-                    Global.CombineRootPath("./World/Checks/"),
-                    "*",
-                    SearchOption.AllDirectories
-                );
-            }
-            else
-            {
-                files = System.IO.Directory.GetFiles(
-                    Global.CombineRootPath("./Glitched-World/Checks/"),
-                    "*",
-                    SearchOption.AllDirectories
-                );
-            }
+
+            files = System.IO.Directory.GetFiles(
+                Global.CombineRootPath("./World/Checks/"),
+                "*",
+                SearchOption.AllDirectories
+            );
 
             // Sort so that the item placement algorithm produces the exact same
             // result in production and development.
@@ -1737,7 +1844,14 @@ namespace TPRandomizer
                     Checks.CheckDict[fileName] = JsonConvert.DeserializeObject<Check>(contents);
                     Check currentCheck = Checks.CheckDict[fileName];
                     currentCheck.checkName = fileName;
-                    currentCheck.requirements = "(" + currentCheck.requirements + ")";
+                    if (SSettings.logicRules == LogicRules.Glitchless)
+                    {
+                        currentCheck.requirements = "(" + currentCheck.requirements + ")";
+                    }
+                    else
+                    {
+                        currentCheck.requirements = "(" + currentCheck.glitchedRequirements + ")";
+                    }
                     currentCheck.checkStatus = "Ready";
                     currentCheck.itemWasPlaced = false;
                     currentCheck.isRequired = false;
@@ -1751,7 +1865,16 @@ namespace TPRandomizer
                     string contents = File.ReadAllText(file);
                     string fileName = Path.GetFileNameWithoutExtension(file);
                     Check currentCheck = JsonConvert.DeserializeObject<Check>(contents);
-                    Checks.CheckDict[fileName].requirements = "(" + currentCheck.requirements + ")";
+                    if (SSettings.logicRules == LogicRules.Glitchless)
+                    {
+                        Checks.CheckDict[fileName].requirements =
+                            "(" + currentCheck.requirements + ")";
+                    }
+                    else
+                    {
+                        Checks.CheckDict[fileName].requirements =
+                            "(" + currentCheck.glitchedRequirements + ")";
+                    }
                     Checks.CheckDict[fileName].checkCategory = currentCheck.checkCategory;
                     Checks.CheckDict[fileName].checkName = fileName;
                     Checks.CheckDict[fileName].checkStatus = "Ready";
@@ -1826,22 +1949,11 @@ namespace TPRandomizer
             Randomizer.Rooms.RoomDict["Root"].Visited = false;
 
             string[] files;
-            if (SSettings.logicRules == LogicRules.Glitchless)
-            {
-                files = System.IO.Directory.GetFiles(
-                    Global.CombineRootPath("./World/Rooms/"),
-                    "*",
-                    SearchOption.AllDirectories
-                );
-            }
-            else
-            {
-                files = System.IO.Directory.GetFiles(
-                    Global.CombineRootPath("./Glitched-World/Rooms/"),
-                    "*",
-                    SearchOption.AllDirectories
-                );
-            }
+            files = System.IO.Directory.GetFiles(
+                Global.CombineRootPath("./World/Rooms/"),
+                "*",
+                SearchOption.AllDirectories
+            );
 
             // Sort so that the item placement algorithm produces the exact same
             // result in production and development.
@@ -1863,9 +1975,16 @@ namespace TPRandomizer
                     currentRoom.Visited = false;
                     for (int i = 0; i < currentRoom.Exits.Count; i++)
                     {
-                        currentRoom.Exits[i].Requirements =
-                            "(" + currentRoom.Exits[i].Requirements + ")";
-
+                        if (SSettings.logicRules == LogicRules.Glitchless)
+                        {
+                            currentRoom.Exits[i].Requirements =
+                                "(" + currentRoom.Exits[i].Requirements + ")";
+                        }
+                        else
+                        {
+                            currentRoom.Exits[i].Requirements =
+                                "(" + currentRoom.Exits[i].GlitchedRequirements + ")";
+                        }
                         currentRoom.Exits[i].ParentArea = currentRoom.RoomName;
                         currentRoom.Exits[i].OriginalConnectedArea = currentRoom.Exits[
                             i
@@ -2016,11 +2135,13 @@ namespace TPRandomizer
                 {
                     currentCheck = kvp.Value;
                     if (
-                        currentCheck.checkCategory.Contains("Dungeon Reward")
-                        || (
-                            Randomizer.SSettings.shuffleRewards
-                            && (currentCheck.checkStatus == "Ready")
-                        )
+                        (
+                            currentCheck.checkCategory.Contains("Dungeon Reward")
+                            || (
+                                Randomizer.SSettings.shuffleRewards
+                                && (currentCheck.checkStatus == "Ready")
+                            )
+                        ) && !currentCheck.checkStatus.Contains("Plando")
                     )
                     {
                         dungeonRewards.Add(currentCheck);
