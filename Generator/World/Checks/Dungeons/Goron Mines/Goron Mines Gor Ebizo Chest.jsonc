@@ -1,10 +1,6 @@
 {
     "requirements": "true",
-    "arcOffsets": ["288"],
-    "stageIDX": [3],
-    "roomIDX": 17,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "category": ["Chest", "Dungeon", "Goron Mines", "ARC"],
+    "glitchedRequirements": "true",
+    "checkCategory": ["Chest", "Dungeon", "Goron Mines"],
     "itemId": "Yellow_Rupee"
 }

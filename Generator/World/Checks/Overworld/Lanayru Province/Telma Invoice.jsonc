@@ -1,9 +1,6 @@
 {
     "requirements": "Renados_Letter",
-    "arcOffsets": ["A7F"],
-    "stageIDX": [70],
-    "fileDirectoryType": [1],
-    "replacementType": [0],
-    "category": ["Overworld", "Npc", "Castle Town", "ARC"],
+    "glitchedRequirements": "Renados_Letter",
+    "checkCategory": ["Overworld", "Npc", "Castle Town"],
     "itemId": "Invoice"
 }

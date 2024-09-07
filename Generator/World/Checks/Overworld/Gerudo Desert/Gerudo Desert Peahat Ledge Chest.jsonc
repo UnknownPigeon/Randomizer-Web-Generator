@@ -1,10 +1,6 @@
 {
     "requirements": "(Progressive_Clawshot, 1)",
-    "arcOffsets": ["1638"],
-    "stageIDX": [59],
-    "roomIDX": 0,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "category": ["Overworld", "Chest", "Gerudo Desert", "ARC"],
+    "glitchedRequirements": "(Progressive_Clawshot, 1)",
+    "checkCategory": ["Overworld", "Chest", "Gerudo Desert"],
     "itemId": "Red_Rupee"
 }

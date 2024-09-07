@@ -1,10 +1,6 @@
 {
     "requirements": "CanDefeatYoungGohma and CanDefeatBabyGohma",
-    "arcOffsets": ["984"],
-    "stageIDX": [9],
-    "roomIDX": 5,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "category": ["Chest", "Dungeon", "Temple of Time", "ARC"],
+    "glitchedRequirements": "CanDefeatYoungGohma and CanDefeatBabyGohma",
+    "checkCategory": ["Chest", "Dungeon", "Temple of Time"],
     "itemId": "Purple_Rupee"
 }

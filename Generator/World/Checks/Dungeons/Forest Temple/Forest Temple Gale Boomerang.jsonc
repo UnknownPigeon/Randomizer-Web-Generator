@@ -1,6 +1,6 @@
 {
     "requirements": "CanDefeatOok",
-    "stageIDX": [8],
-    "category": ["Forest Temple", "Dungeon", "Boss"],
+    "glitchedRequirements": "CanDefeatOok or hasBombs",
+    "checkCategory": ["Forest Temple", "Dungeon", "Boss"],
     "itemId": "Boomerang"
 }

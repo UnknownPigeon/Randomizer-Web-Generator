@@ -1,10 +1,6 @@
 {
     "requirements": "canSmash and Lantern",
-    "arcOffsets": ["1DFC"],
-    "stageIDX": [33],
-    "roomIDX": 0,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "category": ["Overworld", "Chest", "Lake Lantern Cave", "ARC"],
+    "glitchedRequirements": "canSmash",
+    "checkCategory": ["Overworld", "Chest", "Lake Lantern Cave"],
     "itemId": "Bomblings_5"
 }

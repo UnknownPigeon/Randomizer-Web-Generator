@@ -1,7 +1,6 @@
 {
     "requirements": "Shadow_Crystal",
-    "stageIDX": [52],
-    "flag": "4B",
-    "category": ["Overworld", "Poe", "Lake Hylia"],
+    "glitchedRequirements": "Shadow_Crystal",
+    "checkCategory": ["Overworld", "Poe", "Lake Hylia"],
     "itemId": "Poe_Soul"
 }

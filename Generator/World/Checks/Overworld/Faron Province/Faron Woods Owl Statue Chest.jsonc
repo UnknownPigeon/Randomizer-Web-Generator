@@ -1,10 +1,6 @@
 {
-  "requirements": "canSmash and (Progressive_Dominion_Rod, 2) and Shadow_Crystal and canClearForest",
-  "arcOffsets": ["1EF4"],
-    "stageIDX": [45],
-    "roomIDX": 5,
-  "fileDirectoryType": [ 0 ],
-  "replacementType": [ 0 ],
-  "category": [ "Overworld", "Chest", "Faron Woods", "ARC" ],
+  "requirements": "true",
+  "glitchedRequirements": "true",
+  "checkCategory": [ "Overworld", "Chest", "Faron Woods" ],
   "itemId": "Piece_of_Heart"
 }

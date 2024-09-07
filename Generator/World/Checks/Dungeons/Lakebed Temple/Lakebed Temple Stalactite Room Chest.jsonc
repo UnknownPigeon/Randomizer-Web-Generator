@@ -1,10 +1,6 @@
 {
     "requirements": "canLaunchBombs",
-    "arcOffsets": ["1344"],
-    "stageIDX": [0],
-    "roomIDX": 1,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "category": ["Chest", "Dungeon", "Lakebed Temple", "ARC"],
+    "glitchedRequirements": "canLaunchBombs or CanDoLJA",
+    "checkCategory": ["Chest", "Dungeon", "Lakebed Temple"],
     "itemId": "Water_Bombs_10"
 }

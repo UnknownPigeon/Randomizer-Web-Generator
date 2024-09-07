@@ -1,10 +1,6 @@
 {
     "requirements": "Boomerang and Iron_Boots",
-    "arcOffsets": ["A78"],
-    "stageIDX": [50],
-    "roomIDX": 0,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "category": ["Overworld", "Chest", "Zoras Domain", "ARC"],
+    "glitchedRequirements": "Boomerang and HasHeavyMod",
+    "checkCategory": ["Overworld", "Chest", "Zoras Domain"],
     "itemId": "Purple_Rupee"
 }

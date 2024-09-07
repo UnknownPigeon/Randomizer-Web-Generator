@@ -1,7 +1,6 @@
 {
   "requirements": "Shadow_Crystal and canCompletePrologue",
-  "stageIDX": [ 45 ],
-  "flag": "5D",
-  "category": [ "Overworld", "Poe", "Faron Woods" ],
+  "glitchedRequirements": "Shadow_Crystal",
+  "checkCategory": [ "Overworld", "Poe", "Faron Woods" ],
   "itemId": "Poe_Soul"
 }

@@ -1,10 +1,6 @@
 {
     "requirements": "true",
-    "arcOffsets": ["F50"],
-    "stageIDX": [27],
-    "roomIDX": 4,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "category": ["Chest", "Dungeon", "Snowpeak Ruins", "Small Key", "ARC"],
+    "glitchedRequirements": "true",
+    "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins", "Small Key"],
     "itemId": "Snowpeak_Ruins_Small_Key"
 }

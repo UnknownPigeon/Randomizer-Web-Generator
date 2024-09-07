@@ -1,0 +1,6 @@
+{
+    "requirements": "true",
+    "glitchedRequirements": "true",
+    "checkCategory": ["Overworld", "Kakariko Village", "Shop"],
+    "itemId": "Red_Potion_Shop"
+}

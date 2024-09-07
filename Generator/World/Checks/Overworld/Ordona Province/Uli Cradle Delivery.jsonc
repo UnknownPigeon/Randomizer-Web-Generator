@@ -1,9 +1,6 @@
 {
-    "requirements": "true",
-    "arcOffsets": ["C8F"],
-    "stageIDX": [43],
-    "fileDirectoryType": [1],
-    "replacementType": [0],
-    "category": ["Overworld", "Ordona Province", "ARC"],
+    "requirements": "CanChangeTime",
+    "glitchedRequirements": "CanChangeTime",
+    "checkCategory": ["Overworld", "Ordona Province"],
     "itemId": "Progressive_Fishing_Rod"
 }
