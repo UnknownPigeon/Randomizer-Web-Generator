@@ -23,17 +23,17 @@
             },
             {
               "ConnectedArea": "Hyrule Castle Main Hall",
-              "Requirements": "((Hyrule_Castle_Small_Key, 1) or (Setting.smallKeySettings equals Keysy))",
+              "Requirements": "((Hyrule_Castle_Small_Key, 1) or (Setting.smallKeySettings equals Keysy) or  (Setting.skipHc equals True))",
               "GlitchedRequirements": "((Hyrule_Castle_Small_Key, 1) or (Setting.smallKeySettings equals Keysy))"
             },
             {
               "ConnectedArea": "Hyrule Castle Outside West Wing",
-              "Requirements": "CanDefeatBokoblinRed",
+              "Requirements": "CanDefeatBokoblinRed or  (Setting.skipHc equals True)",
               "GlitchedRequirements": "CanDefeatBokoblinRed"
             },
             {
               "ConnectedArea": "Hyrule Castle Outside East Wing",
-              "Requirements": "CanDefeatBokoblinRed",
+              "Requirements": "CanDefeatBokoblinRed or  (Setting.skipHc equals True)",
               "GlitchedRequirements": "CanDefeatBokoblinRed"
             }
           ],
@@ -70,7 +70,7 @@
         },
         {
             "ConnectedArea": "Hyrule Castle Third Floor Balcony",
-            "Requirements": "Lantern and CanDefeatDinalfos",
+            "Requirements": "((Lantern and CanDefeatDinalfos) or  (Setting.skipHc equals True))",
             "GlitchedRequirements": "Lantern and CanDefeatDinalfos"
         }
         ],
@@ -88,7 +88,7 @@
         },
         {
             "ConnectedArea": "Hyrule Castle Third Floor Balcony",
-            "Requirements": "canKnockDownHCPainting and CanDefeatLizalfos and CanDefeatDarknut",
+            "Requirements": "((canKnockDownHCPainting and CanDefeatLizalfos and CanDefeatDarknut) or (Setting.skipHc equals True))",
             "GlitchedRequirements": "canKnockDownHCPainting and CanDefeatLizalfos and CanDefeatDarknut"
         }
         ],
@@ -106,12 +106,12 @@
           },
           {
             "ConnectedArea": "Hyrule Castle Inside East Wing",
-            "Requirements": "CanDefeatBokoblin and  CanDefeatLizalfos and (Progressive_Clawshot, 2) and CanDefeatDarknut and Boomerang",
+            "Requirements": "((CanDefeatBokoblin and  CanDefeatLizalfos and (Progressive_Clawshot, 2) and CanDefeatDarknut and Boomerang) or (Setting.skipHc equals True))",
             "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatLizalfos and Progressive_Clawshot and CanDefeatDarknut and Boomerang"
           },
           {
             "ConnectedArea": "Hyrule Castle Inside West Wing",
-            "Requirements": "CanDefeatBokoblin and  CanDefeatLizalfos and (Progressive_Clawshot, 2) and CanDefeatDarknut and Boomerang",
+            "Requirements": "((CanDefeatBokoblin and  CanDefeatLizalfos and (Progressive_Clawshot, 2) and CanDefeatDarknut and Boomerang) or  (Setting.skipHc equals True))",
             "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatLizalfos and Progressive_Clawshot and CanDefeatDarknut and Boomerang"
           }
         ],
@@ -170,7 +170,7 @@
         [
         {
             "ConnectedArea": "Hyrule Castle Inside West Wing",
-            "Requirements": "CanDefeatDarknut and CanDefeatLizalfos and canKnockDownHCPainting",
+            "Requirements": "((CanDefeatDarknut and CanDefeatLizalfos and canKnockDownHCPainting) or (Setting.skipHc equals True))",
             "GlitchedRequirements": "CanDefeatDarknut and CanDefeatLizalfos and canKnockDownHCPainting"
         },
         {
@@ -180,7 +180,7 @@
         },
         {
             "ConnectedArea": "Hyrule Castle Tower Climb",
-            "Requirements": "((Hyrule_Castle_Small_Key, 2) or (Setting.smallKeySettings equals Keysy))",
+            "Requirements": "((Hyrule_Castle_Small_Key, 2) or (Setting.smallKeySettings equals Keysy) or  (Setting.skipHc equals True))",
             "GlitchedRequirements": "((Hyrule_Castle_Small_Key, 2) or (Setting.smallKeySettings equals Keysy))"
         }
         ],
@@ -202,7 +202,12 @@
             },
             {
               "ConnectedArea": "Hyrule Castle Treasure Room",
-              "Requirements": "((Hyrule_Castle_Small_Key, 3) or (Setting.smallKeySettings equals Keysy)) and Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos",
+              "Requirements": "(((((Hyrule_Castle_Small_Key, 3) or (Setting.smallKeySettings equals Keysy)) and Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos)) or (Setting.skipHc equals True))",
+              "GlitchedRequirements": "((Hyrule_Castle_Small_Key, 3) or (Setting.smallKeySettings equals Keysy)) and (Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos"
+            },
+            {
+              "ConnectedArea": "Ganondorf Castle",
+              "Requirements": "((Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos and (Hyrule_Castle_Big_Key or (Setting.bigKeySettings equals Keysy))) or (Setting.skipHc equals True)) and CanDefeatGanondorf",
               "GlitchedRequirements": "((Hyrule_Castle_Small_Key, 3) or (Setting.smallKeySettings equals Keysy)) and (Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos"
             },
             {

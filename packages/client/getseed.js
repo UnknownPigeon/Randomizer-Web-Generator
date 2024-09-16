@@ -254,6 +254,10 @@
         buttonId: 'audioTabBtn',
         contentId: 'audioTab',
       },
+      {
+        buttonId: 'otherTabBtn',
+        contentId: 'otherTab',
+      },
 
       // ['mainTab', 'cosmeticsTab', 'audioTab'].forEach((id) => {
     ]);

@@ -1,0 +1,134 @@
+{
+  // Pigeon distribution
+  "starting": {
+    "spot": "ordon_sign",
+    "excludeFromGroups": true
+  },
+  "agitha": false,
+  "jovani": {
+    "minFoundSoulsForHint": 10
+  },
+  "caveOfOrdeals": false,
+  "dungeons": {
+    "bigKeyHints": false
+  },
+  "beyondPointZones": ["alias:all"],
+  "barren": {
+    "ownZoneBehavior": "monopolize",
+    "ownZoneShowsAsJunkHint": true
+  },
+  "always": {
+    "monopolizeSpots": true,
+    "idealNumSpots": 5,
+    "copies": 2,
+    "groupId": "overworld"
+  },
+  //
+  "addChecks": {
+    "Lake Hylia Shell Blade Grotto Chest": ["always"],
+    "Death Mountain Alcove Chest": ["sometimes"]
+  },
+  "removeChecks": {
+    "Forest Temple Gale Boomerang": ["sometimes"],
+    "Arbiters Grounds Death Sword Chest": ["sometimes"],
+    "Temple of Time Darknut Chest": ["sometimes"],
+    "City in The Sky Aeralfos Chest": ["sometimes"]
+  },
+  "removeItems": {
+  },
+  //
+  "groups": {
+    "overworld": ["alias:overworldZones"]
+  },
+  "hints": [
+    //Layer un
+    {
+      "groupId": "overworld",
+      "hintDef": {
+        "copies": 2,
+        "hintDef": [
+          {
+            "hintType": "barren",
+            "iterations": 4,
+            "starting": 4
+          },
+          {
+            "hintType": "itemToItemPath",
+            "minCopies": 1
+          },
+          {
+            "hintType": "path",
+            "iterations": 2
+          },
+          {
+            "hintType": "numItemInArea",
+            "saveToVar": "mostSwordsProvince",
+            "options": {
+              "item": "Progressive_Sword",
+              "areaType": "province",
+              "order": "desc"
+            }
+          },
+          {
+            "hintType": "barren",
+            "options": {
+              "areaType": "category"
+            }
+          },
+          {
+            "hintType": "sometimes",
+            "iterations": 2,
+            "minCopies": 1
+          }
+        ]
+      }
+    },
+    //Layer deux
+    {
+      "groupId": "overworld",
+      "hintDef": {
+        "copies": 2,
+        "hintDef": [
+            {
+              "hintType": "location",
+              "options": {
+                "markAsSometimes": true,
+                  "namedChecks": [
+                    "City in The Sky West Wing First Chest",
+                    "Goron Mines Outside Clawshot Chest",
+                    "Goron Mines Main Magnet Room Top Chest",
+                    "Forest Temple West Tile Worm Chest Behind Stairs",
+                    "Snowpeak Ruins Chapel Chest"
+                  ],
+                  "namedOrder":"random",
+                  "namedProbability": 0.1,
+                  "minCopies": 1
+              }
+          },
+          {
+             "hintType": "location",
+             "options": {
+               "markAsSometimes": true,
+               "namedChecks": [
+                 "Forest Temple Gale Boomerang",
+                 "Arbiters Grounds Death Sword Chest",
+                 "Temple of Time Darknut Chest",
+                 "City in The Sky Aeralfos Chest"
+               ],
+               "namedProbability": 1,
+               "namedOrder": "random",
+               "checkStatusDisplay": "Required_Info",
+               "vague": false,
+               "minCopies": 1
+             }
+           },
+          {
+            "hintType": "sometimes",
+            "iterations": 99,
+            "minCopies": 1
+          }
+        ]
+      }
+    }
+  ]
+}

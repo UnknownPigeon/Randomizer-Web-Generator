@@ -1221,6 +1221,15 @@ namespace TPRandomizer.Hints.Settings
                         }
                         break;
                     }
+                    case "unrequireddungeons":
+                    {
+                        HashSet<string> unrequiredDungeonsZones = HintUtils.getOptionalDungeonZones();
+                        foreach (string zoneName in unrequiredDungeonsZones)
+                        {
+                            ret.Add(zoneToSpot[zoneName]);
+                        }
+                        break;
+                    }
                     default:
                         throw new Exception($"Failed to resolve group entry alias '{alias}'.");
                 }
@@ -1367,6 +1376,10 @@ namespace TPRandomizer.Hints.Settings
                     return Path.Combine(basePath, "balanced.jsonc");
                 case HintDistribution.Season_1:
                     return Path.Combine(basePath, "season-1.jsonc");
+                case HintDistribution.DrehenTestv2:
+                    return Path.Combine(basePath, "drehenTestv2.jsonc");
+                case HintDistribution.DrehenTestv1:
+                    return Path.Combine(basePath, "drehenTestv1.jsonc");
                 case HintDistribution.Strong:
                     return Path.Combine(basePath, "strong.jsonc");
                 case HintDistribution.Very_Strong:
