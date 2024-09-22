@@ -733,7 +733,7 @@ namespace TPRandomizer
                         sw.WriteLine(jumpInsr);
                         sw.WriteLine(bootloaderAddr);
                         var bootloaderBytes = File.ReadAllBytes(
-                            "/app/generator/Assets/bootloader/" + region + ".bin"
+                            "/home/wwwdrehen/Randomizer-Web-Generator/Generator/Assets/bootloader/" + region + ".bin"
                         );
                         var bootloaderHex = string.Join(
                             "",
