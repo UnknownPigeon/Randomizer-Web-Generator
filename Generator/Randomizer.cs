@@ -691,15 +691,15 @@ namespace TPRandomizer
                 using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
                 {
                     archive.CreateEntryFromFile(
-                        "/home/wwwdrehen/Randomizer-Web-Generator/generator/Assets/patch/RomHack.toml",
+                        "/home/wwwdrehen/Randomizer-Web-Generator/Generator/Assets/patch/RomHack.toml",
                         "RomHack.toml"
                     );
                     archive.CreateEntryFromFile(
-                        "/home/wwwdrehen/Randomizer-Web-Generator/generator/Assets/rels/Randomizer." + region + ".rel",
+                        "/home/wwwdrehen/Randomizer-Web-Generator/Generator/Assets/rels/Randomizer." + region + ".rel",
                         "mod.rel"
                     );
                     archive.CreateEntryFromFile(
-                        "/home/wwwdrehen/Randomizer-Web-Generator/generator/Assets/rels/boot." + region + ".rel",
+                        "/home/wwwdrehen/Randomizer-Web-Generator/Generator/Assets/rels/boot." + region + ".rel",
                         "boot.rel"
                     );
 
