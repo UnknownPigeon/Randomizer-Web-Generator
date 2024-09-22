@@ -207,11 +207,6 @@
             },
             {
               "ConnectedArea": "Ganondorf Castle",
-              "Requirements": "((Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos and (Hyrule_Castle_Big_Key or (Setting.bigKeySettings equals Keysy))) or (Setting.skipHc equals True)) and CanDefeatGanondorf",
-              "GlitchedRequirements": "((Hyrule_Castle_Small_Key, 3) or (Setting.smallKeySettings equals Keysy)) and (Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos"
-            },
-            {
-              "ConnectedArea": "Ganondorf Castle",
               "Requirements": "Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos and (Hyrule_Castle_Big_Key or (Setting.bigKeySettings equals Keysy)) and CanDefeatGanondorf",
               "GlitchedRequirements": "(Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos and (Hyrule_Castle_Big_Key or (Setting.bigKeySettings equals Keysy)) and CanDefeatGanondorf"
             }
