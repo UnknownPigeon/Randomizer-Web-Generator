@@ -9,6 +9,7 @@ namespace TPRandomizer.Assets
     using Newtonsoft.Json;
     using TPRandomizer.Assets.CLR0;
     using System.ComponentModel.DataAnnotations.Schema;
+    using TPRandomizer.SSettings.Enums;
 
     /// <summary>
     /// summary text.
@@ -35,7 +36,6 @@ namespace TPRandomizer.Assets
         public static readonly int ImageDataSize = 0x1400;
         private static readonly short SeedHeaderSize = 0x160;
         private static short MessageHeaderSize = 0xC;
-
         private SeedGenResults seedGenResults;
         public FileCreationSettings fcSettings { get; }
 
@@ -293,6 +293,7 @@ namespace TPRandomizer.Assets
                 }
             }
             seedHeader.Add(Converter.GcByte((int)randomizerSettings.startingToD));
+            seedHeader.Add(Converter.GcByte((int)ItemFunctions.ToTSwordRequirements[(int)randomizerSettings.totEntrance]));
 
             while (seedHeader.Count < SeedHeaderSize)
             {
@@ -322,6 +323,7 @@ namespace TPRandomizer.Assets
                 fcSettings.disableEnemyBgm,
                 randomizerSettings.instantText,
                 randomizerSettings.skipMajorCutscenes,
+                fcSettings.invertCameraAxis,
             };
             bool[] flagsBitfieldArray =
             {
@@ -1211,6 +1213,42 @@ namespace TPRandomizer.Assets
                     3
                 ), // Replace kak left side red potion with a copy of the hawkeye sign.
 
+                new ARCReplacement(
+                    "11FC",
+                    "3000EE63",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Change the statue to the past to use a custom flag so it's no longer tied to the portal
+
+                new ARCReplacement(
+                    "1574",
+                    "80FF0000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Change the ms pedestal to use a custom flag so it's no longer tied to the portal
+
+                new ARCReplacement(
+                    "1BE0",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    1
+                ), // Remove Beth double actor from outside link's house. It just looks weird
+
+                 new ARCReplacement(
+                    "1C00",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    1
+                ), // Remove Malo double actor from outside link's house. It just looks weird
+
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
                 new ARCReplacement(
@@ -1516,12 +1554,12 @@ namespace TPRandomizer.Assets
 
                     // Update modified time
 
-                    int totalSeconds = BitConverter.ToInt32(Converter.GcBytes((UInt32)(DateTime.Now - new DateTime(2000, 1, 1)).TotalSeconds));
+                    byte[] totalSeconds = Converter.GcBytes((UInt32)(DateTime.UtcNow - new DateTime(2000, 1, 1)).TotalSeconds);
 
-                    gciBytes[0x28] = (byte)((totalSeconds & 0xFF000000) >> 24);
-                    gciBytes[0x29] = (byte)((totalSeconds & 0xFF0000) >> 16);
-                    gciBytes[0x2A] = (byte)((totalSeconds & 0xFF00) >> 8);
-                    gciBytes[0x2B] = (byte)(totalSeconds & 0xFF);
+                    gciBytes[0x28] = totalSeconds[0];
+                    gciBytes[0x29] = totalSeconds[1];
+                    gciBytes[0x2A] = totalSeconds[2];
+                    gciBytes[0x2B] = totalSeconds[3];
 
                     outputFile.AddRange(gciBytes);
 

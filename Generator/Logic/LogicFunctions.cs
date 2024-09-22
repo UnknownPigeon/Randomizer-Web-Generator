@@ -126,7 +126,7 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Fishing Hole"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Zoras Domain"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Zoras Domain West Ledge"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Zoras Throne Room"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Snowpeak Climb Lower"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Snowpeak Climb Upper"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"].ReachedByPlaythrough
@@ -176,9 +176,8 @@ namespace TPRandomizer
                     Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
                     || (
                         Randomizer.Rooms.RoomDict[
-                        "Death Mountain Elevator Lower"
-                        ].ReachedByPlaythrough
-                        && CanDefeatGoron()
+                            "Death Mountain Elevator Lower"
+                        ].ReachedByPlaythrough && CanDefeatGoron()
                     )
                 ) && HasBottle();
         }
@@ -1739,13 +1738,17 @@ namespace TPRandomizer
         {
             return (
                 (
-                    HasSword()
-                    && CanUse(Item.Slingshot)
-                    && (
-                        CanUse(Item.North_Faron_Woods_Gate_Key)
-                        || (Randomizer.SSettings.smallKeySettings == SmallKeySettings.Keysy)
-                    )
+                    Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
+                    && CanDefeatBokoblin()
                 ) || (Randomizer.SSettings.skipPrologue == true)
+            );
+        }
+
+        public static bool CanCompleteGoats1()
+        {
+            return (
+                Randomizer.Rooms.RoomDict["Ordon Ranch"].ReachedByPlaythrough
+                || canCompletePrologue()
             );
         }
 
@@ -1762,6 +1765,11 @@ namespace TPRandomizer
                 )
             );
             //return (canCompleteLakebedTemple() || (Randomizer.SSettings.skipMdh == true));
+        }
+
+        public static bool CanStrikePedestal()
+        {
+            return getItemCount(Item.Progressive_Sword) >= (int)Randomizer.SSettings.totEntrance;
         }
 
         /// <summary>
@@ -1795,8 +1803,7 @@ namespace TPRandomizer
                         "Mist Area Near Faron Woods Cave"
                     ].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Ordon Sword House"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Ordon Shield House"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Ordon Spring"].ReachedByPlaythrough
                     && (
                         !Randomizer.SSettings.bonksDoDamage
                         || (
@@ -1858,7 +1865,7 @@ namespace TPRandomizer
                         || CanUse(Item.Shadow_Crystal)
                     )
                     && Randomizer.Rooms.RoomDict["Zoras Domain"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Zoras Throne Room"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Upper Zoras River"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Lake Hylia"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Lake Hylia Lanayru Spring"].ReachedByPlaythrough

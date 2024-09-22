@@ -369,7 +369,7 @@
   function genSSettingsFromUi() {
     // Increment the version when you make changes to the format. Need to make
     // sure you don't break backwards compatibility!!
-    const sSettingsVersion = 5;
+    const sSettingsVersion = 6;
 
     const values = [
       { id: 'logicRulesFieldset', bitLength: 2 },
@@ -402,7 +402,8 @@
       { id: 'lakebedEntranceCheckbox' },
       { id: 'arbitersEntranceCheckbox' },
       { id: 'snowpeakEntranceCheckbox' },
-      { id: 'totEntranceFieldset', bitLength: 2 },
+      { id: 'groveEntranceCheckbox' },
+      { id: 'totEntranceFieldset', bitLength: 3 },
       { id: 'cityEntranceCheckbox' },
       { id: 'instantTextCheckbox' },
       { id: 'openMapCheckbox' },
@@ -416,6 +417,7 @@
       { id: 'noSmallKeysOnBossesCheckbox' },
       { id: 'todFieldset', bitLength: 3 },
       { id: 'hintDistributionFieldset', bitLength: 5 },
+      { id: 'randomizeStartingPointCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -817,9 +819,28 @@
     processBasic({ id: 'skipLakebedEntrance' });
     processBasic({ id: 'skipArbitersEntrance' });
     processBasic({ id: 'skipSnowpeakEntrance' });
-    if (version >= 1) {
+    if ((version >= 1) && version < 6) {
+      const totEntrance = {
+        closed: 0,
+        openGrove: 1,
+        open: 2,
+      };
       // `totEntrance` changed from a checkbox to a select
       processBasic({ id: 'totEntrance', bitLength: 2 });
+      if (res.totEntrance != totEntrance.closed)
+      {
+        res.skipGroveEntrance = true;
+      }
+      else
+      {
+        res.skipGroveEntrance = false;
+      }
+      res.totEntrance = 3; // Master Sword
+    }
+    else if (version >= 6) {
+      // `totEntrance` changed uses and meaning and was split into two different settings
+      processBasic({ id: 'skipGroveEntrance' });
+      processBasic({ id: 'totEntrance', bitLength: 3 });
     } else {
       const totEntrance = {
         closed: 0,
@@ -861,6 +882,14 @@
       res.noSmallKeysOnBosses = false;
       res.startingToD = 1; // Noon, which the previous rando versions used.
       res.hintDistribution = 0; // None
+    }
+    if (version >= 6)
+    {
+      processBasic({id: 'randomizeStartingPoint'});
+    }
+    else
+    {
+      res.randomizeStartingPoint = false; // Vanilla
     }
 
     res.startingItems = processor.nextEolList(9);

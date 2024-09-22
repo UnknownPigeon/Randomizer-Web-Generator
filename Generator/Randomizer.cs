@@ -52,6 +52,7 @@ namespace TPRandomizer
         public static SharedSettings SSettings = new();
 
         public static int RequiredDungeons = 0;
+        public static int spawnIndex = 0;
 
         public static bool CreateInputJson(
             string idParam,
@@ -156,7 +157,6 @@ namespace TPRandomizer
                 PlaceVanillaChecks();
 
                 // Once we have placed all vanilla checks, we want to give the player all of the items they should be searching for and then generate the world based on the room class values and their neighbour values.
-                SetupGraph();
                 try
                 {
                     Randomizer.EntranceRandomizer.RandomizeEntrances(rnd);
@@ -474,7 +474,9 @@ namespace TPRandomizer
                 part2Settings.Add("skipArbitersEntrance", SSettings.skipArbitersEntrance);
             if (SSettings.skipSnowpeakEntrance)
                 part2Settings.Add("skipSnowpeakEntrance", SSettings.skipSnowpeakEntrance);
-            if (SSettings.totEntrance != TotEntrance.Closed)
+            if (SSettings.skipGroveEntrance)
+                part2Settings.Add("skipGroveEntrance", SSettings.skipGroveEntrance);
+            if (SSettings.totEntrance != TotEntrance.None)
                 part2Settings.Add("totEntrance", SSettings.totEntrance);
             if (SSettings.skipCityEntrance)
                 part2Settings.Add("skipCityEntrance", SSettings.skipCityEntrance);
@@ -895,6 +897,7 @@ namespace TPRandomizer
         public static List<Room> GeneratePlaythroughGraph(Room startingRoom)
         {
             List<Room> playthroughGraph = new();
+            List<Room> availableBaseRooms = new();
             Room availableRoom;
 
             int availableRooms = 1;
@@ -909,7 +912,14 @@ namespace TPRandomizer
             }
 
             startingRoom.Visited = true;
-            playthroughGraph.Add(startingRoom);
+            availableBaseRooms.Add(startingRoom);
+
+            // With sewers no longer a thing, the player starts with Ordon Portal (until we find a way to randomize it)
+            if (LogicFunctions.CanUse(Item.Shadow_Crystal))
+            {
+                availableRoom = Randomizer.Rooms.RoomDict["Ordon Spring"];
+                availableBaseRooms.Add(availableRoom);
+            }
             if (Randomizer.SSettings.openMap)
             {
                 if (Randomizer.SSettings.faronTwilightCleared)
@@ -917,12 +927,10 @@ namespace TPRandomizer
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["South Faron Woods"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
 
                         availableRoom = Randomizer.Rooms.RoomDict["North Faron Woods"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
                     }
                 }
 
@@ -931,16 +939,13 @@ namespace TPRandomizer
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Lower Kakariko Village"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
 
                         availableRoom = Randomizer.Rooms.RoomDict["Kakariko Gorge"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
 
                         availableRoom = Randomizer.Rooms.RoomDict["Death Mountain Volcano"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
                     }
                 }
 
@@ -949,16 +954,14 @@ namespace TPRandomizer
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Lake Hylia"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
 
                         availableRoom = Randomizer.Rooms.RoomDict["Outside Castle Town West"];
-                        playthroughGraph.Add(availableRoom);
+                        availableBaseRooms.Add(availableRoom);
                         availableRoom.Visited = true;
 
-                        availableRoom = Randomizer.Rooms.RoomDict["Zoras Throne Room"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableRoom = Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"];
+                        availableBaseRooms.Add(availableRoom);
                     }
                 }
 
@@ -967,27 +970,31 @@ namespace TPRandomizer
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
                     }
                 }
 
-                if (Randomizer.SSettings.totEntrance != TotEntrance.Closed)
+                if (Randomizer.SSettings.skipGroveEntrance)
                 {
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Sacred Grove Lower"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
                     }
                 }
+            }
+
+            foreach (Room roomToExplore in roomsToExplore)
+            {
+                roomToExplore.Visited = true;
             }
 
             // Build the world by parsing through each room, linking their neighbours, and setting the logic for the checks in the room to reflect the world.
             while (availableRooms > 0)
             {
                 availableRooms = 0;
-                roomsToExplore.Add(startingRoom);
+                roomsToExplore.AddRange(availableBaseRooms);
+                playthroughGraph.AddRange(availableBaseRooms);
                 foreach (KeyValuePair<string, Room> roomList in Randomizer.Rooms.RoomDict.ToList())
                 {
                     Room currentRoom = roomList.Value;
@@ -1737,26 +1744,6 @@ namespace TPRandomizer
                     );
                 }
             }
-        }
-
-        private static void SetupGraph()
-        {
-            // We want to be safe and make sure that the room classes are prepped and ready to be linked together. Then we define our starting room.
-            foreach (KeyValuePair<string, Room> roomList in Randomizer.Rooms.RoomDict.ToList())
-            {
-                Room currentRoom = roomList.Value;
-                currentRoom.Visited = false;
-                Randomizer.Rooms.RoomDict[currentRoom.RoomName] = currentRoom;
-            }
-
-            // This line is just filler until we have a random starting room
-            Room startingRoom = Randomizer.Rooms.RoomDict["Outside Links House"];
-
-            Entrance rootExit = new();
-            rootExit.ConnectedArea = startingRoom.RoomName;
-            rootExit.Requirements = "(true)";
-
-            Randomizer.Rooms.RoomDict["Root"].Exits.Add(rootExit);
         }
 
         private static void DeserializeChecks(SharedSettings SSettings)

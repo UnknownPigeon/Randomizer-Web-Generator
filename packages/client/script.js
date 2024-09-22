@@ -356,7 +356,9 @@ document
 document
   .getElementById('snowpeakEntranceCheckbox')
   .addEventListener('click', setSettingsString);
-document;
+document
+  .getElementById('groveEntranceCheckbox')
+  .addEventListener('click', setSettingsString);
 document.getElementById('totEntranceFieldset').onchange = setSettingsString;
 document
   .getElementById('cityEntranceCheckbox')
@@ -387,6 +389,9 @@ document
   .addEventListener('click', setSettingsString);
 document
   .getElementById('shuffleRewardsCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('randomizeStartingPointCheckbox')
   .addEventListener('click', setSettingsString);
 document
   .getElementById('importSettingsStringButton')
@@ -1222,6 +1227,7 @@ function populateSSettings(s) {
   $('#lakebedEntranceCheckbox').prop('checked', s.skipLakebedEntrance);
   $('#arbitersEntranceCheckbox').prop('checked', s.skipArbitersEntrance);
   $('#snowpeakEntranceCheckbox').prop('checked', s.skipSnowpeakEntrance);
+  $('#groveEntranceCheckbox').prop('checked', s.skipGroveEntrance);
   $('#totEntranceFieldset').val(s.totEntrance);
   $('#cityEntranceCheckbox').prop('checked', s.skipCityEntrance);
   $('#instantTextCheckbox').prop('checked', s.instantText);
@@ -1235,6 +1241,7 @@ function populateSSettings(s) {
   $('#noSmallKeysOnBossesCheckbox').prop('checked', s.noSmallKeysOnBosses);
   $('#todFieldset').val(s.startingToD);
   $('#hintDistributionFieldset').val(s.hintDistribution);
+  $('#randomizeStartingPointCheckbox').prop('checked', s.randomizeStartingPoint);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {
