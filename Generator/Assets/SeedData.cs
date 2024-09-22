@@ -1472,7 +1472,7 @@ namespace TPRandomizer.Assets
                     break;
                 }
             }
-            List<byte> gciBytes = File.ReadAllBytes("home/wwwdrehen/wwwdl/Randomizer." + gciRegion + ".gci").ToList(); // read in the file as an array of bytes
+            List<byte> gciBytes = File.ReadAllBytes("/wwwdrehen/wwwdl/Randomizer." + gciRegion + ".gci").ToList(); // read in the file as an array of bytes
 
             for (int i = 0; i < maxRelEntries; i++)
             {
