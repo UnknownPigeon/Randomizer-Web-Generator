@@ -1,4 +1,4 @@
-[   // unsure at ToT boss room
+[
     // Overworld Exits
     {
         "Type": "Overworld",
@@ -236,7 +236,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F012",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -247,7 +247,7 @@
             "Spawn": "05",
             "SpawnType": "10",
             "Parameters": "F032",
-            "State": "FF"
+            "State": "2"
         }
     },
     {
@@ -529,8 +529,8 @@
         "Type": "Overworld",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Zoras Domain",
-            "TargetRoom": "Zoras Throne Room",
+            "SourceRoom": "Zoras Domain Top of Waterfall",
+            "TargetRoom": "Zoras Domain Throne Room",
             "Stage": 50,
             "Room": 0,
             "Spawn": "01",
@@ -540,8 +540,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Zoras Throne Room",
-            "TargetRoom": "Zoras Domain",
+            "SourceRoom": "Zoras Domain Throne Room",
+            "TargetRoom": "Zoras Domain Top of Waterfall",
             "Stage": 50,
             "Room": 1,
             "Spawn": "00",
@@ -829,7 +829,7 @@
         "Type": "Overworld",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Castle Town South",
+            "SourceRoom": "South Castle Town Doors",
             "TargetRoom": "Outside Castle Town South",
             "Stage": 57,
             "Room": 16,
@@ -841,7 +841,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "Outside Castle Town South",
-            "TargetRoom": "Castle Town South",
+            "TargetRoom": "South Castle Town Doors",
             "Stage": 53,
             "Room": 3,
             "Spawn": "00",
@@ -880,7 +880,7 @@
         "SourceRoomSpawn":
         {
             "SourceRoom": "Lake Hylia Bridge",
-            "TargetRoom": "Lake Hylia",
+            "TargetRoom": "Lake Hylia Flight By Fowl",
             "Stage": 52,
             "Room": 0,
             "Spawn": "08",
@@ -890,7 +890,7 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Lake Hylia",
+            "SourceRoom": "Lake Hylia Flight By Fowl",
             "TargetRoom": "Lake Hylia Bridge",
             "Stage": 56,
             "Room": 13,
@@ -990,6 +990,20 @@
             "Spawn": "11",
             "SpawnType": "C0",
             "Parameters": "F01F",
+            "State": "FF"
+        }
+    },
+    {
+        "Type": "Overworld One-Way",
+        "SourceRoomSpawn":
+        {
+            "SourceRoom": "Lake Hylia",
+            "TargetRoom": "Lake Hylia Flight By Fowl",
+            "Stage": 52,
+            "Room": 0,
+            "Spawn": "03",
+            "SpawnType": "00",
+            "Parameters": "F018",
             "State": "FF"
         }
     },
@@ -1466,7 +1480,7 @@
         {
             "SourceRoom": "Kakariko Bug House Ceiling Hole",
             "TargetRoom": "Lower Kakariko Village",
-            "Stage": 68,
+            "Stage": 46,
             "Room": 0,
             "Spawn": "04",
             "SpawnType": "50",
@@ -1735,7 +1749,7 @@
             "Spawn": "03",
             "SpawnType": "10",
             "Parameters": "F090",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
@@ -2270,7 +2284,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -2290,12 +2304,12 @@
         {
             "SourceRoom": "Lost Woods Lower Battle Arena",
             "TargetRoom": "Lost Woods Baba Serpent Grotto",
-            "Stage": 37,
+            "Stage": 36,
             "Room": 1,
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -2320,7 +2334,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "1"
         },
         "TargetRoomSpawn":
         {
@@ -2345,7 +2359,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F010",
-            "State": "FF"
+            "State": "1"
         },
         "TargetRoomSpawn":
         {
@@ -2370,7 +2384,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "3"
         },
         "TargetRoomSpawn":
         {
@@ -2390,12 +2404,12 @@
         {
             "SourceRoom": "Eldin Field",
             "TargetRoom": "Eldin Field Bomskit Grotto",
-            "Stage": 36,
+            "Stage": 35,
             "Room": 0,
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "1"
         },
         "TargetRoomSpawn":
         {
@@ -2420,7 +2434,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F010",
-            "State": "FF"
+            "State": "3"
         },
         "TargetRoomSpawn":
         {
@@ -2445,7 +2459,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
@@ -2470,7 +2484,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "3"
         },
         "TargetRoomSpawn":
         {
@@ -2495,7 +2509,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "3"
         },
         "TargetRoomSpawn":
         {
@@ -2520,7 +2534,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "3"
         },
         "TargetRoomSpawn":
         {
@@ -2539,38 +2553,13 @@
         "SourceRoomSpawn":
         {
             "SourceRoom": "Snowpeak Climb Upper",
-            "TargetRoom": "Snowpeak Ice Keese Grotto",
-            "Stage": 37,
-            "Room": 2,
-            "Spawn": "00",
-            "SpawnType": "C0",
-            "Parameters": "F013",
-            "State": "FF"
-        },
-        "TargetRoomSpawn":
-        {
-            "SourceRoom": "Snowpeak Ice Keese Grotto",
-            "TargetRoom": "Snowpeak Climb Upper",
-            "Stage": 51,
-            "Room": 0,
-            "Spawn": "02",
-            "SpawnType": "90",
-            "Parameters": "F01F",
-            "State": "FF"
-        }
-    },
-    {
-        "Type": "Grotto",
-        "SourceRoomSpawn":
-        {
-            "SourceRoom": "Snowpeak Climb Upper",
             "TargetRoom": "Snowpeak Freezard Grotto",
             "Stage": 38,
             "Room": 3,
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -2588,6 +2577,31 @@
         "Type": "Grotto",
         "SourceRoomSpawn":
         {
+            "SourceRoom": "Snowpeak Climb Upper",
+            "TargetRoom": "Snowpeak Ice Keese Grotto",
+            "Stage": 37,
+            "Room": 2,
+            "Spawn": "00",
+            "SpawnType": "C0",
+            "Parameters": "F013",
+            "State": "2"
+        },
+        "TargetRoomSpawn":
+        {
+            "SourceRoom": "Snowpeak Ice Keese Grotto",
+            "TargetRoom": "Snowpeak Climb Upper",
+            "Stage": 51,
+            "Room": 0,
+            "Spawn": "02",
+            "SpawnType": "90",
+            "Parameters": "F01F",
+            "State": "FF"
+        }
+    },
+    {
+        "Type": "Grotto",
+        "SourceRoomSpawn":
+        {
             "SourceRoom": "Outside Castle Town West Grotto Ledge",
             "TargetRoom": "Outside Castle Town West Helmasaur Grotto",
             "Stage": 35,
@@ -2595,7 +2609,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
@@ -2620,7 +2634,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F010",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
@@ -2645,7 +2659,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
@@ -2663,22 +2677,22 @@
         "Type": "Grotto",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Lake Hylia",
+            "SourceRoom": "Lake Hylia Flight By Fowl",
             "TargetRoom": "Lake Hylia Shell Blade Grotto",
             "Stage": 39,
             "Room": 4,
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F010",
-            "State": "FF"
+            "State": "4"
         },
         "TargetRoomSpawn":
         {
             "SourceRoom": "Lake Hylia Shell Blade Grotto",
-            "TargetRoom": "Lake Hylia",
+            "TargetRoom": "Lake Hylia Flight By Fowl",
             "Stage": 52,
             "Room": 0,
-            "Spawn": "03",
+            "Spawn": "63",
             "SpawnType": "90",
             "Parameters": "F01F",
             "State": "FF"
@@ -2695,7 +2709,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F010",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -2720,7 +2734,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "1"
         },
         "TargetRoomSpawn":
         {
@@ -2731,7 +2745,7 @@
             "Spawn": "08",
             "SpawnType": "90",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "0"
         }
     },
     {
@@ -2745,7 +2759,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "1"
         },
         "TargetRoomSpawn":
         {
@@ -2756,7 +2770,7 @@
             "Spawn": "0A",
             "SpawnType": "90",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "0"
         }
     },
     {
@@ -2770,7 +2784,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
@@ -2781,7 +2795,7 @@
             "Spawn": "09",
             "SpawnType": "90",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "0"
         }
     },
 	// Dungeon Exits

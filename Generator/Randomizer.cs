@@ -551,70 +551,76 @@ namespace TPRandomizer
 
             List<Tuple<Dictionary<string, object>, byte[]>> fileDefs = new();
 
-            if (fcSettings.gameRegion == GameRegion.All)
+            if (!fcSettings.patchFileOnly)
             {
-                // For now, 'All' only generates for GameCube until we do more
-                // work related to Wii code.
-                List<GameRegion> gameRegionsForAll =
-                    new() { GameRegion.GC_USA, GameRegion.GC_EUR, GameRegion.GC_JAP, };
-
-                // Create files for all regions
-                // foreach (GameRegion gameRegion in GameRegion.GetValues(typeof(GameRegion)))
-                foreach (GameRegion gameRegion in gameRegionsForAll)
+                if (fcSettings.gameRegion == GameRegion.All)
                 {
-                    if (gameRegion != GameRegion.All)
-                    {
-                        // Update language to be used with resource system.
-                        string langTag = fcSettings.GetLanguageTagString(gameRegion);
-                        Res.UpdateCultureInfo(langTag);
+                    // For now, 'All' only generates for GameCube until we do more
+                    // work related to Wii code.
+                    List<GameRegion> gameRegionsForAll =
+                        new() { GameRegion.GC_USA, GameRegion.GC_EUR, GameRegion.GC_JAP, };
 
-                        fileDefs.Add(
-                            GenGciFileDef(id, seedGenResults, fcSettings, gameRegion, true)
-                        );
+                    // Create files for all regions
+                    // foreach (GameRegion gameRegion in GameRegion.GetValues(typeof(GameRegion)))
+                    foreach (GameRegion gameRegion in gameRegionsForAll)
+                    {
+                        if (gameRegion != GameRegion.All)
+                        {
+                            // Update language to be used with resource system.
+                            string langTag = fcSettings.GetLanguageTagString(gameRegion);
+                            Res.UpdateCultureInfo(langTag);
+
+                            fileDefs.Add(
+                                GenGciFileDef(id, seedGenResults, fcSettings, gameRegion, true)
+                            );
+                        }
                     }
                 }
-            }
-            else
-            {
-                // Update language to be used with resource system.
-                string langTag = fcSettings.GetLanguageTagString();
-                Res.UpdateCultureInfo(langTag);
-
-                // Create file for one region
-                fileDefs.Add(
-                    GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, true)
-                );
-            }
-
-            // Generate seed .bin file
-            fileDefs.Add(
-                GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, false)
-            );
-
-            // Generate patch file
-            fileDefs.Add(GenPatchFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion));
-
-            if (!seedGenResults.isRaceSeed && fcSettings.includeSpoilerLog)
-            {
-                // Set back to default language ('en') before creating spoiler
-                // log when gameRegion is 'All'.
-                if (fcSettings.gameRegion == GameRegion.All)
+                else
                 {
                     // Update language to be used with resource system.
                     string langTag = fcSettings.GetLanguageTagString();
                     Res.UpdateCultureInfo(langTag);
+
+                    // Create file for one region
+                    fileDefs.Add(
+                        GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, true)
+                    );
                 }
 
-                // Add fileDef for spoilerLog
-                string spoilerLogText = GetSeedGenResultsJson(id);
-                byte[] spoilerBytes = Encoding.UTF8.GetBytes(spoilerLogText);
+                // Generate seed .bin file
+                fileDefs.Add(
+                    GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, false)
+                );
 
-                Dictionary<string, object> dict = new();
-                dict.Add("name", $"Tpr--{seedGenResults.playthroughName}--SpoilerLog-{id}.json");
-                dict.Add("length", spoilerBytes.Length);
+                if (!seedGenResults.isRaceSeed && fcSettings.includeSpoilerLog)
+                {
+                    // Set back to default language ('en') before creating spoiler
+                    // log when gameRegion is 'All'.
+                    if (fcSettings.gameRegion == GameRegion.All)
+                    {
+                        // Update language to be used with resource system.
+                        string langTag = fcSettings.GetLanguageTagString();
+                        Res.UpdateCultureInfo(langTag);
+                    }
 
-                fileDefs.Add(new(dict, spoilerBytes));
+                    // Add fileDef for spoilerLog
+                    string spoilerLogText = GetSeedGenResultsJson(id);
+                    byte[] spoilerBytes = Encoding.UTF8.GetBytes(spoilerLogText);
+
+                    Dictionary<string, object> dict = new();
+                    dict.Add(
+                        "name",
+                        $"Tpr--{seedGenResults.playthroughName}--SpoilerLog-{id}.json"
+                    );
+                    dict.Add("length", spoilerBytes.Length);
+
+                    fileDefs.Add(new(dict, spoilerBytes));
+                }
             }
+
+            // Generate patch file
+            fileDefs.Add(GenPatchFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion));
 
             PrintFileDefs(id, seedGenResults, fcSettings, fileDefs);
 
@@ -681,6 +687,9 @@ namespace TPRandomizer
                 case GameRegion.WII_10_JP:
                     region = "wjp";
                     break;
+                case GameRegion.WII_12_USA:
+                    region = "wus2";
+                    break;
                 default:
                     throw new Exception("Did not specify output region");
             }
@@ -691,15 +700,15 @@ namespace TPRandomizer
                 using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
                 {
                     archive.CreateEntryFromFile(
-                        "/home/wwwdrehen/Randomizer-Web-Generator/Generator/Assets/patch/RomHack.toml",
+                        Global.CombineRootPath("./Assets/patch/RomHack.toml"),
                         "RomHack.toml"
                     );
                     archive.CreateEntryFromFile(
-                        "/home/wwwdrehen/Randomizer-Web-Generator/Generator/Assets/rels/Randomizer." + region + ".rel",
+                        Global.CombineRootPath("./Assets/rels/Randomizer." + region + ".rel"),
                         "mod.rel"
                     );
                     archive.CreateEntryFromFile(
-                        "/home/wwwdrehen/Randomizer-Web-Generator/Generator/Assets/rels/boot." + region + ".rel",
+                        Global.CombineRootPath("./Assets/rels/boot." + region + ".rel"),
                         "boot.rel"
                     );
 
@@ -721,6 +730,7 @@ namespace TPRandomizer
                             case GameRegion.WII_10_USA:
                             case GameRegion.WII_10_EU:
                             case GameRegion.WII_10_JP:
+                            case GameRegion.WII_12_USA:
                                 bootloaderAddr = "0x80005BF4:";
                                 jumpAddr = "0x80008644:";
                                 jumpInsr = "u32 0x4Bffd5b0";
@@ -733,7 +743,7 @@ namespace TPRandomizer
                         sw.WriteLine(jumpInsr);
                         sw.WriteLine(bootloaderAddr);
                         var bootloaderBytes = File.ReadAllBytes(
-                            "/home/wwwdrehen/Randomizer-Web-Generator/Generator/Assets/bootloader/" + region + ".bin"
+                            Global.CombineRootPath("./Assets/bootloader/" + region + ".bin")
                         );
                         var bootloaderHex = string.Join(
                             "",
@@ -904,6 +914,7 @@ namespace TPRandomizer
         public static List<Room> GeneratePlaythroughGraph(Room startingRoom)
         {
             List<Room> playthroughGraph = new();
+            List<Room> availableBaseRooms = new();
             Room availableRoom;
 
             int availableRooms = 1;
@@ -918,7 +929,14 @@ namespace TPRandomizer
             }
 
             startingRoom.Visited = true;
-            playthroughGraph.Add(startingRoom);
+            availableBaseRooms.Add(startingRoom);
+
+            // With sewers no longer a thing, the player starts with Ordon Portal (until we find a way to randomize it)
+            if (LogicFunctions.CanUse(Item.Shadow_Crystal) && LogicFunctions.CanUnlockOrdonMap())
+            {
+                availableRoom = Randomizer.Rooms.RoomDict["Ordon Spring"];
+                availableBaseRooms.Add(availableRoom);
+            }
             if (Randomizer.SSettings.openMap)
             {
                 if (Randomizer.SSettings.faronTwilightCleared)
@@ -926,12 +944,10 @@ namespace TPRandomizer
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["South Faron Woods"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
 
                         availableRoom = Randomizer.Rooms.RoomDict["North Faron Woods"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
                     }
                 }
 
@@ -940,16 +956,13 @@ namespace TPRandomizer
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Lower Kakariko Village"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
 
                         availableRoom = Randomizer.Rooms.RoomDict["Kakariko Gorge"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
 
                         availableRoom = Randomizer.Rooms.RoomDict["Death Mountain Volcano"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
                     }
                 }
 
@@ -958,16 +971,14 @@ namespace TPRandomizer
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Lake Hylia"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
 
                         availableRoom = Randomizer.Rooms.RoomDict["Outside Castle Town West"];
-                        playthroughGraph.Add(availableRoom);
+                        availableBaseRooms.Add(availableRoom);
                         availableRoom.Visited = true;
 
-                        availableRoom = Randomizer.Rooms.RoomDict["Zoras Throne Room"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableRoom = Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"];
+                        availableBaseRooms.Add(availableRoom);
                     }
                 }
 
@@ -976,8 +987,7 @@ namespace TPRandomizer
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
                     }
                 }
 
@@ -986,17 +996,22 @@ namespace TPRandomizer
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Sacred Grove Lower"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
+                        availableBaseRooms.Add(availableRoom);
                     }
                 }
+            }
+
+            foreach (Room roomToExplore in roomsToExplore)
+            {
+                roomToExplore.Visited = true;
             }
 
             // Build the world by parsing through each room, linking their neighbours, and setting the logic for the checks in the room to reflect the world.
             while (availableRooms > 0)
             {
                 availableRooms = 0;
-                roomsToExplore.Add(startingRoom);
+                roomsToExplore.AddRange(availableBaseRooms);
+                playthroughGraph.AddRange(availableBaseRooms);
                 foreach (KeyValuePair<string, Room> roomList in Randomizer.Rooms.RoomDict.ToList())
                 {
                     Room currentRoom = roomList.Value;
@@ -1895,6 +1910,7 @@ namespace TPRandomizer
                 case GameRegion.WII_10_USA:
                 case GameRegion.WII_10_EU:
                 case GameRegion.WII_10_JP:
+                case GameRegion.WII_12_USA:
                 {
                     files = System.IO.Directory.GetFiles(
                         Global.CombineRootPath("./Assets/CheckMetadata/Wii1.0/"),
