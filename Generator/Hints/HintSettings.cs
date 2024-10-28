@@ -1368,7 +1368,7 @@ namespace TPRandomizer.Hints.Settings
 
         private static string ResolveJsonPath(HintGenData genData)
         {
-            string basePath = Global.CombineRootPath("/home/wwwdrehen/Randomizer-Web-Generator/Generator/Assets/HintDistributions");
+            string basePath = Global.CombineRootPath("./Assets/HintDistributions");
 
             switch (genData.sSettings.hintDistribution)
             {
