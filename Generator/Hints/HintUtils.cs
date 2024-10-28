@@ -2,8 +2,8 @@ namespace TPRandomizer.Hints
 {
     using System;
     using System.Collections.Generic;
-    using TPRandomizer.Util;
     using SSettings.Enums;
+    using TPRandomizer.Util;
 
     public enum GoalEnum
     {
@@ -325,8 +325,14 @@ namespace TPRandomizer.Hints
                     & HintConstants.dungeonZonesToRequiredMaskMap[dungeonHintZoneName]
                 ) != 0;
         }
-         public static bool DungeonIsOptionalSpotId(SpotId spot)
+
+        public static bool DungeonIsOptionalSpotId(SpotId spot)
         {
+            // Hyrule castle is always required for now
+            if (spot == SpotId.Hyrule_Castle_Sign)
+            {
+                return false;
+            }
             return (
                     Randomizer.UnrequiredDungeons
                     & HintConstants.dungeonSpotIdToRequiredMaskMap[spot]
