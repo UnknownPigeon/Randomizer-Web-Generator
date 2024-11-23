@@ -554,7 +554,7 @@
         "Type": "Overworld",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Zoras Domain",
+            "SourceRoom": "Zoras Domain Snowpeak Entrance",
             "TargetRoom": "Snowpeak Climb Lower",
             "Stage": 51,
             "Room": 0,
@@ -566,7 +566,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "Snowpeak Climb Lower",
-            "TargetRoom": "Zoras Domain",
+            "TargetRoom": "Zoras Domain Snowpeak Entrance",
             "Stage": 50,
             "Room": 1,
             "Spawn": "06",

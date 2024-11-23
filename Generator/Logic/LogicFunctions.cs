@@ -66,105 +66,32 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanChangeTime()
         {
-            return CanUse(Item.Shadow_Crystal)
-                || Randomizer.Rooms.RoomDict["South Faron Woods"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["South Faron Woods Behind Gate"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["South Faron Woods Coros Ledge"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "South Faron Woods Owl Statue Area"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "South Faron Woods Above Owl Statue"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Mist Area Near Faron Woods Cave"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Mist Area Inside Mist"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Mist Area Under Owl Statue Chest"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Mist Area Near Owl Statue Chest"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Mist Area Center Stump"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Mist Area Outside Faron Mist Cave"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Mist Area Near North Faron Woods"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Lost Woods"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Lost Woods Lower Battle Arena"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Lost Woods Upper Battle Arena"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Sacred Grove Before Block"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Sacred Grove Upper"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Sacred Grove Lower"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Faron Field"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Faron Field Behind Boulder"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Kakariko Gorge"].ReachedByPlaythrough
-                //|| Randomizer.Rooms.RoomDict["Kakariko Gorge Cave Entrance"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Kakariko Gorge Behind Gate"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Death Mountain Near Kakariko"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Death Mountain Trail"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Death Mountain Outside Sumo Hall"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Death Mountain Elevator Lower"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Eldin Field"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Eldin Field Near Castle Town"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Eldin Field Lava Cave Ledge"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Eldin Field From Lava Cave Lower"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Eldin Field Grotto Platform"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Eldin Field Outside Hidden Village"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Lanayru Field"].ReachedByPlaythrough
-                //|| Randomizer.Rooms.RoomDict["Lanayru Field Cave Entrance"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Lanayru Field Behind Boulder"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Hyrule Field Near Spinner Rails"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Upper Zoras River"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Fishing Hole"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Zoras Domain"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Zoras Domain West Ledge"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Snowpeak Climb Lower"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Snowpeak Climb Upper"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Snowpeak Summit Lower"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Outside Castle Town West"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Outside Castle Town West Grotto Ledge"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town West"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town Center"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town East"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Castle Town Doctors Office Balcony"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Outside Castle Town East"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town South"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Outside Castle Town South"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Outside Castle Town South Inside Boulder"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Lake Hylia Bridge"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Lake Hylia Bridge Grotto Ledge"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Lake Hylia"].ReachedByPlaythrough
-                //|| Randomizer.Rooms.RoomDict["Lake Hylia Cave Entrance"].ReachedByPlaythrough
-                //|| Randomizer.Rooms.RoomDict["Lake Hylia Lakebed Temple Entrance"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Gerudo Desert"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Gerudo Desert Cave of Ordeals Plateau"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Gerudo Desert Basin"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Gerudo Desert North East Ledge"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict[
-                    "Gerudo Desert Outside Bulblin Camp"
-                ].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Bulblin Camp"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Mirror Chamber Upper"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Mirror Chamber Portal"].ReachedByPlaythrough;
+            if (CanUse(Item.Shadow_Crystal))
+            {
+                foreach (string warpStage in RoomFunctions.timeChangeStages)
+                {
+                    if (Randomizer.Rooms.RoomDict[warpStage].ReachedByPlaythrough)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public static bool CanWarp()
+        {
+            if (CanUse(Item.Shadow_Crystal))
+            {
+                foreach (string warpStage in RoomFunctions.WarpableStages)
+                {
+                    if (Randomizer.Rooms.RoomDict[warpStage].ReachedByPlaythrough)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         /// <summary>
@@ -1921,10 +1848,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool canCompleteForestTemple()
         {
-            return (
-                Randomizer.Rooms.RoomDict["Forest Temple Boss Room"].ReachedByPlaythrough
-                && CanDefeatDiababa()
-            );
+            return CanUse(Item.Diababa_Defeated);
         }
 
         /// <summary>
@@ -1932,10 +1856,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool canCompleteGoronMines()
         {
-            return (
-                Randomizer.Rooms.RoomDict["Goron Mines Boss Room"].ReachedByPlaythrough
-                && CanDefeatFyrus()
-            );
+            return CanUse(Item.Fyrus_Defeated);
         }
 
         /// <summary>
@@ -1943,10 +1864,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool canCompleteLakebedTemple()
         {
-            return (
-                Randomizer.Rooms.RoomDict["Lakebed Temple Boss Room"].ReachedByPlaythrough
-                && CanDefeatMorpheel()
-            );
+            return CanUse(Item.Morpheel_Defeated);
         }
 
         /// <summary>
@@ -1954,10 +1872,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool canCompleteArbitersGrounds()
         {
-            return (
-                Randomizer.Rooms.RoomDict["Arbiters Grounds Boss Room"].ReachedByPlaythrough
-                && CanDefeatStallord()
-            );
+            return CanUse(Item.Stallord_Defeated);
         }
 
         /// <summary>
@@ -1965,10 +1880,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool canCompleteSnowpeakRuins()
         {
-            return (
-                Randomizer.Rooms.RoomDict["Snowpeak Ruins Boss Room"].ReachedByPlaythrough
-                && CanDefeatBlizzeta()
-            );
+            return CanUse(Item.Blizzeta_Defeated);
         }
 
         /// <summary>
@@ -1976,10 +1888,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool canCompleteTempleofTime()
         {
-            return (
-                Randomizer.Rooms.RoomDict["Temple of Time Boss Room"].ReachedByPlaythrough
-                && CanDefeatArmogohma()
-            );
+            return CanUse(Item.Armogohma_Defeated);
         }
 
         /// <summary>
@@ -1987,10 +1896,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool canCompleteCityinTheSky()
         {
-            return (
-                Randomizer.Rooms.RoomDict["City in The Sky Boss Room"].ReachedByPlaythrough
-                && CanDefeatArgorok()
-            );
+            return CanUse(Item.Argorok_Defeated);
         }
 
         /// <summary>
@@ -1998,10 +1904,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool canCompletePalaceofTwilight()
         {
-            return (
-                Randomizer.Rooms.RoomDict["Palace of Twilight Boss Room"].ReachedByPlaythrough
-                && CanDefeatZant()
-            );
+            return CanUse(Item.Zant_Defeated);
         }
 
         /// <summary>
@@ -2036,14 +1939,100 @@ namespace TPRandomizer
             return false;
         }
 
-        public static bool CanUnlockOrdonMap()
+        public static bool CanUnlockOrdonaMap()
         {
-            return (
-                    Randomizer.Rooms.RoomDict["Ordon Village"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Ordon Ranch"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Ordon Spring"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Outside Links House"].ReachedByPlaythrough
-                ) || Randomizer.SSettings.openMap;
+            if (Randomizer.SSettings.openMap)
+            {
+                return true;
+            }
+            foreach (string mapRoom in RoomFunctions.OrdonaMapRooms)
+            {
+                if (Randomizer.Rooms.RoomDict[mapRoom].ReachedByPlaythrough)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool CanUnlockFaronMap()
+        {
+            if (Randomizer.SSettings.openMap)
+            {
+                return true;
+            }
+            foreach (string mapRoom in RoomFunctions.FaronMapRooms)
+            {
+                if (Randomizer.Rooms.RoomDict[mapRoom].ReachedByPlaythrough)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool CanUnlockEldinMap()
+        {
+            if (Randomizer.SSettings.openMap)
+            {
+                return true;
+            }
+            foreach (string mapRoom in RoomFunctions.EldinMapRooms)
+            {
+                if (Randomizer.Rooms.RoomDict[mapRoom].ReachedByPlaythrough)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool CanUnlockLanayruMap()
+        {
+            if (Randomizer.SSettings.openMap)
+            {
+                return true;
+            }
+            foreach (string mapRoom in RoomFunctions.LanayruMapRooms)
+            {
+                if (Randomizer.Rooms.RoomDict[mapRoom].ReachedByPlaythrough)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool CanUnlockSnowpeakMap()
+        {
+            if (Randomizer.SSettings.openMap || Randomizer.SSettings.skipSnowpeakEntrance)
+            {
+                return true;
+            }
+            foreach (string mapRoom in RoomFunctions.SnowpeakMapRooms)
+            {
+                if (Randomizer.Rooms.RoomDict[mapRoom].ReachedByPlaythrough)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool CanUnlockGerudoMap()
+        {
+            if (Randomizer.SSettings.openMap)
+            {
+                return true;
+            }
+            foreach (string mapRoom in RoomFunctions.GerudoMapRooms)
+            {
+                if (Randomizer.Rooms.RoomDict[mapRoom].ReachedByPlaythrough)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>

@@ -82,7 +82,8 @@
     "Checks":
     [
         "Eldin Spring Underwater Chest",
-        "Kakariko Village Bomb Rock Spire Heart Piece"
+        "Kakariko Village Bomb Rock Spire Heart Piece",
+        "Kakariko Village Portal"
     ],
     "Region": "Kakariko Village"
   },
@@ -151,8 +152,8 @@
     [
       {
         "ConnectedArea": "Lower Kakariko Village",
-        "Requirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy) or CanCompleteEldinTwilight", // or access to epona
-        "GlitchedRequirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy) or CanCompleteEldinTwilight" // or access to epona
+        "Requirements": "Gate_Keys or CanCompleteEldinTwilight", // or access to epona
+        "GlitchedRequirements": "Gate_Keys or CanCompleteEldinTwilight" // or access to epona
       },
       {
         "ConnectedArea": "Eldin Field",
@@ -551,7 +552,7 @@
       },
       {
         "ConnectedArea": "Lake Hylia",
-        "Requirements": "(Gate_Keys or (Setting.smallKeySettings equals Keysy)) and (Iron_Boots or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight",
+        "Requirements": "Gate_Keys and (Iron_Boots or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(HasHeavyMod and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight) or ((HasHeavyMod or Zora_Armor) and ((hasBombs and (HasSword or Spinner)) or CanDoLJA or CanDoMoonBoots))"
       }
     ],

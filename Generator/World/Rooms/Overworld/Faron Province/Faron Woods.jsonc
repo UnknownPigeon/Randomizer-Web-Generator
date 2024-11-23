@@ -33,7 +33,8 @@
     ],
     "Checks":
     [
-        "Coro Bottle"
+        "Coro Bottle",
+        "South Faron Portal"
     ],
     "Region": "Faron Woods"
   },
@@ -401,7 +402,8 @@
     ],
     "Checks": [
         "North Faron Woods Deku Baba Chest",
-        "Faron Woods Golden Wolf"
+        "Faron Woods Golden Wolf", 
+        "North Faron Portal"
     ],
     "Region": "Faron Woods"
   }

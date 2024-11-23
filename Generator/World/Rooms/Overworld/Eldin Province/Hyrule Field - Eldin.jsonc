@@ -37,7 +37,8 @@
         "Kakariko Gorge Owl Statue Sky Character",
         "Kakariko Gorge Male Pill Bug",
         "Kakariko Gorge Female Pill Bug",
-        "Kakariko Gorge Poe"
+        "Kakariko Gorge Poe",
+        "Kakariko Gorge Portal"
     ],
     "Region": "Hyrule Field - Eldin Province"
   },
@@ -65,8 +66,8 @@
     [
       {
         "ConnectedArea": "Kakariko Gorge",
-        "Requirements": "Shadow_Crystal or Gate_Keys or (Setting.smallKeySettings equals Keysy)", // or acccess to epona
-        "GlitchedRequirements": "Shadow_Crystal or Gate_Keys or (Setting.smallKeySettings equals Keysy)" // or access to epona
+        "Requirements": "Shadow_Crystal or Gate_Keys", // or acccess to epona
+        "GlitchedRequirements": "Shadow_Crystal or Gate_Keys" // or access to epona
       },
       {
         "ConnectedArea": "Lower Kakariko Village",
@@ -165,7 +166,8 @@
         "Eldin Field Male Grasshopper",
         "Eldin Field Female Grasshopper",
         "Bridge of Eldin Male Phasmid",
-        "Bridge of Eldin Female Phasmid"
+        "Bridge of Eldin Female Phasmid",
+        "Bridge of Eldin Portal"
     ],
     "Region": "Hyrule Field - Eldin Province"
   },

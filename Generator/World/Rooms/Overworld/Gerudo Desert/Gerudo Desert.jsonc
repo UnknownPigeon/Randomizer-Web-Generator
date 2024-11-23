@@ -51,7 +51,8 @@
     ],
     "Checks":
     [
-        "Gerudo Desert Poe Above Cave of Ordeals"
+        "Gerudo Desert Poe Above Cave of Ordeals",
+        "Gerudo Desert Portal"
     ],
     "Region": "Gerudo Desert"
   },
@@ -190,8 +191,8 @@
       },
       {
         "ConnectedArea": "Outside Arbiters Grounds",
-        "Requirements": "((Gerudo_Desert_Bulblin_Camp_Key or (Setting.smallKeySettings equals Keysy)) and CanDefeatKingBulblinDesert) or (Setting.skipArbitersEntrance equals True)",
-        "GlitchedRequirements": "(CanDefeatKingBulblinDesert and (Gerudo_Desert_Bulblin_Camp_Key or ((CanDoMapGlitch and HasSword or CanDoLJA) or (Setting.smallKeySettings equals Keysy)))) or (Setting.skipArbitersEntrance equals True)"
+        "Requirements": "(Gerudo_Desert_Bulblin_Camp_Key and CanDefeatKingBulblinDesert) or (Setting.skipArbitersEntrance equals True)",
+        "GlitchedRequirements": "(CanDefeatKingBulblinDesert and (Gerudo_Desert_Bulblin_Camp_Key or ((CanDoMapGlitch and HasSword or CanDoLJA)))) or (Setting.skipArbitersEntrance equals True)"
       }
     ],
     "Checks":
@@ -259,7 +260,10 @@
         "GlitchedRequirements": "CanDefeatShadowBeast and ((Setting.palaceRequirements equals Open) or ((Setting.palaceRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.palaceRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 4)) or ((Setting.palaceRequirements equals Vanilla) and canCompleteCityinTheSky))"
       }
     ],
-    "Checks": [""],
+    "Checks": 
+    [
+      "Mirror Chamber Portal"
+    ],
     "Region": "Gerudo Desert"
   },
   {

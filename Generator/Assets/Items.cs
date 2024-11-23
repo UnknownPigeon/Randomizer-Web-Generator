@@ -8,7 +8,7 @@ namespace TPRandomizer
     using TPRandomizer.SSettings.Enums;
 
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum Item : byte
+    public enum Item
     {
         Recovery_Heart = 0x00,
         Green_Rupee = 0x01,
@@ -286,7 +286,34 @@ namespace TPRandomizer
         /*Key?	=	0xFC,*/
         Goron_Mines_Big_Key = 0xFD,
         Coro_Key = 0xFE,
-        Gives_Vanilla = 0xFF
+        Gives_Vanilla = 0xFF,
+
+        Ordon_Portal,
+        South_Faron_Portal,
+        North_Faron_Portal,
+        Kakariko_Gorge_Portal,
+        Kakariko_Village_Portal,
+        Death_Mountain_Portal,
+        Castle_Town_Portal,
+        Zoras_Domain_Portal,
+        Lake_Hylia_Portal,
+        Gerudo_Desert_Portal,
+        Mirror_Chamber_Portal,
+        Snowpeak_Portal,
+        Sacred_Grove_Portal,
+        Bridge_of_Eldin_Portal,
+        Upper_Zoras_River_Portal,
+
+        // Event items. These are not items that the player can "collect" but are used to specify major events that affect logical progression.
+        Diababa_Defeated,
+        Fyrus_Defeated,
+        Morpheel_Defeated,
+        Stallord_Defeated,
+        Blizzeta_Defeated,
+        Armogohma_Defeated,
+        Argorok_Defeated,
+        Zant_Defeated,
+        Ganondorf_Defeated,
     };
 
     public class ItemFunctions
@@ -811,6 +838,8 @@ namespace TPRandomizer
             else if (parseSetting.smallKeySettings == SmallKeySettings.Keysy)
             {
                 this.RandomizedImportantItems.Remove(Item.Gate_Keys);
+                parseSetting.startingItems.Add(Item.Gate_Keys);
+                parseSetting.startingItems.AddRange(this.RegionSmallKeys);
             }
 
             // Check Big Key Settings before adding them to the pool
@@ -825,6 +854,10 @@ namespace TPRandomizer
             {
                 this.RandomizedImportantItems.AddRange(this.DungeonBigKeys);
             }
+            else if (parseSetting.bigKeySettings == BigKeySettings.Keysy)
+            {
+                parseSetting.startingItems.AddRange(this.DungeonBigKeys);
+            }
 
             // Check Map and Compass settings before adding to pool
             if (
@@ -838,7 +871,10 @@ namespace TPRandomizer
             {
                 this.RandomizedImportantItems.AddRange(this.DungeonMapsAndCompasses);
             }
-            
+            else if (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Start_With)
+            {
+                parseSetting.startingItems.AddRange(this.DungeonMapsAndCompasses);
+            }
 
             // Modifying Item Pool based on ice trap settings
             // If we have Ice Trap Mayhem or Nightmare, all extra junk items are replaced with Foolish Items
@@ -1051,6 +1087,38 @@ namespace TPRandomizer
             if (parseSetting.skipPrologue)
             {
                 RemoveItem(Item.North_Faron_Woods_Gate_Key);
+            }
+
+            // Handle portals
+            parseSetting.startingItems.Add(Item.Ordon_Portal);
+            if (parseSetting.faronTwilightCleared)
+            {
+                parseSetting.startingItems.Add(Item.South_Faron_Portal);
+                parseSetting.startingItems.Add(Item.North_Faron_Portal);
+            }
+
+            if (parseSetting.eldinTwilightCleared)
+            {
+                parseSetting.startingItems.Add(Item.Kakariko_Gorge_Portal);
+                parseSetting.startingItems.Add(Item.Kakariko_Village_Portal);
+                parseSetting.startingItems.Add(Item.Death_Mountain_Portal);
+            }
+
+            if (parseSetting.lanayruTwilightCleared)
+            {
+                parseSetting.startingItems.Add(Item.Zoras_Domain_Portal);
+                parseSetting.startingItems.Add(Item.Lake_Hylia_Portal);
+                parseSetting.startingItems.Add(Item.Castle_Town_Portal);
+            }
+
+            if (parseSetting.skipSnowpeakEntrance)
+            {
+                parseSetting.startingItems.Add(Item.Snowpeak_Portal);
+            }
+
+            if (parseSetting.skipGroveEntrance)
+            {
+                parseSetting.startingItems.Add(Item.Sacred_Grove_Portal);
             }
 
             // Remove the bulblin camp key from the item pool if we have the setting to skip Bulblin Camp enabled.

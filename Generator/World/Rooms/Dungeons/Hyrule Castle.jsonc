@@ -9,7 +9,10 @@
                 "GlitchedRequirements": "true"
             }
         ],
-        "Checks": [""], 
+        "Checks": 
+        [
+            "Hyrule Castle Ganondorf"
+        ], 
         "Region": "Ganondorf"
     },
     {
@@ -23,8 +26,8 @@
             },
             {
               "ConnectedArea": "Hyrule Castle Main Hall",
-              "Requirements": "((Hyrule_Castle_Small_Key, 1) or (Setting.smallKeySettings equals Keysy) or  (Setting.skipHc equals True))",
-              "GlitchedRequirements": "((Hyrule_Castle_Small_Key, 1) or (Setting.smallKeySettings equals Keysy))"
+              "Requirements": "((Hyrule_Castle_Small_Key, 1)  or  (Setting.skipHc equals True))",
+              "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 1)"
             },
             {
               "ConnectedArea": "Hyrule Castle Outside West Wing",
@@ -180,8 +183,8 @@
         },
         {
             "ConnectedArea": "Hyrule Castle Tower Climb",
-            "Requirements": "((Hyrule_Castle_Small_Key, 2) or (Setting.smallKeySettings equals Keysy) or  (Setting.skipHc equals True))",
-            "GlitchedRequirements": "((Hyrule_Castle_Small_Key, 2) or (Setting.smallKeySettings equals Keysy))"
+            "Requirements": "((Hyrule_Castle_Small_Key, 2) or  (Setting.skipHc equals True))",
+            "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 2)"
         }
         ],
         "Checks": 
@@ -202,13 +205,13 @@
             },
             {
               "ConnectedArea": "Hyrule Castle Treasure Room",
-              "Requirements": "(((((Hyrule_Castle_Small_Key, 3) or (Setting.smallKeySettings equals Keysy)) and Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos)) or (Setting.skipHc equals True))",
-              "GlitchedRequirements": "((Hyrule_Castle_Small_Key, 3) or (Setting.smallKeySettings equals Keysy)) and (Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos"
+              "Requirements": "((Hyrule_Castle_Small_Key, 3) or Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos) or (Setting.skipHc equals True)",
+              "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 3) and (Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos"
             },
             {
               "ConnectedArea": "Ganondorf Castle",
-              "Requirements": "Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos and (Hyrule_Castle_Big_Key or (Setting.bigKeySettings equals Keysy)) and CanDefeatGanondorf",
-              "GlitchedRequirements": "(Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos and (Hyrule_Castle_Big_Key or (Setting.bigKeySettings equals Keysy)) and CanDefeatGanondorf"
+              "Requirements": "(Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key) or (Setting.skipHc equals True)",
+              "GlitchedRequirements": "(Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key"
             }
           ],
           "Checks": [""],

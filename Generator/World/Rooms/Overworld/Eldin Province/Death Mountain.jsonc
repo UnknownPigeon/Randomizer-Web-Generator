@@ -63,9 +63,12 @@
         "ConnectedArea": "Death Mountain Hot Spring",
         "Requirements": "CanDefeatGoron",
         "GlitchedRequirements": "CanDefeatGoron"
-      },
+      }
     ],
-    "Checks": [""],
+    "Checks": 
+    [
+      "Death Mountain Portal"
+    ],
     "Region": "Death Mountain"
   },
   {
@@ -81,7 +84,7 @@
         "ConnectedArea": "Death Mountain Elevator Lower",
         "Requirements": "Room.Death_Mountain_Elevator_Lower or (Setting.goronMinesEntrance equals Open)",
         "GlitchedRequirements": "Room.Death_Mountain_Elevator_Lower or (Setting.goronMinesEntrance equals Open)"
-      },
+      }
     ],
     "Checks": [""],
     "Region": "Death Mountain"

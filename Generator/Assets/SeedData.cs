@@ -267,7 +267,7 @@ namespace TPRandomizer.Assets
                 randomizerSettings.lanayruTwilightCleared,
                 randomizerSettings.eldinTwilightCleared,
                 randomizerSettings.faronTwilightCleared,
-                false,
+                randomizerSettings.skipPrologue,
                 false,
             };
             for (int i = 0; i < mapFlags.GetLength(0); i++)
@@ -293,7 +293,6 @@ namespace TPRandomizer.Assets
                     break;
                 }
             }
-            seedHeader.Add(Converter.GcByte((int)randomizerSettings.startingToD));
             seedHeader.Add(Converter.GcByte((int)ItemFunctions.ToTSwordRequirements[(int)randomizerSettings.totEntrance]));
 
             while (seedHeader.Count < SeedHeaderSize)
@@ -1303,6 +1302,15 @@ namespace TPRandomizer.Assets
                     1
                 ), // Move the spawn point from Outside AG -> camp to not be between gates.
 
+                new ARCReplacement(
+                    "1B4",
+                    getStartingTime() + "0044",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    1
+                ), // Set the time of day that is to be set 
+
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
                 new ARCReplacement(
@@ -1810,6 +1818,30 @@ namespace TPRandomizer.Assets
             SeedHeaderRaw.fanfareInfoNumEntries = (byte)fanfareReplacementArray.Count;
 
             return data;
+        }
+
+        private static string getStartingTime()
+        {
+            string time = "203F"; // By default, starting time is in the evening
+            switch(Randomizer.SSettings.startingToD)
+            {
+                case StartingToD.Morning:
+                {
+                    time = "700F"; // Set time to 105
+                    break;
+                }
+                case StartingToD.Noon:
+                {
+                    time = "C00F"; // Set time to 180
+                    break;
+                }
+                case StartingToD.Night:
+                {
+                    time = "000F"; // Set time to 0
+                    break;
+                }
+            }
+            return time;
         }
 
         private static readonly int[,] IncompatibleReplacements = new int[,]

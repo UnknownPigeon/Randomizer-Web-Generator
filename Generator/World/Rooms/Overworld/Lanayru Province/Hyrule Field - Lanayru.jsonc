@@ -204,7 +204,8 @@
         "West Hyrule Field Male Butterfly",
         "West Hyrule Field Female Butterfly",
         "Hyrule Field Amphitheater Poe",
-        "West Hyrule Field Golden Wolf"
+        "West Hyrule Field Golden Wolf",
+        "Castle Town Portal"
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -358,8 +359,8 @@
       },
       {
         "ConnectedArea": "Faron Field",
-        "Requirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy)",
-        "GlitchedRequirements": "(Gate_Keys or (Setting.smallKeySettings equals Keysy)) or Shadow_Crystal"
+        "Requirements": "Gate_Keys",
+        "GlitchedRequirements": "Gate_Keys or Shadow_Crystal"
       }
     ],
     "Checks":

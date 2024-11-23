@@ -1626,7 +1626,7 @@ window.tpr.checkData = {
     category: ['Cutscene', 'Dungeon', 'Palace of Twilight', 'REL'],
     itemId: 'Progressive_Sword',
   },
-  'Palace of Twilight East Wing First Room East Alcove': {
+  'Palace of Twilight East Wing First Room East Alcove Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
@@ -1634,7 +1634,7 @@ window.tpr.checkData = {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Palace of Twilight East Wing First Room West Alcove': {
+  'Palace of Twilight East Wing First Room West Alcove Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Purple_Rupee',
   },

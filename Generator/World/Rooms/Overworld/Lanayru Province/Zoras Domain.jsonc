@@ -27,7 +27,8 @@
     "Checks":
     [
         "Upper Zoras River Female Dragonfly",
-        "Upper Zoras River Poe"
+        "Upper Zoras River Poe",
+        "Upper Zoras River Portal"
     ],
     "Region": "Zoras Domain"
   },
@@ -108,7 +109,7 @@
         "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
       },
       {
-        "ConnectedArea": "Snowpeak Climb Lower",
+        "ConnectedArea": "Zoras Domain Snowpeak Entrance",
         "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight and Ball_and_Chain) or CanCompleteLanayruTwilight)",
         "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight and Ball_and_Chain) or CanCompleteLanayruTwilight)"
       }
@@ -121,6 +122,24 @@
         "Zoras Domain Mother and Child Isle Poe",
         "Zoras Domain Waterfall Poe"
     ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Zoras Domain Snowpeak Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Zoras Domain",
+        "Requirements": "Ball_and_Chain or CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Ball_and_Chain or CanCompleteLanayruTwilight"
+      },
+      {
+        "ConnectedArea": "Snowpeak Climb Lower",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+    ],
+    "Checks": [""],
     "Region": "Zoras Domain"
   },
   {
@@ -160,7 +179,8 @@
     [
         "Zoras Domain Light All Torches Chest",
         "Zoras Domain Extinguish All Torches Chest",
-        "Zoras Domain Underwater Goron"
+        "Zoras Domain Underwater Goron",
+        "Zoras Domain Portal"
     ],
     "Region": "Zoras Domain"
   },

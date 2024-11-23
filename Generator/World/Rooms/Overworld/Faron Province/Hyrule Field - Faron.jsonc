@@ -20,8 +20,8 @@
       },
       {
         "ConnectedArea": "Lake Hylia Bridge",
-        "Requirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy)",
-        "GlitchedRequirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy) or Shadow_Crystal"
+        "Requirements": "Gate_Keys",
+        "GlitchedRequirements": "Gate_Keys or Shadow_Crystal"
       },
       {
         "ConnectedArea": "Faron Field Corner Grotto",

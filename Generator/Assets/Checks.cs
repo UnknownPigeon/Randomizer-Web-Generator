@@ -297,9 +297,9 @@ namespace TPRandomizer
                 "Palace of Twilight Central Outdoor Chest",
                 "Palace of Twilight Central Tower Chest",
                 "Palace of Twilight Collect Both Sols",
-                "Palace of Twilight East Wing First Room East Alcove",
+                "Palace of Twilight East Wing First Room East Alcove Chest",
                 "Palace of Twilight East Wing First Room North Small Chest",
-                "Palace of Twilight East Wing First Room West Alcove",
+                "Palace of Twilight East Wing First Room West Alcove Chest",
                 "Palace of Twilight East Wing First Room Zant Head Chest",
                 "Palace of Twilight East Wing Second Room Northeast Chest",
                 "Palace of Twilight East Wing Second Room Northwest Chest",
@@ -311,6 +311,40 @@ namespace TPRandomizer
                 "Palace of Twilight West Wing Second Room Lower South Chest",
                 "Palace of Twilight West Wing Second Room Southeast Chest",
                 "Palace of Twilight Zant Heart Container",
+            };
+
+        // All of these checks are forced to be vanilla until a way to randomize them is figured out or if they are not meant to be randomized for the sake of events and the like.
+        public static List<string> vanillaChecks =
+            new()
+            {
+                "Renados Letter",
+                "Telma Invoice",
+                "Wooden Statue",
+                "Ilia Charm",
+                "Ilia Memory Reward",
+                "South Faron Portal",
+                "North Faron Portal",
+                "Sacred Grove Portal",
+                "Kakariko Gorge Portal",
+                "Kakariko Village Portal",
+                "Death Mountain Portal",
+                "Bridge of Eldin Portal",
+                "Castle Town Portal",
+                "Zoras Domain Portal",
+                "Lake Hylia Portal",
+                "Gerudo Desert Portal",
+                "Snowpeak Portal",
+                "Mirror Chamber Portal",
+                "Upper Zoras River Portal",
+                "Forest Temple Diababa",
+                "Goron Mines Fyrus",
+                "Lakebed Temple Morpheel",
+                "Arbiters Grounds Stallord",
+                "Snowpeak Ruins Blizzeta",
+                "Temple of Time Armogohma",
+                "City in The Sky Argorok",
+                "Palace of Twilight Zant",
+                "Hyrule Castle Ganondorf"
             };
 
         /// <summary>
@@ -355,6 +389,7 @@ namespace TPRandomizer
                     currentCheck.checkStatus = "Vanilla";
                 }
 
+                // Some NPCs give dungeon items (Yeta give dungeon map, Elders give key shards) so we need to account for the possibility of conflicting settings.
                 if (!parseSetting.shuffleNpcItems)
                 {
                     if (currentCheck.checkCategory.Contains("Npc"))
@@ -486,27 +521,14 @@ namespace TPRandomizer
                 }
             }
 
-            // Vanilla until all of the flag issues are figured out.
-            Randomizer.Checks.CheckDict["Renados Letter"].checkStatus = "Vanilla";
-            Randomizer.Checks.CheckDict["Telma Invoice"].checkStatus = "Vanilla";
-            Randomizer.Checks.CheckDict["Wooden Statue"].checkStatus = "Vanilla";
-            Randomizer.Checks.CheckDict["Ilia Charm"].checkStatus = "Vanilla";
-            Randomizer.Checks.CheckDict["Ilia Memory Reward"].checkStatus = "Vanilla";
-            Randomizer.Items.RandomizedImportantItems.Remove(
-                Randomizer.Checks.CheckDict["Renados Letter"].itemId
-            );
-            Randomizer.Items.RandomizedImportantItems.Remove(
-                Randomizer.Checks.CheckDict["Telma Invoice"].itemId
-            );
-            Randomizer.Items.RandomizedImportantItems.Remove(
-                Randomizer.Checks.CheckDict["Wooden Statue"].itemId
-            );
-            Randomizer.Items.RandomizedImportantItems.Remove(
-                Randomizer.Checks.CheckDict["Ilia Charm"].itemId
-            );
-            Randomizer.Items.RandomizedImportantItems.Remove(
-                Randomizer.Checks.CheckDict["Ilia Memory Reward"].itemId
-            );
+            // set up the vanilla checks
+            foreach (string vanillaCheck in vanillaChecks)
+            {
+                Randomizer.Checks.CheckDict[vanillaCheck].checkStatus = "Vanilla";
+                Randomizer.Items.RandomizedImportantItems.Remove(
+                    Randomizer.Checks.CheckDict[vanillaCheck].itemId
+                );
+            }
 
             foreach ((string checkName, Item item) in parseSetting.plandoChecks)
             {

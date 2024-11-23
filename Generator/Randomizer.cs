@@ -932,70 +932,76 @@ namespace TPRandomizer
             availableBaseRooms.Add(startingRoom);
 
             // With sewers no longer a thing, the player starts with Ordon Portal (until we find a way to randomize it)
-            if (LogicFunctions.CanUse(Item.Shadow_Crystal) && LogicFunctions.CanUnlockOrdonMap())
+            if (LogicFunctions.CanWarp())
             {
-                availableRoom = Randomizer.Rooms.RoomDict["Ordon Spring"];
-                availableBaseRooms.Add(availableRoom);
-            }
-            if (Randomizer.SSettings.openMap)
-            {
-                if (Randomizer.SSettings.faronTwilightCleared)
+                if (LogicFunctions.CanUnlockOrdonaMap())
                 {
-                    if (LogicFunctions.CanUse(Item.Shadow_Crystal))
+                    availableRoom = Randomizer.Rooms.RoomDict["Ordon Spring"];
+                    availableBaseRooms.Add(availableRoom);
+                }
+
+                if (LogicFunctions.CanUnlockFaronMap())
+                {
+                    if (LogicFunctions.CanUse(Item.South_Faron_Portal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["South Faron Woods"];
                         availableBaseRooms.Add(availableRoom);
-
+                    }
+                    if (LogicFunctions.CanUse(Item.North_Faron_Portal))
+                    {
                         availableRoom = Randomizer.Rooms.RoomDict["North Faron Woods"];
+                        availableBaseRooms.Add(availableRoom);
+                    }
+                    if (LogicFunctions.CanUse(Item.Sacred_Grove_Portal))
+                    {
+                        availableRoom = Randomizer.Rooms.RoomDict["Sacred Grove Lower"];
                         availableBaseRooms.Add(availableRoom);
                     }
                 }
 
-                if (Randomizer.SSettings.eldinTwilightCleared)
+                if (LogicFunctions.CanUnlockEldinMap())
                 {
-                    if (LogicFunctions.CanUse(Item.Shadow_Crystal))
+                    if (LogicFunctions.CanUse(Item.Kakariko_Village_Portal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Lower Kakariko Village"];
                         availableBaseRooms.Add(availableRoom);
-
+                    }
+                    if (LogicFunctions.CanUse(Item.Kakariko_Gorge_Portal))
+                    {
                         availableRoom = Randomizer.Rooms.RoomDict["Kakariko Gorge"];
                         availableBaseRooms.Add(availableRoom);
-
+                    }
+                    if (LogicFunctions.CanUse(Item.Death_Mountain_Portal))
+                    {
                         availableRoom = Randomizer.Rooms.RoomDict["Death Mountain Volcano"];
                         availableBaseRooms.Add(availableRoom);
                     }
                 }
 
-                if (Randomizer.SSettings.lanayruTwilightCleared)
+                if (LogicFunctions.CanUnlockLanayruMap())
                 {
-                    if (LogicFunctions.CanUse(Item.Shadow_Crystal))
+                    if (LogicFunctions.CanUse(Item.Lake_Hylia_Portal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Lake Hylia"];
                         availableBaseRooms.Add(availableRoom);
-
+                    }
+                    if (LogicFunctions.CanUse(Item.Castle_Town_Portal))
+                    {
                         availableRoom = Randomizer.Rooms.RoomDict["Outside Castle Town West"];
                         availableBaseRooms.Add(availableRoom);
-                        availableRoom.Visited = true;
-
+                    }
+                    if (LogicFunctions.CanUse(Item.Zoras_Domain_Portal))
+                    {
                         availableRoom = Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"];
                         availableBaseRooms.Add(availableRoom);
                     }
                 }
 
-                if (Randomizer.SSettings.skipSnowpeakEntrance)
+                if (LogicFunctions.CanUnlockSnowpeakMap())
                 {
-                    if (LogicFunctions.CanUse(Item.Shadow_Crystal))
+                    if (LogicFunctions.CanUse(Item.Snowpeak_Portal))
                     {
                         availableRoom = Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                }
-
-                if (Randomizer.SSettings.skipGroveEntrance)
-                {
-                    if (LogicFunctions.CanUse(Item.Shadow_Crystal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Sacred Grove Lower"];
                         availableBaseRooms.Add(availableRoom);
                     }
                 }
