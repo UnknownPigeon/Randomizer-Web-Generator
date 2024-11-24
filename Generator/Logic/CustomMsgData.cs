@@ -116,7 +116,7 @@ namespace TPRandomizer
 
         public static CustomMsgData Decode(
             SharedSettings sSettings,
-            Dictionary<int, byte> itemPlacements,
+            Dictionary<int, int> itemPlacements,
             string sixCharString
         )
         {

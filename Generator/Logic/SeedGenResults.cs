@@ -27,7 +27,7 @@ namespace TPRandomizer
         // output
         public string playthroughName { get; set; }
         public string wiiPlaythroughName { get; set; }
-        public Dictionary<int, byte> itemPlacements { get; }
+        public Dictionary<int, int> itemPlacements { get; }
         public byte requiredDungeons { get; set; }
         public byte unrequiredDungeons { get; set; }
         public List<List<KeyValuePair<int, Item>>> spheres { get; }
@@ -168,8 +168,8 @@ namespace TPRandomizer
             int smallest = checkNumIdToItemId.First().Key;
             int largest = checkNumIdToItemId.Last().Key;
 
-            result += SettingsEncoder.EncodeNumAsBits(smallest, 9);
-            result += SettingsEncoder.EncodeNumAsBits(largest, 9);
+            result += SettingsEncoder.EncodeNumAsBits(smallest, 10);
+            result += SettingsEncoder.EncodeNumAsBits(largest, 10);
 
             string itemBits = "";
 
@@ -178,7 +178,7 @@ namespace TPRandomizer
                 if (checkNumIdToItemId.ContainsKey(i))
                 {
                     result += "1";
-                    itemBits += SettingsEncoder.EncodeNumAsBits(checkNumIdToItemId[i], 8);
+                    itemBits += SettingsEncoder.EncodeNumAsBits(checkNumIdToItemId[i], 9);
                 }
                 else
                 {
@@ -191,13 +191,13 @@ namespace TPRandomizer
             return SettingsEncoder.EncodeAs6BitString(result);
         }
 
-        private Dictionary<int, byte> DecodeItemPlacements(string sixCharString)
+        private Dictionary<int, int> DecodeItemPlacements(string sixCharString)
         {
             BitsProcessor processor = new BitsProcessor(
                 SettingsEncoder.DecodeToBitString(sixCharString)
             );
 
-            Dictionary<int, byte> checkNumIdToItemId = new();
+            Dictionary<int, int> checkNumIdToItemId = new();
 
             UInt16 version = processor.NextVlq16();
 
@@ -206,8 +206,8 @@ namespace TPRandomizer
                 return checkNumIdToItemId;
             }
 
-            int smallest = processor.NextInt(9);
-            int largest = processor.NextInt(9);
+            int smallest = processor.NextInt(10);
+            int largest = processor.NextInt(10);
 
             List<int> checkIdsWithItemIds = new();
 
@@ -222,7 +222,7 @@ namespace TPRandomizer
             for (int i = 0; i < checkIdsWithItemIds.Count; i++)
             {
                 int checkId = checkIdsWithItemIds[i];
-                byte itemId = processor.NextByte();
+                int itemId = processor.NextInt(9);
                 checkNumIdToItemId[checkId] = itemId;
             }
 
@@ -235,7 +235,7 @@ namespace TPRandomizer
             {
                 int checkId = CheckIdClass.GetCheckIdNum(pair.Key);
                 if (!checkNumIdToItemId.ContainsKey(checkId))
-                    checkNumIdToItemId[checkId] = (byte)pair.Value.itemId;
+                    checkNumIdToItemId[checkId] = (int)pair.Value.itemId;
             }
             // Ensure we have a mapping for all checkIds.
             int currCheckId = 0;
@@ -265,7 +265,7 @@ namespace TPRandomizer
                     foreach (KeyValuePair<int, Item> pair in spherePairsList)
                     {
                         result += SettingsEncoder.EncodeNumAsBits(pair.Key, 9); // checkId
-                        result += SettingsEncoder.EncodeNumAsBits((int)pair.Value, 8); // itemId
+                        result += SettingsEncoder.EncodeNumAsBits((int)pair.Value, 9); // itemId
                     }
                 }
             }
@@ -299,7 +299,7 @@ namespace TPRandomizer
                 for (int i = 0; i < numPairsInSphere; i++)
                 {
                     int checkId = processor.NextInt(9);
-                    Item itemId = (Item)processor.NextByte();
+                    Item itemId = (Item)processor.NextInt(9);
 
                     spherePairs.Add(new KeyValuePair<int, Item>(checkId, itemId));
                 }

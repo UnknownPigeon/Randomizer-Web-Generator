@@ -1013,7 +1013,7 @@ namespace TPRandomizer.Hints
             return Randomizer.Checks.CheckDict[checkName].itemId;
         }
 
-        public static Item getCheckContents(string checkName, Dictionary<int, byte> itemPlacements)
+        public static Item getCheckContents(string checkName, Dictionary<int, int> itemPlacements)
         {
             int srcCheckId = CheckIdClass.GetCheckIdNum(checkName);
             return (Item)itemPlacements[srcCheckId];
@@ -1117,7 +1117,7 @@ namespace TPRandomizer.Hints
 
         public static string GetTradeChainFinalCheck(
             string srcCheckName,
-            Dictionary<int, byte> itemPlacements
+            Dictionary<int, int> itemPlacements
         )
         {
             if (!CheckIdClass.IsValidCheckName(srcCheckName))

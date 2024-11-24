@@ -352,6 +352,40 @@ namespace TPRandomizer
                 Item.Horse_Call,
             };
 
+        public List<Item> BossItems =
+            new()
+            {
+                Item.Diababa_Defeated,
+                Item.Fyrus_Defeated,
+                Item.Morpheel_Defeated,
+                Item.Stallord_Defeated,
+                Item.Blizzeta_Defeated,
+                Item.Armogohma_Defeated,
+                Item.Argorok_Defeated,
+                Item.Zant_Defeated,
+                Item.Ganondorf_Defeated,
+            };
+
+        public List<Item> PortalItems =
+            new()
+            {
+                Item.Ordon_Portal,
+                Item.South_Faron_Portal,
+                Item.North_Faron_Portal,
+                Item.Kakariko_Gorge_Portal,
+                Item.Kakariko_Village_Portal,
+                Item.Death_Mountain_Portal,
+                Item.Castle_Town_Portal,
+                Item.Zoras_Domain_Portal,
+                Item.Lake_Hylia_Portal,
+                Item.Gerudo_Desert_Portal,
+                Item.Mirror_Chamber_Portal,
+                Item.Snowpeak_Portal,
+                Item.Sacred_Grove_Portal,
+                Item.Bridge_of_Eldin_Portal,
+                Item.Upper_Zoras_River_Portal,
+            };
+
         public List<Item> ShuffledDungeonRewards = new();
         internal List<Item> VanillaDungeonRewards =
             new()

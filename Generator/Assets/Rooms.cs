@@ -197,7 +197,7 @@ namespace TPRandomizer
                 "Ordon Bridge",
             };
 
-        public static List<string> timeChangeStages =
+        public static List<string> timeFlowStages =
             new()
             {
                 "South Faron Woods",
@@ -205,17 +205,7 @@ namespace TPRandomizer
                 "South Faron Woods Coros Ledge",
                 "South Faron Woods Owl Statue Area",
                 "South Faron Woods Above Owl Statue",
-                "Mist Area Near Faron Woods Cave",
-                "Mist Area Inside Mist",
-                "Mist Area Under Owl Statue Chest",
-                "Mist Area Near Owl Statue Chest",
-                "Mist Area Center Stump",
-                "Mist Area Outside Faron Mist Cave",
-                "Mist Area Near North Faron Woods",
                 "North Faron Woods",
-                "Lost Woods",
-                "Lost Woods Lower Battle Arena",
-                "Lost Woods Upper Battle Arena",
                 "Sacred Grove Before Block",
                 "Sacred Grove Upper",
                 "Sacred Grove Lower",
@@ -246,7 +236,6 @@ namespace TPRandomizer
                 "Zoras Domain Throne Room",
                 "Snowpeak Climb Lower",
                 "Snowpeak Climb Upper",
-                "Snowpeak Summit Upper",
                 "Snowpeak Summit Lower",
                 "Outside Castle Town West",
                 "Outside Castle Town West Grotto Ledge",
@@ -261,8 +250,8 @@ namespace TPRandomizer
                 "Lake Hylia Bridge",
                 "Lake Hylia Bridge Grotto Ledge",
                 "Lake Hylia",
-                //"Lake Hylia Cave Entrance",
-                //"Lake Hylia Lakebed Temple Entrance",
+                "Lake Hylia Cave Entrance",
+                "Lake Hylia Lakebed Temple Entrance",
                 "Gerudo Desert",
                 "Gerudo Desert Cave of Ordeals Plateau",
                 "Gerudo Desert Basin",
@@ -271,7 +260,9 @@ namespace TPRandomizer
                 "Bulblin Camp",
                 "Mirror Chamber Lower",
                 "Mirror Chamber Upper",
-                "Mirror Chamber Portal"
+                "Mirror Chamber Portal",
+                "Ordon Spring",
+                "Ordon Bridge",
             };
 
         public static List<string> OrdonaMapRooms =

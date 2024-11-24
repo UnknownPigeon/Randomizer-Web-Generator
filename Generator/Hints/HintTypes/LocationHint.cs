@@ -45,7 +45,7 @@ namespace TPRandomizer.Hints
             bool markAsSometimes = false,
             bool useDefiniteArticle = false,
             bool isLogicalItem = false,
-            Dictionary<int, byte> itemPlacements = null
+            Dictionary<int, int> itemPlacements = null
         )
         {
             this.checkName = checkName;
@@ -59,7 +59,7 @@ namespace TPRandomizer.Hints
             CalcDerived(genData, itemPlacements);
         }
 
-        private void CalcDerived(HintGenData genData, Dictionary<int, byte> itemPlacements)
+        private void CalcDerived(HintGenData genData, Dictionary<int, int> itemPlacements)
         {
             if (itemPlacements != null)
             {
@@ -122,7 +122,7 @@ namespace TPRandomizer.Hints
         public static LocationHint decode(
             HintEncodingBitLengths bitLengths,
             BitsProcessor processor,
-            Dictionary<int, byte> itemPlacements
+            Dictionary<int, int> itemPlacements
         )
         {
             int checkId = processor.NextInt(bitLengths.checkId);

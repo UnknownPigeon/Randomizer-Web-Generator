@@ -244,7 +244,7 @@ namespace TPRandomizer
                 playthroughDictionary.Add("Starting Item: " + startingItem.ToString(), null);
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!LogicFunctions.CanUse(Item.Ganondorf_Defeated))
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -259,12 +259,6 @@ namespace TPRandomizer
                 foreach (Room graphRoom in currentPlaythroughGraph)
                 {
                     // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                    if (graphRoom.RoomName == "Ganondorf Castle")
-                    {
-                        graphRoom.Visited = true;
-                        hasConcludedPlaythrough = true;
-                        break;
-                    }
 
                     for (int i = 0; i < graphRoom.Checks.Count; i++)
                     {
@@ -299,6 +293,8 @@ namespace TPRandomizer
                                         currentCheck.itemId
                                     )
                                     || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
+                                    || Randomizer.Items.PortalItems.Contains(currentCheck.itemId)
+                                    || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
                                     || (currentCheck.itemId == Item.Poe_Soul)
                                 )
                                 {
@@ -363,8 +359,6 @@ namespace TPRandomizer
                 }
             }
 
-            currentPlaythrough.Add("    Ganondorf Castle: Ganondorf Defeated");
-
             return currentPlaythrough;
         }
 
@@ -404,14 +398,14 @@ namespace TPRandomizer
             foreach (Item startingItem in parseSetting.startingItems)
             {
                 Randomizer.Items.heldItems.Add(startingItem);
-                playthroughDictionary.Add(
+                playthroughDictionaryAll.Add(
                     "Starting Item " + startingItemCount + ": " + startingItem.ToString(),
                     null
                 );
                 startingItemCount++;
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!LogicFunctions.CanUse(Item.Ganondorf_Defeated))
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -428,13 +422,7 @@ namespace TPRandomizer
                 sphereItems.Clear();
                 foreach (Room graphRoom in currentPlaythroughGraph)
                 {
-                    // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                    if (graphRoom.RoomName == "Ganondorf Castle")
-                    {
-                        graphRoom.Visited = true;
-                        hasConcludedPlaythrough = true;
-                        break;
-                    }
+                    //Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
 
                     for (int i = 0; i < graphRoom.Checks.Count; i++)
                     {
@@ -474,6 +462,8 @@ namespace TPRandomizer
                                         currentCheck.itemId
                                     )
                                     || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
+                                    || Randomizer.Items.PortalItems.Contains(currentCheck.itemId)
+                                    || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
                                     || (currentCheck.itemId == Item.Poe_Soul)
                                 )
                                 {
@@ -615,7 +605,7 @@ namespace TPRandomizer
                 Randomizer.Items.heldItems.Add(startingItem);
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!LogicFunctions.CanUse(Item.Ganondorf_Defeated))
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -630,12 +620,6 @@ namespace TPRandomizer
                     foreach (Room graphRoom in currentPlaythroughGraph)
                     {
                         // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                        if (graphRoom.RoomName == "Ganondorf Castle")
-                        {
-                            graphRoom.Visited = true;
-                            hasConcludedPlaythrough = true;
-                            return true;
-                        }
 
                         for (int i = 0; i < graphRoom.Checks.Count; i++)
                         {
@@ -673,6 +657,10 @@ namespace TPRandomizer
                                             currentCheck.itemId
                                         )
                                         || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
+                                        || Randomizer.Items.PortalItems.Contains(
+                                            currentCheck.itemId
+                                        )
+                                        || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
                                         || (currentCheck.itemId == Item.Poe_Soul)
                                     )
                                     {
@@ -833,6 +821,10 @@ namespace TPRandomizer
                                             currentCheck.itemId
                                         )
                                         || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
+                                        || Randomizer.Items.PortalItems.Contains(
+                                            currentCheck.itemId
+                                        )
+                                        || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
                                         || (currentCheck.itemId == Item.Poe_Soul)
                                     )
                                     {
@@ -920,7 +912,7 @@ namespace TPRandomizer
                 Randomizer.Items.heldItems.Add(startingItem);
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!LogicFunctions.CanUse(Item.Ganondorf_Defeated))
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -935,12 +927,6 @@ namespace TPRandomizer
                     foreach (Room graphRoom in currentPlaythroughGraph)
                     {
                         // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                        if (graphRoom.RoomName == "Ganondorf Castle")
-                        {
-                            graphRoom.Visited = true;
-                            hasConcludedPlaythrough = true;
-                            return true;
-                        }
 
                         for (int i = 0; i < graphRoom.Checks.Count; i++)
                         {

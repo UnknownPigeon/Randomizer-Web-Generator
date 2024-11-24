@@ -163,6 +163,10 @@ window.tpr.checkData = {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
+  'Arbiters Grounds Stallord': {
+    category: ['Dungeon', 'Arbiters Grounds'],
+    itemId: 'Stallord_Defeated',
+  },
   'Arbiters Grounds Stallord Heart Container': {
     category: [
       'Heart Container',
@@ -231,6 +235,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Golden Bug', 'Hyrule Field - Eldin Province', 'DZX'],
     itemId: 'Male_Phasmid',
   },
+  'Bridge of Eldin Portal': {
+    category: ['Overworld', 'Hyrule Field - Eldin Province'],
+    itemId: 'Bridge_of_Eldin_Portal',
+  },
   'Bridge of Eldin Owl Statue Chest': {
     category: ['Overworld', 'Chest', 'Hyrule Field - Eldin Province', 'ARC'],
     itemId: 'Piece_of_Heart',
@@ -267,6 +275,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
     itemId: 'Magic_Armor',
   },
+  'Castle Town Portal': {
+    category: ['Overworld', 'Hyrule Field - Lanayru Province'],
+    itemId: 'Castle_Town_Portal',
+  },
   'Cats Hide and Seek Minigame': {
     category: ['Overworld', 'Npc', 'Hidden Village', 'DZX'],
     itemId: 'Piece_of_Heart',
@@ -294,6 +306,10 @@ window.tpr.checkData = {
   'City in The Sky Aeralfos Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Progressive_Clawshot',
+  },
+  'City in The Sky Argorok': {
+    category: ['Dungeon', 'City in The Sky'],
+    itemId: 'Argorok_Defeated',
   },
   'City in The Sky Argorok Heart Container': {
     category: ['Heart Container', 'Dungeon', 'City in The Sky', 'Boss'],
@@ -424,6 +440,10 @@ window.tpr.checkData = {
   'Death Mountain Alcove Chest': {
     category: ['Overworld', 'Chest', 'Death Mountain', 'ARC'],
     itemId: 'Piece_of_Heart',
+  },
+  'Death Mountain Portal': {
+    category: ['Overworld', 'Death Mountain'],
+    itemId: 'Death_Mountain_Portal',
   },
   'Death Mountain Trail Poe': {
     category: ['Overworld', 'Poe', 'Death Mountain'],
@@ -639,6 +659,10 @@ window.tpr.checkData = {
     ],
     itemId: 'Forest_Temple_Dungeon_Map',
   },
+  'Forest Temple Diababa': {
+    category: ['Dungeon', 'Forest Temple'],
+    itemId: 'Diababa_Defeated',
+  },
   'Forest Temple Diababa Heart Container': {
     category: ['Heart Container', 'Dungeon', 'Forest Temple', 'Boss'],
     itemId: 'Heart_Container',
@@ -759,6 +783,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Poe', 'Gerudo Desert'],
     itemId: 'Poe_Soul',
   },
+  'Gerudo Desert Portal': {
+    category: ['Overworld', 'Gerudo Desert'],
+    itemId: 'Gerudo_Desert_Portal',
+  },
   'Gerudo Desert Rock Grotto First Poe': {
     category: ['Overworld', 'Poe', 'Gerudo Desert'],
     itemId: 'Poe_Soul',
@@ -829,6 +857,10 @@ window.tpr.checkData = {
   'Goron Mines Entrance Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Red_Rupee',
+  },
+  'Goron Mines Fyrus': {
+    category: ['Dungeon', 'Goron Mines'],
+    itemId: 'Fyrus_Defeated',
   },
   'Goron Mines Fyrus Heart Container': {
     category: ['Heart Container', 'Dungeon', 'Goron Mines', 'Boss'],
@@ -944,6 +976,10 @@ window.tpr.checkData = {
       'ARC',
     ],
     itemId: 'Hyrule_Castle_Dungeon_Map',
+  },
+  'Hyrule Castle Ganondorf': {
+    category: ['Dungeon', 'Hyrule Castle'],
+    itemId: 'Ganondorf_Defeated',
   },
   'Hyrule Castle Graveyard Grave Switch Room Back Left Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
@@ -1108,6 +1144,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Golden Bug', 'Hyrule Field - Eldin Province', 'DZX'],
     itemId: 'Male_Pill_Bug',
   },
+  'Kakariko Gorge Portal': {
+    category: ['Overworld', 'Hyrule Field - Eldin Province'],
+    itemId: 'Kakariko_Gorge_Portal',
+  },
   'Kakariko Gorge Owl Statue Chest': {
     category: ['Overworld', 'Chest', 'Hyrule Field - Eldin Province', 'ARC'],
     itemId: 'Orange_Rupee',
@@ -1176,6 +1216,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Kakariko Village', 'ARC', 'Shop'],
     itemId: 'Wooden_Shield',
   },
+  'Kakariko Village Portal': {
+    category: ['Overworld', 'Kakariko Village'],
+    itemId: 'Kakariko_Village_Portal',
+  },
   'Kakariko Village Watchtower Poe': {
     category: ['Overworld', 'Poe', 'Kakariko Village'],
     itemId: 'Poe_Soul',
@@ -1227,6 +1271,10 @@ window.tpr.checkData = {
   'Lake Hylia Dock Poe': {
     category: ['Overworld', 'Poe', 'Lake Hylia'],
     itemId: 'Poe_Soul',
+  },
+  'Lake Hylia Portal': {
+    category: ['Overworld', 'Lake Hylia'],
+    itemId: 'Lake_Hylia_Portal',
   },
   'Lake Hylia Shell Blade Grotto Chest': {
     category: ['Overworld', 'Chest', 'Lake Hylia', 'DZX'],
@@ -1395,6 +1443,10 @@ window.tpr.checkData = {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Water_Bombs_10',
   },
+  'Lakebed Temple Morpheel': {
+    category: ['Dungeon', 'Lakebed Temple'],
+    itemId: 'Morpheel_Defeated',
+  },
   'Lakebed Temple Morpheel Heart Container': {
     category: ['Heart Container', 'Dungeon', 'Lakebed Temple', 'Boss'],
     itemId: 'Heart_Container',
@@ -1522,6 +1574,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Poe', 'Sacred Grove'],
     itemId: 'Poe_Soul',
   },
+  'Mirror Chamber Portal': {
+    category: ['Overworld', 'Mirror Chamber'],
+    itemId: 'Mirror_Chamber_Portal',
+  },
   'Arbiters Grounds Dungeon Reward': {
     category: ['Dungeon', 'Arbiters Grounds', 'Dungeon Reward', 'Event'],
     itemId: 'Progressive_Mirror_Shard',
@@ -1529,6 +1585,10 @@ window.tpr.checkData = {
   'North Castle Town Golden Wolf': {
     category: ['Overworld', 'Hidden Skill', 'Castle Town', 'ARC'],
     itemId: 'Progressive_Hidden_Skill',
+  },
+  'North Faron Portal': {
+    category: ['Overworld', 'Faron Woods'],
+    itemId: 'North_Faron_Portal',
   },
   'North Faron Woods Deku Baba Chest': {
     category: ['Overworld', 'Chest', 'Faron Woods', 'ARC'],
@@ -1692,6 +1752,10 @@ window.tpr.checkData = {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Orange_Rupee',
   },
+  'Palace of Twilight Zant': {
+    category: ['Dungeon', 'Palace of Twilight'],
+    itemId: 'Zant_Defeated',
+  },
   'Palace of Twilight Zant Heart Container': {
     category: [
       'Dungeon',
@@ -1750,6 +1814,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Event', 'Sacred Grove'],
     itemId: 'Shadow_Crystal',
   },
+  'Sacred Grove Portal': {
+    category: ['Overworld', 'Sacred Grove'],
+    itemId: 'Sacred_Grove_Portal',
+  },
   'Sacred Grove Spinner Chest': {
     category: ['Overworld', 'Chest', 'Sacred Grove', 'ARC'],
     itemId: 'Orange_Rupee',
@@ -1798,9 +1866,17 @@ window.tpr.checkData = {
     category: ['Overworld', 'Poe', 'Snowpeak Province'],
     itemId: 'Poe_Soul',
   },
+  'Snowpeak Portal': {
+    category: ['Overworld', 'Snowpeak Province'],
+    itemId: 'Snowpeak_Portal',
+  },
   'Snowpeak Ruins Ball and Chain': {
     category: ['Dungeon', 'Snowpeak Ruins', 'REL'],
     itemId: 'Ball_and_Chain',
+  },
+  'Snowpeak Ruins Blizzeta': {
+    category: ['Dungeon', 'Snowpeak Ruins'],
+    itemId: 'Blizzeta_Defeated',
   },
   'Snowpeak Ruins Blizzeta Heart Container': {
     category: ['Heart Container', 'Dungeon', 'Snowpeak Ruins', 'Boss'],
@@ -1920,6 +1996,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Chest', 'Faron Woods', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
+  'South Faron Portal': {
+    category: ['Overworld', 'Faron Woods'],
+    itemId: 'South_Faron_Portal',
+  },
   'Talo Sharpshooting': {
     category: ['Overworld', 'Npc', 'Kakariko Village', 'ARC'],
     itemId: 'Piece_of_Heart',
@@ -1927,6 +2007,10 @@ window.tpr.checkData = {
   'Telma Invoice': {
     category: ['Overworld', 'Npc', 'Castle Town', 'ARC'],
     itemId: 'Invoice',
+  },
+  'Temple of Time Armogohma': {
+    category: ['Dungeon', 'Temple of Time'],
+    itemId: 'Armogohma_Defeated',
   },
   'Temple of Time Armogohma Heart Container': {
     category: ['Heart Container', 'Dungeon', 'Temple of Time', 'Boss'],
@@ -2034,6 +2118,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Poe', 'Upper Zoras River'],
     itemId: 'Poe_Soul',
   },
+  'Upper Zoras River Portal': {
+    category: ['Overworld', 'Upper Zoras River'],
+    itemId: 'Upper_Zoras_River_Portal',
+  },
   'West Hyrule Field Female Butterfly': {
     category: ['Overworld', 'Golden Bug', 'Hyrule Field - Lanayru Province', 'DZX'],
     itemId: 'Female_Butterfly',
@@ -2081,6 +2169,10 @@ window.tpr.checkData = {
   'Zoras Domain Mother and Child Isle Poe': {
     category: ['Overworld', 'Poe', 'Zoras Domain'],
     itemId: 'Poe_Soul',
+  },
+  'Zoras Domain Portal': {
+    category: ['Overworld', 'Zoras Domain'],
+    itemId: 'Zoras_Domain_Portal',
   },
   'Zoras Domain Underwater Goron': {
     category: ['Overworld', 'Npc', 'Zoras Domain', 'ARC'],

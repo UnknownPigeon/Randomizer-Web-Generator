@@ -533,7 +533,7 @@ namespace TPRandomizer
 
             SSettings = SharedSettings.FromString(seedGenResults.settingsString);
 
-            foreach (KeyValuePair<int, byte> kvp in seedGenResults.itemPlacements.ToList())
+            foreach (KeyValuePair<int, int> kvp in seedGenResults.itemPlacements.ToList())
             {
                 // key is checkId, value is itemId
                 string checkName = CheckIdClass.GetCheckName(kvp.Key);
@@ -1476,7 +1476,7 @@ namespace TPRandomizer
             check.itemWasPlaced = true;
             check.itemId = item;
 
-            //Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
+            Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
         }
 
         private static void StartOver()
@@ -2078,7 +2078,7 @@ namespace TPRandomizer
                 DeserializeRooms(SSettings);
             }
 
-            foreach (KeyValuePair<int, byte> kvp in seedGenResults.itemPlacements)
+            foreach (KeyValuePair<int, int> kvp in seedGenResults.itemPlacements)
             {
                 // key is checkId, value is itemId
                 string checkName = CheckIdClass.GetCheckName(kvp.Key);

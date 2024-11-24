@@ -68,9 +68,14 @@ namespace TPRandomizer
         {
             if (CanUse(Item.Shadow_Crystal))
             {
-                foreach (string warpStage in RoomFunctions.timeChangeStages)
+                // Can change time on any stage with shadow crystal
+                return true;
+            }
+            else
+            {
+                foreach (string timeStage in RoomFunctions.timeFlowStages)
                 {
-                    if (Randomizer.Rooms.RoomDict[warpStage].ReachedByPlaythrough)
+                    if (Randomizer.Rooms.RoomDict[timeStage].ReachedByPlaythrough)
                     {
                         return true;
                     }

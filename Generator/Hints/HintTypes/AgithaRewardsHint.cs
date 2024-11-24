@@ -23,7 +23,7 @@ namespace TPRandomizer.Hints
             int numBugsInPool,
             List<string> interestingAgithaChecks,
             List<bool> useDefArticleList = null,
-            Dictionary<int, byte> itemPlacements = null
+            Dictionary<int, int> itemPlacements = null
         // List<Item> items
         )
         {
@@ -34,7 +34,7 @@ namespace TPRandomizer.Hints
             CalcDerived(genData, itemPlacements);
         }
 
-        private void CalcDerived(HintGenData genData, Dictionary<int, byte> itemPlacements)
+        private void CalcDerived(HintGenData genData, Dictionary<int, int> itemPlacements)
         {
             items = new();
             if (genData != null)
@@ -154,7 +154,7 @@ namespace TPRandomizer.Hints
         public static AgithaRewardsHint decode(
             HintEncodingBitLengths bitLengths,
             BitsProcessor processor,
-            Dictionary<int, byte> itemPlacements
+            Dictionary<int, int> itemPlacements
         )
         {
             int numBugsInPool = processor.NextInt(5);
