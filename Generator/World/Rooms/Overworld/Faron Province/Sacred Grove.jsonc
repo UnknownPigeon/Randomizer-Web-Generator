@@ -14,10 +14,9 @@
         "GlitchedRequirements": "(CanDefeatSkullKid and Shadow_Crystal) or (Setting.skipGroveEntrance equals True)"
       },
       {
-        "ConnectedArea": "North Faron Woods",
+        "ConnectedArea": "North Faron Lost Woods Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
-        // In North Faron Woods, when you are near the Lost Woods entrance, you can save-warp to the main part of North Faron Woods.
       }
     ],
     "Checks": 
@@ -112,8 +111,9 @@
       },
       {
         "ConnectedArea": "Sacred Grove Past",
-        "Requirements": "((Setting.skipGroveEntrance equals True) or CanDefeatShadowBeast) and CanStrikePedestal",
-        "GlitchedRequirements": "((Setting.skipGroveEntrance equals True) or CanDefeatShadowBeast) and CanStrikePedestal"
+        // This is a temporary requirement since eventually whenever portals are actually checks, having the portal won't get rid of the Shadow beasts.
+        "Requirements": "(Sacred_Grove_Portal or CanDefeatShadowBeast) and CanStrikePedestal",
+        "GlitchedRequirements": "(Sacred_Grove_Portal or CanDefeatShadowBeast) and CanStrikePedestal"
       }
     ],
     "Checks": [""],

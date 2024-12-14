@@ -154,7 +154,7 @@
         "Type": "Overworld",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "North Faron Woods",
+            "SourceRoom": "North Faron Lost Woods Entrance",
             "TargetRoom": "Lost Woods",
             "Stage": 54,
             "Room": 3,
@@ -166,7 +166,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "Lost Woods",
-            "TargetRoom": "North Faron Woods",
+            "TargetRoom": "North Faron Lost Woods Entrance",
             "Stage": 45,
             "Room": 6,
             "Spawn": "03",

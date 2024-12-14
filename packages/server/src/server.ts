@@ -378,6 +378,12 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [0x8d, 'Hyrule Castle Small Key'],
         [0x98, 'Hyrule Castle Big Key'],
         [0xe0, 'Poe Soul', 60],
+        [0x3b, 'Gerudo Desert Portal'],
+        [0xae, 'Mirror Chamber Portal'],
+        [0xaf, 'Snowpeak Portal'],
+        [0xbf, 'Sacred Grove Portal'],
+        [0xe8, 'Bridge of Eldin Portal'],
+        [0xf7, 'Upper Zoras River Portal']
       ];
 
       const startingItemsEls = startingItems.map((item) => {

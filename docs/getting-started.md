@@ -157,7 +157,7 @@ building the web application. [Trunk](https://trunkrs.dev/) is required to build
 
 1. In the `geckopatcher` repo, under `/gui/web`, run `trunk build --release --features generic_patch`.
 2. Once the build process finishes successfully, from the folder `/gui/web/dist`, copy the
-files `worker_bg.wasm` and `worker.js` to the generator's client folder `/packages/client/js/patcher`.
+   files `worker_bg.wasm` and `worker.js` to the generator's client folder `/packages/client/js/patcher`.
 
 The patcher should now be updated.
 
@@ -182,4 +182,6 @@ It is based on Prettier, hence the name.
 
 ## Next steps
 
-See [docker.md](./docker.md) for instructions on deploying a production build.
+If you need to deploy a production build to a public site, see [docker.md](./docker.md) for instructions.
+YOU DO NOT NEED DOCKER if you are only making changes for personal use or PRs with minor changes.
+Please see the [Running the server](#Running-the-server) section for instructions on running the site locally.

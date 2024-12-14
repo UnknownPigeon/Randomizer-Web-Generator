@@ -10,8 +10,8 @@
       },
       {
         "ConnectedArea": "Fishing Hole",
-        "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
-        "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
+        "Requirements": "(Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "(Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight"
       },
 	  {
 		  "ConnectedArea": "Zoras Domain",
@@ -20,8 +20,8 @@
 	  },
       {
         "ConnectedArea": "Upper Zoras River Izas House",
-        "Requirements": "HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) and CanCompleteLanayruTwilight"
+        "Requirements": "(HasSword or ((CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) or Upper_Zoras_River_Portal)) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "(HasSword or ((CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) or Upper_Zoras_River_Portal)) and CanCompleteLanayruTwilight"
       }
     ],
     "Checks":
@@ -137,7 +137,7 @@
         "ConnectedArea": "Snowpeak Climb Lower",
         "Requirements": "true",
         "GlitchedRequirements": "true"
-      },
+      }
     ],
     "Checks": [""],
     "Region": "Zoras Domain"
@@ -201,5 +201,5 @@
     ],
     "Checks": [""],
     "Region": "Zoras Domain"
-  },
+  }
 ]

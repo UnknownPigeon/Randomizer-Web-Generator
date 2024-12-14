@@ -263,7 +263,7 @@ namespace TPRandomizer.Assets
             {
                 false,
                 randomizerSettings.skipSnowpeakEntrance,
-                false,
+                randomizerSettings.openMap,
                 randomizerSettings.lanayruTwilightCleared,
                 randomizerSettings.eldinTwilightCleared,
                 randomizerSettings.faronTwilightCleared,

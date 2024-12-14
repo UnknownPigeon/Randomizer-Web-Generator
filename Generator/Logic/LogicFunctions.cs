@@ -1639,7 +1639,6 @@ namespace TPRandomizer
                             "Eldin Field Water Bomb Fish Grotto"
                         ].ReachedByPlaythrough && (getItemCount(Item.Progressive_Fishing_Rod) >= 1)
                     )
-                    || Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
                     || Randomizer.Rooms.RoomDict["City in The Sky Entrance"].ReachedByPlaythrough
                 )
             );

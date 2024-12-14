@@ -931,82 +931,6 @@ namespace TPRandomizer
             startingRoom.Visited = true;
             availableBaseRooms.Add(startingRoom);
 
-            // With sewers no longer a thing, the player starts with Ordon Portal (until we find a way to randomize it)
-            if (LogicFunctions.CanWarp())
-            {
-                if (LogicFunctions.CanUnlockOrdonaMap())
-                {
-                    availableRoom = Randomizer.Rooms.RoomDict["Ordon Spring"];
-                    availableBaseRooms.Add(availableRoom);
-                }
-
-                if (LogicFunctions.CanUnlockFaronMap())
-                {
-                    if (LogicFunctions.CanUse(Item.South_Faron_Portal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["South Faron Woods"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                    if (LogicFunctions.CanUse(Item.North_Faron_Portal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["North Faron Woods"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                    if (LogicFunctions.CanUse(Item.Sacred_Grove_Portal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Sacred Grove Lower"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                }
-
-                if (LogicFunctions.CanUnlockEldinMap())
-                {
-                    if (LogicFunctions.CanUse(Item.Kakariko_Village_Portal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Lower Kakariko Village"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                    if (LogicFunctions.CanUse(Item.Kakariko_Gorge_Portal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Kakariko Gorge"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                    if (LogicFunctions.CanUse(Item.Death_Mountain_Portal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Death Mountain Volcano"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                }
-
-                if (LogicFunctions.CanUnlockLanayruMap())
-                {
-                    if (LogicFunctions.CanUse(Item.Lake_Hylia_Portal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Lake Hylia"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                    if (LogicFunctions.CanUse(Item.Castle_Town_Portal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Outside Castle Town West"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                    if (LogicFunctions.CanUse(Item.Zoras_Domain_Portal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                }
-
-                if (LogicFunctions.CanUnlockSnowpeakMap())
-                {
-                    if (LogicFunctions.CanUse(Item.Snowpeak_Portal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"];
-                        availableBaseRooms.Add(availableRoom);
-                    }
-                }
-            }
-
             foreach (Room roomToExplore in roomsToExplore)
             {
                 roomToExplore.Visited = true;
@@ -1017,6 +941,7 @@ namespace TPRandomizer
             {
                 availableRooms = 0;
                 roomsToExplore.AddRange(availableBaseRooms);
+                roomsToExplore.AddRange(GeneratePortalRooms());
                 playthroughGraph.AddRange(availableBaseRooms);
                 foreach (KeyValuePair<string, Room> roomList in Randomizer.Rooms.RoomDict.ToList())
                 {
@@ -2232,6 +2157,84 @@ namespace TPRandomizer
                     Randomizer.Items.heldItems.Remove(currentItem);
                 }
             }
+        }
+
+        private static List<Room> GeneratePortalRooms()
+        {
+            List<Room> portalRooms = new();
+            // With sewers no longer a thing, the player starts with Ordon Portal (until we find a way to randomize it)
+            if (LogicFunctions.CanWarp())
+            {
+                if (LogicFunctions.CanUnlockOrdonaMap())
+                {
+                    portalRooms.Add(Randomizer.Rooms.RoomDict["Ordon Spring"]);
+                }
+
+                if (LogicFunctions.CanUnlockFaronMap())
+                {
+                    if (LogicFunctions.CanUse(Item.South_Faron_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["South Faron Woods"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.North_Faron_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["North Faron Woods"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Sacred_Grove_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Sacred Grove Lower"]);
+                    }
+                }
+
+                if (LogicFunctions.CanUnlockEldinMap())
+                {
+                    if (LogicFunctions.CanUse(Item.Kakariko_Village_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Lower Kakariko Village"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Kakariko_Gorge_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Kakariko Gorge"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Death_Mountain_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Death Mountain Volcano"]);
+                    }
+                }
+
+                if (LogicFunctions.CanUnlockLanayruMap())
+                {
+                    if (LogicFunctions.CanUse(Item.Lake_Hylia_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Lake Hylia"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Castle_Town_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Outside Castle Town West"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Zoras_Domain_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"]);
+                    }
+                }
+
+                if (LogicFunctions.CanUnlockSnowpeakMap())
+                {
+                    if (LogicFunctions.CanUse(Item.Snowpeak_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"]);
+                    }
+                }
+
+                if (LogicFunctions.CanUnlockGerudoMap())
+                {
+                    if (LogicFunctions.CanUse(Item.Gerudo_Desert_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Gerudo Desert"]);
+                    }
+                }
+            }
+            return portalRooms;
         }
     }
 

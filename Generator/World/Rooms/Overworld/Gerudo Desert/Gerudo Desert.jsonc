@@ -5,8 +5,8 @@
     [
       {
         "ConnectedArea": "Gerudo Desert Cave of Ordeals Plateau",
-        "Requirements": "(Progressive_Clawshot, 1) and CanDefeatShadowBeast",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanDefeatShadowBeast"
+        "Requirements": "(Progressive_Clawshot, 1) and (CanDefeatShadowBeast or Gerudo_Desert_Portal)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and (CanDefeatShadowBeast or Gerudo_Desert_Portal)"
       },
       {
         "ConnectedArea": "Gerudo Desert Basin",
@@ -251,13 +251,13 @@
     [
       {
         "ConnectedArea": "Mirror Chamber Lower",
-        "Requirements": "CanDefeatShadowBeast",
-        "GlitchedRequirements": "CanDefeatShadowBeast"
+        "Requirements": "CanDefeatShadowBeast or Mirror_Chamber_Portal",
+        "GlitchedRequirements": "CanDefeatShadowBeast or Mirror_Chamber_Portal"
       },
       {
         "ConnectedArea": "Mirror Chamber Portal",
-        "Requirements": "CanDefeatShadowBeast and ((Setting.palaceRequirements equals Open) or ((Setting.palaceRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.palaceRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 4)) or ((Setting.palaceRequirements equals Vanilla) and canCompleteCityinTheSky))",
-        "GlitchedRequirements": "CanDefeatShadowBeast and ((Setting.palaceRequirements equals Open) or ((Setting.palaceRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.palaceRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 4)) or ((Setting.palaceRequirements equals Vanilla) and canCompleteCityinTheSky))"
+        "Requirements": "(CanDefeatShadowBeast or Mirror_Chamber_Portal) and ((Setting.palaceRequirements equals Open) or ((Setting.palaceRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.palaceRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 4)) or ((Setting.palaceRequirements equals Vanilla) and canCompleteCityinTheSky))",
+        "GlitchedRequirements": "(CanDefeatShadowBeast or Mirror_Chamber_Portal) and ((Setting.palaceRequirements equals Open) or ((Setting.palaceRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.palaceRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 4)) or ((Setting.palaceRequirements equals Vanilla) and canCompleteCityinTheSky))"
       }
     ],
     "Checks": 
@@ -272,8 +272,8 @@
     [
       {
         "ConnectedArea": "Mirror Chamber Upper",
-        "Requirements": "CanDefeatShadowBeast",
-        "GlitchedRequirements": "CanDefeatShadowBeast"
+        "Requirements": "CanDefeatShadowBeast or Mirror_Chamber_Portal",
+        "GlitchedRequirements": "CanDefeatShadowBeast or Mirror_Chamber_Portal"
       },
       {
         "ConnectedArea": "Palace of Twilight Entrance",

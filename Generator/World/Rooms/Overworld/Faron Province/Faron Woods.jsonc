@@ -390,7 +390,7 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Lost Woods",
+        "ConnectedArea": "North Faron Lost Woods Entrance",
         "Requirements": "Shadow_Crystal and CanCompleteFaronTwilight",
         "GlitchedRequirements": "(Shadow_Crystal and CanCompleteFaronTwilight) or (hasBombs and CanDoLJA)"
       },
@@ -405,6 +405,19 @@
         "Faron Woods Golden Wolf", 
         "North Faron Portal"
     ],
+    "Region": "Faron Woods"
+  },
+  {
+    "RoomName": "North Faron Lost Woods Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lost Woods",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [],
     "Region": "Faron Woods"
   }
 ]

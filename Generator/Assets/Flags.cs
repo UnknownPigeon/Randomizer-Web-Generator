@@ -15,7 +15,6 @@ namespace TPRandomizer.Assets
         {
             { 0x2, 0x46 }, // Midna jump 1 mist area.
             { 0x2, 0x47 }, // Midna jump 1 mist area.
-            { 0x2, 0x5D }, // North Faron Portal.
             { 0x2, 0x98 }, // South Faron Portal.
         };
 
@@ -27,9 +26,6 @@ namespace TPRandomizer.Assets
             { 0x3, 0x14 }, // Collected Tear From Bomb Storage
             { 0x3, 0x1A }, // Collected Tear From Bomb Storage
             { 0x3, 0x1B }, // Collected Tear From Bomb Storage
-            { 0x3, 0x40 }, // Kakariko Village Portal
-            { 0x3, 0x4A }, // Death Mountain Portal
-            { 0x6, 0x4A }, // Give Gorge Portal
             { 0x3, 0x67 }, // Ant house entered from top
             { 0x3, 0x64 }, // Ant house box pushed
             { 0x3, 0x5E }, // Defeated Ant house Tears of Light bug
@@ -95,10 +91,7 @@ namespace TPRandomizer.Assets
         public static readonly byte[,] LanayruTwilightRegionFlags = new byte[,]
         {
             { 0x6, 0x58 }, // Lake Hylia has water on Hyrule Field Map
-            { 0x6, 0x5C }, // Castle Town Portal
             { 0x4, 0x7F }, // Lake Hylia has water on Lake Hylia Map.
-            { 0x4, 0x55 }, // Lake Hylia Portal.
-            { 0x4, 0x5D }, // Zora's Domain Portal.
         };
 
         /// <summary>
@@ -383,14 +376,12 @@ namespace TPRandomizer.Assets
         {
             { 0x7, 0xB6 }, // Skull Kid - Human defeated.
             { 0x7, 0xB7 }, // Lost Woods Turns to day after defeating Skull Kid - Human
-            { 0x7, 0xBB }, // Sacred Grove Portal
             { 0x7, 0x5B }, // Block pushed down
             { 0x7, 0x42 }, // Midna text after block pushed down
             { 0x7, 0x43 }, // cs after pushing block human
         };
         public static readonly byte[,] OpenSnowpeakRegionFlags = new byte[,]
         {
-            { 0x8, 0x4A }, // Snowpeak top portal
             { 0x8, 0x49 }, // Snowpeak summit cs.
             { 0x8, 0x45 }, // Snowpeak Summit intro CS.
         };
