@@ -267,9 +267,21 @@ window.tpr.checkData = {
     category: ['Overworld', 'Bulblin Camp', 'Small Key', 'DZX'],
     itemId: 'Gerudo_Desert_Bulblin_Camp_Key',
   },
+  'Castle Town Goron Shop Arrow Refill': {
+    category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
+    itemId: 'Arrows_30',
+  },
   'Castle Town Goron Shop Hylian Shield': {
     category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
     itemId: 'Hylian_Shield',
+  },
+  'Castle Town Goron Shop Lantern Oil': {
+    category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
+    itemId: 'Lantern_Oil_Shop',
+  },
+  'Castle Town Goron Shop Red Potion': {
+    category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
+    itemId: 'Red_Potion',
   },
   'Castle Town Malo Mart Magic Armor': {
     category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
@@ -1187,6 +1199,10 @@ window.tpr.checkData = {
   'Kakariko Inn Chest': {
     category: ['Overworld', 'Chest', 'Kakariko Village', 'ARC'],
     itemId: 'Red_Rupee',
+  },
+  'Kakariko Village Bell Rupee': {
+    category: ['Overworld','Kakariko Village', 'ARC'],
+    itemId: 'Silver_Rupee',
   },
   'Kakariko Village Bomb Rock Spire Heart Piece': {
     category: ['Overworld', 'Chest', 'Kakariko Village', 'DZX'],

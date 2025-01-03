@@ -277,7 +277,8 @@ namespace TPRandomizer.Hints
                         "Kakariko Watchtower Alcove Chest",
                         "Kakariko Watchtower Chest",
                         "Renados Letter",
-                        "Talo Sharpshooting"
+                        "Talo Sharpshooting",
+                        "Kakariko Village Bell Rupee"
                     }
                 },
                 {
@@ -394,7 +395,10 @@ namespace TPRandomizer.Hints
                         "STAR Prize 1",
                         "STAR Prize 2",
                         "Telma Invoice",
-                        "Castle Town Goron Shop Hylian Shield"
+                        "Castle Town Goron Shop Hylian Shield",
+                        "Castle Town Goron Shop Red Potion",
+                        "Castle Town Goron Shop Lantern Oil",
+                        "Castle Town Goron Shop Arrow Refill"
                     }
                 },
                 {

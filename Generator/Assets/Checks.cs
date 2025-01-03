@@ -519,6 +519,14 @@ namespace TPRandomizer
                         }
                     }
                 }
+
+                if (!parseSetting.shuffleRupees)
+                {
+                    if (currentCheck.checkCategory.Contains("Rupee"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
             }
 
             // set up the vanilla checks

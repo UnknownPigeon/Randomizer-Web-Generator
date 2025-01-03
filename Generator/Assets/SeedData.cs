@@ -1258,6 +1258,8 @@ namespace TPRandomizer.Assets
                     6
                 ), // Remove Argorok actor in west city, which breaks the bridge
 
+                // Castle Town Hylian Shield Goron FLW patches
+
                  new ARCReplacement(
                     "50C2",
                     "0001032F",
@@ -1292,6 +1294,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town_Shops,
                     4
                 ), // Set the new flag for buying the shield
+
 
                  new ARCReplacement(
                     "5418",
@@ -1375,6 +1378,123 @@ namespace TPRandomizer.Assets
 
                 //.. ModifyChestAppearanceARC(), This is still in development
             ];
+
+            List<ARCReplacement> listOfShopReplacements =
+            [
+                // Castle Town Red Potion Goron FLW patches
+                new ARCReplacement(
+                    "4E0A",
+                    "00010330",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Check for custom flag before allowing player to buy CT red potion
+                new ARCReplacement(
+                    "4D52",
+                    "00060028",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Instead of checking for an empty bottle, only check for rupees
+                new ARCReplacement(
+                    "4DF8",
+                    "03000851",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set custom event flag before proceeding in conversation
+                new ARCReplacement(
+                    "4DFC",
+                    "03300000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set custom event flag before proceeding in conversation
+
+                // Castle Town Goron Shop Lantern Oil FLW patches
+                new ARCReplacement(
+                    "4BF2",
+                    "00010331",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Check for custom flag before allowing player to buy CT lantern oil
+                new ARCReplacement(
+                    "4C0A",
+                    "0006001E",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Instead of checking for an empty bottle, only check for rupees
+                new ARCReplacement(
+                    "4BF8",
+                    "03000826",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set custom event flag before proceeding in conversation
+                new ARCReplacement(
+                    "4BFC",
+                    "03310000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set custom event flag before proceeding in conversation
+
+                // Castle Town Goron Shop Arrow Refill FLW patches
+                new ARCReplacement(
+                    "4E1A",
+                    "00010332",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town,
+                    4
+                ), // Check for custom flag before allowing player to buy CT arrows
+                 new ARCReplacement(
+                    "4E4A",
+                    "00060028",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town,
+                    4
+                ), // Instead of checking for the bow, only check for rupees
+                 new ARCReplacement(
+                    "4E5A",
+                    "00010332",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town,
+                    4
+                ), // Instead of checking for ammo, just re-check the flag
+                new ARCReplacement(
+                    "4FF0",
+                    "03000887",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town,
+                    4
+                ), // Check for custom event flag before proceeding in conversation
+                new ARCReplacement(
+                    "4FF4",
+                    "03320000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town,
+                    4
+                ), // Check for custom event flag before proceeding in conversation
+            ];
+            if (Randomizer.SSettings.shuffleShopItems)
+            {
+                listOfStaticReplacements.AddRange(listOfShopReplacements);
+            }
             return listOfStaticReplacements;
         }
 

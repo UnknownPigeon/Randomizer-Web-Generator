@@ -221,6 +221,14 @@ namespace TPRandomizer
             {
                 Type = EntranceType.Dungeon;
             }
+            else if (entranceType == "Boss Room")
+            {
+                Type = EntranceType.Boss;
+            }
+            else if (entranceType == "Boss Room Second Exit")
+            {
+                Type = EntranceType.Boss_Reverse;
+            }
             else if (entranceType == "Paired")
             {
                 Type = EntranceType.Paired;

@@ -139,11 +139,34 @@
         "ConnectedArea": "Castle Town Goron House Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Castle Town Goron House Balcony",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       }
     ],
     "Checks": 
     [
-      "Castle Town Goron Shop Hylian Shield"
+      "Castle Town Goron Shop Hylian Shield",
+      "Castle Town Goron Shop Red Potion",
+      "Castle Town Goron Shop Lantern Oil"
+    ],
+    "Region": "Castle Town"
+  },
+  {
+    "RoomName": "Castle Town Goron House Balcony",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Castle Town Goron House",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+    ],
+    "Checks": 
+    [
+      "Castle Town Goron Shop Arrow Refill"
     ],
     "Region": "Castle Town"
   },

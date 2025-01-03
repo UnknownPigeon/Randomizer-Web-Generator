@@ -1532,8 +1532,11 @@ namespace TPRandomizer
             }
             else if (Randomizer.SSettings.castleRequirements == CastleRequirements.Vanilla)
             {
-                // If Palace is required then Arbiters is automatically required.
-                listOfRequiredDungeons[arbiters].isRequired = true;
+                // If Palace is required and the player doesn't have the mirror chamber portal, then Arbiters is automatically required.
+                if (!Randomizer.SSettings.startingItems.Contains(Item.Mirror_Chamber_Portal))
+                {
+                    listOfRequiredDungeons[arbiters].isRequired = true;
+                }
                 listOfRequiredDungeons[palace].isRequired = true;
                 if (Randomizer.SSettings.palaceRequirements == PalaceRequirements.Fused_Shadows)
                 {
@@ -1592,8 +1595,11 @@ namespace TPRandomizer
 
             if (listOfRequiredDungeons[palace].isRequired)
             {
-                // If Palace is required then Arbiters is automatically required.
-                listOfRequiredDungeons[arbiters].isRequired = true;
+                // If Palace is required and the player doesn't have the mirror chamber portal, then Arbiters is automatically required.
+                if (!Randomizer.SSettings.startingItems.Contains(Item.Mirror_Chamber_Portal))
+                {
+                    listOfRequiredDungeons[arbiters].isRequired = true;
+                }
                 listOfRequiredDungeons[palace].isRequired = true;
                 if (Randomizer.SSettings.palaceRequirements == PalaceRequirements.Fused_Shadows)
                 {
@@ -2200,6 +2206,10 @@ namespace TPRandomizer
                     {
                         portalRooms.Add(Randomizer.Rooms.RoomDict["Death Mountain Volcano"]);
                     }
+                    if (LogicFunctions.CanUse(Item.Bridge_of_Eldin_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Eldin Field"]);
+                    }
                 }
 
                 if (LogicFunctions.CanUnlockLanayruMap())
@@ -2216,6 +2226,10 @@ namespace TPRandomizer
                     {
                         portalRooms.Add(Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"]);
                     }
+                    if (LogicFunctions.CanUse(Item.Upper_Zoras_River_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Upper Zoras River"]);
+                    }
                 }
 
                 if (LogicFunctions.CanUnlockSnowpeakMap())
@@ -2230,7 +2244,14 @@ namespace TPRandomizer
                 {
                     if (LogicFunctions.CanUse(Item.Gerudo_Desert_Portal))
                     {
-                        portalRooms.Add(Randomizer.Rooms.RoomDict["Gerudo Desert"]);
+                        portalRooms.Add(
+                            Randomizer.Rooms.RoomDict["Gerudo Desert Cave of Ordeals Plateau"]
+                        );
+                    }
+
+                    if (LogicFunctions.CanUse(Item.Mirror_Chamber_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Mirror Chamber Upper"]);
                     }
                 }
             }

@@ -4,9 +4,10 @@
     "Exits":
     [
       {
+        // Whenever portals are checks, this logic will hold up. If the player starts with the portal, that logic is handled elsewhere. 
         "ConnectedArea": "Gerudo Desert Cave of Ordeals Plateau",
-        "Requirements": "(Progressive_Clawshot, 1) and (CanDefeatShadowBeast or Gerudo_Desert_Portal)",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and (CanDefeatShadowBeast or Gerudo_Desert_Portal)"
+        "Requirements": "(Progressive_Clawshot, 1) and CanDefeatShadowBeast",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanDefeatShadowBeast"
       },
       {
         "ConnectedArea": "Gerudo Desert Basin",
@@ -250,14 +251,16 @@
     "Exits":
     [
       {
+        // This is a temporary requirement since eventually whenever portals are actually checks, having the portal won't get rid of the Shadow beasts.
         "ConnectedArea": "Mirror Chamber Lower",
-        "Requirements": "CanDefeatShadowBeast or Mirror_Chamber_Portal",
-        "GlitchedRequirements": "CanDefeatShadowBeast or Mirror_Chamber_Portal"
+        "Requirements": "CanDefeatShadowBeast or (Shadow_Crystal and Mirror_Chamber_Portal)",
+        "GlitchedRequirements": "CanDefeatShadowBeast or (Shadow_Crystal and Mirror_Chamber_Portal)"
       },
       {
+        // This is a temporary requirement since eventually whenever portals are actually checks, having the portal won't get rid of the Shadow beasts.
         "ConnectedArea": "Mirror Chamber Portal",
-        "Requirements": "(CanDefeatShadowBeast or Mirror_Chamber_Portal) and ((Setting.palaceRequirements equals Open) or ((Setting.palaceRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.palaceRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 4)) or ((Setting.palaceRequirements equals Vanilla) and canCompleteCityinTheSky))",
-        "GlitchedRequirements": "(CanDefeatShadowBeast or Mirror_Chamber_Portal) and ((Setting.palaceRequirements equals Open) or ((Setting.palaceRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.palaceRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 4)) or ((Setting.palaceRequirements equals Vanilla) and canCompleteCityinTheSky))"
+        "Requirements": "(CanDefeatShadowBeast or (Shadow_Crystal and Mirror_Chamber_Portal)) and ((Setting.palaceRequirements equals Open) or ((Setting.palaceRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.palaceRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 4)) or ((Setting.palaceRequirements equals Vanilla) and canCompleteCityinTheSky))",
+        "GlitchedRequirements": "(CanDefeatShadowBeast or (Shadow_Crystal and Mirror_Chamber_Portal)) and ((Setting.palaceRequirements equals Open) or ((Setting.palaceRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.palaceRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 4)) or ((Setting.palaceRequirements equals Vanilla) and canCompleteCityinTheSky))"
       }
     ],
     "Checks": 
@@ -271,9 +274,10 @@
     "Exits":
     [
       {
+        // This is a temporary requirement since eventually whenever portals are actually checks, having the portal won't get rid of the Shadow beasts.
         "ConnectedArea": "Mirror Chamber Upper",
-        "Requirements": "CanDefeatShadowBeast or Mirror_Chamber_Portal",
-        "GlitchedRequirements": "CanDefeatShadowBeast or Mirror_Chamber_Portal"
+        "Requirements": "CanDefeatShadowBeast or (Shadow_Crystal and Mirror_Chamber_Portal)",
+        "GlitchedRequirements": "CanDefeatShadowBeast or (Shadow_Crystal and Mirror_Chamber_Portal)"
       },
       {
         "ConnectedArea": "Palace of Twilight Entrance",
