@@ -894,10 +894,12 @@ namespace TPRandomizer.Assets
 
             if (randomizerSettings.smallKeySettings == SSettings.Enums.SmallKeySettings.Keysy)
             {
-                if (!randomizerSettings.startingItems.Contains(Item.Gerudo_Desert_Bulblin_Camp_Key))
+                // We want to remove all small keys since they dont actually need to be given to the player
+                foreach(Item sk in Randomizer.Items.RegionSmallKeys)
                 {
-                    randomizerSettings.startingItems.Add(Item.Gerudo_Desert_Bulblin_Camp_Key);
+                    randomizerSettings.startingItems.Remove(sk);
                 }
+                
             }
 
             foreach (Item startingItem in randomizerSettings.startingItems)

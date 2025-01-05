@@ -215,7 +215,7 @@ app.post('/api/final', function (req: express.Request, res: express.Response) {
     ['generate_final_output2', id, fileCreationSettings],
     (error, buffer) => {
       if (error) {
-        console.error(buffer?.toString("utf-8"));
+        console.error(buffer?.toString('utf-8'));
         res.status(500).send({ error });
         return;
       }
@@ -287,7 +287,9 @@ app.get('/', (req: express.Request, res: express.Response) => {
         `<input id="userJwtInput" type="hidden" value="${req.newUserJwt}">`
       );
 
-      const excludedChecksList = JSON.parse(callGenerator('print_check_ids'));
+      const excludedChecksList = JSON.parse(
+        callGenerator('print_check_ids_for_ui')
+      );
       const arr = Object.keys(excludedChecksList).map((key) => {
         return `<li><label><input type='checkbox' data-checkId='${excludedChecksList[key]}'>${key}</label></li>`;
       });
@@ -383,7 +385,7 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [0xaf, 'Snowpeak Portal'],
         [0xbf, 'Sacred Grove Portal'],
         [0xe8, 'Bridge of Eldin Portal'],
-        [0xf7, 'Upper Zoras River Portal']
+        [0xf7, 'Upper Zoras River Portal'],
       ];
 
       const startingItemsEls = startingItems.map((item) => {
