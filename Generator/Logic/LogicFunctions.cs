@@ -812,7 +812,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanDefeatShadowBeast()
         {
-            return (HasSword() || (CanUse(Item.Shadow_Crystal) && CanCompleteMDH()));
+            return HasSword() || (CanUse(Item.Shadow_Crystal) && CanMidnaCharge());
         }
 
         /// <summary>
@@ -1723,6 +1723,11 @@ namespace TPRandomizer
                 )
             );
             //return (canCompleteLakebedTemple() || (Randomizer.SSettings.skipMdh == true));
+        }
+
+        public static bool CanMidnaCharge()
+        {
+            return CanCompleteMDH() && CanCompleteAllTwilight();
         }
 
         public static bool CanStrikePedestal()

@@ -1225,6 +1225,15 @@ namespace TPRandomizer.Assets
                 ), // Change the statue to the past to use a custom flag so it's no longer tied to the portal
 
                 new ARCReplacement(
+                    "910",
+                    "063010FF",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Change the door to the past to use a custom flag so it's no longer tied to the portal
+
+                new ARCReplacement(
                     "1574",
                     "80FF0000",
                     (byte)FileDirectory.Room,
