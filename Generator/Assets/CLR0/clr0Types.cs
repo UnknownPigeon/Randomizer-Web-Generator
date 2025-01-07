@@ -140,6 +140,7 @@ namespace TPRandomizer.Assets.CLR0
         BMWE = 0,
         BMDR = 1,
         BMWR = 2,
+        BMDE = 3,
     };
 
     public enum ArchiveIndex : byte
@@ -148,6 +149,8 @@ namespace TPRandomizer.Assets.CLR0
         ZoraArmor = 1,
         ZoraArmorField = 2,
         ALink = 3,
+        MagicArmor = 4,
+        AlAnm = 5,
     }
 
     public class ColorArrays

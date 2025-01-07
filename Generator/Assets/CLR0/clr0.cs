@@ -191,6 +191,48 @@ namespace TPRandomizer.Assets.CLR0
                 )
             );
 
+            // Iron Boots
+            cmprFileModifications.Add(
+                new(
+                    fcSettings.ironsColor,
+                    "al_bootsh.bmd",
+                    "al_bootsH",
+                    (byte)ArchiveIndex.Link,
+                    BMDDirectory.BMWR
+                )
+            );
+
+            cmprFileModifications.Add(
+                new(
+                    fcSettings.ironsColor,
+                    "al_bootsh.bmd",
+                    "al_bootsH",
+                    (byte)ArchiveIndex.ZoraArmor,
+                    BMDDirectory.BMWR
+                )
+            );
+
+            cmprFileModifications.Add(
+                new(
+                    fcSettings.ironsColor,
+                    "al_bootsh.bmd",
+                    "al_bootsH",
+                    (byte)ArchiveIndex.MagicArmor,
+                    BMDDirectory.BMWR
+                )
+            );
+
+            // Spinner
+            cmprFileModifications.Add(
+                new(
+                    fcSettings.spinnerColor,
+                    "al_sp.bmd",
+                    "al_SP",
+                    (byte)ArchiveIndex.ALink,
+                    BMDDirectory.BMDR
+                )
+            );
+
             entries.Add(fcSettings.hTunicHatColor);
             entries.Add(fcSettings.hTunicBodyColor);
             entries.Add(fcSettings.hTunicSkirtColor);
@@ -201,6 +243,8 @@ namespace TPRandomizer.Assets.CLR0
             entries.Add(fcSettings.zTunicBootsColor);
             entries.Add(fcSettings.msBladeColor);
             entries.Add(fcSettings.boomerangColor);
+            entries.Add(fcSettings.ironsColor);
+            entries.Add(fcSettings.spinnerColor);
             entries.Add(fcSettings.lanternGlowColor);
             entries.Add(fcSettings.heartColor);
             entries.Add(fcSettings.aBtnColor);
@@ -238,7 +282,14 @@ namespace TPRandomizer.Assets.CLR0
                                                 BmdTextureAssociation association in textureAssociations
                                             )
                                             {
-                                                if (modification.bmdFile == association.bmdFile)
+                                                // Some archives use the same internal filenames for textures so we want to discern based on the archive index as well.
+                                                if (
+                                                    (modification.bmdFile == association.bmdFile)
+                                                    && (
+                                                        modification.archiveIndex
+                                                        == association.archiveIndex
+                                                    )
+                                                )
                                                 {
                                                     association.textures.Add(modification.texture);
                                                     isInList = true;
