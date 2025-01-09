@@ -894,10 +894,12 @@ namespace TPRandomizer.Assets
 
             if (randomizerSettings.smallKeySettings == SSettings.Enums.SmallKeySettings.Keysy)
             {
-                if (!randomizerSettings.startingItems.Contains(Item.Gerudo_Desert_Bulblin_Camp_Key))
+                // We want to remove all small keys since they dont actually need to be given to the player
+                foreach(Item sk in Randomizer.Items.RegionSmallKeys)
                 {
-                    randomizerSettings.startingItems.Add(Item.Gerudo_Desert_Bulblin_Camp_Key);
+                    randomizerSettings.startingItems.Remove(sk);
                 }
+                
             }
 
             foreach (Item startingItem in randomizerSettings.startingItems)
@@ -1221,6 +1223,15 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Sacred_Grove,
                     1
                 ), // Change the statue to the past to use a custom flag so it's no longer tied to the portal
+
+                new ARCReplacement(
+                    "910",
+                    "063010FF",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Change the door to the past to use a custom flag so it's no longer tied to the portal
 
                 new ARCReplacement(
                     "1574",
