@@ -463,7 +463,6 @@ namespace TPRandomizer.Assets
             { 0xB, 0x20 }, // Talked to Yeta in Snowpeak for the first time
             { 0x43, 0x8 }, // Senses unlocked
             { 0x46, 0x10 }, // Rode Epona back to Link's House
-            { 0x15, 0x80 }, // watched CS after goats 2
         };
 
         /// <summary>
