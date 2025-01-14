@@ -99,7 +99,8 @@ namespace TPRandomizer
         Barnes_Bomb_Bag = 0x50,
         Filled_Bomb_Bag = 0x51,
         Death_Mountain_Portal = 0x52,
-        Castle_Town_Portal = 0x53,
+
+        /*Mirror Shard 1 = 0x53,*/
 
         /*unused*/
         Small_Quiver = 0x54,
@@ -202,8 +203,7 @@ namespace TPRandomizer
         Mirror_Chamber_Portal = 0xAE,
         Snowpeak_Portal = 0xAF,
         Ilias_Scent = 0xB0,
-
-        /*Unused_Scent?	=	0xB1,*/
+        Castle_Town_Portal = 0xB1,
         Poe_Scent = 0xB2,
         Reekfish_Scent = 0xB3,
         Youths_Scent = 0xB4,
@@ -246,11 +246,12 @@ namespace TPRandomizer
         Progressive_Fused_Shadow = 0xD8,
         Fused_Shadow_2 = 0xD9,
         Fused_Shadow_3 = 0xDA,
-        Ancient_Sky_Book_First_Character = 0xDB, /*custom*/
-        Ancient_Sky_Book_Second_Character = 0xDC, /*custom*/
-        Ancient_Sky_Book_Third_Character = 0xDD, /*custom*/
-        Ancient_Sky_Book_Fourth_Character = 0xDE, /*custom*/
-        Ancient_Sky_Book_Fifth_Character = 0xDF, /*custom*/
+
+        /*unused = 0xDB, custom*/
+        /*unused = 0xDC, custom*/
+        /*unused = 0xDD, custom*/
+        /*unused = 0xDE, custom*/
+        /*unused = 0xDF, custom*/
         Poe_Soul = 0xE0,
         Progressive_Hidden_Skill = 0xE1,
         Shield_Attack = 0xE2,
