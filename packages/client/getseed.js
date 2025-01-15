@@ -209,7 +209,14 @@
       if (shouldCheckProgress) {
         handleCheckProgressPage();
       } else {
-        handleInvalidSeedPage();
+        const seedErrorMsgEl = document.getElementById('seedErrorMsg');
+        if (seedErrorMsgEl) {
+          // Error msg was inserted into page
+          $('#progressTitle').text(seedErrorMsgEl.value || 'Error');
+        } else {
+          // Handle invalid seed page
+          $('#progressTitle').text('Invalid seed ID.');
+        }
       }
     }
   }
@@ -253,9 +260,13 @@
 
     function handleToggleTranslationsWarning() {
       let showTranslationsWarning = false;
-      if (window.tpr.shared.selectedRegion !== 'USA' && window.tpr.shared.selectedLanguage !== 'English') {
+      if (
+        window.tpr.shared.selectedRegion !== 'USA' &&
+        window.tpr.shared.selectedLanguage !== 'English'
+      ) {
         showTranslationsWarning =
-          window.tpr.shared.selectedRegion !== 'EUR' || window.tpr.shared.selectedLanguage !== 'Français';
+          window.tpr.shared.selectedRegion !== 'EUR' ||
+          window.tpr.shared.selectedLanguage !== 'Français';
       }
 
       $('#translationsWarning').toggle(showTranslationsWarning);
@@ -286,7 +297,8 @@
 
   function updateLangDisplay() {
     const shouldShowLangSection =
-      window.tpr.shared.selectedRegion == 'All' || window.tpr.shared.selectedRegion === 'EUR';
+      window.tpr.shared.selectedRegion == 'All' ||
+      window.tpr.shared.selectedRegion === 'EUR';
 
     $('#downloadOptionsLanguageFilterGroup').toggle(shouldShowLangSection);
   }
@@ -301,7 +313,11 @@
         window.tpr.shared.selectedRegion = fcSettingsDefault.region;
       }
 
-      if (window.tpr.shared.EurLanguageTag.hasOwnProperty(fcSettingsDefault.eurLanguage)) {
+      if (
+        window.tpr.shared.EurLanguageTag.hasOwnProperty(
+          fcSettingsDefault.eurLanguage
+        )
+      ) {
         window.tpr.shared.selectedLanguage = fcSettingsDefault.eurLanguage;
       }
 
@@ -312,7 +328,11 @@
       // do nothing
     }
 
-    if (!window.tpr.shared.EurLanguageTag.hasOwnProperty(window.tpr.shared.selectedLanguage)) {
+    if (
+      !window.tpr.shared.EurLanguageTag.hasOwnProperty(
+        window.tpr.shared.selectedLanguage
+      )
+    ) {
       pickDefaultEurLanguage();
     }
   }
@@ -354,7 +374,11 @@
       }
     }
 
-    if (!window.tpr.shared.EurLanguageTag.hasOwnProperty(window.tpr.shared.selectedLanguage)) {
+    if (
+      !window.tpr.shared.EurLanguageTag.hasOwnProperty(
+        window.tpr.shared.selectedLanguage
+      )
+    ) {
       window.tpr.shared.selectedLanguage = 'English';
     }
   }
@@ -444,8 +468,7 @@
     }
     baseHue = Math.floor(baseHue);
 
-    if (useSoftColors)
-    {
+    if (useSoftColors) {
       return (
         new window.ColorScheme()
           .from_hue(baseHue) // Start the scheme
@@ -456,9 +479,7 @@
           .distance(0.5)
           .colors()
       );
-    }
-    else
-    {
+    } else {
       return (
         new window.ColorScheme()
           .from_hue(baseHue) // Start the scheme
@@ -469,8 +490,6 @@
           .colors()
       );
     }
-
-    
   }
 
   // `colorHex` does not have the '#' at the front.
@@ -589,10 +608,12 @@
         }
       } else if (typeof entry === 'object') {
         if (entry) {
-          randomizeCosmeticSetting(entry.id, get16ColorsPalette(null, entry.useSoftColors)[0]);
-          
-          if (entry.preventCustomColor == true)
-          {
+          randomizeCosmeticSetting(
+            entry.id,
+            get16ColorsPalette(null, entry.useSoftColors)[0]
+          );
+
+          if (entry.preventCustomColor == true) {
             randomizeCosmeticSetting(entry.id, null, entry.preventCustomColor);
           }
         }
@@ -1114,10 +1135,6 @@
     startCheckProgressRoutine();
   }
 
-  function handleInvalidSeedPage() {
-    $('#progressTitle').text('Invalid seed ID.');
-  }
-
   function initTabButtons(tabIds) {
     const tabBtnEls = tabIds.map(({ buttonId }) => {
       return document.getElementById(buttonId);
@@ -1266,7 +1283,9 @@
     $('#downloadLinkError').hide();
 
     // Validate input
-    if (!window.tpr.shared.Region.hasOwnProperty(window.tpr.shared.selectedRegion)) {
+    if (
+      !window.tpr.shared.Region.hasOwnProperty(window.tpr.shared.selectedRegion)
+    ) {
       hasSelectedRegionError = true;
       $('#downloadLinkError').text('Select a region.').show();
       creationCallInProgress = false;

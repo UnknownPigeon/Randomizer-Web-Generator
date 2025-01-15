@@ -1325,6 +1325,15 @@ namespace TPRandomizer.Assets
                     1
                 ), // Set the time of day that is to be set 
 
+                  new ARCReplacement(
+                    "1004",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Palace_of_Twilight,
+                    0
+                ), // Remove the TagYami SCOB that prevents the player from going north in PoT before collecting both sols
+
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
                 new ARCReplacement(
