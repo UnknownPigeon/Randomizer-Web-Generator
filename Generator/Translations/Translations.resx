@@ -1801,6 +1801,10 @@
     <value>For the sake of peace in Hyrule...\nWould you please make a donation?</value>
     <comment></comment>
   </data>
+  <data name="self-hinter.coro" xml:space="preserve">
+    <value>Right now we have {item} for {price} and oil #(red)refills#(white) for #(purple)20 Rupees#(white)!</value>
+    <comment>Adjusted msg slightly so we don&apos;t have to deal with &quot;a&quot; 10-Rupee item or &quot;an&quot; 11-Rupee item. Also slightly shorter msg length. Only &quot;refills&quot; is red (not &quot;oil refills&quot;) to make the first item text easier to read, and it matchees with the &quot;Buy a refill&quot; part. Vanilla text leaves out &quot;oil&quot; entirely because oil is mentioned earlier in the text.</comment>
+  </data>
   <data name="self-hinter.fishing-bottle" xml:space="preserve">
     <value>#(red)DON&apos;T LITTER!#(white)\nDo NOT toss empty bottles or {item} here! The fish are CRYING!\n\nKeep the fishing hole clean!</value>
     <comment></comment>

@@ -1893,6 +1893,10 @@
     <value>Pour que la paix règne en Hyrule...\npuis-je vous demander l&apos;aumône...?</value>
     <comment></comment>
   </data>
+  <data name="self-hinter.coro" xml:space="preserve">
+    <value>Je vends {item} pour {price}, mais aussi #(red)le plein d&apos;huile#(white) pour #(purple)20 rubis#(white). Alors?</value>
+    <comment></comment>
+  </data>
   <data name="self-hinter.fishing-bottle" xml:space="preserve">
     <value>#(red)Protégez la nature!#(white)\nNe jetez pas de {item}!\n\nPrenez soin de l&apos;eau!\nPensez aux possions!\nPour le plaisir de tous!</value>
     <comment></comment>

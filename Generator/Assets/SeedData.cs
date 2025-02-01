@@ -1243,6 +1243,15 @@ namespace TPRandomizer.Assets
                 ), // Change the ms pedestal to use a custom flag so it's no longer tied to the portal
 
                 new ARCReplacement(
+                    "1094",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Remove the fences from the grove portal fight. Area is constricted as is. no need to make things weird.
+
+                new ARCReplacement(
                     "1BE0",
                     "00000000",
                     (byte)FileDirectory.Room,

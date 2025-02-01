@@ -226,7 +226,13 @@ namespace TPRandomizer
             public bool updateShopText { get; private set; } = true;
             private bool forceNotUpdateShopText = false;
             private HashSet<string> selfHinterChecks =
-                new() { "Barnes Bomb Bag", "Charlo Donation Blessing", "Fishing Hole Bottle" };
+                new()
+                {
+                    "Barnes Bomb Bag",
+                    "Charlo Donation Blessing",
+                    "Fishing Hole Bottle",
+                    "Coro Bottle"
+                };
             public List<HintSpot> hintSpots { get; private set; } = new();
 
             public Builder(HintGenData genData, byte requiredDungeons, byte unrequiredDungeons)
@@ -743,6 +749,33 @@ namespace TPRandomizer
                         MsgEntryId.Fishing_Hole_Bottle_Sign,
                         Res.LangSpecificNormalize(fishingBottleText, Res.IsCultureJa() ? 25 : 30)
                     )
+                );
+            }
+
+            if (selfHinterChecks.TryGetValue("Coro Bottle", out SelfHinterData coroData))
+            {
+                string itemText = GenItemText3(
+                    out _,
+                    coroData.itemToHint,
+                    CheckStatus.Unknown,
+                    coroData.useDefArticle ? "def" : "indef",
+                    prefStartColor: CustomMessages.messageColorRed
+                );
+
+                string priceText = GenShopPriceText(100);
+
+                Res.Result res = Res.Msg("self-hinter.coro", null);
+                // Note we need to add the "shopOption" as it is there normally
+                // and if we try to add the options in the text then the
+                // vertical alignment is low and looks off. We do not change the
+                // options text for any other shops, so it would require some
+                // research if if we wanted to change the "Buy an oil bottle".
+                string text =
+                    Res.LangSpecificNormalize(
+                        res.Substitute(new() { { "item", itemText }, { "price", priceText } })
+                    ) + CustomMessages.shopOption;
+                results.Add(
+                    CustomMsgUtils.GetEntry(MsgEntryId.Coro_Buy_Options_Confirmation, text)
                 );
             }
         }

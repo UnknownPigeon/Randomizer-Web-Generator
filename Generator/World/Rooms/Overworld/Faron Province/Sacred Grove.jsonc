@@ -111,9 +111,8 @@
       },
       {
         "ConnectedArea": "Sacred Grove Past",
-        // This is a temporary requirement since eventually whenever portals are actually checks, having the portal won't get rid of the Shadow beasts.
-        "Requirements": "(Sacred_Grove_Portal or CanDefeatShadowBeast) and CanStrikePedestal",
-        "GlitchedRequirements": "(Sacred_Grove_Portal or CanDefeatShadowBeast) and CanStrikePedestal"
+        "Requirements": "CanStrikePedestal",
+        "GlitchedRequirements": "CanStrikePedestal"
       }
     ],
     "Checks": [""],

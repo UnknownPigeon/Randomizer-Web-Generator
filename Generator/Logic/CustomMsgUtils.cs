@@ -88,6 +88,7 @@ namespace TPRandomizer
         Barnes_Bomb_Bag_Cant_Afford,
         Charlo_Donation_Confirmation,
         Fishing_Hole_Bottle_Sign,
+        Coro_Buy_Options_Confirmation,
     }
 
     public class CustomMsgUtils
@@ -341,6 +342,7 @@ namespace TPRandomizer
                 },
                 { MsgEntryId.Charlo_Donation_Confirmation, new(StageIDs.Castle_Town, 2, 0x355) },
                 { MsgEntryId.Fishing_Hole_Bottle_Sign, new(StageIDs.Fishing_Pond, 0, 0x47A) },
+                { MsgEntryId.Coro_Buy_Options_Confirmation, new(StageIDs.Faron_Woods, 4, 0xDD) },
             };
 
         public static MessageEntry GetEntryForSpotId(SpotId spotId)

@@ -374,7 +374,7 @@ namespace TPRandomizer
             if (Randomizer.SSettings.randomizeStartingPoint)
             {
                 Randomizer.spawnIndex = rnd.Next(this.spawnList.Count());
-                startingRoom = this.spawnList[Randomizer.spawnIndex].ParentArea;
+                startingRoom = this.spawnList[Randomizer.spawnIndex].ConnectedArea;
             }
             else
             {

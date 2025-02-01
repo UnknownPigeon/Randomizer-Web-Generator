@@ -1430,6 +1430,7 @@ namespace TPRandomizer
             Randomizer.Rooms.RoomDict.Clear();
             DeserializeRooms(SSettings);
             Randomizer.EntranceRandomizer.SpawnTable.Clear();
+            Randomizer.Rooms.RoomDict["Root"].Exits.Clear();
 
             // Finally set the required dungeons to 0 since the value may change during the next attempt.
             Randomizer.RequiredDungeons = 0;

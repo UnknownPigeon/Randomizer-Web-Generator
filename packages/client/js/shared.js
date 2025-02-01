@@ -49,8 +49,6 @@
   const encodingChars =
     '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_';
 
-  let selectedLanguage = null;
-
   function encodeBits(bitString) {
     const missingChars = (6 - (bitString.length % 6)) % 6;
     bitString += '0'.repeat(missingChars);
@@ -1268,6 +1266,7 @@
       });
     }
 
+    const { selectedLanguage } = window.tpr.shared;
     if (EurLanguageTag.hasOwnProperty(selectedLanguage)) {
       values.push({
         type: RawSettingType.xBitNum,
