@@ -2,6 +2,7 @@ namespace TPRandomizer
 {
     using System;
     using System.Collections.Generic;
+    using System.Drawing;
 
     public class CheckIdClass
     {
@@ -560,6 +561,8 @@ namespace TPRandomizer
                 "Castle Town Goron Shop Lantern Oil",
                 "Castle Town Goron Shop Arrow Refill",
                 "Kakariko Village Bell Rupee",
+                "Coro Lantern",
+                "Coro Gate Key"
                 // Add new check names right above this line. The name should
                 // match exactly with the json filename in the "Checks"
                 // directory.

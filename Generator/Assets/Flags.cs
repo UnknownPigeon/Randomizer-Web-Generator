@@ -261,7 +261,6 @@ namespace TPRandomizer.Assets
         public static readonly byte[,] SmallKeyRegionFlags = new byte[,]
         {
             { 0x2, 0x53 }, // Coro gate unlocked.
-            { 0x2, 0x6D }, // Got key from Coro.
             { 0x2, 0x4B }, // North Faron Gate Unlocked.
             { 0x3, 0xBA }, // Followed Rutella to graveyard.
             { 0x3, 0xB6 }, // Started Rutella escort.
@@ -438,7 +437,7 @@ namespace TPRandomizer.Assets
             { 0x12, 0x8 }, // Can use Sera's Shop.
             { 0x14, 0x10 }, // Put Bo outside, ready to wrestle
             { 0xA, 0x2F }, // Bridge of Eldin Stolen, KB1 defeated, KB1 started
-            { 0xF, 0x9 }, // Bridge of Eldin Warped Back, coro gave lantern
+            { 0xF, 0x8 }, // Bridge of Eldin Warped Back
             { 0x40, 0x88 }, // Saved monkey from puppets, Visited Gerudo Desert for the first time.
             { 0x41, 0x18 }, // Talked to Fado after Faron and Eldin Twilight
             { 0x7, 0xA0 }, // Watched Colin CS after KB1, talked to Bo before sumo
@@ -556,7 +555,6 @@ namespace TPRandomizer.Assets
             { 0x0, 0x3 }, // Yeto put pumpkin and cheese in soup.
             { 0x14, 0x60 }, // Snowpeak Ruins North and West doors unlocked.
             { 0x1, 0x20 }, // Told Yeta about cheese
-            { 0x1A, 0x10 }, // Talked to Coro after Faron Twilight
         };
 
         public static readonly byte[,] OpenCastleEventFlags = new byte[,]

@@ -34,6 +34,8 @@
     "Checks":
     [
         "Coro Bottle",
+        "Coro Lantern",
+        "Coro Gate Key",
         "South Faron Portal"
     ],
     "Region": "Faron Woods"

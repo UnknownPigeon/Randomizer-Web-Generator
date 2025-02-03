@@ -449,6 +449,14 @@ window.tpr.checkData = {
     category: ['Overworld', 'Npc', 'Faron Woods', 'ARC'],
     itemId: 'Coro_Bottle',
   },
+  'Coro Lantern': {
+    category: ['Overworld', 'Npc', 'Faron Woods', 'ARC'],
+    itemId: 'Lantern',
+  },
+  'Coro Gate Key': {
+    category: ['Overworld', 'Npc', 'Faron Woods', 'ARC'],
+    itemId: 'Coro_Key',
+  },
   'Death Mountain Alcove Chest': {
     category: ['Overworld', 'Chest', 'Death Mountain', 'ARC'],
     itemId: 'Piece_of_Heart',

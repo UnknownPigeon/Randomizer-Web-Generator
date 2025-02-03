@@ -387,6 +387,7 @@ namespace TPRandomizer
             new()
             {
                 Item.North_Faron_Woods_Gate_Key,
+                Item.Coro_Key,
                 Item.Forest_Temple_Small_Key,
                 Item.Forest_Temple_Small_Key,
                 Item.Forest_Temple_Small_Key,

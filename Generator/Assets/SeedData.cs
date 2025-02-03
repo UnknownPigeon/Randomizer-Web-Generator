@@ -1343,6 +1343,142 @@ namespace TPRandomizer.Assets
                     0
                 ), // Remove the TagYami SCOB that prevents the player from going north in PoT before collecting both sols
 
+                // Coro FLW patches to allow him to give all items all the time
+                 new ARCReplacement(
+                    "E24",
+                    "0080013b",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from prologue state
+
+                 new ARCReplacement(
+                    "288",
+                    "02020001",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from post twilight state
+
+                 new ARCReplacement(
+                    "28c",
+                    "0080013b",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from post twilight state
+
+                 new ARCReplacement(
+                    "808",
+                    "02020001",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from post FT state
+
+                 new ARCReplacement(
+                    "80c",
+                    "0080013b",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from post FT state
+
+                 new ARCReplacement(
+                    "d60",
+                    "01000125",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Allow flow state for lantern
+
+                 new ARCReplacement(
+                    "d64",
+                    "01a60000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Allow flow state for lantern
+
+                 new ARCReplacement(
+                    "d58",
+                    "03000138",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Set lantern flag
+
+                 new ARCReplacement(
+                    "d5c",
+                    "00800000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Set lantern flag
+
+                 new ARCReplacement(
+                    "dA8",
+                    "0202000c",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Check coro key flag
+
+                 new ARCReplacement(
+                    "dAc",
+                    "00320139",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Check coro key flag
+
+                 new ARCReplacement(
+                    "d32",
+                    "00c200a1",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Adjust message flow for coro key
+
+                 new ARCReplacement(
+                    "53C",
+                    "00b40000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Adjust message to jump past unnecessary flag check
+
+                 new ARCReplacement(
+                    "E30",
+                    "02020001",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Check coro bottle flag
+
+                 new ARCReplacement(
+                    "E34",
+                    "00da00d8",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Check coro key flag
+
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
                 new ARCReplacement(
