@@ -1335,6 +1335,24 @@ namespace TPRandomizer.Assets
                 ), // Set the time of day that is to be set 
 
                   new ARCReplacement(
+                    "C60",
+                    "0FF0FF0C",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    3
+                ), // Add a flag to the Coro gate in the prologue layer
+
+                  new ARCReplacement(
+                    "1B30",
+                    "0FF0FF0C",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    3
+                ), // Add a flag to the Coro gate in the Post FT layer
+
+                  new ARCReplacement(
                     "1004",
                     "00000000",
                     (byte)FileDirectory.Room,
