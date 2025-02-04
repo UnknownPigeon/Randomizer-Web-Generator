@@ -5,8 +5,8 @@
     [
       {
         "ConnectedArea": "South Faron Woods Behind Gate",
-        "Requirements": "true", // Coro Key is Vanilla if forest is closed. Gate is open otherwise.
-        "GlitchedRequirements": "true" // Coro Key is Vanilla if forest is closed. Gate is open otherwise. 
+        "Requirements": "Coro_Key", 
+        "GlitchedRequirements": "Coro_Key"
       },
       {
         "ConnectedArea": "South Faron Woods Owl Statue Area",
@@ -46,8 +46,8 @@
     [
       {
         "ConnectedArea": "South Faron Woods",
-        "Requirements": "Room.South_Faron_Woods or Shadow_Crystal or canClearForest",
-        "GlitchedRequirements": "Room.South_Faron_Woods or Shadow_Crystal or canClearForestGlitched" 
+        "Requirements": "Shadow_Crystal or Coro_Key",
+        "GlitchedRequirements": "Shadow_Crystal or Coro_Key" 
       },
       {
         "ConnectedArea": "Faron Woods Cave Southern Entrance",
@@ -339,9 +339,27 @@
         "GlitchedRequirements": "Shadow_Crystal"
       },
       {
-        "ConnectedArea": "North Faron Woods",
+        "ConnectedArea": "Mist Area Near North Faron Woods Behind Gate",
         "Requirements": "North_Faron_Woods_Gate_Key or (Setting.skipPrologue equals True)",
         "GlitchedRequirements": "North_Faron_Woods_Gate_Key or (Setting.skipPrologue equals True)"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Faron Woods"
+  },
+  {
+    "RoomName": "Mist Area Near North Faron Woods Behind Gate",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Mist Area Near North Faron Woods",
+        "Requirements": "North_Faron_Woods_Gate_Key or (Setting.skipPrologue equals True)",
+        "GlitchedRequirements": "North_Faron_Woods_Gate_Key or (Setting.skipPrologue equals True)"
+      },
+      {
+        "ConnectedArea": "North Faron Woods",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       }
     ],
     "Checks": [""],
@@ -387,7 +405,7 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Mist Area Near North Faron Woods",
+        "ConnectedArea": "Mist Area Near North Faron Woods Behind Gate",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },

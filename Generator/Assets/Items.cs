@@ -1106,11 +1106,6 @@ namespace TPRandomizer
                 }
             }
 
-            if (parseSetting.skipPrologue)
-            {
-                RemoveItem(Item.North_Faron_Woods_Gate_Key);
-            }
-
             // Handle portals
             parseSetting.startingItems.Add(Item.Ordon_Portal);
             if (parseSetting.faronTwilightCleared)

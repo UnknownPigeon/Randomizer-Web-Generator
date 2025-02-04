@@ -437,6 +437,7 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [0x8c, 'Palace_of_Twilight_Small_Key'],
         [0x8d, 'Hyrule_Castle_Small_Key'],
         [0xee, 'North_Faron_Woods_Gate_Key'],
+        [0xfe, 'Coro_Key'],
         [0xf3, 'Gate_Keys'],
         [0x8e, 'Gerudo_Desert_Bulblin_Camp_Key'],
         // Big Keys

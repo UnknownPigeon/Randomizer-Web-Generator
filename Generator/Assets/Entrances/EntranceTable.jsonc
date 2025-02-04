@@ -129,7 +129,7 @@
         "Type": "Overworld",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Mist Area Near North Faron Woods",
+            "SourceRoom": "Mist Area Near North Faron Woods Behind Gate",
             "TargetRoom": "North Faron Woods",
             "Stage": 45,
             "Room": 6,
@@ -141,7 +141,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "North Faron Woods",
-            "TargetRoom": "Mist Area Near North Faron Woods",
+            "TargetRoom": "Mist Area Near North Faron Woods Behind Gate",
             "Stage": 45,
             "Room": 11,
             "Spawn": "00",
