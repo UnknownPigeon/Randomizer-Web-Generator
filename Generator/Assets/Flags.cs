@@ -94,6 +94,14 @@ namespace TPRandomizer.Assets
             { 0x4, 0x7F }, // Lake Hylia has water on Lake Hylia Map.
         };
 
+        /// <summary>
+        /// summary text.
+        /// </summary>
+        public static readonly byte[,] IntroRegionFlags = new byte[,]
+        {
+            { 0x2, 0x4B }, // Unlock North Faron Woods Gate
+        };
+
         public static readonly byte[,] MDHRegionFlags = new byte[,]
         {
             { 0x4, 0x51 }, // Set flag for MDH Cutscene in Lake Hylia
@@ -399,6 +407,7 @@ namespace TPRandomizer.Assets
         public static readonly Dictionary<int, byte[,]> RegionFlags =
             new()
             {
+                { 0, IntroRegionFlags },
                 { 1, FaronTwilightRegionFlags },
                 { 2, EldinTwilightRegionFlags },
                 { 3, LanayruTwilightRegionFlags },
