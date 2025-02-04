@@ -393,6 +393,81 @@ namespace TPRandomizer.Assets
             { 0x15, 0xBF }, // statue placed in slot in room 1
         };
 
+        public static readonly byte[,] OpenMapRegionFlags = new byte[,]
+        {
+            // Lake Long Cave Flags
+            { 0x1A, 0x40 },
+            { 0x1A, 0x41 },
+            { 0x1A, 0x42 },
+            { 0x1A, 0x43 },
+            { 0x1A, 0x44 },
+            { 0x1A, 0x45 },
+            { 0x1A, 0x46 },
+            { 0x1A, 0x47 },
+            { 0x1A, 0x48 },
+            { 0x1A, 0x49 },
+            { 0x1A, 0x4A },
+            { 0x1A, 0x4B },
+            { 0x1A, 0x4C },
+            { 0x1A, 0x4D },
+            { 0x1A, 0x4E },
+            { 0x1A, 0x4F },
+            { 0x1A, 0x50 },
+            { 0x1A, 0x51 },
+            { 0x1A, 0x52 },
+            { 0x1A, 0x53 },
+            { 0x1A, 0x54 },
+            { 0x1A, 0x55 },
+            { 0x1A, 0x56 },
+            { 0x1A, 0x57 },
+            { 0x1A, 0x58 },
+            { 0x1A, 0x59 },
+            { 0x1A, 0x5A },
+            { 0x1A, 0x5B },
+            { 0x1A, 0x5C },
+            { 0x1A, 0x5D },
+            { 0x1A, 0x5E },
+            { 0x1A, 0x75 },
+            { 0x1A, 0x76 },
+            { 0x1A, 0x77 },
+            { 0x1A, 0x78 },
+            { 0x1A, 0x79 },
+            { 0x1A, 0x7A },
+            { 0x1A, 0x7B },
+            { 0x1A, 0x7C },
+            { 0x1A, 0x7D },
+            { 0x1A, 0x7E },
+            { 0x1A, 0x7F },
+            // Eldin Cave Map Flags
+            { 0x19, 0xA1 },
+            { 0x19, 0xA2 },
+            { 0x19, 0xA3 },
+            { 0x19, 0xA4 },
+            { 0x19, 0xA5 },
+            { 0x19, 0xA6 },
+            { 0x19, 0xA7 },
+            { 0x19, 0xA8 },
+            { 0x19, 0xA9 },
+            { 0x19, 0xAA },
+            { 0x19, 0xAB },
+            { 0x19, 0xAC },
+            { 0x19, 0xAD },
+            { 0x19, 0xAE },
+            { 0x19, 0xAF },
+            { 0x19, 0xB0 },
+            { 0x19, 0xB1 },
+            { 0x19, 0xB2 },
+            { 0x19, 0xB3 },
+            { 0x19, 0xB4 },
+            { 0x19, 0xB5 },
+            { 0x19, 0xB6 },
+            { 0x19, 0xB7 },
+            { 0x19, 0xB8 },
+            { 0x19, 0xB9 },
+            { 0x19, 0xBA },
+            { 0x19, 0xBB },
+        };
+
         /// <summary>
         /// summary text.
         /// </summary>
@@ -414,6 +489,7 @@ namespace TPRandomizer.Assets
                 { 18, OpenGroveRegionFlags },
                 { 19, OpenDMTRegionFlags },
                 { 20, OpenDotRegionFlags },
+                { 21, OpenMapRegionFlags },
             };
 
         /// <summary>
@@ -624,6 +700,7 @@ namespace TPRandomizer.Assets
             /* 18 */RandomizerSettings.skipGroveEntrance,
             /* 19 */RandomizerSettings.goronMinesEntrance == GoronMinesEntrance.Open,
             /* 20 */RandomizerSettings.openDot,
+            /* 21 */RandomizerSettings.openMap,
         };
     }
 }

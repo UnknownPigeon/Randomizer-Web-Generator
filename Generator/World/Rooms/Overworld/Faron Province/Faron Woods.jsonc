@@ -5,8 +5,8 @@
     [
       {
         "ConnectedArea": "South Faron Woods Behind Gate",
-        "Requirements": "Coro_Key", 
-        "GlitchedRequirements": "Coro_Key"
+        "Requirements": "Faron_Woods_Coro_Key", 
+        "GlitchedRequirements": "Faron_Woods_Coro_Key"
       },
       {
         "ConnectedArea": "South Faron Woods Owl Statue Area",
@@ -46,8 +46,8 @@
     [
       {
         "ConnectedArea": "South Faron Woods",
-        "Requirements": "Shadow_Crystal or Coro_Key",
-        "GlitchedRequirements": "Shadow_Crystal or Coro_Key" 
+        "Requirements": "Shadow_Crystal or Faron_Woods_Coro_Key",
+        "GlitchedRequirements": "Shadow_Crystal or Faron_Woods_Coro_Key" 
       },
       {
         "ConnectedArea": "Faron Woods Cave Southern Entrance",

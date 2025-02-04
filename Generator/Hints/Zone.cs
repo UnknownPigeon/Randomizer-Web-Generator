@@ -228,6 +228,8 @@ namespace TPRandomizer.Hints
                     new[]
                     {
                         "Coro Bottle",
+                        "Coro Lantern",
+                        "Coro Gate Key",
                         "Faron Mist Cave Lantern Chest",
                         "Faron Mist Cave Open Chest",
                         "Faron Mist North Chest",

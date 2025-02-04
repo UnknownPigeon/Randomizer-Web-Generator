@@ -285,7 +285,7 @@ namespace TPRandomizer
 
         /*Key?	=	0xFC,*/
         Goron_Mines_Big_Key = 0xFD,
-        Coro_Key = 0xFE,
+        Faron_Woods_Coro_Key = 0xFE,
         Gives_Vanilla = 0xFF,
 
         // Event items. These are not items that the player can "collect" but are used to specify major events that affect logical progression.
@@ -387,7 +387,7 @@ namespace TPRandomizer
             new()
             {
                 Item.North_Faron_Woods_Gate_Key,
-                Item.Coro_Key,
+                Item.Faron_Woods_Coro_Key,
                 Item.Forest_Temple_Small_Key,
                 Item.Forest_Temple_Small_Key,
                 Item.Forest_Temple_Small_Key,
