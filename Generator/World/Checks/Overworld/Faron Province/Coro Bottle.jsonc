@@ -1,6 +1,6 @@
 {
   "requirements": "true",
   "glitchedRequirements": "true",
-  "checkCategory": [ "Overworld", "Npc", "Faron Woods" ],
+  "checkCategory": [ "Overworld", "Shop", "Faron Woods" ],
   "itemId": "Coro_Bottle"
 }

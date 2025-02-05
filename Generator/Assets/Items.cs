@@ -386,8 +386,6 @@ namespace TPRandomizer
         internal List<Item> RegionSmallKeys =
             new()
             {
-                Item.North_Faron_Woods_Gate_Key,
-                Item.Faron_Woods_Coro_Key,
                 Item.Forest_Temple_Small_Key,
                 Item.Forest_Temple_Small_Key,
                 Item.Forest_Temple_Small_Key,
@@ -537,6 +535,8 @@ namespace TPRandomizer
                 Item.Horse_Call,
                 Item.Gate_Keys,
                 Item.Gerudo_Desert_Bulblin_Camp_Key,
+                Item.North_Faron_Woods_Gate_Key,
+                Item.Faron_Woods_Coro_Key,
                 Item.Empty_Bottle,
                 Item.Sera_Bottle,
                 Item.Coro_Bottle,
@@ -860,6 +860,10 @@ namespace TPRandomizer
                 parseSetting.startingItems.Add(Item.Gate_Keys);
                 this.RandomizedImportantItems.Remove(Item.Gerudo_Desert_Bulblin_Camp_Key);
                 parseSetting.startingItems.Add(Item.Gerudo_Desert_Bulblin_Camp_Key);
+                this.RandomizedImportantItems.Remove(Item.North_Faron_Woods_Gate_Key);
+                parseSetting.startingItems.Add(Item.North_Faron_Woods_Gate_Key);
+                this.RandomizedImportantItems.Remove(Item.Faron_Woods_Coro_Key);
+                parseSetting.startingItems.Add(Item.Faron_Woods_Coro_Key);
                 parseSetting.startingItems.AddRange(this.RegionSmallKeys);
             }
 

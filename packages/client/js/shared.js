@@ -1304,6 +1304,7 @@
         { id: 'boomerangColorFieldset', rgb: true },
         { id: 'ironsColorFieldset', rgb: true },
         { id: 'spinnerColorFieldset', rgb: true },
+        { id: 'woodSwordColorFieldset', rgb: true },
         { id: 'lanternColorFieldset', rgb: true },
         // { id: 'midnaHairColorFieldset', bitLength: 1 },
         { id: 'heartColorFieldset', rgb: true },

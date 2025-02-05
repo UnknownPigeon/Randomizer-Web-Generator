@@ -233,6 +233,34 @@ namespace TPRandomizer.Assets.CLR0
                 )
             );
 
+            cmprFileModifications.Add(
+                new(
+                    fcSettings.woodSwordColor,
+                    "al_swb.bmd",
+                    "al_SWB",
+                    (byte)ArchiveIndex.Link,
+                    BMDDirectory.BMWR
+                )
+            );
+            cmprFileModifications.Add(
+                new(
+                    fcSettings.woodSwordColor,
+                    "al_swb.bmd",
+                    "al_SWB",
+                    (byte)ArchiveIndex.ZoraArmor,
+                    BMDDirectory.BMWR
+                )
+            );
+            cmprFileModifications.Add(
+                new(
+                    fcSettings.woodSwordColor,
+                    "al_swb.bmd",
+                    "al_SWB",
+                    (byte)ArchiveIndex.MagicArmor,
+                    BMDDirectory.BMWR
+                )
+            );
+
             entries.Add(fcSettings.hTunicHatColor);
             entries.Add(fcSettings.hTunicBodyColor);
             entries.Add(fcSettings.hTunicSkirtColor);
@@ -245,6 +273,7 @@ namespace TPRandomizer.Assets.CLR0
             entries.Add(fcSettings.boomerangColor);
             entries.Add(fcSettings.ironsColor);
             entries.Add(fcSettings.spinnerColor);
+            entries.Add(fcSettings.woodSwordColor);
             entries.Add(fcSettings.lanternGlowColor);
             entries.Add(fcSettings.heartColor);
             entries.Add(fcSettings.aBtnColor);
