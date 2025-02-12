@@ -25,6 +25,8 @@ namespace TPRandomizer.Hints.HintCreator
                 HintCategory.Southern_Desert,
                 HintCategory.Northern_Desert,
                 HintCategory.Golden_Wolf,
+                HintCategory.Forest_Temple_West_Wing,
+                HintCategory.Lantern_Chests,
             };
 
         // Includes post-dungeon checks, etc.

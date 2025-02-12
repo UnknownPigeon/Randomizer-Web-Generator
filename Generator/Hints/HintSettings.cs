@@ -1380,6 +1380,8 @@ namespace TPRandomizer.Hints.Settings
                     return Path.Combine(basePath, "drehenTestv2.jsonc");
                 case HintDistribution.DrehenTestv1:
                     return Path.Combine(basePath, "drehenTestv1.jsonc");
+                case HintDistribution.DrehenPalace:
+                    return Path.Combine(basePath, "drehenpalace.jsonc");
                 case HintDistribution.Strong:
                     return Path.Combine(basePath, "strong.jsonc");
                 case HintDistribution.Very_Strong:

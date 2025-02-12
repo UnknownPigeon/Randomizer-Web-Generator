@@ -1,17 +1,17 @@
 namespace TPRandomizer.Hints
 {
     using System;
-    using System.Collections.ObjectModel;
     using System.Collections.Generic;
-    using System.Linq;
+    using System.Collections.ObjectModel;
     using System.IO;
+    using System.Linq;
+    using System.Threading;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using SSettings.Enums;
-    using TPRandomizer.Util;
-    using TPRandomizer.Hints.Settings;
     using TPRandomizer.Hints.HintCreator;
-    using System.Threading;
+    using TPRandomizer.Hints.Settings;
+    using TPRandomizer.Util;
 
     class HintGenerator
     {
@@ -1450,8 +1450,16 @@ namespace TPRandomizer.Hints
                 {
                     foreach (HintDefResult result in recHintResults.HintDefResults)
                     {
-                        if(HintUtils.DungeonIsOptionalSpotId(specialHintDef.spotId) && Randomizer.SSettings.hintDistribution  == HintDistribution.DrehenTestv1)
-                        specialSpotToHints.addHintToSpot(specialHintDef.spotId, result.hint);
+                        if (
+                            HintUtils.DungeonIsOptionalSpotId(specialHintDef.spotId)
+                            && (
+                                Randomizer.SSettings.hintDistribution
+                                    == HintDistribution.DrehenTestv1
+                                || Randomizer.SSettings.hintDistribution
+                                    == HintDistribution.DrehenPalace
+                            )
+                        )
+                            specialSpotToHints.addHintToSpot(specialHintDef.spotId, result.hint);
                     }
                 }
             }
@@ -1817,7 +1825,8 @@ namespace TPRandomizer.Hints
                 HintDef hintDef,
                 string nodeId,
                 HashSet<string> deadNodeIds
-            ) : base(currDefProps, hintDef, nodeId, deadNodeIds)
+            )
+                : base(currDefProps, hintDef, nodeId, deadNodeIds)
             {
                 // At the end of an iteration, rebuild the list.
                 BuildIdxList();
@@ -1885,7 +1894,8 @@ namespace TPRandomizer.Hints
                 string nodeId,
                 HashSet<string> deadNodeIds,
                 Random rnd
-            ) : base(currDefProps, hintDef, nodeId, deadNodeIds)
+            )
+                : base(currDefProps, hintDef, nodeId, deadNodeIds)
             {
                 this.rnd = rnd;
                 // At the end of an iteration, rebuild the list.
@@ -1985,7 +1995,8 @@ namespace TPRandomizer.Hints
                 string nodeId,
                 HashSet<string> deadNodeIds,
                 Random rnd
-            ) : base(currDefProps, hintDef, nodeId, deadNodeIds)
+            )
+                : base(currDefProps, hintDef, nodeId, deadNodeIds)
             {
                 this.rnd = rnd;
             }
@@ -2567,7 +2578,8 @@ namespace TPRandomizer.Hints
             latestNodeCache.Clear();
         }
 
-        public T GetFromLatestNodeCache<T>() where T : class
+        public T GetFromLatestNodeCache<T>()
+            where T : class
         {
             if (
                 nodeIdStack.Count > 0

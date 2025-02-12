@@ -28,6 +28,7 @@ namespace TPRandomizer.Hints
         Snowpeak_Ruins_2nd_Floor = 17,
         Snowpeak_Beyond_This_Point = 18,
         Golden_Wolf = 19,
+        Lantern_Chests = 20,
     }
 
     public class HintCategoryUtils
@@ -120,11 +121,7 @@ namespace TPRandomizer.Hints
                 },
                 {
                     HintCategory.Llc_Lantern_Chests,
-                    new[]
-                    {
-                        "Lake Lantern Cave Sixth Chest",
-                        "Lake Lantern Cave End Lantern Chest",
-                    }
+                    new[] { "Lake Lantern Cave Sixth Chest", "Lake Lantern Cave End Lantern Chest" }
                 },
                 {
                     HintCategory.Underwater,
@@ -163,7 +160,7 @@ namespace TPRandomizer.Hints
                         "Gerudo Desert Poe Above Cave of Ordeals",
                         "Gerudo Desert Skulltula Grotto Chest",
                         "Gerudo Desert South Chest Behind Wooden Gates",
-                        "Gerudo Desert West Canyon Chest"
+                        "Gerudo Desert West Canyon Chest",
                     }
                 },
                 {
@@ -258,7 +255,7 @@ namespace TPRandomizer.Hints
                         "Snowpeak Cave Ice Poe",
                         "Snowpeak Freezard Grotto Chest",
                         "Snowpeak Icy Summit Poe",
-                        "Snowpeak Poe Among Trees"
+                        "Snowpeak Poe Among Trees",
                     }
                 },
                 {
@@ -325,9 +322,31 @@ namespace TPRandomizer.Hints
                         "North Castle Town Golden Wolf",
                         "Ordon Spring Golden Wolf",
                         "Outside South Castle Town Golden Wolf",
-                        "West Hyrule Field Golden Wolf"
+                        "West Hyrule Field Golden Wolf",
                     }
-                }
+                },
+                {
+                    HintCategory.Lantern_Chests,
+                    new[]
+                    {
+                        "Ordon Ranch Grotto Lantern Chest",
+                        "Faron Mist Cave Lantern Chest",
+                        "Lost Woods Lantern Chest",
+                        "Eldin Lantern Cave Lantern Chest",
+                        "Kakariko Graveyard Lantern Chest",
+                        "Eldin Field Bomskit Grotto Lantern Chest",
+                        "Eldin Stockcave Lantern Chest",
+                        "Lanayru Field Skulltula Grotto Chest",
+                        "Lanayru Spring Back Room Lantern Chest",
+                        "Zoras Domain Light All Torches Chest",
+                        "Gerudo Desert Rock Grotto Lantern Chest",
+                        "Outside Arbiters Grounds Lantern Chest",
+                        "Snowpeak Cave Ice Lantern Chest",
+                        "Temple of Time Lobby Lantern Chest",
+                        "Lake Lantern Cave Sixth Chest",
+                        "Lake Lantern Cave End Lantern Chest",
+                    }
+                },
             };
 
         static HintCategoryUtils()
@@ -352,6 +371,8 @@ namespace TPRandomizer.Hints
                 { HintCategory.Snowpeak_Ruins_2nd_Floor, "Snowpeak_Ruins_2nd_Floor" },
                 { HintCategory.Snowpeak_Beyond_This_Point, "Snowpeak_Beyond_This_Point" },
                 { HintCategory.Golden_Wolf, "Golden_Wolf" },
+                { HintCategory.Lantern_Chests, "Lantern_Chests" },
+                { HintCategory.Forest_Temple_West_Wing, "Forest_Temple_West_Wing" },
             };
 
             strToEnum = new();

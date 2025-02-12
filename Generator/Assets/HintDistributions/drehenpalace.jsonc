@@ -1,0 +1,351 @@
+{
+  "agitha": true,
+  "jovani": {
+    "minFoundSoulsForHint": 10
+  },
+  "caveOfOrdeals": true,
+  "dungeons": {
+    "bigKeyHints": true
+  },
+  "beyondPointZones": ["alias:all"],
+  "barren": {
+    "ownZoneBehavior": "monopolize",
+    "ownZoneShowsAsJunkHint": false
+  },
+  "always": {
+    "monopolizeSpots": true,
+    "idealNumSpots": 5,
+    "copies": 2,
+    "groupId": "overworld"
+  },
+  "addChecks": {
+    "Lake Hylia Shell Blade Grotto Chest": ["always"]
+  },
+  "removeChecks": {
+    "Forest Temple Gale Boomerang": ["sometimes"],
+    "City in The Sky Aeralfos Chest": ["sometimes"],
+    "Palace of Twilight Collect Both Sols": ["always"]
+  },
+  "removeItems": {
+    "Progressive_Sword": ["sometimes"]
+  },
+  "groups": {
+    "overworld": ["alias:overworldZones"],
+    "requiredDungeons": ["alias:requiredDungeons"],
+    "unrequiredDungeons": ["alias:unrequiredDungeons"]
+  },
+  "specialHintDefs": [
+    {
+      "spot": "Forest_Temple_Sign",
+      "groupId": "unrequiredDungeons",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "markAsSometimes": true,
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Forest Temple Diababa Heart Container","Forest Temple Dungeon Reward"]
+        }
+      }
+    },
+    {
+      "spot": "forest_temple_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Forest Temple Gale Boomerang"]
+        }
+      }
+    },
+    {
+      "spot": "Goron_Mines_Sign",
+      "groupId": "unrequiredDungeons",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "markAsSometimes": true,
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Goron Mines Fyrus Heart Container","Goron Mines Dungeon Reward"]
+        }
+      }
+    },
+    {
+      "spot": "Lakebed_Temple_Sign",
+      "groupId": "unrequiredDungeons",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "markAsSometimes": true,
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Lakebed Temple Morpheel Heart Container","Lakebed Temple Dungeon Reward"]
+        }
+      }
+    },
+    {
+      "spot": "Arbiters_grounds_sign",
+      "groupId": "unrequiredDungeons",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "markAsSometimes": true,
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Arbiters Grounds Stallord Heart Container","Arbiters Grounds Dungeon Reward"]
+        }
+      }
+    },
+    {
+      "spot": "Snowpeak_Ruins_Sign",
+      "groupId": "unrequiredDungeons",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "markAsSometimes": true,
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Snowpeak Ruins Blizzeta Heart Container","Snowpeak Ruins Dungeon Reward"]
+        }
+      }
+    },
+    {
+      "spot": "snowpeak_ruins_sign",
+      "hintDef": {
+        "maxPicks": 1,
+        "hintDef": [
+          {
+            "hintType": "location",
+            "options": {
+              "canHintHintedBarrenChecks": true,
+              "validChecks": [
+                "Snowpeak Ruins Chapel Chest",
+                "Snowpeak Ruins Lobby Chandelier Chest",
+                "Snowpeak Ruins Northeast Chandelier Chest"
+              ],
+              "validItems": ["Snowpeak_Ruins_Bedroom_Key"]
+            }
+          },
+          {
+            "hintType": "location",
+            "options": {
+              "canHintHintedBarrenChecks": true,
+              "validChecks": [
+                "Snowpeak Ruins Chapel Chest",
+                "Snowpeak Ruins Lobby Chandelier Chest",
+                "Snowpeak Ruins Northeast Chandelier Chest"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "spot": "Temple_of_Time_Sign",
+      "groupId": "unrequiredDungeons",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "markAsSometimes": true,
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Temple of Time Armogohma Heart Container","Temple of Time Dungeon Reward"]
+        }
+      }
+    },
+    {
+      "spot": "temple_of_time_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Temple of Time Lobby Lantern Chest"]
+        }
+      }
+    },
+    {
+      "spot": "City_in_the_Sky_Sign",
+      "groupId": "unrequiredDungeons",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "markAsSometimes": true,
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["City in The Sky Argorok Heart Container","City in The Sky Dungeon Reward"]
+        }
+      }
+    },
+    {
+      "spot": "Palace_of_Twilight_Sign",
+      "groupId": "unrequiredDungeons",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "markAsSometimes": true,
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Palace of Twilight Zant Heart Container"]
+        }
+      }
+    },
+    {
+      "spot": "Palace_of_Twilight_Sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Palace of Twilight Collect Both Sols"]
+        }
+      }
+    }
+  ],
+  "hints": [
+    {
+      "groupId": "overworld",
+      "hintDef": {
+        "copies": 2,
+        "hintDef": [
+          {
+            "maxPicks": 4,
+            "hintDef": [
+              {
+                "hintType": "barren",
+                "iterations": 1,
+                "options": {
+                  "validAreas": [
+                    "Forest Temple",
+                    "Goron Mines",
+                    "Lakebed Temple",
+                    "Arbiter's Grounds",
+                    "Snowpeak Ruins",
+                    "Temple of Time",
+                    "City in the Sky",
+                    "Palace of Twilight"
+                  ]
+                }
+              },
+              {
+                "hintType": "barren",
+                "iterations": 4
+              }
+            ]
+          },
+          {
+            "hintType": "itemToItemPath",
+            "saveToVar": "HintCopies",
+            "minCopies": 1
+          },
+          {
+            "hintType": "path",
+            "saveToVar": "HintCopies",
+            "iterations": 3
+          },
+          {
+            "hintType": "barren",
+            "saveToVar": "HintCopies",
+            "options": {
+              "areaType": "category"
+            }
+          },
+          {
+            "hintType": "barren",
+            "options": {
+              "areaType": "category",
+              "validAreas": [
+                "Grotto",
+                "Mist",
+                "Owl_Statue",
+                "Underwater",
+                "Southern_Desert",
+                "Northern_Desert",
+                "Goron_Mines_2nd_Part",
+                "Temple_of_Time_2nd_Half",
+                "City_in_the_Sky_East_Wing",
+                "Arbiters_Grounds_2nd_Half",
+                "Lakebed_Temple_2nd_Wing",
+                "Forest_Temple_West_Wing",
+                "Snowpeak_Ruins_2nd_Floor",
+                "Lantern_Chests"
+              ]
+            }
+          },
+          {
+            "hintType": "numItemInArea",
+            "saveToVar": "HintCopies",
+            "options": {
+              "item": "Progressive_Sword",
+              "areaType": "province",
+              "order": "desc"
+            }
+          },
+          {
+            "hintType": "var",
+            "copies": 1,
+            "iterations": 99,
+            "options": {
+              "varName": "HintCopies",
+              "randomOrder": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "groupId": "overworld",
+      "hintDef": {
+        "copies": 2,
+        "hintDef": [
+          {
+            "maxPicks": 6,
+            "saveToVar": "SometimesCopies",
+            "hintDef": [
+              {
+                "hintType": "location",
+                "options": {
+                  "markAsSometimes": true,
+                  "namedChecks": [
+                    "Forest Temple West Tile Worm Chest Behind Stairs",
+                    "Goron Mines Outside Clawshot Chest",
+                    "Goron Mines Main Magnet Room Top Chest",
+                    "Snowpeak Ruins Chapel Chest",
+                    "Snowpeak Ruins Northeast Chandelier Chest",
+                    "City in The Sky West Wing First Chest",
+                    "City in The Sky Chest Behind North Fan"
+                  ],
+                  "namedOrder": "random",
+                  "namedProbability": 1,
+                  "minCopies": 1
+                }
+              },
+              {
+                "hintType": "location",
+                "options": {
+                  "iterations": 2,
+                  "markAsSometimes": true,
+                  "namedChecks": [
+                    "Forest Temple Gale Boomerang",
+                    "Arbiters Grounds Death Sword Chest",
+                    "Temple of Time Darknut Chest",
+                    "City in The Sky Aeralfos Chest"
+                  ],
+                  "namedProbability": 1,
+                  "namedOrder": "random",
+                  "checkStatusDisplay": "required_Info",
+                  "vague": false,
+                  "minCopies": 1
+                }
+              },
+              {
+                "hintType": "sometimes",
+                "iterations": 99
+              }
+            ]
+          },
+          {
+            "hintType": "var",
+            "copies": 1,
+            "iterations": 99,
+            "options": {
+              "varName": "SometimesCopies",
+              "randomOrder": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
