@@ -1,11 +1,11 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using TPRandomizer.Util;
 using TPRandomizer.Assets;
-using System.Runtime.Serialization;
+using TPRandomizer.Util;
 
 namespace TPRandomizer
 {
@@ -576,7 +576,8 @@ namespace TPRandomizer
             result.Add("increaseSpinnerSpeed", sSettings.increaseSpinnerSpeed);
             result.Add("openDot", sSettings.openDot);
             result.Add("skipHc", sSettings.skipHc);
-            result.Add("optionalDungeons",sSettings.optionalDungeons);
+            result.Add("optionalDungeons", sSettings.optionalDungeons);
+            result.Add("skipZant", sSettings.skipZant);
             result.Add("noSmallKeysOnBosses", sSettings.noSmallKeysOnBosses);
             result.Add("startingToD", sSettings.startingToD.ToString());
             result.Add("hintDistribution", sSettings.hintDistribution.ToString());
@@ -631,7 +632,7 @@ namespace TPRandomizer
                 this.customMsgData = customMsgData.Encode();
             }
 
-            override public string ToString()
+            public override string ToString()
             {
                 Dictionary<string, object> inputJsonRoot = new();
                 // Need to update format for any changes.

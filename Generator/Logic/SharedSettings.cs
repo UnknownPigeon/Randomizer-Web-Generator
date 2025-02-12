@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using TPRandomizer.Util;
-using TPRandomizer.SSettings.Enums;
 using System.Linq;
+using System.Text.RegularExpressions;
+using TPRandomizer.SSettings.Enums;
+using TPRandomizer.Util;
 
 namespace TPRandomizer
 {
@@ -57,8 +57,9 @@ namespace TPRandomizer
         public bool skipMajorCutscenes { get; set; }
         public bool increaseSpinnerSpeed { get; set; }
         public bool openDot { get; set; }
-        public bool skipHc {get; set; }
+        public bool skipHc { get; set; }
         public bool optionalDungeons { get; set; }
+        public bool skipZant { get; set; }
         public bool noSmallKeysOnBosses { get; set; }
         public StartingToD startingToD { get; set; }
         public HintDistribution hintDistribution { get; set; }
@@ -122,8 +123,8 @@ namespace TPRandomizer
             randomizeStartingPoint = processor.NextBool();
             skipHc = processor.NextBool();
             optionalDungeons = processor.NextBool();
-            
             shuffleRupees = processor.NextBool();
+            skipZant = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

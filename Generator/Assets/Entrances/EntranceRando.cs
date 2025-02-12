@@ -2,9 +2,9 @@ namespace TPRandomizer
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using Newtonsoft.Json;
-    using System.IO;
     using TPRandomizer.FcSettings.Enums;
 
     public enum EntranceType : int
@@ -22,7 +22,7 @@ namespace TPRandomizer
         Misc_Reverse,
         Mixed,
         Paired,
-        All
+        All,
     }
 
     public enum EntranceShuffleError
@@ -36,7 +36,7 @@ namespace TPRandomizer
         NOT_ENOUGH_SPHERE_ZERO_LOCATIONS,
         ATTEMPTED_SELF_CONNECTION,
         FAILED_TO_DISCONNECT_TARGET,
-        DUNGEON_ENTRANCES_CONNECTED
+        DUNGEON_ENTRANCES_CONNECTED,
     };
 
     public class SpawnTableEntry
@@ -423,25 +423,34 @@ namespace TPRandomizer
 
             // Once all of the entrances have been shuffled correctly, we want to update the connections on all of the paired entrances.
             ShufflePairedEntrances();
-            
+
             if (Randomizer.SSettings.skipHc)
             {
-                Randomizer.Rooms.RoomDict["Castle Town North Inside Barrier"].Exits[
-                    1
-                ].SetAsShuffled();
-                Randomizer.Rooms.RoomDict["Castle Town North Inside Barrier"].Exits[
-                    1
-                ].SetOriginalName();
-                Randomizer.Rooms.RoomDict["Castle Town North Inside Barrier"].Exits[
-                    1
-                ].SetReplacedEntrance(
-                    Randomizer.Rooms.RoomDict["Hyrule Castle Tower Climb"].Exits[2]
-                );
-                Randomizer.Rooms.RoomDict["Castle Town North Inside Barrier"].Exits[1] = Randomizer
-                    .Rooms
-                    .RoomDict["Hyrule Castle Tower Climb"].Exits[2];
+                Randomizer
+                    .Rooms.RoomDict["Castle Town North Inside Barrier"]
+                    .Exits[1]
+                    .SetAsShuffled();
+                Randomizer
+                    .Rooms.RoomDict["Castle Town North Inside Barrier"]
+                    .Exits[1]
+                    .SetReplacedEntrance(
+                        Randomizer.Rooms.RoomDict["Hyrule Castle Tower Climb"].Exits[2]
+                    );
             }
-            
+
+            if (Randomizer.SSettings.skipZant)
+            {
+                Randomizer
+                    .Rooms.RoomDict["Palace of Twilight North Tower"]
+                    .Exits[1]
+                    .SetAsShuffled();
+                Randomizer
+                    .Rooms.RoomDict["Palace of Twilight North Tower"]
+                    .Exits[1]
+                    .SetReplacedEntrance(
+                        Randomizer.Rooms.RoomDict["Palace of Twilight Boss Room"].Exits[1]
+                    );
+            }
 
             // Validate the world one last time to ensure that everything went okay
             err = ValidateWorld();
@@ -767,9 +776,9 @@ namespace TPRandomizer
 
         void RemoveEntrance(Entrance entranceToRemove)
         {
-            Randomizer.Rooms.RoomDict[entranceToRemove.GetParentArea()].Exits.Remove(
-                entranceToRemove
-            );
+            Randomizer
+                .Rooms.RoomDict[entranceToRemove.GetParentArea()]
+                .Exits.Remove(entranceToRemove);
         }
 
         void SetShuffledEntrances(Dictionary<EntranceType, EntrancePool> entrancePools)

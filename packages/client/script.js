@@ -385,6 +385,9 @@ document
   .getElementById('optDungeonsCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('skipZantCheckbox')
+  .addEventListener('click',setSettingsString);
+document
   .getElementById('increaseWalletCheckbox')
   .addEventListener('click', setSettingsString);
 document
@@ -528,6 +531,7 @@ function setSettingsString() {
   settingsStringRaw[40] = document.getElementById('openDotCheckbox').checked;
   settingsStringRaw[41] = document.getElementById('skipHcCheckbox').checked;
   settingsStringRaw[42] = document.getElementById('optDungeonsCheckbox').checked;
+  settingsStringRaw[43] = document.getElementById('skipZantCheckbox').checked;
 
   // document.getElementById('settingsStringTextbox').value =
   document.getElementById('settingsStringTextbox').textContent =
@@ -693,6 +697,7 @@ var arrayOfSettingsItems = [
   'openDotCheckbox',
   'skipHcCheckBox',
   'optDungeonsCheckbox',
+  'skipZantCheckbox',
 ];
 
 function parseSettingsString(settingsString) {
@@ -1258,8 +1263,10 @@ function populateSSettings(s) {
   $('#randomizeStartingPointCheckbox').prop('checked', s.randomizeStartingPoint);
   $('#skipHcCheckbox').prop('checked', s.skipHc);
   $('#optDungeonsCheckbox').prop('checked', s.optionalDungeons);
+  
 
   $('#rupeeCheckbox').prop('checked', s.rupees);
+  $('#skipZantCheckbox').prop('checked', s.skipZant);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

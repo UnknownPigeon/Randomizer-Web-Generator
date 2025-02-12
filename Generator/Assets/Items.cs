@@ -380,7 +380,7 @@ namespace TPRandomizer
                 Item.Progressive_Mirror_Shard,
                 Item.Progressive_Mirror_Shard,
                 Item.Progressive_Mirror_Shard,
-                Item.Progressive_Mirror_Shard
+                Item.Progressive_Mirror_Shard,
             };
 
         internal List<Item> RegionSmallKeys =
@@ -769,7 +769,7 @@ namespace TPRandomizer
                 Item.Purple_Rupee,
                 Item.Purple_Rupee,
                 Item.Purple_Rupee,
-                Item.Purple_Rupee
+                Item.Purple_Rupee,
             };
 
         public static List<Item> ToTSwordRequirements =
@@ -779,7 +779,7 @@ namespace TPRandomizer
                 Item.Progressive_Sword,
                 Item.Ordon_Sword,
                 Item.Master_Sword,
-                Item.Master_Sword_Light
+                Item.Master_Sword_Light,
             };
 
         // Mutates inputList
@@ -959,13 +959,13 @@ namespace TPRandomizer
                         };
 
                     // Filter out certain items
-                    this.alwaysItems = this.alwaysItems
-                        .Where(item => !alwaysItemsToRemove.Contains(item))
+                    this.alwaysItems = this
+                        .alwaysItems.Where(item => !alwaysItemsToRemove.Contains(item))
                         .ToList();
 
                     // Update RandomizedImportantItems
                     Dictionary<Item, int> importantItemToCount =
-                        new() { { Item.Progressive_Bow, 1 }, { Item.Filled_Bomb_Bag, 1 }, };
+                        new() { { Item.Progressive_Bow, 1 }, { Item.Filled_Bomb_Bag, 1 } };
 
                     foreach (KeyValuePair<Item, int> kv in importantItemToCount)
                     {
@@ -1017,8 +1017,8 @@ namespace TPRandomizer
                 case ItemScarcity.Plentiful:
                 {
                     // Remove all Pieces of Heart
-                    this.alwaysItems = this.alwaysItems
-                        .Where(item => item != Item.Piece_of_Heart)
+                    this.alwaysItems = this
+                        .alwaysItems.Where(item => item != Item.Piece_of_Heart)
                         .ToList();
 
                     // Add Heart Containers
@@ -1152,10 +1152,14 @@ namespace TPRandomizer
                     RemoveItem(Item.Progressive_Sky_Book);
                 }
             }
-            if(parseSetting.skipHc)
+            if (parseSetting.skipHc)
             {
-                updateItemToCount(this.RandomizedDungeonRegionItems, Item.Hyrule_Castle_Big_Key,0);
-                updateItemToCount(this.RandomizedDungeonRegionItems, Item.Hyrule_Castle_Small_Key,0);
+                updateItemToCount(this.RandomizedDungeonRegionItems, Item.Hyrule_Castle_Big_Key, 0);
+                updateItemToCount(
+                    this.RandomizedDungeonRegionItems,
+                    Item.Hyrule_Castle_Small_Key,
+                    0
+                );
             }
 
             foreach (Item startingItem in parseSetting.startingItems)
@@ -1179,7 +1183,7 @@ namespace TPRandomizer
                     RandomizedImportantItems,
                     alwaysItems,
                     RandomizedDungeonRegionItems,
-                    ShuffledDungeonRewards
+                    ShuffledDungeonRewards,
                 };
 
             for (int i = 0; i < lists.Count; i++)
@@ -1219,7 +1223,7 @@ namespace TPRandomizer
                     { "Agitha Male Phasmid Reward", Item.Male_Phasmid },
                     { "Agitha Male Pill Bug Reward", Item.Male_Pill_Bug },
                     { "Agitha Male Snail Reward", Item.Male_Snail },
-                    { "Agitha Male Stag Beetle Reward", Item.Male_Stag_Beetle }
+                    { "Agitha Male Stag Beetle Reward", Item.Male_Stag_Beetle },
                 };
 
             foreach (string excludedCheckName in sSettings.excludedChecks)

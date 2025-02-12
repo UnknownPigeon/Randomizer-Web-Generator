@@ -1,6 +1,25 @@
 [
-    
+   
+    { 
+        "RoomName": "Zant Fight Final Hyrule Phase",
+        "Exits": 
+        [
+            {
+                "ConnectedArea": "Palace of Twilight Boss Room",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            }
+        ],
+        "Checks": 
+        [
+        ], 
+        "Region": "Palace of Twilight"
+    },
+
     {
+    
+        
+
       "RoomName": "Palace of Twilight Entrance",
       "Exits": 
         [
@@ -146,6 +165,12 @@
           "ConnectedArea": "Palace of Twilight Entrance",
           "Requirements": "CanDefeatZant",
           "GlitchedRequirements": "CanDefeatZant"
+        }, 
+
+        {
+            "ConnectedArea": "Zant Fight Final Hyrule Phase",
+            "Requirements": "(Progressive_Sword, 3)",
+            "GlitchedRequirements": "(Progressive_Sword,3)"
         }
       ],
       "Checks":

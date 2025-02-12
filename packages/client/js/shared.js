@@ -445,6 +445,7 @@
       { id: 'skipHcCheckbox' },
       { id: 'optDungeonsCheckbox' },     
       { id: 'rupeeCheckbox' },
+      { id: 'skipZantCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -911,6 +912,7 @@
       processBasic({ id: 'hintDistribution', bitLength: 5 });
       processBasic({ id: 'skipHc' });
       processBasic({ id: 'optionalDungeons' });
+      
     } else {
       res.skipMajorCutscenes = 1; // Vanilla
       res.noSmallKeysOnBosses = false;
@@ -922,9 +924,11 @@
     if (version >= 6) {
       processBasic({ id: 'randomizeStartingPoint' });
       processBasic({ id: 'rupees' });
+      processBasic({ id: 'skipZantCheckbox' });
     } else {
       res.randomizeStartingPoint = false; // Vanilla
       res.rupees = false; // Vanilla
+      res.skipZant = false; // Vanilla
     }
 
     res.startingItems = processor.nextEolList(9);
