@@ -1801,10 +1801,6 @@
     <value>For the sake of peace in Hyrule...\nWould you please make a donation?</value>
     <comment></comment>
   </data>
-  <data name="self-hinter.coro" xml:space="preserve">
-    <value>Right now we have {item} for {price} and oil #(red)refills#(white) for #(purple)20 Rupees#(white)!</value>
-    <comment>Adjusted msg slightly so we don&apos;t have to deal with &quot;a&quot; 10-Rupee item or &quot;an&quot; 11-Rupee item. Also slightly shorter msg length. Only &quot;refills&quot; is red (not &quot;oil refills&quot;) to make the first item text easier to read, and it matchees with the &quot;Buy a refill&quot; part. Vanilla text leaves out &quot;oil&quot; entirely because oil is mentioned earlier in the text.</comment>
-  </data>
   <data name="self-hinter.fishing-bottle" xml:space="preserve">
     <value>#(red)DON&apos;T LITTER!#(white)\nDo NOT toss empty bottles or {item} here! The fish are CRYING!\n\nKeep the fishing hole clean!</value>
     <comment></comment>
@@ -1826,15 +1822,19 @@
     <comment></comment>
   </data>
   <data name="shop.cant-afford" xml:space="preserve">
-    <value>{item} {verb(name:is)} {price}. If you want {noun(name:shop-it)}, bring some money with you, all right, m&apos;dear?</value>
+    <value>{item(capitalize)} {verb(name:is)} {price}. If you want {noun(name:shop-it)}, bring some money with you, all right, m&apos;dear?</value>
     <comment>From Sera Slingshot</comment>
   </data>
   <data name="shop.cant-afford$barnes-bomb-bag" xml:space="preserve">
     <value>$(skip-msg)uses default text!</value>
     <comment></comment>
   </data>
+  <data name="shop.cant-afford$ct-small-gorons" xml:space="preserve">
+    <value>You do not have enough Rupees, Brother...</value>
+    <comment>This is a copy of 0x3C4 for the red potion goron.</comment>
+  </data>
   <data name="shop.cant-afford$kak-malo" xml:space="preserve">
-    <value>{item} {verb(name:costs)} {price}... but there are people with enough Rupees, and then there&apos;s you.</value>
+    <value>{item(capitalize)} {verb(name:costs)} {price}... but there are people with enough Rupees, and then there&apos;s you.</value>
     <comment></comment>
   </data>
   <data name="shop.coming-soon" xml:space="preserve">
@@ -1850,11 +1850,39 @@
     <comment></comment>
   </data>
   <data name="shop.confirmation" xml:space="preserve">
-    <value>{item} will cost you {price}. Want {noun(name:shop-it)} or not?</value>
+    <value>{item(capitalize)} will cost you {price}. Want {noun(name:shop-it)} or not?</value>
     <comment>From kak malo mart.</comment>
   </data>
+  <data name="shop.confirmation$coro" xml:space="preserve">
+    <value>Right now we have {item} for {price} and oil #(red)refills#(white) for #(purple)20 Rupees#(white)!</value>
+    <comment>Adjusted msg slightly so we don&apos;t have to deal with &quot;a&quot; 10-Rupee item or &quot;an&quot; 11-Rupee item. Also slightly shorter msg length. Only &quot;refills&quot; is red (not &quot;oil refills&quot;) to make the first item text easier to read, and it matchees with the &quot;Buy a refill&quot; part. Vanilla text leaves out &quot;oil&quot; entirely because oil is mentioned earlier in the text.</comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-arrows" xml:space="preserve">
+    <value>So... Would you want to buy {item} for {price}?</value>
+    <comment></comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-oil-initial" xml:space="preserve">
+    <value>So, Brother, would you buy {item} from me for {price}?</value>
+    <comment></comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-oil-later" xml:space="preserve">
+    <value>Just buy {item} from me for {price}, OK?</value>
+    <comment></comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-red-potion" xml:space="preserve">
+    <value>You can buy {item} for only {price}!</value>
+    <comment></comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-shield-initial" xml:space="preserve">
+    <value>Anyway... Would you want {item} for {price}?</value>
+    <comment></comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-shield-later" xml:space="preserve">
+    <value>Would you want {item} for {price}?</value>
+    <comment></comment>
+  </data>
   <data name="shop.confirmation$sera" xml:space="preserve">
-    <value>{item} {verb(name:is)} {price}. Do you want to buy {noun(name:shop-it)}, m&apos;dear?</value>
+    <value>{item(capitalize)} {verb(name:is)} {price}. Do you want to buy {noun(name:shop-it)}, m&apos;dear?</value>
     <comment></comment>
   </data>
   <data name="shop.price" xml:space="preserve">

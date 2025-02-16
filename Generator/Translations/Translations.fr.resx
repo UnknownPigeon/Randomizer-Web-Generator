@@ -633,8 +633,16 @@
     <value>$(gender:m,negative)aucun pack de 5 bombes</value>
     <comment></comment>
   </data>
+  <data name="item.0a-bombs_5$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 5 bombes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.0a-bombs_5$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 5 bombes</value>
+    <comment></comment>
+  </data>
+  <data name="item.0a-bombs_5$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 5 bombes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.0b-bombs_10" xml:space="preserve">
@@ -653,8 +661,16 @@
     <value>$(gender:m,negative)aucun pack de 10 bombes</value>
     <comment></comment>
   </data>
+  <data name="item.0b-bombs_10$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 10 bombes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.0b-bombs_10$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 10 bombes</value>
+    <comment></comment>
+  </data>
+  <data name="item.0b-bombs_10$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 10 bombes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.0c-bombs_20" xml:space="preserve">
@@ -673,8 +689,16 @@
     <value>$(gender:m,negative)aucun pack de 20 bombes</value>
     <comment></comment>
   </data>
+  <data name="item.0c-bombs_20$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 20 bombes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.0c-bombs_20$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 20 bombes</value>
+    <comment></comment>
+  </data>
+  <data name="item.0c-bombs_20$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 20 bombes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.0d-bombs_30" xml:space="preserve">
@@ -693,8 +717,16 @@
     <value>$(gender:m,negative)aucun pack de 30 bombes</value>
     <comment></comment>
   </data>
+  <data name="item.0d-bombs_30$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 30 bombes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.0d-bombs_30$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 30 bombes</value>
+    <comment></comment>
+  </data>
+  <data name="item.0d-bombs_30$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 30 bombes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.0e-arrows_10" xml:space="preserve">
@@ -713,8 +745,16 @@
     <value>$(gender:m,negative)aucun pack de 10 flèches</value>
     <comment></comment>
   </data>
+  <data name="item.0e-arrows_10$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 10 flèches{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.0e-arrows_10$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 10 flèches</value>
+    <comment></comment>
+  </data>
+  <data name="item.0e-arrows_10$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 10 flèches{ce}</value>
     <comment></comment>
   </data>
   <data name="item.0f-arrows_20" xml:space="preserve">
@@ -733,8 +773,16 @@
     <value>$(gender:m,negative)aucun pack de 20 flèches</value>
     <comment></comment>
   </data>
+  <data name="item.0f-arrows_20$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 20 flèches{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.0f-arrows_20$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 20 flèches</value>
+    <comment></comment>
+  </data>
+  <data name="item.0f-arrows_20$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 20 flèches{ce}</value>
     <comment></comment>
   </data>
   <data name="item.10-arrows_30" xml:space="preserve">
@@ -753,8 +801,16 @@
     <value>$(gender:m,negative)aucun pack de 30 flèches</value>
     <comment></comment>
   </data>
+  <data name="item.10-arrows_30$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 30 flèches{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.10-arrows_30$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 30 flèches</value>
+    <comment></comment>
+  </data>
+  <data name="item.10-arrows_30$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 30 flèches{ce}</value>
     <comment></comment>
   </data>
   <data name="item.12-seeds_50" xml:space="preserve">
@@ -773,8 +829,16 @@
     <value>$(gender:m,negative)aucun pack de 50 graines</value>
     <comment></comment>
   </data>
+  <data name="item.12-seeds_50$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 50 graines{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.12-seeds_50$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 50 graines</value>
+    <comment></comment>
+  </data>
+  <data name="item.12-seeds_50$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 50 graines{ce}</value>
     <comment></comment>
   </data>
   <data name="item.13-foolish_item@ac(m)" xml:space="preserve">
@@ -806,7 +870,7 @@
     <comment></comment>
   </data>
   <data name="item.16-water_bombs_5$count" xml:space="preserve">
-    <value>$(gender:m){count}pack de 5 hydro-bombes</value>
+    <value>$(gender:m){count} pack de 5 hydro-bombes</value>
     <comment></comment>
   </data>
   <data name="item.16-water_bombs_5$count#other" xml:space="preserve">
@@ -817,8 +881,16 @@
     <value>$(gender:m,negative)aucun pack de 5 hydro-bombes</value>
     <comment></comment>
   </data>
+  <data name="item.16-water_bombs_5$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 5 hydro-bombes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.16-water_bombs_5$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 5 hydro-bombes</value>
+    <comment></comment>
+  </data>
+  <data name="item.16-water_bombs_5$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 5 hydro-bombes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.17-water_bombs_10" xml:space="preserve">
@@ -837,8 +909,16 @@
     <value>$(gender:m,negative)aucun pack de 10 hydro-bombes</value>
     <comment></comment>
   </data>
+  <data name="item.17-water_bombs_10$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 10 hydro-bombes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.17-water_bombs_10$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 10 hydro-bombes</value>
+    <comment></comment>
+  </data>
+  <data name="item.17-water_bombs_10$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 10 hydro-bombes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.18-water_bombs_15" xml:space="preserve">
@@ -857,8 +937,16 @@
     <value>$(gender:m,negative)aucun pack de 15 hydro-bombes</value>
     <comment></comment>
   </data>
+  <data name="item.18-water_bombs_15$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 15 hydro-bombes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.18-water_bombs_15$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 15 hydro-bombes</value>
+    <comment></comment>
+  </data>
+  <data name="item.18-water_bombs_15$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 15 hydro-bombes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.19-water_bombs_3" xml:space="preserve">
@@ -877,8 +965,16 @@
     <value>$(gender:m,negative)aucun pack de 3 hydro-bombes</value>
     <comment></comment>
   </data>
+  <data name="item.19-water_bombs_3$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 3 hydro-bombes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.19-water_bombs_3$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 3 hydro-bombes</value>
+    <comment></comment>
+  </data>
+  <data name="item.19-water_bombs_3$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 3 hydro-bombes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.1a-bomblings_5" xml:space="preserve">
@@ -897,8 +993,16 @@
     <value>$(gender:m,negative)aucun pack de 5 bombinsectes</value>
     <comment></comment>
   </data>
+  <data name="item.1a-bomblings_5$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 5 bombinsectes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.1a-bomblings_5$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 5 bombinsectes</value>
+    <comment></comment>
+  </data>
+  <data name="item.1a-bomblings_5$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 5 bombinsectes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.1b-bomblings_10" xml:space="preserve">
@@ -917,8 +1021,16 @@
     <value>$(gender:m,negative)aucun pack de 10 bombinsectes</value>
     <comment></comment>
   </data>
+  <data name="item.1b-bomblings_10$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 10 bombinsectes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.1b-bomblings_10$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 10 bombinsectes</value>
+    <comment></comment>
+  </data>
+  <data name="item.1b-bomblings_10$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 10 bombinsectes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.1c-bomblings_3" xml:space="preserve">
@@ -937,8 +1049,16 @@
     <value>$(gender:m,negative)aucun pack de 3 bombinsectes</value>
     <comment></comment>
   </data>
+  <data name="item.1c-bomblings_3$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)le {cs}pack de 3 bombinsectes{ce}</value>
+    <comment></comment>
+  </data>
   <data name="item.1c-bomblings_3$fishing-bottle" xml:space="preserve">
     <value>$(gender:m)pack de 3 bombinsectes</value>
+    <comment></comment>
+  </data>
+  <data name="item.1c-bomblings_3$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:m)un {cs}pack de 3 bombinsectes{ce}</value>
     <comment></comment>
   </data>
   <data name="item.21-piece_of_heart@ac(m)" xml:space="preserve">
@@ -1089,8 +1209,16 @@
     <value>$(gender:f,plural)les {cs}bottes de fer{ce}</value>
     <comment></comment>
   </data>
+  <data name="item.45-iron_boots$def,shop-group-of" xml:space="preserve">
+    <value>$(gender:f,plural)les {cs}bottes de fer{ce}</value>
+    <comment>Same as &quot;def&quot; context</comment>
+  </data>
   <data name="item.45-iron_boots$indef" xml:space="preserve">
     <value>$(gender:f,plural)des {cs}bottes de fer{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="item.45-iron_boots$indef,shop-group-of" xml:space="preserve">
+    <value>$(gender:f)une {cs}paire de bottes de fer{ce}</value>
     <comment></comment>
   </data>
   <data name="item.46-progressive_dominion_rod@ac(m)" xml:space="preserve">
@@ -1813,6 +1941,22 @@
     <value>({cs}zone inutile{ce})</value>
     <comment></comment>
   </data>
+  <data name="noun.it-subject" xml:space="preserve">
+    <value>il</value>
+    <comment></comment>
+  </data>
+  <data name="noun.it-subject$gender-f" xml:space="preserve">
+    <value>elle</value>
+    <comment></comment>
+  </data>
+  <data name="noun.it-subject$gender-f,plural" xml:space="preserve">
+    <value>elles</value>
+    <comment></comment>
+  </data>
+  <data name="noun.it-subject$plural" xml:space="preserve">
+    <value>ils</value>
+    <comment></comment>
+  </data>
   <data name="noun.jovani-unhinted" xml:space="preserve">
     <value>Pas d&apos;indice</value>
     <comment></comment>
@@ -1878,11 +2022,11 @@
     <comment></comment>
   </data>
   <data name="self-hinter.barnes-bomb-bag" xml:space="preserve">
-    <value>Allez, je te fais une offre spéciale, {item} pour {price}. Ça te tente?</value>
+    <value>Allez, je te fais une offre spéciale, {item(shop-group-of)} pour {price}. Ça te tente?</value>
     <comment></comment>
   </data>
   <data name="self-hinter.charlo" xml:space="preserve">
-    <value>Pour {item}...\npuis-je vous demander l&apos;aumône...?</value>
+    <value>Pour {item(shop-group-of)}...\npuis-je vous demander l&apos;aumône...?</value>
     <comment></comment>
   </data>
   <data name="self-hinter.charlo-options" xml:space="preserve">
@@ -1891,10 +2035,6 @@
   </data>
   <data name="self-hinter.charlo$default" xml:space="preserve">
     <value>Pour que la paix règne en Hyrule...\npuis-je vous demander l&apos;aumône...?</value>
-    <comment></comment>
-  </data>
-  <data name="self-hinter.coro" xml:space="preserve">
-    <value>Je vends {item} pour {price}, mais aussi #(red)le plein d&apos;huile#(white) pour #(purple)20 rubis#(white). Alors?</value>
     <comment></comment>
   </data>
   <data name="self-hinter.fishing-bottle" xml:space="preserve">
@@ -1918,15 +2058,19 @@
     <comment></comment>
   </data>
   <data name="shop.cant-afford" xml:space="preserve">
-    <value>{item} {verb(name:costs)} {price}. Si tu {noun(name:the-article)} veux, il faut {noun2} payer.</value>
+    <value>{item(capitalize,shop-group-of)} {verb(name:costs)} {price}. Si tu {noun(name:the-article)} veux, il faut {noun2} payer.</value>
     <comment>From Sera Slingshot</comment>
   </data>
   <data name="shop.cant-afford$barnes-bomb-bag" xml:space="preserve">
     <value>Et alors, garçon?\nTu n&apos;as pas assez, apparemment...</value>
     <comment></comment>
   </data>
+  <data name="shop.cant-afford$ct-small-gorons" xml:space="preserve">
+    <value>Vous n&apos;avez pas assez de rrubis...</value>
+    <comment>This is a copy of 0x3C4 for the red potion goron.</comment>
+  </data>
   <data name="shop.cant-afford$kak-malo" xml:space="preserve">
-    <value>{item} {verb(name:costs)} {price}, et tu n&apos;as pas {price2}...</value>
+    <value>{item(capitalize,shop-group-of)} {verb(name:costs)} {price}, et tu n&apos;as pas {price2}...</value>
     <comment></comment>
   </data>
   <data name="shop.coming-soon" xml:space="preserve">
@@ -1942,11 +2086,39 @@
     <comment></comment>
   </data>
   <data name="shop.confirmation" xml:space="preserve">
-    <value>{item} {verb(name:costs)} {price}, tu {noun(name:the-article)} veux?</value>
+    <value>{item(capitalize,shop-group-of)} {verb(name:costs)} {price}, tu {noun(name:the-article)} veux?</value>
     <comment></comment>
   </data>
+  <data name="shop.confirmation$coro" xml:space="preserve">
+    <value>Je vends {item(shop-group-of)} pour {price}, mais aussi #(red)le plein d&apos;huile#(white) pour #(purple)20 rubis#(white). Alors?</value>
+    <comment></comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-arrows" xml:space="preserve">
+    <value>Puisque c&apos;est toi, ce ne serra que {price} pourr {item(shop-group-of)}, ça te va?</value>
+    <comment></comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-oil-initial" xml:space="preserve">
+    <value>Alorrs dites, vous voulez pas m&apos;acheter {item(shop-group-of)}? {noun(name:it-subject,capitalize)} {verb(name:costs)} {price}.</value>
+    <comment>From feedback from Menou: removed &quot;de&quot; after m&apos;acheter since it caused lots of interpolation issues and the sentence works fine without it.</comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-oil-later" xml:space="preserve">
+    <value>Vous voulez pas m&apos;acheter {item(shop-group-of)}? {noun(name:it-subject,capitalize)} {verb(name:costs)} {price}.</value>
+    <comment></comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-red-potion" xml:space="preserve">
+    <value>Si cela vous tente, je peux vous vendrre {item(shop-group-of)} pourr {price}!</value>
+    <comment></comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-shield-initial" xml:space="preserve">
+    <value>Mais au fait, nous vendons {item(shop-group-of)} pourr {price}. Ça t&apos;intérresse?</value>
+    <comment></comment>
+  </data>
+  <data name="shop.confirmation$ct-goron-shield-later" xml:space="preserve">
+    <value>{item(capitalize,shop-group-of)} {verb(name:costs)} {price}, tu {noun(name:the-article)} veux?</value>
+    <comment>Matches the base shop.confirmation, but putting here so this doesn&apos;t change if the fallback changes.</comment>
+  </data>
   <data name="shop.confirmation$sera" xml:space="preserve">
-    <value>{item} {verb(name:costs)} {price}.\nTu {noun(name:the-article)} veux?</value>
+    <value>{item(capitalize,shop-group-of)} {verb(name:costs)} {price}.\nTu {noun(name:the-article)} veux?</value>
     <comment></comment>
   </data>
   <data name="shop.no" xml:space="preserve">
@@ -1955,6 +2127,10 @@
   </data>
   <data name="shop.price" xml:space="preserve">
     <value>{count} rubis</value>
+    <comment></comment>
+  </data>
+  <data name="shop.price$goron" xml:space="preserve">
+    <value>{count} rrubis</value>
     <comment></comment>
   </data>
   <data name="shop.slot" xml:space="preserve">

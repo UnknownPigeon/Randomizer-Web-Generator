@@ -1497,6 +1497,15 @@ namespace TPRandomizer.Assets
                     4
                 ), // Check coro key flag
 
+                 new ARCReplacement(
+                    "4F4",
+                    "00000000",
+                    (byte)FileDirectory.Stage,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.City_in_the_Sky,
+                    0
+                ), // Delete Savemem actr that causes the player to spawn in west wing
+
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
                 new ARCReplacement(

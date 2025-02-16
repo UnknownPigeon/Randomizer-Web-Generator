@@ -1300,6 +1300,50 @@ namespace TPRandomizer
                 this.langCode = langCode;
             }
 
+            private string CapitalizeText(string input)
+            {
+                if (StringUtils.isEmpty(input))
+                    return input;
+
+                int index = 0;
+                while (index < input.Length)
+                {
+                    string currentChar = input.Substring(index, 1);
+                    byte byteVal = (byte)currentChar[0];
+
+                    if (byteVal == 0x1A)
+                    {
+                        byte escLength = (byte)input[index + 1];
+                        // For Japanese only (since non-ja is always one byte per
+                        // char), we may need to convert the string to bytes and
+                        // process that way since an escape sequence (with furigana
+                        // for example) will have fewer chars in it that the actual
+                        // byte length of the sequence.
+                        string escapeSequence = input.Substring(index, escLength);
+                        index += escLength;
+
+                        if (GetEscRenderedCharLength(escapeSequence) > 0)
+                        {
+                            // Found rendered escape sequence before a character
+                            // we can capitalize, so there is nothing to
+                            // capitalize. Return the input string.
+                            return input;
+                        }
+                        // Simply continue if not a rendered escape sequence.
+                    }
+                    else
+                    {
+                        return string.Concat(
+                            input.AsSpan(0, index),
+                            input.Substring(index, 1).ToUpper(cultureInfo),
+                            input.AsSpan(index + 1)
+                        );
+                    }
+                }
+
+                return input;
+            }
+
             public void CapitalizeFirstValidChar()
             {
                 if (StringUtils.isEmpty(value))
@@ -1352,6 +1396,19 @@ namespace TPRandomizer
 
                             if (interpolation.TryGetValue(key.Value, out string valToPut))
                             {
+                                if (
+                                    slotMeta.TryGetValue(
+                                        key.Value,
+                                        out Dictionary<string, string> metaOfSlot
+                                    )
+                                )
+                                {
+                                    if (metaOfSlot.ContainsKey("capitalize"))
+                                    {
+                                        return CapitalizeText(valToPut);
+                                    }
+                                }
+
                                 return valToPut;
                             }
                             // If not in interpolation, return the value back.
