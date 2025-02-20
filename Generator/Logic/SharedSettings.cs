@@ -58,6 +58,7 @@ namespace TPRandomizer
         public bool increaseSpinnerSpeed { get; set; }
         public bool openDot { get; set; }
         public bool noSmallKeysOnBosses { get; set; }
+        public bool hcShortcut { get; set; }
         public StartingToD startingToD { get; set; }
         public HintDistribution hintDistribution { get; set; }
         public bool randomizeStartingPoint { get; set; }
@@ -119,6 +120,7 @@ namespace TPRandomizer
             hintDistribution = (HintDistribution)processor.NextInt(5);
             randomizeStartingPoint = processor.NextBool();
             shuffleRupees = processor.NextBool();
+            hcShortcut = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

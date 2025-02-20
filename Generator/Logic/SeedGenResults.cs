@@ -562,6 +562,7 @@ namespace TPRandomizer
             result.Add("hintDistribution", sSettings.hintDistribution.ToString());
             result.Add("randomizeStartingPoint", sSettings.randomizeStartingPoint);
             result.Add("shuffleRupees", sSettings.shuffleRupees);
+            result.Add("hcShortcut", sSettings.hcShortcut);
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);

@@ -443,6 +443,7 @@
       { id: 'hintDistributionFieldset', bitLength: 5 },
       { id: 'randomizeStartingPointCheckbox' },
       { id: 'rupeeCheckbox' },
+      { id: 'hcShortcutCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -916,9 +917,11 @@
     if (version >= 6) {
       processBasic({ id: 'randomizeStartingPoint' });
       processBasic({ id: 'rupees' });
+      processBasic({ id: 'hcShortcut' });
     } else {
       res.randomizeStartingPoint = false; // Vanilla
       res.rupees = false; // Vanilla
+      res.hcShortcut = false;
     }
 
     res.startingItems = processor.nextEolList(9);
