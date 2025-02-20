@@ -5,8 +5,8 @@
     [
       {
         "ConnectedArea": "South Faron Woods Behind Gate",
-        "Requirements": "Faron_Woods_Coro_Key", 
-        "GlitchedRequirements": "Faron_Woods_Coro_Key"
+        "Requirements": "Faron_Woods_Coro_Key or Shadow_Crystal", 
+        "GlitchedRequirements": "Faron_Woods_Coro_Key or Shadow_Crystal"
       },
       {
         "ConnectedArea": "South Faron Woods Owl Statue Area",
