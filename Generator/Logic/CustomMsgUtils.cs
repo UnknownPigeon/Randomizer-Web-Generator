@@ -44,6 +44,16 @@ namespace TPRandomizer
         Castle_Town_Malo_Mart_Magic_Armor_Slot,
         Castle_Town_Malo_Mart_Magic_Armor_Bought,
         Castle_Town_Malo_Mart_Magic_Armor_Sold_Out,
+        Castle_Town_Goron_Red_Potion_Confirmation_Initial,
+        Castle_Town_Goron_Red_Potion_Confirmation_Second,
+        Castle_Town_Goron_Red_Potion_Cant_Afford,
+        Castle_Town_Goron_Lantern_Oil_Confirmation_Initial,
+        Castle_Town_Goron_Lantern_Oil_Confirmation_Second,
+        Castle_Town_Goron_Lantern_Oil_Cant_Afford,
+        Castle_Town_Goron_Arrows_Confirmation_Initial,
+        Castle_Town_Goron_Arrows_Confirmation_Second,
+        Castle_Town_Goron_Shield_Confirmation_Intitial,
+        Castle_Town_Goron_Shield_Confirmation_Second,
         Agithas_Castle_Sign,
         Jovani_House_Sign,
         Custom_Sign_Ordon,
@@ -88,6 +98,7 @@ namespace TPRandomizer
         Barnes_Bomb_Bag_Cant_Afford,
         Charlo_Donation_Confirmation,
         Fishing_Hole_Bottle_Sign,
+        Coro_Buy_Options_Confirmation,
     }
 
     public class CustomMsgUtils
@@ -260,6 +271,46 @@ namespace TPRandomizer
                     MsgEntryId.Castle_Town_Malo_Mart_Magic_Armor_Sold_Out,
                     new(StageIDs.Castle_Town_Shops, 0, 0x130)
                 },
+                {
+                    MsgEntryId.Castle_Town_Goron_Red_Potion_Confirmation_Initial,
+                    new(StageIDs.Castle_Town_Shops, 4, 0x3BF)
+                },
+                {
+                    MsgEntryId.Castle_Town_Goron_Red_Potion_Confirmation_Second,
+                    new(StageIDs.Castle_Town_Shops, 4, 0x3C1)
+                },
+                {
+                    MsgEntryId.Castle_Town_Goron_Red_Potion_Cant_Afford,
+                    new(StageIDs.Castle_Town_Shops, 4, 0x3C2)
+                },
+                {
+                    MsgEntryId.Castle_Town_Goron_Lantern_Oil_Confirmation_Initial,
+                    new(StageIDs.Castle_Town_Shops, 4, 0x3B3)
+                },
+                {
+                    MsgEntryId.Castle_Town_Goron_Lantern_Oil_Confirmation_Second,
+                    new(StageIDs.Castle_Town_Shops, 4, 0x3B5)
+                },
+                {
+                    MsgEntryId.Castle_Town_Goron_Lantern_Oil_Cant_Afford,
+                    new(StageIDs.Castle_Town_Shops, 4, 0x3AC)
+                },
+                {
+                    MsgEntryId.Castle_Town_Goron_Arrows_Confirmation_Initial,
+                    new(StageIDs.Castle_Town, 0, 0x3D8)
+                },
+                {
+                    MsgEntryId.Castle_Town_Goron_Arrows_Confirmation_Second,
+                    new(StageIDs.Castle_Town, 0, 0x3DB)
+                },
+                {
+                    MsgEntryId.Castle_Town_Goron_Shield_Confirmation_Intitial,
+                    new(StageIDs.Castle_Town_Shops, 4, 0x3E3)
+                },
+                {
+                    MsgEntryId.Castle_Town_Goron_Shield_Confirmation_Second,
+                    new(StageIDs.Castle_Town_Shops, 4, 0x3E5)
+                },
                 { MsgEntryId.Agithas_Castle_Sign, new(StageIDs.Castle_Town, 3, 0x456) },
                 { MsgEntryId.Jovani_House_Sign, new(StageIDs.Castle_Town, 3, 0x457) },
                 { MsgEntryId.Custom_Sign_Ordon, new(StageIDs.Ordon_Village, 1, 0x1369) },
@@ -341,6 +392,7 @@ namespace TPRandomizer
                 },
                 { MsgEntryId.Charlo_Donation_Confirmation, new(StageIDs.Castle_Town, 2, 0x355) },
                 { MsgEntryId.Fishing_Hole_Bottle_Sign, new(StageIDs.Fishing_Pond, 0, 0x47A) },
+                { MsgEntryId.Coro_Buy_Options_Confirmation, new(StageIDs.Faron_Woods, 4, 0xDD) },
             };
 
         public static MessageEntry GetEntryForSpotId(SpotId spotId)

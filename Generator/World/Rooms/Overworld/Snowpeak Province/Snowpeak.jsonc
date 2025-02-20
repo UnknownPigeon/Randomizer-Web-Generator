@@ -9,7 +9,7 @@
         "GlitchedRequirements": "((Setting.skipSnowpeakEntrance equals True) or (Room.Zoras_Domain and (Progressive_Fishing_Rod, 2))) or Shadow_Crystal"
       },
       {
-        "ConnectedArea": "Zoras Domain",
+        "ConnectedArea": "Zoras Domain Snowpeak Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -101,7 +101,8 @@
     [
         "Snowpeak Cave Ice Lantern Chest",
         "Snowboard Racing Prize",
-        "Snowpeak Cave Ice Poe"
+        "Snowpeak Cave Ice Poe",
+        "Snowpeak Portal"
     ],
     "Region": "Snowpeak Province"
   },

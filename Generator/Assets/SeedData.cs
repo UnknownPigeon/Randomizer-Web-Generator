@@ -9,6 +9,7 @@ namespace TPRandomizer.Assets
     using Newtonsoft.Json;
     using TPRandomizer.Assets.CLR0;
     using System.ComponentModel.DataAnnotations.Schema;
+    using TPRandomizer.SSettings.Enums;
 
     /// <summary>
     /// summary text.
@@ -35,7 +36,6 @@ namespace TPRandomizer.Assets
         public static readonly int ImageDataSize = 0x1400;
         private static readonly short SeedHeaderSize = 0x160;
         private static short MessageHeaderSize = 0xC;
-
         private SeedGenResults seedGenResults;
         public FileCreationSettings fcSettings { get; }
 
@@ -104,6 +104,7 @@ namespace TPRandomizer.Assets
             {
                 case GameRegion.GC_USA:
                 case GameRegion.WII_10_USA:
+                case GameRegion.WII_12_USA:
                     region = 'E';
                     break;
                 case GameRegion.GC_EUR:
@@ -262,11 +263,11 @@ namespace TPRandomizer.Assets
             {
                 false,
                 randomizerSettings.skipSnowpeakEntrance,
-                false,
+                randomizerSettings.openMap,
                 randomizerSettings.lanayruTwilightCleared,
                 randomizerSettings.eldinTwilightCleared,
                 randomizerSettings.faronTwilightCleared,
-                false,
+                randomizerSettings.skipPrologue,
                 false,
             };
             for (int i = 0; i < mapFlags.GetLength(0); i++)
@@ -292,7 +293,7 @@ namespace TPRandomizer.Assets
                     break;
                 }
             }
-            seedHeader.Add(Converter.GcByte((int)randomizerSettings.startingToD));
+            seedHeader.Add(Converter.GcByte((int)ItemFunctions.ToTSwordRequirements[(int)randomizerSettings.totEntrance]));
 
             while (seedHeader.Count < SeedHeaderSize)
             {
@@ -322,6 +323,7 @@ namespace TPRandomizer.Assets
                 fcSettings.disableEnemyBgm,
                 randomizerSettings.instantText,
                 randomizerSettings.skipMajorCutscenes,
+                fcSettings.invertCameraAxis,
             };
             bool[] flagsBitfieldArray =
             {
@@ -892,10 +894,12 @@ namespace TPRandomizer.Assets
 
             if (randomizerSettings.smallKeySettings == SSettings.Enums.SmallKeySettings.Keysy)
             {
-                if (!randomizerSettings.startingItems.Contains(Item.Gerudo_Desert_Bulblin_Camp_Key))
+                // We want to remove all small keys since they dont actually need to be given to the player
+                foreach(Item sk in Randomizer.Items.RegionSmallKeys)
                 {
-                    randomizerSettings.startingItems.Add(Item.Gerudo_Desert_Bulblin_Camp_Key);
+                    randomizerSettings.startingItems.Remove(sk);
                 }
+                
             }
 
             foreach (Item startingItem in randomizerSettings.startingItems)
@@ -1211,6 +1215,297 @@ namespace TPRandomizer.Assets
                     3
                 ), // Replace kak left side red potion with a copy of the hawkeye sign.
 
+                new ARCReplacement(
+                    "11FC",
+                    "3000EE63",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Change the statue to the past to use a custom flag so it's no longer tied to the portal
+
+                new ARCReplacement(
+                    "910",
+                    "063010FF",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Change the door to the past to use a custom flag so it's no longer tied to the portal
+
+                new ARCReplacement(
+                    "1574",
+                    "80FF0000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Change the ms pedestal to use a custom flag so it's no longer tied to the portal
+
+                new ARCReplacement(
+                    "1094",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Remove the fences from the grove portal fight. Area is constricted as is. no need to make things weird.
+
+                new ARCReplacement(
+                    "1BE0",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    1
+                ), // Remove Beth double actor from outside link's house. It just looks weird
+
+                 new ARCReplacement(
+                    "1C00",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    1
+                ), // Remove Malo double actor from outside link's house. It just looks weird
+
+                 new ARCReplacement(
+                    "5AC",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.City_in_the_Sky,
+                    6
+                ), // Remove Argorok actor in west city, which breaks the bridge
+
+                // Castle Town Hylian Shield Goron FLW patches
+
+                 new ARCReplacement(
+                    "50C2",
+                    "0001032F",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Check for custom flag before allowing player to buy hylian shield 
+
+                 new ARCReplacement(
+                    "50FA",
+                    "0001032F",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Check to see if the flag for buying the shield has been set before continuing the conversation after buying the shield 
+
+                 new ARCReplacement(
+                    "50F0",
+                    "0300089D",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set the new flag for buying the shield
+                 new ARCReplacement(
+                    "50F4",
+                    "032F0000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set the new flag for buying the shield
+
+
+                 new ARCReplacement(
+                    "5418",
+                    "C493D583",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Bulblin_Camp,
+                    1
+                ), // Move the spawn point from Outside AG -> camp to not be between gates.
+
+                new ARCReplacement(
+                    "1B4",
+                    getStartingTime() + "0044",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    1
+                ), // Set the time of day that is to be set 
+
+                  new ARCReplacement(
+                    "C60",
+                    "0FF0FF0C",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    3
+                ), // Add a flag to the Coro gate in the prologue layer
+
+                  new ARCReplacement(
+                    "1B30",
+                    "0FF0FF0C",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    3
+                ), // Add a flag to the Coro gate in the Post FT layer
+
+                  new ARCReplacement(
+                    "1004",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Palace_of_Twilight,
+                    0
+                ), // Remove the TagYami SCOB that prevents the player from going north in PoT before collecting both sols
+
+                // Coro FLW patches to allow him to give all items all the time
+                 new ARCReplacement(
+                    "E24",
+                    "0080013b",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from prologue state
+
+                 new ARCReplacement(
+                    "288",
+                    "02020001",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from post twilight state
+
+                 new ARCReplacement(
+                    "28c",
+                    "0080013b",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from post twilight state
+
+                 new ARCReplacement(
+                    "808",
+                    "02020001",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from post FT state
+
+                 new ARCReplacement(
+                    "80c",
+                    "0080013b",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from post FT state
+
+                 new ARCReplacement(
+                    "d60",
+                    "01000125",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Allow flow state for lantern
+
+                 new ARCReplacement(
+                    "d64",
+                    "01a60000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Allow flow state for lantern
+
+                 new ARCReplacement(
+                    "d58",
+                    "03000138",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Set lantern flag
+
+                 new ARCReplacement(
+                    "d5c",
+                    "00800000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Set lantern flag
+
+                 new ARCReplacement(
+                    "dA8",
+                    "0202000c",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Check coro key flag
+
+                 new ARCReplacement(
+                    "dAc",
+                    "00320139",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Check coro key flag
+
+                 new ARCReplacement(
+                    "d32",
+                    "00c200a1",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Adjust message flow for coro key
+
+                 new ARCReplacement(
+                    "53C",
+                    "00b40000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Adjust message to jump past unnecessary flag check
+
+                 new ARCReplacement(
+                    "E30",
+                    "02020001",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Check coro bottle flag
+
+                 new ARCReplacement(
+                    "E34",
+                    "00da00d8",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Check coro key flag
+
+                 new ARCReplacement(
+                    "4F4",
+                    "00000000",
+                    (byte)FileDirectory.Stage,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.City_in_the_Sky,
+                    0
+                ), // Delete Savemem actr that causes the player to spawn in west wing
+
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
                 new ARCReplacement(
@@ -1275,6 +1570,123 @@ namespace TPRandomizer.Assets
 
                 //.. ModifyChestAppearanceARC(), This is still in development
             ];
+
+            List<ARCReplacement> listOfShopReplacements =
+            [
+                // Castle Town Red Potion Goron FLW patches
+                new ARCReplacement(
+                    "4E0A",
+                    "00010330",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Check for custom flag before allowing player to buy CT red potion
+                new ARCReplacement(
+                    "4D52",
+                    "00060028",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Instead of checking for an empty bottle, only check for rupees
+                new ARCReplacement(
+                    "4DF8",
+                    "03000851",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set custom event flag before proceeding in conversation
+                new ARCReplacement(
+                    "4DFC",
+                    "03300000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set custom event flag before proceeding in conversation
+
+                // Castle Town Goron Shop Lantern Oil FLW patches
+                new ARCReplacement(
+                    "4BF2",
+                    "00010331",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Check for custom flag before allowing player to buy CT lantern oil
+                new ARCReplacement(
+                    "4C0A",
+                    "0006001E",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Instead of checking for an empty bottle, only check for rupees
+                new ARCReplacement(
+                    "4BF8",
+                    "03000826",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set custom event flag before proceeding in conversation
+                new ARCReplacement(
+                    "4BFC",
+                    "03310000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set custom event flag before proceeding in conversation
+
+                // Castle Town Goron Shop Arrow Refill FLW patches
+                new ARCReplacement(
+                    "4E1A",
+                    "00010332",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town,
+                    4
+                ), // Check for custom flag before allowing player to buy CT arrows
+                 new ARCReplacement(
+                    "4E4A",
+                    "00060028",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town,
+                    4
+                ), // Instead of checking for the bow, only check for rupees
+                 new ARCReplacement(
+                    "4E5A",
+                    "00010332",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town,
+                    4
+                ), // Instead of checking for ammo, just re-check the flag
+                new ARCReplacement(
+                    "4FF0",
+                    "03000887",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town,
+                    4
+                ), // Check for custom event flag before proceeding in conversation
+                new ARCReplacement(
+                    "4FF4",
+                    "03320000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town,
+                    4
+                ), // Check for custom event flag before proceeding in conversation
+            ];
+            if (Randomizer.SSettings.shuffleShopItems)
+            {
+                listOfStaticReplacements.AddRange(listOfShopReplacements);
+            }
             return listOfStaticReplacements;
         }
 
@@ -1452,7 +1864,7 @@ namespace TPRandomizer.Assets
                     break;
                 }
             }
-            List<byte> gciBytes = File.ReadAllBytes("/app/generator/Assets/gci/Randomizer." + gciRegion + ".gci").ToList(); // read in the file as an array of bytes
+            List<byte> gciBytes = File.ReadAllBytes(Global.CombineRootPath("./Assets/gci/Randomizer." + gciRegion + ".gci")).ToList(); // read in the file as an array of bytes
 
             for (int i = 0; i < maxRelEntries; i++)
             {
@@ -1516,12 +1928,12 @@ namespace TPRandomizer.Assets
 
                     // Update modified time
 
-                    int totalSeconds = BitConverter.ToInt32(Converter.GcBytes((UInt32)(DateTime.Now - new DateTime(2000, 1, 1)).TotalSeconds));
+                    byte[] totalSeconds = Converter.GcBytes((UInt32)(DateTime.UtcNow - new DateTime(2000, 1, 1)).TotalSeconds);
 
-                    gciBytes[0x28] = (byte)((totalSeconds & 0xFF000000) >> 24);
-                    gciBytes[0x29] = (byte)((totalSeconds & 0xFF0000) >> 16);
-                    gciBytes[0x2A] = (byte)((totalSeconds & 0xFF00) >> 8);
-                    gciBytes[0x2B] = (byte)(totalSeconds & 0xFF);
+                    gciBytes[0x28] = totalSeconds[0];
+                    gciBytes[0x29] = totalSeconds[1];
+                    gciBytes[0x2A] = totalSeconds[2];
+                    gciBytes[0x2B] = totalSeconds[3];
 
                     outputFile.AddRange(gciBytes);
 
@@ -1718,6 +2130,30 @@ namespace TPRandomizer.Assets
             SeedHeaderRaw.fanfareInfoNumEntries = (byte)fanfareReplacementArray.Count;
 
             return data;
+        }
+
+        private static string getStartingTime()
+        {
+            string time = "203F"; // By default, starting time is in the evening
+            switch(Randomizer.SSettings.startingToD)
+            {
+                case StartingToD.Morning:
+                {
+                    time = "700F"; // Set time to 105
+                    break;
+                }
+                case StartingToD.Noon:
+                {
+                    time = "C00F"; // Set time to 180
+                    break;
+                }
+                case StartingToD.Night:
+                {
+                    time = "000F"; // Set time to 0
+                    break;
+                }
+            }
+            return time;
         }
 
         private static readonly int[,] IncompatibleReplacements = new int[,]

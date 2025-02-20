@@ -2,6 +2,7 @@ namespace TPRandomizer
 {
     using System;
     using System.Collections.Generic;
+    using System.Drawing;
 
     public class CheckIdClass
     {
@@ -9,6 +10,34 @@ namespace TPRandomizer
         private static readonly string idChars = "012345abcdefghijklmnopqrstuvwxyz";
         private static Dictionary<string, string> nameToId;
         private static Dictionary<int, string> idNumToName;
+
+        private static HashSet<string> hideFromUiCheckNames =
+            new()
+            {
+                "Forest Temple Diababa",
+                "Goron Mines Fyrus",
+                "Lakebed Temple Morpheel",
+                "Arbiters Grounds Stallord",
+                "Snowpeak Ruins Blizzeta",
+                "Temple of Time Armogohma",
+                "City in The Sky Argorok",
+                "Palace of Twilight Zant",
+                "Hyrule Castle Ganondorf",
+                "Bridge of Eldin Portal",
+                "Castle Town Portal",
+                "Death Mountain Portal",
+                "Gerudo Desert Portal",
+                "Kakariko Gorge Portal",
+                "Kakariko Village Portal",
+                "Lake Hylia Portal",
+                "Mirror Chamber Portal",
+                "North Faron Portal",
+                "Sacred Grove Portal",
+                "South Faron Portal",
+                "Snowpeak Portal",
+                "Upper Zoras River Portal",
+                "Zoras Domain Portal"
+            };
 
         static CheckIdClass()
         {
@@ -77,7 +106,7 @@ namespace TPRandomizer
                 "Arbiters Grounds Stallord Heart Container",
                 "Zoras Domain Chest Behind Waterfall",
                 "City in The Sky Central Outside Ledge Chest",
-                "Palace of Twilight East Wing First Room West Alcove",
+                "Palace of Twilight East Wing First Room West Alcove Chest",
                 "Bulblin Camp First Chest Under Tower At Entrance",
                 "Arbiters Grounds West Stalfos Northeast Chest",
                 "Outside South Castle Town Male Ladybug",
@@ -495,7 +524,7 @@ namespace TPRandomizer
                 "Lakebed Temple Before Deku Toad Alcove Chest",
                 "Eldin Lantern Cave Poe",
                 "Kakariko Village Malo Mart Hylian Shield",
-                "Palace of Twilight East Wing First Room East Alcove",
+                "Palace of Twilight East Wing First Room East Alcove Chest",
                 "Bulblin Camp Roasted Boar",
                 "Faron Woods Golden Wolf",
                 "Jovani 60 Poe Soul Reward",
@@ -503,7 +532,37 @@ namespace TPRandomizer
                 "Kakariko Village Malo Mart Wooden Shield",
                 "Arbiters Grounds Dungeon Reward",
                 "Sacred Grove Pedestal Master Sword",
-                "Sacred Grove Pedestal Shadow Crystal"
+                "Sacred Grove Pedestal Shadow Crystal",
+                "Castle Town Goron Shop Hylian Shield",
+                "Forest Temple Diababa",
+                "Goron Mines Fyrus",
+                "Lakebed Temple Morpheel",
+                "Arbiters Grounds Stallord",
+                "Snowpeak Ruins Blizzeta",
+                "Temple of Time Armogohma",
+                "City in The Sky Argorok",
+                "Palace of Twilight Zant",
+                "Hyrule Castle Ganondorf",
+                "South Faron Portal",
+                "North Faron Portal",
+                "Sacred Grove Portal",
+                "Kakariko Gorge Portal",
+                "Kakariko Village Portal",
+                "Death Mountain Portal",
+                "Bridge of Eldin Portal",
+                "Castle Town Portal",
+                "Lake Hylia Portal",
+                "Zoras Domain Portal",
+                "Upper Zoras River Portal",
+                "Snowpeak Portal",
+                "Gerudo Desert Portal",
+                "Mirror Chamber Portal",
+                "Castle Town Goron Shop Red Potion",
+                "Castle Town Goron Shop Lantern Oil",
+                "Castle Town Goron Shop Arrow Refill",
+                "Kakariko Village Bell Rupee",
+                "Coro Lantern",
+                "Coro Gate Key"
                 // Add new check names right above this line. The name should
                 // match exactly with the json filename in the "Checks"
                 // directory.
@@ -589,13 +648,17 @@ namespace TPRandomizer
             return GetCheckIdNum(checkName) >= 0;
         }
 
-        public static SortedDictionary<string, int> GetNameToIdNumDictionary()
+        // Used to get the list of checks to use in the settings UI for
+        // Exclusions and Plando checks. Filters out ones that should not show
+        // up such as "Forest Temple Diababa"
+        public static SortedDictionary<string, int> GetUiNameToIdNumDict()
         {
             SortedDictionary<string, int> nameToIdNum = new();
 
             foreach (KeyValuePair<string, string> item in nameToId)
             {
-                nameToIdNum[item.Key] = IdToNum(item.Value);
+                if (!hideFromUiCheckNames.Contains(item.Key))
+                    nameToIdNum[item.Key] = IdToNum(item.Value);
             }
 
             return nameToIdNum;

@@ -45,6 +45,7 @@ namespace TPRandomizer
         public bool skipLakebedEntrance { get; set; }
         public bool skipArbitersEntrance { get; set; }
         public bool skipSnowpeakEntrance { get; set; }
+        public bool skipGroveEntrance { get; set; }
         public TotEntrance totEntrance { get; set; }
         public bool skipCityEntrance { get; set; }
         public bool instantText { get; set; }
@@ -57,8 +58,11 @@ namespace TPRandomizer
         public bool increaseSpinnerSpeed { get; set; }
         public bool openDot { get; set; }
         public bool noSmallKeysOnBosses { get; set; }
+        public bool hcShortcut { get; set; }
         public StartingToD startingToD { get; set; }
         public HintDistribution hintDistribution { get; set; }
+        public bool randomizeStartingPoint { get; set; }
+        public bool shuffleRupees { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
         public List<(string, Item)> plandoChecks { get; set; }
@@ -99,7 +103,8 @@ namespace TPRandomizer
             skipLakebedEntrance = processor.NextBool();
             skipArbitersEntrance = processor.NextBool();
             skipSnowpeakEntrance = processor.NextBool();
-            totEntrance = (TotEntrance)processor.NextInt(2);
+            skipGroveEntrance = processor.NextBool();
+            totEntrance = (TotEntrance)processor.NextInt(3);
             skipCityEntrance = processor.NextBool();
             instantText = processor.NextBool();
             openMap = processor.NextBool();
@@ -113,6 +118,9 @@ namespace TPRandomizer
             noSmallKeysOnBosses = processor.NextBool();
             startingToD = (StartingToD)processor.NextInt(3);
             hintDistribution = (HintDistribution)processor.NextInt(5);
+            randomizeStartingPoint = processor.NextBool();
+            shuffleRupees = processor.NextBool();
+            hcShortcut = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

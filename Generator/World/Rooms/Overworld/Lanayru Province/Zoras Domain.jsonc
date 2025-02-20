@@ -10,8 +10,8 @@
       },
       {
         "ConnectedArea": "Fishing Hole",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "(Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "(Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight"
       },
 	  {
 		  "ConnectedArea": "Zoras Domain",
@@ -20,14 +20,15 @@
 	  },
       {
         "ConnectedArea": "Upper Zoras River Izas House",
-        "Requirements": "HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))",
-        "GlitchedRequirements": "HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))"
+        "Requirements": "(HasSword or ((CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) or Upper_Zoras_River_Portal)) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "(HasSword or ((CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) or Upper_Zoras_River_Portal)) and CanCompleteLanayruTwilight"
       }
     ],
     "Checks":
     [
         "Upper Zoras River Female Dragonfly",
-        "Upper Zoras River Poe"
+        "Upper Zoras River Poe",
+        "Upper Zoras River Portal"
     ],
     "Region": "Zoras Domain"
   },
@@ -103,14 +104,14 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Zoras Throne Room",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "ConnectedArea": "Zoras Domain Top of Waterfall",
+        "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
+        "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
       },
       {
-        "ConnectedArea": "Snowpeak Climb Lower",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "ConnectedArea": "Zoras Domain Snowpeak Entrance",
+        "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight and Ball_and_Chain) or CanCompleteLanayruTwilight)",
+        "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight and Ball_and_Chain) or CanCompleteLanayruTwilight)"
       }
     ],
     "Checks":
@@ -124,6 +125,24 @@
     "Region": "Zoras Domain"
   },
   {
+    "RoomName": "Zoras Domain Snowpeak Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Zoras Domain",
+        "Requirements": "Ball_and_Chain or CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Ball_and_Chain or CanCompleteLanayruTwilight"
+      },
+      {
+        "ConnectedArea": "Snowpeak Climb Lower",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Zoras Domain"
+  },
+  {
     "RoomName": "Zoras Domain West Ledge",
     "Exits":
     [
@@ -131,6 +150,11 @@
         "ConnectedArea": "Zoras Domain",
         "Requirements": "true",
         "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Zoras Domain Top of Waterfall",
+        "Requirements": "canSmash",
+        "GlitchedRequirements": "canSmash"
       },
       {
         "ConnectedArea": "Lanayru Field Behind Boulder",
@@ -142,11 +166,11 @@
     "Region": "Zoras Domain"
   },
   {
-    "RoomName": "Zoras Throne Room",
+    "RoomName": "Zoras Domain Throne Room",
     "Exits":
     [
       {
-        "ConnectedArea": "Zoras Domain",
+        "ConnectedArea": "Zoras Domain Top of Waterfall",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -155,8 +179,27 @@
     [
         "Zoras Domain Light All Torches Chest",
         "Zoras Domain Extinguish All Torches Chest",
-        "Zoras Domain Underwater Goron"
+        "Zoras Domain Underwater Goron",
+        "Zoras Domain Portal"
     ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Zoras Domain Top of Waterfall",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Zoras Domain",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Zoras Domain Throne Room",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [""],
     "Region": "Zoras Domain"
   }
 ]

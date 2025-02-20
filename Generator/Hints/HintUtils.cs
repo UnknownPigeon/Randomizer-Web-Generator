@@ -977,7 +977,7 @@ namespace TPRandomizer.Hints
             return Randomizer.Checks.CheckDict[checkName].itemId;
         }
 
-        public static Item getCheckContents(string checkName, Dictionary<int, byte> itemPlacements)
+        public static Item getCheckContents(string checkName, Dictionary<int, int> itemPlacements)
         {
             int srcCheckId = CheckIdClass.GetCheckIdNum(checkName);
             return (Item)itemPlacements[srcCheckId];
@@ -1081,7 +1081,7 @@ namespace TPRandomizer.Hints
 
         public static string GetTradeChainFinalCheck(
             string srcCheckName,
-            Dictionary<int, byte> itemPlacements
+            Dictionary<int, int> itemPlacements
         )
         {
             if (!CheckIdClass.IsValidCheckName(srcCheckName))
@@ -1131,8 +1131,6 @@ namespace TPRandomizer.Hints
             switch (item)
             {
                 case Item.Foolish_Item:
-                case Item.Foolish_Item_2:
-                case Item.Foolish_Item_3:
                     return true;
                 default:
                     return false;

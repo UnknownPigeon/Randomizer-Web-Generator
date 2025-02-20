@@ -392,9 +392,11 @@ function cancelRequest(
     const index = queue.indexOf(seedId);
     if (index >= 0) {
       const newQueue = new Array(queue.length - 1);
+      let newQueueIndex = 0;
       for (let i = 0; i < queue.length; i++) {
         if (i !== index) {
-          newQueue.push(queue[i]);
+          newQueue[newQueueIndex] = queue[i];
+          newQueueIndex += 1;
         }
       }
       queue = newQueue;

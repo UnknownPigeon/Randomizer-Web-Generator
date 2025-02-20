@@ -55,6 +55,25 @@ namespace TPRandomizer
         public string Spawn { get; set; }
         public string State { get; set; }
         public string PairedEntranceName { get; set; } = "";
+
+        public EntranceInfo(
+            string SourceRoom,
+            string TargetRoom,
+            int Stage,
+            int Room,
+            string Spawn,
+            string State,
+            string PairedEntranceName
+        )
+        {
+            this.SourceRoom = SourceRoom;
+            this.TargetRoom = TargetRoom;
+            this.Stage = Stage;
+            this.Room = Room;
+            this.Spawn = Spawn;
+            this.State = State;
+            this.PairedEntranceName = PairedEntranceName;
+        }
     }
 
     public class Entrance
@@ -202,6 +221,14 @@ namespace TPRandomizer
             {
                 Type = EntranceType.Dungeon;
             }
+            else if (entranceType == "Boss Room")
+            {
+                Type = EntranceType.Boss;
+            }
+            else if (entranceType == "Boss Room Second Exit")
+            {
+                Type = EntranceType.Boss_Reverse;
+            }
             else if (entranceType == "Paired")
             {
                 Type = EntranceType.Paired;
@@ -307,6 +334,8 @@ namespace TPRandomizer
         // If enabled, all entrances are "one way" so if you go through Faron Woods -> FT Entrance and end up in GM, going back the way you came may not lead you to Faron Woods.
         bool decoupleEntrances = false;
         public List<SpawnTableEntry> SpawnTable = new();
+        public EntranceInfo vanillaSpawn = new("Outside Links House", "", 43, 1, "1", "FF", "");
+        public List<Entrance> spawnList = new();
 
         public void RandomizeEntrances(Random rnd)
         {
@@ -316,6 +345,49 @@ namespace TPRandomizer
 
             // Once we have the spawn table created, we want to verify that the data in the table is valid and generate a list of entrances from it.
             GetEntranceList();
+
+            // We want to be safe and make sure that the room classes are prepped and ready to be linked together. Then we define our starting room.
+            foreach (KeyValuePair<string, Room> roomList in Randomizer.Rooms.RoomDict.ToList())
+            {
+                Room currentRoom = roomList.Value;
+                currentRoom.Visited = false;
+                Randomizer.Rooms.RoomDict[currentRoom.RoomName] = currentRoom;
+                foreach (Entrance exit in currentRoom.Exits)
+                {
+                    // We don't want to start the player in Hyrule Castle and we don't want to start them in a boss room.
+                    if (
+                        currentRoom.RoomName != "Hyrule Castle Entrance"
+                        && (exit.State != null)
+                        && (
+                            (exit.GetEntranceType() != EntranceType.Boss)
+                            || (exit.GetEntranceType() != EntranceType.Boss_Reverse)
+                        )
+                    )
+                    {
+                        this.spawnList.Add(exit);
+                    }
+                }
+            }
+
+            string startingRoom;
+
+            if (Randomizer.SSettings.randomizeStartingPoint)
+            {
+                Randomizer.spawnIndex = rnd.Next(this.spawnList.Count());
+                startingRoom = this.spawnList[Randomizer.spawnIndex].ConnectedArea;
+            }
+            else
+            {
+                startingRoom = "Outside Links House";
+            }
+
+            Console.WriteLine("Spawn is: " + startingRoom);
+
+            Entrance rootExit = new();
+            rootExit.ConnectedArea = startingRoom;
+            rootExit.Requirements = "(true)";
+
+            Randomizer.Rooms.RoomDict["Root"].Exits.Add(rootExit);
 
             if (pairEntrances)
             {

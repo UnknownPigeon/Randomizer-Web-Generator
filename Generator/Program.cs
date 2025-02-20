@@ -27,14 +27,12 @@ namespace TPRandomizer
 
             HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 
-            builder.Services.AddLocalization(
-                options =>
-                {
-                    // This path is added to the root "Generator" dir to find
-                    // the folder which contains the resx files.
-                    options.ResourcesPath = "Translations";
-                }
-            );
+            builder.Services.AddLocalization(options =>
+            {
+                // This path is added to the root "Generator" dir to find
+                // the folder which contains the resx files.
+                options.ResourcesPath = "Translations";
+            });
             builder.Services.AddSingleton<Translations>();
 
             IHost host = builder.Build();

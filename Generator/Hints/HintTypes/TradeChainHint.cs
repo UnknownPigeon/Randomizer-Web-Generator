@@ -64,7 +64,7 @@ namespace TPRandomizer.Hints
             bool srcUseDefiniteArticle = false,
             bool tgtUseDefiniteArticle = false,
             bool tgtIsLogicalItem = false,
-            Dictionary<int, byte> itemPlacements = null
+            Dictionary<int, int> itemPlacements = null
         )
         {
             this.srcCheckName = srcCheckName;
@@ -80,7 +80,7 @@ namespace TPRandomizer.Hints
             CalcDerived(genData, itemPlacements);
         }
 
-        private void CalcDerived(HintGenData genData, Dictionary<int, byte> itemPlacements)
+        private void CalcDerived(HintGenData genData, Dictionary<int, int> itemPlacements)
         {
             if (itemPlacements != null)
             {
@@ -266,7 +266,7 @@ namespace TPRandomizer.Hints
         public static TradeChainHint decode(
             HintEncodingBitLengths bitLengths,
             BitsProcessor processor,
-            Dictionary<int, byte> itemPlacements
+            Dictionary<int, int> itemPlacements
         )
         {
             int srcCheckId = processor.NextInt(bitLengths.checkId);

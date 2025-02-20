@@ -9,10 +9,12 @@ namespace TPRandomizer
     {
         public GameRegion gameRegion { get; }
         public EurLanguageTag eurLangTag { get; }
+        public bool patchFileOnly { get; }
         public bool includeSpoilerLog { get; }
         public RandomizeBgm randomizeBgm { get; }
         public bool randomizeFanfares { get; }
         public bool disableEnemyBgm { get; }
+        public bool invertCameraAxis { get; }
 
         public Clr0Entry hTunicHatColor { get; }
         public Clr0Entry hTunicBodyColor { get; }
@@ -26,6 +28,10 @@ namespace TPRandomizer
 
         public Clr0Entry lanternGlowColor { get; }
         public Clr0Entry msBladeColor { get; }
+        public Clr0Entry boomerangColor { get; }
+        public Clr0Entry ironsColor { get; }
+        public Clr0Entry spinnerColor { get; }
+        public Clr0Entry woodSwordColor { get; }
 
         // public int midnaHairColor { get; }
         public Clr0Entry heartColor { get; }
@@ -57,13 +63,15 @@ namespace TPRandomizer
         {
             BitsProcessor processor = new BitsProcessor(bits);
 
-            gameRegion = (GameRegion)processor.NextInt(2);
+            gameRegion = (GameRegion)processor.NextInt(3);
             eurLangTag = (EurLanguageTag)processor.NextInt(3);
+            patchFileOnly = processor.NextBool();
             includeSpoilerLog = processor.NextBool();
 
             randomizeBgm = (RandomizeBgm)processor.NextInt(2);
             randomizeFanfares = processor.NextBool();
             disableEnemyBgm = processor.NextBool();
+            invertCameraAxis = processor.NextBool();
 
             hTunicHatColor = processor.NextClr0Entry(RecolorId.CMPR);
             hTunicBodyColor = processor.NextClr0Entry(RecolorId.CMPR);
@@ -74,6 +82,10 @@ namespace TPRandomizer
             zTunicScalesColor = processor.NextClr0Entry(RecolorId.CMPR);
             zTunicBootsColor = processor.NextClr0Entry(RecolorId.CMPR);
             msBladeColor = processor.NextClr0Entry(RecolorId.CMPR);
+            boomerangColor = processor.NextClr0Entry(RecolorId.CMPR);
+            ironsColor = processor.NextClr0Entry(RecolorId.CMPR);
+            spinnerColor = processor.NextClr0Entry(RecolorId.CMPR);
+            woodSwordColor = processor.NextClr0Entry(RecolorId.CMPR);
             lanternGlowColor = processor.NextClr0Entry(RecolorId.None);
             // midnaHairColor = processor.NextInt(1);
             heartColor = processor.NextClr0Entry(RecolorId.None);
@@ -143,6 +155,7 @@ namespace TPRandomizer
                 case GameRegion.All:
                 case GameRegion.GC_USA:
                 case GameRegion.WII_10_USA:
+                case GameRegion.WII_12_USA:
                     return "en";
                 case GameRegion.GC_JAP:
                 case GameRegion.WII_10_JP:
