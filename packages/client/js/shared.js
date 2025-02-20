@@ -925,7 +925,7 @@
     if (version >= 6) {
       processBasic({ id: 'randomizeStartingPoint' });
       processBasic({ id: 'rupees' });
-      processBasic({ id: 'skipZantCheckbox' });
+      processBasic({ id: 'skipZant' });
       processBasic({ id: 'hcShortcut' });
     } else {
       res.randomizeStartingPoint = false; // Vanilla

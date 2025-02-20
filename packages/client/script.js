@@ -314,9 +314,6 @@ document
 document
   .getElementById('rupeeCheckbox')
   .addEventListener('click', setSettingsString);
-document
-  .getElementById('hcShortcutCheckbox')
-  .addEventListener('click', setSettingsString);
 document.getElementById('itemScarcityFieldset').onchange = setSettingsString;
 document.getElementById('damageMagFieldset').onchange = setSettingsString;
 document.getElementById('todFieldset').onchange = setSettingsString;
@@ -390,6 +387,9 @@ document
 document
   .getElementById('skipZantCheckbox')
   .addEventListener('click',setSettingsString);
+  document
+  .getElementById('hcShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
 document
   .getElementById('increaseWalletCheckbox')
   .addEventListener('click', setSettingsString);
@@ -535,6 +535,7 @@ function setSettingsString() {
   settingsStringRaw[41] = document.getElementById('skipHcCheckbox').checked;
   settingsStringRaw[42] = document.getElementById('optDungeonsCheckbox').checked;
   settingsStringRaw[43] = document.getElementById('skipZantCheckbox').checked;
+  settingsStringRaw[44] = document.getElementById('hcShortcutCheckbox').checked;
 
   // document.getElementById('settingsStringTextbox').value =
   document.getElementById('settingsStringTextbox').textContent =
@@ -701,6 +702,7 @@ var arrayOfSettingsItems = [
   'skipHcCheckBox',
   'optDungeonsCheckbox',
   'skipZantCheckbox',
+  'hcShortcutCheckbox',
 ];
 
 function parseSettingsString(settingsString) {
@@ -1263,10 +1265,9 @@ function populateSSettings(s) {
   $('#noSmallKeysOnBossesCheckbox').prop('checked', s.noSmallKeysOnBosses);
   $('#todFieldset').val(s.startingToD);
   $('#hintDistributionFieldset').val(s.hintDistribution);
-  $('#randomizeStartingPointCheckbox').prop(
-    'checked',
-    s.randomizeStartingPoint
-  );
+  $('#randomizeStartingPointCheckbox').prop( 'checked',s.randomizeStartingPoint);
+  $('#skipHcCheckbox').prop('checked', s.skipHc);
+  $('#optDungeonsCheckbox').prop('checked', s.optionalDungeons);
   $('#rupeeCheckbox').prop('checked', s.rupees);
   $('#skipZantCheckbox').prop('checked', s.skipZant);
   $('#hcShortcutCheckbox').prop('checked', s.hcShortcut);
