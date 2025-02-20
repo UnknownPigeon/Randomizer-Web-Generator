@@ -61,6 +61,7 @@ namespace TPRandomizer
         public bool optionalDungeons { get; set; }
         public bool skipZant { get; set; }
         public bool noSmallKeysOnBosses { get; set; }
+        public bool hcShortcut { get; set; }
         public StartingToD startingToD { get; set; }
         public HintDistribution hintDistribution { get; set; }
         public bool randomizeStartingPoint { get; set; }
@@ -124,7 +125,7 @@ namespace TPRandomizer
             skipHc = processor.NextBool();
             optionalDungeons = processor.NextBool();
             shuffleRupees = processor.NextBool();
-            skipZant = processor.NextBool();
+            hcShortcut = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

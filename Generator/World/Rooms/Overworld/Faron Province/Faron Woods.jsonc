@@ -5,8 +5,8 @@
     [
       {
         "ConnectedArea": "South Faron Woods Behind Gate",
-        "Requirements": "Faron_Woods_Coro_Key", 
-        "GlitchedRequirements": "Faron_Woods_Coro_Key"
+        "Requirements": "Faron_Woods_Coro_Key or Shadow_Crystal", 
+        "GlitchedRequirements": "Faron_Woods_Coro_Key or Shadow_Crystal"
       },
       {
         "ConnectedArea": "South Faron Woods Owl Statue Area",
@@ -340,8 +340,8 @@
       },
       {
         "ConnectedArea": "Mist Area Near North Faron Woods Behind Gate",
-        "Requirements": "North_Faron_Woods_Gate_Key or (Setting.skipPrologue equals True)",
-        "GlitchedRequirements": "North_Faron_Woods_Gate_Key or (Setting.skipPrologue equals True)"
+        "Requirements": "North_Faron_Woods_Gate_Key",
+        "GlitchedRequirements": "North_Faron_Woods_Gate_Key"
       }
     ],
     "Checks": [""],
@@ -353,8 +353,8 @@
     [
       {
         "ConnectedArea": "Mist Area Near North Faron Woods",
-        "Requirements": "North_Faron_Woods_Gate_Key or (Setting.skipPrologue equals True)",
-        "GlitchedRequirements": "North_Faron_Woods_Gate_Key or (Setting.skipPrologue equals True)"
+        "Requirements": "North_Faron_Woods_Gate_Key",
+        "GlitchedRequirements": "North_Faron_Woods_Gate_Key"
       },
       {
         "ConnectedArea": "North Faron Woods",

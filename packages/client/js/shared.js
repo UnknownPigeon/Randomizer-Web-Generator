@@ -446,6 +446,7 @@
       { id: 'optDungeonsCheckbox' },     
       { id: 'rupeeCheckbox' },
       { id: 'skipZantCheckbox' },
+      { id: 'hcShortcutCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -925,10 +926,12 @@
       processBasic({ id: 'randomizeStartingPoint' });
       processBasic({ id: 'rupees' });
       processBasic({ id: 'skipZantCheckbox' });
+      processBasic({ id: 'hcShortcut' });
     } else {
       res.randomizeStartingPoint = false; // Vanilla
       res.rupees = false; // Vanilla
-      res.skipZant = false; // Vanilla
+      res.skipZant = false;
+      res.hcShortcut = false;
     }
 
     res.startingItems = processor.nextEolList(9);

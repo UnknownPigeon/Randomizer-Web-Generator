@@ -3,6 +3,14 @@ namespace TPRandomizer.Assets
     using System.Collections.Generic;
     using TPRandomizer.SSettings.Enums;
 
+    // Note on how the region flags are defined: The first number in the pair is
+    // the region node index (ex: Ordon is node 0, Hyrule Castle is node 0x18).
+    // The second number defines the offset and mask. The lower 3 bits (val % 8)
+    // says how much to right-shift a mask of 0x80 (shift 7 would give 0x01).
+    // The upper 5 bits say the offset within the region node. For example, 0x5A
+    // is 0b01011010 which is 01011 and 010. This means the offset is 0b01011
+    // (or 0xB) and the mask is 0x80 >> 2 (or 0x20).
+
     /// <summary>
     /// summary text.
     /// </summary>
@@ -393,6 +401,15 @@ namespace TPRandomizer.Assets
             { 0x15, 0xBF }, // statue placed in slot in room 1
         };
 
+        public static readonly byte[,] HcShortcutFlags = new byte[,]
+        {
+            { 0x18, 0x6F }, // watched double Dinalfos cs 1
+            { 0x18, 0x70 }, // watched double Dinalfos cs 2
+            { 0x18, 0x85 }, // watched focus on lowered chandelier cs
+            { 0x18, 0x9D }, // lower the main hall chandelier
+            { 0x18, 0xAF }, // defeated double Dinalfos (opens gates both sides)
+        };
+
         public static readonly byte[,] OpenMapRegionFlags = new byte[,]
         {
             // Lake Long Cave Flags
@@ -490,6 +507,7 @@ namespace TPRandomizer.Assets
                 { 19, OpenDMTRegionFlags },
                 { 20, OpenDotRegionFlags },
                 { 21, OpenMapRegionFlags },
+                { 22, HcShortcutFlags },
             };
 
         /// <summary>
@@ -701,6 +719,7 @@ namespace TPRandomizer.Assets
             /* 19 */RandomizerSettings.goronMinesEntrance == GoronMinesEntrance.Open,
             /* 20 */RandomizerSettings.openDot,
             /* 21 */RandomizerSettings.openMap,
+            /* 22 */RandomizerSettings.hcShortcut,
         };
     }
 }

@@ -314,6 +314,9 @@ document
 document
   .getElementById('rupeeCheckbox')
   .addEventListener('click', setSettingsString);
+document
+  .getElementById('hcShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
 document.getElementById('itemScarcityFieldset').onchange = setSettingsString;
 document.getElementById('damageMagFieldset').onchange = setSettingsString;
 document.getElementById('todFieldset').onchange = setSettingsString;
@@ -1260,13 +1263,13 @@ function populateSSettings(s) {
   $('#noSmallKeysOnBossesCheckbox').prop('checked', s.noSmallKeysOnBosses);
   $('#todFieldset').val(s.startingToD);
   $('#hintDistributionFieldset').val(s.hintDistribution);
-  $('#randomizeStartingPointCheckbox').prop('checked', s.randomizeStartingPoint);
-  $('#skipHcCheckbox').prop('checked', s.skipHc);
-  $('#optDungeonsCheckbox').prop('checked', s.optionalDungeons);
-  
-
+  $('#randomizeStartingPointCheckbox').prop(
+    'checked',
+    s.randomizeStartingPoint
+  );
   $('#rupeeCheckbox').prop('checked', s.rupees);
   $('#skipZantCheckbox').prop('checked', s.skipZant);
+  $('#hcShortcutCheckbox').prop('checked', s.hcShortcut);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {
