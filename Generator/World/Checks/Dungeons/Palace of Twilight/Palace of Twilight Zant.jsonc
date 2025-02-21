@@ -1,6 +1,9 @@
 {
-    "requirements": "CanDefeatZant",
+    "requirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))",
     "glitchedRequirements": "CanDefeatZant",
     "checkCategory": ["Dungeon", "Palace of Twilight"],
     "itemId": "Zant_Defeated"
 }
+
+
+

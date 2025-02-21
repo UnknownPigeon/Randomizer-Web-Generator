@@ -126,8 +126,6 @@ namespace TPRandomizer.SSettings.Enums
         Balanced = 3,
         Strong = 4,
         Very_Strong = 5,
-        DrehenTestv2 = 6,
-        DrehenTestv1 = 7,
-        DrehenPalace = 8,
+        DrehenOptional = 6,
     }
 }
