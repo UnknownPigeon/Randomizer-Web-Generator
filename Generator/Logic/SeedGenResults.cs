@@ -1,11 +1,11 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using TPRandomizer.Util;
 using TPRandomizer.Assets;
-using System.Runtime.Serialization;
+using TPRandomizer.Util;
 
 namespace TPRandomizer
 {
@@ -611,7 +611,7 @@ namespace TPRandomizer
                 this.customMsgData = customMsgData.Encode();
             }
 
-            override public string ToString()
+            public override string ToString()
             {
                 Dictionary<string, object> inputJsonRoot = new();
                 // Need to update format for any changes.

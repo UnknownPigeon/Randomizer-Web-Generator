@@ -488,27 +488,26 @@ namespace TPRandomizer.Assets
         /// <summary>
         /// summary text.
         /// </summary>
-        public static readonly Dictionary<int, byte[,]> RegionFlags =
-            new()
-            {
-                { 1, FaronTwilightRegionFlags },
-                { 2, EldinTwilightRegionFlags },
-                { 3, LanayruTwilightRegionFlags },
-                { 4, CutsceneRegionFlags },
-                { 6, MDHRegionFlags },
-                { 7, SmallKeyRegionFlags },
-                { 8, BigKeyRegionFlags },
-                { 9, MapAndCompassRegionFlags },
-                { 13, OpenLakebedRegionFlags },
-                { 14, OpenArbitersRegionFlags },
-                { 15, OpenSnowpeakRegionFlags },
-                { 16, OpenToTRegionFlags },
-                { 18, OpenGroveRegionFlags },
-                { 19, OpenDMTRegionFlags },
-                { 20, OpenDotRegionFlags },
-                { 21, OpenMapRegionFlags },
-                { 22, HcShortcutFlags },
-            };
+        public static readonly Dictionary<int, byte[,]> RegionFlags = new()
+        {
+            { 1, FaronTwilightRegionFlags },
+            { 2, EldinTwilightRegionFlags },
+            { 3, LanayruTwilightRegionFlags },
+            { 4, CutsceneRegionFlags },
+            { 6, MDHRegionFlags },
+            { 7, SmallKeyRegionFlags },
+            { 8, BigKeyRegionFlags },
+            { 9, MapAndCompassRegionFlags },
+            { 13, OpenLakebedRegionFlags },
+            { 14, OpenArbitersRegionFlags },
+            { 15, OpenSnowpeakRegionFlags },
+            { 16, OpenToTRegionFlags },
+            { 18, OpenGroveRegionFlags },
+            { 19, OpenDMTRegionFlags },
+            { 20, OpenDotRegionFlags },
+            { 21, OpenMapRegionFlags },
+            { 22, HcShortcutFlags },
+        };
 
         /// <summary>
         /// summary text.
@@ -672,24 +671,23 @@ namespace TPRandomizer.Assets
         /// <summary>
         /// summary text.
         /// </summary>
-        public static readonly Dictionary<int, byte[,]> EventFlags =
-            new()
-            {
-                { 0, IntroEventFlags },
-                { 1, FaronTwilightEventFlags },
-                { 2, EldinTwilightEventFlags },
-                { 3, LanayruTwilightEventFlags },
-                { 4, CutsceneEventFlags },
-                { 5, OpenForestEventFlags },
-                { 6, MDHEventFlags },
-                { 7, SmallKeyEventFlags },
-                { 10, OpenCastleEventFlags },
-                { 11, OpenPalaceEventFlags },
-                { 12, OpenMinesEventFlags },
-                { 14, OpenArbitersEventFlags },
-                { 15, OpenSnowpeakEventFlags },
-                { 17, OpenCityEventFlags },
-            };
+        public static readonly Dictionary<int, byte[,]> EventFlags = new()
+        {
+            { 0, IntroEventFlags },
+            { 1, FaronTwilightEventFlags },
+            { 2, EldinTwilightEventFlags },
+            { 3, LanayruTwilightEventFlags },
+            { 4, CutsceneEventFlags },
+            { 5, OpenForestEventFlags },
+            { 6, MDHEventFlags },
+            { 7, SmallKeyEventFlags },
+            { 10, OpenCastleEventFlags },
+            { 11, OpenPalaceEventFlags },
+            { 12, OpenMinesEventFlags },
+            { 14, OpenArbitersEventFlags },
+            { 15, OpenSnowpeakEventFlags },
+            { 17, OpenCityEventFlags },
+        };
         private static readonly SharedSettings RandomizerSettings = Randomizer.SSettings;
 
         /// <summary>

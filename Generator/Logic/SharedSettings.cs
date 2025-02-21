@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using TPRandomizer.Util;
-using TPRandomizer.SSettings.Enums;
 using System.Linq;
+using System.Text.RegularExpressions;
+using TPRandomizer.SSettings.Enums;
+using TPRandomizer.Util;
 
 namespace TPRandomizer
 {

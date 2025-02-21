@@ -2,12 +2,12 @@
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Text;
+using System.Threading;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using System.Threading;
-using System.Text;
 
 namespace TPRandomizer
 {
