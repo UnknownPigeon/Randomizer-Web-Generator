@@ -1,9 +1,9 @@
 namespace TPRandomizer
 {
     using System;
-    using TPRandomizer.Util;
-    using TPRandomizer.FcSettings.Enums;
     using TPRandomizer.Assets.CLR0;
+    using TPRandomizer.FcSettings.Enums;
+    using TPRandomizer.Util;
 
     public class FileCreationSettings
     {

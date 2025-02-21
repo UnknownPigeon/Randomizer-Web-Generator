@@ -559,8 +559,12 @@ namespace TPRandomizer
                 {
                     // For now, 'All' only generates for GameCube until we do more
                     // work related to Wii code.
-                    List<GameRegion> gameRegionsForAll =
-                        new() { GameRegion.GC_USA, GameRegion.GC_EUR, GameRegion.GC_JAP };
+                    List<GameRegion> gameRegionsForAll = new()
+                    {
+                        GameRegion.GC_USA,
+                        GameRegion.GC_EUR,
+                        GameRegion.GC_JAP,
+                    };
 
                     // Create files for all regions
                     // foreach (GameRegion gameRegion in GameRegion.GetValues(typeof(GameRegion)))
@@ -773,8 +777,11 @@ namespace TPRandomizer
             var filename =
                 "Tpr-" + region + "-" + seedGenResults.playthroughName + "-" + seedId + ".patch";
 
-            Dictionary<string, object> dict =
-                new() { { "name", filename }, { "length", patchBytes.Count } };
+            Dictionary<string, object> dict = new()
+            {
+                { "name", filename },
+                { "length", patchBytes.Count },
+            };
 
             return new(dict, patchBytes.ToArray());
         }
