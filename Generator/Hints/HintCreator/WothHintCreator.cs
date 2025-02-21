@@ -23,6 +23,7 @@ namespace TPRandomizer.Hints.HintCreator
                 HintCategory.Underwater,
                 HintCategory.Southern_Desert,
                 HintCategory.Northern_Desert,
+                HintCategory.Lantern_Chests
             };
 
         private static readonly HashSet<AreaId.AreaType> validAreaTypes =

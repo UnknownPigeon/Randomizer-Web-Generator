@@ -1450,15 +1450,6 @@ namespace TPRandomizer.Hints
                 {
                     foreach (HintDefResult result in recHintResults.HintDefResults)
                     {
-                        if (
-                            HintUtils.DungeonIsOptionalSpotId(specialHintDef.spotId)
-                            && (
-                                Randomizer.SSettings.hintDistribution
-                                    == HintDistribution.DrehenTestv1
-                                || Randomizer.SSettings.hintDistribution
-                                    == HintDistribution.DrehenPalace
-                            )
-                        )
                             specialSpotToHints.addHintToSpot(specialHintDef.spotId, result.hint);
                     }
                 }
