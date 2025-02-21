@@ -2,13 +2,13 @@ namespace TPRandomizer.Assets
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.IO;
     using System.Linq;
     using System.Reflection;
-    using TPRandomizer.FcSettings.Enums;
     using Newtonsoft.Json;
     using TPRandomizer.Assets.CLR0;
-    using System.ComponentModel.DataAnnotations.Schema;
+    using TPRandomizer.FcSettings.Enums;
     using TPRandomizer.SSettings.Enums;
 
     /// <summary>
@@ -39,7 +39,6 @@ namespace TPRandomizer.Assets
         private SeedGenResults seedGenResults;
         public FileCreationSettings fcSettings { get; }
 
-
         private SeedData(SeedGenResults seedGenResults, FileCreationSettings fcSettings)
         {
             this.seedGenResults = seedGenResults;
@@ -59,7 +58,10 @@ namespace TPRandomizer.Assets
 
         public byte[] GenerateSeedDataBytesInternal(GameRegion regionOverride, bool isGci)
         {
-            Assets.CustomMessages.MessageLanguage hintLanguage = Assets.CustomMessages.MessageLanguage.English;
+            Assets.CustomMessages.MessageLanguage hintLanguage = Assets
+                .CustomMessages
+                .MessageLanguage
+                .English;
             /*
             * General Note: offset sizes are handled as two bytes. Because of this,
             * any seed bigger than 7 blocks will not work with this method. The seed structure is as follows:
@@ -89,8 +91,8 @@ namespace TPRandomizer.Assets
             List<byte> currentMessageEntryInfo = new();
             Dictionary<byte, List<CustomMessages.MessageEntry>> seedDictionary = new();
 
-            
-            List<CustomMessages.MessageEntry> seedMessages = seedGenResults.customMsgData.GenMessageEntries();
+            List<CustomMessages.MessageEntry> seedMessages =
+                seedGenResults.customMsgData.GenMessageEntries();
 
             seedDictionary.Add((byte)hintLanguage, seedMessages);
 
@@ -150,28 +152,28 @@ namespace TPRandomizer.Assets
 
             // Next we want to generate the non-check/item data
             List<byte> dataBytes = GenerateEntranceTable();
-            if (dataBytes !=null)
+            if (dataBytes != null)
             {
                 SeedHeaderRaw.shuffledEntranceInfoDataOffset = (UInt16)GCIDataRaw.Count();
                 GCIDataRaw.AddRange(dataBytes);
             }
 
             dataBytes = GenerateBgmData();
-            if (dataBytes !=null)
+            if (dataBytes != null)
             {
                 SeedHeaderRaw.bgmInfoDataOffset = (UInt16)GCIDataRaw.Count();
                 GCIDataRaw.AddRange(dataBytes);
             }
 
             dataBytes = GenerateFanfareData();
-            if (dataBytes !=null)
+            if (dataBytes != null)
             {
                 SeedHeaderRaw.fanfareInfoDataOffset = (UInt16)GCIDataRaw.Count();
                 GCIDataRaw.AddRange(dataBytes);
             }
 
             dataBytes = ParseClr0Bytes();
-            if (dataBytes !=null)
+            if (dataBytes != null)
             {
                 SeedHeaderRaw.clr0Offset = (UInt16)GCIDataRaw.Count();
                 GCIDataRaw.AddRange(dataBytes);
@@ -179,8 +181,8 @@ namespace TPRandomizer.Assets
 
             // Custom Message Info
             currentMessageData.AddRange(
-                    ParseCustomMessageData((int)hintLanguage, currentMessageData, seedDictionary)
-                );
+                ParseCustomMessageData((int)hintLanguage, currentMessageData, seedDictionary)
+            );
             while (currentMessageData.Count % 0x4 != 0)
             {
                 currentMessageData.Add(Converter.GcByte(0x0));
@@ -202,7 +204,6 @@ namespace TPRandomizer.Assets
             currentSeedData.AddRange(currentMessageHeader);
             currentSeedData.AddRange(currentMessageData);
 
-
             if (isGci)
             {
                 return patchGCIWithSeed(region, currentSeedData);
@@ -211,7 +212,7 @@ namespace TPRandomizer.Assets
             {
                 return currentSeedData.ToArray();
             }
-            
+
             // File.WriteAllBytes(playthroughName, gci.gciFile.ToArray());
         }
 
@@ -250,9 +251,7 @@ namespace TPRandomizer.Assets
                 }
                 else if (headerObject.PropertyType == typeof(List<byte>))
                 {
-                    seedHeader.AddRange(
-                        (List<byte>)headerObject.GetValue(SeedHeaderRaw, null)
-                    );
+                    seedHeader.AddRange((List<byte>)headerObject.GetValue(SeedHeaderRaw, null));
                 }
             }
 
@@ -293,7 +292,11 @@ namespace TPRandomizer.Assets
                     break;
                 }
             }
-            seedHeader.Add(Converter.GcByte((int)ItemFunctions.ToTSwordRequirements[(int)randomizerSettings.totEntrance]));
+            seedHeader.Add(
+                Converter.GcByte(
+                    (int)ItemFunctions.ToTSwordRequirements[(int)randomizerSettings.totEntrance]
+                )
+            );
 
             while (seedHeader.Count < SeedHeaderSize)
             {
@@ -314,7 +317,7 @@ namespace TPRandomizer.Assets
                 randomizerSettings.lanayruTwilightCleared,
                 randomizerSettings.skipMinorCutscenes,
                 randomizerSettings.skipMdh,
-                randomizerSettings.openMap //map bits
+                randomizerSettings.openMap, //map bits
             };
             bool[] oneTimePatchSettingsArray =
             {
@@ -335,18 +338,23 @@ namespace TPRandomizer.Assets
                 randomizerSettings.modifyShopModels,
             };
 
-            List<bool[]> flagArrayList = new() { volatilePatchSettingsArray, oneTimePatchSettingsArray, flagsBitfieldArray};
-            SeedHeaderRaw.volatilePatchInfoNumEntries = (ushort)volatilePatchSettingsArray.Length; 
-            SeedHeaderRaw.oneTimePatchInfoNumEntries = (ushort)oneTimePatchSettingsArray.Length; 
+            List<bool[]> flagArrayList = new()
+            {
+                volatilePatchSettingsArray,
+                oneTimePatchSettingsArray,
+                flagsBitfieldArray,
+            };
+            SeedHeaderRaw.volatilePatchInfoNumEntries = (ushort)volatilePatchSettingsArray.Length;
+            SeedHeaderRaw.oneTimePatchInfoNumEntries = (ushort)oneTimePatchSettingsArray.Length;
             SeedHeaderRaw.flagBitfieldInfoNumEntries = (ushort)flagsBitfieldArray.Length;
             ushort dataOffset = (ushort)CheckDataRaw.Count;
             SeedHeaderRaw.volatilePatchInfoDataOffset = dataOffset;
             SeedHeaderRaw.oneTimePatchInfoDataOffset = (ushort)(dataOffset + 0x10);
             SeedHeaderRaw.flagBitfieldInfoDataOffset = (ushort)(dataOffset + 0x20);
 
-            foreach(bool[] flagArr in flagArrayList)
+            foreach (bool[] flagArr in flagArrayList)
             {
-                List<byte> listOfFlags = new() { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; // Align to 16 bytes
+                List<byte> listOfFlags = new() { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // Align to 16 bytes
                 int bitwiseOperator = 7;
                 for (int i = 0, j = 0; i < flagArr.Length; i++)
                 {
@@ -550,7 +558,6 @@ namespace TPRandomizer.Assets
                                     Console.WriteLine("doing the not thing for " + currentCheck.checkName);
                                 }
                             }*/
-                        
                         }
                         else if (currentCheck.dzxTag[i] == "ACTR")
                         {
@@ -709,7 +716,7 @@ namespace TPRandomizer.Assets
                 new(0xA430, glowDarkWorldActive[1]),
                 new(0xA43C, fcSettings.midnaHairTipsLightWorldInactive << 8),
                 new(0xA428, fcSettings.midnaHairTipsDarkWorldAnyActive << 8),
-                new(0xA448, fcSettings.midnaHairTipsLightWorldActive << 8)
+                new(0xA448, fcSettings.midnaHairTipsLightWorldActive << 8),
             };
         }
 
@@ -837,9 +844,9 @@ namespace TPRandomizer.Assets
                     listOfShopItems.Add(
                         Converter.GcByte(
                             int.Parse(
-                                    currentCheck.flag,
-                                    System.Globalization.NumberStyles.HexNumber
-                                )
+                                currentCheck.flag,
+                                System.Globalization.NumberStyles.HexNumber
+                            )
                         )
                     );
                     listOfShopItems.Add(Converter.GcByte((int)currentCheck.itemId));
@@ -863,11 +870,10 @@ namespace TPRandomizer.Assets
                 Check currentCheck = checkList.Value;
                 if (currentCheck.dataCategory.Contains("Event"))
                 {
-                    
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.itemId));
-                    
+
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.stageIDX[0]));
-                    
+
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.roomIDX));
                     listOfEventItems.Add(
                         Converter.GcByte(
@@ -895,11 +901,10 @@ namespace TPRandomizer.Assets
             if (randomizerSettings.smallKeySettings == SSettings.Enums.SmallKeySettings.Keysy)
             {
                 // We want to remove all small keys since they dont actually need to be given to the player
-                foreach(Item sk in Randomizer.Items.RegionSmallKeys)
+                foreach (Item sk in Randomizer.Items.RegionSmallKeys)
                 {
                     randomizerSettings.startingItems.Remove(sk);
                 }
-                
             }
 
             foreach (Item startingItem in randomizerSettings.startingItems)
@@ -1090,7 +1095,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     0
                 ), // Set Charlo Donation to check Link's wallet for 100 rupees.
-
                 new ARCReplacement(
                     "1A84",
                     "00000064",
@@ -1099,7 +1103,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     0
                 ), // Set Charlo Donation to increase donated amount by 100 rupees.
-
                 new ARCReplacement(
                     "1ACC",
                     "00000064",
@@ -1108,7 +1111,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     0
                 ), // Set Charlo Donation to remove 100 rupees from Link's wallet.
-
                 new ARCReplacement(
                     "1ACC",
                     "00000064",
@@ -1117,7 +1119,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     0
                 ), // Set Charlo Donation to remove 100 rupees from Link's wallet.
-
                 new ARCReplacement(
                     "1324",
                     "00000181",
@@ -1126,7 +1127,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Palace_of_Twilight,
                     0
                 ), // Remove the invisible wall from Palace
-
                 new ARCReplacement(
                     "608",
                     "FF05FFFF",
@@ -1153,7 +1153,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Change the flag of the Hawkeye item
-
                 new ARCReplacement(
                     "708",
                     "3904FFFF",
@@ -1162,7 +1161,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Add a flag to the kak red potion shop item.
-
                 new ARCReplacement(
                     "648",
                     "04FFFFFF",
@@ -1171,7 +1169,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Change the flag of the Kak Hylian Shield sold out sign.
-
                 new ARCReplacement(
                     "624",
                     "01478000",
@@ -1180,7 +1177,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Change the kak Hawkeye sold out to a Hylian Shield sold out.
-
                 new ARCReplacement(
                     "628",
                     "33FFFFFF",
@@ -1189,7 +1185,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Change the flag of the new Hylian shield sold out.
-
                 new ARCReplacement(
                     "694",
                     "01FFFFFF",
@@ -1214,7 +1209,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Replace kak left side red potion with a copy of the hawkeye sign.
-
                 new ARCReplacement(
                     "11FC",
                     "3000EE63",
@@ -1223,7 +1217,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Sacred_Grove,
                     1
                 ), // Change the statue to the past to use a custom flag so it's no longer tied to the portal
-
                 new ARCReplacement(
                     "910",
                     "063010FF",
@@ -1232,7 +1225,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Sacred_Grove,
                     1
                 ), // Change the door to the past to use a custom flag so it's no longer tied to the portal
-
                 new ARCReplacement(
                     "1574",
                     "80FF0000",
@@ -1241,7 +1233,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Sacred_Grove,
                     1
                 ), // Change the ms pedestal to use a custom flag so it's no longer tied to the portal
-
                 new ARCReplacement(
                     "1094",
                     "00000000",
@@ -1250,7 +1241,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Sacred_Grove,
                     1
                 ), // Remove the fences from the grove portal fight. Area is constricted as is. no need to make things weird.
-
                 new ARCReplacement(
                     "1BE0",
                     "00000000",
@@ -1259,8 +1249,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Ordon_Village,
                     1
                 ), // Remove Beth double actor from outside link's house. It just looks weird
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "1C00",
                     "00000000",
                     (byte)FileDirectory.Room,
@@ -1268,8 +1257,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Ordon_Village,
                     1
                 ), // Remove Malo double actor from outside link's house. It just looks weird
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "5AC",
                     "00000000",
                     (byte)FileDirectory.Room,
@@ -1277,28 +1265,24 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.City_in_the_Sky,
                     6
                 ), // Remove Argorok actor in west city, which breaks the bridge
-
                 // Castle Town Hylian Shield Goron FLW patches
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "50C2",
                     "0001032F",
                     (byte)FileDirectory.Message,
                     (byte)ReplacementType.Instruction,
                     (int)StageIDs.Castle_Town_Shops,
                     4
-                ), // Check for custom flag before allowing player to buy hylian shield 
-
-                 new ARCReplacement(
+                ), // Check for custom flag before allowing player to buy hylian shield
+                new ARCReplacement(
                     "50FA",
                     "0001032F",
                     (byte)FileDirectory.Message,
                     (byte)ReplacementType.Instruction,
                     (int)StageIDs.Castle_Town_Shops,
                     4
-                ), // Check to see if the flag for buying the shield has been set before continuing the conversation after buying the shield 
-
-                 new ARCReplacement(
+                ), // Check to see if the flag for buying the shield has been set before continuing the conversation after buying the shield
+                new ARCReplacement(
                     "50F0",
                     "0300089D",
                     (byte)FileDirectory.Message,
@@ -1306,7 +1290,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town_Shops,
                     4
                 ), // Set the new flag for buying the shield
-                 new ARCReplacement(
+                new ARCReplacement(
                     "50F4",
                     "032F0000",
                     (byte)FileDirectory.Message,
@@ -1314,9 +1298,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town_Shops,
                     4
                 ), // Set the new flag for buying the shield
-
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "5418",
                     "C493D583",
                     (byte)FileDirectory.Room,
@@ -1324,7 +1306,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Bulblin_Camp,
                     1
                 ), // Move the spawn point from Outside AG -> camp to not be between gates.
-
                 new ARCReplacement(
                     "1B4",
                     getStartingTime() + "0044",
@@ -1332,9 +1313,8 @@ namespace TPRandomizer.Assets
                     (byte)ReplacementType.Instruction,
                     (int)StageIDs.Faron_Woods,
                     1
-                ), // Set the time of day that is to be set 
-
-                  new ARCReplacement(
+                ), // Set the time of day that is to be set
+                new ARCReplacement(
                     "C60",
                     "0FF0FF0C",
                     (byte)FileDirectory.Room,
@@ -1342,8 +1322,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     3
                 ), // Add a flag to the Coro gate in the prologue layer
-
-                  new ARCReplacement(
+                new ARCReplacement(
                     "1B30",
                     "0FF0FF0C",
                     (byte)FileDirectory.Room,
@@ -1351,8 +1330,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     3
                 ), // Add a flag to the Coro gate in the Post FT layer
-
-                  new ARCReplacement(
+                new ARCReplacement(
                     "1004",
                     "00000000",
                     (byte)FileDirectory.Room,
@@ -1360,9 +1338,8 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Palace_of_Twilight,
                     0
                 ), // Remove the TagYami SCOB that prevents the player from going north in PoT before collecting both sols
-
                 // Coro FLW patches to allow him to give all items all the time
-                 new ARCReplacement(
+                new ARCReplacement(
                     "E24",
                     "0080013b",
                     (byte)FileDirectory.Message,
@@ -1370,8 +1347,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Initialize new flow from prologue state
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "288",
                     "02020001",
                     (byte)FileDirectory.Message,
@@ -1379,8 +1355,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Initialize new flow from post twilight state
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "28c",
                     "0080013b",
                     (byte)FileDirectory.Message,
@@ -1388,8 +1363,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Initialize new flow from post twilight state
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "808",
                     "02020001",
                     (byte)FileDirectory.Message,
@@ -1397,8 +1371,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Initialize new flow from post FT state
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "80c",
                     "0080013b",
                     (byte)FileDirectory.Message,
@@ -1406,8 +1379,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Initialize new flow from post FT state
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "d60",
                     "01000125",
                     (byte)FileDirectory.Message,
@@ -1415,8 +1387,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Allow flow state for lantern
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "d64",
                     "01a60000",
                     (byte)FileDirectory.Message,
@@ -1424,8 +1395,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Allow flow state for lantern
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "d58",
                     "03000138",
                     (byte)FileDirectory.Message,
@@ -1433,8 +1403,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Set lantern flag
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "d5c",
                     "00800000",
                     (byte)FileDirectory.Message,
@@ -1442,8 +1411,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Set lantern flag
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "dA8",
                     "0202000c",
                     (byte)FileDirectory.Message,
@@ -1451,8 +1419,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Check coro key flag
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "dAc",
                     "00320139",
                     (byte)FileDirectory.Message,
@@ -1460,8 +1427,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Check coro key flag
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "d32",
                     "00c200a1",
                     (byte)FileDirectory.Message,
@@ -1469,8 +1435,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Adjust message flow for coro key
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "53C",
                     "00b40000",
                     (byte)FileDirectory.Message,
@@ -1478,8 +1443,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Adjust message to jump past unnecessary flag check
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "E30",
                     "02020001",
                     (byte)FileDirectory.Message,
@@ -1487,8 +1451,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Check coro bottle flag
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "E34",
                     "00da00d8",
                     (byte)FileDirectory.Message,
@@ -1496,8 +1459,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     4
                 ), // Check coro key flag
-
-                 new ARCReplacement(
+                new ARCReplacement(
                     "4F4",
                     "00000000",
                     (byte)FileDirectory.Stage,
@@ -1505,9 +1467,8 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.City_in_the_Sky,
                     0
                 ), // Delete Savemem actr that causes the player to spawn in west wing
-
                 /*
-                // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
+                // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here.
                 new ARCReplacement(
                     "3014",
                     "FF05FFFF",
@@ -1606,7 +1567,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town_Shops,
                     4
                 ), // Set custom event flag before proceeding in conversation
-
                 // Castle Town Goron Shop Lantern Oil FLW patches
                 new ARCReplacement(
                     "4BF2",
@@ -1640,7 +1600,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town_Shops,
                     4
                 ), // Set custom event flag before proceeding in conversation
-
                 // Castle Town Goron Shop Arrow Refill FLW patches
                 new ARCReplacement(
                     "4E1A",
@@ -1650,7 +1609,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     4
                 ), // Check for custom flag before allowing player to buy CT arrows
-                 new ARCReplacement(
+                new ARCReplacement(
                     "4E4A",
                     "00060028",
                     (byte)FileDirectory.Message,
@@ -1658,7 +1617,7 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     4
                 ), // Instead of checking for the bow, only check for rupees
-                 new ARCReplacement(
+                new ARCReplacement(
                     "4E5A",
                     "00010332",
                     (byte)FileDirectory.Message,
@@ -1699,8 +1658,7 @@ namespace TPRandomizer.Assets
             List<byte> listOfCustomMsgIDs = new();
             ushort count = 0;
             CustomMessageHeaderRaw.msgIdTableOffset = (ushort)(
-                MessageHeaderSize
-                + currentMessageData.Count
+                MessageHeaderSize + currentMessageData.Count
             );
             foreach (
                 CustomMessages.MessageEntry messageEntry in seedDictionary
@@ -1736,9 +1694,7 @@ namespace TPRandomizer.Assets
                 listOfCustomMessages.AddRange(Converter.MessageStringBytes(messageEntry.message));
                 listOfCustomMessages.Add(Converter.GcByte(0x0));
             }
-            CustomMessageHeaderRaw.msgTableSize = (ushort)(
-                listOfCustomMessages.Count
-            );
+            CustomMessageHeaderRaw.msgTableSize = (ushort)(listOfCustomMessages.Count);
 
             for (int i = 0; i < listOfCustomMessages.Count; i++)
             {
@@ -1760,7 +1716,7 @@ namespace TPRandomizer.Assets
         private static List<byte> GenerateMessageHeader(List<byte> messageTableInfo)
         {
             List<byte> messageHeader = new();
-            messageHeader.AddRange(Converter.GcBytes((UInt16)(messageTableInfo.Count))); 
+            messageHeader.AddRange(Converter.GcBytes((UInt16)(messageTableInfo.Count)));
             messageHeader.AddRange(messageTableInfo);
 
             return messageHeader;
@@ -1770,19 +1726,13 @@ namespace TPRandomizer.Assets
         {
             List<byte> messageTableInfo = new();
             messageTableInfo.AddRange(
-                Converter.GcBytes(
-                    (UInt16)CustomMessageHeaderRaw.totalEntries
-                )
+                Converter.GcBytes((UInt16)CustomMessageHeaderRaw.totalEntries)
             );
             messageTableInfo.AddRange(
-                Converter.GcBytes(
-                    (UInt32)CustomMessageHeaderRaw.msgTableSize
-                )
+                Converter.GcBytes((UInt32)CustomMessageHeaderRaw.msgTableSize)
             );
             messageTableInfo.AddRange(
-                Converter.GcBytes(
-                    (UInt32)CustomMessageHeaderRaw.msgIdTableOffset
-                )
+                Converter.GcBytes((UInt32)CustomMessageHeaderRaw.msgIdTableOffset)
             );
 
             return messageTableInfo;
@@ -1864,14 +1814,32 @@ namespace TPRandomizer.Assets
                     break;
                 }
             }
-            List<byte> gciBytes = File.ReadAllBytes(Global.CombineRootPath("./Assets/gci/Randomizer." + gciRegion + ".gci")).ToList(); // read in the file as an array of bytes
+            List<byte> gciBytes = File.ReadAllBytes(
+                    Global.CombineRootPath("./Assets/gci/Randomizer." + gciRegion + ".gci")
+                )
+                .ToList(); // read in the file as an array of bytes
 
             for (int i = 0; i < maxRelEntries; i++)
             {
                 int offset = 0x2084 + (i * 0xC);
-                int currentId = (int)(gciBytes[offset] << 32 | gciBytes[offset + 1] << 16 | gciBytes[offset + 2] << 8 | gciBytes[offset + 3]);
-                int relSize = (int)(gciBytes[offset+4] << 32 | gciBytes[offset + 5] << 16 | gciBytes[offset + 6] << 8 | gciBytes[offset + 7]);
-                int relOffset = (int)(gciBytes[offset+8] << 32 | gciBytes[offset + 9] << 16 | gciBytes[offset + 0xA] << 8 | gciBytes[offset + 0xB]);
+                int currentId = (int)(
+                    gciBytes[offset] << 32
+                    | gciBytes[offset + 1] << 16
+                    | gciBytes[offset + 2] << 8
+                    | gciBytes[offset + 3]
+                );
+                int relSize = (int)(
+                    gciBytes[offset + 4] << 32
+                    | gciBytes[offset + 5] << 16
+                    | gciBytes[offset + 6] << 8
+                    | gciBytes[offset + 7]
+                );
+                int relOffset = (int)(
+                    gciBytes[offset + 8] << 32
+                    | gciBytes[offset + 9] << 16
+                    | gciBytes[offset + 0xA] << 8
+                    | gciBytes[offset + 0xB]
+                );
 
                 if ((currentId == 0) || (relSize == 0) || (relOffset == 0))
                 {
@@ -1915,7 +1883,7 @@ namespace TPRandomizer.Assets
                     }
 
                     // Write the file's data
-                    for( int index = 0; index < seed.Count; index++)
+                    for (int index = 0; index < seed.Count; index++)
                     {
                         int byteIndex = index + relOffset + 0x40;
                         gciBytes[byteIndex] = seed[index];
@@ -1928,7 +1896,9 @@ namespace TPRandomizer.Assets
 
                     // Update modified time
 
-                    byte[] totalSeconds = Converter.GcBytes((UInt32)(DateTime.UtcNow - new DateTime(2000, 1, 1)).TotalSeconds);
+                    byte[] totalSeconds = Converter.GcBytes(
+                        (UInt32)(DateTime.UtcNow - new DateTime(2000, 1, 1)).TotalSeconds
+                    );
 
                     gciBytes[0x28] = totalSeconds[0];
                     gciBytes[0x29] = totalSeconds[1];
@@ -2012,7 +1982,9 @@ namespace TPRandomizer.Assets
                             rnd.Next(replacementPool.Count)
                         ].bgmID;
                         bool foundSame = false;
-                        foreach (SoundAssets.bgmReplacement currentReplacement in bgmReplacementArray)
+                        foreach (
+                            SoundAssets.bgmReplacement currentReplacement in bgmReplacementArray
+                        )
                         {
                             if (currentReplacement.originalBgmTrack == replacement.originalBgmTrack)
                             {
@@ -2094,7 +2066,9 @@ namespace TPRandomizer.Assets
                             rnd.Next(replacementPool.Count)
                         ].bgmID;
                         bool foundSame = false;
-                        foreach (SoundAssets.bgmReplacement currentReplacement in fanfareReplacementArray)
+                        foreach (
+                            SoundAssets.bgmReplacement currentReplacement in fanfareReplacementArray
+                        )
                         {
                             if (currentReplacement.originalBgmTrack == replacement.originalBgmTrack)
                             {
@@ -2135,7 +2109,7 @@ namespace TPRandomizer.Assets
         private static string getStartingTime()
         {
             string time = "203F"; // By default, starting time is in the evening
-            switch(Randomizer.SSettings.startingToD)
+            switch (Randomizer.SSettings.startingToD)
             {
                 case StartingToD.Morning:
                 {

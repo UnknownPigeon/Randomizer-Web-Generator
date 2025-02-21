@@ -229,7 +229,7 @@
       },
       {
         "ConnectedArea": "Mist Area Outside Faron Mist Cave",
-        "Requirements": "Lantern",
+        "Requirements": "Lantern and (CanCompleteFaronTwilight or Shadow_Crystal)",
         "GlitchedRequirements": "Lantern or (Room.South_Faron_Woods and CanDoMapGlitch)" // Epona OoB in South Faron can get Epona in the mist.
       },
       {

@@ -2,9 +2,9 @@ namespace TPRandomizer
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using Newtonsoft.Json;
-    using System.IO;
     using TPRandomizer.FcSettings.Enums;
 
     public enum EntranceType : int
@@ -22,7 +22,7 @@ namespace TPRandomizer
         Misc_Reverse,
         Mixed,
         Paired,
-        All
+        All,
     }
 
     public enum EntranceShuffleError
@@ -36,7 +36,7 @@ namespace TPRandomizer
         NOT_ENOUGH_SPHERE_ZERO_LOCATIONS,
         ATTEMPTED_SELF_CONNECTION,
         FAILED_TO_DISCONNECT_TARGET,
-        DUNGEON_ENTRANCES_CONNECTED
+        DUNGEON_ENTRANCES_CONNECTED,
     };
 
     public class SpawnTableEntry
@@ -748,9 +748,9 @@ namespace TPRandomizer
 
         void RemoveEntrance(Entrance entranceToRemove)
         {
-            Randomizer.Rooms.RoomDict[entranceToRemove.GetParentArea()].Exits.Remove(
-                entranceToRemove
-            );
+            Randomizer
+                .Rooms.RoomDict[entranceToRemove.GetParentArea()]
+                .Exits.Remove(entranceToRemove);
         }
 
         void SetShuffledEntrances(Dictionary<EntranceType, EntrancePool> entrancePools)

@@ -1,20 +1,20 @@
 namespace TPRandomizer
 {
     using System;
-    using System.Text;
     using System.Collections.Generic;
-    using System.Text.RegularExpressions;
+    using System.ComponentModel;
     using System.IO;
     using System.IO.Compression;
     using System.Linq;
+    using System.Reflection;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using Assets;
+    using Hints;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
-    using TPRandomizer.SSettings.Enums;
     using TPRandomizer.FcSettings.Enums;
-    using System.Reflection;
-    using Assets;
-    using System.ComponentModel;
-    using Hints;
+    using TPRandomizer.SSettings.Enums;
 
     /// <summary>
     /// Generates a randomizer seed given a settings string.
@@ -550,8 +550,12 @@ namespace TPRandomizer
                 {
                     // For now, 'All' only generates for GameCube until we do more
                     // work related to Wii code.
-                    List<GameRegion> gameRegionsForAll =
-                        new() { GameRegion.GC_USA, GameRegion.GC_EUR, GameRegion.GC_JAP, };
+                    List<GameRegion> gameRegionsForAll = new()
+                    {
+                        GameRegion.GC_USA,
+                        GameRegion.GC_EUR,
+                        GameRegion.GC_JAP,
+                    };
 
                     // Create files for all regions
                     // foreach (GameRegion gameRegion in GameRegion.GetValues(typeof(GameRegion)))
@@ -764,8 +768,11 @@ namespace TPRandomizer
             var filename =
                 "Tpr-" + region + "-" + seedGenResults.playthroughName + "-" + seedId + ".patch";
 
-            Dictionary<string, object> dict =
-                new() { { "name", filename }, { "length", patchBytes.Count } };
+            Dictionary<string, object> dict = new()
+            {
+                { "name", filename },
+                { "length", patchBytes.Count },
+            };
 
             return new(dict, patchBytes.ToArray());
         }
@@ -957,9 +964,10 @@ namespace TPRandomizer
                         if (roomsToExplore[0].Exits[i].ConnectedArea != "")
                         {
                             if (
-                                Randomizer.Rooms.RoomDict[
-                                    roomsToExplore[0].Exits[i].ConnectedArea
-                                ].Visited == false
+                                Randomizer
+                                    .Rooms
+                                    .RoomDict[roomsToExplore[0].Exits[i].ConnectedArea]
+                                    .Visited == false
                             )
                             {
                                 // Parse the neighbour's requirements to find out if we can access it
@@ -975,15 +983,17 @@ namespace TPRandomizer
                                 )
                                 {
                                     if (
-                                        !Randomizer.Rooms.RoomDict[
-                                            roomsToExplore[0].Exits[i].ConnectedArea
-                                        ].ReachedByPlaythrough
+                                        !Randomizer
+                                            .Rooms
+                                            .RoomDict[roomsToExplore[0].Exits[i].ConnectedArea]
+                                            .ReachedByPlaythrough
                                     )
                                     {
                                         availableRooms++;
-                                        Randomizer.Rooms.RoomDict[
-                                            roomsToExplore[0].Exits[i].ConnectedArea
-                                        ].ReachedByPlaythrough = true;
+                                        Randomizer
+                                            .Rooms
+                                            .RoomDict[roomsToExplore[0].Exits[i].ConnectedArea]
+                                            .ReachedByPlaythrough = true;
                                         playthroughGraph.Add(
                                             Randomizer.Rooms.RoomDict[
                                                 roomsToExplore[0].Exits[i].ConnectedArea
@@ -995,9 +1005,10 @@ namespace TPRandomizer
                                             roomsToExplore[0].Exits[i].ConnectedArea
                                         ]
                                     );
-                                    Randomizer.Rooms.RoomDict[
-                                        roomsToExplore[0].Exits[i].ConnectedArea
-                                    ].Visited = true;
+                                    Randomizer
+                                        .Rooms
+                                        .RoomDict[roomsToExplore[0].Exits[i].ConnectedArea]
+                                        .Visited = true;
 
                                     /* Console.WriteLine(
                                          "Neighbour: "
@@ -1448,7 +1459,7 @@ namespace TPRandomizer
                 CheckFunctions.arbitersRequirementChecks,
                 CheckFunctions.lakebedRequirementChecks,
                 CheckFunctions.minesRequirementChecks,
-                CheckFunctions.forestRequirementChecks
+                CheckFunctions.forestRequirementChecks,
             };
 
             // Create the dungeon entries
@@ -1459,8 +1470,11 @@ namespace TPRandomizer
             requiredDungeons snowpeakRuins = new("Snowpeak Ruins Dungeon Reward", false, null);
             requiredDungeons templeOfTime = new("Temple of Time Dungeon Reward", false, null);
             requiredDungeons cityInTheSky = new("City in The Sky Dungeon Reward", false, null);
-            requiredDungeons palaceOfTwilight =
-                new("Palace of Twilight Zant Heart Container", false, null);
+            requiredDungeons palaceOfTwilight = new(
+                "Palace of Twilight Zant Heart Container",
+                false,
+                null
+            );
 
             requiredDungeons[] listOfRequiredDungeons = new requiredDungeons[]
             {
@@ -1867,9 +1881,9 @@ namespace TPRandomizer
                                 "(" + currentRoom.Exits[i].GlitchedRequirements + ")";
                         }
                         currentRoom.Exits[i].ParentArea = currentRoom.RoomName;
-                        currentRoom.Exits[i].OriginalConnectedArea = currentRoom.Exits[
-                            i
-                        ].ConnectedArea;
+                        currentRoom.Exits[i].OriginalConnectedArea = currentRoom
+                            .Exits[i]
+                            .ConnectedArea;
                     }
 
                     Randomizer.Rooms.RoomDict[room.RoomName] = currentRoom;
