@@ -1364,6 +1364,30 @@ namespace TPRandomizer.Assets
                     4
                 ), // Initialize new flow from post twilight state
                 new ARCReplacement(
+                    "780",
+                    "02020001",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from twilight state
+                new ARCReplacement(
+                    "784",
+                    "0080013b",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ), // Initialize new flow from twilight state
+                new ARCReplacement(
+                    "52c",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods_Interiors,
+                    0
+                ), // Remove original Twilight coro actr
+                new ARCReplacement(
                     "808",
                     "02020001",
                     (byte)FileDirectory.Message,
