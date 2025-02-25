@@ -1099,12 +1099,7 @@ namespace TPRandomizer
 
             // Handle portals
             parseSetting.startingItems.Add(Item.Ordon_Portal);
-            if (parseSetting.faronTwilightCleared)
-            {
-                parseSetting.startingItems.Add(Item.South_Faron_Portal);
-                parseSetting.startingItems.Add(Item.North_Faron_Portal);
-            }
-
+      
             if (parseSetting.eldinTwilightCleared)
             {
                 parseSetting.startingItems.Add(Item.Kakariko_Gorge_Portal);
