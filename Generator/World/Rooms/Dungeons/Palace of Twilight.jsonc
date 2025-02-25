@@ -163,8 +163,8 @@
       [
         {
           "ConnectedArea": "Palace of Twilight Entrance",
-          "Requirements": "CanDefeatZant",
-          "GlitchedRequirements": "CanDefeatZant"
+          "Requirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))",
+          "GlitchedRequirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))"
         }, 
 
         {

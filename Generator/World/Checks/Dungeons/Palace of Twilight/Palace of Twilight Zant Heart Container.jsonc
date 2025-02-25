@@ -1,6 +1,6 @@
 {
-    "requirements": "CanDefeatZant",
-    "glitchedRequirements": "CanDefeatZant",
+    "requirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))",
+    "glitchedRequirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))",
     "checkCategory": ["Dungeon", "Palace of Twilight", "Heart Container", "Dungeon Reward"],
     "itemId": "Heart_Container"
 }
