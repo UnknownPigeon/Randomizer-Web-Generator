@@ -5,13 +5,13 @@
     [
       {
         "ConnectedArea": "Faron Field Behind Boulder",
-        "Requirements": "canGetHotSpringWater and Room.Outside_Castle_Town_South",
+        "Requirements": "canSmash",
         "GlitchedRequirements": "Room.Castle_Town_South and HasBottle and Room.Outside_Castle_Town_South"
       },
       {
         "ConnectedArea": "South Faron Woods",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "Faron_Woods_Coro_Key",
+        "GlitchedRequirements": "Faron_Woods_Coro_Key"
       },
       {
         "ConnectedArea": "Kakariko Gorge",
@@ -50,7 +50,7 @@
     [
       {
         "ConnectedArea": "Faron Field",
-        "Requirements": "canGetHotSpringWater and Room.Outside_Castle_Town_South",
+        "Requirements": "canSmash",
         "GlitchedRequirements": "canGetHotSpringWater and HasBottle and Room.Outside_Castle_Town_South"
       },
       {

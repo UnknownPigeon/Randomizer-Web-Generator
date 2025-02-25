@@ -64,17 +64,6 @@
         }
       }
     },
-	{
-      "spot": "forest_temple_sign",
-      "groupId": "unrequiredDungeons",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Forest Temple Dungeon Reward"]
-        }
-      }
-    },
 	//
 	{
       "spot": "goron_mines_sign",
@@ -84,17 +73,6 @@
         "options": {
           "canHintHintedBarrenChecks": true,
           "validChecks": ["Goron Mines Fyrus Heart Container"]
-        }
-      }
-    },
-	{
-      "spot": "goron_mines_sign",
-      "groupId": "unrequiredDungeons",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Goron Mines Dungeon Reward"]
         }
       }
     },
@@ -110,17 +88,6 @@
         }
       }
     },
-	{
-      "spot": "lakebed_temple_sign",
-      "groupId": "unrequiredDungeons",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Lakebed Temple Dungeon Reward"]
-        }
-      }
-    },
 	//
 	{
       "spot": "arbiters_grounds_sign",
@@ -130,17 +97,6 @@
         "options": {
           "canHintHintedBarrenChecks": true,
           "validChecks": ["Arbiters Grounds Stallord Heart Container"]
-        }
-      }
-    },
-	{
-      "spot": "arbiters_grounds_sign",
-      "groupId": "unrequiredDungeons",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Arbiters Grounds Dungeon Reward"]
         }
       }
     },
@@ -187,17 +143,6 @@
         }
       }
     },
-	{
-      "spot": "snowpeak_ruins_sign",
-      "groupId": "unrequiredDungeons",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Snowpeak Ruins Dungeon Reward"]
-        }
-      }
-    },
 	//
     {
       "spot": "temple_of_time_sign",
@@ -220,17 +165,6 @@
         }
       }
     },
-	{
-      "spot": "temple_of_time_sign",
-      "groupId": "unrequiredDungeons",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Temple of Time Dungeon Reward"]
-        }
-      }
-    },
 	//
 	{
       "spot": "city_in_the_sky_sign",
@@ -243,29 +177,7 @@
         }
       }
     },
-	{
-      "spot": "city_in_the_sky_sign",
-      "groupId": "unrequiredDungeons",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["City in The Sky Dungeon Reward"]
-        }
-      }
-    },
 	//
-	{
-      "spot": "palace_of_twilight_sign",
-      "groupId": "unrequiredDungeons",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Palace of Twilight Zant Heart Container"]
-        }
-      }
-    },
 	{
       "spot": "Palace_of_Twilight_Sign",
       "hintDef": {

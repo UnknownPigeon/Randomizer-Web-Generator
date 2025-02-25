@@ -21,9 +21,9 @@
       },
       {
         "ConnectedArea": "Faron Field",
-        "Requirements": "canClearForest and CanCompleteFaronTwilight and canCompletePrologue",
+        "Requirements": "canClearForest and Faron_Woods_Coro_Key",
         // There's no prologue requirement because worse case scenerio, you just gate clip
-        "GlitchedRequirements": "canClearForestGlitched and CanCompleteFaronTwilight"
+        "GlitchedRequirements": "canClearForestGlitched and Faron_Woods_Coro_Key"
       },
       {
         "ConnectedArea": "Faron Woods Coros House Lower",
