@@ -107,7 +107,7 @@
             },
             {
                 "ConnectedArea": "City in The Sky North Wing",
-                "Requirements": "(Progressive_Clawshot, 2) and CanDefeatBabaSerpent and CanDefeatKargarok and Shadow_Crystal and Iron_Boots",
+                "Requirements": "(Progressive_Clawshot, 2) and Spinner and CanDefeatBabaSerpent and CanDefeatKargarok and Shadow_Crystal and Iron_Boots",
                 // You can use only Double Claws to reach north wing. Thank Hab for this.
                 "GlitchedRequirements": "(Progressive_Clawshot, 2)"
             },
