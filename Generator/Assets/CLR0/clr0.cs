@@ -183,6 +183,16 @@ namespace TPRandomizer.Assets.CLR0
 
             cmprFileModifications.Add(
                 new(
+                    fcSettings.msHandleColor,
+                    "al_swm.bmd",
+                    "al_SWgripM",
+                    (byte)ArchiveIndex.ALink,
+                    BMDDirectory.BMWE
+                )
+            );
+
+            cmprFileModifications.Add(
+                new(
                     fcSettings.boomerangColor,
                     "al_boom.bmd",
                     "L_al_boom00",
@@ -270,6 +280,7 @@ namespace TPRandomizer.Assets.CLR0
             entries.Add(fcSettings.zTunicScalesColor);
             entries.Add(fcSettings.zTunicBootsColor);
             entries.Add(fcSettings.msBladeColor);
+            entries.Add(fcSettings.msHandleColor);
             entries.Add(fcSettings.boomerangColor);
             entries.Add(fcSettings.ironsColor);
             entries.Add(fcSettings.spinnerColor);
