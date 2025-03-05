@@ -28,6 +28,7 @@ namespace TPRandomizer
 
         public Clr0Entry lanternGlowColor { get; }
         public Clr0Entry msBladeColor { get; }
+        public Clr0Entry msHandleColor { get; }
         public Clr0Entry boomerangColor { get; }
         public Clr0Entry ironsColor { get; }
         public Clr0Entry spinnerColor { get; }
@@ -82,6 +83,7 @@ namespace TPRandomizer
             zTunicScalesColor = processor.NextClr0Entry(RecolorId.CMPR);
             zTunicBootsColor = processor.NextClr0Entry(RecolorId.CMPR);
             msBladeColor = processor.NextClr0Entry(RecolorId.CMPR);
+            msHandleColor = processor.NextClr0Entry(RecolorId.CMPR);
             boomerangColor = processor.NextClr0Entry(RecolorId.CMPR);
             ironsColor = processor.NextClr0Entry(RecolorId.CMPR);
             spinnerColor = processor.NextClr0Entry(RecolorId.CMPR);

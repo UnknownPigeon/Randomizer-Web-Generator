@@ -1308,6 +1308,7 @@
         { id: 'zTunicScalesColorFieldset', rgb: true },
         { id: 'zTunicBootsColorFieldset', rgb: true },
         { id: 'msBladeColorFieldset', rgb: true },
+        { id: 'msHandleColorFieldset', rgb: true },
         { id: 'boomerangColorFieldset', rgb: true },
         { id: 'ironsColorFieldset', rgb: true },
         { id: 'spinnerColorFieldset', rgb: true },
