@@ -29,6 +29,9 @@ namespace TPRandomizer.Hints
         Snowpeak_Beyond_This_Point = 18,
         Golden_Wolf = 19,
         Lantern_Chests = 20,
+        Palace_of_Twilight_West_Wing = 21,
+        Palace_of_Twilight_Central_Tower = 22,
+        Palace_of_Twilight_East_Wing = 23,
     }
 
     public class HintCategoryUtils
@@ -347,6 +350,42 @@ namespace TPRandomizer.Hints
                         "Lake Lantern Cave End Lantern Chest",
                     }
                 },
+                {
+                    HintCategory.Palace_of_Twilight_West_Wing,
+                    new[]
+                    {
+                        "Palace of Twilight West Wing Chest Behind Wall of Darkness",
+                        "Palace of Twilight West Wing First Room Central Chest",
+                        "Palace of Twilight West Wing Second Room Central Chest",
+                        "Palace of Twilight West Wing Second Room Lower South Chest",
+                        "Palace of Twilight West Wing Second Room Southeast Chest"
+                    }
+                },
+                {
+                    HintCategory.Palace_of_Twilight_Central_Tower,
+                    new[]
+                    {
+                        "Palace of Twilight Big Key Chest",
+                        "Palace of Twilight Central First Room Chest",
+                        "Palace of Twilight Central Outdoor Chest",
+                        "Palace of Twilight Central Tower Chest",
+                        "Palace of Twilight Zant Heart Container"
+                    }
+                },
+                {
+                    HintCategory.Palace_of_Twilight_East_Wing,
+                    new[]
+                    {
+                        "Palace of Twilight East Wing First Room East Alcove Chest",
+                        "Palace of Twilight East Wing First Room North Small Chest",
+                        "Palace of Twilight East Wing First Room West Alcove Chest",
+                        "Palace of Twilight East Wing First Room Zant Head Chest",
+                        "Palace of Twilight East Wing Second Room Northeast Chest",
+                        "Palace of Twilight East Wing Second Room Northwest Chest",
+                        "Palace of Twilight East Wing Second Room Southeast Chest",
+                        "Palace of Twilight East Wing Second Room Southwest Chest",
+                    }
+                }
             };
 
         static HintCategoryUtils()
@@ -373,6 +412,12 @@ namespace TPRandomizer.Hints
                 { HintCategory.Golden_Wolf, "Golden_Wolf" },
                 { HintCategory.Lantern_Chests, "Lantern_Chests" },
                 { HintCategory.Forest_Temple_West_Wing, "Forest_Temple_West_Wing" },
+                { HintCategory.Palace_of_Twilight_West_Wing, "Palace_of_Twilight_West_Wing" },
+                {
+                    HintCategory.Palace_of_Twilight_Central_Tower,
+                    "Palace_of_Twilight_Central_Tower"
+                },
+                { HintCategory.Palace_of_Twilight_East_Wing, "Palace_of_Twilight_East_Wing" },
             };
 
             strToEnum = new();
