@@ -141,10 +141,6 @@
     <value>le {cs}Loup Doré{ce}</value>
     <comment></comment>
   </data>
-    <data name="area.category.lantern_chests" xml:space="preserve">
-    <value>$(ap:dans)un {cs}Coffre Lanterne qui apparait{ce}</value>
-    <comment></comment>
-  </data>
   <data name="area.category.grotto" xml:space="preserve">
     <value>$(ap:dans)une {cs}Grotte secrète{ce}</value>
     <comment></comment>
@@ -155,6 +151,10 @@
   </data>
   <data name="area.category.grotto$plural" xml:space="preserve">
     <value>$(ap:dans,plural)les {cs}Grottes secrètes{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.lantern_chests" xml:space="preserve">
+    <value>$(ap:dans)un {cs}Coffre Lanterne qui apparait{ce}</value>
     <comment></comment>
   </data>
   <data name="area.category.llc_lantern_chests" xml:space="preserve">

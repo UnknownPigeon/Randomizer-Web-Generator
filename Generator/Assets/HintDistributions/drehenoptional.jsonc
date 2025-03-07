@@ -28,16 +28,15 @@
   },
   "removeChecks": {
     "Palace of Twilight Collect Both Sols": ["always"],
-	"Forest Temple Gale Boomerang": ["sometimes"],
+    "Forest Temple Gale Boomerang": ["sometimes"],
     "City in The Sky Aeralfos Chest": ["sometimes"]
   },
-  "removeItems": {
-  },
+  "removeItems": {},
   //
   "groups": {
     "overworld": ["alias:overworldZones"],
     "requiredDungeons": ["alias:requiredDungeons"],
-	"unrequiredDungeons": ["alias:unrequiredDungeons"]
+    "unrequiredDungeons": ["alias:unrequiredDungeons"]
   },
   // Special hints generated right after Always hints are generated. These are
   // created even if the dungeon is hinted barren or the check is already hinted
@@ -53,7 +52,7 @@
         }
       }
     },
-	{
+    {
       "spot": "forest_temple_sign",
       "groupId": "unrequiredDungeons",
       "hintDef": {
@@ -64,8 +63,8 @@
         }
       }
     },
-	//
-	{
+    //
+    {
       "spot": "goron_mines_sign",
       "groupId": "unrequiredDungeons",
       "hintDef": {
@@ -76,8 +75,8 @@
         }
       }
     },
-	//
-	{
+    //
+    {
       "spot": "lakebed_temple_sign",
       "groupId": "unrequiredDungeons",
       "hintDef": {
@@ -88,8 +87,8 @@
         }
       }
     },
-	//
-	{
+    //
+    {
       "spot": "arbiters_grounds_sign",
       "groupId": "unrequiredDungeons",
       "hintDef": {
@@ -100,7 +99,7 @@
         }
       }
     },
-	//
+    //
     {
       "spot": "snowpeak_ruins_sign",
       "hintDef": {
@@ -132,7 +131,7 @@
         ]
       }
     },
-	{
+    {
       "spot": "snowpeak_ruins_sign",
       "groupId": "unrequiredDungeons",
       "hintDef": {
@@ -143,7 +142,7 @@
         }
       }
     },
-	//
+    //
     {
       "spot": "temple_of_time_sign",
       "hintDef": {
@@ -154,7 +153,7 @@
         }
       }
     },
-	{
+    {
       "spot": "temple_of_time_sign",
       "groupId": "unrequiredDungeons",
       "hintDef": {
@@ -165,61 +164,46 @@
         }
       }
     },
-	//
-	{
+    //
+    {
       "spot": "city_in_the_sky_sign",
       "groupId": "unrequiredDungeons",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["City in The Sky Argorok Heart Container"]
+      "hintDef": [
+        {
+          "hintType": "location",
+          "options": {
+            "canHintHintedBarrenChecks": true,
+            "validChecks": ["City in The Sky Argorok Heart Container"]
+          }
         }
-      }
+      ]
     },
-	//
-	{
+    //
+    {
       "spot": "Palace_of_Twilight_Sign",
       "hintDef": {
         "hintType": "location",
         "options": {
           "canHintHintedBarrenChecks": true,
-          "validChecks": ["Palace of Twilight Collect Both Sols"]
+          "validChecks": ["Palace of Twilight Collect Both Sols"],
+          "checkStatusDisplay": "required_info"
         }
       }
     },
     {
-      "spot": "palace_of_twilight_sign",
+      "spot": "Palace_of_Twilight_Sign",
       "hintDef": {
-        "maxPicks": 1,
-        "hintDef": [
-          {
-            "hintType": "location",
-            "options": {
-              "canHintHintedBarrenChecks": true,
-              "validChecks": [
-                "Palace of Twilight Big Key Chest",
-                "Palace of Twilight Central First Room Chest",
-                "Palace of Twilight Central Outdoor Chest",
-                "Palace of Twilight Central Tower Chest",
-                "Palace of Twilight East Wing First Room East Alcove Chest",
-                "Palace of Twilight East Wing First Room North Small Chest",
-                "Palace of Twilight East Wing First Room West Alcove Chest",
-                "Palace of Twilight East Wing First Room Zant Head Chest",
-                "Palace of Twilight East Wing Second Room Northeast Chest",
-                "Palace of Twilight East Wing Second Room Northwest Chest",
-                "Palace of Twilight East Wing Second Room Southeast Chest",
-                "Palace of Twilight East Wing Second Room Southwest Chest",
-                "Palace of Twilight West Wing Chest Behind Wall of Darkness",
-                "Palace of Twilight West Wing First Room Central Chest",
-                "Palace of Twilight West Wing Second Room Central Chest",
-                "Palace of Twilight West Wing Second Room Lower South Chest",
-                "Palace of Twilight West Wing Second Room Southeast Chest"
-              ],
-              "validItems": ["Palace_of_Twilight_Big_Key"]
-            }
-          }
-        ]
+        "hintType": "item",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validItems": ["Palace_of_Twilight_Big_Key"],
+          "areaType": "category",
+          "validCategories": [
+            "Palace_of_Twilight_West_Wing",
+            "Palace_of_Twilight_Central_Tower",
+            "Palace_of_Twilight_East_Wing"
+          ]
+        }
       }
     }
   ],
@@ -248,7 +232,6 @@
             "saveToVar": "HintCopies",
             "options": {
               "areaType": "category"
-
             }
           },
           {
@@ -280,9 +263,9 @@
             "hintDef": [
               {
                 "hintType": "location",
-                "namedOrder": "random",				  
+                "namedOrder": "random",
                 "namedProbability": 1,
-                "minCopies": 1,					
+                "minCopies": 1,
                 "options": {
                   "markAsSometimes": true,
                   "namedChecks": [
@@ -291,15 +274,15 @@
                     "Goron Mines Main Magnet Room Top Chest",
                     "City in The Sky West Wing First Chest",
                     "City in The Sky Chest Behind North Fan",
-				          	"Palace of Twilight Big Key Chest"
+                    "Palace of Twilight Big Key Chest"
                   ]
                 }
               },
               {
                 "hintType": "location",
-                "namedOrder": "random",				  
+                "namedOrder": "random",
                 "namedProbability": 1,
-                "minCopies": 1,				
+                "minCopies": 1,
                 "options": {
                   "markAsSometimes": true,
                   "namedChecks": [

@@ -149,10 +149,6 @@
     <value>$(ap:with)the {cs}Golden Wolf{ce}</value>
     <comment></comment>
   </data>
-  <data name="area.category.lantern_chests" xml:space="preserve">
-    <value>a {cs}spawnable lantern chests{ce}</value>
-    <comment></comment>
-  </data>
   <data name="area.category.grotto" xml:space="preserve">
     <value>a {cs}Grotto{ce}</value>
     <comment></comment>
@@ -163,6 +159,10 @@
   </data>
   <data name="area.category.grotto$plural" xml:space="preserve">
     <value>$(plural)Grottos</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.lantern_chests" xml:space="preserve">
+    <value>a {cs}spawnable lantern chests{ce}</value>
     <comment></comment>
   </data>
   <data name="area.category.llc_lantern_chests" xml:space="preserve">
@@ -195,6 +195,18 @@
   </data>
   <data name="area.category.owl_statue$plural" xml:space="preserve">
     <value>$(ap:behind,plural)Owl Statues</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.palace_of_twilight_central_tower" xml:space="preserve">
+    <value>the {cs}central tower{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.palace_of_twilight_east_wing" xml:space="preserve">
+    <value>the {cs}east wing{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.palace_of_twilight_west_wing" xml:space="preserve">
+    <value>the {cs}west wing{ce}</value>
     <comment></comment>
   </data>
   <data name="area.category.southern_desert" xml:space="preserve">
