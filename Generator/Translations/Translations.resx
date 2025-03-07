@@ -197,6 +197,18 @@
     <value>$(ap:behind,plural)Owl Statues</value>
     <comment></comment>
   </data>
+  <data name="area.category.palace_of_twilight_central_tower" xml:space="preserve">
+    <value>the {cs}central tower{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.palace_of_twilight_east_wing" xml:space="preserve">
+    <value>the {cs}east wing{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.palace_of_twilight_west_wing" xml:space="preserve">
+    <value>the {cs}west wing{ce}</value>
+    <comment></comment>
+  </data>
   <data name="area.category.southern_desert" xml:space="preserve">
     <value>the {cs}southern desert{ce}</value>
     <comment></comment>
