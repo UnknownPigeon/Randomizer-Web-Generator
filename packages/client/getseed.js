@@ -399,6 +399,10 @@
         buttonId: 'tabBtnPlaythroughSpoilers',
         contentId: 'tabPlaythroughSpoilers',
       },
+      {
+        buttonId: 'tabBtnPlaythroughHints',
+        contentId: 'tabPlaythroughHints',
+      },
     ]);
 
     fillInSettingsTable(spoilerData);
@@ -412,6 +416,10 @@
     }
 
     initDownloadOptions(spoilerData.isRaceSeed);
+    if (spoilerData.settings.hintDistribution == 'DrehenOptional') {
+      fillInHintsTable(spoilerData);
+      $('#tabBtnPlaythroughHints').show();
+    }
   }
 
   function initDownloadOptions(isRaceSeed) {
@@ -1261,6 +1269,34 @@
       valueEl.textContent = value;
       tr.appendChild(valueEl);
     });
+  }
+
+  function fillInHintsTable(spoilerData) {
+    const hints = {};
+    let value =
+      (spoilerData.hints && spoilerData.hints['Hyrule_Castle_Sign']) ||
+      'Not found in hints data';
+
+    hints.Barrens = Array.isArray(value)
+      ? value.map((item) => item?.text || String(item))
+      : [value?.text || String(value)];
+
+    hints.RequiredDungeons =
+      spoilerData.requiredDungeons !== undefined
+        ? spoilerData.requiredDungeons
+        : [];
+
+    hints.UnrequiredDungeons =
+      spoilerData.UnrequiredDungeons !== undefined
+        ? spoilerData.UnrequiredDungeons
+        : [];
+
+    const hintsContainer = document.createElement('pre');
+    hintsContainer.className = 'settingsTable';
+
+    const tabContainer = document.getElementById('tabPlaythroughHints');
+    tabContainer.appendChild(hintsContainer);
+    hintsContainer.textContent = JSON.stringify(hints, null, 4);
   }
 
   function _base64ToUint8Array(base64Str) {

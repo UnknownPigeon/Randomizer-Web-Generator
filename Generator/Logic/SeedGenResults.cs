@@ -321,6 +321,7 @@ namespace TPRandomizer
             // input.json file. So we decode some values which
 
             Dictionary<string, object> root = new();
+            SharedSettings sSettings = SharedSettings.FromString(settingsString);
 
             if (dangerouslyPrintFullRaceSpoiler)
             {
@@ -345,6 +346,12 @@ namespace TPRandomizer
                 root.Add("itemPlacements", sortedCheckNameToItemNameDict);
                 root.Add("hints", customMsgData.GetDictForSpoiler());
                 root.Add("spheres", GetSpheresForSpoiler());
+            }
+            else if (sSettings.hintDistribution == SSettings.Enums.HintDistribution.DrehenOptional)
+            {
+                root.Add("requiredDungeons", GetRequiredDungeonsStringList());
+                root.Add("UnrequiredDungeons", GetUnRequiredDungeonsStringList());
+                root.Add("hints", customMsgData.GetDictForRaceSpoiler());
             }
 
             // Note this is the metaData from the file, not the current
