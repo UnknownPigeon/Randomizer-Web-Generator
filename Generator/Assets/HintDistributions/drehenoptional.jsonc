@@ -195,6 +195,7 @@
       "hintDef": {
         "hintType": "item",
         "options": {
+          "canHintHintedBarrenChecks": true,
           "validItems": ["Palace_of_Twilight_Big_Key"],
           "areaType": "category",
           "validCategories": [

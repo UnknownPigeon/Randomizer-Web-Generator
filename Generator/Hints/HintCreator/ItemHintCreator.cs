@@ -31,6 +31,7 @@ namespace TPRandomizer.Hints.HintCreator
         private bool itemsOrdered = false;
         private bool vague = false;
         private AreaType areaType = AreaType.Default;
+        protected bool canHintHintedBarrenChecks = false;
 
         // Creates item hints with the following properties:
 
@@ -195,6 +196,12 @@ namespace TPRandomizer.Hints.HintCreator
                     validCategories.Add(category);
                 }
                 inst.validCategories = validCategories;
+
+                inst.canHintHintedBarrenChecks = HintSettingUtils.getOptionalBool(
+                    options,
+                    "canHintHintedBarrenChecks",
+                    inst.canHintHintedBarrenChecks
+                );
             }
 
             if (inst.validStatuses.Contains(CheckStatus.Good))
@@ -308,6 +315,7 @@ namespace TPRandomizer.Hints.HintCreator
                     continue;
 
                 List<(string, AreaId)> checkNameAndCategory = new();
+                HashSet<string> pendingCheckNamesToRemove = new();
                 foreach (string checkName in possibleChecks)
                 {
                     if (areaType == AreaType.Category)
@@ -315,6 +323,8 @@ namespace TPRandomizer.Hints.HintCreator
                         AreaId category = PickCategoryForCheckName(genData, checkName);
                         if (category != null)
                             checkNameAndCategory.Add((checkName, category));
+                        else
+                            pendingCheckNamesToRemove.Add(checkName);
                     }
                     else
                     {
@@ -322,6 +332,19 @@ namespace TPRandomizer.Hints.HintCreator
                         checkNameAndCategory.Add((checkName, null));
                     }
                 }
+
+                // Remove any checkNames which failed to produce a possible hint
+                foreach (string checkName in pendingCheckNamesToRemove)
+                {
+                    possibleChecks.Remove(checkName);
+                    if (possibleChecks.Count < 1)
+                        itemToHintableChecks.Remove(selectedItem);
+                }
+
+                // Return early if there were no hintable checks based on the
+                // valid categories.
+                if (ListUtils.isEmpty(checkNameAndCategory))
+                    continue;
 
                 List<KeyValuePair<double, (string, AreaId)>> weightedList = new();
                 foreach ((string, AreaId) pair in checkNameAndCategory)
@@ -392,6 +415,8 @@ namespace TPRandomizer.Hints.HintCreator
 
             HashSet<HintCategory> allCategoriesWithCheckName =
                 HintCategoryUtils.checkNameToCategories(checkName);
+            if (ListUtils.isEmpty(allCategoriesWithCheckName))
+                return null;
 
             List<HintCategory> possibleCategories = new();
             foreach (HintCategory category in validCategories)
@@ -418,7 +443,9 @@ namespace TPRandomizer.Hints.HintCreator
             return !genData.CheckShouldBeIgnored(checkName)
                 && !hinted.alreadyCheckContentsHinted.Contains(checkName)
                 && !hinted.alreadyCheckDirectedToward.Contains(checkName)
-                && !hinted.alreadyCheckKnownBarren.Contains(checkName);
+                && (
+                    canHintHintedBarrenChecks || !hinted.alreadyCheckKnownBarren.Contains(checkName)
+                );
         }
 
         private static HashSet<Item> resolveItemsAlias(string alias)
