@@ -149,10 +149,6 @@
     <value>$(ap:with)the {cs}Golden Wolf{ce}</value>
     <comment></comment>
   </data>
-  <data name="area.category.lantern_chests" xml:space="preserve">
-    <value>a {cs}spawnable lantern chests{ce}</value>
-    <comment></comment>
-  </data>
   <data name="area.category.grotto" xml:space="preserve">
     <value>a {cs}Grotto{ce}</value>
     <comment></comment>
@@ -163,6 +159,10 @@
   </data>
   <data name="area.category.grotto$plural" xml:space="preserve">
     <value>$(plural)Grottos</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.lantern_chests" xml:space="preserve">
+    <value>a {cs}spawnable lantern chests{ce}</value>
     <comment></comment>
   </data>
   <data name="area.category.llc_lantern_chests" xml:space="preserve">
