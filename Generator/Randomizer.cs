@@ -53,8 +53,8 @@ namespace TPRandomizer
 
         public static int RequiredDungeons = 0;
         public static int spawnIndex = 0;
-        public static int UnrequiredDungeons = 0;
-        public static int nbUnrequiredDungeon = 0;
+        public static int OptionalDungeons = 0;
+        public static int nbOptionalDungeons = 0;
 
         public static bool CreateInputJson(
             string idParam,
@@ -385,7 +385,7 @@ namespace TPRandomizer
             builder.playthroughName = playthroughNames[0];
             builder.wiiPlaythroughName = playthroughNames[1];
             builder.requiredDungeons = (byte)Randomizer.RequiredDungeons;
-            builder.unrequiredDungeon = (byte)Randomizer.UnrequiredDungeons;
+            builder.optionalDungeons = (byte)Randomizer.OptionalDungeons;
             builder.SetItemPlacements(checkNumIdToItemId);
             builder.SetSpheres(spheres);
             builder.SetEntrances();
@@ -1447,8 +1447,8 @@ namespace TPRandomizer
 
             // Finally set the required dungeons to 0 since the value may change during the next attempt.
             Randomizer.RequiredDungeons = 0;
-            Randomizer.nbUnrequiredDungeon = 0;
-            Randomizer.UnrequiredDungeons = 0;
+            Randomizer.nbOptionalDungeons = 0;
+            Randomizer.OptionalDungeons = 0;
         }
 
         private static void CheckUnrequiredDungeons()
@@ -1761,7 +1761,7 @@ namespace TPRandomizer
                     }
                     else
                     {
-                        Randomizer.UnrequiredDungeons |= 0x80 >> i;
+                        Randomizer.OptionalDungeons |= 0x80 >> i;
                         Console.WriteLine(
                             listOfRequiredDungeons[i].dungeonReward + " is a optional Dungeon!"
                         );

@@ -25,7 +25,7 @@ namespace TPRandomizer
         private static readonly ushort latestEncodingVersion = 0;
 
         private byte requiredDungeons;
-        private byte unrequiredDungeons;
+        private byte optionalDungeons;
         private bool updateShopText;
 
         // checkName to useDefArticle
@@ -44,7 +44,7 @@ namespace TPRandomizer
         private CustomMsgData(Builder builder, SharedSettings sSettings)
         {
             requiredDungeons = builder.requiredDungeons;
-            unrequiredDungeons = builder.unrequiredDungeons;
+            optionalDungeons = builder.optionalDungeons;
             updateShopText = builder.updateShopText;
             selfHinterChecks = builder.GetSelfHinterChecks();
             hintSpots = builder.hintSpots;
@@ -61,7 +61,7 @@ namespace TPRandomizer
 
             // Encode required dungeons
             result += SettingsEncoder.EncodeNumAsBits(requiredDungeons, 8);
-            result += SettingsEncoder.EncodeNumAsBits(unrequiredDungeons, 8);
+            result += SettingsEncoder.EncodeNumAsBits(optionalDungeons, 8);
 
             // Encode updateShopText
             result += updateShopText ? "1" : "0";
@@ -136,7 +136,7 @@ namespace TPRandomizer
 
             // Decode requiredDungeons
             inst.requiredDungeons = processor.NextByte();
-            inst.unrequiredDungeons = processor.NextByte();
+            inst.optionalDungeons = processor.NextByte();
 
             // Decode updateShopText
             inst.updateShopText = processor.NextBool();
@@ -222,7 +222,7 @@ namespace TPRandomizer
             private HintGenData genData;
             private List<Item> selfHinterTrapReplacements;
             public byte requiredDungeons { get; private set; }
-            public byte unrequiredDungeons { get; private set; }
+            public byte optionalDungeons { get; private set; }
             public bool updateShopText { get; private set; } = true;
             private bool forceNotUpdateShopText = false;
               private Dictionary<string, bool> selfHinterChecksToIsShop = new()
@@ -238,11 +238,11 @@ namespace TPRandomizer
                 };
             public List<HintSpot> hintSpots { get; private set; } = new();
 
-            public Builder(HintGenData genData, byte requiredDungeons, byte unrequiredDungeons)
+            public Builder(HintGenData genData, byte requiredDungeons, byte optionalDungeons)
             {
                 this.genData = genData;
                 this.requiredDungeons = requiredDungeons;
-                this.unrequiredDungeons = unrequiredDungeons;
+                this.optionalDungeons = optionalDungeons;
                 if (!genData.sSettings.modifyShopModels)
                 {
                     updateShopText = false;
@@ -706,7 +706,7 @@ namespace TPRandomizer
                     // out of bytes and have the text get cut off.
                     sb.Append(Res.Msg(tuple.Item1, null).ResolveWithColor(tuple.Item3, ""));
                 }
-                else if ((unrequiredDungeons & tuple.Item2) != 0)
+                else if ((optionalDungeons & tuple.Item2) != 0)
                 {
                     if (sb.Length > 0)
                         sb.Append('\n');

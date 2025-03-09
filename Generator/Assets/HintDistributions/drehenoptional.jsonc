@@ -35,8 +35,7 @@
   //
   "groups": {
     "overworld": ["alias:overworldZones"],
-    "requiredDungeons": ["alias:requiredDungeons"],
-    "unrequiredDungeons": ["alias:unrequiredDungeons"]
+    "requiredDungeons": ["alias:requiredDungeons"]
   },
   // Special hints generated right after Always hints are generated. These are
   // created even if the dungeon is hinted barren or the check is already hinted
@@ -54,7 +53,6 @@
     },
     {
       "spot": "forest_temple_sign",
-      "groupId": "unrequiredDungeons",
       "hintDef": {
         "hintType": "location",
         "options": {
@@ -66,7 +64,6 @@
     //
     {
       "spot": "goron_mines_sign",
-      "groupId": "unrequiredDungeons",
       "hintDef": {
         "hintType": "location",
         "options": {
@@ -78,7 +75,6 @@
     //
     {
       "spot": "lakebed_temple_sign",
-      "groupId": "unrequiredDungeons",
       "hintDef": {
         "hintType": "location",
         "options": {
@@ -90,7 +86,6 @@
     //
     {
       "spot": "arbiters_grounds_sign",
-      "groupId": "unrequiredDungeons",
       "hintDef": {
         "hintType": "location",
         "options": {
@@ -133,7 +128,6 @@
     },
     {
       "spot": "snowpeak_ruins_sign",
-      "groupId": "unrequiredDungeons",
       "hintDef": {
         "hintType": "location",
         "options": {
@@ -155,7 +149,6 @@
     },
     {
       "spot": "temple_of_time_sign",
-      "groupId": "unrequiredDungeons",
       "hintDef": {
         "hintType": "location",
         "options": {
@@ -167,7 +160,6 @@
     //
     {
       "spot": "city_in_the_sky_sign",
-      "groupId": "unrequiredDungeons",
       "hintDef": [
         {
           "hintType": "location",
