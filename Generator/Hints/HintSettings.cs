@@ -1221,10 +1221,10 @@ namespace TPRandomizer.Hints.Settings
                         }
                         break;
                     }
-                    case "unrequireddungeons":
+                    case "optionalDungeons":
                     {
-                        HashSet<string> unrequiredDungeonsZones = HintUtils.getOptionalDungeonZones();
-                        foreach (string zoneName in unrequiredDungeonsZones)
+                        HashSet<string> optionalDungeonsZones = HintUtils.getOptionalDungeonZones();
+                        foreach (string zoneName in optionalDungeonsZones)
                         {
                             ret.Add(zoneToSpot[zoneName]);
                         }

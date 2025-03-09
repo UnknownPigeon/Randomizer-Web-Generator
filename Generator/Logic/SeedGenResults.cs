@@ -29,7 +29,7 @@ namespace TPRandomizer
         public string wiiPlaythroughName { get; set; }
         public Dictionary<int, int> itemPlacements { get; }
         public byte requiredDungeons { get; set; }
-        public byte unrequiredDungeons { get; set; }
+        public byte optionalDungeons { get; set; }
         public List<List<KeyValuePair<int, Item>>> spheres { get; }
         public string entrances { get; }
         public CustomMsgData customMsgData { get; }
@@ -69,7 +69,7 @@ namespace TPRandomizer
             this.wiiPlaythroughName = (string)output["wiiName"];
             this.itemPlacements = DecodeItemPlacements((string)output["itemPlacement"]);
             this.requiredDungeons = (byte)output["reqDungeons"];
-            this.unrequiredDungeons = (byte)output["unreqDungeons"];
+            this.optionalDungeons = (byte)output["optDungeons"];
             this.spheres = DecodeSpheres((string)output["spheres"]);
             this.entrances = DecodeEntrances((string)output["entrances"]);
             this.customMsgData = CustomMsgData.Decode(
@@ -341,7 +341,7 @@ namespace TPRandomizer
             if (!isRaceSeed || dangerouslyPrintFullRaceSpoiler)
             {
                 root.Add("requiredDungeons", GetRequiredDungeonsStringList());
-                root.Add("UnrequiredDungeons", GetUnRequiredDungeonsStringList());
+                root.Add("OptionalDungeons", GetOptionalDungeonsStringList());
                 root.Add("shuffledEntrances", GetShuffledEntrancesStringList());
                 root.Add("itemPlacements", sortedCheckNameToItemNameDict);
                 root.Add("hints", customMsgData.GetDictForSpoiler());
@@ -350,7 +350,7 @@ namespace TPRandomizer
             else if (sSettings.hintDistribution == SSettings.Enums.HintDistribution.DrehenOptional)
             {
                 root.Add("requiredDungeons", GetRequiredDungeonsStringList());
-                root.Add("UnrequiredDungeons", GetUnRequiredDungeonsStringList());
+                root.Add("OptionalDungeons", GetOptionalDungeonsStringList());
                 root.Add("hints", customMsgData.GetDictForRaceSpoiler());
             }
 
@@ -391,19 +391,19 @@ namespace TPRandomizer
             return reqDungeonsList;
         }
 
-        private List<string> GetUnRequiredDungeonsStringList()
+        private List<string> GetOptionalDungeonsStringList()
         {
-            List<string> unreqDungeonsList = new();
+            List<string> optDungeonsList = new();
 
             foreach (RequiredDungeon unreqDungeonEnum in Enum.GetValues(typeof(RequiredDungeon)))
             {
-                if (((1 << (byte)unreqDungeonEnum) & unrequiredDungeons) != 0)
+                if (((1 << (byte)unreqDungeonEnum) & optionalDungeons) != 0)
                 {
-                    unreqDungeonsList.Add(unreqDungeonEnum.ToString());
+                    optDungeonsList.Add(unreqDungeonEnum.ToString());
                 }
             }
 
-            return unreqDungeonsList;
+            return optDungeonsList;
         }
 
         private List<string> GetShuffledEntrancesStringList()
@@ -607,7 +607,7 @@ namespace TPRandomizer
             public string playthroughName { get; set; }
             public string wiiPlaythroughName { get; set; }
             public byte requiredDungeons { get; set; }
-            public byte unrequiredDungeon { get; set; }
+            public byte optionalDungeons { get; set; }
             private string itemPlacement;
             private string spheres;
             public string entrances;
@@ -667,7 +667,7 @@ namespace TPRandomizer
                 outputObj.Add("wiiName", wiiPlaythroughName);
                 outputObj.Add("itemPlacement", itemPlacement);
                 outputObj.Add("reqDungeons", requiredDungeons);
-                outputObj.Add("unreqDungeons", unrequiredDungeon);
+                outputObj.Add("optDungeons", optionalDungeons);
                 outputObj.Add("spheres", spheres);
                 outputObj.Add("entrances", entrances);
                 outputObj.Add("customMsg", customMsgData);

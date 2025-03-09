@@ -1286,9 +1286,9 @@
         ? spoilerData.requiredDungeons
         : [];
 
-    hints.UnrequiredDungeons =
-      spoilerData.UnrequiredDungeons !== undefined
-        ? spoilerData.UnrequiredDungeons
+    hints.OptionalDungeons =
+      spoilerData.OptionalDungeons !== undefined
+        ? spoilerData.OptionalDungeons
         : [];
 
     const hintsContainer = document.createElement('pre');

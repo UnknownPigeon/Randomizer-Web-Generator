@@ -37,7 +37,7 @@ namespace TPRandomizer.Hints
                 new(
                     genData,
                     (byte)Randomizer.RequiredDungeons,
-                    (byte)Randomizer.UnrequiredDungeons
+                    (byte)Randomizer.OptionalDungeons
                 );
 
             // If user specified that there are no hintSettings, then we should
