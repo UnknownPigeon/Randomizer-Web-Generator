@@ -756,6 +756,13 @@ namespace TPRandomizer.Assets
                     0x30B0,
                     0x418000c4
                 ), // Patch item checking so that showing the completed skybook doesn't bork the check
+                 new RELReplacement(
+                    (int)ReplacementType.Instruction,
+                    (int)0xFF,
+                    (int)GCRelIDs.D_A_NPC_WRESTLER,
+                    0x41B0,
+                    DataFunctions.ASM_NOP()
+                ), // Patch bo rng
             ];
 
             // Parse Midna hair color replacement
