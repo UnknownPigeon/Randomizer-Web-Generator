@@ -11,32 +11,33 @@ namespace TPRandomizer
         private static Dictionary<string, string> nameToId;
         private static Dictionary<int, string> idNumToName;
 
-        private static HashSet<string> hideFromUiCheckNames = new()
-        {
-            "Forest Temple Diababa",
-            "Goron Mines Fyrus",
-            "Lakebed Temple Morpheel",
-            "Arbiters Grounds Stallord",
-            "Snowpeak Ruins Blizzeta",
-            "Temple of Time Armogohma",
-            "City in The Sky Argorok",
-            "Palace of Twilight Zant",
-            "Hyrule Castle Ganondorf",
-            "Bridge of Eldin Portal",
-            "Castle Town Portal",
-            "Death Mountain Portal",
-            "Gerudo Desert Portal",
-            "Kakariko Gorge Portal",
-            "Kakariko Village Portal",
-            "Lake Hylia Portal",
-            "Mirror Chamber Portal",
-            "North Faron Portal",
-            "Sacred Grove Portal",
-            "South Faron Portal",
-            "Snowpeak Portal",
-            "Upper Zoras River Portal",
-            "Zoras Domain Portal",
-        };
+        private static HashSet<string> hideFromUiCheckNames =
+            new()
+            {
+                "Forest Temple Diababa",
+                "Goron Mines Fyrus",
+                "Lakebed Temple Morpheel",
+                "Arbiters Grounds Stallord",
+                "Snowpeak Ruins Blizzeta",
+                "Temple of Time Armogohma",
+                "City in The Sky Argorok",
+                "Palace of Twilight Zant",
+                "Hyrule Castle Ganondorf",
+                "Bridge of Eldin Portal",
+                "Castle Town Portal",
+                "Death Mountain Portal",
+                "Gerudo Desert Portal",
+                "Kakariko Gorge Portal",
+                "Kakariko Village Portal",
+                "Lake Hylia Portal",
+                "Mirror Chamber Portal",
+                "North Faron Portal",
+                "Sacred Grove Portal",
+                "South Faron Portal",
+                "Snowpeak Portal",
+                "Upper Zoras River Portal",
+                "Zoras Domain Portal",
+            };
 
         static CheckIdClass()
         {
@@ -562,6 +563,7 @@ namespace TPRandomizer
                 "Kakariko Village Bell Rupee",
                 "Coro Lantern",
                 "Coro Gate Key",
+                "Shad Dominion Rod",
                 // Add new check names right above this line. The name should
                 // match exactly with the json filename in the "Checks"
                 // directory.

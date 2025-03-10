@@ -1854,6 +1854,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Shop', 'Ordona Province', 'ARC'],
     itemId: 'Slingshot',
   },
+  'Shad Dominion Rod': {
+    category: ['Overworld', 'Npc', 'Kakariko Graveyard', 'ARC'],
+    itemId: 'Progressive_Dominion_Rod',
+  },
   'Skybook From Impaz': {
     category: ['Overworld', 'Npc', 'Hidden Village', 'ARC'],
     itemId: 'Progressive_Sky_Book',
