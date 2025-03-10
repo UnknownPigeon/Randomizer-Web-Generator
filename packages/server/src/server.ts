@@ -383,6 +383,8 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [0xEE, 'North Faron Woods Gate Key'],
         [0xFE, 'Faron Woods Coro Key'],
         [0xe0, 'Poe Soul', 60],
+        [0x15, 'South Faron Portal'],
+        [0x3C, 'North Faron Portal'],
         [0x3b, 'Gerudo Desert Portal'],
         [0xae, 'Mirror Chamber Portal'],
         [0xaf, 'Snowpeak Portal'],
