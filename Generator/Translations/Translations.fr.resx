@@ -1185,7 +1185,7 @@
     <value>arcs</value>
     <comment></comment>
   </data>
-<data name="item.fe-faron_woods_coro_key@ac(t,a,b,s)" xml:space="preserve">
+<data name="item.fe-faron_woods_coro_key@ac(m,true)" xml:space="preserve">
   <value>Clé de Kikolou</value>
   <comment></comment>
 </data>
