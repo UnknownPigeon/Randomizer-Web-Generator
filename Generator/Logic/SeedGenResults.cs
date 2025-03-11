@@ -347,7 +347,7 @@ namespace TPRandomizer
                 root.Add("hints", customMsgData.GetDictForSpoiler());
                 root.Add("spheres", GetSpheresForSpoiler());
             }
-            else if (sSettings.hintDistribution == SSettings.Enums.HintDistribution.DrehenOptional)
+            else if ((sSettings.hintDistribution == SSettings.Enums.HintDistribution.DrehenOptional) || (sSettings.hintDistribution == SSettings.Enums.HintDistribution.DrehenOptional2))
             {
                 root.Add("requiredDungeons", GetRequiredDungeonsStringList());
                 root.Add("OptionalDungeons", GetOptionalDungeonsStringList());
