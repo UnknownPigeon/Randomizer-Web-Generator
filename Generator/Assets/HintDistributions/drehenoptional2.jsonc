@@ -1,0 +1,310 @@
+{
+  "starting": {
+    "spot": "Hyrule_Castle_Sign",
+    "excludeFromGroups": true
+  },
+  "agitha": true,
+  "jovani": {
+    "minFoundSoulsForHint": 10
+  },
+  "caveOfOrdeals": true,
+  "dungeons": {
+    "bigKeyHints": true
+  },
+  "beyondPointZones": ["alias:all"],
+  "barren": {
+    "ownZoneBehavior": "monopolize",
+    "ownZoneShowsAsJunkHint": false
+  },
+  "always": {
+    "monopolizeSpots": true,
+    "idealNumSpots": 5,
+    "copies": 2,
+    "groupId": "overworld"
+  },
+  //
+  "addChecks": {
+    "Lake Hylia Shell Blade Grotto Chest": ["always"]
+  },
+  "removeChecks": {
+    "Palace of Twilight Collect Both Sols": ["always"],
+    "Forest Temple Gale Boomerang": ["sometimes"],
+    "City in The Sky Aeralfos Chest": ["sometimes"]
+  },
+  "removeItems": {},
+  //
+  "groups": {
+    "overworld": ["alias:overworldZones"],
+    "requiredDungeons": ["alias:requiredDungeons"]
+  },
+  // Special hints generated right after Always hints are generated. These are
+  // created even if the dungeon is hinted barren or the check is already hinted
+  // barren by a BeyondThisPoint hint.
+  "specialHintDefs": [
+    {
+      "spot": "forest_temple_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Forest Temple Gale Boomerang"]
+        }
+      }
+    },
+    {
+      "spot": "forest_temple_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Forest Temple Diababa Heart Container"]
+        }
+      }
+    },
+    //
+    {
+      "spot": "goron_mines_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Goron Mines Fyrus Heart Container"]
+        }
+      }
+    },
+    //
+    {
+      "spot": "lakebed_temple_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Lakebed Temple Morpheel Heart Container"]
+        }
+      }
+    },
+    //
+    {
+      "spot": "arbiters_grounds_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Arbiters Grounds Stallord Heart Container"]
+        }
+      }
+    },
+    //
+    {
+      "spot": "snowpeak_ruins_sign",
+      "hintDef": {
+        "maxPicks": 1,
+        "hintDef": [
+          {
+            "hintType": "location",
+            "options": {
+              "canHintHintedBarrenChecks": true,
+              "validChecks": [
+                "Snowpeak Ruins Chapel Chest",
+                "Snowpeak Ruins Lobby Chandelier Chest",
+                "Snowpeak Ruins Northeast Chandelier Chest"
+              ],
+              "validItems": ["Snowpeak_Ruins_Bedroom_Key"]
+            }
+          },
+          {
+            "hintType": "location",
+            "options": {
+              "canHintHintedBarrenChecks": true,
+              "validChecks": [
+                "Snowpeak Ruins Chapel Chest",
+                "Snowpeak Ruins Lobby Chandelier Chest",
+                "Snowpeak Ruins Northeast Chandelier Chest"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "spot": "snowpeak_ruins_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Snowpeak Ruins Blizzeta Heart Container"]
+        }
+      }
+    },
+    //
+    {
+      "spot": "temple_of_time_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Temple of Time Lobby Lantern Chest"]
+        }
+      }
+    },
+    {
+      "spot": "temple_of_time_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Temple of Time Armogohma Heart Container"]
+        }
+      }
+    },
+    //
+    {
+      "spot": "city_in_the_sky_sign",
+      "hintDef": [
+        {
+          "hintType": "location",
+          "options": {
+            "canHintHintedBarrenChecks": true,
+            "validChecks": ["City in The Sky Argorok Heart Container"]
+          }
+        }
+      ]
+    },
+    //
+    {
+      "spot": "Palace_of_Twilight_Sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validChecks": ["Palace of Twilight Collect Both Sols"],
+          "checkStatusDisplay": "required_info"
+        }
+      }
+    },
+    {
+      "spot": "Palace_of_Twilight_Sign",
+      "hintDef": {
+        "hintType": "item",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "validItems": ["Palace_of_Twilight_Big_Key"],
+          "areaType": "category",
+          "validCategories": [
+            "Palace_of_Twilight_West_Wing",
+            "Palace_of_Twilight_Central_Tower",
+            "Palace_of_Twilight_East_Wing"
+          ]
+        }
+      }
+    }
+  ],
+  "hints": [
+    {
+      "groupId": "overworld",
+      "hintDef": {
+        "copies": 2,
+        "hintDef": [
+          {
+            "hintType": "numItemInArea",
+            "saveToVar": "HintCopies",
+            "options": {
+              "item": "Progressive_Sword",
+              "areaType": "province",
+              "order": "desc"
+            }
+          },
+          {
+            "hintType": "itemToItemPath",
+            "saveToVar": "HintCopies"
+          },
+          {
+            "hintType": "path",
+            "saveToVar": "HintCopies",
+            "iterations": 3
+          },
+          {
+            "hintType": "barren",
+            "saveToVar": "HintCopies",
+            "options": {
+              "areaType": "category"
+            }
+          },
+          {
+            "hintType": "barren",
+            "iterations": 4,
+            "starting": 4
+          },
+          // Fill in layer with extra copies
+          {
+            "hintType": "var",
+            "copies": 1,
+            "iterations": 99,
+            "options": {
+              "varName": "HintCopies",
+              "randomOrder": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "groupId": "overworld",
+      "hintDef": {
+        "copies": 2,
+        "hintDef": [
+          {
+            "maxPicks": 6,
+            "saveToVar": "SometimesCopies",
+            "hintDef": [
+              {
+                "hintType": "location",
+                "namedOrder": "random",
+                "namedProbability": 1,
+                "minCopies": 1,
+                "options": {
+                  "markAsSometimes": true,
+                  "namedChecks": [
+                    "Forest Temple West Tile Worm Chest Behind Stairs",
+                    "Goron Mines Outside Clawshot Chest",
+                    "Goron Mines Main Magnet Room Top Chest",
+                    "City in The Sky West Wing First Chest",
+                    "City in The Sky Chest Behind North Fan",
+                    "Palace of Twilight Big Key Chest"
+                  ]
+                }
+              },
+              {
+                "hintType": "location",
+                "namedOrder": "random",
+                "namedProbability": 1,
+                "minCopies": 1,
+                "options": {
+                  "markAsSometimes": true,
+                  "namedChecks": [
+                    "Arbiters Grounds Death Sword Chest",
+                    "Temple of Time Darknut Chest",
+                    "City in The Sky Aeralfos Chest"
+                  ]
+                }
+              },
+              {
+                "hintType": "sometimes",
+                "iterations": 99
+              }
+            ]
+          },
+          {
+            "hintType": "var",
+            "copies": 1,
+            "iterations": 99,
+            "options": {
+              "varName": "SometimesCopies",
+              "randomOrder": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

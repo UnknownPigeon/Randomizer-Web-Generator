@@ -127,5 +127,7 @@ namespace TPRandomizer.SSettings.Enums
         Strong = 4,
         Very_Strong = 5,
         DrehenOptional = 6,
+        DrehenOptional2 = 7,
+        
     }
 }
