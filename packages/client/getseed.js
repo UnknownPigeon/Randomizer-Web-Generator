@@ -416,7 +416,7 @@
     }
 
     initDownloadOptions(spoilerData.isRaceSeed);
-    if (spoilerData.settings.hintDistribution == 'DrehenOptional') {
+    if ((spoilerData.settings.hintDistribution == 'DrehenOptional') || (spoilerData.settings.hintDistribution == 'DrehenOptional2')) {
       fillInHintsTable(spoilerData);
       $('#tabBtnPlaythroughHints').show();
     }
