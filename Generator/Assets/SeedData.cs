@@ -1565,6 +1565,14 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Graveyard_Interiors,
                     7
                 ), // Call event017 to give player item
+                new ARCReplacement(
+                    "49F0",
+                    "030A08C7",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Kakariko_Graveyard_Interiors,
+                    7
+                ), // Set custom check flag
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here.
                 new ARCReplacement(
