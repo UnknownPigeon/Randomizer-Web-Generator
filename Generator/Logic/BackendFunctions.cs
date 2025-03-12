@@ -3,12 +3,12 @@ namespace TPRandomizer
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.IO.Compression;
     using System.Linq;
     using System.Reflection;
     using System.Text;
-    using Newtonsoft.Json;
-    using System.IO.Compression;
     using Assets;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// summary text.
@@ -168,34 +168,33 @@ namespace TPRandomizer
                 // include any number of Agitha checks (not just 0 or 24)
                 // without having to memorize which bugs are valid or invalid.
 
-                HashSet<string> agithaChecks =
-                    new()
-                    {
-                        "Agitha Female Ant Reward",
-                        "Agitha Female Beetle Reward",
-                        "Agitha Female Butterfly Reward",
-                        "Agitha Female Dayfly Reward",
-                        "Agitha Female Dragonfly Reward",
-                        "Agitha Female Grasshopper Reward",
-                        "Agitha Female Ladybug Reward",
-                        "Agitha Female Mantis Reward",
-                        "Agitha Female Phasmid Reward",
-                        "Agitha Female Pill Bug Reward",
-                        "Agitha Female Snail Reward",
-                        "Agitha Female Stag Beetle Reward",
-                        "Agitha Male Ant Reward",
-                        "Agitha Male Beetle Reward",
-                        "Agitha Male Butterfly Reward",
-                        "Agitha Male Dayfly Reward",
-                        "Agitha Male Dragonfly Reward",
-                        "Agitha Male Grasshopper Reward",
-                        "Agitha Male Ladybug Reward",
-                        "Agitha Male Mantis Reward",
-                        "Agitha Male Phasmid Reward",
-                        "Agitha Male Pill Bug Reward",
-                        "Agitha Male Snail Reward",
-                        "Agitha Male Stag Beetle Reward",
-                    };
+                HashSet<string> agithaChecks = new()
+                {
+                    "Agitha Female Ant Reward",
+                    "Agitha Female Beetle Reward",
+                    "Agitha Female Butterfly Reward",
+                    "Agitha Female Dayfly Reward",
+                    "Agitha Female Dragonfly Reward",
+                    "Agitha Female Grasshopper Reward",
+                    "Agitha Female Ladybug Reward",
+                    "Agitha Female Mantis Reward",
+                    "Agitha Female Phasmid Reward",
+                    "Agitha Female Pill Bug Reward",
+                    "Agitha Female Snail Reward",
+                    "Agitha Female Stag Beetle Reward",
+                    "Agitha Male Ant Reward",
+                    "Agitha Male Beetle Reward",
+                    "Agitha Male Butterfly Reward",
+                    "Agitha Male Dayfly Reward",
+                    "Agitha Male Dragonfly Reward",
+                    "Agitha Male Grasshopper Reward",
+                    "Agitha Male Ladybug Reward",
+                    "Agitha Male Mantis Reward",
+                    "Agitha Male Phasmid Reward",
+                    "Agitha Male Pill Bug Reward",
+                    "Agitha Male Snail Reward",
+                    "Agitha Male Stag Beetle Reward",
+                };
 
                 foreach (string excludedCheckName in sSettings.excludedChecks)
                 {
@@ -244,7 +243,7 @@ namespace TPRandomizer
                 playthroughDictionary.Add("Starting Item: " + startingItem.ToString(), null);
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!LogicFunctions.CanUse(Item.Ganondorf_Defeated))
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -259,12 +258,6 @@ namespace TPRandomizer
                 foreach (Room graphRoom in currentPlaythroughGraph)
                 {
                     // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                    if (graphRoom.RoomName == "Ganondorf Castle")
-                    {
-                        graphRoom.Visited = true;
-                        hasConcludedPlaythrough = true;
-                        break;
-                    }
 
                     for (int i = 0; i < graphRoom.Checks.Count; i++)
                     {
@@ -299,6 +292,8 @@ namespace TPRandomizer
                                         currentCheck.itemId
                                     )
                                     || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
+                                    || Randomizer.Items.PortalItems.Contains(currentCheck.itemId)
+                                    || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
                                     || (currentCheck.itemId == Item.Poe_Soul)
                                 )
                                 {
@@ -363,8 +358,6 @@ namespace TPRandomizer
                 }
             }
 
-            currentPlaythrough.Add("    Ganondorf Castle: Ganondorf Defeated");
-
             return currentPlaythrough;
         }
 
@@ -404,14 +397,14 @@ namespace TPRandomizer
             foreach (Item startingItem in parseSetting.startingItems)
             {
                 Randomizer.Items.heldItems.Add(startingItem);
-                playthroughDictionary.Add(
+                playthroughDictionaryAll.Add(
                     "Starting Item " + startingItemCount + ": " + startingItem.ToString(),
                     null
                 );
                 startingItemCount++;
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!LogicFunctions.CanUse(Item.Ganondorf_Defeated))
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -428,13 +421,7 @@ namespace TPRandomizer
                 sphereItems.Clear();
                 foreach (Room graphRoom in currentPlaythroughGraph)
                 {
-                    // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                    if (graphRoom.RoomName == "Ganondorf Castle")
-                    {
-                        graphRoom.Visited = true;
-                        hasConcludedPlaythrough = true;
-                        break;
-                    }
+                    //Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
 
                     for (int i = 0; i < graphRoom.Checks.Count; i++)
                     {
@@ -474,6 +461,8 @@ namespace TPRandomizer
                                         currentCheck.itemId
                                     )
                                     || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
+                                    || Randomizer.Items.PortalItems.Contains(currentCheck.itemId)
+                                    || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
                                     || (currentCheck.itemId == Item.Poe_Soul)
                                 )
                                 {
@@ -615,7 +604,7 @@ namespace TPRandomizer
                 Randomizer.Items.heldItems.Add(startingItem);
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!LogicFunctions.CanUse(Item.Ganondorf_Defeated))
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -630,12 +619,6 @@ namespace TPRandomizer
                     foreach (Room graphRoom in currentPlaythroughGraph)
                     {
                         // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                        if (graphRoom.RoomName == "Ganondorf Castle")
-                        {
-                            graphRoom.Visited = true;
-                            hasConcludedPlaythrough = true;
-                            return true;
-                        }
 
                         for (int i = 0; i < graphRoom.Checks.Count; i++)
                         {
@@ -673,6 +656,10 @@ namespace TPRandomizer
                                             currentCheck.itemId
                                         )
                                         || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
+                                        || Randomizer.Items.PortalItems.Contains(
+                                            currentCheck.itemId
+                                        )
+                                        || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
                                         || (currentCheck.itemId == Item.Poe_Soul)
                                     )
                                     {
@@ -737,21 +724,20 @@ namespace TPRandomizer
 
             if (startWithBigKeys)
             {
-                List<Item> bigKeys =
-                    new()
-                    {
-                        Item.Forest_Temple_Big_Key,
-                        Item.Goron_Mines_Key_Shard,
-                        Item.Goron_Mines_Key_Shard,
-                        Item.Goron_Mines_Key_Shard,
-                        Item.Lakebed_Temple_Big_Key,
-                        Item.Arbiters_Grounds_Big_Key,
-                        Item.Temple_of_Time_Big_Key,
-                        Item.Snowpeak_Ruins_Bedroom_Key,
-                        Item.City_in_The_Sky_Big_Key,
-                        Item.Palace_of_Twilight_Big_Key,
-                        Item.Hyrule_Castle_Big_Key,
-                    };
+                List<Item> bigKeys = new()
+                {
+                    Item.Forest_Temple_Big_Key,
+                    Item.Goron_Mines_Key_Shard,
+                    Item.Goron_Mines_Key_Shard,
+                    Item.Goron_Mines_Key_Shard,
+                    Item.Lakebed_Temple_Big_Key,
+                    Item.Arbiters_Grounds_Big_Key,
+                    Item.Temple_of_Time_Big_Key,
+                    Item.Snowpeak_Ruins_Bedroom_Key,
+                    Item.City_in_The_Sky_Big_Key,
+                    Item.Palace_of_Twilight_Big_Key,
+                    Item.Hyrule_Castle_Big_Key,
+                };
 
                 foreach (Item bk in bigKeys)
                 {
@@ -833,6 +819,10 @@ namespace TPRandomizer
                                             currentCheck.itemId
                                         )
                                         || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
+                                        || Randomizer.Items.PortalItems.Contains(
+                                            currentCheck.itemId
+                                        )
+                                        || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
                                         || (currentCheck.itemId == Item.Poe_Soul)
                                     )
                                     {
@@ -920,7 +910,7 @@ namespace TPRandomizer
                 Randomizer.Items.heldItems.Add(startingItem);
             }
 
-            while (!Randomizer.Rooms.RoomDict["Ganondorf Castle"].Visited)
+            while (!LogicFunctions.CanUse(Item.Ganondorf_Defeated))
             {
                 hasCompletedSphere = false;
                 hasConcludedPlaythrough = false;
@@ -935,12 +925,6 @@ namespace TPRandomizer
                     foreach (Room graphRoom in currentPlaythroughGraph)
                     {
                         // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-                        if (graphRoom.RoomName == "Ganondorf Castle")
-                        {
-                            graphRoom.Visited = true;
-                            hasConcludedPlaythrough = true;
-                            return true;
-                        }
 
                         for (int i = 0; i < graphRoom.Checks.Count; i++)
                         {

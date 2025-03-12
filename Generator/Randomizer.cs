@@ -1,20 +1,20 @@
 namespace TPRandomizer
 {
     using System;
-    using System.Text;
     using System.Collections.Generic;
-    using System.Text.RegularExpressions;
+    using System.ComponentModel;
     using System.IO;
     using System.IO.Compression;
     using System.Linq;
+    using System.Reflection;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using Assets;
+    using Hints;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
-    using TPRandomizer.SSettings.Enums;
     using TPRandomizer.FcSettings.Enums;
-    using System.Reflection;
-    using Assets;
-    using System.ComponentModel;
-    using Hints;
+    using TPRandomizer.SSettings.Enums;
 
     /// <summary>
     /// Generates a randomizer seed given a settings string.
@@ -52,6 +52,7 @@ namespace TPRandomizer
         public static SharedSettings SSettings = new();
 
         public static int RequiredDungeons = 0;
+        public static int spawnIndex = 0;
 
         public static bool CreateInputJson(
             string idParam,
@@ -156,7 +157,6 @@ namespace TPRandomizer
                 PlaceVanillaChecks();
 
                 // Once we have placed all vanilla checks, we want to give the player all of the items they should be searching for and then generate the world based on the room class values and their neighbour values.
-                SetupGraph();
                 try
                 {
                     Randomizer.EntranceRandomizer.RandomizeEntrances(rnd);
@@ -474,7 +474,9 @@ namespace TPRandomizer
                 part2Settings.Add("skipArbitersEntrance", SSettings.skipArbitersEntrance);
             if (SSettings.skipSnowpeakEntrance)
                 part2Settings.Add("skipSnowpeakEntrance", SSettings.skipSnowpeakEntrance);
-            if (SSettings.totEntrance != TotEntrance.Closed)
+            if (SSettings.skipGroveEntrance)
+                part2Settings.Add("skipGroveEntrance", SSettings.skipGroveEntrance);
+            if (SSettings.totEntrance != TotEntrance.None)
                 part2Settings.Add("totEntrance", SSettings.totEntrance);
             if (SSettings.skipCityEntrance)
                 part2Settings.Add("skipCityEntrance", SSettings.skipCityEntrance);
@@ -524,7 +526,7 @@ namespace TPRandomizer
 
             SSettings = SharedSettings.FromString(seedGenResults.settingsString);
 
-            foreach (KeyValuePair<int, byte> kvp in seedGenResults.itemPlacements.ToList())
+            foreach (KeyValuePair<int, int> kvp in seedGenResults.itemPlacements.ToList())
             {
                 // key is checkId, value is itemId
                 string checkName = CheckIdClass.GetCheckName(kvp.Key);
@@ -542,69 +544,84 @@ namespace TPRandomizer
 
             List<Tuple<Dictionary<string, object>, byte[]>> fileDefs = new();
 
-            if (fcSettings.gameRegion == GameRegion.All)
+            if (!fcSettings.patchFileOnly)
             {
-                // For now, 'All' only generates for GameCube until we do more
-                // work related to Wii code.
-                List<GameRegion> gameRegionsForAll =
-                    new() { GameRegion.GC_USA, GameRegion.GC_EUR, GameRegion.GC_JAP, };
-
-                // Create files for all regions
-                // foreach (GameRegion gameRegion in GameRegion.GetValues(typeof(GameRegion)))
-                foreach (GameRegion gameRegion in gameRegionsForAll)
+                if (fcSettings.gameRegion == GameRegion.All)
                 {
-                    if (gameRegion != GameRegion.All)
+                    // For now, 'All' only generates for GameCube until we do more
+                    // work related to Wii code.
+                    List<GameRegion> gameRegionsForAll = new()
                     {
-                        // Update language to be used with resource system.
-                        string langTag = fcSettings.GetLanguageTagString(gameRegion);
-                        Res.UpdateCultureInfo(langTag);
+                        GameRegion.GC_USA,
+                        GameRegion.GC_EUR,
+                        GameRegion.GC_JAP,
+                    };
 
-                        fileDefs.Add(
-                            GenGciFileDef(id, seedGenResults, fcSettings, gameRegion, true)
-                        );
+                    // Create files for all regions
+                    // foreach (GameRegion gameRegion in GameRegion.GetValues(typeof(GameRegion)))
+                    foreach (GameRegion gameRegion in gameRegionsForAll)
+                    {
+                        if (gameRegion != GameRegion.All)
+                        {
+                            // Update language to be used with resource system.
+                            string langTag = fcSettings.GetLanguageTagString(gameRegion);
+                            Res.UpdateCultureInfo(langTag);
+
+                            fileDefs.Add(
+                                GenGciFileDef(id, seedGenResults, fcSettings, gameRegion, true)
+                            );
+                        }
                     }
                 }
-            }
-            else
-            {
-                // Update language to be used with resource system.
-                string langTag = fcSettings.GetLanguageTagString();
-                Res.UpdateCultureInfo(langTag);
-
-                // Create file for one region
-                fileDefs.Add(
-                    GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, true)
-                );
-            }
-
-            // Generate seed .bin file
-            fileDefs.Add(
-                GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, false)
-            );
-
-            // Generate patch file
-            fileDefs.Add(GenPatchFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion));
-
-            if (!seedGenResults.isRaceSeed && fcSettings.includeSpoilerLog)
-            {
-                // Set back to default language ('en') before creating spoiler
-                // log when gameRegion is 'All'.
-                if (fcSettings.gameRegion == GameRegion.All)
+                else
                 {
                     // Update language to be used with resource system.
                     string langTag = fcSettings.GetLanguageTagString();
                     Res.UpdateCultureInfo(langTag);
+
+                    // Create file for one region
+                    fileDefs.Add(
+                        GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, true)
+                    );
                 }
 
-                // Add fileDef for spoilerLog
-                string spoilerLogText = GetSeedGenResultsJson(id);
-                byte[] spoilerBytes = Encoding.UTF8.GetBytes(spoilerLogText);
+                // Generate seed .bin file
+                /*fileDefs.Add(
+                    GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, false)
+                );*/
 
-                Dictionary<string, object> dict = new();
-                dict.Add("name", $"Tpr--{seedGenResults.playthroughName}--SpoilerLog-{id}.json");
-                dict.Add("length", spoilerBytes.Length);
+                if (!seedGenResults.isRaceSeed && fcSettings.includeSpoilerLog)
+                {
+                    // Set back to default language ('en') before creating spoiler
+                    // log when gameRegion is 'All'.
+                    if (fcSettings.gameRegion == GameRegion.All)
+                    {
+                        // Update language to be used with resource system.
+                        string langTag = fcSettings.GetLanguageTagString();
+                        Res.UpdateCultureInfo(langTag);
+                    }
 
-                fileDefs.Add(new(dict, spoilerBytes));
+                    // Add fileDef for spoilerLog
+                    string spoilerLogText = GetSeedGenResultsJson(id);
+                    byte[] spoilerBytes = Encoding.UTF8.GetBytes(spoilerLogText);
+
+                    Dictionary<string, object> dict = new();
+                    dict.Add(
+                        "name",
+                        $"Tpr--{seedGenResults.playthroughName}--SpoilerLog-{id}.json"
+                    );
+                    dict.Add("length", spoilerBytes.Length);
+
+                    fileDefs.Add(new(dict, spoilerBytes));
+                }
+            }
+
+            // Generate patch file
+            if (fcSettings.patchFileOnly)
+            {
+                fileDefs.Add(
+                    GenPatchFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion)
+                );
             }
 
             PrintFileDefs(id, seedGenResults, fcSettings, fileDefs);
@@ -672,6 +689,9 @@ namespace TPRandomizer
                 case GameRegion.WII_10_JP:
                     region = "wjp";
                     break;
+                case GameRegion.WII_12_USA:
+                    region = "wus2";
+                    break;
                 default:
                     throw new Exception("Did not specify output region");
             }
@@ -682,15 +702,15 @@ namespace TPRandomizer
                 using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
                 {
                     archive.CreateEntryFromFile(
-                        "/app/generator/Assets/patch/RomHack.toml",
+                        Global.CombineRootPath("./Assets/patch/RomHack.toml"),
                         "RomHack.toml"
                     );
                     archive.CreateEntryFromFile(
-                        "/app/generator/Assets/rels/Randomizer." + region + ".rel",
+                        Global.CombineRootPath("./Assets/rels/Randomizer." + region + ".rel"),
                         "mod.rel"
                     );
                     archive.CreateEntryFromFile(
-                        "/app/generator/Assets/rels/boot." + region + ".rel",
+                        Global.CombineRootPath("./Assets/rels/boot." + region + ".rel"),
                         "boot.rel"
                     );
 
@@ -712,6 +732,7 @@ namespace TPRandomizer
                             case GameRegion.WII_10_USA:
                             case GameRegion.WII_10_EU:
                             case GameRegion.WII_10_JP:
+                            case GameRegion.WII_12_USA:
                                 bootloaderAddr = "0x80005BF4:";
                                 jumpAddr = "0x80008644:";
                                 jumpInsr = "u32 0x4Bffd5b0";
@@ -724,7 +745,7 @@ namespace TPRandomizer
                         sw.WriteLine(jumpInsr);
                         sw.WriteLine(bootloaderAddr);
                         var bootloaderBytes = File.ReadAllBytes(
-                            "/app/generator/Assets/bootloader/" + region + ".bin"
+                            Global.CombineRootPath("./Assets/bootloader/" + region + ".bin")
                         );
                         var bootloaderHex = string.Join(
                             "",
@@ -747,8 +768,11 @@ namespace TPRandomizer
             var filename =
                 "Tpr-" + region + "-" + seedGenResults.playthroughName + "-" + seedId + ".patch";
 
-            Dictionary<string, object> dict =
-                new() { { "name", filename }, { "length", patchBytes.Count } };
+            Dictionary<string, object> dict = new()
+            {
+                { "name", filename },
+                { "length", patchBytes.Count },
+            };
 
             return new(dict, patchBytes.ToArray());
         }
@@ -895,6 +919,7 @@ namespace TPRandomizer
         public static List<Room> GeneratePlaythroughGraph(Room startingRoom)
         {
             List<Room> playthroughGraph = new();
+            List<Room> availableBaseRooms = new();
             Room availableRoom;
 
             int availableRooms = 1;
@@ -909,85 +934,20 @@ namespace TPRandomizer
             }
 
             startingRoom.Visited = true;
-            playthroughGraph.Add(startingRoom);
-            if (Randomizer.SSettings.openMap)
+            availableBaseRooms.Add(startingRoom);
+
+            foreach (Room roomToExplore in roomsToExplore)
             {
-                if (Randomizer.SSettings.faronTwilightCleared)
-                {
-                    if (LogicFunctions.CanUse(Item.Shadow_Crystal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["South Faron Woods"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
-
-                        availableRoom = Randomizer.Rooms.RoomDict["North Faron Woods"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
-                    }
-                }
-
-                if (Randomizer.SSettings.eldinTwilightCleared)
-                {
-                    if (LogicFunctions.CanUse(Item.Shadow_Crystal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Lower Kakariko Village"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
-
-                        availableRoom = Randomizer.Rooms.RoomDict["Kakariko Gorge"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
-
-                        availableRoom = Randomizer.Rooms.RoomDict["Death Mountain Volcano"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
-                    }
-                }
-
-                if (Randomizer.SSettings.lanayruTwilightCleared)
-                {
-                    if (LogicFunctions.CanUse(Item.Shadow_Crystal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Lake Hylia"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
-
-                        availableRoom = Randomizer.Rooms.RoomDict["Outside Castle Town West"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
-
-                        availableRoom = Randomizer.Rooms.RoomDict["Zoras Throne Room"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
-                    }
-                }
-
-                if (Randomizer.SSettings.skipSnowpeakEntrance)
-                {
-                    if (LogicFunctions.CanUse(Item.Shadow_Crystal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
-                    }
-                }
-
-                if (Randomizer.SSettings.totEntrance != TotEntrance.Closed)
-                {
-                    if (LogicFunctions.CanUse(Item.Shadow_Crystal))
-                    {
-                        availableRoom = Randomizer.Rooms.RoomDict["Sacred Grove Lower"];
-                        playthroughGraph.Add(availableRoom);
-                        availableRoom.Visited = true;
-                    }
-                }
+                roomToExplore.Visited = true;
             }
 
             // Build the world by parsing through each room, linking their neighbours, and setting the logic for the checks in the room to reflect the world.
             while (availableRooms > 0)
             {
                 availableRooms = 0;
-                roomsToExplore.Add(startingRoom);
+                roomsToExplore.AddRange(availableBaseRooms);
+                roomsToExplore.AddRange(GeneratePortalRooms());
+                playthroughGraph.AddRange(availableBaseRooms);
                 foreach (KeyValuePair<string, Room> roomList in Randomizer.Rooms.RoomDict.ToList())
                 {
                     Room currentRoom = roomList.Value;
@@ -1004,9 +964,10 @@ namespace TPRandomizer
                         if (roomsToExplore[0].Exits[i].ConnectedArea != "")
                         {
                             if (
-                                Randomizer.Rooms.RoomDict[
-                                    roomsToExplore[0].Exits[i].ConnectedArea
-                                ].Visited == false
+                                Randomizer
+                                    .Rooms
+                                    .RoomDict[roomsToExplore[0].Exits[i].ConnectedArea]
+                                    .Visited == false
                             )
                             {
                                 // Parse the neighbour's requirements to find out if we can access it
@@ -1022,15 +983,17 @@ namespace TPRandomizer
                                 )
                                 {
                                     if (
-                                        !Randomizer.Rooms.RoomDict[
-                                            roomsToExplore[0].Exits[i].ConnectedArea
-                                        ].ReachedByPlaythrough
+                                        !Randomizer
+                                            .Rooms
+                                            .RoomDict[roomsToExplore[0].Exits[i].ConnectedArea]
+                                            .ReachedByPlaythrough
                                     )
                                     {
                                         availableRooms++;
-                                        Randomizer.Rooms.RoomDict[
-                                            roomsToExplore[0].Exits[i].ConnectedArea
-                                        ].ReachedByPlaythrough = true;
+                                        Randomizer
+                                            .Rooms
+                                            .RoomDict[roomsToExplore[0].Exits[i].ConnectedArea]
+                                            .ReachedByPlaythrough = true;
                                         playthroughGraph.Add(
                                             Randomizer.Rooms.RoomDict[
                                                 roomsToExplore[0].Exits[i].ConnectedArea
@@ -1042,9 +1005,10 @@ namespace TPRandomizer
                                             roomsToExplore[0].Exits[i].ConnectedArea
                                         ]
                                     );
-                                    Randomizer.Rooms.RoomDict[
-                                        roomsToExplore[0].Exits[i].ConnectedArea
-                                    ].Visited = true;
+                                    Randomizer
+                                        .Rooms
+                                        .RoomDict[roomsToExplore[0].Exits[i].ConnectedArea]
+                                        .Visited = true;
 
                                     /* Console.WriteLine(
                                          "Neighbour: "
@@ -1271,7 +1235,6 @@ namespace TPRandomizer
                         foreach (Room graphRoom in currentPlaythroughGraph)
                         {
                             graphRoom.Visited = true;
-                            //Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
                             for (int i = 0; i < graphRoom.Checks.Count; i++)
                             {
                                 // Create reference to the dictionary entry of the check whose logic we are evaluating
@@ -1446,7 +1409,7 @@ namespace TPRandomizer
             check.itemWasPlaced = true;
             check.itemId = item;
 
-            //Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
+            Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
         }
 
         private static void StartOver()
@@ -1471,6 +1434,7 @@ namespace TPRandomizer
             Randomizer.Rooms.RoomDict.Clear();
             DeserializeRooms(SSettings);
             Randomizer.EntranceRandomizer.SpawnTable.Clear();
+            Randomizer.Rooms.RoomDict["Root"].Exits.Clear();
 
             // Finally set the required dungeons to 0 since the value may change during the next attempt.
             Randomizer.RequiredDungeons = 0;
@@ -1495,7 +1459,7 @@ namespace TPRandomizer
                 CheckFunctions.arbitersRequirementChecks,
                 CheckFunctions.lakebedRequirementChecks,
                 CheckFunctions.minesRequirementChecks,
-                CheckFunctions.forestRequirementChecks
+                CheckFunctions.forestRequirementChecks,
             };
 
             // Create the dungeon entries
@@ -1506,8 +1470,11 @@ namespace TPRandomizer
             requiredDungeons snowpeakRuins = new("Snowpeak Ruins Dungeon Reward", false, null);
             requiredDungeons templeOfTime = new("Temple of Time Dungeon Reward", false, null);
             requiredDungeons cityInTheSky = new("City in The Sky Dungeon Reward", false, null);
-            requiredDungeons palaceOfTwilight =
-                new("Palace of Twilight Zant Heart Container", false, null);
+            requiredDungeons palaceOfTwilight = new(
+                "Palace of Twilight Zant Heart Container",
+                false,
+                null
+            );
 
             requiredDungeons[] listOfRequiredDungeons = new requiredDungeons[]
             {
@@ -1569,8 +1536,11 @@ namespace TPRandomizer
             }
             else if (Randomizer.SSettings.castleRequirements == CastleRequirements.Vanilla)
             {
-                // If Palace is required then Arbiters is automatically required.
-                listOfRequiredDungeons[arbiters].isRequired = true;
+                // If Palace is required and the player doesn't have the mirror chamber portal, then Arbiters is automatically required.
+                if (!Randomizer.SSettings.startingItems.Contains(Item.Mirror_Chamber_Portal))
+                {
+                    listOfRequiredDungeons[arbiters].isRequired = true;
+                }
                 listOfRequiredDungeons[palace].isRequired = true;
                 if (Randomizer.SSettings.palaceRequirements == PalaceRequirements.Fused_Shadows)
                 {
@@ -1629,8 +1599,11 @@ namespace TPRandomizer
 
             if (listOfRequiredDungeons[palace].isRequired)
             {
-                // If Palace is required then Arbiters is automatically required.
-                listOfRequiredDungeons[arbiters].isRequired = true;
+                // If Palace is required and the player doesn't have the mirror chamber portal, then Arbiters is automatically required.
+                if (!Randomizer.SSettings.startingItems.Contains(Item.Mirror_Chamber_Portal))
+                {
+                    listOfRequiredDungeons[arbiters].isRequired = true;
+                }
                 listOfRequiredDungeons[palace].isRequired = true;
                 if (Randomizer.SSettings.palaceRequirements == PalaceRequirements.Fused_Shadows)
                 {
@@ -1739,26 +1712,6 @@ namespace TPRandomizer
             }
         }
 
-        private static void SetupGraph()
-        {
-            // We want to be safe and make sure that the room classes are prepped and ready to be linked together. Then we define our starting room.
-            foreach (KeyValuePair<string, Room> roomList in Randomizer.Rooms.RoomDict.ToList())
-            {
-                Room currentRoom = roomList.Value;
-                currentRoom.Visited = false;
-                Randomizer.Rooms.RoomDict[currentRoom.RoomName] = currentRoom;
-            }
-
-            // This line is just filler until we have a random starting room
-            Room startingRoom = Randomizer.Rooms.RoomDict["Outside Links House"];
-
-            Entrance rootExit = new();
-            rootExit.ConnectedArea = startingRoom.RoomName;
-            rootExit.Requirements = "(true)";
-
-            Randomizer.Rooms.RoomDict["Root"].Exits.Add(rootExit);
-        }
-
         private static void DeserializeChecks(SharedSettings SSettings)
         {
             string[] files;
@@ -1854,6 +1807,7 @@ namespace TPRandomizer
                 case GameRegion.WII_10_USA:
                 case GameRegion.WII_10_EU:
                 case GameRegion.WII_10_JP:
+                case GameRegion.WII_12_USA:
                 {
                     files = System.IO.Directory.GetFiles(
                         Global.CombineRootPath("./Assets/CheckMetadata/Wii1.0/"),
@@ -1927,9 +1881,9 @@ namespace TPRandomizer
                                 "(" + currentRoom.Exits[i].GlitchedRequirements + ")";
                         }
                         currentRoom.Exits[i].ParentArea = currentRoom.RoomName;
-                        currentRoom.Exits[i].OriginalConnectedArea = currentRoom.Exits[
-                            i
-                        ].ConnectedArea;
+                        currentRoom.Exits[i].OriginalConnectedArea = currentRoom
+                            .Exits[i]
+                            .ConnectedArea;
                     }
 
                     Randomizer.Rooms.RoomDict[room.RoomName] = currentRoom;
@@ -2012,7 +1966,7 @@ namespace TPRandomizer
                 DeserializeRooms(SSettings);
             }
 
-            foreach (KeyValuePair<int, byte> kvp in seedGenResults.itemPlacements)
+            foreach (KeyValuePair<int, int> kvp in seedGenResults.itemPlacements)
             {
                 // key is checkId, value is itemId
                 string checkName = CheckIdClass.GetCheckName(kvp.Key);
@@ -2104,6 +2058,7 @@ namespace TPRandomizer
                             && (currentItem == Item.Progressive_Fused_Shadow)
                         )
                         {
+                            numAttemptsRemaining--;
                             continue;
                         }
 
@@ -2113,6 +2068,7 @@ namespace TPRandomizer
                             && (currentItem == Item.Progressive_Mirror_Shard)
                         )
                         {
+                            numAttemptsRemaining--;
                             continue;
                         }
                     }
@@ -2149,6 +2105,99 @@ namespace TPRandomizer
                     Randomizer.Items.heldItems.Remove(currentItem);
                 }
             }
+        }
+
+        private static List<Room> GeneratePortalRooms()
+        {
+            List<Room> portalRooms = new();
+            // With sewers no longer a thing, the player starts with Ordon Portal (until we find a way to randomize it)
+            if (LogicFunctions.CanWarp())
+            {
+                if (LogicFunctions.CanUnlockOrdonaMap())
+                {
+                    portalRooms.Add(Randomizer.Rooms.RoomDict["Ordon Spring"]);
+                }
+
+                if (LogicFunctions.CanUnlockFaronMap())
+                {
+                    if (LogicFunctions.CanUse(Item.South_Faron_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["South Faron Woods"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.North_Faron_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["North Faron Woods"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Sacred_Grove_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Sacred Grove Lower"]);
+                    }
+                }
+
+                if (LogicFunctions.CanUnlockEldinMap())
+                {
+                    if (LogicFunctions.CanUse(Item.Kakariko_Village_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Lower Kakariko Village"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Kakariko_Gorge_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Kakariko Gorge"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Death_Mountain_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Death Mountain Volcano"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Bridge_of_Eldin_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Eldin Field"]);
+                    }
+                }
+
+                if (LogicFunctions.CanUnlockLanayruMap())
+                {
+                    if (LogicFunctions.CanUse(Item.Lake_Hylia_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Lake Hylia"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Castle_Town_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Outside Castle Town West"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Zoras_Domain_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Upper_Zoras_River_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Upper Zoras River"]);
+                    }
+                }
+
+                if (LogicFunctions.CanUnlockSnowpeakMap())
+                {
+                    if (LogicFunctions.CanUse(Item.Snowpeak_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"]);
+                    }
+                }
+
+                if (LogicFunctions.CanUnlockGerudoMap())
+                {
+                    if (LogicFunctions.CanUse(Item.Gerudo_Desert_Portal))
+                    {
+                        portalRooms.Add(
+                            Randomizer.Rooms.RoomDict["Gerudo Desert Cave of Ordeals Plateau"]
+                        );
+                    }
+
+                    if (LogicFunctions.CanUse(Item.Mirror_Chamber_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Mirror Chamber Upper"]);
+                    }
+                }
+            }
+            return portalRooms;
         }
     }
 

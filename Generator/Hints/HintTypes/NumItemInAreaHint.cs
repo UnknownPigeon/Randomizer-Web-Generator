@@ -43,7 +43,7 @@ namespace TPRandomizer.Hints
         public static NumItemInAreaHint decode(
             HintEncodingBitLengths bitLengths,
             BitsProcessor processor,
-            Dictionary<int, byte> itemPlacements
+            Dictionary<int, int> itemPlacements
         )
         {
             int count = processor.NextVlq16();

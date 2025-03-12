@@ -228,6 +228,8 @@ namespace TPRandomizer.Hints
                     new[]
                     {
                         "Coro Bottle",
+                        "Coro Lantern",
+                        "Coro Gate Key",
                         "Faron Mist Cave Lantern Chest",
                         "Faron Mist Cave Open Chest",
                         "Faron Mist North Chest",
@@ -277,7 +279,8 @@ namespace TPRandomizer.Hints
                         "Kakariko Watchtower Alcove Chest",
                         "Kakariko Watchtower Chest",
                         "Renados Letter",
-                        "Talo Sharpshooting"
+                        "Talo Sharpshooting",
+                        "Kakariko Village Bell Rupee"
                     }
                 },
                 {
@@ -393,7 +396,11 @@ namespace TPRandomizer.Hints
                         "North Castle Town Golden Wolf",
                         "STAR Prize 1",
                         "STAR Prize 2",
-                        "Telma Invoice"
+                        "Telma Invoice",
+                        "Castle Town Goron Shop Hylian Shield",
+                        "Castle Town Goron Shop Red Potion",
+                        "Castle Town Goron Shop Lantern Oil",
+                        "Castle Town Goron Shop Arrow Refill"
                     }
                 },
                 {
@@ -810,9 +817,9 @@ namespace TPRandomizer.Hints
                         "Palace of Twilight Central Outdoor Chest",
                         "Palace of Twilight Central Tower Chest",
                         "Palace of Twilight Collect Both Sols",
-                        "Palace of Twilight East Wing First Room East Alcove",
+                        "Palace of Twilight East Wing First Room East Alcove Chest",
                         "Palace of Twilight East Wing First Room North Small Chest",
-                        "Palace of Twilight East Wing First Room West Alcove",
+                        "Palace of Twilight East Wing First Room West Alcove Chest",
                         "Palace of Twilight East Wing First Room Zant Head Chest",
                         "Palace of Twilight East Wing Second Room Northeast Chest",
                         "Palace of Twilight East Wing Second Room Northwest Chest",

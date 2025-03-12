@@ -25,7 +25,7 @@ namespace TPRandomizer.Hints
         public static BarrenHint decode(
             HintEncodingBitLengths bitLengths,
             BitsProcessor processor,
-            Dictionary<int, byte> itemPlacements
+            Dictionary<int, int> itemPlacements
         )
         {
             AreaId areaId = AreaId.decode(bitLengths, processor);

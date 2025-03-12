@@ -1,6 +1,6 @@
 {
-  "requirements": "canCompletePrologue",
-  "glitchedRequirements": "canCompletePrologue",
-  "checkCategory": [ "Overworld", "Npc", "Faron Woods" ],
+  "requirements": "true",
+  "glitchedRequirements": "true",
+  "checkCategory": [ "Overworld", "Shop", "Faron Woods" ],
   "itemId": "Coro_Bottle"
 }

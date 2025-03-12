@@ -3,6 +3,14 @@ namespace TPRandomizer.Assets
     using System.Collections.Generic;
     using TPRandomizer.SSettings.Enums;
 
+    // Note on how the region flags are defined: The first number in the pair is
+    // the region node index (ex: Ordon is node 0, Hyrule Castle is node 0x18).
+    // The second number defines the offset and mask. The lower 3 bits (val % 8)
+    // says how much to right-shift a mask of 0x80 (shift 7 would give 0x01).
+    // The upper 5 bits say the offset within the region node. For example, 0x5A
+    // is 0b01011010 which is 01011 and 010. This means the offset is 0b01011
+    // (or 0xB) and the mask is 0x80 >> 2 (or 0x20).
+
     /// <summary>
     /// summary text.
     /// </summary>
@@ -15,11 +23,7 @@ namespace TPRandomizer.Assets
         {
             { 0x2, 0x46 }, // Midna jump 1 mist area.
             { 0x2, 0x47 }, // Midna jump 1 mist area.
-            { 0x2, 0x5D }, // North Faron Portal.
             { 0x2, 0x98 }, // South Faron Portal.
-            { 0x0, 0x6B }, // Ordon Spring Portal.
-            { 0x0, 0x44 }, // Midna Text after Ordon Shield (Spawns sword)
-            { 0x0, 0x46 }, // Midna Text after Ordon Sword
         };
 
         /// <summary>
@@ -30,9 +34,6 @@ namespace TPRandomizer.Assets
             { 0x3, 0x14 }, // Collected Tear From Bomb Storage
             { 0x3, 0x1A }, // Collected Tear From Bomb Storage
             { 0x3, 0x1B }, // Collected Tear From Bomb Storage
-            { 0x3, 0x40 }, // Kakariko Village Portal
-            { 0x3, 0x4A }, // Death Mountain Portal
-            { 0x6, 0x4A }, // Give Gorge Portal
             { 0x3, 0x67 }, // Ant house entered from top
             { 0x3, 0x64 }, // Ant house box pushed
             { 0x3, 0x5E }, // Defeated Ant house Tears of Light bug
@@ -46,15 +47,12 @@ namespace TPRandomizer.Assets
         public static readonly byte[,] BaseRandomizerRegionFlags = new byte[,]
         {
             { 0x0, 0x57 }, // Spider on Link's Ladder killed.
-            { 0x16, 0x47 }, // West Bridge in CiTS Broken.
-            { 0x16, 0x4D }, // West Bridge in CiTS Extended.
-            { 0x16, 0x5D }, // West Bridge in CiTS Spinner Slot Closed.
-            { 0x16, 0x6D }, // West Bridge in CiTS Extended.
-            { 0x16, 0x6B }, // West Bridge in CiTS Destroyed CS Trigger.
             { 0x2, 0x63 }, // Trill lets you shop at his store.
             { 0x3, 0xB9 }, // Barnes sells water bombs.
             { 0x3, 0xB3 }, // Colin Rescued CS (Malo Mart is Open).
             { 0x2, 0x60 }, // Got Lantern Back from Monkey
+            { 0x2, 0x61 }, // Saw bugs move in Coro's house
+            { 0x2, 0x7D }, // Talked to Midna about Coro spirit
             { 0x2, 0x4E }, // Saved Monkey from Puppets.
             { 0x2, 0x62 }, // Midna text before jumping to lost woods
             { 0x6, 0x4C }, // Bridge of Eldin Warped back CS.
@@ -84,6 +82,17 @@ namespace TPRandomizer.Assets
             { 0x3, 0x99 }, // Remove wooden shield from Kak Malo Mart counter.
             { 0x0, 0x63 }, // Spawn the Chest in Link's House
             { 0x9, 0xBC }, // Spawn Gengle by default as his actor interferes with the poe soul
+            { 0x7, 0x58 }, // Sacred Grove MS Pedestal Map
+            { 0x0, 0x6B }, // Ordon Spring Portal.
+            { 0x0, 0x44 }, // Midna Text after Ordon Shield (Spawns sword)
+            { 0x0, 0x46 }, // Midna Text after Ordon Sword
+            { 0x0, 0x70 }, // Midna Text after sewers
+            { 0x0, 0x68 }, // Approach faron wall with Midna
+            { 0x0, 0xA0 }, // Midna allows player to approach Faron Twilight Wall
+            { 0x0, 0xBA }, // Explored area outside Link's house as wolf
+            { 0x0, 0x61 }, // Defeated first bulblin outside link's house
+            { 0x0, 0x62 }, // Defeated second bulblin outside link's house
+            { 0x0, 0x60 }, // Defeated Hugo
         };
 
         /// <summary>
@@ -92,18 +101,7 @@ namespace TPRandomizer.Assets
         public static readonly byte[,] LanayruTwilightRegionFlags = new byte[,]
         {
             { 0x6, 0x58 }, // Lake Hylia has water on Hyrule Field Map
-            { 0x6, 0x5C }, // Castle Town Portal
             { 0x4, 0x7F }, // Lake Hylia has water on Lake Hylia Map.
-            { 0x4, 0x55 }, // Lake Hylia Portal.
-            { 0x4, 0x5D }, // Zora's Domain Portal.
-        };
-
-        /// <summary>
-        /// summary text.
-        /// </summary>
-        public static readonly byte[,] IntroRegionFlags = new byte[,]
-        {
-            { 0x2, 0x4B }, // Unlock North Faron Woods Gate
         };
 
         public static readonly byte[,] MDHRegionFlags = new byte[,]
@@ -265,7 +263,6 @@ namespace TPRandomizer.Assets
         public static readonly byte[,] SmallKeyRegionFlags = new byte[,]
         {
             { 0x2, 0x53 }, // Coro gate unlocked.
-            { 0x2, 0x6D }, // Got key from Coro.
             { 0x2, 0x4B }, // North Faron Gate Unlocked.
             { 0x3, 0xBA }, // Followed Rutella to graveyard.
             { 0x3, 0xB6 }, // Started Rutella escort.
@@ -374,25 +371,18 @@ namespace TPRandomizer.Assets
             { 0x7, 0x49 }, // Stairs to Temple of time created.
             { 0x7, 0x4A }, // Struck master sword pedestal with sword.
             { 0x7, 0x4B }, // Stairs and window appear and work properly (Past).
-            { 0x7, 0xB6 }, // Skull Kid - Human defeated.
-            { 0x7, 0xB7 }, // Lost Woods Turns to day after defeating Skull Kid - Human
-            { 0x7, 0xBB }, // Sacred Grove Portal
-            { 0x7, 0x5B }, // Block pushed down
-            { 0x7, 0x42 }, // Midna text after block pushed down
-            { 0x7, 0x43 }, // cs after pushing block human
+            { 0x7, 0xBC }, // Statue in present is gone.
         };
         public static readonly byte[,] OpenGroveRegionFlags = new byte[,]
         {
             { 0x7, 0xB6 }, // Skull Kid - Human defeated.
             { 0x7, 0xB7 }, // Lost Woods Turns to day after defeating Skull Kid - Human
-            { 0x7, 0xBB }, // Sacred Grove Portal
             { 0x7, 0x5B }, // Block pushed down
             { 0x7, 0x42 }, // Midna text after block pushed down
             { 0x7, 0x43 }, // cs after pushing block human
         };
         public static readonly byte[,] OpenSnowpeakRegionFlags = new byte[,]
         {
-            { 0x8, 0x4A }, // Snowpeak top portal
             { 0x8, 0x49 }, // Snowpeak summit cs.
             { 0x8, 0x45 }, // Snowpeak Summit intro CS.
         };
@@ -413,13 +403,96 @@ namespace TPRandomizer.Assets
             { 0x15, 0xBF }, // statue placed in slot in room 1
         };
 
+        public static readonly byte[,] HcShortcutFlags = new byte[,]
+        {
+            { 0x18, 0x6F }, // watched double Dinalfos cs 1
+            { 0x18, 0x70 }, // watched double Dinalfos cs 2
+            { 0x18, 0x85 }, // watched focus on lowered chandelier cs
+            { 0x18, 0x9D }, // lower the main hall chandelier
+            { 0x18, 0xAF }, // defeated double Dinalfos (opens gates both sides)
+        };
+
+        public static readonly byte[,] OpenMapRegionFlags = new byte[,]
+        {
+            // Lake Long Cave Flags
+            { 0x1A, 0x40 },
+            { 0x1A, 0x41 },
+            { 0x1A, 0x42 },
+            { 0x1A, 0x43 },
+            { 0x1A, 0x44 },
+            { 0x1A, 0x45 },
+            { 0x1A, 0x46 },
+            { 0x1A, 0x47 },
+            { 0x1A, 0x48 },
+            { 0x1A, 0x49 },
+            { 0x1A, 0x4A },
+            { 0x1A, 0x4B },
+            { 0x1A, 0x4C },
+            { 0x1A, 0x4D },
+            { 0x1A, 0x4E },
+            { 0x1A, 0x4F },
+            { 0x1A, 0x50 },
+            { 0x1A, 0x51 },
+            { 0x1A, 0x52 },
+            { 0x1A, 0x53 },
+            { 0x1A, 0x54 },
+            { 0x1A, 0x55 },
+            { 0x1A, 0x56 },
+            { 0x1A, 0x57 },
+            { 0x1A, 0x58 },
+            { 0x1A, 0x59 },
+            { 0x1A, 0x5A },
+            { 0x1A, 0x5B },
+            { 0x1A, 0x5C },
+            { 0x1A, 0x5D },
+            { 0x1A, 0x5E },
+            { 0x1A, 0x75 },
+            { 0x1A, 0x76 },
+            { 0x1A, 0x77 },
+            { 0x1A, 0x78 },
+            { 0x1A, 0x79 },
+            { 0x1A, 0x7A },
+            { 0x1A, 0x7B },
+            { 0x1A, 0x7C },
+            { 0x1A, 0x7D },
+            { 0x1A, 0x7E },
+            { 0x1A, 0x7F },
+            // Eldin Cave Map Flags
+            { 0x19, 0xA1 },
+            { 0x19, 0xA2 },
+            { 0x19, 0xA3 },
+            { 0x19, 0xA4 },
+            { 0x19, 0xA5 },
+            { 0x19, 0xA6 },
+            { 0x19, 0xA7 },
+            { 0x19, 0xA8 },
+            { 0x19, 0xA9 },
+            { 0x19, 0xAA },
+            { 0x19, 0xAB },
+            { 0x19, 0xAC },
+            { 0x19, 0xAD },
+            { 0x19, 0xAE },
+            { 0x19, 0xAF },
+            { 0x19, 0xB0 },
+            { 0x19, 0xB1 },
+            { 0x19, 0xB2 },
+            { 0x19, 0xB3 },
+            { 0x19, 0xB4 },
+            { 0x19, 0xB5 },
+            { 0x19, 0xB6 },
+            { 0x19, 0xB7 },
+            { 0x19, 0xB8 },
+            { 0x19, 0xB9 },
+            { 0x19, 0xBA },
+            { 0x19, 0xBB },
+        };
+
         /// <summary>
         /// summary text.
         /// </summary>
         public static readonly Dictionary<int, byte[,]> RegionFlags =
             new()
             {
-                { 0, IntroRegionFlags },
                 { 1, FaronTwilightRegionFlags },
                 { 2, EldinTwilightRegionFlags },
                 { 3, LanayruTwilightRegionFlags },
@@ -435,6 +508,8 @@ namespace TPRandomizer.Assets
                 { 18, OpenGroveRegionFlags },
                 { 19, OpenDMTRegionFlags },
                 { 20, OpenDotRegionFlags },
+                { 21, OpenMapRegionFlags },
+                { 22, HcShortcutFlags },
             };
 
         /// <summary>
@@ -442,12 +517,14 @@ namespace TPRandomizer.Assets
         /// </summary>
         public static readonly byte[,] BaseRandomizerEventFlags = new byte[,]
         {
-            { 0x3, 0x2 }, // Gave wooden sword to Talo.
-            { 0x6, 0x9 }, // Tame Epona, KB1 trigger activated
+            { 0x3, 0x82 }, // Gave wooden sword to Talo. Talked to squirrel outside link's house
+            { 0x5, 0x7E }, // Finished Sewers, Midna text after entering Faron Twilight, Met Zelda in sewers, Midna cut prison chain, Watched Sewers intro CS, Escaped cell in sewers.
+            { 0x6, 0x29 }, // Tame Epona, KB1 trigger activated, Warped Kakariko Bridge Back.
+            { 0xC, 0x10 }, // Midna accompanies Wolf
             { 0x12, 0x8 }, // Can use Sera's Shop.
             { 0x14, 0x10 }, // Put Bo outside, ready to wrestle
             { 0xA, 0x2F }, // Bridge of Eldin Stolen, KB1 defeated, KB1 started
-            { 0xF, 0x9 }, // Bridge of Eldin Warped Back, coro gave lantern
+            { 0xF, 0x8 }, // Bridge of Eldin Warped Back
             { 0x40, 0x88 }, // Saved monkey from puppets, Visited Gerudo Desert for the first time.
             { 0x41, 0x18 }, // Talked to Fado after Faron and Eldin Twilight
             { 0x7, 0xA0 }, // Watched Colin CS after KB1, talked to Bo before sumo
@@ -456,7 +533,6 @@ namespace TPRandomizer.Assets
             { 0x2C, 0x10 }, // Raised the mirror in the Mirror Chamber
             { 0x1B, 0x38 }, // Skip Monkey Escort
             { 0x1C, 0x20 }, // Talked to Bo after opening boots chest.
-            { 0x6, 0x20 }, // Warped Kakariko Bridge Back.
             { 0x5F, 0x20 }, // Shad leaves sanctuary.
             { 0xF7, 0x1 }, // Add 256 Rupees to Charlo.
             { 0xF8, 0xF4 }, // Add 244 Rupees to Charlo.
@@ -471,6 +547,8 @@ namespace TPRandomizer.Assets
             { 0x39, 0x2 }, // Released first caught fish in Ordon Day 2
             { 0x10, 0x2 }, // Talked to Jaggle after climbing vines.
             { 0xB, 0x20 }, // Talked to Yeta in Snowpeak for the first time
+            { 0x43, 0x8 }, // Senses unlocked
+            { 0x46, 0x10 }, // Rode Epona back to Link's House
         };
 
         /// <summary>
@@ -478,10 +556,9 @@ namespace TPRandomizer.Assets
         /// </summary>
         public static readonly byte[,] FaronTwilightEventFlags = new byte[,]
         {
-            { 0x5, 0x7F }, // Midna Charge Unlocked, Finished Sewers, Midna text after entering Faron Twilight, Met Zelda in sewers, Midna cut prison chain, Watched Sewers intro CS, Escaped cell in sewers.
+            { 0x5, 0x1 }, // Midna Charge Unlocked
             { 0x6, 0x10 }, // Cleared Faron Twilight
-            { 0xC, 0x18 }, // Midna accompanies Wolf, sword and shield removed from wolf's back.
-            { 0x43, 0x8 }, // Senses unlocked
+            { 0xC, 0x8 }, // Sword and shield removed from wolf's back.
         };
 
         /// <summary>
@@ -513,7 +590,6 @@ namespace TPRandomizer.Assets
             { 0x4A, 0x60 }, // Completed Ordon Day 1 and Finished Sword Training.
             { 0x16, 0x1 }, // Completed Ordon Day 2.
             { 0x15, 0x80 }, // Watched CS for Goats 2 Done.
-            { 0x46, 0x10 }, // Rode Epona back to Link's House
         };
 
         public static readonly byte[,] CutsceneEventFlags = new byte[,]
@@ -566,7 +642,6 @@ namespace TPRandomizer.Assets
             { 0x0, 0x3 }, // Yeto put pumpkin and cheese in soup.
             { 0x14, 0x60 }, // Snowpeak Ruins North and West doors unlocked.
             { 0x1, 0x20 }, // Told Yeta about cheese
-            { 0x1A, 0x10 }, // Talked to Coro after Faron Twilight
         };
 
         public static readonly byte[,] OpenCastleEventFlags = new byte[,]
@@ -640,11 +715,13 @@ namespace TPRandomizer.Assets
             /* 13 */RandomizerSettings.skipLakebedEntrance,
             /* 14 */RandomizerSettings.skipArbitersEntrance,
             /* 15 */RandomizerSettings.skipSnowpeakEntrance,
-            /* 16 */RandomizerSettings.totEntrance == TotEntrance.Open,
+            /* 16 */RandomizerSettings.totEntrance == TotEntrance.None,
             /* 17 */RandomizerSettings.skipCityEntrance,
-            /* 18 */RandomizerSettings.totEntrance == TotEntrance.OpenGrove,
+            /* 18 */RandomizerSettings.skipGroveEntrance,
             /* 19 */RandomizerSettings.goronMinesEntrance == GoronMinesEntrance.Open,
             /* 20 */RandomizerSettings.openDot,
+            /* 21 */RandomizerSettings.openMap,
+            /* 22 */RandomizerSettings.hcShortcut,
         };
     }
 }

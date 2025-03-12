@@ -259,6 +259,18 @@
                 />
                 <label for="hiddenSkillsCheckbox"> Hidden Skills </label><br />
               </div>
+              <div
+                style="width: 80%"
+                data-tooltip-text="If checked, certain freestanding rupees are randomized.&#0010;"
+              >
+                <input
+                  type="checkbox"
+                  id="rupeeCheckbox"
+                  name="Freestanding Rupees"
+                  value=""
+                />
+                <label for="rupeeCheckbox"> Freestanding Rupees </label><br />
+              </div>
               <div class="selectGroup">
                 <label for="poeSettingsFieldset">Poe Souls:</label><br />
                 <select
@@ -520,7 +532,7 @@
               </div>
               <div
                 style="width: 90%"
-                data-tooltip-text="If enabled, map regions affected by certain settings/sequence skips are unlocked and can be warped to once the Shadow Crystal has been obtained. (Example: The Lanayru Region of the map is unlocked if Lanayru Twilight is skipped.)&#0010;"
+                data-tooltip-text="If enabled, map regions affected by certain settings/sequence skips are unlocked and can be warped to once the Shadow Crystal has been obtained and the respective portals have been unlocked. (Example: The Lanayru Region of the map is unlocked if Lanayru Twilight is skipped.)&#0010;"
               >
                 <input
                   type="checkbox"
@@ -555,6 +567,20 @@
                   value=""
                 />
                 <label for="openDotCheckbox"> Open Door of Time </label><br />
+              </div>
+              <div
+                style="width: 90%"
+                data-tooltip-text="If enabled, the shortcut chandelier in the Hyrule Castle main hall will be lowered, and the double Dinalfos room will be cleared.&#0010;&#0010;This allows for you to continue from the main hall to the southern balcony more quickly and with fewer item requirements (ex: no Gale Boomerang)."
+              >
+                <input
+                  type="checkbox"
+                  id="hcShortcutCheckbox"
+                  name="Lower Hyrule Castle Chandelier"
+                  value=""
+                />
+                <label for="hcShortcutCheckbox"
+                  >Lower Hyrule Castle Chandelier</label
+                ><br />
               </div>
             </fieldset>
           </div>
@@ -613,6 +639,19 @@
                 />
                 <label for="bonksDoDamageCheckbox">Bonks Do Damage</label><br />
               </div>
+              <div
+                data-tooltip-text="If checked, when starting a new save file, instead of starting in Ordon, the starting spawn point will be randomized.&#0010;"
+              >
+                <input
+                  type="checkbox"
+                  id="randomizeStartingPointCheckbox"
+                  name="Randomize Starting Point Checkbox"
+                  value=""
+                />
+                <label for="randomizeStartingPointCheckbox"
+                  >Randomize Starting Location</label
+                ><br />
+              </div>
               <div class="selectGroup" style="margin-top: 8px">
                 <label for="trapItemFieldset">Trap Item Frequency</label><br />
                 <select
@@ -646,7 +685,7 @@
                 <select
                   name="Starting Time of Day"
                   id="todFieldset"
-                  data-tooltip-text="If the prologue is skipped, sets the starting time of day of a new save file to the specified value."
+                  data-tooltip-text="Sets the starting time of day of a new save file to the specified value."
                 >
                   <option value="0">Morning</option>
                   <option value="1" selected="selected">Noon</option>
@@ -719,6 +758,20 @@
                 ><br />
               </div>
               <div
+                data-tooltip-text="If checked, Skull Kid will not need to be defeated to access Sacred Grove.&#0010;"
+                data-tooltip-position="left"
+              >
+                <input
+                  type="checkbox"
+                  id="groveEntranceCheckbox"
+                  name="Grove Checkbox"
+                  value=""
+                />
+                <label for="groveEntranceCheckbox">
+                  Sacred Grove Does Not Require Skull Kid </label
+                ><br />
+              </div>
+              <div
                 data-tooltip-text="If checked, the Sky Cannon is automatically warped to Lake Hylia once Lanayru Twilight is complete and the Sky Characters are removed from the item pool.&#0010;"
                 data-tooltip-position="left"
               >
@@ -751,15 +804,18 @@
               <div
                 class="selectGroup"
                 style="margin-top: 8px"
-                data-tooltip-text="'Closed': The player must defeat Skull Kid. Warping to the Sacred Grove, accessing the past area, and entering the Temple of Time dungeon are all locked behind the Master Sword.&#0010;&#0010;'Open Grove': The player will not need to defeat Skull Kid, the portal to the Sacred Grove is opened, and the past area is accessible. The Master Sword is still required to enter the dungeon.&#0010;&#0010;'Open': All changes of 'Open Grove' are applied. Additionally, the player will not need the Master Sword to access the Temple of Time dungeon."
+                data-tooltip-text="Sets the minimum progressive sword level that is required to strike the pedestal in Sacred Grove and the Temple of Time. This means that if set to Ordon Sword, the pedestal can be struck with the Ordon, Master, or Light Sword, but not the Wooden Sword. If set to 'none', the player does not need to strike the sword into the pedestal.&#0010;"
                 data-tooltip-position="left"
               >
-                <label for="totEntranceFieldset">Temple of Time Entrance</label
+                <label for="totEntranceFieldset"
+                  >Temple of Time Sword Requirement</label
                 ><br />
                 <select name="Temple of Time Entrance" id="totEntranceFieldset">
-                  <option value="0">Closed</option>
-                  <option value="1">Open Grove</option>
-                  <option value="2">Open</option>
+                  <option value="0">None</option>
+                  <option value="1">Wooden Sword</option>
+                  <option value="2">Ordon Sword</option>
+                  <option value="3" selected="selected">Master Sword</option>
+                  <option value="4">Light Sword</option>
                 </select>
               </div>
             </fieldset>
@@ -968,7 +1024,7 @@
       <div class="blackbg">
         <div class="footerText" style="text-align: center">
           Logo and background image are property of Nintendo. Copyright ©
-          Nintendo, 1998-2024.<br />
+          Nintendo, 1998-2025.<br />
           Based off the original website design by
           <a
             target="_blank"

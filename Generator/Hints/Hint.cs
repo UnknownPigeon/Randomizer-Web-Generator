@@ -59,7 +59,7 @@ namespace TPRandomizer.Hints
         public static Hint decodeHint(
             HintEncodingBitLengths bitLengths,
             BitsProcessor processor,
-            Dictionary<int, byte> itemPlacements
+            Dictionary<int, int> itemPlacements
         )
         {
             HintType type = (HintType)processor.NextInt(bitLengths.hintType);

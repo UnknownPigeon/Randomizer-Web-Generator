@@ -44,7 +44,7 @@ namespace TPRandomizer.Hints
             bool vague,
             bool useDefiniteArticle = false,
             bool isLogicalItem = false,
-            Dictionary<int, byte> itemPlacements = null,
+            Dictionary<int, int> itemPlacements = null,
             HintGenData genData = null
         )
         {
@@ -59,7 +59,7 @@ namespace TPRandomizer.Hints
             CalcDerived(genData, itemPlacements);
         }
 
-        private void CalcDerived(HintGenData genData, Dictionary<int, byte> itemPlacements)
+        private void CalcDerived(HintGenData genData, Dictionary<int, int> itemPlacements)
         {
             if (itemPlacements != null)
             {
@@ -106,7 +106,7 @@ namespace TPRandomizer.Hints
         public static ItemHint decode(
             HintEncodingBitLengths bitLengths,
             BitsProcessor processor,
-            Dictionary<int, byte> itemPlacements
+            Dictionary<int, int> itemPlacements
         )
         {
             AreaId areaId = AreaId.decode(bitLengths, processor);

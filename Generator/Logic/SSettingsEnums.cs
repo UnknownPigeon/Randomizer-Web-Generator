@@ -25,13 +25,13 @@ namespace TPRandomizer.SSettings.Enums
         Open = 0,
         Fused_Shadows = 1,
         Mirror_Shards = 2,
-        Vanilla = 3
+        Vanilla = 3,
     }
 
     public enum FaronWoodsLogic
     {
         Open = 0,
-        Closed = 1
+        Closed = 1,
     }
 
     public enum SmallKeySettings
@@ -72,9 +72,11 @@ namespace TPRandomizer.SSettings.Enums
 
     public enum TotEntrance
     {
-        Closed = 0,
-        OpenGrove = 1,
-        Open = 2,
+        None = 0,
+        Wooden_Sword = 1,
+        Ordon_Sword = 2,
+        Master_Sword = 3,
+        Light_Sword = 4,
     }
 
     public enum GoronMinesEntrance
@@ -96,7 +98,7 @@ namespace TPRandomizer.SSettings.Enums
         Vanilla = 0,
         Overworld = 1,
         Dungeons = 2,
-        All = 3
+        All = 3,
     }
 
     public enum DamageMagnification

@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
+import semver from 'semver';
 import searchUpFileTree from './util/searchUpFileTree';
 
 if (process.env.NODE_ENV === 'production') {
@@ -215,6 +216,7 @@ app.post('/api/final', function (req: express.Request, res: express.Response) {
     ['generate_final_output2', id, fileCreationSettings],
     (error, buffer) => {
       if (error) {
+        console.error(buffer?.toString('utf-8'));
         res.status(500).send({ error });
         return;
       }
@@ -286,7 +288,9 @@ app.get('/', (req: express.Request, res: express.Response) => {
         `<input id="userJwtInput" type="hidden" value="${req.newUserJwt}">`
       );
 
-      const excludedChecksList = JSON.parse(callGenerator('print_check_ids'));
+      const excludedChecksList = JSON.parse(
+        callGenerator('print_check_ids_for_ui')
+      );
       const arr = Object.keys(excludedChecksList).map((key) => {
         return `<li><label><input type='checkbox' data-checkId='${excludedChecksList[key]}'>${key}</label></li>`;
       });
@@ -376,7 +380,15 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [0x8d, 'Hyrule Castle Small Key'],
         [0x8d, 'Hyrule Castle Small Key'],
         [0x98, 'Hyrule Castle Big Key'],
+        [0xEE, 'North Faron Woods Gate Key'],
+        [0xFE, 'Faron Woods Coro Key'],
         [0xe0, 'Poe Soul', 60],
+        [0x3b, 'Gerudo Desert Portal'],
+        [0xae, 'Mirror Chamber Portal'],
+        [0xaf, 'Snowpeak Portal'],
+        [0xbf, 'Sacred Grove Portal'],
+        [0xe8, 'Bridge of Eldin Portal'],
+        [0xf7, 'Upper Zoras River Portal'],
       ];
 
       const startingItemsEls = startingItems.map((item) => {
@@ -427,6 +439,7 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [0x8c, 'Palace_of_Twilight_Small_Key'],
         [0x8d, 'Hyrule_Castle_Small_Key'],
         [0xee, 'North_Faron_Woods_Gate_Key'],
+        [0xfe, 'Faron_Woods_Coro_Key'],
         [0xf3, 'Gate_Keys'],
         [0x8e, 'Gerudo_Desert_Bulblin_Camp_Key'],
         // Big Keys
@@ -585,8 +598,6 @@ const abc: HtmlCharMap = {
 };
 
 function escapeHtml(str: string) {
-  console.log(77);
-
   return str.replace(/[&<>'"]/g, (tag: string) => {
     return abc[tag] || '';
   });
@@ -602,72 +613,119 @@ app.get('/s/:id', (req: express.Request, res: express.Response) => {
       console.log(err);
       res.status(500).send({ error: 'Internal server error.' });
     } else {
-      let msg = data.toString();
+      try {
+        let msg = data.toString();
 
-      // const { id } = <{ id: string }>req.query;
-      // if (!id || typeof id )
+        const { id } = req.params;
 
-      const { id } = req.params;
-
-      if (!id) {
-        res.status(400).send({ error: 'Malformed request.' });
-        return;
-      }
-
-      msg = msg.replace(
-        '<!-- USER_ID -->',
-        `<input id="userJwtInput" type="hidden" value="${req.newUserJwt}">`
-      );
-
-      // const filePath = path.join(__dirname, `seeds/${id}/input.json`);
-      const filePath = resolveOutputPath(`seeds/${id}/input.json`);
-
-      if (fs.existsSync(filePath)) {
-        // Completely done generating
-        const json = JSON.parse(
-          fs.readFileSync(filePath, { encoding: 'utf8' })
-        );
-
-        json.output.seedHash = undefined;
-        json.output.itemPlacement = undefined;
-        // Stringifying will get rid of these undefined values. We don't want to
-        // expose certain values, especially if it is a race seed.
-        const fileContents = escapeHtml(JSON.stringify(json));
-
-        msg = msg.replace(
-          '<!-- INPUT_JSON_DATA -->',
-          `<input id='inputJsonData' type='hidden' value='${fileContents}'>`
-        );
-        msg = msg.replace('<!-- REQUESTER_HASH -->', '');
-
-        const spoilerData = escapeHtml(
-          callGenerator('print_seed_gen_results', id)
-        );
-
-        msg = msg.replace(
-          '<!-- SEED_GEN_RESULTS -->',
-          `<input id='spoilerData' type='hidden' value='${spoilerData}'>`
-        );
-      } else {
-        const { seedGenStatus } = checkProgress(id);
-        if (seedGenStatus) {
-          // Generation requested but not completed and not 100% forgotten about
-          // by the server.
-          msg = msg.replace('<!-- INPUT_JSON_DATA -->', '');
-          msg = msg.replace(
-            '<!-- REQUESTER_HASH -->',
-            `<input id='requesterHash' type='hidden' value='${seedGenStatus.requesterHash}'>`
-          );
-          msg = msg.replace('<!-- SEED_GEN_RESULTS -->', '');
-        } else {
-          // Have no idea what the client is talking about with that seedId.
-          msg = msg.replace('<!-- INPUT_JSON_DATA -->', '');
-          msg = msg.replace('<!-- REQUESTER_HASH -->', '');
-          msg = msg.replace('<!-- SEED_GEN_RESULTS -->', '');
+        if (!id) {
+          res.status(400).send({ error: 'Malformed request.' });
+          return;
         }
-      }
 
-      res.send(msg);
+        msg = msg.replace(
+          '<!-- USER_ID -->',
+          `<input id="userJwtInput" type="hidden" value="${req.newUserJwt}">`
+        );
+
+        const filePath = resolveOutputPath(`seeds/${id}/input.json`);
+
+        if (fs.existsSync(filePath)) {
+          // Completely done generating
+          const json = JSON.parse(
+            fs.readFileSync(filePath, { encoding: 'utf8' })
+          );
+
+          // Check if unsupported version.
+          try {
+            const imageVersion = semver.parse(process.env.IMAGE_VERSION);
+            if (imageVersion) {
+              const minAllowedVer = semver.parse(
+                `${imageVersion.major}.${imageVersion.minor}.0`
+              );
+              if (minAllowedVer) {
+                if (minAllowedVer.compare(json.meta.imgVer) > 0) {
+                  // Version that seed was generated is lower than
+                  // minAllowedVersion.
+                  msg = msg.replace('<!-- INPUT_JSON_DATA -->', '');
+                  msg = msg.replace('<!-- REQUESTER_HASH -->', '');
+                  msg = msg.replace(
+                    '<!-- SEED_GEN_RESULTS -->',
+                    `<input id='seedErrorMsg' type='hidden' value='Seed "${json.output.name}" was generated on version "${json.meta.imgVer}" which is no longer supported.'>`
+                  );
+                  res.send(msg);
+                  return;
+                }
+              }
+            }
+          } catch (e) {
+            console.error(e);
+            // Skip over error if semver comparison fails for some reason.
+          }
+
+          // Filter json.output to only include the safe values used by the UI.
+          // We don't want to expose certain values such as itemPlacement,
+          // especially if it is a race seed.
+          json.output = {
+            name: json.output.name,
+            wiiName: json.output.wiiName,
+          };
+          const fileContents = escapeHtml(JSON.stringify(json));
+
+          let spoilerData = '';
+          try {
+            spoilerData = escapeHtml(
+              callGenerator('print_seed_gen_results', id)
+            );
+          } catch (e) {
+            // Error occurred while trying to parse seedGenResults in Generator
+            // code. This is likely caused by the seedGenResults being in an old
+            // unsupported format. More likely to see this in a dev branch where
+            // the version check above passes.
+            console.error(e);
+            msg = msg.replace('<!-- INPUT_JSON_DATA -->', '');
+            msg = msg.replace('<!-- REQUESTER_HASH -->', '');
+            msg = msg.replace(
+              '<!-- SEED_GEN_RESULTS -->',
+              `<input id='seedErrorMsg' type='hidden' value='Error occurred while parsing seedGenResults.'>`
+            );
+            res.send(msg);
+            return;
+          }
+
+          msg = msg.replace(
+            '<!-- INPUT_JSON_DATA -->',
+            `<input id='inputJsonData' type='hidden' value='${fileContents}'>`
+          );
+          msg = msg.replace('<!-- REQUESTER_HASH -->', '');
+          msg = msg.replace(
+            '<!-- SEED_GEN_RESULTS -->',
+            `<input id='spoilerData' type='hidden' value='${spoilerData}'>`
+          );
+        } else {
+          const { seedGenStatus } = checkProgress(id);
+          if (seedGenStatus) {
+            // Generation requested but not completed and not 100% forgotten about
+            // by the server.
+            msg = msg.replace('<!-- INPUT_JSON_DATA -->', '');
+            msg = msg.replace(
+              '<!-- REQUESTER_HASH -->',
+              `<input id='requesterHash' type='hidden' value='${seedGenStatus.requesterHash}'>`
+            );
+            msg = msg.replace('<!-- SEED_GEN_RESULTS -->', '');
+          } else {
+            // Have no idea what the client is talking about with that seedId.
+            msg = msg.replace('<!-- INPUT_JSON_DATA -->', '');
+            msg = msg.replace('<!-- REQUESTER_HASH -->', '');
+            msg = msg.replace('<!-- SEED_GEN_RESULTS -->', '');
+          }
+        }
+
+        res.send(msg);
+      } catch (e) {
+        console.error(e);
+        res.status(500).send({ error: 'Unexpected error occurred.' });
+      }
     }
   });
 });
