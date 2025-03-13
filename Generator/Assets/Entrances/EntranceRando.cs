@@ -357,10 +357,13 @@ namespace TPRandomizer
                     // We don't want to start the player in Hyrule Castle and we don't want to start them in a boss room.
                     if (
                         currentRoom.RoomName != "Hyrule Castle Entrance"
+                        && currentRoom.RoomName != "Castle Town North Inside Barrier"
                         && (exit.State != null)
                         && (
                             (exit.GetEntranceType() != EntranceType.Boss)
-                            || (exit.GetEntranceType() != EntranceType.Boss_Reverse)
+                            && (exit.GetEntranceType() != EntranceType.Boss_Reverse)
+                            && (exit.GetEntranceType() != EntranceType.Dungeon)
+                            && (exit.GetEntranceType() != EntranceType.Dungeon_Reverse)
                         )
                     )
                     {
