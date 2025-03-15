@@ -280,7 +280,7 @@ namespace TPRandomizer.Hints
                         "Kakariko Watchtower Chest",
                         "Renados Letter",
                         "Talo Sharpshooting",
-                        "Kakariko Village Bell Rupee"
+                        "Kakariko Village Bell Rupee",
                     }
                 },
                 {

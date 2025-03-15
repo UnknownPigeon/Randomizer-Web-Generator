@@ -107,10 +107,9 @@ namespace TPRandomizer
             return (
                     Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
                     || (
-                        Randomizer
-                            .Rooms
-                            .RoomDict["Death Mountain Elevator Lower"]
-                            .ReachedByPlaythrough && CanDefeatGoron()
+                        Randomizer.Rooms.RoomDict[
+                            "Death Mountain Elevator Lower"
+                        ].ReachedByPlaythrough && CanDefeatGoron()
                     )
                 ) && HasBottle();
         }
@@ -1632,16 +1631,13 @@ namespace TPRandomizer
             return (
                 CanUse(Item.Filled_Bomb_Bag)
                 && (
-                    Randomizer
-                        .Rooms
-                        .RoomDict["Kakariko Barnes Bomb Shop Lower"]
-                        .ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict[
+                        "Kakariko Barnes Bomb Shop Lower"
+                    ].ReachedByPlaythrough
                     || (
-                        Randomizer
-                            .Rooms
-                            .RoomDict["Eldin Field Water Bomb Fish Grotto"]
-                            .ReachedByPlaythrough
-                        && (getItemCount(Item.Progressive_Fishing_Rod) >= 1)
+                        Randomizer.Rooms.RoomDict[
+                            "Eldin Field Water Bomb Fish Grotto"
+                        ].ReachedByPlaythrough && (getItemCount(Item.Progressive_Fishing_Rod) >= 1)
                     )
                     || Randomizer.Rooms.RoomDict["City in The Sky Entrance"].ReachedByPlaythrough
                 )
@@ -1656,22 +1652,18 @@ namespace TPRandomizer
             return (
                 CanUse(Item.Filled_Bomb_Bag)
                 && (
-                    Randomizer
-                        .Rooms
-                        .RoomDict["Kakariko Barnes Bomb Shop Lower"]
-                        .ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict[
+                        "Kakariko Barnes Bomb Shop Lower"
+                    ].ReachedByPlaythrough
                     || (
-                        Randomizer
-                            .Rooms
-                            .RoomDict["Eldin Field Water Bomb Fish Grotto"]
-                            .ReachedByPlaythrough
-                        && (getItemCount(Item.Progressive_Fishing_Rod) >= 1)
+                        Randomizer.Rooms.RoomDict[
+                            "Eldin Field Water Bomb Fish Grotto"
+                        ].ReachedByPlaythrough && (getItemCount(Item.Progressive_Fishing_Rod) >= 1)
                     )
                     || (
-                        Randomizer
-                            .Rooms
-                            .RoomDict["Kakariko Barnes Bomb Shop Lower"]
-                            .ReachedByPlaythrough
+                        Randomizer.Rooms.RoomDict[
+                            "Kakariko Barnes Bomb Shop Lower"
+                        ].ReachedByPlaythrough
                         && Randomizer.Rooms.RoomDict["Castle Town Malo Mart"].ReachedByPlaythrough
                     )
                 )
@@ -1690,10 +1682,9 @@ namespace TPRandomizer
                     && Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
                 )
                 || (
-                    Randomizer
-                        .Rooms
-                        .RoomDict["Castle Town Goron House Balcony"]
-                        .ReachedByPlaythrough && !Randomizer.SSettings.shuffleShopItems
+                    Randomizer.Rooms.RoomDict[
+                        "Castle Town Goron House Balcony"
+                    ].ReachedByPlaythrough && !Randomizer.SSettings.shuffleShopItems
                 )
             );
         }
@@ -1768,14 +1759,12 @@ namespace TPRandomizer
                 || (
                     canCompletePrologue()
                     && Randomizer.Rooms.RoomDict["South Faron Woods"].ReachedByPlaythrough
-                    && Randomizer
-                        .Rooms
-                        .RoomDict["Faron Woods Coros House Lower"]
-                        .ReachedByPlaythrough
-                    && Randomizer
-                        .Rooms
-                        .RoomDict["Mist Area Near Faron Woods Cave"]
-                        .ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict[
+                        "Faron Woods Coros House Lower"
+                    ].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict[
+                        "Mist Area Near Faron Woods Cave"
+                    ].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Ordon Spring"].ReachedByPlaythrough
                     && (
@@ -1804,14 +1793,12 @@ namespace TPRandomizer
                     && Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Kakariko Graveyard"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
-                    && Randomizer
-                        .Rooms
-                        .RoomDict["Kakariko Barnes Bomb Shop Upper"]
-                        .ReachedByPlaythrough
-                    && Randomizer
-                        .Rooms
-                        .RoomDict["Kakariko Renados Sanctuary Basement"]
-                        .ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict[
+                        "Kakariko Barnes Bomb Shop Upper"
+                    ].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict[
+                        "Kakariko Renados Sanctuary Basement"
+                    ].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Kakariko Elde Inn"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Kakariko Bug House"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Upper Kakariko Village"].ReachedByPlaythrough
