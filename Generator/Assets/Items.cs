@@ -1156,6 +1156,10 @@ namespace TPRandomizer
                     0
                 );
             }
+            if (parseSetting.lessKeyPalace)
+            {
+                updateItemToCount(this.RandomizedDungeonRegionItems, Item.Palace_of_Twilight_Small_Key, 5);
+            }
 
             foreach (Item startingItem in parseSetting.startingItems)
             {

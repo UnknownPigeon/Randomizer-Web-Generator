@@ -104,8 +104,8 @@
         },
         {
             "ConnectedArea": "Palace of Twilight Outside Room",
-            "Requirements": "(Palace_of_Twilight_Small_Key, 5) and (Progressive_Sword, 4)",
-            "GlitchedRequirements": "(Palace_of_Twilight_Small_Key, 5) and (Progressive_Sword, 4)"
+            "Requirements": "((Palace_of_Twilight_Small_Key, 5) or (Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 3)) and (Progressive_Sword, 4)",
+            "GlitchedRequirements": "((Palace_of_Twilight_Small_Key, 5) or (Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 3)) and (Progressive_Sword, 4)"
         }
         ],
         "Checks": 
@@ -125,8 +125,8 @@
         },
         {
             "ConnectedArea": "Palace of Twilight North Tower",
-            "Requirements": "(Palace_of_Twilight_Small_Key, 6)",
-            "GlitchedRequirements": "(Palace_of_Twilight_Small_Key, 6)"
+            "Requirements": "((Palace_of_Twilight_Small_Key, 6) or (Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 4))",
+            "GlitchedRequirements": "((Palace_of_Twilight_Small_Key, 6) or (Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 4))"
         }
         ],
         "Checks": 
@@ -147,8 +147,8 @@
         },
         {
             "ConnectedArea": "Palace of Twilight Boss Room",
-            "Requirements": "CanDefeatZantHead and (Progressive_Sword, 4) and Palace_of_Twilight_Big_Key and CanDefeatShadowBeast and (Progressive_Clawshot, 1) and (Palace_of_Twilight_Small_Key, 7)",
-            "GlitchedRequirements": "CanDefeatZantHead and (Progressive_Sword, 4) and Palace_of_Twilight_Big_Key and CanDefeatShadowBeast and (Progressive_Clawshot, 1) and (Palace_of_Twilight_Small_Key, 7)"
+            "Requirements": "CanDefeatZantHead and (Progressive_Sword, 4) and Palace_of_Twilight_Big_Key and CanDefeatShadowBeast and (Progressive_Clawshot, 1) and ((Palace_of_Twilight_Small_Key, 7) or (Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 5))",
+            "GlitchedRequirements": "CanDefeatZantHead and (Progressive_Sword, 4) and Palace_of_Twilight_Big_Key and CanDefeatShadowBeast and (Progressive_Clawshot, 1) and ((Palace_of_Twilight_Small_Key, 7)"
         }
         ],
         "Checks": 

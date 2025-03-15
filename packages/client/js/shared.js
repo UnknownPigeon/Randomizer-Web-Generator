@@ -447,6 +447,7 @@
       { id: 'rupeeCheckbox' },
       { id: 'skipZantCheckbox' },
       { id: 'hcShortcutCheckbox' },
+      { id: 'lessKeyPalaceCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -927,11 +928,13 @@
       processBasic({ id: 'rupees' });
       processBasic({ id: 'skipZant' });
       processBasic({ id: 'hcShortcut' });
+      processBasic({ id: 'lessKeyPalace' });
     } else {
       res.randomizeStartingPoint = false; // Vanilla
       res.rupees = false; // Vanilla
       res.skipZant = false;
       res.hcShortcut = false;
+      res.lessKeyPalace = false;
     }
 
     res.startingItems = processor.nextEolList(9);
