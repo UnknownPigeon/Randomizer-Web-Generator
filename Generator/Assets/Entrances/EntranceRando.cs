@@ -374,16 +374,14 @@ namespace TPRandomizer
                 foreach (Entrance exit in currentRoom.Exits)
                 {
                     // We don't want to start the player in Hyrule Castle and we don't want to start them in a boss room.
-                    if (exit.State == null)
-                        return;
-
-                    if (excludedRooms.Contains(currentRoom.RoomName))
-                        return;
-
-                    if (excludedEntranceTypes.Contains(exit.GetEntranceType()))
-                        return;
-
-                    spawnList.Add(exit);
+                    if (
+                        exit.State != null
+                        && !excludedRooms.Contains(currentRoom.RoomName)
+                        && !excludedEntranceTypes.Contains(exit.GetEntranceType())
+                    )
+                    {
+                        spawnList.Add(exit);
+                    }
                 }
             }
 
