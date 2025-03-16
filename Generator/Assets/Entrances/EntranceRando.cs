@@ -337,6 +337,25 @@ namespace TPRandomizer
         public EntranceInfo vanillaSpawn = new("Outside Links House", "", 43, 1, "1", "FF", "");
         public List<Entrance> spawnList = new();
 
+        // List of excluded entrance rooms
+        private static readonly HashSet<string> excludedRooms = new HashSet<string>
+        {
+            "Hyrule Castle Entrance",
+            "Castle Town North Inside Barrier",
+            "Eldin Field Grotto Platform",
+            "Eldin Field Stalfos Grotto",
+        };
+
+        // List of excluded entrance types
+        private static readonly HashSet<EntranceType> excludedEntranceTypes =
+            new HashSet<EntranceType>
+            {
+                EntranceType.Boss,
+                EntranceType.Boss_Reverse,
+                EntranceType.Dungeon,
+                EntranceType.Dungeon_Reverse,
+            };
+
         public void RandomizeEntrances(Random rnd)
         {
             EntranceShuffleError err = EntranceShuffleError.NONE;
@@ -355,20 +374,16 @@ namespace TPRandomizer
                 foreach (Entrance exit in currentRoom.Exits)
                 {
                     // We don't want to start the player in Hyrule Castle and we don't want to start them in a boss room.
-                    if (
-                        currentRoom.RoomName != "Hyrule Castle Entrance"
-                        && currentRoom.RoomName != "Castle Town North Inside Barrier"
-                        && (exit.State != null)
-                        && (
-                            (exit.GetEntranceType() != EntranceType.Boss)
-                            && (exit.GetEntranceType() != EntranceType.Boss_Reverse)
-                            && (exit.GetEntranceType() != EntranceType.Dungeon)
-                            && (exit.GetEntranceType() != EntranceType.Dungeon_Reverse)
-                        )
-                    )
-                    {
-                        this.spawnList.Add(exit);
-                    }
+                    if (exit.State == null)
+                        return;
+
+                    if (excludedRooms.Contains(currentRoom.RoomName))
+                        return;
+
+                    if (excludedEntranceTypes.Contains(exit.GetEntranceType()))
+                        return;
+
+                    spawnList.Add(exit);
                 }
             }
 
