@@ -19,6 +19,8 @@ namespace TPRandomizer.Hints
         Desert = 5,
         Peak = 6,
         Dungeon = 7,
+        Required = 8,
+        Optional = 9,
     }
 
     public class ProvinceUtils
@@ -68,11 +70,11 @@ namespace TPRandomizer.Hints
                 },
                 {
                     Province.Desert,
-                    new() { Zone.Bulblin_Camp, Zone.Cave_of_Ordeals, Zone.Gerudo_Desert, }
+                    new() { Zone.Bulblin_Camp, Zone.Cave_of_Ordeals, Zone.Gerudo_Desert }
                 },
                 {
                     Province.Peak,
-                    new() { Zone.Snowpeak_Mountain, }
+                    new() { Zone.Snowpeak_Mountain }
                 },
                 {
                     Province.Dungeon,
@@ -88,7 +90,9 @@ namespace TPRandomizer.Hints
                         Zone.Palace_of_Twilight,
                         Zone.Hyrule_Castle,
                     }
-                }
+                },
+                { Province.Optional, ZoneUtils.GetOptionalDungeonsZoneList() },
+                { Province.Required, ZoneUtils.GetRequiredDungeonsZoneList() },
             };
         private static Dictionary<Zone, Province> zoneToProvince;
 
@@ -160,6 +164,8 @@ namespace TPRandomizer.Hints
                     Province.Desert,
                     Province.Peak,
                     Province.Dungeon,
+                    Province.Required,
+                    Province.Optional,
                 };
             foreach (Province province in validProvinces)
             {
