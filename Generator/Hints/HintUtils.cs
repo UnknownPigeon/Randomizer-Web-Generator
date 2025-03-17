@@ -1002,6 +1002,12 @@ namespace TPRandomizer.Hints
         {
             string hintZone = checkNameToHintZone(checkName);
 
+            if (HintConstants.requiredZones.ContainsKey(hintZone))
+                return HintConstants.requiredZones[hintZone];
+
+            if (HintConstants.optionalZones.ContainsKey(hintZone))
+                return HintConstants.optionalZones[hintZone];
+
             if (HintConstants.zoneToProvince.ContainsKey(hintZone))
                 return HintConstants.zoneToProvince[hintZone];
 

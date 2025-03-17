@@ -972,5 +972,26 @@ namespace TPRandomizer.Hints
             Zone zoneId = StringToId(stringId);
             return dungeonZones.Contains(zoneId);
         }
+
+        public static HashSet<Zone> GetOptionalDungeonsZoneList()
+        {
+            return GetDungeonsZoneList(HintUtils.getOptionalDungeonZones());
+        }
+
+        public static HashSet<Zone> GetRequiredDungeonsZoneList()
+        {
+            return GetDungeonsZoneList(HintUtils.getRequiredDungeonZones());
+        }
+
+        private static HashSet<Zone> GetDungeonsZoneList(IEnumerable<string> dungeonZones)
+        {
+            HashSet<Zone> zones = new HashSet<Zone>();
+            foreach (string stringId in dungeonZones)
+            {
+                Zone zoneId = StringToId(stringId);
+                zones.Add(zoneId);
+            }
+            return zones;
+        }
     }
 }
