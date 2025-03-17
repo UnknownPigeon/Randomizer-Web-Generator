@@ -2214,45 +2214,45 @@ namespace TPRandomizer
                     }
                 }
 
-                // if (LogicFunctions.CanUnlockEldinMap())
-                // {
-                //     if (LogicFunctions.CanUse(Item.Kakariko_Village_Portal))
-                //     {
-                //         portalRooms.Add(Randomizer.Rooms.RoomDict["Lower Kakariko Village"]);
-                //     }
-                //     if (LogicFunctions.CanUse(Item.Kakariko_Gorge_Portal))
-                //     {
-                //         portalRooms.Add(Randomizer.Rooms.RoomDict["Kakariko Gorge"]);
-                //     }
-                //     if (LogicFunctions.CanUse(Item.Death_Mountain_Portal))
-                //     {
-                //         portalRooms.Add(Randomizer.Rooms.RoomDict["Death Mountain Volcano"]);
-                //     }
-                //     if (LogicFunctions.CanUse(Item.Bridge_of_Eldin_Portal))
-                //     {
-                //         portalRooms.Add(Randomizer.Rooms.RoomDict["Eldin Field"]);
-                //     }
-                // }
+                if (LogicFunctions.CanUnlockEldinMap())
+                {
+                    if (LogicFunctions.CanUse(Item.Kakariko_Village_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Lower Kakariko Village"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Kakariko_Gorge_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Kakariko Gorge"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Death_Mountain_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Death Mountain Volcano"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Bridge_of_Eldin_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Eldin Field"]);
+                    }
+                }
 
-                // if (LogicFunctions.CanUnlockLanayruMap())
-                // {
-                //     if (LogicFunctions.CanUse(Item.Lake_Hylia_Portal))
-                //     {
-                //         portalRooms.Add(Randomizer.Rooms.RoomDict["Lake Hylia"]);
-                //     }
-                //     if (LogicFunctions.CanUse(Item.Castle_Town_Portal))
-                //     {
-                //         portalRooms.Add(Randomizer.Rooms.RoomDict["Outside Castle Town West"]);
-                //     }
-                //     if (LogicFunctions.CanUse(Item.Zoras_Domain_Portal))
-                //     {
-                //         portalRooms.Add(Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"]);
-                //     }
-                //     if (LogicFunctions.CanUse(Item.Upper_Zoras_River_Portal))
-                //     {
-                //         portalRooms.Add(Randomizer.Rooms.RoomDict["Upper Zoras River"]);
-                //     }
-                // }
+                if (LogicFunctions.CanUnlockLanayruMap())
+                {
+                    if (LogicFunctions.CanUse(Item.Lake_Hylia_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Lake Hylia"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Castle_Town_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Outside Castle Town West"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Zoras_Domain_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"]);
+                    }
+                    if (LogicFunctions.CanUse(Item.Upper_Zoras_River_Portal))
+                    {
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Upper Zoras River"]);
+                    }
+                }
 
                 if (LogicFunctions.CanUnlockSnowpeakMap())
                 {
