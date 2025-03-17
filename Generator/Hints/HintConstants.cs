@@ -391,30 +391,11 @@ namespace TPRandomizer.Hints
                 { "Hyrule Castle", Province.Dungeon },
             };
 
-        public static readonly Dictionary<string, Province> optionalZones = CreateZonesMap(
-            HintUtils.getOptionalDungeonZones(),
-            Province.Optional
-        );
+        public static Dictionary<string, Province> optionalZones =
+            new Dictionary<string, Province>();
 
-        public static readonly Dictionary<string, Province> requiredZones = CreateZonesMap(
-            HintUtils.getRequiredDungeonZones(),
-            Province.Required
-        );
-
-        private static Dictionary<string, Province> CreateZonesMap(
-            HashSet<string> zones,
-            Province provinceType
-        )
-        {
-            var result = new Dictionary<string, Province>();
-
-            foreach (var zone in zones)
-            {
-                result[zone] = provinceType;
-            }
-
-            return result;
-        }
+        public static Dictionary<string, Province> requiredZones =
+            new Dictionary<string, Province>();
 
         public static readonly Dictionary<string, SpotId> hintZoneToHintSpotLocation =
             new()

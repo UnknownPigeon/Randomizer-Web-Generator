@@ -368,6 +368,21 @@ namespace TPRandomizer.Hints
 
             return result;
         }
+        private static Dictionary<string, Province> CreateZonesMap(
+            HashSet<string> zones,
+            Province provinceType
+        )
+        {
+            var result = new Dictionary<string, Province>();
+
+            foreach (var zone in zones)
+            {
+                result[zone] = provinceType;
+            }
+
+            return result;
+        }
+
 
         public static HashSet<string> calculateRequiredChecks(
             Room startingRoom,
@@ -1000,6 +1015,16 @@ namespace TPRandomizer.Hints
 
         public static Province checkNameToHintProvince(string checkName)
         {
+            HintConstants.requiredZones = CreateZonesMap(
+                HintUtils.getRequiredDungeonZones(),
+                Province.Required
+            );
+
+            HintConstants.optionalZones = CreateZonesMap(
+                HintUtils.getRequiredDungeonZones(),
+                Province.Required
+            );
+            // Convert the input checkName to a normalized lookup key first
             string hintZone = checkNameToHintZone(checkName);
 
             if (HintConstants.requiredZones.ContainsKey(hintZone))
