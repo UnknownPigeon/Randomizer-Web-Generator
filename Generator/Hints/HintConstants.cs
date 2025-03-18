@@ -574,8 +574,8 @@ namespace TPRandomizer.Hints
                 { Province.Desert, "Desert" },
                 { Province.Peak, "Peak" },
                 { Province.Dungeon, "Dungeon" },
-                { Province.Required, "Required" },
-                { Province.Optional, "Optional" },
+                // { Province.Required, "Required" },
+                // { Province.Optional, "Optional" },
             };
 
         // Gets inited using `provinceToString`.

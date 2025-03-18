@@ -91,8 +91,8 @@ namespace TPRandomizer.Hints
                         Zone.Hyrule_Castle,
                     }
                 },
-                { Province.Optional, ZoneUtils.GetOptionalDungeonsZoneList() },
-                { Province.Required, ZoneUtils.GetRequiredDungeonsZoneList() },
+                // { Province.Optional, ZoneUtils.GetOptionalDungeonsZoneList() },
+                // { Province.Required, ZoneUtils.GetRequiredDungeonsZoneList() },
             };
         private static Dictionary<Zone, Province> zoneToProvince;
 
@@ -164,8 +164,8 @@ namespace TPRandomizer.Hints
                     Province.Desert,
                     Province.Peak,
                     Province.Dungeon,
-                    Province.Required,
-                    Province.Optional,
+                    // Province.Required,
+                    // Province.Optional,
                 };
             foreach (Province province in validProvinces)
             {

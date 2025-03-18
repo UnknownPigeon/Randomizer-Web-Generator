@@ -1015,23 +1015,23 @@ namespace TPRandomizer.Hints
 
         public static Province checkNameToHintProvince(string checkName)
         {
-            HintConstants.requiredZones = CreateZonesMap(
-                HintUtils.getRequiredDungeonZones(),
-                Province.Required
-            );
+            // HintConstants.requiredZones = CreateZonesMap(
+            //     HintUtils.getRequiredDungeonZones(),
+            //     Province.Required
+            // );
 
-            HintConstants.optionalZones = CreateZonesMap(
-                HintUtils.getRequiredDungeonZones(),
-                Province.Required
-            );
+            // HintConstants.optionalZones = CreateZonesMap(
+            //     HintUtils.getRequiredDungeonZones(),
+            //     Province.Required
+            // );
             // Convert the input checkName to a normalized lookup key first
             string hintZone = checkNameToHintZone(checkName);
 
-            if (HintConstants.requiredZones.ContainsKey(hintZone))
-                return HintConstants.requiredZones[hintZone];
+            // if (HintConstants.requiredZones.ContainsKey(hintZone))
+            //     return HintConstants.requiredZones[hintZone];
 
-            if (HintConstants.optionalZones.ContainsKey(hintZone))
-                return HintConstants.optionalZones[hintZone];
+            // if (HintConstants.optionalZones.ContainsKey(hintZone))
+            //     return HintConstants.optionalZones[hintZone];
 
             if (HintConstants.zoneToProvince.ContainsKey(hintZone))
                 return HintConstants.zoneToProvince[hintZone];
