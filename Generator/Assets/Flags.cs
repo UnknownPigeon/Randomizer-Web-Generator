@@ -304,6 +304,12 @@ namespace TPRandomizer.Assets
             { 0x18, 0xA3 }, // Unlock door in south garden.
         };
 
+        public static readonly byte[,] PalaceFirstDoor = new byte[,]
+        {
+            { 0x17, 0x7B }, // Unlock door in east room 1.
+            { 0x17, 0x7C }, // Unlock door in west room 1.
+        };
+
         public static readonly byte[,] BigKeyRegionFlags = new byte[,]
         {
             { 0x10, 0x48 }, // Unlocked Forest Temple Boss Door.
@@ -511,6 +517,7 @@ namespace TPRandomizer.Assets
                 { 20, OpenDotRegionFlags },
                 { 21, OpenMapRegionFlags },
                 { 22, HcShortcutFlags },
+                { 23, PalaceFirstDoor},
             };
 
         /// <summary>
@@ -723,6 +730,7 @@ namespace TPRandomizer.Assets
             /* 20 */RandomizerSettings.openDot,
             /* 21 */RandomizerSettings.openMap,
             /* 22 */RandomizerSettings.hcShortcut,
+            /* 23 */RandomizerSettings.hintDistribution == HintDistribution.DrehenOptional || RandomizerSettings.hintDistribution == HintDistribution.DrehenOptional2,
         };
     }
 }

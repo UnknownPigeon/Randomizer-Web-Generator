@@ -387,8 +387,11 @@ document
 document
   .getElementById('skipZantCheckbox')
   .addEventListener('click',setSettingsString);
-  document
+document
   .getElementById('hcShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('lessKeyPalaceCheckbox')
   .addEventListener('click', setSettingsString);
 document
   .getElementById('increaseWalletCheckbox')
@@ -536,6 +539,7 @@ function setSettingsString() {
   settingsStringRaw[42] = document.getElementById('optDungeonsCheckbox').checked;
   settingsStringRaw[43] = document.getElementById('skipZantCheckbox').checked;
   settingsStringRaw[44] = document.getElementById('hcShortcutCheckbox').checked;
+  settingsStringRaw[45] = document.getElementById('lessKeyPalaceCheckbox').checked;
 
   // document.getElementById('settingsStringTextbox').value =
   document.getElementById('settingsStringTextbox').textContent =
@@ -703,6 +707,7 @@ var arrayOfSettingsItems = [
   'optDungeonsCheckbox',
   'skipZantCheckbox',
   'hcShortcutCheckbox',
+  'lessKeyPalaceCheckbox',
 ];
 
 function parseSettingsString(settingsString) {
@@ -1271,6 +1276,7 @@ function populateSSettings(s) {
   $('#rupeeCheckbox').prop('checked', s.rupees);
   $('#skipZantCheckbox').prop('checked', s.skipZant);
   $('#hcShortcutCheckbox').prop('checked', s.hcShortcut);
+  $('#lessKeyPalaceCheckbox').prop('checked', s.lessKeyPalace);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

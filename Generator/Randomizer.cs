@@ -499,6 +499,8 @@ namespace TPRandomizer
                 part2Settings.Add("optionalDungeons", SSettings.optionalDungeons);
             if (SSettings.skipZant)
                 part2Settings.Add("skipZant", SSettings.skipZant);
+            if (SSettings.lessKeyPalace)
+                part2Settings.Add("lessKeyPalace", SSettings.lessKeyPalace);
 
             // Complex fields
             if (SSettings.startingItems?.Count > 0)

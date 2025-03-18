@@ -439,7 +439,8 @@ namespace TPRandomizer
 
             // Once all of the entrances have been shuffled correctly, we want to update the connections on all of the paired entrances.
             ShufflePairedEntrances();
-
+            
+            //Skip HC
             if (Randomizer.SSettings.skipHc)
             {
                 Randomizer
@@ -454,6 +455,7 @@ namespace TPRandomizer
                     );
             }
 
+            //Skip Zant
             if (Randomizer.SSettings.skipZant)
             {
                 Randomizer

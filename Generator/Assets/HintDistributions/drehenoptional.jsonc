@@ -42,6 +42,17 @@
   // barren by a BeyondThisPoint hint.
   "specialHintDefs": [
     {
+      "spot": "death_mountain_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canHintHintedBarrenChecks": true,
+          "vague": true,
+          "validChecks": ["Death Mountain Alcove Chest"]
+        }
+      }
+    },
+    {
       "spot": "forest_temple_sign",
       "hintDef": {
         "hintType": "location",
@@ -205,6 +216,7 @@
       "hintDef": {
         "copies": 2,
         "hintDef": [
+          //Most Sword Province
           {
             "hintType": "numItemInArea",
             "saveToVar": "HintCopies",
@@ -214,6 +226,17 @@
               "order": "desc"
             }
           },
+          //Least Sword Province
+          {
+            "hintType": "numItemInArea",
+            "saveToVar": "HintCopies",
+            "options": {
+              "item": "Progressive_Sword",
+              "areaType": "province",
+              "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert"],
+              "order": "asc"
+            }
+          },
           {
             "hintType": "path",
             "saveToVar": "HintCopies",
@@ -221,15 +244,15 @@
           },
           {
             "hintType": "barren",
+            "iterations": 4,
+            "starting": 4
+          },
+          {
+            "hintType": "barren",
             "saveToVar": "HintCopies",
             "options": {
               "areaType": "category"
             }
-          },
-          {
-            "hintType": "barren",
-            "iterations": 4,
-            "starting": 4
           },
           // Fill in layer with extra copies
           {
