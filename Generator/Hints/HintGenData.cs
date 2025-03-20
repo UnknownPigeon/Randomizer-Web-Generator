@@ -662,6 +662,8 @@ namespace TPRandomizer.Hints
             ret[AreaId.Zone(Zone.Palace_of_Twilight)] = new(baseAllowedForDungeons);
             ret[AreaId.Zone(Zone.Hyrule_Castle)] = new(baseAllowedForDungeons);
             ret[AreaId.Province(Province.Dungeon)] = new(baseAllowedForDungeons);
+            ret[AreaId.Province(Province.Optional)] = new(baseAllowedForDungeons);
+            ret[AreaId.Province(Province.Required)] = new(baseAllowedForDungeons);
 
             if (sSettings.smallKeySettings == SmallKeySettings.Own_Dungeon)
             {
@@ -697,6 +699,46 @@ namespace TPRandomizer.Hints
                         Item.Palace_of_Twilight_Small_Key,
                         Item.Hyrule_Castle_Small_Key,
                     }
+                    
+                    
+                );
+
+                 ret[AreaId.Province(Province.Optional)].UnionWith(
+                    new HashSet<Item>()
+                    {
+                        Item.Forest_Temple_Small_Key,
+                        Item.Goron_Mines_Small_Key,
+                        Item.Lakebed_Temple_Small_Key,
+                        Item.Arbiters_Grounds_Small_Key,
+                        Item.Snowpeak_Ruins_Small_Key,
+                        Item.Snowpeak_Ruins_Ordon_Pumpkin,
+                        Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
+                        Item.Temple_of_Time_Small_Key,
+                        Item.City_in_The_Sky_Small_Key,
+                        Item.Palace_of_Twilight_Small_Key,
+                        Item.Hyrule_Castle_Small_Key,
+                    }
+                    
+                    
+                );
+
+                ret[AreaId.Province(Province.Required)].UnionWith(
+                    new HashSet<Item>()
+                    {
+                        Item.Forest_Temple_Small_Key,
+                        Item.Goron_Mines_Small_Key,
+                        Item.Lakebed_Temple_Small_Key,
+                        Item.Arbiters_Grounds_Small_Key,
+                        Item.Snowpeak_Ruins_Small_Key,
+                        Item.Snowpeak_Ruins_Ordon_Pumpkin,
+                        Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
+                        Item.Temple_of_Time_Small_Key,
+                        Item.City_in_The_Sky_Small_Key,
+                        Item.Palace_of_Twilight_Small_Key,
+                        Item.Hyrule_Castle_Small_Key,
+                    }
+                    
+                    
                 );
             }
 
@@ -713,6 +755,34 @@ namespace TPRandomizer.Hints
                 ret[AreaId.Zone(Zone.Hyrule_Castle)].Add(Item.Hyrule_Castle_Big_Key);
 
                 ret[AreaId.Province(Province.Dungeon)].UnionWith(
+                    new HashSet<Item>()
+                    {
+                        Item.Forest_Temple_Big_Key,
+                        Item.Goron_Mines_Key_Shard,
+                        Item.Lakebed_Temple_Big_Key,
+                        Item.Arbiters_Grounds_Big_Key,
+                        Item.Snowpeak_Ruins_Bedroom_Key,
+                        Item.Temple_of_Time_Big_Key,
+                        Item.City_in_The_Sky_Big_Key,
+                        Item.Palace_of_Twilight_Big_Key,
+                        Item.Hyrule_Castle_Big_Key,
+                    }
+                );
+                ret[AreaId.Province(Province.Optional)].UnionWith(
+                    new HashSet<Item>()
+                    {
+                        Item.Forest_Temple_Big_Key,
+                        Item.Goron_Mines_Key_Shard,
+                        Item.Lakebed_Temple_Big_Key,
+                        Item.Arbiters_Grounds_Big_Key,
+                        Item.Snowpeak_Ruins_Bedroom_Key,
+                        Item.Temple_of_Time_Big_Key,
+                        Item.City_in_The_Sky_Big_Key,
+                        Item.Palace_of_Twilight_Big_Key,
+                        Item.Hyrule_Castle_Big_Key,
+                    }
+                );
+                ret[AreaId.Province(Province.Required)].UnionWith(
                     new HashSet<Item>()
                     {
                         Item.Forest_Temple_Big_Key,
