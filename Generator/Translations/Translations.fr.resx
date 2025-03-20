@@ -233,6 +233,32 @@
     <value>$(ap:dans,plural)les {cs}Donjons{ce}</value>
     <comment></comment>
   </data>
+    </data>
+    <data name="area.province.required" xml:space="preserve">
+    <value>$(ap:dans)un {cs}Donjon Requis{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.required$default" xml:space="preserve">
+    <value>$(ap:dans,plural)les {cs}Donjons Requis{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.required$plural" xml:space="preserve">
+    <value>$(ap:dans,plural)les {cs}Donjons Requis{ce}</value>
+    <comment></comment>
+  </data>
+    </data>
+    <data name="area.province.optional" xml:space="preserve">
+    <value>$(ap:dans)un {cs}Donjon Requis{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.optional$default" xml:space="preserve">
+    <value>$(ap:dans,plural)les {cs}Donjons Optionnels{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.optional$plural" xml:space="preserve">
+    <value>$(ap:dans,plural)les {cs}Donjons Optionnels{ce}</value>
+    <comment></comment>
+  </data>
   <data name="area.province.eldin" xml:space="preserve">
     <value>$(ap:dans)la {cs}Région d&apos;Ordinn{ce}</value>
     <comment></comment>
