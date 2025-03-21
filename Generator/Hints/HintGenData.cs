@@ -161,6 +161,7 @@ namespace TPRandomizer.Hints
 
             if (sSettings.smallKeySettings != SmallKeySettings.Keysy)
                 itemSet.Add(Item.Gate_Keys);
+                itemSet.Add(Item.Faron_Woods_Coro_Key);
 
             // For keysy, camp_key gets added to starting items currently, so it
             // will automatically get handled by allowBarrenChecks.
