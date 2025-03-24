@@ -66,7 +66,7 @@ namespace TPRandomizer
         public StartingToD startingToD { get; set; }
         public HintDistribution hintDistribution { get; set; }
         public bool randomizeStartingPoint { get; set; }
-        public bool shuffleRupees { get; set; }
+        public bool shuffleHiddenRupees { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
         public List<(string, Item)> plandoChecks { get; set; }
@@ -125,7 +125,7 @@ namespace TPRandomizer
             randomizeStartingPoint = processor.NextBool();
             skipHc = processor.NextBool();
             optionalDungeons = processor.NextBool();
-            shuffleRupees = processor.NextBool();
+            shuffleHiddenRupees = processor.NextBool();
             skipZant = processor.NextBool();
             hcShortcut = processor.NextBool();
             lessKeyPalace = processor.NextBool();

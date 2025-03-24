@@ -281,6 +281,7 @@ namespace TPRandomizer.Hints
                         "Renados Letter",
                         "Talo Sharpshooting",
                         "Kakariko Village Bell Rupee",
+                        "Shad Dominion Rod"
                     }
                 },
                 {

@@ -444,7 +444,7 @@
       { id: 'randomizeStartingPointCheckbox' },
       { id: 'skipHcCheckbox' },
       { id: 'optDungeonsCheckbox' },     
-      { id: 'rupeeCheckbox' },
+      { id: 'hiddenRupeeCheckbox' },
       { id: 'skipZantCheckbox' },
       { id: 'hcShortcutCheckbox' },
       { id: 'lessKeyPalaceCheckbox' },
@@ -925,13 +925,13 @@
     }
     if (version >= 6) {
       processBasic({ id: 'randomizeStartingPoint' });
-      processBasic({ id: 'rupees' });
+      processBasic({ id: 'hiddenRupees' });
       processBasic({ id: 'skipZant' });
       processBasic({ id: 'hcShortcut' });
       processBasic({ id: 'lessKeyPalace' });
     } else {
       res.randomizeStartingPoint = false; // Vanilla
-      res.rupees = false; // Vanilla
+      res.hiddenRupees = false; // Vanilla // Vanilla
       res.skipZant = false;
       res.hcShortcut = false;
       res.lessKeyPalace = false;
