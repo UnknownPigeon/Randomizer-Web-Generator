@@ -61,8 +61,8 @@
       },
       {
         "ConnectedArea": "Death Mountain Hot Spring",
-        "Requirements": "CanDefeatGoron",
-        "GlitchedRequirements": "CanDefeatGoron"
+        "Requirements": "CanDefeatGoron or Shadow_Crystal",
+        "GlitchedRequirements": "CanDefeatGoron or Shadow_Crystal"
       }
     ],
     "Checks": 

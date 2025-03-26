@@ -1684,8 +1684,10 @@ namespace TPRandomizer
                 || (
                     Randomizer.Rooms.RoomDict[
                         "Castle Town Goron House Balcony"
-                    ].ReachedByPlaythrough && !Randomizer.SSettings.shuffleShopItems
+                    ].ReachedByPlaythrough
+                    // && !Randomizer.SSettings.shuffleShopItems
                 )
+                || Randomizer.Rooms.RoomDict["Death Mountain Hot Spring"].ReachedByPlaythrough
             );
         }
 
