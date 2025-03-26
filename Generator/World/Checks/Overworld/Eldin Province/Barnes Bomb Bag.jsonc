@@ -1,6 +1,6 @@
 {
     "requirements": "CanCompleteEldinTwilight",
     "glitchedRequirements": "CanCompleteEldinTwilight",
-    "checkCategory": ["Overworld", "Npc - Shop", "Kakariko Village"],
+    "checkCategory": ["Overworld", "Npc", "Kakariko Village"],
     "itemId": "Filled_Bomb_Bag"
 }
