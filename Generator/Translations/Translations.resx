@@ -253,12 +253,36 @@
     <value>Lanayru Province</value>
     <comment></comment>
   </data>
+  <data name="area.province.optional" xml:space="preserve">
+    <value>an {cs}Optional Dungeon{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.optional$default" xml:space="preserve">
+    <value>$(plural)Optional Dungeons</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.optional$plural" xml:space="preserve">
+    <value>$(plural)Optional Dungeons</value>
+    <comment></comment>
+  </data>
   <data name="area.province.ordona" xml:space="preserve">
     <value>Ordona Province</value>
     <comment></comment>
   </data>
   <data name="area.province.peak" xml:space="preserve">
     <value>Peak Province</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.required" xml:space="preserve">
+    <value>a {cs}Required Dungeon{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.required$default" xml:space="preserve">
+    <value>$(plural)Required Dungeons</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.required$plural" xml:space="preserve">
+    <value>$(plural)Required Dungeons</value>
     <comment></comment>
   </data>
   <data name="area.zone.agithas_castle" xml:space="preserve">

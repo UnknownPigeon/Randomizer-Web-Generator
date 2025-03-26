@@ -112,8 +112,8 @@
           },
           {
             "ConnectedArea": "Lakebed Temple Central Room",
-            "Requirements": "canLaunchBombs",
-            "GlitchedRequirements": "CanDoAirRefill and (canLaunchBombs or CanDoLJA or CanDoJSMoonBoots)"
+            "Requirements": "canLaunchBombs or (Setting.skipLakebedEntrance equals True)",
+            "GlitchedRequirements": "CanDoAirRefill and (canLaunchBombs or CanDoLJA or CanDoJSMoonBoots or (Setting.skipLakebedEntrance equals True))"
           }
         ],
         "Checks": 

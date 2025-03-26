@@ -470,6 +470,19 @@ namespace TPRandomizer
                     );
             }
 
+            // Stallord backdoor
+            Randomizer
+                .Rooms.RoomDict["Mirror Chamber Lower"]
+                .Exits[0]
+                .SetAsShuffled();
+            Randomizer
+                .Rooms.RoomDict["Mirror Chamber Lower"]
+                .Exits[0]
+                .SetReplacedEntrance(
+                    Randomizer.Rooms.RoomDict["Arbiters Grounds Boss Room"].Exits[0]
+                );
+
+
             // Validate the world one last time to ensure that everything went okay
             err = ValidateWorld();
             if (err != EntranceShuffleError.NONE)

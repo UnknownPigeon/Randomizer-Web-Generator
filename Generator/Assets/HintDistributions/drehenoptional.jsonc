@@ -223,6 +223,7 @@
             "options": {
               "item": "Progressive_Sword",
               "areaType": "province",
+              "validAreas": ["Optional", "Required", "Faron", "Eldin", "Lanayru", "Desert", "Ordona", "Peak"],
               "order": "desc"
             }
           },
@@ -233,7 +234,7 @@
             "options": {
               "item": "Progressive_Sword",
               "areaType": "province",
-              "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert"],
+              "validAreas": ["Optional", "Required", "Faron", "Eldin", "Lanayru", "Desert"],
               "order": "asc"
             }
           },

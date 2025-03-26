@@ -1,6 +1,6 @@
 {
-    "requirements": "canLaunchBombs",
-    "glitchedRequirements": "canLaunchBombs or CanDoLJA",
+    "requirements": "canLaunchBombs or (Setting.skipLakebedEntrance equals True)",
+    "glitchedRequirements": "canLaunchBombs or CanDoLJA or (Setting.skipLakebedEntrance equals True)",
     "checkCategory": ["Chest", "Dungeon", "Lakebed Temple"],
     "itemId": "Water_Bombs_10"
 }
