@@ -1710,6 +1710,7 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
                 || (
                     canCompleteGoronMines()
+                    && Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
                     && CanChangeTime()
                 )
                 || (
