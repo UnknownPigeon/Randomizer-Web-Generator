@@ -939,7 +939,7 @@
       processBasic({ id: 'lanayruEldinRoadBlock' });
     } else {
       res.randomizeStartingPoint = false; // Vanilla
-      res.hiddenRupees = false; // Vanilla // Vanilla
+      res.hiddenRupees = false; // Vanilla
       res.skipZant = false;
       res.hcShortcut = false;
       res.lessKeyPalace = false;
