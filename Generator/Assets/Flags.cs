@@ -48,6 +48,7 @@ namespace TPRandomizer.Assets
         {
             { 0x0, 0x57 }, // Spider on Link's Ladder killed.
             { 0x2, 0x63 }, // Trill lets you shop at his store.
+            { 0x2, 0x48 }, // Talked to Coro after bugs
             { 0x3, 0xB9 }, // Barnes sells water bombs.
             { 0x3, 0xB3 }, // Colin Rescued CS (Malo Mart is Open).
             { 0x2, 0x60 }, // Got Lantern Back from Monkey
@@ -86,7 +87,6 @@ namespace TPRandomizer.Assets
             { 0x0, 0x6B }, // Ordon Spring Portal.
             { 0x0, 0x44 }, // Midna Text after Ordon Shield (Spawns sword)
             { 0x0, 0x46 }, // Midna Text after Ordon Sword
-            { 0x0, 0x70 }, // Midna Text after sewers
             { 0x0, 0x68 }, // Approach faron wall with Midna
             { 0x0, 0xA0 }, // Midna allows player to approach Faron Twilight Wall
             { 0x0, 0xBA }, // Explored area outside Link's house as wolf
@@ -533,9 +533,7 @@ namespace TPRandomizer.Assets
         public static readonly byte[,] BaseRandomizerEventFlags = new byte[,]
         {
             { 0x3, 0x82 }, // Gave wooden sword to Talo. Talked to squirrel outside link's house
-            { 0x5, 0x7E }, // Finished Sewers, Midna text after entering Faron Twilight, Met Zelda in sewers, Midna cut prison chain, Watched Sewers intro CS, Escaped cell in sewers.
             { 0x6, 0x29 }, // Tame Epona, KB1 trigger activated, Warped Kakariko Bridge Back.
-            { 0xC, 0x10 }, // Midna accompanies Wolf
             { 0x12, 0x8 }, // Can use Sera's Shop.
             { 0x14, 0x10 }, // Put Bo outside, ready to wrestle
             { 0xA, 0x2F }, // Bridge of Eldin Stolen, KB1 defeated, KB1 started
@@ -572,9 +570,9 @@ namespace TPRandomizer.Assets
         /// </summary>
         public static readonly byte[,] FaronTwilightEventFlags = new byte[,]
         {
-            { 0x5, 0x1 }, // Midna Charge Unlocked
+            { 0x5, 0x7F }, // Midna Charge Unlocked, Finished Sewers, Met Zelda in swers, Midna cut prison chain, watched sewers intro CS, Escaped Cell in Sewers.
             { 0x6, 0x10 }, // Cleared Faron Twilight
-            { 0xC, 0x8 }, // Sword and shield removed from wolf's back.
+            { 0xC, 0x18 }, // Midna Accompanies Wolf, Sword and shield removed from wolf's back.
         };
 
         /// <summary>
@@ -687,6 +685,12 @@ namespace TPRandomizer.Assets
             { 0x3B, 0x8 }, // Sky Cannon Repaired.
         };
 
+        public static readonly byte[,] OverworldEREventFlags = new byte[,]
+        {
+            { 0x5, 0x7A }, // Finished Sewers, Midna text after entering Faron Twilight, Met Zelda in sewers, Midna cut prison chain, Watched Sewers intro CS, Escaped cell in sewers.
+            { 0xC, 0x10 }, // Midna accompanies Wolf
+        };
+
         /// <summary>
         /// summary text.
         /// </summary>
@@ -707,6 +711,7 @@ namespace TPRandomizer.Assets
                 { 14, OpenArbitersEventFlags },
                 { 15, OpenSnowpeakEventFlags },
                 { 17, OpenCityEventFlags },
+                { 24, OverworldEREventFlags }
             };
         private static readonly SharedSettings RandomizerSettings = Randomizer.SSettings;
 
@@ -739,6 +744,7 @@ namespace TPRandomizer.Assets
             /* 21 */RandomizerSettings.openMap,
             /* 22 */RandomizerSettings.hcShortcut,
             /* 23 */RandomizerSettings.hintDistribution == HintDistribution.Drehen || RandomizerSettings.hintDistribution == HintDistribution.Drehen2 || RandomizerSettings.hintDistribution == HintDistribution.DrehenOptional || RandomizerSettings.hintDistribution == HintDistribution.Drehen2Optional,
+            /* 24 */RandomizerSettings.randomizeStartingPoint,
         };
     }
 }

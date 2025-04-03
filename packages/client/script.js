@@ -312,7 +312,7 @@ document
   .getElementById('hiddenSkillsCheckbox')
   .addEventListener('click', setSettingsString);
 document
-  .getElementById('rupeeCheckbox')
+  .getElementById('hiddenRupeeCheckbox')
   .addEventListener('click', setSettingsString);
 document.getElementById('itemScarcityFieldset').onchange = setSettingsString;
 document.getElementById('damageMagFieldset').onchange = setSettingsString;
@@ -1278,7 +1278,7 @@ function populateSSettings(s) {
   $('#randomizeStartingPointCheckbox').prop( 'checked',s.randomizeStartingPoint);
   $('#skipHcCheckbox').prop('checked', s.skipHc);
   $('#optDungeonsCheckbox').prop('checked', s.optionalDungeons);
-  $('#rupeeCheckbox').prop('checked', s.rupees);
+  $('#hiddenRupeeCheckbox').prop('checked', s.hiddenRupees);
   $('#skipZantCheckbox').prop('checked', s.skipZant);
   $('#hcShortcutCheckbox').prop('checked', s.hcShortcut);
   $('#lessKeyPalaceCheckbox').prop('checked', s.lessKeyPalace);

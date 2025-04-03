@@ -50,8 +50,6 @@ namespace TPRandomizer
 
         public List<string> arcOffsets { get; set; } // Used by ARC checks.
 
-        public List<string> magicByte { get; set; }
-
         public string fileName { get; set; }
 
         public List<string> overrideInstruction { get; set; } // Used by REL checks. The override instruction to be used when replacing the item in the rel.
@@ -520,9 +518,9 @@ namespace TPRandomizer
                     }
                 }
 
-                if (!parseSetting.shuffleRupees)
+                if (!parseSetting.shuffleHiddenRupees)
                 {
-                    if (currentCheck.checkCategory.Contains("Rupee"))
+                    if (currentCheck.checkCategory.Contains("Rupee - Hidden"))
                     {
                         currentCheck.checkStatus = "Vanilla";
                     }

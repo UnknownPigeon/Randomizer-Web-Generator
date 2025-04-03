@@ -574,21 +574,8 @@ namespace TPRandomizer.Assets
                             )
                         );
                         listOfDZXReplacements.Add(Converter.GcByte(currentCheck.stageIDX[i]));
-                        if (currentCheck.magicByte == null)
-                        {
-                            listOfDZXReplacements.Add(Converter.GcByte(0xFF)); // If a magic byte is not set, use 0xFF as a default.
-                        }
-                        else
-                        {
-                            listOfDZXReplacements.Add(
-                                Converter.GcByte(
-                                    byte.Parse(
-                                        currentCheck.magicByte[i],
-                                        System.Globalization.NumberStyles.HexNumber
-                                    )
-                                )
-                            );
-                        }
+                        listOfDZXReplacements.Add(Converter.GcByte(0xFF)); // padding
+                        
 
                         listOfDZXReplacements.AddRange(dataArray);
                         count++;
@@ -1557,29 +1544,21 @@ namespace TPRandomizer.Assets
                     7
                 ), // Set custom check flag
                 new ARCReplacement(
-                    "49C8",
-                    "031108CC",
+                    "4A70",
+                    "031108C7",
                     (byte)FileDirectory.Message,
                     (byte)ReplacementType.Instruction,
                     (int)StageIDs.Kakariko_Graveyard_Interiors,
                     7
                 ), // Call event017 to give player item
                 new ARCReplacement(
-                    "49CE",
-                    "00000202",
+                    "4A76",
+                    "0000030B",
                     (byte)FileDirectory.Message,
                     (byte)ReplacementType.Instruction,
                     (int)StageIDs.Kakariko_Graveyard_Interiors,
                     7
                 ), // Call event017 to give player item
-                new ARCReplacement(
-                    "49F0",
-                    "030A08C7",
-                    (byte)FileDirectory.Message,
-                    (byte)ReplacementType.Instruction,
-                    (int)StageIDs.Kakariko_Graveyard_Interiors,
-                    7
-                ), // Set custom check flag
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here.
                 new ARCReplacement(
