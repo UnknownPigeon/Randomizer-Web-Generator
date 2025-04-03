@@ -355,6 +355,13 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [0xbf, 'Sacred Grove Portal'],
         [0xe8, 'Bridge of Eldin Portal'],
         [0xf7, 'Upper Zoras River Portal'],
+        [0x4D, 'Kakarico Gorge Portal'],
+        [0x4E, 'Kakarico Village Portal'],
+        [0x52, 'Death Mountain Portal'],
+        [0x57, 'Zora Domain Portal'],
+        [0x8F, 'Lake Hylia Portal'],
+        [0xB1, 'Castle Town Portal'],
+
       ];
 
       const startingItemsEls = startingItems.map((item) => {

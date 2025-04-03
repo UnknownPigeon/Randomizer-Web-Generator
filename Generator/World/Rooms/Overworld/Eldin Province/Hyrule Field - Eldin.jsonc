@@ -182,8 +182,8 @@
       },
       {
         "ConnectedArea": "Outside Castle Town East",
-        "Requirements": "CanUnlockLanayruMap",
-        "GlitchedRequirements": "CanUnlockLanayruMap"
+        "Requirements": "(Setting.lanayruEldinRoadBlock equals false) or CanUnlockLanayruMap",
+        "GlitchedRequirements": "(Setting.lanayruEldinRoadBlock equals false) or CanUnlockLanayruMap"
       }
     ],
     "Checks": [""],
@@ -248,8 +248,8 @@
       {
         "ConnectedArea": "Lanayru Field",
         // Future Rocks between Lanayru and Eldin
-        "Requirements": "CanCompleteEldinTwilight and canSmash",
-        "GlitchedRequirements": "CanCompleteEldinTwilight and canSmash"
+        "Requirements": "((Setting.lanayruEldinRoadBlock equals false) or canSmash) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "((Setting.lanayruEldinRoadBlock equals false) or canSmash) and CanCompleteEldinTwilight"
       }
     ],
     "Checks": [""],

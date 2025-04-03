@@ -24,12 +24,14 @@
   },
   //
   "addChecks": {
-    "Lake Hylia Shell Blade Grotto Chest": ["always"]
+    "Lake Hylia Shell Blade Grotto Chest": ["always"],
+    "Death Mountain Alcove Chest": ["always"]
   },
   "removeChecks": {
     "Palace of Twilight Collect Both Sols": ["always"],
     "Forest Temple Gale Boomerang": ["sometimes"],
-    "City in The Sky Aeralfos Chest": ["sometimes"]
+    "City in The Sky Aeralfos Chest": ["sometimes"],
+    "Plumm Fruit Balloon Minigame": ["always"]
   },
   "removeItems": {},
   //
@@ -41,17 +43,6 @@
   // created even if the dungeon is hinted barren or the check is already hinted
   // barren by a BeyondThisPoint hint.
   "specialHintDefs": [
-    {
-      "spot": "death_mountain_sign",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "vague": true,
-          "validChecks": ["Death Mountain Alcove Chest"]
-        }
-      }
-    },
     {
       "spot": "forest_temple_sign",
       "hintDef": {
@@ -244,13 +235,6 @@
             "iterations": 3
           },
           {
-            "hintType": "barren",
-            "saveToVar": "HintCopies",
-            "options": {
-              "areaType": "category"
-            }
-          },
-          {
             "maxPicks": 4,
             "starting": 4,
             "hintDef": [
@@ -275,6 +259,13 @@
                 "iterations": 4
               }
             ]
+          },
+          {
+            "hintType": "barren",
+            "saveToVar": "HintCopies",
+            "options": {
+              "areaType": "category"
+            }
           },
           // Fill in layer with extra copies
           {

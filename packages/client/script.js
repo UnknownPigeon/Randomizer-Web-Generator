@@ -394,6 +394,9 @@ document
   .getElementById('lessKeyPalaceCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('lanayruEldinRoadBlockCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('increaseWalletCheckbox')
   .addEventListener('click', setSettingsString);
 document
@@ -540,6 +543,7 @@ function setSettingsString() {
   settingsStringRaw[43] = document.getElementById('skipZantCheckbox').checked;
   settingsStringRaw[44] = document.getElementById('hcShortcutCheckbox').checked;
   settingsStringRaw[45] = document.getElementById('lessKeyPalaceCheckbox').checked;
+  settingsStringRaw[46] = document.getElementById('lanayruEldinRoadBlockCheckbox').checked;
 
   // document.getElementById('settingsStringTextbox').value =
   document.getElementById('settingsStringTextbox').textContent =
@@ -708,6 +712,7 @@ var arrayOfSettingsItems = [
   'skipZantCheckbox',
   'hcShortcutCheckbox',
   'lessKeyPalaceCheckbox',
+  'lanayruEldinRoadBlockCheckbox',
 ];
 
 function parseSettingsString(settingsString) {
@@ -1277,6 +1282,7 @@ function populateSSettings(s) {
   $('#skipZantCheckbox').prop('checked', s.skipZant);
   $('#hcShortcutCheckbox').prop('checked', s.hcShortcut);
   $('#lessKeyPalaceCheckbox').prop('checked', s.lessKeyPalace);
+  $('#lanayruEldinRoadBlockCheckbox').prop('checked', s.lanayruEldinRoadBlock);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

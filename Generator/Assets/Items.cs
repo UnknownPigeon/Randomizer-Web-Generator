@@ -1113,19 +1113,19 @@ namespace TPRandomizer
             // Handle portals
             parseSetting.startingItems.Add(Item.Ordon_Portal);
       
-            if (parseSetting.eldinTwilightCleared)
-            {
-                parseSetting.startingItems.Add(Item.Kakariko_Gorge_Portal);
-                parseSetting.startingItems.Add(Item.Kakariko_Village_Portal);
-                parseSetting.startingItems.Add(Item.Death_Mountain_Portal);
-            }
+            // if (parseSetting.eldinTwilightCleared)
+            // {
+            //     parseSetting.startingItems.Add(Item.Kakariko_Gorge_Portal);
+            //     parseSetting.startingItems.Add(Item.Kakariko_Village_Portal);
+            //     parseSetting.startingItems.Add(Item.Death_Mountain_Portal);
+            // }
 
-            if (parseSetting.lanayruTwilightCleared)
-            {
-                parseSetting.startingItems.Add(Item.Zoras_Domain_Portal);
-                parseSetting.startingItems.Add(Item.Lake_Hylia_Portal);
-                parseSetting.startingItems.Add(Item.Castle_Town_Portal);
-            }
+            // if (parseSetting.lanayruTwilightCleared)
+            // {
+            //     parseSetting.startingItems.Add(Item.Zoras_Domain_Portal);
+            //     parseSetting.startingItems.Add(Item.Lake_Hylia_Portal);
+            //     parseSetting.startingItems.Add(Item.Castle_Town_Portal);
+            // }
 
             if (parseSetting.skipSnowpeakEntrance)
             {

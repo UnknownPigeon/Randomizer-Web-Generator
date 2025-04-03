@@ -380,15 +380,15 @@ namespace TPRandomizer.Hints
                 { "Bulblin Camp", Province.Desert },
                 { "Snowpeak Mountain", Province.Peak },
                 { "Cave of Ordeals", Province.Desert },
-                { "Forest Temple", Province.Dungeon },
-                { "Goron Mines", Province.Dungeon },
-                { "Lakebed Temple", Province.Dungeon },
-                { "Arbiter's Grounds", Province.Dungeon },
-                { "Snowpeak Ruins", Province.Dungeon },
-                { "Temple of Time", Province.Dungeon },
-                { "City in the Sky", Province.Dungeon },
-                { "Palace of Twilight", Province.Dungeon },
-                { "Hyrule Castle", Province.Dungeon },
+                // { "Forest Temple", Province.Dungeon },
+                // { "Goron Mines", Province.Dungeon },
+                // { "Lakebed Temple", Province.Dungeon },
+                // { "Arbiter's Grounds", Province.Dungeon },
+                // { "Snowpeak Ruins", Province.Dungeon },
+                // { "Temple of Time", Province.Dungeon },
+                // { "City in the Sky", Province.Dungeon },
+                // { "Palace of Twilight", Province.Dungeon },
+                // { "Hyrule Castle", Province.Dungeon },
             };
 
         public static Dictionary<string, Province> optionalZones =
@@ -573,7 +573,7 @@ namespace TPRandomizer.Hints
                 { Province.Lanayru, "Lanayru" },
                 { Province.Desert, "Desert" },
                 { Province.Peak, "Peak" },
-                { Province.Dungeon, "Dungeon" },
+                // { Province.Dungeon, "Dungeon" },
                 { Province.Required, "Required" },
                 { Province.Optional, "Optional" },
             };
