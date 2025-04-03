@@ -76,21 +76,21 @@ namespace TPRandomizer.Hints
                     Province.Peak,
                     new() { Zone.Snowpeak_Mountain }
                 },
-                {
-                    Province.Dungeon,
-                    new()
-                    {
-                        Zone.Forest_Temple,
-                        Zone.Goron_Mines,
-                        Zone.Lakebed_Temple,
-                        Zone.Arbiters_Grounds,
-                        Zone.Snowpeak_Ruins,
-                        Zone.Temple_of_Time,
-                        Zone.City_in_the_Sky,
-                        Zone.Palace_of_Twilight,
-                        Zone.Hyrule_Castle,
-                    }
-                },
+                // {
+                //     Province.Dungeon,
+                //     new()
+                //     {
+                //         Zone.Forest_Temple,
+                //         Zone.Goron_Mines,
+                //         Zone.Lakebed_Temple,
+                //         Zone.Arbiters_Grounds,
+                //         Zone.Snowpeak_Ruins,
+                //         Zone.Temple_of_Time,
+                //         Zone.City_in_the_Sky,
+                //         Zone.Palace_of_Twilight,
+                //         Zone.Hyrule_Castle,
+                //     }
+                // },
                 { Province.Optional, ZoneUtils.GetOptionalDungeonsZoneList() },
                 { Province.Required, ZoneUtils.GetRequiredDungeonsZoneList() },
             };
@@ -163,7 +163,7 @@ namespace TPRandomizer.Hints
                     Province.Lanayru,
                     Province.Desert,
                     Province.Peak,
-                    Province.Dungeon,
+                    // Province.Dungeon,
                     Province.Required,
                     Province.Optional,
                 };

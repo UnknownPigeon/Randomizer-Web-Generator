@@ -94,6 +94,7 @@ namespace TPRandomizer.Assets
             { 0x0, 0x62 }, // Defeated second bulblin outside link's house
             { 0x0, 0x60 }, // Defeated Hugo
             { 0x6, 0x7B }, // Open path from faron field to south of castle town
+            { 0x6, 0x44 }, // Eldin field Goron Bridge repaired
         };
 
         /// <summary>
@@ -413,6 +414,7 @@ namespace TPRandomizer.Assets
             { 0x15, 0xBE }, // open big door in room 1 cs part 1 trigger
             { 0x15, 0xBD }, // open big door in room 1 cs part 2 trigger
             { 0x15, 0xBF }, // statue placed in slot in room 1
+            // { 0x15, 0x63 }, // Room 1 Big Chest Spawned
         };
 
         public static readonly byte[,] HcShortcutFlags = new byte[,]
@@ -562,6 +564,7 @@ namespace TPRandomizer.Assets
             { 0xB, 0x20 }, // Talked to Yeta in Snowpeak for the first time
             { 0x43, 0x8 }, // Senses unlocked
             { 0x46, 0x10 }, // Rode Epona back to Link's House
+            { 0x2E, 0x20 }, // Bridge Repair fundraising completed
         };
 
         /// <summary>
@@ -735,7 +738,7 @@ namespace TPRandomizer.Assets
             /* 20 */RandomizerSettings.openDot,
             /* 21 */RandomizerSettings.openMap,
             /* 22 */RandomizerSettings.hcShortcut,
-            /* 23 */RandomizerSettings.hintDistribution == HintDistribution.DrehenOptional || RandomizerSettings.hintDistribution == HintDistribution.DrehenOptional2,
+            /* 23 */RandomizerSettings.hintDistribution == HintDistribution.Drehen || RandomizerSettings.hintDistribution == HintDistribution.Drehen2 || RandomizerSettings.hintDistribution == HintDistribution.DrehenOptional || RandomizerSettings.hintDistribution == HintDistribution.Drehen2Optional,
         };
     }
 }

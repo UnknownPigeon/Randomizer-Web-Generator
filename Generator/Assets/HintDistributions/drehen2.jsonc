@@ -24,12 +24,14 @@
   },
   //
   "addChecks": {
-    "Lake Hylia Shell Blade Grotto Chest": ["always"]
+    "Lake Hylia Shell Blade Grotto Chest": ["always"],
+    "Death Mountain Alcove Chest": ["always"]
   },
   "removeChecks": {
     "Palace of Twilight Collect Both Sols": ["always"],
     "Forest Temple Gale Boomerang": ["sometimes"],
-    "City in The Sky Aeralfos Chest": ["sometimes"]
+    "City in The Sky Aeralfos Chest": ["sometimes"],
+    "Plumm Fruit Balloon Minigame": ["always"]
   },
   "removeItems": {},
   //
@@ -42,17 +44,6 @@
   // barren by a BeyondThisPoint hint.
   "specialHintDefs": [
     {
-      "spot": "death_mountain_sign",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "vague": true,
-          "validChecks": ["Death Mountain Alcove Chest"]
-        }
-      }
-    },
-    {
       "spot": "forest_temple_sign",
       "hintDef": {
         "hintType": "location",
@@ -62,50 +53,6 @@
         }
       }
     },
-    {
-      "spot": "forest_temple_sign",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Forest Temple Diababa Heart Container"]
-        }
-      }
-    },
-    //
-    {
-      "spot": "goron_mines_sign",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Goron Mines Fyrus Heart Container"]
-        }
-      }
-    },
-    //
-    {
-      "spot": "lakebed_temple_sign",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Lakebed Temple Morpheel Heart Container"]
-        }
-      }
-    },
-    //
-    {
-      "spot": "arbiters_grounds_sign",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Arbiters Grounds Stallord Heart Container"]
-        }
-      }
-    },
-    //
     {
       "spot": "snowpeak_ruins_sign",
       "hintDef": {
@@ -138,17 +85,6 @@
       }
     },
     {
-      "spot": "snowpeak_ruins_sign",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Snowpeak Ruins Blizzeta Heart Container"]
-        }
-      }
-    },
-    //
-    {
       "spot": "temple_of_time_sign",
       "hintDef": {
         "hintType": "location",
@@ -158,30 +94,6 @@
         }
       }
     },
-    {
-      "spot": "temple_of_time_sign",
-      "hintDef": {
-        "hintType": "location",
-        "options": {
-          "canHintHintedBarrenChecks": true,
-          "validChecks": ["Temple of Time Armogohma Heart Container"]
-        }
-      }
-    },
-    //
-    {
-      "spot": "city_in_the_sky_sign",
-      "hintDef": [
-        {
-          "hintType": "location",
-          "options": {
-            "canHintHintedBarrenChecks": true,
-            "validChecks": ["City in The Sky Argorok Heart Container"]
-          }
-        }
-      ]
-    },
-    //
     {
       "spot": "Palace_of_Twilight_Sign",
       "hintDef": {
@@ -223,7 +135,7 @@
             "options": {
               "item": "Progressive_Sword",
               "areaType": "province",
-              "validAreas": ["Optional", "Required", "Faron", "Eldin", "Lanayru", "Desert", "Ordona", "Peak"],
+              "validAreas": ["Required", "Faron", "Eldin", "Lanayru", "Desert", "Ordona", "Peak"],
               "order": "desc"
             }
           },
@@ -234,13 +146,9 @@
             "options": {
               "item": "Progressive_Sword",
               "areaType": "province",
-              "validAreas": ["Optional", "Required", "Faron", "Eldin", "Lanayru", "Desert"],
+              "validAreas": ["Required", "Faron", "Eldin", "Lanayru", "Desert"],
               "order": "asc"
             }
-          },
-          {
-            "hintType": "itemToItemPath",
-            "saveToVar": "HintCopies"
           },
           {
             "hintType": "path",
@@ -248,16 +156,16 @@
             "iterations": 3
           },
           {
+              "hintType": "barren",
+              "iterations": 4,
+              "starting": 4
+          },
+          {
             "hintType": "barren",
             "saveToVar": "HintCopies",
             "options": {
               "areaType": "category"
             }
-          },
-          {
-            "hintType": "barren",
-            "iterations": 4,
-            "starting": 4
           },
           // Fill in layer with extra copies
           {

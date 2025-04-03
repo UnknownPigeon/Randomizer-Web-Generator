@@ -448,6 +448,7 @@
       { id: 'skipZantCheckbox' },
       { id: 'hcShortcutCheckbox' },
       { id: 'lessKeyPalaceCheckbox' },
+      { id: 'lanayruEldinRoadBlockCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -929,12 +930,14 @@
       processBasic({ id: 'skipZant' });
       processBasic({ id: 'hcShortcut' });
       processBasic({ id: 'lessKeyPalace' });
+      processBasic({ id: 'lanayruEldinRoadBlock' });
     } else {
       res.randomizeStartingPoint = false; // Vanilla
       res.rupees = false; // Vanilla
       res.skipZant = false;
       res.hcShortcut = false;
       res.lessKeyPalace = false;
+      res.lanayruEldinRoadBlock = false;
     }
 
     res.startingItems = processor.nextEolList(9);

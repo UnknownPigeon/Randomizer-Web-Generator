@@ -23,11 +23,12 @@
         "Requirements": "Aurus_Memo and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "Aurus_Memo and CanCompleteLanayruTwilight"
       },
-      {
-        "ConnectedArea": "Upper Zoras River",
-        "Requirements": "Shadow_Crystal",
-        "GlitchedRequirements": "Shadow_Crystal"
-      },
+      // PLUMM Out of Logic to access UZR
+      // {
+      //   "ConnectedArea": "Upper Zoras River",
+      //   "Requirements": "Shadow_Crystal",
+      //   "GlitchedRequirements": "Shadow_Crystal"
+      // },
       {
         "ConnectedArea": "Lake Hylia Lanayru Spring",
         "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
@@ -75,7 +76,7 @@
         "ConnectedArea": "Lake Hylia Shell Blade Grotto",
         "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
-      },
+      }
     ],
     "Checks":[
       "Outside Lanayru Spring Left Statue Chest",
