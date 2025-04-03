@@ -524,7 +524,7 @@ namespace TPRandomizer.Assets
                 { 20, OpenDotRegionFlags },
                 { 21, OpenMapRegionFlags },
                 { 22, HcShortcutFlags },
-                { 23, PalaceFirstDoor},
+                { 23, PalaceFirstDoor },
             };
 
         /// <summary>
