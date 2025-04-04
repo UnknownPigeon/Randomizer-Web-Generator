@@ -707,7 +707,7 @@ var arrayOfSettingsItems = [
   'openMapCheckbox',
   'spinnerSpeedCheckbox',
   'openDotCheckbox',
-  'skipHcCheckBox',
+  'skipHcCheckbox',
   'optDungeonsCheckbox',
   'skipZantCheckbox',
   'hcShortcutCheckbox',
