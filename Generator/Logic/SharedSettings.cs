@@ -123,9 +123,9 @@ namespace TPRandomizer
             noSmallKeysOnBosses = processor.NextBool();
             startingToD = (StartingToD)processor.NextInt(3);
             hintDistribution = (HintDistribution)processor.NextInt(5);
-            randomizeStartingPoint = processor.NextBool();
             skipHc = processor.NextBool();
             optionalDungeons = processor.NextBool();
+            randomizeStartingPoint = processor.NextBool();
             shuffleHiddenRupees = processor.NextBool();
             skipZant = processor.NextBool();
             hcShortcut = processor.NextBool();
