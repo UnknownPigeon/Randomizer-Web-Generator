@@ -654,17 +654,17 @@ namespace TPRandomizer.Hints
                     if (pair.Value)
                     {
                         // Was able to complete goal after replacing check contents.
-                        Console.WriteLine(
+                        /*Console.WriteLine(
                             $"NOT needed for Goal {pair.Key.id}: {originalContents} in {checkName}"
-                        );
+                        );*/
                     }
                     else
                     {
                         // Was unable to complete goal after replacing check contents.
                         goalsToRequiredChecks[pair.Key].Add(checkName);
-                        Console.WriteLine(
+                        /*Console.WriteLine(
                             $"Needed for Goal {pair.Key.id}: {originalContents} in {checkName}"
-                        );
+                        );*/
                     }
                 }
 

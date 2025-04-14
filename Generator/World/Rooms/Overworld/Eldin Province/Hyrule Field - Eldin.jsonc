@@ -182,8 +182,8 @@
       },
       {
         "ConnectedArea": "Outside Castle Town East",
-        "Requirements": "(Setting.lanayruEldinRoadBlock equals false) or CanUnlockLanayruMap",
-        "GlitchedRequirements": "(Setting.lanayruEldinRoadBlock equals false) or CanUnlockLanayruMap"
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       }
     ],
     "Checks": [""],
@@ -237,8 +237,8 @@
       },
       {
         "ConnectedArea": "Eldin Field Outside Hidden Village",
-        "Requirements": "Room.Kakariko_Renados_Sanctuary and Wooden_Statue",
-        "GlitchedRequirements": "Room.Kakariko_Renados_Sanctuary and Wooden_Statue"
+        "Requirements": "(Room.Kakariko_Renados_Sanctuary and Wooden_Statue) or (Setting.iliaQuest equals Charm)",
+        "GlitchedRequirements": "(Room.Kakariko_Renados_Sanctuary and Wooden_Statue) or (Setting.iliaQuest equals Charm)"
       },
       {
         "ConnectedArea": "Eldin Field Grotto Platform",
@@ -247,9 +247,8 @@
       },
       {
         "ConnectedArea": "Lanayru Field",
-        // Future Rocks between Lanayru and Eldin
-        "Requirements": "((Setting.lanayruEldinRoadBlock equals false) or canSmash) and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "((Setting.lanayruEldinRoadBlock equals false) or canSmash) and CanCompleteEldinTwilight"
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
       }
     ],
     "Checks": [""],

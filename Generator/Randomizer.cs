@@ -1412,7 +1412,7 @@ namespace TPRandomizer
             check.itemWasPlaced = true;
             check.itemId = item;
 
-            Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
+            //Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
         }
 
         private static void StartOver()
