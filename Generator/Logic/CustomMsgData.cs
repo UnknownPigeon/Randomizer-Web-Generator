@@ -225,7 +225,8 @@ namespace TPRandomizer
             public byte optionalDungeons { get; private set; }
             public bool updateShopText { get; private set; } = true;
             private bool forceNotUpdateShopText = false;
-              private Dictionary<string, bool> selfHinterChecksToIsShop = new()
+            private Dictionary<string, bool> selfHinterChecksToIsShop =
+                new()
                 {
                     { "Barnes Bomb Bag", true },
                     { "Charlo Donation Blessing", false },
@@ -683,7 +684,8 @@ namespace TPRandomizer
 
         private void GenLinkHouseSignText(List<MessageEntry> results)
         {
-           List<(string, byte, string)> dungeonData = new()
+            List<(string, byte, string)> dungeonData =
+                new()
                 {
                     ("required-dungeon.forest-temple", 0x01, CustomMessages.messageColorGreen),
                     ("required-dungeon.goron-mines", 0x02, CustomMessages.messageColorRed),
@@ -692,7 +694,11 @@ namespace TPRandomizer
                     ("required-dungeon.snowpeak-ruins", 0x10, CustomMessages.messageColorLightBlue),
                     ("required-dungeon.temple-of-time", 0x20, CustomMessages.messageColorDarkGreen),
                     ("required-dungeon.city-in-the-sky", 0x40, CustomMessages.messageColorYellow),
-                    ("required-dungeon.palace-of-twilight", 0x80, CustomMessages.messageColorPurple),
+                    (
+                        "required-dungeon.palace-of-twilight",
+                        0x80,
+                        CustomMessages.messageColorPurple
+                    ),
                 };
 
             StringBuilder sb = new();
@@ -1626,10 +1632,8 @@ namespace TPRandomizer
             if (includeColor)
                 result += CustomMessages.messageColorPurple;
 
-         Dictionary<string, string> interpolation = new()
-            {
-                { "count", amount.ToString(CultureInfo.InvariantCulture) },
-            };
+            Dictionary<string, string> interpolation =
+                new() { { "count", amount.ToString(CultureInfo.InvariantCulture) }, };
 
             string shopText = Res.Msg("shop.price", interpolation, priceContextMeta)
                 .Substitute(interpolation);

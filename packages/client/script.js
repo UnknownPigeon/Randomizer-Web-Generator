@@ -414,6 +414,7 @@ document
 document
   .getElementById('randomizeStartingPointCheckbox')
   .addEventListener('click', setSettingsString);
+  document.getElementById('iliaQuestFieldset').onchange = setSettingsString;
 document
   .getElementById('importSettingsStringButton')
   .addEventListener('click', importSettingsString);
@@ -1283,6 +1284,7 @@ function populateSSettings(s) {
   $('#hcShortcutCheckbox').prop('checked', s.hcShortcut);
   $('#lessKeyPalaceCheckbox').prop('checked', s.lessKeyPalace);
   $('#lanayruEldinRoadBlockCheckbox').prop('checked', s.lanayruEldinRoadBlock);
+  $('#iliaQuestFieldset').val(s.iliaQuest);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

@@ -132,4 +132,13 @@ namespace TPRandomizer.SSettings.Enums
         Drehen2Optional = 9,
         
     }
+
+    public enum IliaQuest
+    {
+        Vanilla = 0,
+        Letter = 1,
+        Invoice = 2,
+        Statue = 3,
+        Charm = 4,
+    }
 }
