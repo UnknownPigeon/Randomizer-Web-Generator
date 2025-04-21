@@ -502,8 +502,6 @@ namespace TPRandomizer
                 part2Settings.Add("skipZant", SSettings.skipZant);
             if (SSettings.lessKeyPalace)
                 part2Settings.Add("lessKeyPalace", SSettings.lessKeyPalace);
-            if (SSettings.lanayruEldinRoadBlock)
-                part2Settings.Add("lanayruEldinRoadBlock", SSettings.lanayruEldinRoadBlock);
 
             // Complex fields
             if (SSettings.startingItems?.Count > 0)

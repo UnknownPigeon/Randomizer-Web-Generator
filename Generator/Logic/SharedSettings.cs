@@ -62,7 +62,6 @@ namespace TPRandomizer
         public bool skipZant { get; set; }
         public bool hcShortcut { get; set; }
         public bool lessKeyPalace { get; set; }
-        public bool lanayruEldinRoadBlock { get; set; }
         public bool noSmallKeysOnBosses { get; set; }
         public StartingToD startingToD { get; set; }
         public HintDistribution hintDistribution { get; set; }
@@ -131,7 +130,6 @@ namespace TPRandomizer
             skipZant = processor.NextBool();
             hcShortcut = processor.NextBool();
             lessKeyPalace = processor.NextBool();
-            lanayruEldinRoadBlock = processor.NextBool();
             iliaQuest = (IliaQuest)processor.NextInt(3);
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.

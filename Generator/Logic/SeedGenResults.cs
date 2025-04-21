@@ -587,7 +587,6 @@ namespace TPRandomizer
             result.Add("skipZant", sSettings.skipZant);
             result.Add("hcShortcut", sSettings.hcShortcut);
             result.Add("lessKeyPalace", sSettings.lessKeyPalace);
-            result.Add("lanayruEldinRoadBlock", sSettings.lanayruEldinRoadBlock);
             result.Add("noSmallKeysOnBosses", sSettings.noSmallKeysOnBosses);
             result.Add("startingToD", sSettings.startingToD.ToString());
             result.Add("hintDistribution", sSettings.hintDistribution.ToString());
