@@ -224,7 +224,7 @@ window.tpr.checkData = {
     itemId: 'Aurus_Memo',
   },
   'Barnes Bomb Bag': {
-    category: ['Overworld', 'Npc', 'Kakariko Village', 'ARC'],
+    category: ['Overworld', 'Shop', 'Kakariko Village', 'ARC'],
     itemId: 'Filled_Bomb_Bag',
   },
   'Bridge of Eldin Female Phasmid': {
@@ -284,7 +284,7 @@ window.tpr.checkData = {
     itemId: 'Red_Potion',
   },
   'Castle Town Malo Mart Magic Armor': {
-    category: ['Overworld', 'Castle Town', 'ARC', 'Npc'],
+    category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
     itemId: 'Magic_Armor',
   },
   'Castle Town Portal': {
@@ -446,7 +446,7 @@ window.tpr.checkData = {
     itemId: 'Bombs_10',
   },
   'Coro Bottle': {
-    category: ['Overworld', 'Npc', 'Faron Woods', 'ARC'],
+    category: ['Overworld', 'Shop', 'Faron Woods', 'ARC'],
     itemId: 'Coro_Bottle',
   },
   'Coro Lantern': {
@@ -1225,7 +1225,7 @@ window.tpr.checkData = {
     itemId: 'Female_Ant',
   },
   'Kakariko Village Malo Mart Hawkeye': {
-    category: ['Overworld', 'Kakariko Village', 'ARC', 'Npc'],
+    category: ['Overworld', 'Kakariko Village', 'ARC', 'Shop'],
     itemId: 'Hawkeye',
   },
   'Kakariko Village Malo Mart Hylian Shield': {
@@ -1851,7 +1851,7 @@ window.tpr.checkData = {
     itemId: 'Poe_Soul',
   },
   'Sera Shop Slingshot': {
-    category: ['Overworld', 'Npc', 'Ordona Province', 'ARC'],
+    category: ['Overworld', 'Shop', 'Ordona Province', 'ARC'],
     itemId: 'Slingshot',
   },
   'Shad Dominion Rod': {

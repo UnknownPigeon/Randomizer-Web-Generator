@@ -347,7 +347,7 @@ namespace TPRandomizer
                 root.Add("hints", customMsgData.GetDictForSpoiler());
                 root.Add("spheres", GetSpheresForSpoiler());
             }
-            else if ((sSettings.hintDistribution == SSettings.Enums.HintDistribution.Drehen) || (sSettings.hintDistribution == SSettings.Enums.HintDistribution.Drehen2) || (sSettings.hintDistribution == SSettings.Enums.HintDistribution.DrehenOptional) || (sSettings.hintDistribution == SSettings.Enums.HintDistribution.Drehen2Optional))
+            else if (sSettings.hintDistribution == SSettings.Enums.HintDistribution.DrehenS2)
             {
                 root.Add("requiredDungeons", GetRequiredDungeonsStringList());
                 root.Add("OptionalDungeons", GetOptionalDungeonsStringList());
@@ -587,7 +587,6 @@ namespace TPRandomizer
             result.Add("skipZant", sSettings.skipZant);
             result.Add("hcShortcut", sSettings.hcShortcut);
             result.Add("lessKeyPalace", sSettings.lessKeyPalace);
-            result.Add("lanayruEldinRoadBlock", sSettings.lanayruEldinRoadBlock);
             result.Add("noSmallKeysOnBosses", sSettings.noSmallKeysOnBosses);
             result.Add("startingToD", sSettings.startingToD.ToString());
             result.Add("hintDistribution", sSettings.hintDistribution.ToString());
