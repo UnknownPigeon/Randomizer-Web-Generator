@@ -1376,14 +1376,8 @@ namespace TPRandomizer.Hints.Settings
                     return Path.Combine(basePath, "balanced.jsonc");
                 case HintDistribution.Season_1:
                     return Path.Combine(basePath, "season-1.jsonc");
-                case HintDistribution.Drehen:
-                    return Path.Combine(basePath, "drehen.jsonc");
-                case HintDistribution.Drehen2:
-                    return Path.Combine(basePath, "drehen2.jsonc");
-                case HintDistribution.DrehenOptional:
-                    return Path.Combine(basePath, "drehenoptional.jsonc");
-                case HintDistribution.Drehen2Optional:
-                    return Path.Combine(basePath, "drehen2optional.jsonc");
+                case HintDistribution.DrehenS2:
+                    return Path.Combine(basePath, "drehens2.jsonc");
                 case HintDistribution.Strong:
                     return Path.Combine(basePath, "strong.jsonc");
                 case HintDistribution.Very_Strong:

@@ -416,7 +416,7 @@
     }
 
     initDownloadOptions(spoilerData.isRaceSeed);
-    if ((spoilerData.settings.hintDistribution == 'Drehen') || (spoilerData.settings.hintDistribution == 'Drehen2') || (spoilerData.settings.hintDistribution == 'DrehenOptional') || (spoilerData.settings.hintDistribution == 'Drehen2Optional')) {
+    if (spoilerData.settings.hintDistribution == 'DrehenS2'){
       fillInHintsTable(spoilerData);
       $('#tabBtnPlaythroughHints').show();
     }

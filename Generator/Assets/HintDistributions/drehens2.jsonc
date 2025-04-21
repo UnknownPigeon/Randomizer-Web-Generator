@@ -58,7 +58,8 @@
           "hintType": "location",
           "options": {
             "canHintHintedBarrenChecks": true,
-            "validChecks": ["Forest Temple Gale Boomerang"]
+            "validChecks": ["Forest Temple Gale Boomerang"],
+            "checkStatusDisplay": "required_info"
           }
         }
       },
@@ -87,7 +88,8 @@
                   "Snowpeak Ruins Chapel Chest",
                   "Snowpeak Ruins Lobby Chandelier Chest",
                   "Snowpeak Ruins Northeast Chandelier Chest"
-                ]
+                ],
+            "checkStatusDisplay": "required_info"
               }
             }
           ]
@@ -99,7 +101,8 @@
           "hintType": "location",
           "options": {
             "canHintHintedBarrenChecks": true,
-            "validChecks": ["Temple of Time Lobby Lantern Chest"]
+            "validChecks": ["Temple of Time Lobby Lantern Chest"],
+            "checkStatusDisplay": "required_info"
           }
         }
       },
@@ -165,16 +168,37 @@
               "iterations": 3
             },
             {
+              "maxPicks": 4,
+              "starting": 4,
+              "hintDef": [
+                {
+                  "hintType": "barren",
+                  "iterations": 1,
+                  "options": {
+                    "validAreas": [
+                      "Forest Temple",
+                      "Goron Mines",
+                      "Lakebed Temple",
+                      "Arbiter's Grounds",
+                      "Snowpeak Ruins",
+                      "Temple of Time",
+                      "City in the Sky",
+                      "Palace of Twilight"
+                    ]
+                  }
+                },
+                {
+                  "hintType": "barren",
+                  "iterations": 4
+                }
+              ]
+            },
+            {
               "hintType": "barren",
               "saveToVar": "HintCopies",
               "options": {
                 "areaType": "category"
               }
-            },
-            {
-              "hintType": "barren",
-              "iterations": 4,
-              "starting": 4
             },
             // Fill in layer with extra copies
             {
@@ -208,9 +232,7 @@
                     "namedChecks": [
                       "Forest Temple West Tile Worm Chest Behind Stairs",
                       "Goron Mines Outside Clawshot Chest",
-                      "Goron Mines Main Magnet Room Top Chest",
                       "City in The Sky West Wing First Chest",
-                      "City in The Sky Chest Behind North Fan",
                       "Palace of Twilight Big Key Chest"
                     ]
                   }

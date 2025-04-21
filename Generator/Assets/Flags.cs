@@ -743,7 +743,7 @@ namespace TPRandomizer.Assets
             /* 20 */RandomizerSettings.openDot,
             /* 21 */RandomizerSettings.openMap,
             /* 22 */RandomizerSettings.hcShortcut,
-            /* 23 */RandomizerSettings.hintDistribution == HintDistribution.Drehen || RandomizerSettings.hintDistribution == HintDistribution.Drehen2 || RandomizerSettings.hintDistribution == HintDistribution.DrehenOptional || RandomizerSettings.hintDistribution == HintDistribution.Drehen2Optional,
+            /* 23 */RandomizerSettings.hintDistribution == HintDistribution.DrehenS2,
             /* 24 */RandomizerSettings.randomizeStartingPoint,
         };
     }
