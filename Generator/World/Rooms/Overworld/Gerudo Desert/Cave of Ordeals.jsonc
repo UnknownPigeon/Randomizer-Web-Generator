@@ -31,11 +31,11 @@
         "Requirements": "CanDefeatHelmasaur and CanDefeatRat and Ball_and_Chain and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatBulblin and CanDefeatKeese and CanDefeatRat and CanDefeatStalhound and CanDefeatPoe and CanDefeatLeever",
         "GlitchedRequirements": "CanDefeatHelmasaur and CanDefeatRat and Ball_and_Chain and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatBulblin and CanDefeatKeese and CanDefeatRat and CanDefeatStalhound and CanDefeatPoe and CanDefeatLeever"
       },
-      {
-        "ConnectedArea": "South Faron Woods",
-        "Requirements": "CanDefeatHelmasaur and CanDefeatRat and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatBulblin and CanDefeatKeese and CanDefeatRat and CanDefeatStalhound and CanDefeatPoe and CanDefeatLeever",
-        "GlitchedRequirements": "CanDefeatHelmasaur and CanDefeatRat and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatBulblin and CanDefeatKeese and CanDefeatRat and CanDefeatStalhound and CanDefeatPoe and CanDefeatLeever"
-      }
+      // {
+      //   "ConnectedArea": "South Faron Woods",
+      //   "Requirements": "CanDefeatHelmasaur and CanDefeatRat and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatBulblin and CanDefeatKeese and CanDefeatRat and CanDefeatStalhound and CanDefeatPoe and CanDefeatLeever",
+      //   "GlitchedRequirements": "CanDefeatHelmasaur and CanDefeatRat and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatBulblin and CanDefeatKeese and CanDefeatRat and CanDefeatStalhound and CanDefeatPoe and CanDefeatLeever"
+      // }
     ],
     "Checks":
     [
@@ -52,11 +52,11 @@
         "Requirements": "CanDefeatBokoblin and CanDefeatIceKeese and (Progressive_Dominion_Rod, 2) and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble",
         "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatIceKeese and (Progressive_Dominion_Rod, 2) and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble"
       },
-      {
-        "ConnectedArea": "Lower Kakariko Village",
-        "Requirements": "CanDefeatBokoblin and CanDefeatIceKeese and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble",
-        "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatIceKeese and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble"
-      }
+      // {
+      //   "ConnectedArea": "Lower Kakariko Village",
+      //   "Requirements": "CanDefeatBokoblin and CanDefeatIceKeese and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble",
+      //   "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatIceKeese and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble"
+      // }
     ],
     "Checks": [""],
     "Region": "Gerudo Desert"
