@@ -439,7 +439,7 @@ namespace TPRandomizer
 
             // Once all of the entrances have been shuffled correctly, we want to update the connections on all of the paired entrances.
             ShufflePairedEntrances();
-            
+
             //Skip HC
             if (Randomizer.SSettings.skipHc)
             {
@@ -471,10 +471,7 @@ namespace TPRandomizer
             }
 
             // Stallord backdoor
-            Randomizer
-                .Rooms.RoomDict["Mirror Chamber Lower"]
-                .Exits[0]
-                .SetAsShuffled();
+            Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].SetAsShuffled();
             Randomizer
                 .Rooms.RoomDict["Mirror Chamber Lower"]
                 .Exits[0]
@@ -482,6 +479,24 @@ namespace TPRandomizer
                     Randomizer.Rooms.RoomDict["Arbiters Grounds Boss Room"].Exits[0]
                 );
 
+            // Cave of Ordeal
+
+            if (Randomizer.SSettings.hintDistribution == SSettings.Enums.HintDistribution.DrehenS2)
+            {
+                Randomizer
+                    .Rooms.RoomDict["Gerudo Desert Cave of Ordeals Plateau"]
+                    .Exits[1]
+                    .SetAsShuffled();
+                Randomizer
+                    .Rooms.RoomDict["Gerudo Desert Cave of Ordeals Plateau"]
+                    .Exits[1]
+                    .SetReplacedEntrance(
+                        Randomizer
+                            .Rooms
+                            .RoomDict["Gerudo Desert Cave of Ordeals Floors 01-11"]
+                            .Exits[0]
+                    );
+            }
 
             // Validate the world one last time to ensure that everything went okay
             err = ValidateWorld();
@@ -807,9 +822,9 @@ namespace TPRandomizer
 
         void RemoveEntrance(Entrance entranceToRemove)
         {
-            Randomizer.Rooms.RoomDict[entranceToRemove.GetParentArea()].Exits.Remove(
-                entranceToRemove
-            );
+            Randomizer
+                .Rooms.RoomDict[entranceToRemove.GetParentArea()]
+                .Exits.Remove(entranceToRemove);
         }
 
         void SetShuffledEntrances(Dictionary<EntranceType, EntrancePool> entrancePools)
