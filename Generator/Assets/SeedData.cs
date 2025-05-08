@@ -141,7 +141,6 @@ namespace TPRandomizer.Assets
             CheckDataRaw.AddRange(ParseBugRewards());
             CheckDataRaw.AddRange(ParseSkyCharacters());
             CheckDataRaw.AddRange(ParseShopItems());
-            CheckDataRaw.AddRange(ParseShopRefills());
             CheckDataRaw.AddRange(ParseEventItems());
             CheckDataRaw.AddRange(ParseStartingItems());
             while (CheckDataRaw.Count % 0x10 != 0)
@@ -882,7 +881,10 @@ namespace TPRandomizer.Assets
             foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
             {
                 Check currentCheck = checkList.Value;
-                if (currentCheck.dataCategory.Contains("Shop"))
+                if (
+                    currentCheck.dataCategory.Contains("Shop")
+                    || currentCheck.dataCategory.Contains("Refills")
+                )
                 {
                     listOfShopItems.Add(
                         Converter.GcByte(
@@ -902,35 +904,6 @@ namespace TPRandomizer.Assets
             SeedHeaderRaw.shopCheckInfoNumEntries = count;
             SeedHeaderRaw.shopCheckInfoDataOffset = (ushort)(CheckDataRaw.Count);
             return listOfShopItems;
-        }
-
-        private List<byte> ParseShopRefills()
-        {
-            List<byte> listOfShopRefills = new();
-            ushort count = 0;
-            foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
-            {
-                Check currentCheck = checkList.Value;
-                if (currentCheck.dataCategory.Contains("Refills"))
-                {
-                    listOfShopRefills.Add(
-                        Converter.GcByte(
-                            int.Parse(
-                                currentCheck.flag,
-                                System.Globalization.NumberStyles.HexNumber
-                            )
-                        )
-                    );
-                    listOfShopRefills.Add(Converter.GcByte((int)currentCheck.itemId));
-                    listOfShopRefills.Add(Converter.GcByte(0x0)); // padding
-                    listOfShopRefills.Add(Converter.GcByte(0x0)); // padding
-                    count++;
-                }
-            }
-
-            SeedHeaderRaw.shopCheckInfoNumEntries = count;
-            SeedHeaderRaw.shopCheckInfoDataOffset = (ushort)(CheckDataRaw.Count);
-            return listOfShopRefills;
         }
 
         private List<byte> ParseEventItems()
