@@ -1475,11 +1475,11 @@ namespace TPRandomizer
                 CanUse(Item.Hylian_Shield)
                 || (
                     Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
-                    && !Randomizer.SSettings.shuffleShopItems
+                    && !Randomizer.SSettings.shuffleShopRefills
                 )
                 || (
                     Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
-                    && !Randomizer.SSettings.shuffleShopItems
+                    && !Randomizer.SSettings.shuffleShopRefills
                 )
                 || Randomizer.Rooms.RoomDict["Death Mountain Hot Spring"].ReachedByPlaythrough
             );
@@ -1691,7 +1691,7 @@ namespace TPRandomizer
                     Randomizer.Rooms.RoomDict[
                         "Castle Town Goron House Balcony"
                     ].ReachedByPlaythrough
-                    // && !Randomizer.SSettings.shuffleShopItems
+                    && !Randomizer.SSettings.shuffleShopRefills
                 )
                 || Randomizer.Rooms.RoomDict["Death Mountain Hot Spring"].ReachedByPlaythrough
             );
@@ -1715,7 +1715,7 @@ namespace TPRandomizer
                 )
                 || (
                     Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
-                    && !Randomizer.SSettings.shuffleShopItems
+                    && !Randomizer.SSettings.shuffleShopRefills
                 )
             );
         }

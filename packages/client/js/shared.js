@@ -449,6 +449,7 @@
       { id: 'hcShortcutCheckbox' },
       { id: 'lessKeyPalaceCheckbox' },
       { id: 'iliaQuestFieldset', bitLength: 3 },
+      { id: 'shopRefillsCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -937,6 +938,7 @@
       processBasic({ id: 'hcShortcut' });
       processBasic({ id: 'lessKeyPalace' });
       processBasic({ id: 'iliaQuest', bitLength: 3 });
+      processBasic({ id: 'shopRefills' });
     } else {
       res.randomizeStartingPoint = false; // Vanilla
       res.hiddenRupees = false; // Vanilla
@@ -944,6 +946,7 @@
       res.hcShortcut = false;
       res.lessKeyPalace = false;
       res.iliaQuest = 0; // Vanilla
+      res.shopRefills = false
     }
 
     res.startingItems = processor.nextEolList(9);

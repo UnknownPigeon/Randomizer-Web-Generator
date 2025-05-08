@@ -1,6 +1,6 @@
 {
     "requirements": "true",
     "glitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Castle Town", "Shop"],
+    "checkCategory": ["Overworld", "Castle Town", "Refills"],
     "itemId": "Hylian_Shield"
 }

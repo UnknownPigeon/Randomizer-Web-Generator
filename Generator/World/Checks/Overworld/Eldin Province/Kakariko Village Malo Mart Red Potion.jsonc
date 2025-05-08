@@ -1,6 +1,6 @@
 {
     "requirements": "CanCompleteEldinTwilight",
     "glitchedRequirements": "CanCompleteEldinTwilight",
-    "checkCategory": ["Overworld", "Kakariko Village", "Shop"],
+    "checkCategory": ["Overworld", "Kakariko Village", "Refills"],
     "itemId": "Red_Potion_Shop"
 }

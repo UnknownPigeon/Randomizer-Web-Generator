@@ -24,6 +24,7 @@ namespace TPRandomizer
         public bool shuffleNpcItems { get; set; }
         public PoeSettings shufflePoes { get; set; }
         public bool shuffleShopItems { get; set; }
+        public bool shuffleShopRefills { get; set; }
         public bool shuffleHiddenSkills { get; set; }
         public SmallKeySettings smallKeySettings { get; set; }
         public BigKeySettings bigKeySettings { get; set; }
@@ -131,6 +132,7 @@ namespace TPRandomizer
             hcShortcut = processor.NextBool();
             lessKeyPalace = processor.NextBool();
             iliaQuest = (IliaQuest)processor.NextInt(3);
+            shuffleShopRefills = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

@@ -516,6 +516,16 @@ namespace TPRandomizer
                     }
                 }
 
+                if (!parseSetting.shuffleShopRefills)
+                {
+                    if (
+                        currentCheck.checkCategory.Contains("Refills")
+                    )
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    } 
+                }
+
                 if (!parseSetting.shuffleHiddenRupees)
                 {
                     if (currentCheck.checkCategory.Contains("Rupee - Hidden"))

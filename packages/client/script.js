@@ -309,6 +309,9 @@ document
   .getElementById('shopItemsCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('shopRefillsCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('hiddenSkillsCheckbox')
   .addEventListener('click', setSettingsString);
 document
@@ -541,6 +544,7 @@ function setSettingsString() {
   settingsStringRaw[43] = document.getElementById('skipZantCheckbox').checked;
   settingsStringRaw[44] = document.getElementById('hcShortcutCheckbox').checked;
   settingsStringRaw[45] = document.getElementById('lessKeyPalaceCheckbox').checked;
+  settingsStringRaw[46] = document.getElementById('shopRefillsCheckbox').checked;
 
   // document.getElementById('settingsStringTextbox').value =
   document.getElementById('settingsStringTextbox').textContent =
@@ -709,6 +713,7 @@ var arrayOfSettingsItems = [
   'skipZantCheckbox',
   'hcShortcutCheckbox',
   'lessKeyPalaceCheckbox',
+  'shopRefillsCheckbox',
 ];
 
 function parseSettingsString(settingsString) {
@@ -1279,6 +1284,7 @@ function populateSSettings(s) {
   $('#hcShortcutCheckbox').prop('checked', s.hcShortcut);
   $('#lessKeyPalaceCheckbox').prop('checked', s.lessKeyPalace);
   $('#iliaQuestFieldset').val(s.iliaQuest);
+  $('#shopRefillsCheckbox').prop('checked', s.shopRefills);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {
