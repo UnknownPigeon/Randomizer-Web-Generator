@@ -268,19 +268,19 @@ window.tpr.checkData = {
     itemId: 'Gerudo_Desert_Bulblin_Camp_Key',
   },
   'Castle Town Goron Shop Arrow Refill': {
-    category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
+    category: ['Overworld', 'Castle Town', 'ARC', 'Refills'],
     itemId: 'Arrows_30',
   },
   'Castle Town Goron Shop Hylian Shield': {
-    category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
+    category: ['Overworld', 'Castle Town', 'ARC', 'Refills'],
     itemId: 'Hylian_Shield',
   },
   'Castle Town Goron Shop Lantern Oil': {
-    category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
+    category: ['Overworld', 'Castle Town', 'ARC', 'Refills'],
     itemId: 'Lantern_Oil_Shop',
   },
   'Castle Town Goron Shop Red Potion': {
-    category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
+    category: ['Overworld', 'Castle Town', 'ARC', 'Refills'],
     itemId: 'Red_Potion',
   },
   'Castle Town Malo Mart Magic Armor': {
@@ -1233,11 +1233,11 @@ window.tpr.checkData = {
     itemId: 'Hylian_Shield',
   },
   'Kakariko Village Malo Mart Red Potion': {
-    category: ['Overworld', 'Kakariko Village', 'ARC', 'Shop'],
+    category: ['Overworld', 'Kakariko Village', 'ARC', 'Refills'],
     itemId: 'Red_Potion',
   },
   'Kakariko Village Malo Mart Wooden Shield': {
-    category: ['Overworld', 'Kakariko Village', 'ARC', 'Shop'],
+    category: ['Overworld', 'Kakariko Village', 'ARC', 'Refills'],
     itemId: 'Wooden_Shield',
   },
   'Kakariko Village Portal': {
