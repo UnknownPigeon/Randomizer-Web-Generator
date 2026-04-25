@@ -11,10 +11,6 @@ namespace TPRandomizer
     {
         public string checkName { get; set; } // The common name for the check this can be used in the randomizer to identify the check."
 
-        public string requirements { get; set; } // List of requirements to obtain this check while inside the room (so does not include the items needed to enter the room)
-
-        public string glitchedRequirements { get; set; } // List of glitched logic requirements to obtain this check while inside the room (so does not include the items needed to enter the room)
-
         public string checkStatus { get; set; } // Identifies if the check is excluded or not. We can write the randomizer to not place important items in excluded checks
 
         public List<string> checkCategory { get; set; } // Allows grouping of checks to make it easier to randomize them based on their type, region, exclusion status, etc.
@@ -27,7 +23,7 @@ namespace TPRandomizer
         // Data that will be stored in the rando-data .gci file.
         public Item itemId { get; set; } // The original item id of the check. This allows us to make an array of all items in the item pool for randomization purposes. Also is useful for documentation purposes.
 
-        public List<byte> stageIDX { get; set; } // Used by DZX, SHOP, POE, SKILL, and BOSS checks. The index of the stage where the check is located.
+        public List<byte> stageIDX { get; set; } // Used by DZX, SHOP, POE, SKILL, and BOSS checks. The index of the stage where the check is located. In flag checks, this could be the nodeID
 
         public byte roomIDX { get; set; } // Used by SKILL checks to determine which wolf is being learned from.
 
@@ -53,20 +49,9 @@ namespace TPRandomizer
         public string fileName { get; set; }
 
         public List<string> overrideInstruction { get; set; } // Used by REL checks. The override instruction to be used when replacing the item in the rel.
+        public string chestLowerNibble { get; set; } // Used by Chests to determine functionality
 
         public bool isRequired { get; set; }
-
-        private LogicAST reqsCache;
-
-        public LogicAST CachedRequirements()
-        {
-            if (reqsCache != null)
-            {
-                return reqsCache;
-            }
-
-            return reqsCache = Parser.Parse(requirements);
-        }
     }
 
     /// <summary>

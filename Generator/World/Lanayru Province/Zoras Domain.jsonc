@@ -1,0 +1,432 @@
+[
+  {
+    "RoomName": "Upper Zoras River",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lanayru Field",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Fishing Hole",
+        "Requirements": "(Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "(Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight"
+      },
+	  {
+		  "ConnectedArea": "Zoras Domain",
+		  "Requirements": "true",
+      "GlitchedRequirements": "true"
+	  },
+      {
+        "ConnectedArea": "Upper Zoras River Izas House",
+        "Requirements": "(HasSword or ((CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) or Upper_Zoras_River_Portal)) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "(HasSword or ((CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) or Upper_Zoras_River_Portal)) and CanCompleteLanayruTwilight"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Upper Zoras River Female Dragonfly",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Upper Zoras River Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Upper Zoras River Portal",
+        "Requirements": "CanDefeatShadowBeast",
+        "GlitchedRequirements": "CanDefeatShadowBeast"
+      },
+      {
+        "CheckName": "Upper Zoras River East Underwater Boulder Rupee",
+        "Requirements": "Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "Iron_Boots and CanUseWaterBombs"
+      },
+      {
+        "CheckName": "Upper Zoras River Central Underwater Boulder Rupee",
+        "Requirements": "Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "Iron_Boots and CanUseWaterBombs"
+      },
+      {
+        "CheckName": "Upper Zoras River West Underwater Boulder Rupee",
+        "Requirements": "Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "Iron_Boots and CanUseWaterBombs"
+      },
+      {
+        "CheckName": "Upper Zoras River Ledge Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Catch A Hylian Pike",
+        "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
+      }
+    ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Upper Zoras River Izas House",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Upper Zoras River",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Lake Hylia",
+        "Requirements": "(Progressive_Bow, 1)",
+        "GlitchedRequirements": "(Progressive_Bow, 1)"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Iza Helping Hand",
+        "Requirements": "Room.Upper_Zoras_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Room.Upper_Zoras_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Iza Raging Rapids Minigame",
+        "Requirements": "Room.Upper_Zoras_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Room.Upper_Zoras_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight"
+      }
+    ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Fishing Hole",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Upper Zoras River",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Fishing Hole House",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Fishing Hole Heart Piece",
+        "Requirements": "Progressive_Clawshot",
+        "GlitchedRequirements": "Progressive_Clawshot"
+      },
+      {
+        "CheckName": "Fishing Hole Bottle",
+        "Requirements": "(Progressive_Fishing_Rod, 1)",
+        "GlitchedRequirements": "(Progressive_Fishing_Rod, 1)"
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch An Ordon Catfish",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch A Hylian Pike",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch A Hyrule Bass",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch A Hylian Loach",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      }
+    ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Fishing Hole House",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Fishing Hole",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Fishing Hole Canoe",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Fishing Hole Canoe",
+    "Exits": [],
+    "Checks":
+    [
+      {
+        "CheckName": "Fishing Hole Heart Piece",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Glitchless exptects that you can get the sinking lure since the fish is much easier to catch with it.
+        // Glitched expects you to have access to rollgoal to get the frog lure. 
+        // Also you need access to fishing hole to change the season to summer.
+        "CheckName": "Catch The Legendary Hylian Loach",
+        "Requirements": "Room.Fishing_Hole and Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Room.Fishing_Hole and Room.Fishing_Hole_House"
+      }
+    ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Zoras Domain",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Zoras Domain West Ledge",
+        "Requirements": "(Progressive_Clawshot, 1) or Shadow_Crystal or CanSmash",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Shadow_Crystal or CanSmash"
+      },
+      {
+        "ConnectedArea": "Upper Zoras River",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Zoras Domain Top of Waterfall",
+        "Requirements": "CanWarpMeteor or Shadow_Crystal",
+        "GlitchedRequirements": "CanWarpMeteor or Shadow_Crystal"
+      },
+      {
+        "ConnectedArea": "Zoras Domain Snowpeak Entrance",
+        "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight and Ball_and_Chain) or CanCompleteLanayruTwilight)",
+        "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight and Ball_and_Chain) or CanCompleteLanayruTwilight)"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Zoras Domain Chest By Mother and Child Isles",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Zoras Domain Chest Behind Waterfall",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal or CanDoBSMoonBoots or Spinner or (HasBombs and HasSword) or CanDoLJA"
+      },
+      {
+        "CheckName": "Zoras Domain Male Dragonfly",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Zoras Domain Mother and Child Isle Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Zoras Domain Waterfall Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Zoras Domain Behind Waterfall Rupee",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Zoras Domain Central Underwater Boulder Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and Iron_Boots and CanUseWaterBombs"
+      },
+      {
+        "CheckName": "Zoras Domain North Underwater Boulder Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and Iron_Boots and CanUseWaterBombs"
+      },
+      {
+        "CheckName": "Zoras Domain Shortcut Ledge Rupee",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Zoras Domain Top Ledge Rupee",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Zoras Domain Vine Ledge Rupee",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Zoras Domain Waterfall Ledge Rupee",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Catch A Reekfish",
+        "Requirements": "(Progressive_Fishing_Rod, 2) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "(Progressive_Fishing_Rod, 2) and CanCompleteLanayruTwilight"
+      }
+    ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Zoras Domain Snowpeak Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Zoras Domain",
+        "Requirements": "Ball_and_Chain or CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Ball_and_Chain or CanCompleteLanayruTwilight"
+      },
+      {
+        "ConnectedArea": "Snowpeak Climb Lower",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Zoras Domain West Ledge",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Zoras Domain",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Zoras Domain Top of Waterfall",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "ConnectedArea": "Lanayru Field Behind Boulder",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": 
+    [
+      {
+        "CheckName": "Zoras Domain Shortcut Lower Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
+    ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Zoras Domain Throne Room",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Zoras Domain Top of Waterfall",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Zoras Domain Light All Torches Chest",
+        "Requirements": "Lantern and Iron_Boots",
+        "GlitchedRequirements": "Lantern and HasHeavyMod"
+      },
+      {
+        "CheckName": "Zoras Domain Extinguish All Torches Chest",
+        "Requirements": "Boomerang and Iron_Boots",
+        "GlitchedRequirements": "Boomerang and HasHeavyMod"
+      },
+      {
+        "CheckName": "Zoras Domain Underwater Goron",
+        "Requirements": "CanUseWaterBombs and Iron_Boots and Zora_Armor and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanUseWaterBombs and Iron_Boots and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Zoras Domain Portal",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Zoras Domain Throne East Gate Underwater Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and Iron_Boots",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor)"
+      },
+      {
+        "CheckName": "Zoras Domain Throne East Underwater Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and (Iron_Boots or Zora_Armor)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor or Zora_Armor)"
+      },
+      {
+        "CheckName": "Zoras Domain Throne Northwest Underwater Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and (Iron_Boots or Zora_Armor)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor or Zora_Armor)"
+      },
+      {
+        "CheckName": "Zoras Domain Throne South Underwater Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and (Iron_Boots or Zora_Armor)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor or Zora_Armor)"
+      },
+      {
+        "CheckName": "Zoras Domain Throne West Gate Underwater Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and Iron_Boots",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor)"
+      },
+      {
+        "CheckName": "Zoras Domain Throne West Underwater Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and (Iron_Boots or Zora_Armor)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor or Zora_Armor)"
+      }
+    ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Zoras Domain Top of Waterfall",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Zoras Domain",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Zoras Domain Throne Room",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": 
+    [
+      {
+        "CheckName": "Zoras Domain Shortcut Upper Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
+    ],
+    "Region": "Zoras Domain"
+  }
+]

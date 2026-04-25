@@ -1,6 +1,8 @@
 {
     "stageIDX": [25],
     "roomIDX": 50,
-    "flag": "DB",
+    "flag": "53",
+    "checkCategory": ["Dungeon", "Arbiters Grounds", "Dungeon Reward"],
+    "itemId": "Progressive_Mirror_Shard",
     "dataCategory": ["Event"]
 }

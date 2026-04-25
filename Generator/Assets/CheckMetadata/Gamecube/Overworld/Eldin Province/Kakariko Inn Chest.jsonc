@@ -4,5 +4,8 @@
     "roomIDX": 2,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
+    "checkCategory": ["Overworld", "Chest", "Kakariko Village"],
+    "itemId": "Red_Rupee",
     "dataCategory": ["Chest", "ARC"]
 }
