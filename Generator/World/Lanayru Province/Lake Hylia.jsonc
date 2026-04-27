@@ -272,8 +272,8 @@
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
+        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Lake Hylia"
@@ -427,8 +427,8 @@
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "Progressive_Fishing_Rod and CanDefeatWaterToadpoli",
-        "GlitchedRequirements": "Progressive_Fishing_Rod and CanDefeatWaterToadpoli"
+        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanDefeatWaterToadpoli",
+        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanDefeatWaterToadpoli"
       }
     ],
     "Region": "Lake Hylia"

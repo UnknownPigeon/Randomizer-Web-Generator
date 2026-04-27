@@ -1444,6 +1444,34 @@ namespace TPRandomizer
             );
         }
 
+        public static bool CanCollectLarva()
+        {
+            if (
+                (
+                    (
+                        (
+                            Randomizer.Rooms.RoomDict[
+                                "Lake Hylia Water Toadpoli Grotto"
+                            ].ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict[
+                                "Eldin Field Water Bomb Fish Grotto"
+                            ].ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict["Kakariko Graveyard"].ReachedByPlaythrough
+                        )
+                        && (
+                            CanUse(Item.Progressive_Clawshot)
+                            || CanUse(Item.Progressive_Bow)
+                            || CanUse(Item.Ball_and_Chain)
+                        )
+                    ) || Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
+                ) && HasBottle()
+            )
+            {
+                return true;
+            }
+            return false;
+        }
+
         public static bool CanUseBottledFairy()
         {
             return HasBottle() && Randomizer.Rooms.RoomDict["Lake Hylia"].ReachedByPlaythrough;

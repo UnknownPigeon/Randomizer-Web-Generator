@@ -80,8 +80,8 @@
       },
       {
         "CheckName": "Catch An Ordon Catfish",
-        "Requirements": "Progressive_Fishing_Rod and CanCompleteFaronTwilight",
-        "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteFaronTwilight"
+        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanCompleteFaronTwilight",
+        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanCompleteFaronTwilight"
       }
     ],
     "Region": "Faron Woods"

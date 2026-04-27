@@ -237,8 +237,8 @@
             },
             {
                 "CheckName": "Catch A Hyrule Bass",
-                "Requirements": "Progressive_Fishing_Rod",
-                "GlitchedRequirements": "Progressive_Fishing_Rod"
+                "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))",
+                "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))"
             },
             {
                 "CheckName": "Goron Mines Gor Ebizo Key Shard",
