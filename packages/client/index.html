@@ -284,7 +284,7 @@
           </div>
           <div class="tabColumn">
             <fieldset id="itemPoolOptionsFieldset">
-              <legend>World Items</legend>
+              <legend>World Locations</legend>
               <div
                 data-tooltip-text="If checked, the golden bug locations across Hyrule are randomized.&#0010;"
                 style="width: 90%"
@@ -370,6 +370,34 @@
                 />
                 <label for="freestandingRupeeCheckbox">
                   Freestanding Rupees </label
+                ><br />
+              </div>
+              <div
+                style="width: 90%"
+                data-tooltip-text="If checked, catching a fish for the first time gives a reward.&#0010;"
+              >
+                <input
+                  type="checkbox"
+                  id="fishJournalCheckbox"
+                  name="Fish Journal Entries"
+                  value=""
+                />
+                <label for="fishJournalCheckbox">
+                  Fish Journal Entries </label
+                ><br />
+              </div>
+              <div
+                style="width: 90%"
+                data-tooltip-text="If checked, catching the Legendary Hylian Loach in the Fishing Hole gives a reward.&#0010;"
+              >
+                <input
+                  type="checkbox"
+                  id="legendaryLoachCheckbox"
+                  name="Legendary Hylian Loach"
+                  value=""
+                />
+                <label for="legendaryLoachCheckbox">
+                  Shuffle Legendary Hylian Loach </label
                 ><br />
               </div>
               <div class="selectGroup">
@@ -816,6 +844,17 @@
                   value=""
                 />
                 <label for="bonksDoDamageCheckbox">Bonks Do Damage</label><br />
+              </div>
+              <div
+                data-tooltip-text="If checked, treasure chests models will be updated to reflect their contents. Chests with major items will be blue, junk items will be small, and big keys will use the Big Key Chest.&#0010;"
+              >
+                <input
+                  type="checkbox"
+                  id="chestSizeCheckbox"
+                  name="Chest Size Checkbox"
+                  value=""
+                />
+                <label for="chestSizeCheckbox">Chest Size Matches Contents</label><br />
               </div>
               <div
                 class="selectGroup"

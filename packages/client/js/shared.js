@@ -393,7 +393,7 @@
   function genSSettingsFromUi() {
     // Increment the version when you make changes to the format. Need to make
     // sure you don't break backwards compatibility!!
-    const sSettingsVersion = 6;
+    const sSettingsVersion = 7;
 
     const values = [
       { id: 'logicRulesFieldset', bitLength: 2 },
@@ -461,6 +461,9 @@
       { id: 'noPlandoHintsCheckbox' },
       { id: 'adjustHintsForCompletionistsCheckbox' },
       { id: 'hintDungeonEntrancesCheckbox' },
+      { id: 'fishJournalCheckbox' },
+      { id: 'legendaryLoachCheckbox' },
+      { id: 'chestSizeCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1012,6 +1015,19 @@
       res.noPlandoHints = false;
       res.adjustHintsForCompletionists = false;
       res.hintDungeonEntrances = false;
+    }
+
+    if (version >= 7)
+    {
+      processBasic({ id: 'fishJournals' });
+      processBasic({ id: 'legendaryLoach' });
+      processBasic({ id: 'chestSize' });
+    }
+    else
+    {
+      res.fishJournals = false;
+      res.legendaryLoach = false;
+      res.chestSize = false;
     }
 
     res.startingItems = processor.nextEolList(9);

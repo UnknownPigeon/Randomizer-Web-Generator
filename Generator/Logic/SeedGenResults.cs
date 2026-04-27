@@ -724,6 +724,9 @@ namespace TPRandomizer
             result.Add("noPlandoHints", sSettings.noPlandoHints);
             result.Add("adjustHintsForCompletionists", sSettings.adjustHintsForCompletionists);
             result.Add("hintDungeonEntrances", sSettings.hintDungeonEntrances);
+            result.Add("shuffleFishJournals", sSettings.shuffleFishJournals);
+            result.Add("shuffleLegendaryLoach", sSettings.shuffleLegendaryLoach);
+            result.Add("chestSizeMatchesContent", sSettings.chestSizeMatchesContent);
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);

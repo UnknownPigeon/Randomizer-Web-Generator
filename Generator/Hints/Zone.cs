@@ -210,6 +210,8 @@ namespace TPRandomizer.Hints
                         "Ordon Shield House Ledge Grass Rupee",
                         "Ordon Tree Long Branch Rupee",
                         "Ordon Tree Short Branch Rupee",
+                        // "Catch A Greengill",
+                        // "Catch An Ordon Catfish",
                         "Sera Shop Slingshot",
                         "Uli Cradle Delivery",
                         "Wooden Sword Chest",
@@ -231,7 +233,10 @@ namespace TPRandomizer.Hints
                         "Sacred Grove Pedestal Master Sword",
                         "Sacred Grove Pedestal Shadow Crystal",
                         "Sacred Grove Spinner Chest",
-                        "Sacred Grove Temple of Time Owl Statue Poe"
+                        "Sacred Grove Temple of Time Owl Statue Poe",
+                        //"Catch A Greengill",
+                        //"Catch An Ordon Catfish",
+                        //"Catch A Hylian Loach"
                     }
                 },
                 {
@@ -245,7 +250,9 @@ namespace TPRandomizer.Hints
                         "Faron Field Female Beetle",
                         "Faron Field Male Beetle",
                         "Faron Field Poe",
-                        "Faron Field Tree Heart Piece"
+                        "Faron Field Tree Heart Piece",
+                        //"Catch An Ordon Catfish",
+                        //"Catch A Hylian Loach",
                     }
                 },
                 {
@@ -269,7 +276,9 @@ namespace TPRandomizer.Hints
                         "Faron Woods Coro Boulder Rupee 1",
                         "Faron Woods Coro Boulder Rupee 2",
                         "Faron Woods Coro Boulder Rupee 3",
-                        "Faron Woods Coro Boulder Rupee 4"
+                        "Faron Woods Coro Boulder Rupee 4",
+                        //"Catch A Greengill",
+                        //"Catch An Ordon Catfish",
                     }
                 },
                 {
@@ -318,6 +327,8 @@ namespace TPRandomizer.Hints
                         "Kakariko Village Spring Shortcut Box Rupee 2",
                         "Kakariko Village Ant House Ledge Box Rupee",
                         "Kakariko Village Hot Spring Ledge Box Rupee",
+                        //"Catch A Greengill",
+                        //"Catch A Hyrule Bass",
                     }
                 },
                 {
@@ -332,6 +343,8 @@ namespace TPRandomizer.Hints
                         "Kakariko Graveyard Open Poe",
                         "Rutelas Blessing",
                         "Kakariko Graveyard Underwater Boulder Rupee",
+                        //"Catch A Greengill",
+                        //"Catch A Hylian Loach",
                     }
                 },
                 {
@@ -403,7 +416,9 @@ namespace TPRandomizer.Hints
                         "Lanayru Field South Spinner Track Boulder Rupee",
                         "Lanayru Field North Underwater Boulder Rupee",
                         "Lanayru Field South Underwater Boulder Rupee",
-                        "Lanayru Field Tree Boulder Rupee"
+                        "Lanayru Field Tree Boulder Rupee",
+                        //"Catch A Greengill",
+                        //"Catch A Hylian Pike",
                     }
                 },
                 {
@@ -435,6 +450,7 @@ namespace TPRandomizer.Hints
                         "Outside South Castle Town Tightrope Chest",
                         "Wooden Statue",
                         "Outside South Castle Town Boulder Rupee",
+                        //"Catch A Hylian Pike",
                     }
                 },
                 {
@@ -567,7 +583,9 @@ namespace TPRandomizer.Hints
                         "Lanayru Spring Underwater Right Chest",
                         "Lanayru Spring West Double Clawshot Chest",
                         "Lanayru Spring Upper Underwater Boulder Rupee",
-                        "Lanayru Spring Lower Underwater Boulder Rupee"
+                        "Lanayru Spring Lower Underwater Boulder Rupee",
+                        //"Catch A Hylian Loach",
+                        //"Catch A Greengill"
                     }
                 },
                 {
@@ -597,6 +615,7 @@ namespace TPRandomizer.Hints
                         "Zoras Domain Top Ledge Rupee",
                         "Zoras Domain Vine Ledge Rupee",
                         "Zoras Domain Waterfall Ledge Rupee",
+                        "Catch A Reekfish",
                     }
                 },
                 {
@@ -613,6 +632,12 @@ namespace TPRandomizer.Hints
                         "Upper Zoras River Central Underwater Boulder Rupee",
                         "Upper Zoras River West Underwater Boulder Rupee",
                         "Upper Zoras River Ledge Boulder Rupee",
+                        "Catch The Legendary Hylian Loach",
+                        "Catch A Greengill",
+                        "Catch An Ordon Catfish",
+                        "Catch A Hyrule Bass",
+                        "Catch A Hylian Pike",
+                        "Catch A Hylian Loach",
                     }
                 },
                 {

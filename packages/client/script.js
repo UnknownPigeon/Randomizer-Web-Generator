@@ -793,6 +793,15 @@ document
   .getElementById('freestandingRupeeCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('fishJournalCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('legendaryLoachCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('chestSizeCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('importSettingsStringButton')
   .addEventListener('click', importSettingsString);
 
@@ -2365,6 +2374,9 @@ function populateSSettings(s) {
     s.adjustHintsForCompletionists
   );
   $('#hintDungeonEntrancesCheckbox').prop('checked', s.hintDungeonEntrances);
+  $('#fishJournalCheckbox').prop('checked', s.fishJournals);
+  $('#legendaryLoachCheckbox').prop('checked', s.legendaryLoach);
+  $('#chestSizeCheckbox').prop('checked', s.chestSize);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

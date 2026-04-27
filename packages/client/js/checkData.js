@@ -291,6 +291,34 @@ window.tpr.checkData = {
     category: ['Overworld', 'Hyrule Field - Lanayru Province'],
     itemId: 'Castle_Town_Portal',
   },
+  'Catch A Greengill': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch An Ordon Catfish': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch A Hyrule Bass': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch A Hylian Pike': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch A Hylian Loach': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch A Reekfish': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch The Legendary Hylian Loach': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
   'Cats Hide and Seek Minigame': {
     category: ['Overworld', 'Npc', 'Hidden Village', 'DZX'],
     itemId: 'Piece_of_Heart',

@@ -1213,6 +1213,15 @@ namespace TPRandomizer.Assets
                 Check currentCheck = checkList.Value;
                 if (currentCheck.dataCategory.Contains("Event"))
                 {
+                    // Handle each event check type since we don't want to place anything unless the check is shuffled
+                    if (currentCheck.checkCategory.Contains("Fish Journal") && !Randomizer.SSettings.shuffleFishJournals)
+                    {
+                        continue;
+                    }
+                    if (currentCheck.checkCategory.Contains("Legendary Loach") && !Randomizer.SSettings.shuffleLegendaryLoach)
+                    {
+                        continue;
+                    }
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.itemId));
 
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.stageIDX[0]));

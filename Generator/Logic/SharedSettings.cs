@@ -80,6 +80,9 @@ namespace TPRandomizer
         public bool noPlandoHints { get; set; }
         public bool adjustHintsForCompletionists { get; set; }
         public bool hintDungeonEntrances { get; set; }
+        public bool shuffleFishJournals { get; set; }
+        public bool shuffleLegendaryLoach { get; set; }
+        public bool chestSizeMatchesContent { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
         public List<(string, Item)> plandoChecks { get; set; }
@@ -155,6 +158,9 @@ namespace TPRandomizer
             noPlandoHints = processor.NextBool();
             adjustHintsForCompletionists = processor.NextBool();
             hintDungeonEntrances = processor.NextBool();
+            shuffleFishJournals = processor.NextBool();
+            shuffleLegendaryLoach = processor.NextBool();
+            chestSizeMatchesContent = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

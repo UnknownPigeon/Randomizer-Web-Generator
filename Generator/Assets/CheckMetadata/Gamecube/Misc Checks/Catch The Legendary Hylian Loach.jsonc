@@ -1,7 +1,7 @@
 {
     "stageIDX": [255],
     "flag": "5002",
-    "checkCategory": [ "Overworld", "Ordona Province" ],
+    "checkCategory": [ "Overworld", "Legendary Loach" ],
     "itemId": "Green_Rupee",
     "dataCategory": [ "Flag" ]
 }
