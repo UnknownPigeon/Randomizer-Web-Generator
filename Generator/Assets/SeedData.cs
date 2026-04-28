@@ -433,7 +433,10 @@ namespace TPRandomizer.Assets
             List<byte> listOfArcReplacements = new();
             ushort count = 0;
             List<ARCReplacement> staticArcReplacements = generateStaticArcReplacements();
-            staticArcReplacements.AddRange(GenerateChestSizeReplacements());
+            if (Randomizer.SSettings.chestSizeMatchesContent)
+            {
+                staticArcReplacements.AddRange(GenerateChestSizeReplacements());
+            }
             foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
             {
                 Check currentCheck = checkList.Value;
