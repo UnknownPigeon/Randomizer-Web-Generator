@@ -3522,7 +3522,7 @@ namespace TPRandomizer.Assets
                             chestTypeOffset.ToString("X"),
                             replacementValue,
                             (byte)FileDirectory.Room,
-                            (byte)ReplacementType.Item,
+                            (byte)ReplacementType.SingleByte,
                             check.stageIDX[i],
                             check.roomIDX
                         )
@@ -4261,6 +4261,7 @@ namespace TPRandomizer.Assets
         Instruction = 0x3, // Replaces a u32 instruction
         AlwaysLoaded = 0x4, // Replaces values specifically in the bmgres archive which is always loaded.
         MessageResource = 0x5, // Replaces values in the MESG section of a bmgres archive file.
+        SingleByte = 0x6, // Replaces a single byte value
     };
 
     enum GCRelIDs
