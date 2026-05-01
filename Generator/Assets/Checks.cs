@@ -511,6 +511,22 @@ namespace TPRandomizer
                         currentCheck.checkStatus = "Vanilla";
                     }
                 }
+
+                if (!parseSetting.shuffleFishJournals)
+                {
+                    if (currentCheck.checkCategory.Contains("Fish Journal"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
+
+                if (!parseSetting.shuffleLegendaryLoach)
+                {
+                    if (currentCheck.checkCategory.Contains("Legendary Loach"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
             }
 
             List<string> removedQuestChecks = new();
