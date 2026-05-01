@@ -727,6 +727,7 @@ namespace TPRandomizer
             result.Add("shuffleFishJournals", sSettings.shuffleFishJournals);
             result.Add("shuffleLegendaryLoach", sSettings.shuffleLegendaryLoach);
             result.Add("chestSizeMatchesContent", sSettings.chestSizeMatchesContent);
+            result.Add("shuffleGrottoEntrances", sSettings.shuffleGrottoEntrances);
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);

@@ -464,6 +464,7 @@
       { id: 'fishJournalCheckbox' },
       { id: 'legendaryLoachCheckbox' },
       { id: 'chestSizeCheckbox' },
+      { id: 'grottoERCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1022,12 +1023,14 @@
       processBasic({ id: 'fishJournals' });
       processBasic({ id: 'legendaryLoach' });
       processBasic({ id: 'chestSize' });
+      processBasic({ id: 'grottoER' });
     }
     else
     {
       res.fishJournals = false;
       res.legendaryLoach = false;
       res.chestSize = false;
+      res.grottoER = false;
     }
 
     res.startingItems = processor.nextEolList(9);

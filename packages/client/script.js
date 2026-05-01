@@ -833,6 +833,9 @@ document
 document
   .getElementById('hintDungeonEntrancesCheckbox')
   .addEventListener('click', setSettingsString);
+document
+  .getElementById('grottoERCheckbox')
+  .addEventListener('click', setSettingsString);
 
 function importSettingsString() {
   parseSettingsString(document.getElementById('settingsStringTextbox').value);
@@ -2377,6 +2380,7 @@ function populateSSettings(s) {
   $('#fishJournalCheckbox').prop('checked', s.fishJournals);
   $('#legendaryLoachCheckbox').prop('checked', s.legendaryLoach);
   $('#chestSizeCheckbox').prop('checked', s.chestSize);
+  $('#grottoERCheckbox').prop('checked', s.grottoER);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

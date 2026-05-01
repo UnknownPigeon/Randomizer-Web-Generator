@@ -83,6 +83,7 @@ namespace TPRandomizer
         public bool shuffleFishJournals { get; set; }
         public bool shuffleLegendaryLoach { get; set; }
         public bool chestSizeMatchesContent { get; set; }
+        public bool shuffleGrottoEntrances { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
         public List<(string, Item)> plandoChecks { get; set; }
@@ -161,6 +162,7 @@ namespace TPRandomizer
             shuffleFishJournals = processor.NextBool();
             shuffleLegendaryLoach = processor.NextBool();
             chestSizeMatchesContent = processor.NextBool();
+            shuffleGrottoEntrances = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();
