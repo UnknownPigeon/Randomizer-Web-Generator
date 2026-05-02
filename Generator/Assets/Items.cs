@@ -288,7 +288,7 @@ namespace TPRandomizer
         /*Key?	=	0xFC,*/
         Goron_Mines_Big_Key = 0xFD,
         Faron_Woods_Coro_Key = 0xFE,
-        Gives_Vanilla = 0xFF,
+        Nothing = 0xFF,
 
         // Event items. These are not items that the player can "collect" but are used to specify major events that affect logical progression.
         Diababa_Defeated,
@@ -797,7 +797,7 @@ namespace TPRandomizer
         public static List<Item> ToTSwordRequirements =
             new()
             {
-                Item.Gives_Vanilla,
+                Item.Nothing,
                 Item.Progressive_Sword,
                 Item.Ordon_Sword,
                 Item.Master_Sword,
