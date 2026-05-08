@@ -1,8 +1,7 @@
 [
   {
     "RoomName": "Hidden Village",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Eldin Field Outside Hidden Village",
         "Requirements": "true",
@@ -14,13 +13,11 @@
         "GlitchedRequirements": "(Progressive_Bow, 1)"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Cats Hide and Seek Minigame",
-        // As of 1.3, Hidden Village is in the "saved" state until the statue is shown to Ilia, so technically the charm is not needed for this check, however the bow/glitched requirements remain as a softlock prevention in the event that the player shows the statue to Ilia and triggers Bulblin Archery. 
-        "Requirements": "(Progressive_Bow, 1) and Shadow_Crystal and (Progressive_Clawshot, 1)",
-        "GlitchedRequirements": "CanDoHiddenVillageGlitched and Shadow_Crystal"
+        "Requirements": "(Progressive_Bow, 1) and Shadow_Crystal and (Progressive_Clawshot, 1) and Ilias_Charm and Room.Kakariko_Renados_Sanctuary",
+        "GlitchedRequirements": "CanDoHiddenVillageGlitched and Shadow_Crystal and Ilias_Charm and Room.Kakariko_Renados_Sanctuary"
       },
       {
         "CheckName": "Ilia Charm",
@@ -29,7 +26,7 @@
       },
       {
         "CheckName": "Hidden Village Poe",
-        // As of 1.3, Hidden Village is in the "saved" state until the statue is shown to Ilia, so technically the charm is not needed for this check, however the bow/glitched requirements remain as a softlock prevention in the event that the player shows the statue to Ilia and triggers Bulblin Archery. 
+        // As of 1.3, Hidden Village is in the "saved" state until the statue is shown to Ilia, so technically the charm is not needed for this check, however the bow/glitched requirements remain as a softlock prevention in the event that the player shows the statue to Ilia and triggers Bulblin Archery.
         "Requirements": "(Progressive_Bow, 1) and Shadow_Crystal and (Progressive_Clawshot, 1)",
         "GlitchedRequirements": "CanDoHiddenVillageGlitched and Shadow_Crystal"
       },
@@ -37,27 +34,25 @@
         "CheckName": "Skybook From Impaz",
         "Requirements": "Progressive_Bow and Progressive_Dominion_Rod",
         "GlitchedRequirements": "CanDoHiddenVillageGlitched and Progressive_Dominion_Rod"
-      } 
+      }
     ],
     "Region": "Hidden Village"
   },
   {
     "RoomName": "Hidden Village Impaz House",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Hidden Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Skybook From Impaz",
         "Requirements": "Room.Hidden_Village and Progressive_Bow and Progressive_Dominion_Rod",
         "GlitchedRequirements": "Room.Hidden_Village and CanDoHiddenVillageGlitched and Progressive_Dominion_Rod"
-      } 
+      }
     ],
     "Region": "Hidden Village"
   }
