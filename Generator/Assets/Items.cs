@@ -3,6 +3,7 @@ namespace TPRandomizer
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Runtime.CompilerServices;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using TPRandomizer.SSettings.Enums;
@@ -853,6 +854,34 @@ namespace TPRandomizer
         public void GenerateItemPool()
         {
             SharedSettings parseSetting = Randomizer.SSettings;
+
+            
+
+            var dungeonBkSettings = new[]
+            {
+                parseSetting.ftBigKeySettings,
+                parseSetting.gmBigKeySettings,
+                parseSetting.lbtBigKeySettings,
+                parseSetting.agBigKeySettings,
+                parseSetting.sprBigKeySettings,
+                parseSetting.totBigKeySettings,
+                parseSetting.citsBigKeySettings,
+                parseSetting.potBigKeySettings,
+                parseSetting.hcBigKeySettings,
+            };
+
+            var dungeonMcSettings = new[]
+            {
+                parseSetting.ftMapAndCompassSettings,
+                parseSetting.gmMapAndCompassSettings,
+                parseSetting.lbtMapAndCompassSettings,
+                parseSetting.agMapAndCompassSettings,
+                parseSetting.sprMapAndCompassSettings,
+                parseSetting.totMapAndCompassSettings,
+                parseSetting.citsMapAndCompassSettings,
+                parseSetting.potMapAndCompassSettings,
+                parseSetting.hcMapAndCompassSettings,
+            };
             // Reset startingItems and other lists to prevent them from getting extra copies while
             // emulating playthroughs. This is critical to avoid a memory leak when doing many
             // playthroughs during conditionallyRequired calculations.
@@ -876,68 +905,16 @@ namespace TPRandomizer
                 this.AddGoldenBugs(parseSetting);
             }
 
-            // Check Small Key settings before adding them to the rando pool
-            if (
-                (parseSetting.smallKeySettings == SmallKeySettings.Own_Dungeon)
-                || (parseSetting.smallKeySettings == SmallKeySettings.Any_Dungeon)
-            )
-            {
-                this.RandomizedDungeonRegionItems.AddRange(this.RegionSmallKeys);
-            }
-            else if (parseSetting.smallKeySettings == SmallKeySettings.Anywhere)
-            {
-                this.RandomizedImportantItems.AddRange(this.RegionSmallKeys);
-            }
-            else if (parseSetting.smallKeySettings == SmallKeySettings.Keysy)
-            {
-                this.RandomizedImportantItems.Remove(Item.Gate_Keys);
-                parseSetting.startingItems.Add(Item.Gate_Keys);
-                this.RandomizedImportantItems.Remove(Item.Gerudo_Desert_Bulblin_Camp_Key);
-                parseSetting.startingItems.Add(Item.Gerudo_Desert_Bulblin_Camp_Key);
-                this.RandomizedImportantItems.Remove(Item.North_Faron_Woods_Gate_Key);
-                parseSetting.startingItems.Add(Item.North_Faron_Woods_Gate_Key);
-                this.RandomizedImportantItems.Remove(Item.Faron_Woods_Coro_Key);
-                parseSetting.startingItems.Add(Item.Faron_Woods_Coro_Key);
-                parseSetting.startingItems.AddRange(this.RegionSmallKeys);
-            }
+            
+            // Check Small key settings and add them to the appropriate pool
+            GenerateRegionSmallKeyPlacement(parseSetting);
 
             // Check Big Key Settings before adding them to the pool
-            if (
-                (parseSetting.bigKeySettings == BigKeySettings.Own_Dungeon)
-                || (parseSetting.bigKeySettings == BigKeySettings.Any_Dungeon)
-            )
-            {
-                this.RandomizedDungeonRegionItems.AddRange(this.DungeonBigKeys);
-            }
-            else if (parseSetting.bigKeySettings == BigKeySettings.Anywhere)
-            {
-                this.RandomizedImportantItems.AddRange(this.DungeonBigKeys);
-            }
-            else if (parseSetting.bigKeySettings == BigKeySettings.Keysy)
-            {
-                parseSetting.startingItems.AddRange(this.DungeonBigKeys);
-                if (parseSetting.castleBKRequirements != CastleBKRequirements.None)
-                {
-                    parseSetting.startingItems.Remove(Item.Hyrule_Castle_Big_Key);
-                }
-            }
+            GenerateRegionBigKeyPlacement(parseSetting);
+            
 
             // Check Map and Compass settings before adding to pool
-            if (
-                (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Own_Dungeon)
-                || (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Any_Dungeon)
-            )
-            {
-                this.RandomizedDungeonRegionItems.AddRange(this.DungeonMapsAndCompasses);
-            }
-            else if (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Anywhere)
-            {
-                this.RandomizedImportantItems.AddRange(this.DungeonMapsAndCompasses);
-            }
-            else if (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Start_With)
-            {
-                parseSetting.startingItems.AddRange(this.DungeonMapsAndCompasses);
-            }
+            GenerateRegionMapCompassPlacement(parseSetting);
 
             // Handle Castle settings
             if (
@@ -1133,18 +1110,6 @@ namespace TPRandomizer
                             Item.Hylian_Shield,
                         };
                     RandomizedImportantItems.AddRange(plentifulImportantItems);
-
-                    // Add big keys
-                    if (parseSetting.bigKeySettings == BigKeySettings.Anywhere)
-                        this.RandomizedImportantItems.AddRange(this.PlentifulDungeonBigKeys);
-                    else if (parseSetting.bigKeySettings == BigKeySettings.Any_Dungeon)
-                        this.RandomizedDungeonRegionItems.AddRange(this.PlentifulDungeonBigKeys);
-
-                    // Add small keys
-                    if (parseSetting.smallKeySettings == SmallKeySettings.Anywhere)
-                        this.RandomizedImportantItems.AddRange(this.PlentifulRegionSmallKeys);
-                    else if (parseSetting.smallKeySettings == SmallKeySettings.Any_Dungeon)
-                        this.RandomizedDungeonRegionItems.AddRange(this.PlentifulRegionSmallKeys);
 
                     break;
                 }
@@ -1360,6 +1325,290 @@ namespace TPRandomizer
                     check.checkCategory.Contains("Heart Container")
                     || check.checkCategory.Contains("Dungeon Reward")
                 );
+        }
+
+        private void GenerateRegionSmallKeyPlacement(SharedSettings parseSetting)
+        {
+            var smallKeyConfigs = new[]
+            {
+                new
+                {
+                    Setting = parseSetting.ftSmallKeySettings,
+                    Key = Item.Forest_Temple_Small_Key,
+                    Count = 4
+                },
+                new
+                {
+                    Setting = parseSetting.gmSmallKeySettings,
+                    Key = Item.Goron_Mines_Small_Key,
+                    Count = 3
+                },
+                new
+                {
+                    Setting = parseSetting.lbtSmallKeySettings,
+                    Key = Item.Lakebed_Temple_Small_Key,
+                    Count = 3
+                },
+                new
+                {
+                    Setting = parseSetting.agSmallKeySettings,
+                    Key = Item.Arbiters_Grounds_Small_Key,
+                    Count = 5
+                },
+                new
+                {
+                    Setting = parseSetting.sprSmallKeySettings,
+                    Key = Item.Snowpeak_Ruins_Small_Key,
+                    Count = 4
+                },
+                new
+                {
+                    Setting = parseSetting.totSmallKeySettings,
+                    Key = Item.Temple_of_Time_Small_Key,
+                    Count = 3
+                },
+                new
+                {
+                    Setting = parseSetting.citsSmallKeySettings,
+                    Key = Item.City_in_The_Sky_Small_Key,
+                    Count = 1
+                },
+                new
+                {
+                    Setting = parseSetting.potSmallKeySettings,
+                    Key = Item.Palace_of_Twilight_Small_Key,
+                    Count = 7
+                },
+                new
+                {
+                    Setting = parseSetting.hcSmallKeySettings,
+                    Key = Item.Hyrule_Castle_Small_Key,
+                    Count = 3
+                }
+            };
+
+            foreach (var config in smallKeyConfigs)
+            {
+                List<Item> keys = [.. Enumerable.Repeat(config.Key, config.Count)];
+;
+                if (config.Key == Item.Snowpeak_Ruins_Small_Key)
+                {
+                    keys.Add(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
+                    keys.Add(Item.Snowpeak_Ruins_Ordon_Pumpkin);
+                }
+
+                switch (config.Setting)
+                {
+                    case SmallKeySettings.Own_Dungeon:
+                    case SmallKeySettings.Any_Dungeon:
+                    {
+                        RandomizedDungeonRegionItems.AddRange(keys);
+                        break;
+                    }
+                    case SmallKeySettings.Anywhere:
+                    {
+                        RandomizedImportantItems.AddRange(keys);
+                        break;
+                    }
+                    case SmallKeySettings.Keysy:
+                    {
+                        parseSetting.startingItems.AddRange(keys);
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void GenerateRegionBigKeyPlacement(SharedSettings parseSetting)
+        {
+            var bigKeyConfigs = new[]
+            {
+                new
+                {
+                    Setting = parseSetting.ftBigKeySettings,
+                    Key = Item.Forest_Temple_Big_Key,
+                    Count = 1
+                },
+                new
+                {
+                    Setting = parseSetting.gmBigKeySettings,
+                    Key = Item.Goron_Mines_Key_Shard,
+                    Count = 3
+                },
+                new
+                {
+                    Setting = parseSetting.lbtBigKeySettings,
+                    Key = Item.Lakebed_Temple_Big_Key,
+                    Count = 1
+                },
+                new
+                {
+                    Setting = parseSetting.agBigKeySettings,
+                    Key = Item.Arbiters_Grounds_Big_Key,
+                    Count = 1
+                },
+                new
+                {
+                    Setting = parseSetting.sprBigKeySettings,
+                    Key = Item.Snowpeak_Ruins_Bedroom_Key,
+                    Count = 1
+                },
+                new
+                {
+                    Setting = parseSetting.totBigKeySettings,
+                    Key = Item.Temple_of_Time_Big_Key,
+                    Count = 1
+                },
+                new
+                {
+                    Setting = parseSetting.citsBigKeySettings,
+                    Key = Item.City_in_The_Sky_Big_Key,
+                    Count = 1
+                },
+                new
+                {
+                    Setting = parseSetting.potBigKeySettings,
+                    Key = Item.Palace_of_Twilight_Big_Key,
+                    Count = 1
+                },
+                new
+                {
+                    Setting = parseSetting.hcBigKeySettings,
+                    Key = Item.Hyrule_Castle_Big_Key,
+                    Count = 1,
+                }
+            };
+
+            foreach (var config in bigKeyConfigs)
+            {
+                switch (config.Setting)
+                {
+                    case BigKeySettings.Own_Dungeon:
+                    case BigKeySettings.Any_Dungeon:
+                    {
+                        if (config.Count > 1)
+                        {
+                            RandomizedDungeonRegionItems.AddRange(
+                                Enumerable.Repeat(config.Key, config.Count)
+                            );
+                        }
+                        else
+                        {
+                            RandomizedDungeonRegionItems.Add(config.Key);
+                        }
+
+                        break;
+                    }
+                    case BigKeySettings.Anywhere:
+                    {
+                        RandomizedImportantItems.Add(config.Key);
+                        break;
+                    }
+                    case BigKeySettings.Keysy:
+                    {
+                        if (
+                            config.Key == Item.Hyrule_Castle_Big_Key &&
+                            parseSetting.castleBKRequirements != CastleBKRequirements.None
+                        )
+                        {
+                            parseSetting.startingItems.Remove(Item.Hyrule_Castle_Big_Key);
+                            break;
+                        }
+
+                        parseSetting.startingItems.Add(config.Key);
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void GenerateRegionMapCompassPlacement(SharedSettings parseSetting)
+        {
+            var mapCompassConfigs = new[]
+            {
+                new
+                {
+                    Setting = parseSetting.ftMapAndCompassSettings,
+                    Map = Item.Forest_Temple_Dungeon_Map,
+                    Compass = Item.Forest_Temple_Compass
+                },
+                new
+                {
+                    Setting = parseSetting.gmMapAndCompassSettings,
+                    Map = Item.Goron_Mines_Dungeon_Map,
+                    Compass = Item.Goron_Mines_Compass
+                },
+                new
+                {
+                    Setting = parseSetting.lbtMapAndCompassSettings,
+                    Map = Item.Lakebed_Temple_Dungeon_Map,
+                    Compass = Item.Lakebed_Temple_Compass
+                },
+                new
+                {
+                    Setting = parseSetting.agMapAndCompassSettings,
+                    Map = Item.Arbiters_Grounds_Dungeon_Map,
+                    Compass = Item.Arbiters_Grounds_Compass
+                },
+                new
+                {
+                    Setting = parseSetting.sprMapAndCompassSettings,
+                    Map = Item.Snowpeak_Ruins_Dungeon_Map,
+                    Compass = Item.Snowpeak_Ruins_Compass
+                },
+                new
+                {
+                    Setting = parseSetting.totMapAndCompassSettings,
+                    Map = Item.Temple_of_Time_Dungeon_Map,
+                    Compass = Item.Temple_of_Time_Compass
+                },
+                new
+                {
+                    Setting = parseSetting.citsMapAndCompassSettings,
+                    Map = Item.City_in_The_Sky_Dungeon_Map,
+                    Compass = Item.City_in_The_Sky_Compass
+                },
+                new
+                {
+                    Setting = parseSetting.potMapAndCompassSettings,
+                    Map = Item.Palace_of_Twilight_Dungeon_Map,
+                    Compass = Item.Palace_of_Twilight_Compass
+                },
+                new
+                {
+                    Setting = parseSetting.hcMapAndCompassSettings,
+                    Map = Item.Hyrule_Castle_Dungeon_Map,
+                    Compass = Item.Hyrule_Castle_Compass
+                }
+            };
+
+            foreach (var config in mapCompassConfigs)
+            {
+                switch (config.Setting)
+                {
+                    case MapAndCompassSettings.Own_Dungeon:
+                    case MapAndCompassSettings.Any_Dungeon:
+
+                        RandomizedDungeonRegionItems.Add(config.Map);
+                        RandomizedDungeonRegionItems.Add(config.Compass);
+
+                        break;
+
+                    case MapAndCompassSettings.Anywhere:
+
+                        RandomizedImportantItems.Add(config.Map);
+                        RandomizedImportantItems.Add(config.Compass);
+
+                        break;
+
+                    case MapAndCompassSettings.Start_With:
+
+                        parseSetting.startingItems.Add(config.Map);
+                        parseSetting.startingItems.Add(config.Compass);
+
+                        break;
+                }
+            }
         }
     }
 }

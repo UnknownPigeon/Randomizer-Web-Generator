@@ -512,7 +512,7 @@ namespace TPRandomizer
 
             if (Randomizer.SSettings.shuffleGrottoEntrances)
             {
-                // If we are grotto entrances, loop through the entrance table and make note of all of the dungeon entrances and add them to the pool.
+                // If we are grotto entrances, loop through the entrance table and make note of all of the grotto entrances and add them to the pool.
                 newEntrancePools.Add(
                     EntranceType.Grotto,
                     GetShufflableEntrances(EntranceType.Grotto, true)
@@ -555,7 +555,7 @@ namespace TPRandomizer
                         assumedForward.BindTwoWay(assumedReturn);
                     }
 
-                    ChangeConnections(vanillaEntrance, assumedForward);
+                    ChangeConnections(vanillaEntrance, assumedForward, false);
                     ConfirmReplacement(vanillaEntrance, assumedForward);
                 }
             }
@@ -696,9 +696,9 @@ namespace TPRandomizer
                     {
                         shufflableEntrances.EntranceList.Add(entrance);
                         // DEBUG
-                        Console.WriteLine(
+                        /*Console.WriteLine(
                             "Entrance: " + entrance.GetOriginalName() + " is able to be randomized"
-                        );
+                        );*/
                     }
                 }
             }
@@ -726,14 +726,17 @@ namespace TPRandomizer
             return reversePool;
         }
 
-        void ChangeConnections(Entrance entrance, Entrance targetEntrance)
+        void ChangeConnections(Entrance entrance, Entrance targetEntrance, bool showDebug = false)
         {
-            Console.WriteLine(
-                "Changing connections for "
-                    + entrance.GetOriginalName()
-                    + " and "
-                    + targetEntrance.GetOriginalName()
-            );
+            if (showDebug)
+            {
+                Console.WriteLine(
+                    "Changing connections for "
+                        + entrance.GetOriginalName()
+                        + " and "
+                        + targetEntrance.GetOriginalName()
+                );
+            }
             entrance.Connect(targetEntrance.Disconnect());
             entrance.SetReplacedEntrance(targetEntrance.GetReplacedEntrance());
             if ((entrance.GetReverse() != null) && !entrance.IsDecoupled())

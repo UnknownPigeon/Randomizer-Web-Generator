@@ -144,31 +144,31 @@
                 name="Logic Rules Fieldset"
                 id="logicRulesFieldset"
                 data-tooltip-text="'Glitchless': No glitches are considered in logic.&#0010;&#0010;'Glitched': Repeatable glitches are in logic. Some frame perfect or very precise glitches are not considered in logic.&#0010;&#0010;'No Logic': All items are placed randomly with no consideration for logic. SEEDS MAY BE UNBEATABLE.&#0010;"
-                style="width: 20%;"
+                style="width: 20%"
               >
                 <option value="0">Glitchless</option>
                 <option value="1">Glitched</option>
                 <option value="2">No Logic</option>
               </select>
+              <!--
               <p></p>
               <label for="goalFieldset">Win Condition:</label>
               <select
                 id="goalFieldset"
                 data-tooltip-text="'Defeat Ganondorf': No glitches are considered in logic.&#0010;&#0010;'Glitched': Repeatable glitches are in logic. Some frame perfect or very precise glitches are not considered in logic.&#0010;&#0010;'No Logic': All items are placed randomly with no consideration for logic. SEEDS MAY BE UNBEATABLE.&#0010;"
-                style="width: 20%;"
+                style="width: 20%"
               >
                 <option value="0">Defeat Ganondorf</option>
                 <option value="1">Glitched</option>
                 <option value="2">No Logic</option>
               </select>
-            </fieldset>
+            --></fieldset>
           </div>
 
           <div class="tabColumn">
             <fieldset id="accessOptionsFieldset">
               <legend>Access Options</legend>
-              
-              
+
               <div class="selectGroup">
                 <label for="faronLogicFieldset">Faron Woods Logic:</label><br />
                 <select
@@ -234,8 +234,7 @@
                   name="Shuffle Grotto Entrances Checkbox"
                   value=""
                 />
-                <label for="grottoERCheckbox"
-                  >Shuffle Grotto Entrances</label
+                <label for="grottoERCheckbox">Shuffle Grotto Entrances</label
                 ><br />
               </div>
               <div class="selectGroup" style="margin-top: 8px">
@@ -377,8 +376,7 @@
                   name="Fish Journal Entries"
                   value=""
                 />
-                <label for="fishJournalCheckbox">
-                  Fish Journal Entries </label
+                <label for="fishJournalCheckbox"> Fish Journal Entries </label
                 ><br />
               </div>
               <div
@@ -537,7 +535,7 @@
                   Skip Major Cutscenes </label
                 ><br />
               </div>
-              
+
               <div
                 style="width: 90%"
                 data-tooltip-text="If enabled, text box text will appear immediately for all messages.&#0010;"
@@ -563,7 +561,7 @@
                 />
                 <label for="openMapCheckbox"> Unlock Map Regions </label><br />
               </div>
-              
+
               <div
                 style="width: 90%"
                 data-tooltip-text="If enabled, the bridge to Castle Town from Eldin Field will be automatically repaired."
@@ -631,7 +629,9 @@
                   name="Chest Size Checkbox"
                   value=""
                 />
-                <label for="chestSizeCheckbox">Chest Size Matches Contents</label><br />
+                <label for="chestSizeCheckbox"
+                  >Chest Size Matches Contents</label
+                ><br />
               </div>
               <div
                 class="selectGroup"
@@ -639,7 +639,7 @@
                 data-tooltip-text="'Reduced': Sets the wallet capacities to 99, 500, and 1000&#0010;&#0010;'Vanila': Sets the wallet capacities to 300, 600, and 1000.&#0010;&#0010;'HD': Sets the wallet capacities to 500, 1000, and 2000.&#0010;&#0010;'Large': Sets the wallet capacities to 1000, 5000, and 9999."
                 data-tooltip-position="left"
               >
-                <label for="">Wallet Size</label><br />
+                <label for="walletSizeFieldset">Wallet Size</label><br />
                 <select name="Wallet Size" id="walletSizeFieldset">
                   <option value="0">Reduced</option>
                   <option value="1" selected>Vanilla</option>
@@ -691,7 +691,7 @@
             </fieldset>
           </div>
           <div class="tabColumn">
-            <fieldset id="qolFieldset"  style="height: auto;">
+            <fieldset id="qolFieldset" style="height: auto">
               <legend>Quality of Life Changes</legend>
               <div
                 style="width: 90%"
@@ -747,7 +747,7 @@
                 ><br />
               </div>
             </fieldset>
-            <fieldset id="hintSettingsFieldset" style="height: auto;">
+            <fieldset id="hintSettingsFieldset" style="height: auto">
               <legend>Hint Settings</legend>
               <div class="selectGroup" style="margin-top: 8px">
                 <label for="hintDistributionFieldset">Hint Distribution</label
@@ -823,920 +823,991 @@
 
         <div id="dungeonSettingsTab" class="tabcontent">
           <fieldset class="dungeonFieldset">
-          <legend>Dungeon Item Options</legend>
-          <!-- Tab links -->
-          <div class="tab">
-            <button class="dungeonTablinks" onclick="openDungeon(event, 'Forest')">Forest</button>
-            <button class="dungeonTablinks" onclick="openDungeon(event, 'Mines')">Mines</button>
-            <button class="dungeonTablinks" onclick="openDungeon(event, 'Lakebed')">Lakebed</button>
-            <button class="dungeonTablinks" onclick="openDungeon(event, 'Arbiters')">Arbiters</button>
-            <button class="dungeonTablinks" onclick="openDungeon(event, 'Snowpeak')">Snowpeak</button>
-            <button class="dungeonTablinks" onclick="openDungeon(event, 'Time')">Time</button>
-            <button class="dungeonTablinks" onclick="openDungeon(event, 'City')">City</button>
-            <button class="dungeonTablinks" onclick="openDungeon(event, 'Palace')">Palace</button>
-            <button class="dungeonTablinks" onclick="openDungeon(event, 'Hyrule')">Hyrule</button>
-          </div>
-          <br/>
-          <!-- Tab content -->
-          <div id="Forest" class="dungeonTabcontent">
-            <div class="tabColumn">
-            <fieldset id="dungeonItemFieldset">
-            <div class="selectGroup">
-                <label for="ftSmallKeyFieldset">Small Keys</label><br />
-                <select
-                  name="Small Keys"
-                  data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
-                  data-tooltip-position="left"
-                  id="ftSmallKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="ftMapAndCompassFieldset">Maps and Compasses</label
-                ><br />
-                <select
-                  name="Maps and Compasses"
-                  data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
-                  data-tooltip-position="left"
-                  id="ftMapAndCompassFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Anywhere</option>
-                  <option value="4">Start With</option>
-                </select>
-              </div>
-              </fieldset>
+            <legend>Dungeon Item Options</legend>
+            <!-- Tab links -->
+            <div class="tab">
+              <button
+                class="dungeonTablinks"
+                onclick="openDungeon(event, 'Forest')"
+              >
+                Forest
+              </button>
+              <button
+                class="dungeonTablinks"
+                onclick="openDungeon(event, 'Mines')"
+              >
+                Mines
+              </button>
+              <button
+                class="dungeonTablinks"
+                onclick="openDungeon(event, 'Lakebed')"
+              >
+                Lakebed
+              </button>
+              <button
+                class="dungeonTablinks"
+                onclick="openDungeon(event, 'Arbiters')"
+              >
+                Arbiters
+              </button>
+              <button
+                class="dungeonTablinks"
+                onclick="openDungeon(event, 'Snowpeak')"
+              >
+                Snowpeak
+              </button>
+              <button
+                class="dungeonTablinks"
+                onclick="openDungeon(event, 'Time')"
+              >
+                Time
+              </button>
+              <button
+                class="dungeonTablinks"
+                onclick="openDungeon(event, 'City')"
+              >
+                City
+              </button>
+              <button
+                class="dungeonTablinks"
+                onclick="openDungeon(event, 'Palace')"
+              >
+                Palace
+              </button>
+              <button
+                class="dungeonTablinks"
+                onclick="openDungeon(event, 'Hyrule')"
+              >
+                Hyrule
+              </button>
             </div>
+            <br />
+            <!-- Tab content -->
+            <div id="Forest" class="dungeonTabcontent">
               <div class="tabColumn">
                 <fieldset id="dungeonItemFieldset">
-              <div class="selectGroup">
-                <label for="ftBigKeyFieldset">Big Key</label><br />
-                <select
-                  name="Big Keys"
-                  data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
-                  data-tooltip-position="left"
-                  id="ftBigKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div
-                data-tooltip-text="If checked, the boulders are removed from in front of the Forest Temple during the Prologue.&#0010;"
-                data-tooltip-position="left"
-              >
-                <input
-                  type="checkbox"
-                  id="forestEntranceCheckbox"
-                  value=""
-                />
-                <label for="forestEntranceCheckbox">
-                  Forest Temple does not require Prologue </label
-                ><br />
-              </div>
-              <div
-                data-tooltip-text="If checked, all monkeys are rescued, allowing the player to access the midboss and boss rooms.&#0010;"
-                data-tooltip-position="left"
-              >
-                <input
-                  type="checkbox"
-                  id="forestMonkeyCheckbox"
-                  value=""
-                />
-                <label for="forestMonkeyCheckbox">
-                  Automatically Free All Monkeys </label
-                ><br />
-              </div>
+                  <div class="selectGroup">
+                    <label for="ftSmallKeyFieldset">Small Keys</label><br />
+                    <select
+                      name="Small Keys"
+                      data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
+                      data-tooltip-position="left"
+                      id="ftSmallKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="ftMapAndCompassFieldset"
+                      >Maps and Compasses</label
+                    ><br />
+                    <select
+                      name="Maps and Compasses"
+                      data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
+                      data-tooltip-position="left"
+                      id="ftMapAndCompassFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Anywhere</option>
+                      <option value="4">Start With</option>
+                    </select>
+                  </div>
                 </fieldset>
+              </div>
+              <div class="tabColumn">
+                <fieldset id="dungeonItemFieldset">
+                  <div class="selectGroup">
+                    <label for="ftBigKeyFieldset">Big Key</label><br />
+                    <select
+                      name="Big Keys"
+                      data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
+                      data-tooltip-position="left"
+                      id="ftBigKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <!--
+                  <div
+                    data-tooltip-text="If checked, the boulders are removed from in front of the Forest Temple during the Prologue.&#0010;"
+                    data-tooltip-position="left"
+                  >
+                    <input
+                      type="checkbox"
+                      id="forestEntranceCheckbox"
+                      value=""
+                    />
+                    <label for="forestEntranceCheckbox">
+                      Forest Temple does not require Prologue </label
+                    ><br />
+                  </div>
+                  <div
+                    data-tooltip-text="If checked, all monkeys are rescued, allowing the player to access the midboss and boss rooms.&#0010;"
+                    data-tooltip-position="left"
+                  >
+                    <input type="checkbox" id="forestMonkeyCheckbox" value="" />
+                    <label for="forestMonkeyCheckbox">
+                      Automatically Free All Monkeys </label
+                    ><br />
+                  </div>
+                --></fieldset>
+              </div>
             </div>
-          </div>
 
-          <div id="Mines" class="dungeonTabcontent">
-            <div class="tabColumn">
-            <fieldset id="dungeonItemFieldset">
-            <div class="selectGroup">
-                <label for="gmSmallKeyFieldset">Small Keys</label><br />
-                <select
-                  name="Small Keys"
-                  data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
-                  data-tooltip-position="left"
-                  id="gmSmallKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="gmMapAndCompassFieldset">Maps and Compasses</label
-                ><br />
-                <select
-                  name="Maps and Compasses"
-                  data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
-                  data-tooltip-position="left"
-                  id="gmMapAndCompassFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Anywhere</option>
-                  <option value="4">Start With</option>
-                </select>
-              </div>
-              </fieldset>
-            </div>
+            <div id="Mines" class="dungeonTabcontent">
               <div class="tabColumn">
                 <fieldset id="dungeonItemFieldset">
-              <div class="selectGroup">
-                <label for="gmBigKeyFieldset">Big Key</label><br />
-                <select
-                  name="Big Keys"
-                  data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
-                  data-tooltip-position="left"
-                  id="gmBigKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div
-                class="selectGroup"
-                style="margin-top: 8px"
-                data-tooltip-text="'Closed': The player must wrestle Gor Coron to enter Goron Mines.&#0010;&#0010;'No Wrestling': The player will not have to wrestle Gor Coron to enter Goron Mines.&#0010;&#0010;'Open': All changes of 'No Wrestling' are applied. Additionally, the player will be able to immediately use the elevator to reach the top of Death Mountain."
-                data-tooltip-position="left"
-              >
-                <label for="">Goron Mines Entrance</label><br />
-                <select
-                  name="Goron Mines Entrance"
-                  id="goronMinesEntranceFieldset"
-                >
-                  <option value="0">Closed</option>
-                  <option value="1">No Wrestling</option>
-                  <option value="2">Open</option>
-                </select>
-              </div>
-              <div
-                style="width: 90%"
-                data-tooltip-text="If enabled, all magnets within Goron Mines except the final one will automatically be activated. The final magnet remains deactivated to avoid a softlock."
-              >
-                <input
-                  type="checkbox"
-                  id="gmShortcutCheckbox"
-                  name="Active Goron Mines Magnets"
-                  value=""
-                />
-                <label for="gmShortcutCheckbox"
-                  >Active Goron Mines Magnets</label
-                ><br />
-              </div>
+                  <div class="selectGroup">
+                    <label for="gmSmallKeyFieldset">Small Keys</label><br />
+                    <select
+                      name="Small Keys"
+                      data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
+                      data-tooltip-position="left"
+                      id="gmSmallKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="gmMapAndCompassFieldset"
+                      >Maps and Compasses</label
+                    ><br />
+                    <select
+                      name="Maps and Compasses"
+                      data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
+                      data-tooltip-position="left"
+                      id="gmMapAndCompassFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Anywhere</option>
+                      <option value="4">Start With</option>
+                    </select>
+                  </div>
                 </fieldset>
+              </div>
+              <div class="tabColumn">
+                <fieldset id="dungeonItemFieldset">
+                  <div class="selectGroup">
+                    <label for="gmBigKeyFieldset">Big Key</label><br />
+                    <select
+                      name="Big Keys"
+                      data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
+                      data-tooltip-position="left"
+                      id="gmBigKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div
+                    class="selectGroup"
+                    style="margin-top: 8px"
+                    data-tooltip-text="'Closed': The player must wrestle Gor Coron to enter Goron Mines.&#0010;&#0010;'No Wrestling': The player will not have to wrestle Gor Coron to enter Goron Mines.&#0010;&#0010;'Open': All changes of 'No Wrestling' are applied. Additionally, the player will be able to immediately use the elevator to reach the top of Death Mountain."
+                    data-tooltip-position="left"
+                  >
+                    <label for="goronMinesEntranceFieldset"
+                      >Goron Mines Entrance</label
+                    ><br />
+                    <select
+                      name="Goron Mines Entrance"
+                      id="goronMinesEntranceFieldset"
+                    >
+                      <option value="0">Closed</option>
+                      <option value="1">No Wrestling</option>
+                      <option value="2">Open</option>
+                    </select>
+                  </div>
+                  <div
+                    style="width: 90%"
+                    data-tooltip-text="If enabled, all magnets within Goron Mines except the final one will automatically be activated. The final magnet remains deactivated to avoid a softlock."
+                  >
+                    <input
+                      type="checkbox"
+                      id="gmShortcutCheckbox"
+                      name="Active Goron Mines Magnets"
+                      value=""
+                    />
+                    <label for="gmShortcutCheckbox"
+                      >Active Goron Mines Magnets</label
+                    ><br />
+                  </div>
+                </fieldset>
+              </div>
             </div>
-          </div>
 
-          <div id="Lakebed" class="dungeonTabcontent">
-            <div class="tabColumn">
-            <fieldset id="dungeonItemFieldset">
-            <div class="selectGroup">
-                <label for="lbtSmallKeyFieldset">Small Keys</label><br />
-                <select
-                  name="Small Keys"
-                  data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
-                  data-tooltip-position="left"
-                  id="lbtSmallKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="lbtMapAndCompassFieldset">Maps and Compasses</label
-                ><br />
-                <select
-                  name="Maps and Compasses"
-                  data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
-                  data-tooltip-position="left"
-                  id="lbtMapAndCompassFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Anywhere</option>
-                  <option value="4">Start With</option>
-                </select>
-              </div>
-              </fieldset>
-            </div>
+            <div id="Lakebed" class="dungeonTabcontent">
               <div class="tabColumn">
                 <fieldset id="dungeonItemFieldset">
-              <div class="selectGroup">
-                <label for="lbtBigKeyFieldset">Big Key</label><br />
-                <select
-                  name="Big Keys"
-                  data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
-                  data-tooltip-position="left"
-                  id="lbtBigKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div
-                data-tooltip-text="If checked, the rock in front of the entrance to Lakebed Temple is destroyed.&#0010;"
-                data-tooltip-position="left"
-              >
-                <input
-                  type="checkbox"
-                  id="lakebedEntranceCheckbox"
-                  name="Lakebed Temple Checkbox"
-                  value=""
-                />
-                <label for="lakebedEntranceCheckbox">
-                  Lakebed Does Not Require Water Bombs </label
-                ><br />
-              </div>
-              <div
-                style="width: 90%"
-                data-tooltip-text="If enabled, both water supply gates are opened and water is freely flowing through the dungeon"
-              >
-                <input
-                  type="checkbox"
-                  id="lbtShortcutCheckbox"
-                  value=""
-                />
-                <label for="lbtShortcutCheckbox"
-                  >Open Lakebed Water Supplies</label
-                ><br />
-              </div>
+                  <div class="selectGroup">
+                    <label for="lbtSmallKeyFieldset">Small Keys</label><br />
+                    <select
+                      name="Small Keys"
+                      data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
+                      data-tooltip-position="left"
+                      id="lbtSmallKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="lbtMapAndCompassFieldset"
+                      >Maps and Compasses</label
+                    ><br />
+                    <select
+                      name="Maps and Compasses"
+                      data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
+                      data-tooltip-position="left"
+                      id="lbtMapAndCompassFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Anywhere</option>
+                      <option value="4">Start With</option>
+                    </select>
+                  </div>
                 </fieldset>
+              </div>
+              <div class="tabColumn">
+                <fieldset id="dungeonItemFieldset">
+                  <div class="selectGroup">
+                    <label for="lbtBigKeyFieldset">Big Key</label><br />
+                    <select
+                      name="Big Keys"
+                      data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
+                      data-tooltip-position="left"
+                      id="lbtBigKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div
+                    data-tooltip-text="If checked, the rock in front of the entrance to Lakebed Temple is destroyed.&#0010;"
+                    data-tooltip-position="left"
+                  >
+                    <input
+                      type="checkbox"
+                      id="lakebedEntranceCheckbox"
+                      name="Lakebed Temple Checkbox"
+                      value=""
+                    />
+                    <label for="lakebedEntranceCheckbox">
+                      Lakebed Does Not Require Water Bombs </label
+                    ><br />
+                  </div>
+                  <!--
+                  <div
+                    style="width: 90%"
+                    data-tooltip-text="If enabled, both water supply gates are opened and water is freely flowing through the dungeon"
+                  >
+                    <input type="checkbox" id="lbtShortcutCheckbox" value="" />
+                    <label for="lbtShortcutCheckbox"
+                      >Open Lakebed Water Supplies</label
+                    ><br />
+                  </div>
+                --></fieldset>
+              </div>
             </div>
-          </div>
 
-          <div id="Arbiters" class="dungeonTabcontent">
-            <div class="tabColumn">
-            <fieldset id="dungeonItemFieldset">
-            <div class="selectGroup">
-                <label for="agSmallKeyFieldset">Small Keys</label><br />
-                <select
-                  name="Small Keys"
-                  data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
-                  data-tooltip-position="left"
-                  id="agSmallKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="agMapAndCompassFieldset">Maps and Compasses</label
-                ><br />
-                <select
-                  name="Maps and Compasses"
-                  data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
-                  data-tooltip-position="left"
-                  id="agMapAndCompassFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Anywhere</option>
-                  <option value="4">Start With</option>
-                </select>
-              </div>
-              </fieldset>
-            </div>
+            <div id="Arbiters" class="dungeonTabcontent">
               <div class="tabColumn">
                 <fieldset id="dungeonItemFieldset">
-              <div class="selectGroup">
-                <label for="agBigKeyFieldset">Big Key</label><br />
-                <select
-                  name="Big Keys"
-                  data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
-                  data-tooltip-position="left"
-                  id="agBigKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div
-                data-tooltip-text="If checked, the Bulblin Camp is cleared and the player does not need to defeat King Bulblin. This also removes the Bulblin Camp Key from the item pool.&#0010;"
-                data-tooltip-position="left"
-              >
-                <input
-                  type="checkbox"
-                  id="arbitersEntranceCheckbox"
-                  name="Arbiters Grounds Checkbox"
-                  value=""
-                />
-                <label for="arbitersEntranceCheckbox">
-                  Arbiters Does Not Require Bulblin Camp </label
-                ><br />
-              </div>
-              <div
-                style="width: 90%"
-                data-tooltip-text="If enabled, the gate to the second half of the Arbiters is opened and does not require the poes to progress."
-              >
-                <input
-                  type="checkbox"
-                  id="agShortcutCheckbox"
-                  value=""
-                />
-                <label for="agShortcutCheckbox"
-                  >Open Poe Gate</label
-                ><br />
-              </div>
+                  <div class="selectGroup">
+                    <label for="agSmallKeyFieldset">Small Keys</label><br />
+                    <select
+                      name="Small Keys"
+                      data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
+                      data-tooltip-position="left"
+                      id="agSmallKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="agMapAndCompassFieldset"
+                      >Maps and Compasses</label
+                    ><br />
+                    <select
+                      name="Maps and Compasses"
+                      data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
+                      data-tooltip-position="left"
+                      id="agMapAndCompassFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Anywhere</option>
+                      <option value="4">Start With</option>
+                    </select>
+                  </div>
                 </fieldset>
+              </div>
+              <div class="tabColumn">
+                <fieldset id="dungeonItemFieldset">
+                  <div class="selectGroup">
+                    <label for="agBigKeyFieldset">Big Key</label><br />
+                    <select
+                      name="Big Keys"
+                      data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
+                      data-tooltip-position="left"
+                      id="agBigKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div
+                    data-tooltip-text="If checked, the Bulblin Camp is cleared and the player does not need to defeat King Bulblin. This also removes the Bulblin Camp Key from the item pool.&#0010;"
+                    data-tooltip-position="left"
+                  >
+                    <input
+                      type="checkbox"
+                      id="arbitersEntranceCheckbox"
+                      name="Arbiters Grounds Checkbox"
+                      value=""
+                    />
+                    <label for="arbitersEntranceCheckbox">
+                      Arbiters Does Not Require Bulblin Camp </label
+                    ><br />
+                  </div>
+                  <!--
+                  <div
+                    style="width: 90%"
+                    data-tooltip-text="If enabled, the gate to the second half of the Arbiters is opened and does not require the poes to progress."
+                  >
+                    <input type="checkbox" id="agShortcutCheckbox" value="" />
+                    <label for="agShortcutCheckbox">Open Poe Gate</label><br />
+                  </div>
+                --></fieldset>
+              </div>
             </div>
-          </div>
 
-          <div id="Snowpeak" class="dungeonTabcontent">
-            <div class="tabColumn">
-            <fieldset id="dungeonItemFieldset">
-            <div class="selectGroup">
-                <label for="sprSmallKeyFieldset">Small Keys</label><br />
-                <select
-                  name="Small Keys"
-                  data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
-                  data-tooltip-position="left"
-                  id="sprSmallKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="sprMapAndCompassFieldset">Maps and Compasses</label
-                ><br />
-                <select
-                  name="Maps and Compasses"
-                  data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
-                  data-tooltip-position="left"
-                  id="sprMapAndCompassFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Anywhere</option>
-                  <option value="4">Start With</option>
-                </select>
-              </div>
-              </fieldset>
-            </div>
+            <div id="Snowpeak" class="dungeonTabcontent">
               <div class="tabColumn">
                 <fieldset id="dungeonItemFieldset">
-              <div class="selectGroup">
-                <label for="sprBigKeyFieldset">Big Key</label><br />
-                <select
-                  name="Big Keys"
-                  data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
-                  data-tooltip-position="left"
-                  id="sprBigKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-               <div
-                data-tooltip-text="If checked, the blizzard in Snowpeak will not void out Link if the correct path is taken. Shadow Crystal is still in logic in to see the scent path and the portal to the mountain is open.&#0010;"
-                data-tooltip-position="left"
-              >
-                <input
-                  type="checkbox"
-                  id="snowpeakEntranceCheckbox"
-                  name="Snowpeak Ruins Checkbox"
-                  value=""
-                />
-                <label for="snowpeakEntranceCheckbox">
-                  Snowpeak Does Not Require Reekfish Scent </label
-                ><br />
-              </div>
-              <div
-                style="width: 90%"
-                data-tooltip-text="If enabled, the player will start with the Pumpkin and Cheese items and the doors in Yeta's room will be opened."
-              >
-                <input
-                  type="checkbox"
-                  id="sprShortcutCheckbox"
-                  value=""
-                />
-                <label for="sprShortcutCheckbox"> Unlock Doors In Yeta's Room </label><br />
-              </div>
+                  <div class="selectGroup">
+                    <label for="sprSmallKeyFieldset">Small Keys</label><br />
+                    <select
+                      name="Small Keys"
+                      data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
+                      data-tooltip-position="left"
+                      id="sprSmallKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="sprMapAndCompassFieldset"
+                      >Maps and Compasses</label
+                    ><br />
+                    <select
+                      name="Maps and Compasses"
+                      data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
+                      data-tooltip-position="left"
+                      id="sprMapAndCompassFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Anywhere</option>
+                      <option value="4">Start With</option>
+                    </select>
+                  </div>
                 </fieldset>
+              </div>
+              <div class="tabColumn">
+                <fieldset id="dungeonItemFieldset">
+                  <div class="selectGroup">
+                    <label for="sprBigKeyFieldset">Big Key</label><br />
+                    <select
+                      name="Big Keys"
+                      data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
+                      data-tooltip-position="left"
+                      id="sprBigKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div
+                    data-tooltip-text="If checked, the blizzard in Snowpeak will not void out Link if the correct path is taken. Shadow Crystal is still in logic in to see the scent path and the portal to the mountain is open.&#0010;"
+                    data-tooltip-position="left"
+                  >
+                    <input
+                      type="checkbox"
+                      id="snowpeakEntranceCheckbox"
+                      name="Snowpeak Ruins Checkbox"
+                      value=""
+                    />
+                    <label for="snowpeakEntranceCheckbox">
+                      Snowpeak Does Not Require Reekfish Scent </label
+                    ><br />
+                  </div>
+                  <!--
+                  <div
+                    style="width: 90%"
+                    data-tooltip-text="If enabled, the player will start with the Pumpkin and Cheese items and the doors in Yeta's room will be opened."
+                  >
+                    <input type="checkbox" id="sprShortcutCheckbox" value="" />
+                    <label for="sprShortcutCheckbox">
+                      Unlock Doors In Yeta's Room </label
+                    ><br />
+                  </div>
+                --></fieldset>
+              </div>
             </div>
-          </div>
 
-          <div id="Time" class="dungeonTabcontent">
-            <div class="tabColumn">
-            <fieldset id="dungeonItemFieldset">
-            <div class="selectGroup">
-                <label for="totSmallKeyFieldset">Small Keys</label><br />
-                <select
-                  name="Small Keys"
-                  data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
-                  data-tooltip-position="left"
-                  id="totSmallKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="totMapAndCompassFieldset">Maps and Compasses</label
-                ><br />
-                <select
-                  name="Maps and Compasses"
-                  data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
-                  data-tooltip-position="left"
-                  id="totMapAndCompassFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Anywhere</option>
-                  <option value="4">Start With</option>
-                </select>
-              </div>
-              </fieldset>
-            </div>
+            <div id="Time" class="dungeonTabcontent">
               <div class="tabColumn">
                 <fieldset id="dungeonItemFieldset">
-              <div class="selectGroup">
-                <label for="totBigKeyFieldset">Big Key</label><br />
-                <select
-                  name="Big Keys"
-                  data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
-                  data-tooltip-position="left"
-                  id="totBigKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div
-                class="selectGroup"
-                style="margin-top: 8px"
-                data-tooltip-text="Sets the minimum progressive sword level that is required to strike the pedestal in Sacred Grove and the Temple of Time. This means that if set to Ordon Sword, the pedestal can be struck with the Ordon, Master, or Light Sword, but not the Wooden Sword. If set to 'none', the player does not need to strike the sword into the pedestal.&#0010;"
-                data-tooltip-position="left"
-              >
-                <label for="totEntranceFieldset"
-                  >Temple of Time Sword Requirement</label
-                ><br />
-                <select name="Temple of Time Entrance" id="totEntranceFieldset">
-                  <option value="0">None</option>
-                  <option value="1">Wooden Sword</option>
-                  <option value="2">Ordon Sword</option>
-                  <option value="3" selected="selected">Master Sword</option>
-                  <option value="4">Light Sword</option>
-                </select>
-              </div>
-              <div
-                style="width: 90%"
-                data-tooltip-text="WARNING: you will need to save and quit the game to exit the Darknut room since the statue is gone.&#0010;&#0010;If enabled, the Door of Time (the big door at the entrance) in the Temple of Time will be opened and the statue is moved to the entrance."
-              >
-                <input
-                  type="checkbox"
-                  id="openDotCheckbox"
-                  name="Open Door of Time"
-                  value=""
-                />
-                <label for="openDotCheckbox"> Open Door of Time </label><br />
-              </div>
+                  <div class="selectGroup">
+                    <label for="totSmallKeyFieldset">Small Keys</label><br />
+                    <select
+                      name="Small Keys"
+                      data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
+                      data-tooltip-position="left"
+                      id="totSmallKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="totMapAndCompassFieldset"
+                      >Maps and Compasses</label
+                    ><br />
+                    <select
+                      name="Maps and Compasses"
+                      data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
+                      data-tooltip-position="left"
+                      id="totMapAndCompassFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Anywhere</option>
+                      <option value="4">Start With</option>
+                    </select>
+                  </div>
                 </fieldset>
+              </div>
+              <div class="tabColumn">
+                <fieldset id="dungeonItemFieldset">
+                  <div class="selectGroup">
+                    <label for="totBigKeyFieldset">Big Key</label><br />
+                    <select
+                      name="Big Keys"
+                      data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
+                      data-tooltip-position="left"
+                      id="totBigKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div
+                    class="selectGroup"
+                    style="margin-top: 8px"
+                    data-tooltip-text="Sets the minimum progressive sword level that is required to strike the pedestal in Sacred Grove and the Temple of Time. This means that if set to Ordon Sword, the pedestal can be struck with the Ordon, Master, or Light Sword, but not the Wooden Sword. If set to 'none', the player does not need to strike the sword into the pedestal.&#0010;"
+                    data-tooltip-position="left"
+                  >
+                    <label for="totEntranceFieldset"
+                      >Temple of Time Sword Requirement</label
+                    ><br />
+                    <select
+                      name="Temple of Time Entrance"
+                      id="totEntranceFieldset"
+                    >
+                      <option value="0">None</option>
+                      <option value="1">Wooden Sword</option>
+                      <option value="2">Ordon Sword</option>
+                      <option value="3" selected="selected">
+                        Master Sword
+                      </option>
+                      <option value="4">Light Sword</option>
+                    </select>
+                  </div>
+                  <div
+                    style="width: 90%"
+                    data-tooltip-text="WARNING: you will need to save and quit the game to exit the Darknut room since the statue is gone.&#0010;&#0010;If enabled, the Door of Time (the big door at the entrance) in the Temple of Time will be opened and the statue is moved to the entrance."
+                  >
+                    <input
+                      type="checkbox"
+                      id="openDotCheckbox"
+                      name="Open Door of Time"
+                      value=""
+                    />
+                    <label for="openDotCheckbox"> Open Door of Time </label
+                    ><br />
+                  </div>
+                </fieldset>
+              </div>
             </div>
-          </div>
 
-          <div id="City" class="dungeonTabcontent">
-            <div class="tabColumn">
-            <fieldset id="dungeonItemFieldset">
-            <div class="selectGroup">
-                <label for="citySmallKeyFieldset">Small Key</label><br />
-                <select
-                  name="Small Keys"
-                  data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
-                  data-tooltip-position="left"
-                  id="citySmallKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="cityMapAndCompassFieldset">Maps and Compasses</label
-                ><br />
-                <select
-                  name="Maps and Compasses"
-                  data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
-                  data-tooltip-position="left"
-                  id="cityMapAndCompassFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Anywhere</option>
-                  <option value="4">Start With</option>
-                </select>
-              </div>
-              </fieldset>
-            </div>
+            <div id="City" class="dungeonTabcontent">
               <div class="tabColumn">
                 <fieldset id="dungeonItemFieldset">
-              <div class="selectGroup">
-                <label for="cityBigKeyFieldset">Big Key</label><br />
-                <select
-                  name="Big Keys"
-                  data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
-                  data-tooltip-position="left"
-                  id="cityBigKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div
-                data-tooltip-text="If checked, the Sky Cannon is automatically warped to Lake Hylia once Lanayru Twilight is complete and the Sky Characters are removed from the item pool.&#0010;"
-                data-tooltip-position="left"
-              >
-                <input
-                  type="checkbox"
-                  id="cityEntranceCheckbox"
-                  name="City in The Sky Checkbox"
-                  value=""
-                />
-                <label for="cityEntranceCheckbox">
-                  City Does Not Require Filled Skybook </label
-                ><br />
-              </div>
-              <div
-                style="width: 90%"
-                data-tooltip-text="If enabled, the east and west bridges will be extended, skipping the need for the spinner."
-              >
-                <input
-                  type="checkbox"
-                  id="cityShortcutCheckbox"
-                  value=""
-                />
-                <label for="cityShortcutCheckbox"> Extend Spinner Bridges </label><br />
-              </div>
-              <div
-                style="width: 90%"
-                data-tooltip-text="If enabled, the northern fan will be activated and can be used to access the Boss Room."
-              >
-                <input
-                  type="checkbox"
-                  id="cityShortcutFanCheckbox"
-                  value=""
-                />
-                <label for="cityShortcutFanCheckbox"> Activate North Fan </label><br />
-              </div>
+                  <div class="selectGroup">
+                    <label for="citsSmallKeyFieldset">Small Key</label><br />
+                    <select
+                      name="Small Keys"
+                      data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
+                      data-tooltip-position="left"
+                      id="citsSmallKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="citsMapAndCompassFieldset"
+                      >Maps and Compasses</label
+                    ><br />
+                    <select
+                      name="Maps and Compasses"
+                      data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
+                      data-tooltip-position="left"
+                      id="citsMapAndCompassFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Anywhere</option>
+                      <option value="4">Start With</option>
+                    </select>
+                  </div>
                 </fieldset>
+              </div>
+              <div class="tabColumn">
+                <fieldset id="dungeonItemFieldset">
+                  <div class="selectGroup">
+                    <label for="citsBigKeyFieldset">Big Key</label><br />
+                    <select
+                      name="Big Keys"
+                      data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
+                      data-tooltip-position="left"
+                      id="citsBigKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div
+                    data-tooltip-text="If checked, the Sky Cannon is automatically warped to Lake Hylia once Lanayru Twilight is complete and the Sky Characters are removed from the item pool.&#0010;"
+                    data-tooltip-position="left"
+                  >
+                    <input
+                      type="checkbox"
+                      id="cityEntranceCheckbox"
+                      name="City in The Sky Checkbox"
+                      value=""
+                    />
+                    <label for="cityEntranceCheckbox">
+                      City Does Not Require Filled Skybook </label
+                    ><br />
+                  </div>
+                  <!--
+                  <div
+                    style="width: 90%"
+                    data-tooltip-text="If enabled, the east and west bridges will be extended, skipping the need for the spinner."
+                  >
+                    <input type="checkbox" id="cityShortcutCheckbox" value="" />
+                    <label for="cityShortcutCheckbox">
+                      Extend Spinner Bridges </label
+                    ><br />
+                  </div>
+                  <div
+                    style="width: 90%"
+                    data-tooltip-text="If enabled, the northern fan will be activated and can be used to access the Boss Room."
+                  >
+                    <input
+                      type="checkbox"
+                      id="cityShortcutFanCheckbox"
+                      value=""
+                    />
+                    <label for="cityShortcutFanCheckbox">
+                      Activate North Fan </label
+                    ><br />
+                  </div>
+                --></fieldset>
+              </div>
             </div>
-          </div>
 
-          <div id="Palace" class="dungeonTabcontent">
-            <div class="tabColumn">
-            <fieldset id="dungeonItemFieldset">
-            <div class="selectGroup">
-                <label for="potSmallKeyFieldset">Small Key</label><br />
-                <select
-                  name="Small Keys"
-                  data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
-                  data-tooltip-position="left"
-                  id="potSmallKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="potMapAndCompassFieldset">Maps and Compasses</label
-                ><br />
-                <select
-                  name="Maps and Compasses"
-                  data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
-                  data-tooltip-position="left"
-                  id="potMapAndCompassFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Anywhere</option>
-                  <option value="4">Start With</option>
-                </select>
-              </div>
-              </fieldset>
-            </div>
+            <div id="Palace" class="dungeonTabcontent">
               <div class="tabColumn">
                 <fieldset id="dungeonItemFieldset">
-              <div class="selectGroup">
-                <label for="potBigKeyFieldset">Big Key</label><br />
-                <select
-                  name="Big Keys"
-                  data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
-                  data-tooltip-position="left"
-                  id="potBigKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="palaceRequirementsFieldset"
-                  >Palace Access Requirements</label
-                ><br />
-                <select
-                  name="Palace Requirements"
-                  data-tooltip-text="'Open': The mirror is assembled from the beginning and the entrance to the dungeon is open.&#0010;&#0010;'Fused Shadows': The player must collect all 3 Fused Shadows.&#0010;&#0010;'Mirror Shards': The player must collect all 4 Mirror Shards.&#0010;&#0010;'Vanilla (beat CitS)': The player must complete City in the Sky.&#0010;"
-                  id="palaceRequirementsFieldset"
-                >
-                  <option value="0">Open</option>
-                  <option value="1">Fused Shadows</option>
-                  <option value="2">Mirror Shards</option>
-                  <option value="3" selected>Vanilla (beat CitS)</option>
-                </select>
-              </div>
-              <div
-                style="width: 90%"
-                data-tooltip-text="If enabled, the wall of darkness blocking the path to the central tower will be dispelled."
-              >
-                <input
-                  type="checkbox"
-                  id="potShortcutCheckbox"
-                  value=""
-                />
-                <label for="cityShortcutCheckbox"> Remove Entrance Wall of Darkness </label><br />
-              </div>
+                  <div class="selectGroup">
+                    <label for="potSmallKeyFieldset">Small Keys</label><br />
+                    <select
+                      name="Small Keys"
+                      data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
+                      data-tooltip-position="left"
+                      id="potSmallKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="potMapAndCompassFieldset"
+                      >Maps and Compasses</label
+                    ><br />
+                    <select
+                      name="Maps and Compasses"
+                      data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
+                      data-tooltip-position="left"
+                      id="potMapAndCompassFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Anywhere</option>
+                      <option value="4">Start With</option>
+                    </select>
+                  </div>
                 </fieldset>
+              </div>
+              <div class="tabColumn">
+                <fieldset id="dungeonItemFieldset">
+                  <div class="selectGroup">
+                    <label for="potBigKeyFieldset">Big Key</label><br />
+                    <select
+                      name="Big Keys"
+                      data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
+                      data-tooltip-position="left"
+                      id="potBigKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="palaceRequirementsFieldset"
+                      >Palace Access Requirements</label
+                    ><br />
+                    <select
+                      name="Palace Requirements"
+                      data-tooltip-text="'Open': The mirror is assembled from the beginning and the entrance to the dungeon is open.&#0010;&#0010;'Fused Shadows': The player must collect all 3 Fused Shadows.&#0010;&#0010;'Mirror Shards': The player must collect all 4 Mirror Shards.&#0010;&#0010;'Vanilla (beat CitS)': The player must complete City in the Sky.&#0010;"
+                      id="palaceRequirementsFieldset"
+                    >
+                      <option value="0">Open</option>
+                      <option value="1">Fused Shadows</option>
+                      <option value="2">Mirror Shards</option>
+                      <option value="3" selected>Vanilla (beat CitS)</option>
+                    </select>
+                  </div>
+                  <!--
+                  <div
+                    style="width: 90%"
+                    data-tooltip-text="If enabled, the wall of darkness blocking the path to the central tower will be dispelled."
+                  >
+                    <input type="checkbox" id="potShortcutCheckbox" value="" />
+                    <label for="cityShortcutCheckbox">
+                      Remove Entrance Wall of Darkness </label
+                    ><br />
+                  </div>
+                --></fieldset>
+              </div>
             </div>
-          </div>
 
-          <div id="Hyrule" class="dungeonTabcontent">
-            <div class="tabColumn">
-            <fieldset id="dungeonItemFieldset">
-            <div class="selectGroup">
-                <label for="hcSmallKeyFieldset">Small Key</label><br />
-                <select
-                  name="Small Keys"
-                  data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
-                  data-tooltip-position="left"
-                  id="hcSmallKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="hcMapAndCompassFieldset">Maps and Compasses</label
-                ><br />
-                <select
-                  name="Maps and Compasses"
-                  data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
-                  data-tooltip-position="left"
-                  id="hcMapAndCompassFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Anywhere</option>
-                  <option value="4">Start With</option>
-                </select>
-              </div>
-              </fieldset>
-            </div>
+            <div id="Hyrule" class="dungeonTabcontent">
               <div class="tabColumn">
                 <fieldset id="dungeonItemFieldset">
-              <div class="selectGroup">
-                <label for="castleBKRequirementsFieldset"
-                  >Hyrule Castle Big Key Requirements</label
-                ><br />
-                <select
-                  name="Castle BK Requirements"
-                  data-tooltip-text="When enabled, the HC Big Key will be placed in its vanilla location with the gate in front of it locked. Only when the specified criteria have been met will the gate unlock.&#0010;&#0010;'None': The gate is opened and the key is randomized according to the respective Big Key settings.&#0010;&#0010;'Fused Shadows': The gate will open once the required number of Fused Shadows have been collected.&#0010;&#0010;'Mirror Shards': The gate will open once the required number of Mirror Shards have been collected.&#0010;&#0010;'Dungeons': The gate will open once the required number of Dungeons have been cleared.&#0010;&#0010;'Poe Souls': The gate will open once the required number of Poe Souls have been collected.&#0010;&#0010;'Hearts': The gate will open once the required number of Hearts have been reached."
-                  data-tooltip-position="left"
-                  id="castleBKRequirementsFieldset"
-                >
-                  <option value="0" selected>None</option>
-                  <option value="1">Fused Shadows</option>
-                  <option value="2">Mirror Shards</option>
-                  <option value="3">Dungeons</option>
-                  <option value="4">Poe Souls</option>
-                  <option value="5">Hearts</option>
-                </select>
-              </div>
-              <label
-                for="castleBKRequirementsSlider"
-                id="castleBKRequirementsSliderLabel"
-                hidden
-                >Hyrule Castle Requirements</label
-              >
-              <input
-                type="range"
-                min="1"
-                max="1"
-                value="1"
-                class="liSlider"
-                id="castleBKRequirementsSlider"
-                hidden
-              />
-              <output id="castleBKRequirementsSliderOutput" hidden></output>
-              <p></p>
-              <div class="selectGroup">
-                <label for="castleRequirementsFieldset"
-                  >Hyrule Barrier Requirements</label
-                ><br />
-                <select
-                  name="Castle Requirements"
-                  data-tooltip-text="'Open': The barrier around Hyrule Castle is dispelled from the beginning.&#0010;&#0010;'Fused Shadows': The barrier will be dispelled once the required number of Fused Shadows have been collected.&#0010;&#0010;'Mirror Shards': The barrier will be dispelled once the required number of Mirror Shards have been collected.&#0010;&#0010;'Dungeons': The barrier will be dispelled once the required number of Dungeons have been cleared.&#0010;&#0010;'Vanilla (beat PoT)': The player must complete Palace of Twilight.&#0010;&#0010;'Poe Souls': The barrier will be dispelled once the required number of Poe Souls have been collected.&#0010;&#0010;'Hearts': The barrier will be dispelled once the required number of Hearts have been reached.&#0010;&#0010;Note that all Castle requirements include completing Midna's Desperate Hour. Visit the 'Other' tab to adjust your MDH settings."
-                  id="castleRequirementsFieldset"
-                >
-                  <option value="0">Open</option>
-                  <option value="1">Fused Shadows</option>
-                  <option value="2">Mirror Shards</option>
-                  <option value="3">Dungeons</option>
-                  <option value="4" selected>Vanilla (beat PoT)</option>
-                  <option value="5">Poe Souls</option>
-                  <option value="6">Hearts</option>
-                </select>
-              </div>
-              <label
-                for="castleRequirementsSlider"
-                id="castleRequirementsSliderLabel"
-                hidden
-                >Hyrule Castle Requirements</label
-              >
-              <input
-                type="range"
-                min="1"
-                max="1"
-                value="1"
-                class="liSlider"
-                id="castleRequirementsSlider"
-                hidden
-              />
-              <output id="castleRequirementsSliderOutput" hidden></output>
-              <p></p>
-              <div
-                style="width: 90%"
-                data-tooltip-text="If enabled, the shortcut chandelier in the Hyrule Castle main hall will be lowered, and the double Dinalfos room will be cleared.&#0010;&#0010;This allows for you to continue from the main hall to the southern balcony more quickly and with fewer item requirements (ex: no Gale Boomerang)."
-              >
-                <input
-                  type="checkbox"
-                  id="hcShortcutCheckbox"
-                  name="Lower Hyrule Castle Chandelier"
-                  value=""
-                />
-                <label for="hcShortcutCheckbox"
-                  >Lower Hyrule Castle Chandelier</label
-                ><br />
-              </div>
+                  <div class="selectGroup">
+                    <label for="hcSmallKeyFieldset">Small Keys</label><br />
+                    <select
+                      name="Small Keys"
+                      data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
+                      data-tooltip-position="left"
+                      id="hcSmallKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="hcMapAndCompassFieldset"
+                      >Maps and Compasses</label
+                    ><br />
+                    <select
+                      name="Maps and Compasses"
+                      data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
+                      data-tooltip-position="left"
+                      id="hcMapAndCompassFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Anywhere</option>
+                      <option value="4">Start With</option>
+                    </select>
+                  </div>
+                  <div class="selectGroup">
+                    <label for="hcBigKeyFieldset">Big Key</label><br />
+                    <select
+                      name="Big Keys"
+                      data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
+                      data-tooltip-position="left"
+                      id="hcBigKeyFieldset"
+                    >
+                      <option value="0">Vanilla</option>
+                      <option value="1">Own Dungeon</option>
+                      <option value="2">Any Dungeon</option>
+                      <option value="3">Keysanity</option>
+                      <option value="4">Keysy</option>
+                    </select>
+                  </div>
                 </fieldset>
+              </div>
+              <div class="tabColumn">
+                <fieldset id="dungeonItemFieldset">
+                  <div
+                    class="selectGroup"
+                    id="castleBKRequirementsSelectGroup"
+                    hidden
+                  >
+                    <label for="castleBKRequirementsFieldset"
+                      >Hyrule Castle Big Key Requirements</label
+                    ><br />
+                    <select
+                      name="Castle BK Requirements"
+                      data-tooltip-text="When enabled, the HC Big Key will be placed in its vanilla location with the gate in front of it locked. Only when the specified criteria have been met will the gate unlock.&#0010;&#0010;'None': The gate is opened and the key is randomized according to the respective Big Key settings.&#0010;&#0010;'Fused Shadows': The gate will open once the required number of Fused Shadows have been collected.&#0010;&#0010;'Mirror Shards': The gate will open once the required number of Mirror Shards have been collected.&#0010;&#0010;'Dungeons': The gate will open once the required number of Dungeons have been cleared.&#0010;&#0010;'Poe Souls': The gate will open once the required number of Poe Souls have been collected.&#0010;&#0010;'Hearts': The gate will open once the required number of Hearts have been reached."
+                      data-tooltip-position="left"
+                      id="castleBKRequirementsFieldset"
+                    >
+                      <option value="0" selected>None</option>
+                      <option value="1">Fused Shadows</option>
+                      <option value="2">Mirror Shards</option>
+                      <option value="3">Dungeons</option>
+                      <option value="4">Poe Souls</option>
+                      <option value="5">Hearts</option>
+                    </select>
+                  </div>
+                  <label
+                    for="castleBKRequirementsSlider"
+                    id="castleBKRequirementsSliderLabel"
+                    hidden
+                    >Hyrule Castle Requirements</label
+                  >
+                  <input
+                    type="range"
+                    min="1"
+                    max="1"
+                    value="1"
+                    class="liSlider"
+                    id="castleBKRequirementsSlider"
+                    hidden
+                  />
+                  <output id="castleBKRequirementsSliderOutput" hidden></output>
+                  <p></p>
+                  <div class="selectGroup">
+                    <label for="castleRequirementsFieldset"
+                      >Hyrule Barrier Requirements</label
+                    ><br />
+                    <select
+                      name="Castle Requirements"
+                      data-tooltip-text="'Open': The barrier around Hyrule Castle is dispelled from the beginning.&#0010;&#0010;'Fused Shadows': The barrier will be dispelled once the required number of Fused Shadows have been collected.&#0010;&#0010;'Mirror Shards': The barrier will be dispelled once the required number of Mirror Shards have been collected.&#0010;&#0010;'Dungeons': The barrier will be dispelled once the required number of Dungeons have been cleared.&#0010;&#0010;'Vanilla (beat PoT)': The player must complete Palace of Twilight.&#0010;&#0010;'Poe Souls': The barrier will be dispelled once the required number of Poe Souls have been collected.&#0010;&#0010;'Hearts': The barrier will be dispelled once the required number of Hearts have been reached.&#0010;&#0010;Note that all Castle requirements include completing Midna's Desperate Hour. Visit the 'Other' tab to adjust your MDH settings."
+                      id="castleRequirementsFieldset"
+                    >
+                      <option value="0">Open</option>
+                      <option value="1">Fused Shadows</option>
+                      <option value="2">Mirror Shards</option>
+                      <option value="3">Dungeons</option>
+                      <option value="4" selected>Vanilla (beat PoT)</option>
+                      <option value="5">Poe Souls</option>
+                      <option value="6">Hearts</option>
+                    </select>
+                  </div>
+                  <label
+                    for="castleRequirementsSlider"
+                    id="castleRequirementsSliderLabel"
+                    hidden
+                    >Hyrule Castle Requirements</label
+                  >
+                  <input
+                    type="range"
+                    min="1"
+                    max="1"
+                    value="1"
+                    class="liSlider"
+                    id="castleRequirementsSlider"
+                    hidden
+                  />
+                  <output id="castleRequirementsSliderOutput" hidden></output>
+                  <p></p>
+                  <div
+                    style="width: 90%"
+                    data-tooltip-text="If enabled, the shortcut chandelier in the Hyrule Castle main hall will be lowered, and the double Dinalfos room will be cleared.&#0010;&#0010;This allows for you to continue from the main hall to the southern balcony more quickly and with fewer item requirements (ex: no Gale Boomerang)."
+                  >
+                    <input
+                      type="checkbox"
+                      id="hcShortcutCheckbox"
+                      name="Lower Hyrule Castle Chandelier"
+                      value=""
+                    />
+                    <label for="hcShortcutCheckbox"
+                      >Lower Hyrule Castle Chandelier</label
+                    ><br />
+                  </div>
+                </fieldset>
+              </div>
             </div>
-          </div>
           </fieldset>
           <fieldset class="otherItemsFieldset">
             <legend>Additional Dungeon Settings</legend>
             <div
-                data-tooltip-text="If checked, the Fused Shadows and Mirror Shards that normally appear at the end of Dungeons can be found anywhere in the game.&#0010;"
+              data-tooltip-text="If checked, the Fused Shadows and Mirror Shards that normally appear at the end of Dungeons can be found anywhere in the game.&#0010;"
+              data-tooltip-position="left"
+            >
+              <input
+                type="checkbox"
+                id="shuffleRewardsCheckbox"
+                name="Shuffle Rewards"
+                value=""
+              />
+              <label for="shuffleRewardsCheckbox">
+                Dungeon Rewards Can Be Anywhere </label
+              ><br />
+            </div>
+            <div
+              data-tooltip-text="Helps prevent needing to reenter a dungeon after defeating the boss when small keys are Own Dungeon.&#0010;&#0010;If checked, the following items will not appear on Heart Container or Dungeon Reward checks: Dungeon small keys, Snowpeak Ruins Ordon Pumpkin, Snowpeak Ruins Ordon Goat Cheese, Gerudo Desert Bulblin Camp Key, and North Faron Woods Gate Key&#0010;"
+              data-tooltip-position="left"
+            >
+              <input
+                type="checkbox"
+                id="noSmallKeysOnBossesCheckbox"
+                name="No Small Keys On Bosses Checkbox"
+                value=""
+              />
+              <label for="noSmallKeysOnBossesCheckbox"
+                >No Small Keys On Bosses</label
+              >
+            </div>
+            <div
+              style="width: 90%"
+              data-tooltip-text="If enabled, any dungeon that is not required to complete the seed will not contain any important items.&#0010;"
+            >
+              <input
+                type="checkbox"
+                id="barrenCheckbox"
+                name="Unrequired Dungeons"
+                value=""
+              />
+              <label for="barrenCheckbox">
+                Unrequired Dungeons Are Barren </label
+              ><br />
+            </div>
+            <p></p>
+            <div class="selectGroup">
+              <label for="smallKeyFieldset">Global Small Key Setting</label
+              ><br />
+              <select
+                name="Small Keys"
+                data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
                 data-tooltip-position="left"
+                id="smallKeyFieldset"
               >
-                <input
-                  type="checkbox"
-                  id="shuffleRewardsCheckbox"
-                  name="Shuffle Rewards"
-                  value=""
-                />
-                <label for="shuffleRewardsCheckbox">
-                  Dungeon Rewards Can Be Anywhere </label
-                ><br />
-              </div>
-              <div
-                data-tooltip-text="Helps prevent needing to reenter a dungeon after defeating the boss when small keys are Own Dungeon.&#0010;&#0010;If checked, the following items will not appear on Heart Container or Dungeon Reward checks: Dungeon small keys, Snowpeak Ruins Ordon Pumpkin, Snowpeak Ruins Ordon Goat Cheese, Gerudo Desert Bulblin Camp Key, and North Faron Woods Gate Key&#0010;"
+                <option value="0">Vanilla</option>
+                <option value="1">Own Dungeon</option>
+                <option value="2">Any Dungeon</option>
+                <option value="3">Keysanity</option>
+                <option value="4">Keysy</option>
+              </select>
+            </div>
+            <div class="selectGroup">
+              <label for="bigKeyFieldset">Global Big Key Setting</label><br />
+              <select
+                name="Big Keys"
+                data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
                 data-tooltip-position="left"
+                id="bigKeyFieldset"
               >
-                <input
-                  type="checkbox"
-                  id="noSmallKeysOnBossesCheckbox"
-                  name="No Small Keys On Bosses Checkbox"
-                  value=""
-                />
-                <label for="noSmallKeysOnBossesCheckbox"
-                  >No Small Keys On Bosses</label
-                >
-              </div>
-              <div
-                style="width: 90%"
-                data-tooltip-text="If enabled, any dungeon that is not required to complete the seed will not contain any important items.&#0010;"
+                <option value="0">Vanilla</option>
+                <option value="1">Own Dungeon</option>
+                <option value="2">Any Dungeon</option>
+                <option value="3">Keysanity</option>
+                <option value="4">Keysy</option>
+              </select>
+            </div>
+            <div class="selectGroup">
+              <label for="mapAndCompassFieldset"
+                >Global Maps and Compasses Setting</label
+              ><br />
+              <select
+                name="Maps and Compasses"
+                data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
+                data-tooltip-position="left"
+                id="mapAndCompassFieldset"
               >
-                <input
-                  type="checkbox"
-                  id="barrenCheckbox"
-                  name="Unrequired Dungeons"
-                  value=""
-                />
-                <label for="barrenCheckbox">
-                  Unrequired Dungeons Are Barren </label
-                ><br />
-              </div>
-              <p></p>
-              <div class="selectGroup">
-                <label for="smallKeyFieldset">Global Small Key Setting</label><br />
-                <select
-                  name="Small Keys"
-                  data-tooltip-text="'Vanilla': Small Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Small Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Small Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Small Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Small Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All small key locks are removed and the keys are removed from the item pool and the player will start with all region small keys. (i.e Gate Keys, Coro Key, etc.)&#0010;"
-                  data-tooltip-position="left"
-                  id="smallKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="bigKeyFieldset">Global Big Key Setting</label><br />
-                <select
-                  name="Big Keys"
-                  data-tooltip-text="'Vanilla': Big Keys will be placed in their original location.&#0010;&#0010;'Own Dungeon': Big Keys will only be randomized in their vanilla dungeon. Example: You can only find a Forest Temple Big Key in the Forest Temple.&#0010;&#0010;'Any Dungeon': Big Keys will be randomized between dungeons.&#0010;&#0010;'Keysanity': Big Keys will be randomized among all checks.&#0010;&#0010;'Keysy': All Big Key locks are removed and the keys are removed from the item pool.&#0010;"
-                  data-tooltip-position="left"
-                  id="bigKeyFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Keysanity</option>
-                  <option value="4">Keysy</option>
-                </select>
-              </div>
-              <div class="selectGroup">
-                <label for="mapAndCompassFieldset">Global Maps and Compasses Setting</label
-                ><br />
-                <select
-                  name="Maps and Compasses"
-                  data-tooltip-text="'Vanilla': Maps and Compasses will be placed in their original location.&#0010;&#0010;'Own Dungeon': Maps and Compasses will only be randomized in their vanilla dungeon. Example: You can only find the Forest Temple Map in the Forest Temple.&#0010;&#0010;'Any Dungeon': Maps and Compasses will be randomized between dungeons.&#0010;&#0010;'Anywhere': Maps and Compasses will be randomized among all checks.&#0010;&#0010;'Start With': The player starts with all Maps and Compasses.&#0010;"
-                  data-tooltip-position="left"
-                  id="mapAndCompassFieldset"
-                >
-                  <option value="0">Vanilla</option>
-                  <option value="1">Own Dungeon</option>
-                  <option value="2">Any Dungeon</option>
-                  <option value="3">Anywhere</option>
-                  <option value="4">Start With</option>
-                </select>
-              </div>
+                <option value="0">Vanilla</option>
+                <option value="1">Own Dungeon</option>
+                <option value="2">Any Dungeon</option>
+                <option value="3">Anywhere</option>
+                <option value="4">Start With</option>
+              </select>
+            </div>
           </fieldset>
         </div>
 

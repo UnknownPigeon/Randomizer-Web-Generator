@@ -387,7 +387,7 @@ function initTabButtons() {
     'excludedChecksTab',
     'startingInventoryTab',
     'plandoTab',
-    'dungeonSettingsTab'
+    'dungeonSettingsTab',
     // 'legacyTab',
   ].forEach((id) => {
     byId(id + 'Btn').addEventListener('click', genOnTabClick(id));
@@ -467,6 +467,9 @@ function onDomContentLoaded() {
 
   setDungeonERSettings();
   setOverworldERSettings();
+  // Set the "Forest" dungeon item tab to be the default one open.
+  openDungeon(event, 'Forest');
+
   // If returning back from the seed page, the browser will fill in the state.
   // This updates the string after the browser updates all of the fields to
   // their previous values.
@@ -522,6 +525,10 @@ function onDomContentLoaded() {
   $('#plandoItemSelect').select2();
 
   updatePresetsSelect();
+
+  // Update the state of the HCBK elements once everything is loaded
+  setShowCastleBKRequirements();
+
   window.initTooltipsInTree(document);
 }
 
@@ -673,9 +680,43 @@ document
 document
   .getElementById('introCheckbox')
   .addEventListener('click', setSettingsString);
-document.getElementById('smallKeyFieldset').onchange = setSettingsString;
-document.getElementById('bigKeyFieldset').onchange = setSettingsString;
-document.getElementById('mapAndCompassFieldset').onchange = setSettingsString;
+document.getElementById('smallKeyFieldset').onchange = setSmallKeyValues;
+document.getElementById('bigKeyFieldset').onchange = setBigKeyValues;
+document.getElementById('mapAndCompassFieldset').onchange =
+  setMapAndCompassValues;
+document.getElementById('ftSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('gmSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('lbtSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('agSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('sprSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('totSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('citsSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('potSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('hcSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('ftBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('gmBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('lbtBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('agBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('sprBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('totBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('citsBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('potBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('hcBigKeyFieldset').onchange =
+  setShowCastleBKRequirements;
+document.getElementById('ftMapAndCompassFieldset').onchange = setSettingsString;
+document.getElementById('gmMapAndCompassFieldset').onchange = setSettingsString;
+document.getElementById('lbtMapAndCompassFieldset').onchange =
+  setSettingsString;
+document.getElementById('agMapAndCompassFieldset').onchange = setSettingsString;
+document.getElementById('sprMapAndCompassFieldset').onchange =
+  setSettingsString;
+document.getElementById('totMapAndCompassFieldset').onchange =
+  setSettingsString;
+document.getElementById('citsMapAndCompassFieldset').onchange =
+  setSettingsString;
+document.getElementById('potMapAndCompassFieldset').onchange =
+  setSettingsString;
+document.getElementById('hcMapAndCompassFieldset').onchange = setSettingsString;
 document
   .getElementById('goldenBugsCheckbox')
   .addEventListener('click', setSettingsString);
@@ -925,6 +966,17 @@ function setMaloShopDonationValue() {
   setSettingsString();
 }
 
+function setShowCastleBKRequirements() {
+  var reqs = document.getElementById('hcBigKeyFieldset').value;
+  if (reqs != '0') {
+    document.getElementById('castleBKRequirementsFieldset').value = 0;
+    document.getElementById('castleBKRequirementsSelectGroup').hidden = true;
+    setCastleBKRequirementsSettings();
+  } else {
+    document.getElementById('castleBKRequirementsSelectGroup').hidden = false;
+  }
+}
+
 function setCastleBKRequirementsSettings() {
   var reqs = document.getElementById('castleBKRequirementsFieldset').value;
   let sliderName = 'castleBKRequirementsSlider';
@@ -1023,6 +1075,51 @@ function setDungeonERSettings() {
     document.getElementById('unpairedEntrancesCheckbox').disabled = true;
     document.getElementById('decoupleEntrancesCheckbox').disabled = true;
   }
+  setSettingsString();
+}
+
+function setSmallKeyValues() {
+  const smallKeyValue = document.getElementById('smallKeyFieldset').value;
+  document.getElementById('ftSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('gmSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('lbtSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('agSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('sprSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('totSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('citsSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('potSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('hcSmallKeyFieldset').value = smallKeyValue;
+
+  setSettingsString();
+}
+
+function setBigKeyValues() {
+  const values = document.getElementById('bigKeyFieldset').value;
+  document.getElementById('ftBigKeyFieldset').value = values;
+  document.getElementById('gmBigKeyFieldset').value = values;
+  document.getElementById('lbtBigKeyFieldset').value = values;
+  document.getElementById('agBigKeyFieldset').value = values;
+  document.getElementById('sprBigKeyFieldset').value = values;
+  document.getElementById('totBigKeyFieldset').value = values;
+  document.getElementById('citsBigKeyFieldset').value = values;
+  document.getElementById('potBigKeyFieldset').value = values;
+  document.getElementById('hcBigKeyFieldset').value = values;
+
+  setSettingsString();
+}
+
+function setMapAndCompassValues() {
+  const values = document.getElementById('mapAndCompassFieldset').value;
+  document.getElementById('ftMapAndCompassFieldset').value = values;
+  document.getElementById('gmMapAndCompassFieldset').value = values;
+  document.getElementById('lbtMapAndCompassFieldset').value = values;
+  document.getElementById('agMapAndCompassFieldset').value = values;
+  document.getElementById('sprMapAndCompassFieldset').value = values;
+  document.getElementById('totMapAndCompassFieldset').value = values;
+  document.getElementById('citsMapAndCompassFieldset').value = values;
+  document.getElementById('potMapAndCompassFieldset').value = values;
+  document.getElementById('hcMapAndCompassFieldset').value = values;
+
   setSettingsString();
 }
 
@@ -2157,6 +2254,7 @@ function populateFromSettingsString(settingsString) {
   }
 
   setSettingsString();
+  setShowCastleBKRequirements();
 
   return null;
 }
@@ -2315,9 +2413,33 @@ function populateSSettings(s) {
   $('#poeSettingsFieldset').val(s.poes);
   $('#shopItemsCheckbox').prop('checked', s.shopItems);
   $('#hiddenSkillsCheckbox').prop('checked', s.hiddenSkills);
-  $('#smallKeyFieldset').val(s.smallKeys);
-  $('#bigKeyFieldset').val(s.bigKeys);
-  $('#mapAndCompassFieldset').val(s.mapsAndCompasses);
+  $('#ftSmallKeyFieldset').val(s.ftSmallKeys);
+  $('#gmSmallKeyFieldset').val(s.gmSmallKeys);
+  $('#lbtSmallKeyFieldset').val(s.lbtSmallKeys);
+  $('#agSmallKeyFieldset').val(s.agSmallKeys);
+  $('#sprSmallKeyFieldset').val(s.sprSmallKeys);
+  $('#totSmallKeyFieldset').val(s.totSmallKeys);
+  $('#citsSmallKeyFieldset').val(s.citsSmallKeys);
+  $('#potSmallKeyFieldset').val(s.potSmallKeys);
+  $('#hcSmallKeyFieldset').val(s.hcSmallKeys);
+  $('#ftBigKeyFieldset').val(s.ftBigKey);
+  $('#gmBigKeyFieldset').val(s.gmBigKeys);
+  $('#lbtBigKeyFieldset').val(s.lbtBigKey);
+  $('#agBigKeyFieldset').val(s.agBigKey);
+  $('#sprBigKeyFieldset').val(s.sprBigKey);
+  $('#totBigKeyFieldset').val(s.totBigKey);
+  $('#citsBigKeyFieldset').val(s.citsBigKey);
+  $('#potBigKeyFieldset').val(s.potBigKey);
+  $('#hcBigKeyFieldset').val(s.hcBigKey);
+  $('#ftMapAndCompassFieldset').val(s.ftMapAndCompass);
+  $('#gmMapAndCompassFieldset').val(s.gmMapAndCompass);
+  $('#lbtMapAndCompassFieldset').val(s.lbtMapAndCompass);
+  $('#agMapAndCompassFieldset').val(s.agMapAndCompass);
+  $('#sprMapAndCompassFieldset').val(s.sprMapAndCompass);
+  $('#totMapAndCompassFieldset').val(s.totMapAndCompass);
+  $('#citsMapAndCompassFieldset').val(s.citsMapAndCompass);
+  $('#potMapAndCompassFieldset').val(s.potMapAndCompass);
+  $('#hcMapAndCompassFieldset').val(s.hcMapAndCompass);
   $('#introCheckbox').prop('checked', s.skipIntro);
   $('#faronTwilightCheckbox').prop('checked', s.faronTwilightCleared);
   $('#eldinTwilightCheckbox').prop('checked', s.eldinTwilightCleared);
@@ -2585,19 +2707,20 @@ function openDungeon(evt, dungeonName) {
   var i, tabcontent, tablinks;
 
   // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("dungeonTabcontent");
+  tabcontent = document.getElementsByClassName('dungeonTabcontent');
   for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+    tabcontent[i].style.display = 'none';
   }
 
   // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("dungeonTablinks");
+  tablinks = document.getElementsByClassName('dungeonTablinks');
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].className = tablinks[i].className.replace(' active', '');
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(dungeonName).style.display = "flex";
-  document.getElementById(dungeonName).className = "dungeonTabcontent tabcontentactive";
-  evt.currentTarget.className += " active";
+  document.getElementById(dungeonName).style.display = 'flex';
+  document.getElementById(dungeonName).className =
+    'dungeonTabcontent tabcontentactive';
+  evt.currentTarget.className += ' active';
 }
