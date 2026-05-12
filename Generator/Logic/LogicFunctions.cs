@@ -1446,8 +1446,10 @@ namespace TPRandomizer
 
         public static bool CanCollectLarva()
         {
-            return (
-                    (
+            return HasBottle()
+                && (
+                    Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
+                    || (
                         (
                             Randomizer
                                 .Rooms
@@ -1470,8 +1472,8 @@ namespace TPRandomizer
                             || CanUse(Item.Progressive_Bow)
                             || CanUse(Item.Ball_and_Chain)
                         )
-                    ) || Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
-                ) && HasBottle();
+                    )
+                );
         }
 
         public static bool CanCollectWorms()
