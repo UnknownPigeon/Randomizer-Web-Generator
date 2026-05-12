@@ -1281,14 +1281,46 @@ namespace TPRandomizer.Assets
             SharedSettings randomizerSettings = Randomizer.SSettings;
             List<byte> listOfStartingItems = new();
             ushort count = 0;
-
-            if (randomizerSettings.smallKeySettings == SSettings.Enums.SmallKeySettings.Keysy)
+            if (randomizerSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
             {
-                // We want to remove all small keys since they dont actually need to be given to the player
-                foreach (Item sk in Randomizer.Items.RegionSmallKeys)
-                {
-                    randomizerSettings.startingItems.Remove(sk);
-                }
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Forest_Temple_Small_Key);
+            }
+
+            if (randomizerSettings.gmSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Goron_Mines_Small_Key);
+            }
+
+            if (randomizerSettings.lbtSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Lakebed_Temple_Small_Key);
+            }
+
+            if (randomizerSettings.agSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Arbiters_Grounds_Small_Key);
+            }
+            if (randomizerSettings.sprSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Snowpeak_Ruins_Small_Key);
+                randomizerSettings.startingItems.Remove(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
+                randomizerSettings.startingItems.Remove(Item.Snowpeak_Ruins_Ordon_Pumpkin);
+            }
+            if (randomizerSettings.totSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Temple_of_Time_Small_Key);
+            }
+            if (randomizerSettings.citsSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.City_in_The_Sky_Small_Key);
+            }
+            if (randomizerSettings.potSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Palace_of_Twilight_Small_Key);
+            }
+            if (randomizerSettings.hcSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Hyrule_Castle_Small_Key);
             }
 
             foreach (Item startingItem in randomizerSettings.startingItems)

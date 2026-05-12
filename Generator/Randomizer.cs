@@ -279,7 +279,6 @@ namespace TPRandomizer
             {
                 return new PlaythroughSpheres(null, null, null);
             }
-
             return BackendFunctions.CalculateOptimalPlaythrough2(startingRoom);
         }
 
@@ -441,12 +440,60 @@ namespace TPRandomizer
             // TODO: Change this one to a boolean called "faronWoodsOpen"
             if (SSettings.faronWoodsLogic == FaronWoodsLogic.Open)
                 part2Settings.Add("faronWoodsLogic", SSettings.faronWoodsLogic);
-            if (SSettings.smallKeySettings == SmallKeySettings.Keysy)
-                part2Settings.Add("smallKeySettings", SSettings.smallKeySettings);
-            if (SSettings.bigKeySettings == BigKeySettings.Keysy)
-                part2Settings.Add("bigKeySettings", SSettings.bigKeySettings);
-            if (SSettings.mapAndCompassSettings == MapAndCompassSettings.Start_With)
-                part2Settings.Add("mapAndCompassSettings", SSettings.mapAndCompassSettings);
+            if (SSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
+                part2Settings.Add("ftSmallKeySettings", SSettings.ftSmallKeySettings);
+            if (SSettings.gmSmallKeySettings == SmallKeySettings.Keysy)
+                part2Settings.Add("gmSmallKeySettings", SSettings.gmSmallKeySettings);
+            if (SSettings.lbtSmallKeySettings == SmallKeySettings.Keysy)
+                part2Settings.Add("lbtSmallKeySettings", SSettings.lbtSmallKeySettings);
+            if (SSettings.agSmallKeySettings == SmallKeySettings.Keysy)
+                part2Settings.Add("agSmallKeySettings", SSettings.agSmallKeySettings);
+            if (SSettings.sprSmallKeySettings == SmallKeySettings.Keysy)
+                part2Settings.Add("sprSmallKeySettings", SSettings.sprSmallKeySettings);
+            if (SSettings.totSmallKeySettings == SmallKeySettings.Keysy)
+                part2Settings.Add("totSmallKeySettings", SSettings.totSmallKeySettings);
+            if (SSettings.citsSmallKeySettings == SmallKeySettings.Keysy)
+                part2Settings.Add("citsSmallKeySettings", SSettings.citsSmallKeySettings);
+            if (SSettings.potSmallKeySettings == SmallKeySettings.Keysy)
+                part2Settings.Add("potSmallKeySettings", SSettings.potSmallKeySettings);
+            if (SSettings.hcSmallKeySettings == SmallKeySettings.Keysy)
+                part2Settings.Add("hcSmallKeySettings", SSettings.hcSmallKeySettings);
+            if (SSettings.ftBigKeySettings == BigKeySettings.Keysy)
+                part2Settings.Add("ftBigKeySettings", SSettings.ftBigKeySettings);
+            if (SSettings.gmBigKeySettings == BigKeySettings.Keysy)
+                part2Settings.Add("gmBigKeySettings", SSettings.gmBigKeySettings);
+            if (SSettings.lbtBigKeySettings == BigKeySettings.Keysy)
+                part2Settings.Add("lbtBigKeySettings", SSettings.lbtBigKeySettings);
+            if (SSettings.agBigKeySettings == BigKeySettings.Keysy)
+                part2Settings.Add("agBigKeySettings", SSettings.agBigKeySettings);
+            if (SSettings.sprBigKeySettings == BigKeySettings.Keysy)
+                part2Settings.Add("sprBigKeySettings", SSettings.sprBigKeySettings);
+            if (SSettings.totBigKeySettings == BigKeySettings.Keysy)
+                part2Settings.Add("totBigKeySettings", SSettings.totBigKeySettings);
+            if (SSettings.citsBigKeySettings == BigKeySettings.Keysy)
+                part2Settings.Add("citsBigKeySettings", SSettings.citsBigKeySettings);
+            if (SSettings.potBigKeySettings == BigKeySettings.Keysy)
+                part2Settings.Add("potBigKeySettings", SSettings.potBigKeySettings);
+            if (SSettings.hcBigKeySettings == BigKeySettings.Keysy)
+                part2Settings.Add("hcBigKeySettings", SSettings.hcBigKeySettings);
+            if (SSettings.ftMapAndCompassSettings == MapAndCompassSettings.Start_With)
+                part2Settings.Add("ftMapAndCompassSettings", SSettings.ftMapAndCompassSettings);
+            if (SSettings.gmMapAndCompassSettings == MapAndCompassSettings.Start_With)
+                part2Settings.Add("gmMapAndCompassSettings", SSettings.gmMapAndCompassSettings);
+            if (SSettings.lbtMapAndCompassSettings == MapAndCompassSettings.Start_With)
+                part2Settings.Add("lbtMapAndCompassSettings", SSettings.lbtMapAndCompassSettings);
+            if (SSettings.agMapAndCompassSettings == MapAndCompassSettings.Start_With)
+                part2Settings.Add("agMapAndCompassSettings", SSettings.agMapAndCompassSettings);
+            if (SSettings.sprMapAndCompassSettings == MapAndCompassSettings.Start_With)
+                part2Settings.Add("sprMapAndCompassSettings", SSettings.sprMapAndCompassSettings);
+            if (SSettings.totMapAndCompassSettings == MapAndCompassSettings.Start_With)
+                part2Settings.Add("totMapAndCompassSettings", SSettings.totMapAndCompassSettings);
+            if (SSettings.citsMapAndCompassSettings == MapAndCompassSettings.Start_With)
+                part2Settings.Add("citsMapAndCompassSettings", SSettings.citsMapAndCompassSettings);
+            if (SSettings.potMapAndCompassSettings == MapAndCompassSettings.Start_With)
+                part2Settings.Add("potMapAndCompassSettings", SSettings.potMapAndCompassSettings);
+            if (SSettings.hcMapAndCompassSettings == MapAndCompassSettings.Start_With)
+                part2Settings.Add("hcMapAndCompassSettings", SSettings.hcMapAndCompassSettings);
 
             // Boolean fields included when true
             if (SSettings.skipPrologue)

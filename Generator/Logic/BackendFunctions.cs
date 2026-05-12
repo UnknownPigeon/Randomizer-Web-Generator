@@ -163,6 +163,10 @@ namespace TPRandomizer
             }
             else
             {
+                if (printResults)
+                {
+                    Console.WriteLine("Failed to Validate Playthrough");
+                }
                 return false;
             }
         }

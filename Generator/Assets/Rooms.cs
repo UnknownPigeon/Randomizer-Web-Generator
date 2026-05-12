@@ -2,6 +2,8 @@ namespace TPRandomizer
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
     using TPRandomizer.SSettings.Enums;
 
     /// <summary>
@@ -432,6 +434,19 @@ namespace TPRandomizer
                 "City in The Sky",
                 "Palace of Twilight"
             };
+        public static List<string> AllDungeonNames =
+            new()
+            {
+                "Forest Temple",
+                "Goron Mines",
+                "Lakebed Temple",
+                "Arbiters Grounds",
+                "Snowpeak Ruins",
+                "Temple of Time",
+                "City in The Sky",
+                "Palace of Twilight",
+                "Hyrule Castle"
+            };
 
         /// <summary>
         /// A dictionary of all of the rooms that will be used to generate a playthrough graph.
@@ -450,8 +465,81 @@ namespace TPRandomizer
             SharedSettings parseSetting = Randomizer.SSettings;
             string itemName = itemToPlace.ToString();
             itemName = itemName.Replace("_", " ");
+            var dungeonConfigs = new[]
+            {
+                new
+                {
+                    Region = "Forest Temple",
+                    SmallKeySetting = parseSetting.ftSmallKeySettings,
+                    BigKeySetting = parseSetting.ftBigKeySettings,
+                    MapCompassSetting = parseSetting.ftMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Goron Mines",
+                    SmallKeySetting = parseSetting.gmSmallKeySettings,
+                    BigKeySetting = parseSetting.gmBigKeySettings,
+                    MapCompassSetting = parseSetting.gmMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Lakebed Temple",
+                    SmallKeySetting = parseSetting.lbtSmallKeySettings,
+                    BigKeySetting = parseSetting.lbtBigKeySettings,
+                    MapCompassSetting = parseSetting.lbtMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Arbiters Grounds",
+                    SmallKeySetting = parseSetting.agSmallKeySettings,
+                    BigKeySetting = parseSetting.agBigKeySettings,
+                    MapCompassSetting = parseSetting.agMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Snowpeak Ruins",
+                    SmallKeySetting = parseSetting.sprSmallKeySettings,
+                    BigKeySetting = parseSetting.sprBigKeySettings,
+                    MapCompassSetting = parseSetting.sprMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Temple of Time",
+                    SmallKeySetting = parseSetting.totSmallKeySettings,
+                    BigKeySetting = parseSetting.totBigKeySettings,
+                    MapCompassSetting = parseSetting.totMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "City in The Sky",
+                    SmallKeySetting = parseSetting.citsSmallKeySettings,
+                    BigKeySetting = parseSetting.citsBigKeySettings,
+                    MapCompassSetting = parseSetting.citsMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Palace of Twilight",
+                    SmallKeySetting = parseSetting.potSmallKeySettings,
+                    BigKeySetting = parseSetting.potBigKeySettings,
+                    MapCompassSetting = parseSetting.potMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Hyrule Castle",
+                    SmallKeySetting = parseSetting.hcSmallKeySettings,
+                    BigKeySetting = parseSetting.hcBigKeySettings,
+                    MapCompassSetting = parseSetting.hcMapAndCompassSettings
+                }
+            };
+
+            bool isDungeonItem = false;
+            bool ownDungeon = false;
+            bool anyDungeon = false;
+
             if (Randomizer.Items.RegionSmallKeys.Contains(itemToPlace))
             {
+                isDungeonItem = true;
+
                 if (
                     Randomizer.SSettings.noSmallKeysOnBosses
                     && ItemFunctions.IsSmallKeyOnBossCheck(itemToPlace, currentCheck)
@@ -460,56 +548,70 @@ namespace TPRandomizer
                     return false;
                 }
 
-                if (
-                    (parseSetting.smallKeySettings == SmallKeySettings.Own_Dungeon)
-                    && itemName.Contains(currentRoom.Region)
-                )
+                foreach (var config in dungeonConfigs)
                 {
-                    return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
-                }
-                else if (
-                    (parseSetting.smallKeySettings == SmallKeySettings.Any_Dungeon)
-                    && (
-                        currentCheck.checkCategory.Contains("Dungeon")
-                        || itemName.Contains(currentRoom.Region)
-                    )
-                )
-                {
-                    return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
+                    if (!itemName.Contains(config.Region))
+                    {
+                        continue;
+                    }
+
+                    ownDungeon = config.SmallKeySetting == SmallKeySettings.Own_Dungeon;
+
+                    anyDungeon = config.SmallKeySetting == SmallKeySettings.Any_Dungeon;
+
+                    break;
                 }
             }
             else if (Randomizer.Items.DungeonBigKeys.Contains(itemToPlace))
             {
-                if (parseSetting.bigKeySettings == BigKeySettings.Own_Dungeon)
+                isDungeonItem = true;
+
+                foreach (var config in dungeonConfigs)
                 {
-                    if (itemName.Contains(currentRoom.Region))
+                    if (!itemName.Contains(config.Region))
                     {
-                        return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
+                        continue;
                     }
-                }
-                else if (parseSetting.bigKeySettings == BigKeySettings.Any_Dungeon)
-                {
-                    if (currentCheck.checkCategory.Contains("Dungeon"))
-                    {
-                        return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
-                    }
+
+                    ownDungeon = config.BigKeySetting == BigKeySettings.Own_Dungeon;
+
+                    anyDungeon = config.BigKeySetting == BigKeySettings.Any_Dungeon;
+
+                    break;
                 }
             }
             else if (Randomizer.Items.DungeonMapsAndCompasses.Contains(itemToPlace))
             {
-                if (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Own_Dungeon)
+                isDungeonItem = true;
+
+                foreach (var config in dungeonConfigs)
                 {
-                    if (itemName.Contains(currentRoom.Region))
+                    if (!itemName.Contains(config.Region))
                     {
-                        return true;
+                        continue;
                     }
+
+                    ownDungeon = config.MapCompassSetting == MapAndCompassSettings.Own_Dungeon;
+
+                    anyDungeon = config.MapCompassSetting == MapAndCompassSettings.Any_Dungeon;
+
+                    break;
                 }
-                else if (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Any_Dungeon)
+            }
+
+            if (isDungeonItem)
+            {
+                bool sameDungeon = dungeonConfigs.Any(
+                    config =>
+                        itemName.Contains(config.Region)
+                        && currentCheck.checkCategory.Contains(config.Region)
+                );
+
+                bool inDungeon = currentCheck.checkCategory.Contains("Dungeon");
+
+                if ((ownDungeon && sameDungeon) || (anyDungeon && inDungeon))
                 {
-                    if (currentCheck.checkCategory.Contains("Dungeon"))
-                    {
-                        return true;
-                    }
+                    return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
                 }
             }
 

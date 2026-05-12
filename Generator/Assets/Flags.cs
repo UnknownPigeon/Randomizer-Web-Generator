@@ -303,6 +303,77 @@ namespace TPRandomizer.Assets
             { 0x18, 0xA3 }, // Unlock door in south garden.
         };
 
+        public static readonly byte[,] FTSmallKeyRegionFlags = new byte[,]
+        {
+            { 0x10, 0x54 }, // Unlocked door to Second Monkey.
+            { 0x10, 0x58 }, // Unlock windless bridge east door.
+            { 0x10, 0x61 }, // Opened big baba monkey cage.
+            { 0x10, 0x74 }, // Opened tile worm monkey cage.
+        };
+
+        public static readonly byte[,] GMSmallKeyRegionFlags = new byte[,]
+        {
+            { 0x11, 0x60 }, // Unlock north door in toadpoli room.
+            { 0x11, 0x62 }, // Unlock west locked door in main magnet room.
+            { 0x11, 0x6C }, // Unlock east outside door.
+        };
+
+        public static readonly byte[,] LBTSmallKeyRegionFlags = new byte[,]
+        {
+            { 0x12, 0x6B }, // Unlock east door main room 2F.
+            { 0x12, 0x7B }, // Unlocked door in second east room 2F.
+            { 0x12, 0x7C }, // Unlocked door before Deku Toad.
+        };
+
+        public static readonly byte[,] AGSmallKeyRegionFlags = new byte[,]
+        {
+            { 0x13, 0x78 }, // Unlocked door in second east room 2F.
+            { 0x13, 0x84 }, // Unlocked door in elevator room 2B.
+            { 0x13, 0x85 }, // Unlocked door in first room.
+            { 0x13, 0x92 }, // Unlocked door in first east room 1F.
+            { 0x13, 0x99 }, // Unlocked door in fourth east room.
+        };
+
+        public static readonly byte[,] SPRSmallKeyRegionFlags = new byte[,]
+        {
+            { 0x14, 0x4D }, // Unlock North lobby door.
+            { 0x14, 0x4C }, // Unlock West lobby door.
+            { 0x14, 0x6F }, // Unlock door in southeast room 2F.
+            { 0x14, 0x73 }, // Unlock door in east outside hallway.
+            { 0x14, 0x74 }, // Unlock west door in courtyard.
+            { 0x14, 0x70 }, // Unlock door to lobby from Freezard room.
+        };
+
+        public static readonly byte[,] ToTSmallKeyRegionFlags = new byte[,]
+        {
+            { 0x15, 0x44 }, // Unlock door in room 1.
+            { 0x15, 0x42 }, // Unlock door in room 6 on 8F.
+            { 0x15, 0x43 }, // Unlock door in 5F.
+        };
+
+        public static readonly byte[,] CitSSmallKeyRegionFlags = new byte[,]
+        {
+            { 0x16, 0x59 }, // Unlock east bridge door.
+        };
+
+        public static readonly byte[,] PoTSmallKeyRegionFlags = new byte[,]
+        {
+            { 0x17, 0x57 }, // Unlock door in north room 3.
+            { 0x17, 0x58 }, // Unlock door in east room 2.
+            { 0x17, 0x59 }, // Unlock door in west room 2.
+            { 0x17, 0x6C }, // Unlock door in north room 2.
+            { 0x17, 0x7A }, // Unlock door in norht room 1.
+            { 0x17, 0x7B }, // Unlock door in east room 1.
+            { 0x17, 0x7C }, // Unlock door in west room 1.
+        };
+
+        public static readonly byte[,] HCSmallKeyRegionFlags = new byte[,]
+        {
+            { 0x18, 0x93 }, // Unlock door outside 3F.
+            { 0x18, 0xB0 }, // Unlock treasure room door.
+            { 0x18, 0xA3 }, // Unlock door in south garden.
+        };
+
         public static readonly byte[,] BigKeyRegionFlags = new byte[,]
         {
             { 0x10, 0x48 }, // Unlocked Forest Temple Boss Door.
@@ -320,6 +391,54 @@ namespace TPRandomizer.Assets
             { 0x15, 0xED }, // Got Temple of Time Big Key.
             { 0x16, 0x58 }, // Unlocked City in The Sky Boss Door.
             { 0x16, 0xED }, // Got City in The Sky Big Key.
+            { 0x17, 0x56 }, // Unlocked Palace of Twilight Boss Door.
+            { 0x17, 0xED }, // Got Palace of Twilight Big Key.
+        };
+
+        public static readonly byte[,] FTBigKeyRegionFlags = new byte[,]
+        {
+            { 0x10, 0x48 }, // Unlocked Forest Temple Boss Door.
+            { 0x10, 0xED }, // Got Forest Temple Big Key.
+        };
+
+        public static readonly byte[,] GMBigKeyRegionFlags = new byte[,]
+        {
+            { 0x11, 0x48 }, // Unlocked Goron Mines Boss Door.
+            { 0x11, 0xED }, // Got Goron Mines Big Key.
+        };
+
+        public static readonly byte[,] LBTBigKeyRegionFlags = new byte[,]
+        {
+            { 0x12, 0x8A }, // Unlocked Lakebed Temple Boss Door.
+            { 0x12, 0xED }, // Got Lakebed Temple Big Key.
+        };
+
+        public static readonly byte[,] AGBigKeyRegionFlags = new byte[,]
+        {
+            { 0x13, 0x47 }, // Unlocked Arbiter's Grounds Boss Door.
+            { 0x13, 0xED }, // Got Arbiter's Grounds Big Key.
+        };
+
+        public static readonly byte[,] SPRBigKeyRegionFlags = new byte[,]
+        {
+            { 0x14, 0x57 }, // Unlocked Snowpeak Ruins Boss Door.
+            { 0x14, 0xED }, // Got Snowpeak Ruins Big Key.
+        };
+
+        public static readonly byte[,] ToTBigKeyRegionFlags = new byte[,]
+        {
+            { 0x15, 0x7F }, // Unlocked Temple of Time Boss Door.
+            { 0x15, 0xED }, // Got Temple of Time Big Key.
+        };
+
+        public static readonly byte[,] CitSBigKeyRegionFlags = new byte[,]
+        {
+            { 0x16, 0x58 }, // Unlocked City in The Sky Boss Door.
+            { 0x16, 0xED }, // Got City in The Sky Big Key.
+        };
+
+        public static readonly byte[,] PoTBigKeyRegionFlags = new byte[,]
+        {
             { 0x17, 0x56 }, // Unlocked Palace of Twilight Boss Door.
             { 0x17, 0xED }, // Got Palace of Twilight Big Key.
         };
@@ -343,6 +462,60 @@ namespace TPRandomizer.Assets
             { 0x15, 0xEF }, // Got Temple of Time Dungeon Map.
             { 0x16, 0xEF }, // Got City in The Sky Dungeon Map.
             { 0x17, 0xEF }, // Got Palace of Twilight Dungeon Map.
+            { 0x18, 0xEF }, // Got Hyrule Castle Dungeon Map.
+        };
+
+        public static readonly byte[,] FTMapAndCompassRegionFlags = new byte[,]
+        {
+            { 0x10, 0xEE }, // Got Forest Temple Compass.
+            { 0x10, 0xEF }, // Got Forest Temple Dungeon Map.
+        };
+
+        public static readonly byte[,] GMMapAndCompassRegionFlags = new byte[,]
+        {
+            { 0x11, 0xEE }, // Got Goron Mines Compass.
+            { 0x11, 0xEF }, // Got Goron Mines Dungeon Map.
+        };
+
+        public static readonly byte[,] LBTMapAndCompassRegionFlags = new byte[,]
+        {
+            { 0x12, 0xEE }, // Got Lakebed Temple Compass.
+            { 0x12, 0xEF }, // Got Lakebed Temple Dungeon Map.
+        };
+
+        public static readonly byte[,] AGMapAndCompassRegionFlags = new byte[,]
+        {
+            { 0x13, 0xEE }, // Got Arbiter's Grounds Compass.
+            { 0x13, 0xEF }, // Got Arbiter's Grounds Dungeon Map.
+        };
+
+        public static readonly byte[,] SPRMapAndCompassRegionFlags = new byte[,]
+        {
+            { 0x14, 0xEE }, // Got Snowpeak Ruins Compass.
+            { 0x14, 0xEF }, // Got Snowpeak Ruins Dungeon Map.
+        };
+
+        public static readonly byte[,] ToTMapAndCompassRegionFlags = new byte[,]
+        {
+            { 0x15, 0xEE }, // Got Temple of Time Compass.
+            { 0x15, 0xEF }, // Got Temple of Time Dungeon Map.
+        };
+
+        public static readonly byte[,] CitSMapAndCompassRegionFlags = new byte[,]
+        {
+            { 0x16, 0xEE }, // Got City in The Sky Compass.
+            { 0x16, 0xEF }, // Got City in The Sky Dungeon Map.
+        };
+
+        public static readonly byte[,] PoTMapAndCompassRegionFlags = new byte[,]
+        {
+            { 0x17, 0xEE }, // Got Palace of Twilight Compass.
+            { 0x17, 0xEF }, // Got Palace of Twilight Dungeon Map.
+        };
+
+        public static readonly byte[,] HCMapAndCompassRegionFlags = new byte[,]
+        {
+            { 0x18, 0xEE }, // Got Hyrule Castle Compass.
             { 0x18, 0xEF }, // Got Hyrule Castle Dungeon Map.
         };
 
@@ -554,9 +727,9 @@ namespace TPRandomizer.Assets
                 { 3, LanayruTwilightRegionFlags },
                 { 4, CutsceneRegionFlags },
                 { 6, MDHRegionFlags },
-                { 7, SmallKeyRegionFlags },
-                { 8, BigKeyRegionFlags },
-                { 9, MapAndCompassRegionFlags },
+                { 7, FTSmallKeyRegionFlags },
+                { 8, FTBigKeyRegionFlags },
+                { 9, FTMapAndCompassRegionFlags },
                 { 13, OpenLakebedRegionFlags },
                 { 14, OpenArbitersRegionFlags },
                 { 15, OpenSnowpeakRegionFlags },
@@ -573,6 +746,29 @@ namespace TPRandomizer.Assets
                 { 30, bridgeDonationRegionFlags },
                 { 31, GmShortcutRegionFlags },
                 { 32, HCBKDoorRegionFlags },
+                { 33, GMSmallKeyRegionFlags },
+                { 34, LBTSmallKeyRegionFlags },
+                { 35, AGSmallKeyRegionFlags },
+                { 36, SPRSmallKeyRegionFlags },
+                { 37, ToTSmallKeyRegionFlags },
+                { 38, CitSSmallKeyRegionFlags },
+                { 39, PoTSmallKeyRegionFlags },
+                { 40, HCSmallKeyRegionFlags },
+                { 41, GMBigKeyRegionFlags },
+                { 42, LBTBigKeyRegionFlags },
+                { 43, AGBigKeyRegionFlags },
+                { 44, SPRBigKeyRegionFlags },
+                { 45, ToTBigKeyRegionFlags },
+                { 46, CitSBigKeyRegionFlags },
+                { 47, PoTBigKeyRegionFlags },
+                { 48, GMMapAndCompassRegionFlags },
+                { 49, LBTMapAndCompassRegionFlags },
+                { 50, AGMapAndCompassRegionFlags },
+                { 51, SPRMapAndCompassRegionFlags },
+                { 52, ToTMapAndCompassRegionFlags },
+                { 53, CitSMapAndCompassRegionFlags },
+                { 54, PoTMapAndCompassRegionFlags },
+                { 55, HCMapAndCompassRegionFlags },
             };
 
         /// <summary>
@@ -705,6 +901,14 @@ namespace TPRandomizer.Assets
             { 0x1, 0x20 }, // Told Yeta about cheese
         };
 
+        public static readonly byte[,] SPRSmallKeyEventFlags = new byte[,]
+        {
+            { 0x4, 0x80 }, // Told Yeta about pumpkin.
+            { 0x0, 0x3 }, // Yeto put pumpkin and cheese in soup.
+            { 0x14, 0x60 }, // Snowpeak Ruins North and West doors unlocked.
+            { 0x1, 0x20 }, // Told Yeta about cheese
+        };
+
         public static readonly byte[,] OpenCastleEventFlags = new byte[,]
         {
             { 0x42, 0x8 }, // Remove Castle Barrier
@@ -776,7 +980,7 @@ namespace TPRandomizer.Assets
                 { 4, CutsceneEventFlags },
                 { 5, OpenForestEventFlags },
                 { 6, MDHEventFlags },
-                { 7, SmallKeyEventFlags },
+                { 36, SPRSmallKeyEventFlags },
                 { 10, OpenCastleEventFlags },
                 { 11, OpenPalaceEventFlags },
                 { 12, OpenMinesEventFlags },
@@ -803,9 +1007,9 @@ namespace TPRandomizer.Assets
             /* 4 */RandomizerSettings.skipMinorCutscenes,
             /* 5 */RandomizerSettings.faronWoodsLogic == FaronWoodsLogic.Open,
             /* 6 */RandomizerSettings.skipMdh,
-            /* 7 */RandomizerSettings.smallKeySettings == SmallKeySettings.Keysy,
-            /* 8 */RandomizerSettings.bigKeySettings == BigKeySettings.Keysy,
-            /* 9 */RandomizerSettings.mapAndCompassSettings == MapAndCompassSettings.Start_With,
+            /* 7 */RandomizerSettings.ftSmallKeySettings == SmallKeySettings.Keysy,
+            /* 8 */RandomizerSettings.ftBigKeySettings == BigKeySettings.Keysy,
+            /* 9 */RandomizerSettings.ftMapAndCompassSettings == MapAndCompassSettings.Start_With,
             /* 10 */RandomizerSettings.castleRequirements == CastleRequirements.Open,
             /* 11 */RandomizerSettings.palaceRequirements == PalaceRequirements.Open,
             /* 12 */RandomizerSettings.goronMinesEntrance != GoronMinesEntrance.Closed,
@@ -828,8 +1032,31 @@ namespace TPRandomizer.Assets
             /* 29 */RandomizerSettings.castleBKRequirements == CastleBKRequirements.None,
             /* 30 */RandomizerSettings.skipBridgeDonation,
             /* 31 */RandomizerSettings.gmShortcut,
-            /* 32 */RandomizerSettings.bigKeySettings == BigKeySettings.Keysy
+            /* 32 */RandomizerSettings.hcBigKeySettings == BigKeySettings.Keysy
                 && RandomizerSettings.castleBKRequirements == CastleBKRequirements.None,
+            /* 33 */RandomizerSettings.gmSmallKeySettings == SmallKeySettings.Keysy,
+            /* 34 */RandomizerSettings.lbtSmallKeySettings == SmallKeySettings.Keysy,
+            /* 35 */RandomizerSettings.agSmallKeySettings == SmallKeySettings.Keysy,
+            /* 36 */RandomizerSettings.sprSmallKeySettings == SmallKeySettings.Keysy,
+            /* 37 */RandomizerSettings.totSmallKeySettings == SmallKeySettings.Keysy,
+            /* 38 */RandomizerSettings.citsSmallKeySettings == SmallKeySettings.Keysy,
+            /* 39 */RandomizerSettings.potSmallKeySettings == SmallKeySettings.Keysy,
+            /* 40 */RandomizerSettings.hcSmallKeySettings == SmallKeySettings.Keysy,
+            /* 41 */RandomizerSettings.gmBigKeySettings == BigKeySettings.Keysy,
+            /* 42 */RandomizerSettings.lbtBigKeySettings == BigKeySettings.Keysy,
+            /* 43 */RandomizerSettings.agBigKeySettings == BigKeySettings.Keysy,
+            /* 44 */RandomizerSettings.sprBigKeySettings == BigKeySettings.Keysy,
+            /* 45 */RandomizerSettings.totBigKeySettings == BigKeySettings.Keysy,
+            /* 46 */RandomizerSettings.citsBigKeySettings == BigKeySettings.Keysy,
+            /* 47 */RandomizerSettings.potBigKeySettings == BigKeySettings.Keysy,
+            /* 48 */RandomizerSettings.gmMapAndCompassSettings == MapAndCompassSettings.Start_With,
+            /* 49 */RandomizerSettings.lbtMapAndCompassSettings == MapAndCompassSettings.Start_With,
+            /* 50 */RandomizerSettings.agMapAndCompassSettings == MapAndCompassSettings.Start_With,
+            /* 51 */RandomizerSettings.sprMapAndCompassSettings == MapAndCompassSettings.Start_With,
+            /* 52 */RandomizerSettings.totMapAndCompassSettings == MapAndCompassSettings.Start_With,
+            /* 53 */RandomizerSettings.citsMapAndCompassSettings == MapAndCompassSettings.Start_With,
+            /* 54 */RandomizerSettings.potMapAndCompassSettings == MapAndCompassSettings.Start_With,
+            /* 55 */RandomizerSettings.hcMapAndCompassSettings == MapAndCompassSettings.Start_With,
         };
     }
 }

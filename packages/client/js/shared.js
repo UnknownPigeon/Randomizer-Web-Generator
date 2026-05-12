@@ -406,9 +406,33 @@
       { id: 'poeSettingsFieldset', bitLength: 2 },
       { id: 'shopItemsCheckbox' },
       { id: 'hiddenSkillsCheckbox' },
-      { id: 'smallKeyFieldset', bitLength: 3 },
-      { id: 'bigKeyFieldset', bitLength: 3 },
-      { id: 'mapAndCompassFieldset', bitLength: 3 },
+      { id: 'ftSmallKeyFieldset', bitLength: 3 },
+      { id: 'gmSmallKeyFieldset', bitLength: 3 },
+      { id: 'lbtSmallKeyFieldset', bitLength: 3 },
+      { id: 'agSmallKeyFieldset', bitLength: 3 },
+      { id: 'sprSmallKeyFieldset', bitLength: 3 },
+      { id: 'totSmallKeyFieldset', bitLength: 3 },
+      { id: 'citsSmallKeyFieldset', bitLength: 3 },
+      { id: 'potSmallKeyFieldset', bitLength: 3 },
+      { id: 'hcSmallKeyFieldset', bitLength: 3 },
+      { id: 'ftBigKeyFieldset', bitLength: 3 },
+      { id: 'gmBigKeyFieldset', bitLength: 3 },
+      { id: 'lbtBigKeyFieldset', bitLength: 3 },
+      { id: 'agBigKeyFieldset', bitLength: 3 },
+      { id: 'sprBigKeyFieldset', bitLength: 3 },
+      { id: 'totBigKeyFieldset', bitLength: 3 },
+      { id: 'citsBigKeyFieldset', bitLength: 3 },
+      { id: 'potBigKeyFieldset', bitLength: 3 },
+      { id: 'hcBigKeyFieldset', bitLength: 3 },
+      { id: 'ftMapAndCompassFieldset', bitLength: 3 },
+      { id: 'gmMapAndCompassFieldset', bitLength: 3 },
+      { id: 'lbtMapAndCompassFieldset', bitLength: 3 },
+      { id: 'agMapAndCompassFieldset', bitLength: 3 },
+      { id: 'sprMapAndCompassFieldset', bitLength: 3 },
+      { id: 'totMapAndCompassFieldset', bitLength: 3 },
+      { id: 'citsMapAndCompassFieldset', bitLength: 3 },
+      { id: 'potMapAndCompassFieldset', bitLength: 3 },
+      { id: 'hcMapAndCompassFieldset', bitLength: 3 },
       { id: 'introCheckbox' },
       { id: 'faronTwilightCheckbox' },
       { id: 'eldinTwilightCheckbox' },
@@ -839,9 +863,70 @@
     }
     processBasic({ id: 'shopItems' });
     processBasic({ id: 'hiddenSkills' });
-    processBasic({ id: 'smallKeys', bitLength: 3 });
-    processBasic({ id: 'bigKeys', bitLength: 3 });
-    processBasic({ id: 'mapsAndCompasses', bitLength: 3 });
+    if (version >= 7) {
+      // dungeon items were broken out into their individual dungeon keys setting
+      processBasic({ id: 'ftSmallKeys', bitLength: 3 });
+      processBasic({ id: 'gmSmallKeys', bitLength: 3 });
+      processBasic({ id: 'lbtSmallKeys', bitLength: 3 });
+      processBasic({ id: 'agSmallKeys', bitLength: 3 });
+      processBasic({ id: 'sprSmallKeys', bitLength: 3 });
+      processBasic({ id: 'totSmallKeys', bitLength: 3 });
+      processBasic({ id: 'citsSmallKeys', bitLength: 3 });
+      processBasic({ id: 'potSmallKeys', bitLength: 3 });
+      processBasic({ id: 'hcSmallKeys', bitLength: 3 });
+      processBasic({ id: 'ftBigKey', bitLength: 3 });
+      processBasic({ id: 'gmBigKeys', bitLength: 3 });
+      processBasic({ id: 'lbtBigKey', bitLength: 3 });
+      processBasic({ id: 'agBigKey', bitLength: 3 });
+      processBasic({ id: 'sprBigKey', bitLength: 3 });
+      processBasic({ id: 'totBigKey', bitLength: 3 });
+      processBasic({ id: 'citsBigKey', bitLength: 3 });
+      processBasic({ id: 'potBigKey', bitLength: 3 });
+      processBasic({ id: 'hcBigKey', bitLength: 3 });
+      processBasic({ id: 'ftMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'gmMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'lbtMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'agMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'sprMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'totMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'citsMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'potMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'hcMapAndCompass', bitLength: 3 });
+    } else {
+      const smallKeyValue = processor.nextXBitsAsNum(3);
+      const bigKeyValue = processor.nextXBitsAsNum(3);
+      const mapCompassValue = processor.nextXBitsAsNum(3);
+      res.ftSmallKeys = smallKeyValue;
+      res.gmSmallKeys = smallKeyValue;
+      res.lbtSmallKeys = smallKeyValue;
+      res.agSmallKeys = smallKeyValue;
+      res.sprSmallKeys = smallKeyValue;
+      res.totSmallKeys = smallKeyValue;
+      res.citsSmallKeys = smallKeyValue;
+      res.potSmallKeys = smallKeyValue;
+      res.hcSmallKeys = smallKeyValue;
+
+      res.ftBigKey = bigKeyValue;
+      res.gmBigKeys = bigKeyValue;
+      res.lbtBigKey = bigKeyValue;
+      res.agBigKey = bigKeyValue;
+      res.sprBigKey = bigKeyValue;
+      res.totBigKey = bigKeyValue;
+      res.citsBigKey = bigKeyValue;
+      res.potBigKey = bigKeyValue;
+      res.hcBigKey = bigKeyValue;
+
+      res.ftMapAndCompass = mapCompassValue;
+      res.gmMapAndCompass = mapCompassValue;
+      res.lbtMapAndCompass = mapCompassValue;
+      res.agMapAndCompass = mapCompassValue;
+      res.sprMapAndCompass = mapCompassValue;
+      res.totMapAndCompass = mapCompassValue;
+      res.citsMapAndCompass = mapCompassValue;
+      res.potMapAndCompass = mapCompassValue;
+      res.hcMapAndCompass = mapCompassValue;
+    }
+
     processBasic({ id: 'skipIntro' });
     processBasic({ id: 'faronTwilightCleared' });
     processBasic({ id: 'eldinTwilightCleared' });
@@ -1018,15 +1103,12 @@
       res.hintDungeonEntrances = false;
     }
 
-    if (version >= 7)
-    {
+    if (version >= 7) {
       processBasic({ id: 'fishJournals' });
       processBasic({ id: 'legendaryLoach' });
       processBasic({ id: 'chestSize' });
       processBasic({ id: 'grottoER' });
-    }
-    else
-    {
+    } else {
       res.fishJournals = false;
       res.legendaryLoach = false;
       res.chestSize = false;

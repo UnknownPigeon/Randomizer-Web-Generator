@@ -2,6 +2,7 @@ namespace TPRandomizer
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using TPRandomizer.SSettings.Enums;
 
     /// <summary>
@@ -335,35 +336,85 @@ namespace TPRandomizer
         public static void GenerateCheckList()
         {
             SharedSettings parseSetting = Randomizer.SSettings;
+            var dungeonSkSettings = new[]
+            {
+                parseSetting.ftSmallKeySettings,
+                parseSetting.gmSmallKeySettings,
+                parseSetting.lbtSmallKeySettings,
+                parseSetting.agSmallKeySettings,
+                parseSetting.sprSmallKeySettings,
+                parseSetting.totSmallKeySettings,
+                parseSetting.citsSmallKeySettings,
+                parseSetting.potSmallKeySettings,
+                parseSetting.hcSmallKeySettings,
+            };
+
+            var dungeonBkSettings = new[]
+            {
+                parseSetting.ftBigKeySettings,
+                parseSetting.gmBigKeySettings,
+                parseSetting.lbtBigKeySettings,
+                parseSetting.agBigKeySettings,
+                parseSetting.sprBigKeySettings,
+                parseSetting.totBigKeySettings,
+                parseSetting.citsBigKeySettings,
+                parseSetting.potBigKeySettings,
+                parseSetting.hcBigKeySettings,
+            };
+
+            var dungeonMcSettings = new[]
+            {
+                parseSetting.ftMapAndCompassSettings,
+                parseSetting.gmMapAndCompassSettings,
+                parseSetting.lbtMapAndCompassSettings,
+                parseSetting.agMapAndCompassSettings,
+                parseSetting.sprMapAndCompassSettings,
+                parseSetting.totMapAndCompassSettings,
+                parseSetting.citsMapAndCompassSettings,
+                parseSetting.potMapAndCompassSettings,
+                parseSetting.hcMapAndCompassSettings,
+            };
             foreach (KeyValuePair<string, Check> check in Randomizer.Checks.CheckDict)
             {
                 Check currentCheck = check.Value;
 
-                if (
-                    (parseSetting.smallKeySettings == SmallKeySettings.Vanilla)
-                    && currentCheck.checkCategory.Contains("Small Key")
-                )
+                for (int i = 0; i < RoomFunctions.AllDungeonNames.Count(); i++)
                 {
-                    currentCheck.checkStatus = "Vanilla";
-                }
-
-                if (
-                    (parseSetting.bigKeySettings == BigKeySettings.Vanilla)
-                    && currentCheck.checkCategory.Contains("Big Key")
-                )
-                {
-                    currentCheck.checkStatus = "Vanilla";
-                }
-
-                if (
-                    (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Vanilla)
-                    && (
-                        currentCheck.checkCategory.Contains("Dungeon Map")
-                        || currentCheck.checkCategory.Contains("Compass")
+                    if (
+                        dungeonSkSettings[i] == SmallKeySettings.Vanilla
+                        && ValidateDungeonSmallKeyCheck(
+                            currentCheck,
+                            RoomFunctions.AllDungeonNames[i]
+                        )
                     )
-                )
-                {
-                    currentCheck.checkStatus = "Vanilla";
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                        break;
+                    }
+
+                    if (
+                        dungeonBkSettings[i] == BigKeySettings.Vanilla
+                        && ValidateDungeonBigKeyCheck(
+                            currentCheck,
+                            RoomFunctions.AllDungeonNames[i]
+                        )
+                    )
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                        break;
+                    }
+
+                    if (
+                        dungeonMcSettings[i] == MapAndCompassSettings.Vanilla
+                        && ValidateDungeonMapCompassCheck(
+                            currentCheck,
+                            RoomFunctions.AllDungeonNames[i]
+                        )
+                    )
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                        break;
+                    }
                 }
 
                 // Some NPCs give dungeon items (Yeta give dungeon map, Elders give key shards) so we need to account for the possibility of conflicting settings.
@@ -371,37 +422,47 @@ namespace TPRandomizer
                 {
                     if (currentCheck.checkCategory.Contains("Npc"))
                     {
-                        if (
-                            (
-                                (parseSetting.smallKeySettings == SmallKeySettings.Keysy)
-                                && currentCheck.checkCategory.Contains("Small Key")
-                            )
-                            || (
-                                (parseSetting.bigKeySettings == BigKeySettings.Keysy)
-                                && currentCheck.checkCategory.Contains("Big Key")
-                            )
-                            || (
+                        for (int i = 0; i < RoomFunctions.AllDungeonNames.Count(); i++)
+                        {
+                            if (
                                 (
-                                    parseSetting.mapAndCompassSettings
-                                    == MapAndCompassSettings.Start_With
+                                    dungeonSkSettings[i] == SmallKeySettings.Keysy
+                                    && ValidateDungeonSmallKeyCheck(
+                                        currentCheck,
+                                        RoomFunctions.AllDungeonNames[i]
+                                    )
                                 )
-                                && (
-                                    currentCheck.checkCategory.Contains("Dungeon Map")
-                                    || currentCheck.checkCategory.Contains("Compass")
+                                || (
+                                    dungeonBkSettings[i] == BigKeySettings.Keysy
+                                    && ValidateDungeonBigKeyCheck(
+                                        currentCheck,
+                                        RoomFunctions.AllDungeonNames[i]
+                                    )
+                                )
+                                || (
+                                    dungeonMcSettings[i] == MapAndCompassSettings.Start_With
+                                    && ValidateDungeonMapCompassCheck(
+                                        currentCheck,
+                                        RoomFunctions.AllDungeonNames[i]
+                                    )
                                 )
                             )
-                        )
-                        {
-                            currentCheck.checkStatus = "Excluded";
-                        }
-                        else
-                        {
-                            currentCheck.checkStatus = "Vanilla";
-                            Randomizer.Items.RandomizedImportantItems.Remove(currentCheck.itemId);
-                            Randomizer.Items.RandomizedDungeonRegionItems.Remove(
-                                currentCheck.itemId
-                            );
-                            Randomizer.Items.alwaysItems.Remove(currentCheck.itemId);
+                            {
+                                currentCheck.checkStatus = "Excluded";
+                                break;
+                            }
+                            else
+                            {
+                                currentCheck.checkStatus = "Vanilla";
+                                Randomizer.Items.RandomizedImportantItems.Remove(
+                                    currentCheck.itemId
+                                );
+                                Randomizer.Items.RandomizedDungeonRegionItems.Remove(
+                                    currentCheck.itemId
+                                );
+                                Randomizer.Items.alwaysItems.Remove(currentCheck.itemId);
+                                break;
+                            }
                         }
                     }
                 }
@@ -600,6 +661,45 @@ namespace TPRandomizer
                 Randomizer.Checks.CheckDict[checkName].checkStatus = "Plando";
                 Randomizer.Checks.CheckDict[checkName].itemId = item;
             }
+        }
+
+        public static bool ValidateDungeonSmallKeyCheck(Check smallKeyCheck, string Dungeon)
+        {
+            if (
+                smallKeyCheck.checkCategory.Contains(Dungeon)
+                && smallKeyCheck.checkCategory.Contains("Small Key")
+            )
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool ValidateDungeonBigKeyCheck(Check smallKeyCheck, string Dungeon)
+        {
+            if (
+                smallKeyCheck.checkCategory.Contains(Dungeon)
+                && smallKeyCheck.checkCategory.Contains("Big Key")
+            )
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool ValidateDungeonMapCompassCheck(Check smallKeyCheck, string Dungeon)
+        {
+            if (
+                smallKeyCheck.checkCategory.Contains(Dungeon)
+                && (
+                    smallKeyCheck.checkCategory.Contains("Dungeon Map")
+                    || smallKeyCheck.checkCategory.Contains("Compass")
+                )
+            )
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

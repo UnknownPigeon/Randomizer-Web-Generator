@@ -1583,7 +1583,7 @@ namespace TPRandomizer
                 && (
                     CanUse(Item.Lantern)
                     || (
-                        (Randomizer.SSettings.smallKeySettings == SmallKeySettings.Keysy)
+                        (Randomizer.SSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
                         && (HasBombs() || CanUse(Item.Iron_Boots))
                     )
                 )
@@ -1592,7 +1592,7 @@ namespace TPRandomizer
                 && CanDefeatBokoblin()
                 && (
                     (GetItemCount(Item.Forest_Temple_Small_Key) >= 4)
-                    || (Randomizer.SSettings.smallKeySettings == SmallKeySettings.Keysy)
+                    || (Randomizer.SSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
                 )
             );
         }
@@ -2476,7 +2476,7 @@ namespace TPRandomizer
         ///
         public static bool CanSkipKeyToDekuToad()
         {
-            return Randomizer.SSettings.smallKeySettings == SmallKeySettings.Keysy
+            return Randomizer.SSettings.lbtSmallKeySettings == SmallKeySettings.Keysy
                 || GetItemCount(Item.Progressive_Hidden_Skill) >= 3
                 || CanDoBSMoonBoots()
                 || CanDoJSMoonBoots()

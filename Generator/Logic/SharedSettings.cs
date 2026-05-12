@@ -25,9 +25,35 @@ namespace TPRandomizer
         public PoeSettings shufflePoes { get; set; }
         public bool shuffleShopItems { get; set; }
         public bool shuffleHiddenSkills { get; set; }
-        public SmallKeySettings smallKeySettings { get; set; }
+        public SmallKeySettings ftSmallKeySettings { get; set; }
+        public SmallKeySettings gmSmallKeySettings { get; set; }
+        public SmallKeySettings lbtSmallKeySettings { get; set; }
+        public SmallKeySettings agSmallKeySettings { get; set; }
+        public SmallKeySettings sprSmallKeySettings { get; set; }
+        public SmallKeySettings totSmallKeySettings { get; set; }
+        public SmallKeySettings citsSmallKeySettings { get; set; }
+        public SmallKeySettings potSmallKeySettings { get; set; }
+        public SmallKeySettings hcSmallKeySettings { get; set; }
         public BigKeySettings bigKeySettings { get; set; }
+        public BigKeySettings ftBigKeySettings { get; set; }
+        public BigKeySettings gmBigKeySettings { get; set; }
+        public BigKeySettings lbtBigKeySettings { get; set; }
+        public BigKeySettings agBigKeySettings { get; set; }
+        public BigKeySettings sprBigKeySettings { get; set; }
+        public BigKeySettings totBigKeySettings { get; set; }
+        public BigKeySettings citsBigKeySettings { get; set; }
+        public BigKeySettings potBigKeySettings { get; set; }
+        public BigKeySettings hcBigKeySettings { get; set; }
         public MapAndCompassSettings mapAndCompassSettings { get; set; }
+        public MapAndCompassSettings ftMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings gmMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings lbtMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings agMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings sprMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings totMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings citsMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings potMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings hcMapAndCompassSettings { get; set; }
         public bool skipPrologue { get; set; }
         public bool faronTwilightCleared { get; set; }
         public bool eldinTwilightCleared { get; set; }
@@ -104,9 +130,33 @@ namespace TPRandomizer
             shufflePoes = (PoeSettings)processor.NextInt(2);
             shuffleShopItems = processor.NextBool();
             shuffleHiddenSkills = processor.NextBool();
-            smallKeySettings = (SmallKeySettings)processor.NextInt(3);
-            bigKeySettings = (BigKeySettings)processor.NextInt(3);
-            mapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            ftSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            gmSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            lbtSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            agSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            sprSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            totSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            citsSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            potSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            hcSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            ftBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            gmBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            lbtBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            agBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            sprBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            totBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            citsBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            potBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            hcBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            ftMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            gmMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            lbtMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            agMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            sprMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            totMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            citsMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            potMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            hcMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
             skipPrologue = processor.NextBool();
             faronTwilightCleared = processor.NextBool();
             eldinTwilightCleared = processor.NextBool();
