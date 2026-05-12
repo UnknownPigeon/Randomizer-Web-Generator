@@ -113,13 +113,13 @@
       },
       {
         "CheckName": "Catch An Ordon Catfish",
-        "Requirements": "CanCatchFish",
-        "GlitchedRequirements": "CanCatchFish"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "CanCatchFish",
-        "GlitchedRequirements": "CanCatchFish"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       }
     ],
     "Region": "Hyrule Field - Faron Province"

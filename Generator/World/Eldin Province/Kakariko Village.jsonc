@@ -93,8 +93,8 @@
       },
       {
         "CheckName": "Catch A Hyrule Bass",
-        "Requirements": "CanCatchFish and CanSmash and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "CanCatchFish and CanSmash and CanCompleteEldinTwilight"
+        "Requirements": "CanCatchBaitedFish and CanSmash and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCatchBaitedFish and CanSmash and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Kakariko Village Bomb Rock Spire Heart Piece",
@@ -680,8 +680,8 @@
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "CanCatchFish and Gate_Keys and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "CanCatchFish and Gate_Keys and CanCompleteEldinTwilight"
+        "Requirements": "CanCatchBaitedFish and Gate_Keys and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCatchBaitedFish and Gate_Keys and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Kakariko Graveyard Male Ant",

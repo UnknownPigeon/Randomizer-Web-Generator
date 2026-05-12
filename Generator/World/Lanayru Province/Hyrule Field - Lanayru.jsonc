@@ -93,8 +93,8 @@
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "CanCatchFish and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "CanCatchFish and CanCompleteLanayruTwilight"
+        "Requirements": "CanCatchBaitedFish and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCatchBaitedFish and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Hyrule Field - Lanayru Province"
@@ -472,8 +472,8 @@
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "CanCatchFish and CanDefeatTektike",
-        "GlitchedRequirements": "CanCatchFish and CanDefeatTektike"
+        "Requirements": "CanCatchBaitedFish and CanDefeatTektike",
+        "GlitchedRequirements": "CanCatchBaitedFish and CanDefeatTektike"
       }
     ],
     "Region": "Hyrule Field - Lanayru Province"

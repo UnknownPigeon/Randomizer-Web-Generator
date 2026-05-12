@@ -38,13 +38,13 @@
       },
       {
         "CheckName": "Catch An Ordon Catfish",
-        "Requirements": "CanCatchFish and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))",
-        "GlitchedRequirements": "CanCatchFish and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))"
+        "Requirements": "CanCatchBaitedFish and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))",
+        "GlitchedRequirements": "CanCatchBaitedFish and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))"
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "CanCatchFish and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))",
-        "GlitchedRequirements": "CanCatchFish and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))"
+        "Requirements": "CanCatchBaitedFish and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))",
+        "GlitchedRequirements": "CanCatchBaitedFish and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))"
       }
     ],
     "Region": "Sacred Grove"

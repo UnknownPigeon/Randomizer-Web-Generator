@@ -66,8 +66,8 @@
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "CanCatchFish and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "CanCatchFish and CanCompleteLanayruTwilight"
+        "Requirements": "CanCatchBaitedFish and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCatchBaitedFish and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Zoras Domain"
@@ -132,23 +132,23 @@
       },
       {
         "CheckName": "Catch An Ordon Catfish",
-        "Requirements": "CanCatchFish",
-        "GlitchedRequirements": "CanCatchFish"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "CanCatchFish",
-        "GlitchedRequirements": "CanCatchFish"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       },
       {
         "CheckName": "Catch A Hyrule Bass",
-        "Requirements": "CanCatchFish",
-        "GlitchedRequirements": "CanCatchFish"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "CanCatchFish",
-        "GlitchedRequirements": "CanCatchFish"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       }
     ],
     "Region": "Zoras Domain"

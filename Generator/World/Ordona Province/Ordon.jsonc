@@ -185,8 +185,8 @@
       },
       {
         "CheckName": "Catch An Ordon Catfish",
-        "Requirements": "CanCatchFish",
-        "GlitchedRequirements": "CanCatchFish"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       }
     ],
     "Region": "Ordona Province"

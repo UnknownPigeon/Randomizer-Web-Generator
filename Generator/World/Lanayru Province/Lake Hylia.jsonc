@@ -272,8 +272,8 @@
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "CanCatchFish and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "CanCatchFish and CanCompleteLanayruTwilight"
+        "Requirements": "CanCatchBaitedFish and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCatchBaitedFish and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Lake Hylia"
@@ -427,8 +427,8 @@
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "CanCatchFish and CanDefeatWaterToadpoli",
-        "GlitchedRequirements": "CanCatchFish and CanDefeatWaterToadpoli"
+        "Requirements": "CanCatchBaitedFish and CanDefeatWaterToadpoli",
+        "GlitchedRequirements": "CanCatchBaitedFish and CanDefeatWaterToadpoli"
       }
     ],
     "Region": "Lake Hylia"

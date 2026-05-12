@@ -168,8 +168,8 @@
           },
           {
             "CheckName": "Catch An Ordon Catfish",
-            "Requirements": "CanCatchFish and Boomerang",
-            "GlitchedRequirements": "CanCatchFish and (Boomerang or (HasBombs and HasSword and Progressive_Clawshot))"
+            "Requirements": "CanCatchBaitedFish and Boomerang",
+            "GlitchedRequirements": "CanCatchBaitedFish and (Boomerang or (HasBombs and HasSword and Progressive_Clawshot))"
           },
           {
             "CheckName": "Forest Temple East Tile Worm Chest",

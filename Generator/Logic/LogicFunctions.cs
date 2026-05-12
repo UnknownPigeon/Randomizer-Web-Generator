@@ -1470,7 +1470,7 @@ namespace TPRandomizer
 
         // I know greengill looks for just fishing rod, and loach/catfish/bass/pike
         //  look for this; I am not convinced this is the best name for this function. - Lupa
-        public static bool CanCatchFish()
+        public static bool CanCatchBaitedFish()
         {
             return (CanUse(Item.Fishing_Rod_Earring_Worm) && CanCollectLarva())
                 || (GetItemCount(Item.Progressive_Fishing_Rod) == 2);

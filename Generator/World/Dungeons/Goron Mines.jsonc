@@ -237,8 +237,8 @@
             },
             {
                 "CheckName": "Catch A Hyrule Bass",
-                "Requirements": "CanCatchFish",
-                "GlitchedRequirements": "CanCatchFish"
+                "Requirements": "CanCatchBaitedFish",
+                "GlitchedRequirements": "CanCatchBaitedFish"
             },
             {
                 "CheckName": "Goron Mines Gor Ebizo Key Shard",
