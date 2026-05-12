@@ -1458,6 +1458,12 @@ namespace TPRandomizer
                                 .RoomDict["Eldin Field Water Bomb Fish Grotto"]
                                 .ReachedByPlaythrough
                             || Randomizer.Rooms.RoomDict["Kakariko Graveyard"].ReachedByPlaythrough
+                            || Randomizer
+                                .Rooms
+                                .RoomDict["Outside Castle Town South Tektite Grotto"]
+                                .ReachedByPlaythrough
+                            // There's a hive above the hint sign.
+                            || Randomizer.Rooms.RoomDict["Fishing Hole"].ReachedByPlaythrough
                         )
                         && (
                             CanUse(Item.Progressive_Clawshot)
