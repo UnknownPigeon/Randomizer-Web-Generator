@@ -185,8 +185,8 @@
       },
       {
         "CheckName": "Catch An Ordon Catfish",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))"
+        "Requirements": "CanCatchFish",
+        "GlitchedRequirements": "CanCatchFish"
       }
     ],
     "Region": "Ordona Province"

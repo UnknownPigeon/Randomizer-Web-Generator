@@ -93,8 +93,8 @@
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanCompleteLanayruTwilight"
+        "Requirements": "CanCatchFish and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCatchFish and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Hyrule Field - Lanayru Province"
@@ -472,8 +472,8 @@
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanDefeatTektike",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanDefeatTektike"
+        "Requirements": "CanCatchFish and CanDefeatTektike",
+        "GlitchedRequirements": "CanCatchFish and CanDefeatTektike"
       }
     ],
     "Region": "Hyrule Field - Lanayru Province"
