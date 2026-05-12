@@ -1446,16 +1446,17 @@ namespace TPRandomizer
 
         public static bool CanCollectLarva()
         {
-            if (
-                (
+            return (
                     (
                         (
-                            Randomizer.Rooms.RoomDict[
-                                "Lake Hylia Water Toadpoli Grotto"
-                            ].ReachedByPlaythrough
-                            || Randomizer.Rooms.RoomDict[
-                                "Eldin Field Water Bomb Fish Grotto"
-                            ].ReachedByPlaythrough
+                            Randomizer
+                                .Rooms
+                                .RoomDict["Lake Hylia Water Toadpoli Grotto"]
+                                .ReachedByPlaythrough
+                            || Randomizer
+                                .Rooms
+                                .RoomDict["Eldin Field Water Bomb Fish Grotto"]
+                                .ReachedByPlaythrough
                             || Randomizer.Rooms.RoomDict["Kakariko Graveyard"].ReachedByPlaythrough
                         )
                         && (
@@ -1464,12 +1465,15 @@ namespace TPRandomizer
                             || CanUse(Item.Ball_and_Chain)
                         )
                     ) || Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
-                ) && HasBottle()
-            )
-            {
-                return true;
-            }
-            return false;
+                ) && HasBottle();
+        }
+
+        // I know greengill looks for just fishing rod, and loach/catfish/bass/pike
+        //  look for this; I am not convinced this is the best name for this function. - Lupa
+        public static bool CanCatchBaitedFish()
+        {
+            return (CanUse(Item.Fishing_Rod_Earring_Worm) && CanCollectLarva())
+                || (GetItemCount(Item.Progressive_Fishing_Rod) == 2);
         }
 
         public static bool CanUseBottledFairy()

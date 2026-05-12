@@ -66,8 +66,8 @@
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanCompleteLanayruTwilight"
+        "Requirements": "CanCatchBaitedFish and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCatchBaitedFish and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Zoras Domain"
@@ -132,23 +132,23 @@
       },
       {
         "CheckName": "Catch An Ordon Catfish",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       },
       {
         "CheckName": "Catch A Hyrule Bass",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       }
     ],
     "Region": "Zoras Domain"
