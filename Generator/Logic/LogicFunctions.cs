@@ -1446,16 +1446,17 @@ namespace TPRandomizer
 
         public static bool CanCollectLarva()
         {
-            if (
-                (
+            return (
                     (
                         (
-                            Randomizer.Rooms.RoomDict[
-                                "Lake Hylia Water Toadpoli Grotto"
-                            ].ReachedByPlaythrough
-                            || Randomizer.Rooms.RoomDict[
-                                "Eldin Field Water Bomb Fish Grotto"
-                            ].ReachedByPlaythrough
+                            Randomizer
+                                .Rooms
+                                .RoomDict["Lake Hylia Water Toadpoli Grotto"]
+                                .ReachedByPlaythrough
+                            || Randomizer
+                                .Rooms
+                                .RoomDict["Eldin Field Water Bomb Fish Grotto"]
+                                .ReachedByPlaythrough
                             || Randomizer.Rooms.RoomDict["Kakariko Graveyard"].ReachedByPlaythrough
                         )
                         && (
@@ -1464,12 +1465,7 @@ namespace TPRandomizer
                             || CanUse(Item.Ball_and_Chain)
                         )
                     ) || Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
-                ) && HasBottle()
-            )
-            {
-                return true;
-            }
-            return false;
+                ) && HasBottle();
         }
 
         public static bool CanUseBottledFairy()
