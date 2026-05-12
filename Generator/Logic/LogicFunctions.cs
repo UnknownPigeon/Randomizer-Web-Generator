@@ -1468,12 +1468,50 @@ namespace TPRandomizer
                 ) && HasBottle();
         }
 
-        // I know greengill looks for just fishing rod, and loach/catfish/bass/pike
-        //  look for this; I am not convinced this is the best name for this function. - Lupa
+        public static bool CanCollectWorms()
+        {
+            return HasBottle()
+                && (
+                    // Bomskits always drop them when killed. (This is the most reliable method.)
+                    (
+                        CanDefeatBomskit()
+                        && (
+                            Randomizer.Rooms.RoomDict["Faron Field"].ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict["Kakariko Gorge"].ReachedByPlaythrough
+                            || Randomizer
+                                .Rooms
+                                .RoomDict["Eldin Field Bomskit Grotto"]
+                                .ReachedByPlaythrough
+                        )
+                    )
+                    // Digging for worms: You'll see weird little spots in the ground, like dirt spots,
+                    // and if you dig as wolf on them, worms will pop up.
+                    // Each digging spot is finite, worms will go back into the hole and holes will
+                    // despawn after a random amount of digging attempts. (From my testing)
+                    || (
+                        CanUse(Item.Shadow_Crystal)
+                        && (
+                            // Behind the sign that says "Fishing Hole!" next to Hena's house
+                            Randomizer.Rooms.RoomDict["Fishing Hole"].ReachedByPlaythrough
+                            // Right next to the entrance; across the water
+                            || Randomizer
+                                .Rooms
+                                .RoomDict["Faron Field Fishing Grotto"]
+                                .ReachedByPlaythrough
+                            // Supposedly can get from under pumpkins at night, but digging was
+                            // more reliable in testing than trying to get them from under pumpkins.
+                            || Randomizer.Rooms.RoomDict["Ordon Village"].ReachedByPlaythrough
+                        )
+                    )
+                );
+        }
+
         public static bool CanCatchBaitedFish()
         {
-            return (CanUse(Item.Fishing_Rod_Earring_Worm) && CanCollectLarva())
-                || (GetItemCount(Item.Progressive_Fishing_Rod) == 2);
+            return (
+                    CanUse(Item.Fishing_Rod_Earring_Worm)
+                    && (CanCollectLarva() || CanCollectWorms())
+                ) || (GetItemCount(Item.Progressive_Fishing_Rod) == 2);
         }
 
         public static bool CanUseBottledFairy()
