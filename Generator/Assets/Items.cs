@@ -6,6 +6,7 @@ namespace TPRandomizer
     using System.Runtime.CompilerServices;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
+    using TPRandomizer.Hints;
     using TPRandomizer.SSettings.Enums;
 
     [JsonConverter(typeof(StringEnumConverter))]
@@ -311,7 +312,7 @@ namespace TPRandomizer
             {
                 return 0x2; // Boss key chest
             }
-            if (Randomizer.Items.RandomizedImportantItemsStatic.Contains(item))
+            if (Randomizer.Items.BigChestItems.Contains(item))
             {
                 return 0x1; // Big chest
             }
@@ -320,6 +321,7 @@ namespace TPRandomizer
 
         public List<Item> RandomizedImportantItems = new();
 
+        public HashSet<Item> BigChestItems = new(); // Items which should appear in big chests if CSMC is enabled.
         public List<Item> RandomizedImportantItemsStatic = new(); // A copy of the randomized important items to be read and referenced.
         public List<Item> StartingItems = new(); // Any items that the player starts with as selected by the gui.
         public List<Item> RandomizedDungeonRegionItems = new(); // Items that are shuffled among dungeons.
@@ -882,6 +884,8 @@ namespace TPRandomizer
                 parseSetting.potMapAndCompassSettings,
                 parseSetting.hcMapAndCompassSettings,
             };
+            BuildBigChestItemsSet(parseSetting);
+
             // Reset startingItems and other lists to prevent them from getting extra copies while
             // emulating playthroughs. This is critical to avoid a memory leak when doing many
             // playthroughs during conditionallyRequired calculations.
@@ -1199,6 +1203,19 @@ namespace TPRandomizer
             // Adjust Poe souls for BaseItemPool to match calculated value
             updateItemToCount(Randomizer.Items.BaseItemPool, Item.Poe_Soul, numPoesForBaseItemPool);
             return;
+        }
+
+        private void BuildBigChestItemsSet(SharedSettings sSettings)
+        {
+            // Builds the set for items which should appear in big chests for CSMC. This is
+            // essentially major items + small keys since we do not have a way of showing a
+            // different kind of chest for small keys at the moment.
+            BigChestItems = HintUtils.BuildMajorItemsSet(sSettings);
+
+            // Remove big keys
+            BigChestItems.ExceptWith(DungeonBigKeys);
+            // Add dungeon small keys
+            BigChestItems.UnionWith(RegionSmallKeys);
         }
 
         private void RemoveItem(Item item)

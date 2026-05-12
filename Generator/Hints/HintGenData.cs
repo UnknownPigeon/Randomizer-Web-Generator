@@ -97,7 +97,7 @@ namespace TPRandomizer.Hints
 
         public void updateFromHintSettings(HintSettings hintSettings)
         {
-            majorItems = prepMajorItems();
+            majorItems = HintUtils.BuildMajorItemsSet(sSettings);
 
             prepLogicalItemAndMultiMax();
             prepDefaultHintworthyItems();

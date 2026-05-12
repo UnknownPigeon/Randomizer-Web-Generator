@@ -1,31 +1,29 @@
 [
   {
     "RoomName": "Upper Zoras River",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lanayru Field",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
         "ConnectedArea": "Fishing Hole",
         "Requirements": "(Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight",
         "GlitchedRequirements": "(Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight"
       },
-	  {
-		  "ConnectedArea": "Zoras Domain",
-		  "Requirements": "true",
-      "GlitchedRequirements": "true"
-	  },
+      {
+        "ConnectedArea": "Zoras Domain",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
       {
         "ConnectedArea": "Upper Zoras River Izas House",
         "Requirements": "(HasSword or ((CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) or Upper_Zoras_River_Portal)) and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "(HasSword or ((CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) or Upper_Zoras_River_Portal)) and CanCompleteLanayruTwilight"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Upper Zoras River Female Dragonfly",
         "Requirements": "CanCompleteLanayruTwilight",
@@ -68,16 +66,15 @@
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2)) and CanCompleteLanayruTwilight"
+        "Requirements": "CanCatchBaitedFish and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCatchBaitedFish and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Zoras Domain"
   },
   {
     "RoomName": "Upper Zoras River Izas House",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Upper Zoras River",
         "Requirements": "true",
@@ -89,8 +86,7 @@
         "GlitchedRequirements": "(Progressive_Bow, 1)"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Iza Helping Hand",
         "Requirements": "Room.Upper_Zoras_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight",
@@ -106,8 +102,7 @@
   },
   {
     "RoomName": "Fishing Hole",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Upper Zoras River",
         "Requirements": "true",
@@ -119,8 +114,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Fishing Hole Heart Piece",
         "Requirements": "Progressive_Clawshot",
@@ -138,31 +132,30 @@
       },
       {
         "CheckName": "Catch An Ordon Catfish",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       },
       {
         "CheckName": "Catch A Hyrule Bass",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))",
-        "GlitchedRequirements": "((Progressive_Fishing_Rod and CanCollectLarva) or (Progressive_Fishing_Rod, 2))"
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
       }
     ],
     "Region": "Zoras Domain"
   },
   {
     "RoomName": "Fishing Hole House",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Fishing Hole",
         "Requirements": "true",
@@ -179,8 +172,7 @@
   {
     "RoomName": "Fishing Hole Canoe",
     "Exits": [],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Fishing Hole Heart Piece",
         "Requirements": "true",
@@ -188,7 +180,7 @@
       },
       {
         // Glitchless exptects that you can get the sinking lure since the fish is much easier to catch with it.
-        // Glitched expects you to have access to rollgoal to get the frog lure. 
+        // Glitched expects you to have access to rollgoal to get the frog lure.
         // Also you need access to fishing hole to change the season to summer.
         "CheckName": "Catch The Legendary Hylian Loach",
         "Requirements": "Room.Fishing_Hole and Progressive_Fishing_Rod",
@@ -199,8 +191,7 @@
   },
   {
     "RoomName": "Zoras Domain",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Zoras Domain West Ledge",
         "Requirements": "(Progressive_Clawshot, 1) or Shadow_Crystal or CanSmash",
@@ -222,8 +213,7 @@
         "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight and Ball_and_Chain) or CanCompleteLanayruTwilight)"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Zoras Domain Chest By Mother and Child Isles",
         "Requirements": "true",
@@ -294,8 +284,7 @@
   },
   {
     "RoomName": "Zoras Domain Snowpeak Entrance",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Zoras Domain",
         "Requirements": "Ball_and_Chain or CanCompleteLanayruTwilight",
@@ -311,8 +300,7 @@
   },
   {
     "RoomName": "Zoras Domain West Ledge",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Zoras Domain",
         "Requirements": "true",
@@ -329,8 +317,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Zoras Domain Shortcut Lower Boulder Rupee",
         "Requirements": "CanSmash",
@@ -341,16 +328,14 @@
   },
   {
     "RoomName": "Zoras Domain Throne Room",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Zoras Domain Top of Waterfall",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Zoras Domain Light All Torches Chest",
         "Requirements": "Lantern and Iron_Boots",
@@ -406,8 +391,7 @@
   },
   {
     "RoomName": "Zoras Domain Top of Waterfall",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Zoras Domain",
         "Requirements": "true",
@@ -419,8 +403,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Zoras Domain Shortcut Upper Boulder Rupee",
         "Requirements": "CanSmash",

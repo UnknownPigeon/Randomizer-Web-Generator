@@ -1296,5 +1296,73 @@ namespace TPRandomizer.Hints
             bool couldBeatGanondorf = goalResults[GoalConstants.Ganondorf];
             return couldBeatGanondorf;
         }
+
+        public static HashSet<Item> BuildMajorItemsSet(SharedSettings sSettings)
+        {
+            // Note: do NOT adjust this function if there is a problem with CSMC. This needs to be
+            // unchanged for hint logic. Instead, adjust `ItemFunctions::BuildBigChestItemsSet`.
+            HashSet<Item> majorItems = new(HintConstants.baseMightBeMajorItems);
+
+            // Filter out conditional majorItems as appropriate:
+
+            if (!sSettings.shuffleRewards)
+            {
+                majorItems.Remove(Item.Progressive_Fused_Shadow);
+                majorItems.Remove(Item.Progressive_Mirror_Shard);
+            }
+
+            if (
+                sSettings.castleRequirements != CastleRequirements.Poe_Souls
+                && sSettings.castleBKRequirements != CastleBKRequirements.Poe_Souls
+            )
+            {
+                majorItems.Remove(Item.Poe_Soul);
+            }
+
+            if (
+                sSettings.castleRequirements != CastleRequirements.Hearts
+                && sSettings.castleBKRequirements != CastleBKRequirements.Hearts
+            )
+            {
+                majorItems.Remove(Item.Heart_Container);
+                majorItems.Remove(Item.Piece_of_Heart);
+            }
+
+            if (
+                sSettings.smallKeySettings != SmallKeySettings.Any_Dungeon
+                && sSettings.smallKeySettings != SmallKeySettings.Anywhere
+            )
+            {
+                majorItems.Remove(Item.Forest_Temple_Small_Key);
+                majorItems.Remove(Item.Goron_Mines_Small_Key);
+                majorItems.Remove(Item.Lakebed_Temple_Small_Key);
+                majorItems.Remove(Item.Arbiters_Grounds_Small_Key);
+                majorItems.Remove(Item.Snowpeak_Ruins_Small_Key);
+                majorItems.Remove(Item.Snowpeak_Ruins_Ordon_Pumpkin);
+                majorItems.Remove(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
+                majorItems.Remove(Item.Temple_of_Time_Small_Key);
+                majorItems.Remove(Item.City_in_The_Sky_Small_Key);
+                majorItems.Remove(Item.Palace_of_Twilight_Small_Key);
+                majorItems.Remove(Item.Hyrule_Castle_Small_Key);
+            }
+
+            if (
+                sSettings.bigKeySettings != BigKeySettings.Any_Dungeon
+                && sSettings.bigKeySettings != BigKeySettings.Anywhere
+            )
+            {
+                majorItems.Remove(Item.Forest_Temple_Big_Key);
+                majorItems.Remove(Item.Goron_Mines_Key_Shard);
+                majorItems.Remove(Item.Lakebed_Temple_Big_Key);
+                majorItems.Remove(Item.Arbiters_Grounds_Big_Key);
+                majorItems.Remove(Item.Temple_of_Time_Big_Key);
+                majorItems.Remove(Item.Snowpeak_Ruins_Bedroom_Key);
+                majorItems.Remove(Item.City_in_The_Sky_Big_Key);
+                majorItems.Remove(Item.Palace_of_Twilight_Big_Key);
+                majorItems.Remove(Item.Hyrule_Castle_Big_Key);
+            }
+
+            return majorItems;
+        }
     }
 }
