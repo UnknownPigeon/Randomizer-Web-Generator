@@ -1511,14 +1511,18 @@ namespace TPRandomizer
                         }
                         else
                         {
-                            RandomizedDungeonRegionItems.Add(config.Key);
+                            RandomizedDungeonRegionItems.AddRange(
+                                Enumerable.Repeat(config.Key, config.Count)
+                            );
                         }
 
                         break;
                     }
                     case BigKeySettings.Anywhere:
                     {
-                        RandomizedImportantItems.Add(config.Key);
+                        RandomizedImportantItems.AddRange(
+                                Enumerable.Repeat(config.Key, config.Count)
+                            );
                         break;
                     }
                     case BigKeySettings.Keysy:
@@ -1532,7 +1536,9 @@ namespace TPRandomizer
                             break;
                         }
 
-                        parseSetting.startingItems.Add(config.Key);
+                        parseSetting.startingItems.AddRange(
+                                Enumerable.Repeat(config.Key, config.Count)
+                            );
                         break;
                     }
                 }

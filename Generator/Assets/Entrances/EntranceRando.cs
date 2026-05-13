@@ -1024,7 +1024,7 @@ namespace TPRandomizer
 
         EntranceShuffleError ValidateWorld()
         {
-            if (!BackendFunctions.ValidatePlaythrough(Randomizer.Rooms.RoomDict["Root"], true))
+            if (!BackendFunctions.ValidatePlaythrough(Randomizer.Rooms.RoomDict["Root"], false))
             {
                 return EntranceShuffleError.ALL_LOCATIONS_NOT_REACHABLE;
             }
