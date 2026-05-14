@@ -1307,9 +1307,22 @@ namespace TPRandomizer.Hints
                 majorItems.Remove(Item.Progressive_Mirror_Shard);
             }
 
+            // Remove Poe souls from major items if they aren't required by HC or HCBK
+            // and if either npc items aren't shuffled or both jovani checks are excluded.
             if (
                 sSettings.castleRequirements != CastleRequirements.Poe_Souls
                 && sSettings.castleBKRequirements != CastleBKRequirements.Poe_Souls
+                && (
+                    !sSettings.shuffleNpcItems
+                    || (
+                        Randomizer.Checks.CheckDict[
+                            "Jovani 20 Poe Soul Reward"
+                        ].checkStatus.Contains("Excluded")
+                        && Randomizer.Checks.CheckDict[
+                            "Jovani 60 Poe Soul Reward"
+                        ].checkStatus.Contains("Excluded")
+                    )
+                )
             )
             {
                 majorItems.Remove(Item.Poe_Soul);
