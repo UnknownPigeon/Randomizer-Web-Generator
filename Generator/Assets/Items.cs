@@ -1210,12 +1210,108 @@ namespace TPRandomizer
             // Builds the set for items which should appear in big chests for CSMC. This is
             // essentially major items + small keys since we do not have a way of showing a
             // different kind of chest for small keys at the moment.
-            BigChestItems = HintUtils.BuildMajorItemsSet(sSettings);
+            BigChestItems = BuildCsmcBigChestItemsSet(sSettings);
 
             // Remove big keys
             BigChestItems.ExceptWith(DungeonBigKeys);
             // Add dungeon small keys
             BigChestItems.UnionWith(RegionSmallKeys);
+        }
+
+        private HashSet<Item> BuildCsmcBigChestItemsSet(SharedSettings sSettings)
+        {
+            HashSet<Item> bigChestItems = new(HintConstants.baseMightBeMajorItems);
+
+            if (!sSettings.shuffleRewards)
+            {
+                bigChestItems.Remove(Item.Progressive_Fused_Shadow);
+                bigChestItems.Remove(Item.Progressive_Mirror_Shard);
+            }
+
+            // Remove Poe souls from major items if they aren't required by HC or HCBK
+            // and if either npc items aren't shuffled or both jovani checks are excluded.
+            if (
+                sSettings.castleRequirements != CastleRequirements.Poe_Souls
+                && sSettings.castleBKRequirements != CastleBKRequirements.Poe_Souls
+                && (
+                    !sSettings.shuffleNpcItems
+                    || (
+                        Randomizer.Checks.CheckDict[
+                            "Jovani 20 Poe Soul Reward"
+                        ].checkStatus.Contains("Excluded")
+                        && Randomizer.Checks.CheckDict[
+                            "Jovani 60 Poe Soul Reward"
+                        ].checkStatus.Contains("Excluded")
+                    )
+                )
+            )
+            {
+                bigChestItems.Remove(Item.Poe_Soul);
+            }
+
+            if (
+                sSettings.castleRequirements != CastleRequirements.Hearts
+                && sSettings.castleBKRequirements != CastleBKRequirements.Hearts
+            )
+            {
+                bigChestItems.Remove(Item.Heart_Container);
+                bigChestItems.Remove(Item.Piece_of_Heart);
+            }
+
+            // Small keys only major if AnyDungeon or Anywhere.
+            List<(SmallKeySettings, Item)> smallKeySettings =
+                new()
+                {
+                    (sSettings.ftSmallKeySettings, Item.Forest_Temple_Small_Key),
+                    (sSettings.gmSmallKeySettings, Item.Goron_Mines_Small_Key),
+                    (sSettings.lbtSmallKeySettings, Item.Lakebed_Temple_Small_Key),
+                    (sSettings.agSmallKeySettings, Item.Arbiters_Grounds_Small_Key),
+                    (sSettings.sprSmallKeySettings, Item.Snowpeak_Ruins_Small_Key),
+                    (sSettings.totSmallKeySettings, Item.Temple_of_Time_Small_Key),
+                    (sSettings.citsSmallKeySettings, Item.City_in_The_Sky_Small_Key),
+                    (sSettings.potSmallKeySettings, Item.Palace_of_Twilight_Small_Key),
+                    (sSettings.hcSmallKeySettings, Item.Hyrule_Castle_Small_Key),
+                };
+            foreach ((SmallKeySettings, Item) tuple in smallKeySettings)
+            {
+                SmallKeySettings skSetting = tuple.Item1;
+                if (
+                    skSetting != SmallKeySettings.Any_Dungeon
+                    && skSetting != SmallKeySettings.Anywhere
+                )
+                    bigChestItems.Remove(tuple.Item2);
+            }
+            if (
+                sSettings.sprSmallKeySettings != SmallKeySettings.Any_Dungeon
+                && sSettings.sprSmallKeySettings != SmallKeySettings.Anywhere
+            )
+            {
+                bigChestItems.Remove(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
+                bigChestItems.Remove(Item.Snowpeak_Ruins_Ordon_Pumpkin);
+            }
+
+            // Big keys only major if AnyDungeon or Anywhere.
+            List<(BigKeySettings, Item)> bigKeySettings =
+                new()
+                {
+                    (sSettings.ftBigKeySettings, Item.Forest_Temple_Big_Key),
+                    (sSettings.gmBigKeySettings, Item.Goron_Mines_Key_Shard),
+                    (sSettings.lbtBigKeySettings, Item.Lakebed_Temple_Big_Key),
+                    (sSettings.agBigKeySettings, Item.Arbiters_Grounds_Big_Key),
+                    (sSettings.sprBigKeySettings, Item.Snowpeak_Ruins_Bedroom_Key),
+                    (sSettings.totBigKeySettings, Item.Temple_of_Time_Big_Key),
+                    (sSettings.citsBigKeySettings, Item.City_in_The_Sky_Big_Key),
+                    (sSettings.potBigKeySettings, Item.Palace_of_Twilight_Big_Key),
+                    (sSettings.hcBigKeySettings, Item.Hyrule_Castle_Big_Key),
+                };
+            foreach ((BigKeySettings, Item) tuple in bigKeySettings)
+            {
+                BigKeySettings bkSetting = tuple.Item1;
+                if (bkSetting != BigKeySettings.Any_Dungeon && bkSetting != BigKeySettings.Anywhere)
+                    bigChestItems.Remove(tuple.Item2);
+            }
+
+            return bigChestItems;
         }
 
         private void RemoveItem(Item item)
