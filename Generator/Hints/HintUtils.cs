@@ -1302,7 +1302,6 @@ namespace TPRandomizer.Hints
             // Note: do NOT adjust this function if there is a problem with CSMC. This needs to be
             // unchanged for hint logic. Instead, adjust `ItemFunctions::BuildBigChestItemsSet`.
             HashSet<Item> majorItems = new(HintConstants.baseMightBeMajorItems);
-            SharedSettings parseSetting = Randomizer.SSettings;
 
             // Filter out conditional majorItems as appropriate:
 
@@ -1329,95 +1328,57 @@ namespace TPRandomizer.Hints
                 majorItems.Remove(Item.Piece_of_Heart);
             }
 
-            var smallKeyConfigs = new[]
+            // Small keys only major if AnyDungeon or Anywhere.
+            List<(SmallKeySettings, Item)> smallKeySettings =
+                new()
+                {
+                    (sSettings.ftSmallKeySettings, Item.Forest_Temple_Small_Key),
+                    (sSettings.gmSmallKeySettings, Item.Goron_Mines_Small_Key),
+                    (sSettings.lbtSmallKeySettings, Item.Lakebed_Temple_Small_Key),
+                    (sSettings.agSmallKeySettings, Item.Arbiters_Grounds_Small_Key),
+                    (sSettings.sprSmallKeySettings, Item.Snowpeak_Ruins_Small_Key),
+                    (sSettings.totSmallKeySettings, Item.Temple_of_Time_Small_Key),
+                    (sSettings.citsSmallKeySettings, Item.City_in_The_Sky_Small_Key),
+                    (sSettings.potSmallKeySettings, Item.Palace_of_Twilight_Small_Key),
+                    (sSettings.hcSmallKeySettings, Item.Hyrule_Castle_Small_Key),
+                };
+            foreach ((SmallKeySettings, Item) tuple in smallKeySettings)
             {
-                new
-                {
-                    skSetting = parseSetting.ftSmallKeySettings,
-                    bkSetting = parseSetting.ftBigKeySettings,
-                    skey = Item.Forest_Temple_Small_Key,
-                    bkey = Item.Forest_Temple_Big_Key,
-                },
-                new
-                {
-                    skSetting = parseSetting.gmSmallKeySettings,
-                    bkSetting = parseSetting.gmBigKeySettings,
-                    skey = Item.Goron_Mines_Small_Key,
-                    bkey = Item.Goron_Mines_Key_Shard,
-                },
-                new
-                {
-                    skSetting = parseSetting.lbtSmallKeySettings,
-                    bkSetting = parseSetting.lbtBigKeySettings,
-                    skey = Item.Lakebed_Temple_Small_Key,
-                    bkey = Item.Lakebed_Temple_Big_Key,
-                },
-                new
-                {
-                    skSetting = parseSetting.agSmallKeySettings,
-                    bkSetting = parseSetting.agBigKeySettings,
-                    skey = Item.Arbiters_Grounds_Small_Key,
-                    bkey = Item.Arbiters_Grounds_Big_Key,
-                },
-                new
-                {
-                    skSetting = parseSetting.sprSmallKeySettings,
-                    bkSetting = parseSetting.sprBigKeySettings,
-                    skey = Item.Snowpeak_Ruins_Small_Key,
-                    bkey = Item.Snowpeak_Ruins_Bedroom_Key
-                },
-                new
-                {
-                    skSetting = parseSetting.totSmallKeySettings,
-                    bkSetting = parseSetting.totBigKeySettings,
-                    skey = Item.Temple_of_Time_Small_Key,
-                    bkey = Item.Temple_of_Time_Big_Key,
-                },
-                new
-                {
-                    skSetting = parseSetting.citsSmallKeySettings,
-                    bkSetting = parseSetting.citsBigKeySettings,
-                    skey = Item.City_in_The_Sky_Small_Key,
-                    bkey = Item.City_in_The_Sky_Big_Key,
-                },
-                new
-                {
-                    skSetting = parseSetting.potSmallKeySettings,
-                    bkSetting = parseSetting.potBigKeySettings,
-                    skey = Item.Palace_of_Twilight_Small_Key,
-                    bkey = Item.Palace_of_Twilight_Big_Key,
-                },
-                new
-                {
-                    skSetting = parseSetting.hcSmallKeySettings,
-                    bkSetting = parseSetting.hcBigKeySettings,
-                    skey = Item.Hyrule_Castle_Small_Key,
-                    bkey = Item.Big_Key,
-                }
-            };
-
-            foreach (var config in smallKeyConfigs)
+                SmallKeySettings skSetting = tuple.Item1;
+                if (
+                    skSetting != SmallKeySettings.Any_Dungeon
+                    && skSetting != SmallKeySettings.Anywhere
+                )
+                    majorItems.Remove(tuple.Item2);
+            }
+            if (
+                sSettings.sprSmallKeySettings != SmallKeySettings.Any_Dungeon
+                && sSettings.sprSmallKeySettings != SmallKeySettings.Anywhere
+            )
             {
-                if (
-                    config.skSetting != SmallKeySettings.Any_Dungeon
-                    && config.skSetting != SmallKeySettings.Anywhere
-                )
-                {
-                    majorItems.Remove(config.skey);
-                    if (config.skey == Item.Snowpeak_Ruins_Small_Key)
-                    {
-                        majorItems.Remove(Item.Snowpeak_Ruins_Ordon_Pumpkin);
-                        majorItems.Remove(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
-                    }
-                }
+                majorItems.Remove(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
+                majorItems.Remove(Item.Snowpeak_Ruins_Ordon_Pumpkin);
+            }
 
-                if (
-                    config.bkSetting != BigKeySettings.Any_Dungeon
-                    && config.bkSetting != BigKeySettings.Anywhere
-                )
+            // Big keys only major if AnyDungeon or Anywhere.
+            List<(BigKeySettings, Item)> bigKeySettings =
+                new()
                 {
-                    majorItems.Remove(config.bkey);
-                }
+                    (sSettings.ftBigKeySettings, Item.Forest_Temple_Big_Key),
+                    (sSettings.gmBigKeySettings, Item.Goron_Mines_Key_Shard),
+                    (sSettings.lbtBigKeySettings, Item.Lakebed_Temple_Big_Key),
+                    (sSettings.agBigKeySettings, Item.Arbiters_Grounds_Big_Key),
+                    (sSettings.sprBigKeySettings, Item.Snowpeak_Ruins_Bedroom_Key),
+                    (sSettings.totBigKeySettings, Item.Temple_of_Time_Big_Key),
+                    (sSettings.citsBigKeySettings, Item.City_in_The_Sky_Big_Key),
+                    (sSettings.potBigKeySettings, Item.Palace_of_Twilight_Big_Key),
+                    (sSettings.hcBigKeySettings, Item.Hyrule_Castle_Big_Key),
+                };
+            foreach ((BigKeySettings, Item) tuple in bigKeySettings)
+            {
+                BigKeySettings bkSetting = tuple.Item1;
+                if (bkSetting != BigKeySettings.Any_Dungeon && bkSetting != BigKeySettings.Anywhere)
+                    majorItems.Remove(tuple.Item2);
             }
 
             return majorItems;
