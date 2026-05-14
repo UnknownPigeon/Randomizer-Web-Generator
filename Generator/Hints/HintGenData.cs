@@ -293,125 +293,6 @@ namespace TPRandomizer.Hints
             return new(defaultHintworthyItems);
         }
 
-        private HashSet<Item> prepMajorItems()
-        {
-            HashSet<Item> majorItems = new(HintConstants.baseMightBeMajorItems);
-
-            // Filter out conditional majorItems as appropriate:
-
-            if (!sSettings.shuffleRewards)
-            {
-                majorItems.Remove(Item.Progressive_Fused_Shadow);
-                majorItems.Remove(Item.Progressive_Mirror_Shard);
-            }
-
-            if (
-                sSettings.castleRequirements != CastleRequirements.Poe_Souls
-                && sSettings.castleBKRequirements != CastleBKRequirements.Poe_Souls
-            )
-            {
-                majorItems.Remove(Item.Poe_Soul);
-            }
-
-            if (
-                sSettings.castleRequirements != CastleRequirements.Hearts
-                && sSettings.castleBKRequirements != CastleBKRequirements.Hearts
-            )
-            {
-                majorItems.Remove(Item.Heart_Container);
-                majorItems.Remove(Item.Piece_of_Heart);
-            }
-
-            var smallKeyConfigs = new[]
-            {
-                new { Setting = sSettings.ftSmallKeySettings, Key = Item.Forest_Temple_Small_Key },
-                new { Setting = sSettings.gmSmallKeySettings, Key = Item.Goron_Mines_Small_Key },
-                new
-                {
-                    Setting = sSettings.lbtSmallKeySettings,
-                    Key = Item.Lakebed_Temple_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.agSmallKeySettings,
-                    Key = Item.Arbiters_Grounds_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.totSmallKeySettings,
-                    Key = Item.Temple_of_Time_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.citsSmallKeySettings,
-                    Key = Item.City_in_The_Sky_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.potSmallKeySettings,
-                    Key = Item.Palace_of_Twilight_Small_Key
-                },
-                new { Setting = sSettings.hcSmallKeySettings, Key = Item.Hyrule_Castle_Small_Key }
-            };
-
-            foreach (var config in smallKeyConfigs)
-            {
-                bool isShuffled =
-                    config.Setting == SmallKeySettings.Any_Dungeon
-                    || config.Setting == SmallKeySettings.Anywhere;
-
-                if (!isShuffled)
-                {
-                    majorItems.Remove(config.Key);
-                }
-            }
-
-            if (
-                sSettings.sprSmallKeySettings != SmallKeySettings.Any_Dungeon
-                && sSettings.sprSmallKeySettings != SmallKeySettings.Anywhere
-            )
-            {
-                majorItems.Remove(Item.Snowpeak_Ruins_Small_Key);
-                majorItems.Remove(Item.Snowpeak_Ruins_Ordon_Pumpkin);
-                majorItems.Remove(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
-            }
-
-            var bigKeyConfigs = new[]
-            {
-                new { Setting = sSettings.ftBigKeySettings, Key = Item.Forest_Temple_Big_Key },
-                new { Setting = sSettings.gmBigKeySettings, Key = Item.Goron_Mines_Key_Shard },
-                new { Setting = sSettings.lbtBigKeySettings, Key = Item.Lakebed_Temple_Big_Key },
-                new { Setting = sSettings.agBigKeySettings, Key = Item.Arbiters_Grounds_Big_Key },
-                new
-                {
-                    Setting = sSettings.sprBigKeySettings,
-                    Key = Item.Snowpeak_Ruins_Bedroom_Key
-                },
-                new { Setting = sSettings.totBigKeySettings, Key = Item.Temple_of_Time_Big_Key },
-                new { Setting = sSettings.citsBigKeySettings, Key = Item.City_in_The_Sky_Big_Key },
-                new
-                {
-                    Setting = sSettings.potBigKeySettings,
-                    Key = Item.Palace_of_Twilight_Big_Key
-                },
-                new { Setting = sSettings.hcBigKeySettings, Key = Item.Hyrule_Castle_Big_Key }
-            };
-
-            foreach (var config in bigKeyConfigs)
-            {
-                bool isShuffled =
-                    config.Setting == BigKeySettings.Any_Dungeon
-                    || config.Setting == BigKeySettings.Anywhere;
-
-                if (!isShuffled)
-                {
-                    majorItems.Remove(config.Key);
-                }
-            }
-
-            return majorItems;
-        }
-
         private void prepLogicalItemAndMultiMax()
         {
             HashSet<Item> newLogicalItems = new(HintConstants.baseMightBeMajorItems);
@@ -522,84 +403,47 @@ namespace TPRandomizer.Hints
                 newLogicalItems.Remove(Item.Piece_of_Heart);
             }
 
-            var smallKeyConfigs = new[]
+            List<(SmallKeySettings, Item)> smallKeySettings =
+                new()
+                {
+                    (sSettings.ftSmallKeySettings, Item.Forest_Temple_Small_Key),
+                    (sSettings.gmSmallKeySettings, Item.Goron_Mines_Small_Key),
+                    (sSettings.lbtSmallKeySettings, Item.Lakebed_Temple_Small_Key),
+                    (sSettings.agSmallKeySettings, Item.Arbiters_Grounds_Small_Key),
+                    (sSettings.sprSmallKeySettings, Item.Snowpeak_Ruins_Small_Key),
+                    (sSettings.totSmallKeySettings, Item.Temple_of_Time_Small_Key),
+                    (sSettings.citsSmallKeySettings, Item.City_in_The_Sky_Small_Key),
+                    (sSettings.potSmallKeySettings, Item.Palace_of_Twilight_Small_Key),
+                    (sSettings.hcSmallKeySettings, Item.Hyrule_Castle_Small_Key),
+                };
+            foreach ((SmallKeySettings, Item) pair in smallKeySettings)
             {
-                new { Setting = sSettings.ftSmallKeySettings, Key = Item.Forest_Temple_Small_Key },
-                new { Setting = sSettings.gmSmallKeySettings, Key = Item.Goron_Mines_Small_Key },
-                new
-                {
-                    Setting = sSettings.lbtSmallKeySettings,
-                    Key = Item.Lakebed_Temple_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.agSmallKeySettings,
-                    Key = Item.Arbiters_Grounds_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.totSmallKeySettings,
-                    Key = Item.Temple_of_Time_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.citsSmallKeySettings,
-                    Key = Item.City_in_The_Sky_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.potSmallKeySettings,
-                    Key = Item.Palace_of_Twilight_Small_Key
-                },
-                new { Setting = sSettings.hcSmallKeySettings, Key = Item.Hyrule_Castle_Small_Key }
-            };
-
-            foreach (var config in smallKeyConfigs)
-            {
-                bool isShuffled = config.Setting == SmallKeySettings.Keysy;
-
-                if (!isShuffled)
-                {
-                    newLogicalItems.Remove(config.Key);
-                }
+                if (pair.Item1 == SmallKeySettings.Keysy)
+                    newLogicalItems.Remove(pair.Item2);
             }
-
-            if (sSettings.sprSmallKeySettings != SmallKeySettings.Keysy)
+            if (sSettings.sprSmallKeySettings == SmallKeySettings.Keysy)
             {
-                newLogicalItems.Remove(Item.Snowpeak_Ruins_Small_Key);
-                newLogicalItems.Remove(Item.Snowpeak_Ruins_Ordon_Pumpkin);
                 newLogicalItems.Remove(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
+                newLogicalItems.Remove(Item.Snowpeak_Ruins_Ordon_Pumpkin);
             }
 
-            var bigKeyConfigs = new[]
+            List<(BigKeySettings, Item)> bigKeySettings =
+                new()
+                {
+                    (sSettings.ftBigKeySettings, Item.Forest_Temple_Big_Key),
+                    (sSettings.gmBigKeySettings, Item.Goron_Mines_Key_Shard),
+                    (sSettings.lbtBigKeySettings, Item.Lakebed_Temple_Big_Key),
+                    (sSettings.agBigKeySettings, Item.Arbiters_Grounds_Big_Key),
+                    (sSettings.sprBigKeySettings, Item.Snowpeak_Ruins_Bedroom_Key),
+                    (sSettings.totBigKeySettings, Item.Temple_of_Time_Big_Key),
+                    (sSettings.citsBigKeySettings, Item.City_in_The_Sky_Big_Key),
+                    (sSettings.potBigKeySettings, Item.Palace_of_Twilight_Big_Key),
+                    (sSettings.hcBigKeySettings, Item.Hyrule_Castle_Big_Key),
+                };
+            foreach ((BigKeySettings, Item) pair in bigKeySettings)
             {
-                new { Setting = sSettings.ftBigKeySettings, Key = Item.Forest_Temple_Big_Key },
-                new { Setting = sSettings.gmBigKeySettings, Key = Item.Goron_Mines_Key_Shard },
-                new { Setting = sSettings.lbtBigKeySettings, Key = Item.Lakebed_Temple_Big_Key },
-                new { Setting = sSettings.agBigKeySettings, Key = Item.Arbiters_Grounds_Big_Key },
-                new
-                {
-                    Setting = sSettings.sprBigKeySettings,
-                    Key = Item.Snowpeak_Ruins_Bedroom_Key
-                },
-                new { Setting = sSettings.totBigKeySettings, Key = Item.Temple_of_Time_Big_Key },
-                new { Setting = sSettings.citsBigKeySettings, Key = Item.City_in_The_Sky_Big_Key },
-                new
-                {
-                    Setting = sSettings.potBigKeySettings,
-                    Key = Item.Palace_of_Twilight_Big_Key
-                },
-                new { Setting = sSettings.hcBigKeySettings, Key = Item.Hyrule_Castle_Big_Key }
-            };
-
-            foreach (var config in bigKeyConfigs)
-            {
-                bool isShuffled = config.Setting == BigKeySettings.Keysy;
-
-                if (!isShuffled)
-                {
-                    newLogicalItems.Remove(config.Key);
-                }
+                if (pair.Item1 == BigKeySettings.Keysy)
+                    newLogicalItems.Remove(pair.Item2);
             }
 
             if (sSettings.barrenDungeons)
@@ -978,7 +822,6 @@ namespace TPRandomizer.Hints
             if (
                 !BackendFunctions.ValidatePlaythrough(
                     startingRoom,
-                    true,
                     unreachableChecks: unreachableChecks
                 )
             )
@@ -1216,181 +1059,89 @@ namespace TPRandomizer.Hints
                 baseAllowedForDungeons.Add(Item.Progressive_Mirror_Shard);
             }
 
-            ret[AreaId.Zone(Zone.Forest_Temple)] = new(baseAllowedForDungeons);
-            ret[AreaId.Zone(Zone.Goron_Mines)] = new(baseAllowedForDungeons);
-            ret[AreaId.Zone(Zone.Lakebed_Temple)] = new(baseAllowedForDungeons);
-            ret[AreaId.Zone(Zone.Arbiters_Grounds)] = new(baseAllowedForDungeons);
-            ret[AreaId.Zone(Zone.Snowpeak_Ruins)] = new(baseAllowedForDungeons);
-            ret[AreaId.Zone(Zone.Temple_of_Time)] = new(baseAllowedForDungeons);
-            ret[AreaId.Zone(Zone.City_in_the_Sky)] = new(baseAllowedForDungeons);
-            ret[AreaId.Zone(Zone.Palace_of_Twilight)] = new(baseAllowedForDungeons);
-            ret[AreaId.Zone(Zone.Hyrule_Castle)] = new(baseAllowedForDungeons);
-            ret[AreaId.Province(Province.Dungeon)] = new(baseAllowedForDungeons);
+            AreaId ftAreaId = AreaId.Zone(Zone.Forest_Temple);
+            AreaId gmAreaId = AreaId.Zone(Zone.Goron_Mines);
+            AreaId lbtAreaId = AreaId.Zone(Zone.Lakebed_Temple);
+            AreaId agAreaId = AreaId.Zone(Zone.Arbiters_Grounds);
+            AreaId sprAreaId = AreaId.Zone(Zone.Snowpeak_Ruins);
+            AreaId totAreaId = AreaId.Zone(Zone.Temple_of_Time);
+            AreaId citsAreaId = AreaId.Zone(Zone.City_in_the_Sky);
+            AreaId potAreaId = AreaId.Zone(Zone.Palace_of_Twilight);
+            AreaId hcAreaId = AreaId.Zone(Zone.Hyrule_Castle);
+            AreaId dungeonsAreaId = AreaId.Province(Province.Dungeon);
 
-            var smallKeyConfigs = new[]
+            ret[ftAreaId] = new(baseAllowedForDungeons);
+            ret[gmAreaId] = new(baseAllowedForDungeons);
+            ret[lbtAreaId] = new(baseAllowedForDungeons);
+            ret[agAreaId] = new(baseAllowedForDungeons);
+            ret[sprAreaId] = new(baseAllowedForDungeons);
+            ret[totAreaId] = new(baseAllowedForDungeons);
+            ret[citsAreaId] = new(baseAllowedForDungeons);
+            ret[potAreaId] = new(baseAllowedForDungeons);
+            ret[hcAreaId] = new(baseAllowedForDungeons);
+            ret[dungeonsAreaId] = new(baseAllowedForDungeons);
+
+            // Small keys for dungeons which are not AnyDungeon or Anywhere are allowed.
+            List<(SmallKeySettings, AreaId, Item)> smallKeySettings =
+                new()
+                {
+                    (sSettings.ftSmallKeySettings, ftAreaId, Item.Forest_Temple_Small_Key),
+                    (sSettings.gmSmallKeySettings, gmAreaId, Item.Goron_Mines_Small_Key),
+                    (sSettings.lbtSmallKeySettings, lbtAreaId, Item.Lakebed_Temple_Small_Key),
+                    (sSettings.agSmallKeySettings, agAreaId, Item.Arbiters_Grounds_Small_Key),
+                    (sSettings.sprSmallKeySettings, sprAreaId, Item.Snowpeak_Ruins_Small_Key),
+                    (sSettings.totSmallKeySettings, totAreaId, Item.Temple_of_Time_Small_Key),
+                    (sSettings.citsSmallKeySettings, citsAreaId, Item.City_in_The_Sky_Small_Key),
+                    (sSettings.potSmallKeySettings, potAreaId, Item.Palace_of_Twilight_Small_Key),
+                    (sSettings.hcSmallKeySettings, hcAreaId, Item.Hyrule_Castle_Small_Key),
+                };
+            foreach ((SmallKeySettings, AreaId, Item) tuple in smallKeySettings)
             {
-                new
+                SmallKeySettings skSetting = tuple.Item1;
+                if (
+                    skSetting != SmallKeySettings.Any_Dungeon
+                    && skSetting != SmallKeySettings.Anywhere
+                )
                 {
-                    Setting = sSettings.ftSmallKeySettings,
-                    Zone = Zone.Forest_Temple,
-                    Key = Item.Forest_Temple_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.gmSmallKeySettings,
-                    Zone = Zone.Goron_Mines,
-                    Key = Item.Goron_Mines_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.lbtSmallKeySettings,
-                    Zone = Zone.Lakebed_Temple,
-                    Key = Item.Lakebed_Temple_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.agSmallKeySettings,
-                    Zone = Zone.Arbiters_Grounds,
-                    Key = Item.Arbiters_Grounds_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.totSmallKeySettings,
-                    Zone = Zone.Temple_of_Time,
-                    Key = Item.Temple_of_Time_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.citsSmallKeySettings,
-                    Zone = Zone.City_in_the_Sky,
-                    Key = Item.City_in_The_Sky_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.potSmallKeySettings,
-                    Zone = Zone.Palace_of_Twilight,
-                    Key = Item.Palace_of_Twilight_Small_Key
-                },
-                new
-                {
-                    Setting = sSettings.hcSmallKeySettings,
-                    Zone = Zone.Hyrule_Castle,
-                    Key = Item.Hyrule_Castle_Small_Key
+                    Item skItem = tuple.Item3;
+                    ret[tuple.Item2].Add(skItem);
+                    ret[dungeonsAreaId].Add(skItem);
                 }
-            };
-
-            foreach (var config in smallKeyConfigs)
-            {
-                bool isShuffled =
-                    config.Setting == SmallKeySettings.Any_Dungeon
-                    || config.Setting == SmallKeySettings.Anywhere;
-
-                if (isShuffled)
-                {
-                    continue;
-                }
-
-                ret[AreaId.Zone(config.Zone)].Add(config.Key);
-
-                ret[AreaId.Province(Province.Dungeon)].Add(config.Key);
             }
-
             if (
                 sSettings.sprSmallKeySettings != SmallKeySettings.Any_Dungeon
                 && sSettings.sprSmallKeySettings != SmallKeySettings.Anywhere
             )
             {
-                ret[AreaId.Zone(Zone.Snowpeak_Ruins)].UnionWith(
-                    new HashSet<Item>()
-                    {
-                        Item.Snowpeak_Ruins_Small_Key,
-                        Item.Snowpeak_Ruins_Ordon_Pumpkin,
-                        Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
-                    }
-                );
-
-                ret[AreaId.Province(Province.Dungeon)].UnionWith(
-                    new HashSet<Item>()
-                    {
-                        Item.Snowpeak_Ruins_Small_Key,
-                        Item.Snowpeak_Ruins_Ordon_Pumpkin,
-                        Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
-                    }
-                );
+                ret[sprAreaId].Add(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
+                ret[sprAreaId].Add(Item.Snowpeak_Ruins_Ordon_Pumpkin);
+                ret[dungeonsAreaId].Add(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
+                ret[dungeonsAreaId].Add(Item.Snowpeak_Ruins_Ordon_Pumpkin);
             }
 
-            var bigKeyConfigs = new[]
+            // Big keys for dungeons which are not AnyDungeon or Anywhere are allowed.
+            List<(BigKeySettings, AreaId, Item)> bigKeySettings =
+                new()
+                {
+                    (sSettings.ftBigKeySettings, ftAreaId, Item.Forest_Temple_Big_Key),
+                    (sSettings.gmBigKeySettings, gmAreaId, Item.Goron_Mines_Key_Shard),
+                    (sSettings.lbtBigKeySettings, lbtAreaId, Item.Lakebed_Temple_Big_Key),
+                    (sSettings.agBigKeySettings, agAreaId, Item.Arbiters_Grounds_Big_Key),
+                    (sSettings.sprBigKeySettings, sprAreaId, Item.Snowpeak_Ruins_Bedroom_Key),
+                    (sSettings.totBigKeySettings, totAreaId, Item.Temple_of_Time_Big_Key),
+                    (sSettings.citsBigKeySettings, citsAreaId, Item.City_in_The_Sky_Big_Key),
+                    (sSettings.potBigKeySettings, potAreaId, Item.Palace_of_Twilight_Big_Key),
+                    (sSettings.hcBigKeySettings, hcAreaId, Item.Hyrule_Castle_Big_Key),
+                };
+            foreach ((BigKeySettings, AreaId, Item) tuple in bigKeySettings)
             {
-                new
+                BigKeySettings bkSetting = tuple.Item1;
+                if (bkSetting != BigKeySettings.Any_Dungeon && bkSetting != BigKeySettings.Anywhere)
                 {
-                    Setting = sSettings.ftBigKeySettings,
-                    Zone = Zone.Forest_Temple,
-                    Key = Item.Forest_Temple_Big_Key
-                },
-                new
-                {
-                    Setting = sSettings.gmBigKeySettings,
-                    Zone = Zone.Goron_Mines,
-                    Key = Item.Goron_Mines_Big_Key
-                },
-                new
-                {
-                    Setting = sSettings.lbtBigKeySettings,
-                    Zone = Zone.Lakebed_Temple,
-                    Key = Item.Lakebed_Temple_Big_Key
-                },
-                new
-                {
-                    Setting = sSettings.agBigKeySettings,
-                    Zone = Zone.Arbiters_Grounds,
-                    Key = Item.Arbiters_Grounds_Big_Key
-                },
-                new
-                {
-                    Setting = sSettings.sprBigKeySettings,
-                    Zone = Zone.Snowpeak_Ruins,
-                    Key = Item.Snowpeak_Ruins_Bedroom_Key
-                },
-                new
-                {
-                    Setting = sSettings.totBigKeySettings,
-                    Zone = Zone.Temple_of_Time,
-                    Key = Item.Temple_of_Time_Big_Key
-                },
-                new
-                {
-                    Setting = sSettings.citsBigKeySettings,
-                    Zone = Zone.City_in_the_Sky,
-                    Key = Item.City_in_The_Sky_Big_Key
-                },
-                new
-                {
-                    Setting = sSettings.potBigKeySettings,
-                    Zone = Zone.Palace_of_Twilight,
-                    Key = Item.Palace_of_Twilight_Big_Key
-                },
-                new
-                {
-                    Setting = sSettings.hcBigKeySettings,
-                    Zone = Zone.Hyrule_Castle,
-                    Key = Item.Hyrule_Castle_Big_Key
+                    Item bkItem = tuple.Item3;
+                    ret[tuple.Item2].Add(bkItem);
+                    ret[dungeonsAreaId].Add(bkItem);
                 }
-            };
-
-            foreach (var config in bigKeyConfigs)
-            {
-                bool isShuffled =
-                    config.Setting == BigKeySettings.Any_Dungeon
-                    || config.Setting == BigKeySettings.Anywhere;
-
-                if (isShuffled)
-                {
-                    continue;
-                }
-
-                ret[AreaId.Zone(config.Zone)].Add(config.Key);
-
-                ret[AreaId.Province(Province.Dungeon)].Add(config.Key);
             }
 
             return ret;
