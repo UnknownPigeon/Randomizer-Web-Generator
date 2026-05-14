@@ -1205,7 +1205,6 @@ namespace TPRandomizer
             return;
         }
 
-
         private void BuildBigChestItemsSet(SharedSettings sSettings)
         {
             // Builds the set for items which should appear in big chests for CSMC. This is similar
