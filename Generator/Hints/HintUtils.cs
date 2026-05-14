@@ -650,15 +650,11 @@ namespace TPRandomizer.Hints
             if (goalsFromDungeons == null)
                 goalsFromDungeons = getGoalsBasedOnDungeons(sSettings);
 
-            bool startWithBigKeys =
-                sSettings.bigKeySettings == BigKeySettings.Anywhere
-                || sSettings.bigKeySettings == BigKeySettings.Any_Dungeon;
-
             return filterToRequiredChecksOfGoals(
                 startingRoom,
                 maybeRequiredCheckNames,
                 goalsFromDungeons,
-                startWithBigKeys
+                false
             );
         }
 
