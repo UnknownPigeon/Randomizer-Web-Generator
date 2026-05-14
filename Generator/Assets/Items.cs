@@ -1207,15 +1207,53 @@ namespace TPRandomizer
 
         private void BuildBigChestItemsSet(SharedSettings sSettings)
         {
-            // Builds the set for items which should appear in big chests for CSMC. This is
-            // essentially major items + small keys since we do not have a way of showing a
-            // different kind of chest for small keys at the moment.
-            BigChestItems = HintUtils.BuildMajorItemsSet(sSettings);
+            // Builds the set for items which should appear in big chests for CSMC. This is similar
+            // to major items with some slight differences since we have not way of showing special
+            // chests for small keys or poes.
+            HashSet<Item> bigChestItems = new(HintConstants.baseMightBeMajorItems);
+
+            if (!sSettings.shuffleRewards)
+            {
+                bigChestItems.Remove(Item.Progressive_Fused_Shadow);
+                bigChestItems.Remove(Item.Progressive_Mirror_Shard);
+            }
+
+            // Remove Poe souls from major items if they aren't required by HC or HCBK
+            // and if either npc items aren't shuffled or both jovani checks are excluded.
+            if (
+                sSettings.castleRequirements != CastleRequirements.Poe_Souls
+                && sSettings.castleBKRequirements != CastleBKRequirements.Poe_Souls
+                && (
+                    !sSettings.shuffleNpcItems
+                    || (
+                        Randomizer.Checks.CheckDict[
+                            "Jovani 20 Poe Soul Reward"
+                        ].checkStatus.Contains("Excluded")
+                        && Randomizer.Checks.CheckDict[
+                            "Jovani 60 Poe Soul Reward"
+                        ].checkStatus.Contains("Excluded")
+                    )
+                )
+            )
+            {
+                bigChestItems.Remove(Item.Poe_Soul);
+            }
+
+            if (
+                sSettings.castleRequirements != CastleRequirements.Hearts
+                && sSettings.castleBKRequirements != CastleBKRequirements.Hearts
+            )
+            {
+                bigChestItems.Remove(Item.Heart_Container);
+                bigChestItems.Remove(Item.Piece_of_Heart);
+            }
 
             // Remove big keys
-            BigChestItems.ExceptWith(DungeonBigKeys);
+            bigChestItems.ExceptWith(DungeonBigKeys);
             // Add dungeon small keys
-            BigChestItems.UnionWith(RegionSmallKeys);
+            bigChestItems.UnionWith(RegionSmallKeys);
+
+            BigChestItems = bigChestItems;
         }
 
         private void RemoveItem(Item item)
