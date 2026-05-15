@@ -1451,19 +1451,16 @@ namespace TPRandomizer
                     Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
                     || (
                         (
-                            Randomizer
-                                .Rooms
-                                .RoomDict["Lake Hylia Water Toadpoli Grotto"]
-                                .ReachedByPlaythrough
-                            || Randomizer
-                                .Rooms
-                                .RoomDict["Eldin Field Water Bomb Fish Grotto"]
-                                .ReachedByPlaythrough
+                            Randomizer.Rooms.RoomDict[
+                                "Lake Hylia Water Toadpoli Grotto"
+                            ].ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict[
+                                "Eldin Field Water Bomb Fish Grotto"
+                            ].ReachedByPlaythrough
                             || Randomizer.Rooms.RoomDict["Kakariko Graveyard"].ReachedByPlaythrough
-                            || Randomizer
-                                .Rooms
-                                .RoomDict["Outside Castle Town South Tektite Grotto"]
-                                .ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict[
+                                "Outside Castle Town South Tektite Grotto"
+                            ].ReachedByPlaythrough
                             // There's a hive above the hint sign.
                             || Randomizer.Rooms.RoomDict["Fishing Hole"].ReachedByPlaythrough
                         )
@@ -1486,10 +1483,9 @@ namespace TPRandomizer
                         && (
                             Randomizer.Rooms.RoomDict["Faron Field"].ReachedByPlaythrough
                             || Randomizer.Rooms.RoomDict["Kakariko Gorge"].ReachedByPlaythrough
-                            || Randomizer
-                                .Rooms
-                                .RoomDict["Eldin Field Bomskit Grotto"]
-                                .ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict[
+                                "Eldin Field Bomskit Grotto"
+                            ].ReachedByPlaythrough
                         )
                     )
                     // Digging for worms: You'll see weird little spots in the ground, like dirt spots,
@@ -1502,10 +1498,9 @@ namespace TPRandomizer
                             // Behind the sign that says "Fishing Hole!" next to Hena's house
                             Randomizer.Rooms.RoomDict["Fishing Hole"].ReachedByPlaythrough
                             // Right next to the entrance; across the water
-                            || Randomizer
-                                .Rooms
-                                .RoomDict["Faron Field Fishing Grotto"]
-                                .ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict[
+                                "Faron Field Fishing Grotto"
+                            ].ReachedByPlaythrough
                             // Supposedly can get from under pumpkins at night, but digging was
                             // more reliable in testing than trying to get them from under pumpkins.
                             || Randomizer.Rooms.RoomDict["Ordon Village"].ReachedByPlaythrough
@@ -1517,8 +1512,7 @@ namespace TPRandomizer
         public static bool CanCatchBaitedFish()
         {
             return (
-                    CanUse(Item.Fishing_Rod_Earring_Worm)
-                    && (CanCollectLarva() || CanCollectWorms())
+                    CanUse(Item.Progressive_Fishing_Rod) && (CanCollectLarva() || CanCollectWorms())
                 ) || (GetItemCount(Item.Progressive_Fishing_Rod) == 2);
         }
 
