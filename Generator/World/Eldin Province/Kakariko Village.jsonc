@@ -705,8 +705,8 @@
       },
       {
         "CheckName": "Kakariko Graveyard Underwater Boulder Rupee",
-        "Requirements": "(Iron_Boots or Zora_Armor) and CanUseWaterBombs",
-        "GlitchedRequirements": "(Iron_Boots or Magic_Armor or Zora_Armor) and CanUseWaterBombs"
+        "Requirements": "(Iron_Boots or Zora_Armor) and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(Iron_Boots or Magic_Armor or Zora_Armor) and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight"
       } 
     ],
     "Region": "Kakariko Village"
