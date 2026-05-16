@@ -1,11 +1,10 @@
 [
   {
     "RoomName": "South Faron Woods",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "South Faron Woods Behind Gate",
-        "Requirements": "Faron_Woods_Coro_Key or Shadow_Crystal", 
+        "Requirements": "Faron_Woods_Coro_Key or Shadow_Crystal",
         "GlitchedRequirements": "Faron_Woods_Coro_Key or Shadow_Crystal"
       },
       {
@@ -28,11 +27,10 @@
       {
         "ConnectedArea": "Faron Woods Coros House Lower",
         "Requirements": "true",
-        "GlitchedRequirements": "true" 
+        "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Coro Bottle",
         "Requirements": "((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
@@ -88,12 +86,11 @@
   },
   {
     "RoomName": "South Faron Woods Behind Gate",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "South Faron Woods",
         "Requirements": "Shadow_Crystal or Faron_Woods_Coro_Key",
-        "GlitchedRequirements": "Shadow_Crystal or Faron_Woods_Coro_Key" 
+        "GlitchedRequirements": "Shadow_Crystal or Faron_Woods_Coro_Key"
       },
       {
         "ConnectedArea": "Faron Woods Cave Southern Entrance",
@@ -105,8 +102,7 @@
   },
   {
     "RoomName": "South Faron Woods Coros Ledge",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "South Faron Woods",
         "Requirements": "true",
@@ -122,8 +118,7 @@
   },
   {
     "RoomName": "South Faron Woods Owl Statue Area",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "South Faron Woods",
         "Requirements": "CanSmash",
@@ -135,20 +130,18 @@
         "GlitchedRequirements": "CanClearForestGlitched and (Progressive_Dominion_Rod, 2) and Shadow_Crystal and CanCompleteFaronTwilight"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Faron Woods Owl Statue Sky Character",
         "Requirements": "CanClearForest and (Progressive_Dominion_Rod, 2)",
         "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) and (CanDoMapGlitch or (CanSmash and CanClearForest))"
-      }  
+      }
     ],
     "Region": "Faron Woods"
   },
   {
     "RoomName": "South Faron Woods Above Owl Statue",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "South Faron Woods Owl Statue Area",
         "Requirements": "true",
@@ -164,13 +157,12 @@
   },
   {
     "RoomName": "Faron Woods Coros House Lower",
-    "Exits":
-    [
-	  {
-		"ConnectedArea": "Faron Woods Coros House Upper",
-		"Requirements": "Shadow_Crystal",
-    "GlitchedRequirements": "Shadow_Crystal"
-	  },
+    "Exits": [
+      {
+        "ConnectedArea": "Faron Woods Coros House Upper",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
       {
         "ConnectedArea": "South Faron Woods",
         "Requirements": "true",
@@ -181,25 +173,23 @@
   },
   {
     "RoomName": "Faron Woods Coros House Upper",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Faron Woods Coros House Lower",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
-	  {
-		  "ConnectedArea": "South Faron Woods Coros Ledge",
-		  "Requirements": "true",
-      "GlitchedRequirements": "true"
-	  }
+      {
+        "ConnectedArea": "South Faron Woods Coros Ledge",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
     ],
     "Region": "Faron Woods"
   },
   {
     "RoomName": "Faron Woods Cave Southern Entrance",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "South Faron Woods Behind Gate",
         "Requirements": "true",
@@ -215,8 +205,7 @@
   },
   {
     "RoomName": "Faron Woods Cave",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Faron Woods Cave Southern Entrance",
         "Requirements": "true",
@@ -228,8 +217,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "South Faron Cave Chest",
         "Requirements": "true",
@@ -240,8 +228,7 @@
   },
   {
     "RoomName": "Mist Area Near Faron Woods Cave",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Inside Mist",
         "Requirements": "Lantern",
@@ -262,8 +249,7 @@
   },
   {
     "RoomName": "Mist Area Inside Mist",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Near Faron Woods Cave",
         "Requirements": "Lantern",
@@ -285,8 +271,7 @@
         "GlitchedRequirements": "Lantern or (Room.South_Faron_Woods and CanDoMapGlitch)" // Epona OoB in South Faron can get Epona in the mist.
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Faron Mist Stump Chest",
         "Requirements": "Lantern and CanCompletePrologue and (CanCompleteFaronTwilight or Shadow_Crystal)",
@@ -301,14 +286,13 @@
         "CheckName": "Faron Mist South Chest",
         "Requirements": "Lantern and CanCompletePrologue and (CanCompleteFaronTwilight or Shadow_Crystal)",
         "GlitchedRequirements": "((Lantern and (CanCompleteFaronTwilight or Shadow_Crystal)) or CanDoMapGlitch) and CanCompletePrologue"
-      } 
+      }
     ],
     "Region": "Faron Woods"
   },
   {
     "RoomName": "Mist Area Under Owl Statue Chest",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Inside Mist",
         "Requirements": "Lantern",
@@ -324,8 +308,7 @@
   },
   {
     "RoomName": "Mist Area Near Owl Statue Chest",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Under Owl Statue Chest",
         "Requirements": "true",
@@ -337,8 +320,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Faron Woods Owl Statue Chest",
         "Requirements": "true",
@@ -349,8 +331,7 @@
   },
   {
     "RoomName": "Mist Area Center Stump",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Inside Mist",
         "Requirements": "Lantern",
@@ -362,8 +343,7 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Faron Mist Poe",
         "Requirements": "Shadow_Crystal and CanCompletePrologue and CanCompleteFaronTwilight",
@@ -374,8 +354,7 @@
   },
   {
     "RoomName": "Mist Area Outside Faron Mist Cave",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Inside Mist",
         "Requirements": "Lantern",
@@ -391,8 +370,7 @@
   },
   {
     "RoomName": "Mist Area Near North Faron Woods",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Inside Mist",
         "Requirements": "Lantern",
@@ -413,8 +391,7 @@
   },
   {
     "RoomName": "Mist Area Near North Faron Woods Behind Gate",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Near North Faron Woods",
         "Requirements": "North_Faron_Woods_Gate_Key",
@@ -430,8 +407,7 @@
   },
   {
     "RoomName": "Faron Woods Cave Northern Entrance",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Near Faron Woods Cave",
         "Requirements": "true",
@@ -447,16 +423,14 @@
   },
   {
     "RoomName": "Mist Area Faron Mist Cave",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Outside Faron Mist Cave",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Faron Mist Cave Open Chest",
         "Requirements": "true",
@@ -472,8 +446,7 @@
   },
   {
     "RoomName": "North Faron Woods",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Mist Area Near North Faron Woods Behind Gate",
         "Requirements": "true",
@@ -490,15 +463,14 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "North Faron Woods Deku Baba Chest",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Faron Woods Golden Wolf", 
+        "CheckName": "Faron Woods Golden Wolf",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
@@ -512,8 +484,7 @@
   },
   {
     "RoomName": "North Faron Lost Woods Entrance",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lost Woods",
         "Requirements": "true",

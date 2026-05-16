@@ -143,7 +143,7 @@
         "CheckName": "Eldin Lantern Cave Poe",
         "Requirements": "Shadow_Crystal and CanBurnWebs",
         "GlitchedRequirements": "Shadow_Crystal and CanBurnWebs"
-      } 
+      }
     ],
     "Region": "Hyrule Field - Eldin Province"
   },
@@ -267,8 +267,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Goron Springwater Rush",
         // Note: this check is in the "Eldin Field Near Castle Town" room which takes
@@ -389,8 +388,7 @@
         "GlitchedRequirements": "Iron_Boots or Shadow_Crystal"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Eldin Stockcave Upper Chest",
         "Requirements": "Iron_Boots",
@@ -408,8 +406,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Eldin Stockcave Lantern Chest",
         "Requirements": "Lantern",

@@ -1,8 +1,7 @@
 [
   {
     "RoomName": "Death Mountain Near Kakariko",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -18,8 +17,7 @@
   },
   {
     "RoomName": "Death Mountain Trail",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Death Mountain Near Kakariko",
         "Requirements": "true",
@@ -31,8 +29,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Death Mountain Alcove Chest",
         "Requirements": "(CanCompleteGoronMines and (Setting.barrenDungeons equals False)) or (Progressive_Clawshot, 1)",
@@ -48,8 +45,7 @@
   },
   {
     "RoomName": "Death Mountain Volcano",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Death Mountain Trail",
         "Requirements": "true",
@@ -72,8 +68,7 @@
         "GlitchedRequirements": "CanDefeatGoron"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Death Mountain Portal",
         "Requirements": "true",
@@ -104,8 +99,7 @@
   },
   {
     "RoomName": "Death Mountain Hot Spring",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Death Mountain Volcano",
         "Requirements": "true",
@@ -121,8 +115,7 @@
   },
   {
     "RoomName": "Death Mountain Outside Sumo Hall",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Death Mountain Volcano",
         "Requirements": "true",
@@ -138,8 +131,7 @@
   },
   {
     "RoomName": "Death Mountain Elevator Lower",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Death Mountain Volcano",
         "Requirements": "true",
@@ -160,8 +152,7 @@
   },
   {
     "RoomName": "Death Mountain Sumo Hall",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Death Mountain Outside Sumo Hall",
         "Requirements": "true",
@@ -182,8 +173,7 @@
   },
   {
     "RoomName": "Death Mountain Sumo Hall Elevator",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Death Mountain Elevator Lower",
         "Requirements": "Iron_Boots",
@@ -201,8 +191,7 @@
   },
   {
     "RoomName": "Death Mountain Sumo Hall Goron Mines Tunnel",
-    "Exits":
-    [
+    "Exits": [
       {
         // Depending on settings, the Gorons can be blocking the way into the room. If this is the case, we need to make sure we can actually move the Gorons before we consider this a valid path.
         "ConnectedArea": "Death Mountain Sumo Hall",

@@ -1,8 +1,7 @@
 [
   {
     "RoomName": "Lake Hylia",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia Cave Entrance",
         "Requirements": "CanSmash and CanWarpMeteor",
@@ -44,8 +43,7 @@
         "GlitchedRequirements": "((Progressive_Sky_Book, 7) or (Setting.skipCityEntrance equals True)) and (Progressive_Clawshot, 1) and CanCompleteLanayruTwilight"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lake Hylia Underwater Chest",
         "Requirements": "Iron_Boots and CanCompleteLanayruTwilight",
@@ -106,8 +104,7 @@
   },
   {
     "RoomName": "Lake Hylia Flight By Fowl",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia",
         "Requirements": "CanCompleteLanayruTwilight",
@@ -125,7 +122,7 @@
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       }
     ],
-    "Checks":[
+    "Checks": [
       {
         "CheckName": "Outside Lanayru Spring Left Statue Chest",
         "Requirements": "CanCompleteLanayruTwilight",
@@ -176,8 +173,7 @@
   },
   {
     "RoomName": "Lake Hylia Cave Entrance",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia",
         "Requirements": "CanSmash",
@@ -193,8 +189,7 @@
   },
   {
     "RoomName": "Lake Hylia Lakebed Temple Entrance",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia",
         "Requirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (Iron_Boots and CanUseWaterBombs))",
@@ -210,16 +205,14 @@
   },
   {
     "RoomName": "Lake Hylia Lanayru Spring",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lanayru Spring Underwater Left Chest",
         "Requirements": "Iron_Boots",
@@ -280,16 +273,14 @@
   },
   {
     "RoomName": "Lake Hylia Long Cave",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia Cave Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lake Lantern Cave First Chest",
         "Requirements": "CanSmash and Lantern",
@@ -379,42 +370,38 @@
         "CheckName": "Lake Lantern Cave Final Poe",
         "Requirements": "Shadow_Crystal and CanSmash and Lantern",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
-      } 
+      }
     ],
     "Region": "Lake Hylia"
   },
   {
     "RoomName": "Lake Hylia Shell Blade Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia Flight By Fowl",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lake Hylia Shell Blade Grotto Chest",
         "Requirements": "CanDefeatShellBlade",
         "GlitchedRequirements": "CanDefeatShellBlade"
-      } 
+      }
     ],
     "Region": "Lake Hylia"
   },
   {
     "RoomName": "Lake Hylia Water Toadpoli Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lake Hylia Water Toadpoli Grotto Chest",
         "Requirements": "CanDefeatWaterToadpoli",

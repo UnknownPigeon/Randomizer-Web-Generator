@@ -1,8 +1,7 @@
 [
   {
     "RoomName": "Faron Field",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Outside Castle Town South",
         "Requirements": "CanGetHotSpringWater and Room.Outside_Castle_Town_South",
@@ -34,8 +33,7 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Faron Field Bridge Chest",
         "Requirements": "(Progressive_Clawshot, 1)",
@@ -66,16 +64,14 @@
   },
   {
     "RoomName": "Faron Field Corner Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Faron Field",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Faron Field Corner Grotto Right Chest",
         "Requirements": "true",
@@ -96,16 +92,14 @@
   },
   {
     "RoomName": "Faron Field Fishing Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Faron Field",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Catch A Greengill",
         "Requirements": "Progressive_Fishing_Rod",

@@ -1,8 +1,7 @@
 [
   {
     "RoomName": "Snowpeak Climb Lower",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Snowpeak Climb Upper",
         "Requirements": "((Setting.skipSnowpeakEntrance equals True) or (Room.Zoras_Domain and (Progressive_Fishing_Rod, 2))) and Shadow_Crystal",
@@ -14,8 +13,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Ashei Sketch",
         "Requirements": "true",
@@ -26,8 +24,7 @@
   },
   {
     "RoomName": "Snowpeak Climb Upper",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Snowpeak Climb Lower",
         "Requirements": "true",
@@ -49,8 +46,7 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Snowpeak Above Freezard Grotto Poe",
         "Requirements": "Shadow_Crystal",
@@ -71,8 +67,7 @@
   },
   {
     "RoomName": "Snowpeak Ice Keese Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Snowpeak Climb Upper",
         "Requirements": "true",
@@ -83,16 +78,14 @@
   },
   {
     "RoomName": "Snowpeak Freezard Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Snowpeak Climb Upper",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Snowpeak Freezard Grotto Chest",
         "Requirements": "Ball_and_Chain",
@@ -103,8 +96,7 @@
   },
   {
     "RoomName": "Snowpeak Summit Upper",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Snowpeak Summit Lower",
         "Requirements": "(Snowpeak_Portal or CanDefeatShadowBeast) and (((Setting.bonksDoDamage equals False) or ((Setting.bonksDoDamage equals True) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) or CanCompleteSnowpeakRuins)",
@@ -116,8 +108,7 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Snowpeak Cave Ice Lantern Chest",
         "Requirements": "Lantern and Ball_and_Chain",
@@ -238,21 +229,19 @@
   },
   {
     "RoomName": "Snowpeak Summit Lower",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Snowpeak Summit Lower Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
-	  {
-	    "ConnectedArea": "Snowpeak Summit Lower Right Door",
-		"Requirements": "true",
-    "GlitchedRequirements": "true"
-	  }
+      {
+        "ConnectedArea": "Snowpeak Summit Lower Right Door",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Snowpeak Icy Summit Poe",
         "Requirements": "Shadow_Crystal",
@@ -263,8 +252,7 @@
   },
   {
     "RoomName": "Snowpeak Summit Lower Left Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Snowpeak Ruins Left Door",
         "Requirements": "true",
@@ -276,14 +264,12 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [],
+    "Checks": [],
     "Region": "Snowpeak Province"
   },
   {
     "RoomName": "Snowpeak Summit Lower Right Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Snowpeak Ruins Right Door",
         "Requirements": "true",
@@ -295,8 +281,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [],
+    "Checks": [],
     "Region": "Snowpeak Province"
   }
 ]

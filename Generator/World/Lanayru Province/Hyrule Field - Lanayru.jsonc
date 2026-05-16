@@ -1,8 +1,7 @@
 [
   {
     "RoomName": "Lanayru Field",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lanayru Field Cave Entrance",
         "Requirements": "CanSmash",
@@ -44,8 +43,7 @@
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lanayru Field Behind Gate Underwater Chest",
         "Requirements": "Iron_Boots",
@@ -101,8 +99,7 @@
   },
   {
     "RoomName": "Lanayru Field Cave Entrance",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lanayru Field",
         "Requirements": "CanSmash",
@@ -118,8 +115,7 @@
   },
   {
     "RoomName": "Lanayru Field Behind Boulder",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lanayru Field",
         "Requirements": "CanSmash",
@@ -135,8 +131,7 @@
   },
   {
     "RoomName": "Hyrule Field Near Spinner Rails",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lanayru Field",
         "Requirements": "CanSmash",
@@ -148,8 +143,7 @@
         "GlitchedRequirements": "CanSmash"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lanayru Field Spinner Track Chest",
         "Requirements": "Spinner",
@@ -160,16 +154,14 @@
   },
   {
     "RoomName": "Lanayru Ice Puzzle Cave",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lanayru Field Cave Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lanayru Ice Block Puzzle Cave Chest",
         "Requirements": "Ball_and_Chain",
@@ -180,8 +172,7 @@
   },
   {
     "RoomName": "Lanayru Field Chu Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lanayru Field",
         "Requirements": "true",
@@ -192,16 +183,14 @@
   },
   {
     "RoomName": "Lanayru Field Skulltula Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lanayru Field",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lanayru Field Skulltula Grotto Chest",
         "Requirements": "CanDefeatSkulltula and Lantern and CanBreakWoodenDoor",
@@ -212,16 +201,14 @@
   },
   {
     "RoomName": "Lanayru Field Poe Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lanayru Field",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lanayru Field Poe Grotto Left Poe",
         "Requirements": "Shadow_Crystal",
@@ -231,14 +218,13 @@
         "CheckName": "Lanayru Field Poe Grotto Right Poe",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
-      } 
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
   {
     "RoomName": "Outside Castle Town West",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Outside Castle Town West Grotto Ledge",
         "Requirements": "(Progressive_Clawshot, 1)",
@@ -260,8 +246,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Hyrule Field Amphitheater Owl Statue Chest",
         "Requirements": "(Progressive_Dominion_Rod, 2)",
@@ -312,8 +297,7 @@
   },
   {
     "RoomName": "Outside Castle Town West Grotto Ledge",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Outside Castle Town West",
         "Requirements": "true",
@@ -329,16 +313,14 @@
   },
   {
     "RoomName": "Outside Castle Town West Helmasaur Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Outside Castle Town West Grotto Ledge",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "West Hyrule Field Helmasaur Grotto Chest",
         "Requirements": "CanDefeatHelmasaur",
@@ -349,8 +331,7 @@
   },
   {
     "RoomName": "Outside Castle Town East",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Eldin Field Near Castle Town",
         "Requirements": "true",
@@ -362,8 +343,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "East Castle Town Bridge Poe",
         "Requirements": "Shadow_Crystal",
@@ -374,8 +354,7 @@
   },
   {
     "RoomName": "Outside Castle Town South",
-    "Exits":
-    [
+    "Exits": [
       {
         // The people blocking the way in the twilight are a one-way entrance.
         "ConnectedArea": "South Castle Town Doors",
@@ -398,8 +377,7 @@
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Outside South Castle Town Tightrope Chest",
         "Requirements": "(Progressive_Clawshot, 1) and Shadow_Crystal",
@@ -444,22 +422,20 @@
         "CheckName": "Outside South Castle Town Boulder Rupee",
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
-      } 
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
   {
     "RoomName": "Outside Castle Town South Tektite Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Outside Castle Town South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Outside South Castle Town Tektite Grotto Chest",
         "Requirements": "CanDefeatTektite",
@@ -480,8 +456,7 @@
   },
   {
     "RoomName": "Lake Hylia Bridge",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia Bridge Grotto Ledge",
         "Requirements": "CanLaunchBombs and (Progressive_Clawshot, 1)",
@@ -508,8 +483,7 @@
         "GlitchedRequirements": "(Gate_Keys or Shadow_Crystal) and CanCompleteLanayruTwilight"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lake Hylia Bridge Vines Chest",
         "Requirements": "(Progressive_Clawshot, 1)",
@@ -555,8 +529,7 @@
   },
   {
     "RoomName": "Lake Hylia Bridge Grotto Ledge",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia Bridge",
         "Requirements": "true",
@@ -568,8 +541,7 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lake Hylia Bridge Cliff Chest",
         "Requirements": "true",
@@ -585,16 +557,14 @@
   },
   {
     "RoomName": "Lake Hylia Bridge Bubble Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lake Hylia Bridge Grotto Ledge",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Lake Hylia Bridge Bubble Grotto Chest",
         "Requirements": "CanDefeatBubble and CanDefeatFireBubble and CanDefeatIceBubble",

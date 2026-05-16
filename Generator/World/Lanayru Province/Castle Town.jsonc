@@ -1,8 +1,7 @@
 [
   {
     "RoomName": "Castle Town West",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Outside Castle Town West",
         "Requirements": "true",
@@ -24,8 +23,7 @@
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Charlo Donation Blessing",
         "Requirements": "CanCompleteLanayruTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
@@ -36,16 +34,14 @@
   },
   {
     "RoomName": "Castle Town STAR Game",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town West",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "STAR Prize 1",
         "Requirements": "(Progressive_Clawshot, 1)",
@@ -55,14 +51,13 @@
         "CheckName": "STAR Prize 2",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
-      } 
+      }
     ],
     "Region": "Castle Town"
   },
   {
     "RoomName": "Castle Town Center",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town West",
         "Requirements": "true",
@@ -95,7 +90,7 @@
       },
       {
         "ConnectedArea": "Castle Town Malo Mart",
-        "Requirements": "CanCompleteLanayruTwilight" ,
+        "Requirements": "CanCompleteLanayruTwilight",
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       }
     ],
@@ -103,8 +98,7 @@
   },
   {
     "RoomName": "Castle Town Goron House Left Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town Center",
         "Requirements": "true",
@@ -120,8 +114,7 @@
   },
   {
     "RoomName": "Castle Town Goron House Right Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town Center",
         "Requirements": "true",
@@ -137,8 +130,7 @@
   },
   {
     "RoomName": "Castle Town Goron House",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town Goron House Left Door",
         "Requirements": "true",
@@ -155,8 +147,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Castle Town Goron Shop Hylian Shield",
         "Requirements": "(Setting.walletSize not_equal Reduced) or Progressive_Wallet",
@@ -177,16 +168,14 @@
   },
   {
     "RoomName": "Castle Town Goron House Balcony",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town Goron House",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Castle Town Goron Shop Arrow Refill",
         "Requirements": "CanCompleteLanayruTwilight",
@@ -197,28 +186,25 @@
   },
   {
     "RoomName": "Castle Town Malo Mart",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town Center",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Castle Town Malo Mart Magic Armor",
         "Requirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village and CanBuyMagicArmor",
         "GlitchedRequirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village and CanBuyMagicArmor"
-      } 
+      }
     ],
     "Region": "Castle Town"
   },
   {
     "RoomName": "Castle Town North",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town North Behind First Door",
         "Requirements": "CanCompleteMDH",
@@ -234,8 +220,7 @@
   },
   {
     "RoomName": "Castle Town North Behind First Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town North",
         "Requirements": "CanCompleteMDH",
@@ -247,24 +232,22 @@
         "GlitchedRequirements": "CanBreakHCBarrier"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "North Castle Town Golden Wolf",
         "Requirements": "Shadow_Crystal and Room.Hidden_Village and CanCompleteMDH and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "Shadow_Crystal and Room.Hidden_Village and CanCompleteMDH and CanCompleteLanayruTwilight"
-      } 
+      }
     ],
     "Region": "Castle Town"
   },
   {
     "RoomName": "Castle Town North Inside Barrier",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town North Behind First Door",
         // Barrier is one-way.
-        "Requirements": "true", 
+        "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
@@ -277,8 +260,7 @@
   },
   {
     "RoomName": "Castle Town East",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town Center",
         "Requirements": "true",
@@ -296,12 +278,12 @@
       },
       {
         "ConnectedArea": "Castle Town Doctors Office Left Door",
-        "Requirements": "true" ,
+        "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
         "ConnectedArea": "Castle Town Doctors Office Right Door",
-        "Requirements": "true" ,
+        "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
@@ -309,8 +291,7 @@
   },
   {
     "RoomName": "Castle Town Doctors Office Balcony",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town East",
         "Requirements": "true",
@@ -322,8 +303,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Doctors Office Balcony Chest",
         "Requirements": "true",
@@ -334,8 +314,7 @@
   },
   {
     "RoomName": "Castle Town Doctors Office Left Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town East",
         "Requirements": "true",
@@ -351,8 +330,7 @@
   },
   {
     "RoomName": "Castle Town Doctors Office Right Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town East",
         "Requirements": "true",
@@ -368,8 +346,7 @@
   },
   {
     "RoomName": "Castle Town Doctors Office Entrance",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town Doctors Office Left Door",
         "Requirements": "true",
@@ -390,8 +367,7 @@
   },
   {
     "RoomName": "Castle Town Doctors Office Lower",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town Doctors Office Entrance",
         "Requirements": "Invoice or (Setting.iliaQuest equals Statue) or (Setting.iliaQuest equals Charm)",
@@ -407,8 +383,7 @@
   },
   {
     "RoomName": "Castle Town Doctors Office Upper",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town Doctors Office Lower",
         "Requirements": "true",
@@ -424,8 +399,7 @@
   },
   {
     "RoomName": "Castle Town South",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town West",
         "Requirements": "true",
@@ -472,8 +446,7 @@
   },
   {
     "RoomName": "South Castle Town Doors",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town South",
         "Requirements": "true",
@@ -489,16 +462,14 @@
   },
   {
     "RoomName": "Castle Town Agithas House",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Agitha Female Ant Reward",
         "Requirements": "Female_Ant",
@@ -565,7 +536,7 @@
         "GlitchedRequirements": "Male_Ant"
       },
       {
-        "CheckName":  "Agitha Male Beetle Reward",
+        "CheckName": "Agitha Male Beetle Reward",
         "Requirements": "Male_Beetle",
         "GlitchedRequirements": "Male_Beetle"
       },
@@ -624,8 +595,7 @@
   },
   {
     "RoomName": "Castle Town Seer House",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town South",
         "Requirements": "true",
@@ -636,8 +606,7 @@
   },
   {
     "RoomName": "Castle Town Jovanis House",
-    "Exits":
-    [
+    "Exits": [
       {
         // The door and the dig spot lead to the exact same entrance, so there technically is only one way out, which is always accessible.
         "ConnectedArea": "Castle Town South",
@@ -645,8 +614,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Jovani House Poe",
         "Requirements": "Shadow_Crystal",
@@ -661,22 +629,20 @@
         "CheckName": "Jovani 60 Poe Soul Reward",
         "Requirements": "(Poe_Soul, 60)",
         "GlitchedRequirements": "(Poe_Soul, 60)"
-      } 
+      }
     ],
     "Region": "Castle Town"
   },
   {
     "RoomName": "Castle Town Telmas Bar",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Castle Town South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Telma Invoice",
         "Requirements": "Renados_Letter and CanCompleteLanayruTwilight",

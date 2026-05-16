@@ -1,10 +1,9 @@
 [
   {
     "RoomName": "Gerudo Desert",
-    "Exits":
-    [
+    "Exits": [
       {
-        // Whenever portals are checks, this logic will hold up. If the player starts with the portal, that logic is handled elsewhere. 
+        // Whenever portals are checks, this logic will hold up. If the player starts with the portal, that logic is handled elsewhere.
         "ConnectedArea": "Gerudo Desert Cave of Ordeals Plateau",
         "Requirements": "(Progressive_Clawshot, 1) and CanDefeatShadowBeast",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanDefeatShadowBeast"
@@ -20,8 +19,7 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Gerudo Desert Peahat Ledge Chest",
         "Requirements": "(Progressive_Clawshot, 1)",
@@ -72,13 +70,12 @@
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       }
-     ],
+    ],
     "Region": "Gerudo Desert"
   },
   {
     "RoomName": "Gerudo Desert Cave of Ordeals Plateau",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Gerudo Desert",
         "Requirements": "true",
@@ -90,8 +87,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Gerudo Desert Poe Above Cave of Ordeals",
         "Requirements": "Shadow_Crystal",
@@ -101,14 +97,13 @@
         "CheckName": "Gerudo Desert Portal",
         "Requirements": "CanDefeatShadowBeast",
         "GlitchedRequirements": "CanDefeatShadowBeast"
-      } 
+      }
     ],
     "Region": "Gerudo Desert"
   },
   {
     "RoomName": "Gerudo Desert Basin",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Gerudo Desert",
         "Requirements": "CanDefeatBulblin",
@@ -161,8 +156,7 @@
   },
   {
     "RoomName": "Gerudo Desert North East Ledge",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Gerudo Desert Basin",
         "Requirements": "true",
@@ -174,8 +168,7 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Gerudo Desert North Peahat Poe",
         "Requirements": "Shadow_Crystal",
@@ -186,8 +179,7 @@
   },
   {
     "RoomName": "Gerudo Desert Outside Bulblin Camp",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Gerudo Desert Basin",
         "Requirements": "Room.Gerudo_Desert_Basin and CanDefeatBulblin",
@@ -199,8 +191,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Gerudo Desert North Small Chest Before Bulblin Camp",
         "Requirements": "true",
@@ -221,16 +212,14 @@
   },
   {
     "RoomName": "Gerudo Desert Skulltula Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Gerudo Desert",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Gerudo Desert Skulltula Grotto Chest",
         "Requirements": "CanDefeatSkulltula",
@@ -241,8 +230,7 @@
   },
   {
     "RoomName": "Gerudo Desert Chu Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Gerudo Desert Basin",
         "Requirements": "true",
@@ -253,16 +241,14 @@
   },
   {
     "RoomName": "Gerudo Desert Rock Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Gerudo Desert North East Ledge",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Gerudo Desert Rock Grotto Lantern Chest",
         "Requirements": "CanSmash and Lantern",
@@ -277,14 +263,13 @@
         "CheckName": "Gerudo Desert Rock Grotto Second Poe",
         "Requirements": "Shadow_Crystal and CanSmash",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
-      } 
+      }
     ],
     "Region": "Gerudo Desert"
   },
   {
     "RoomName": "Bulblin Camp",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Gerudo Desert Outside Bulblin Camp",
         "Requirements": "true",
@@ -296,8 +281,7 @@
         "GlitchedRequirements": "(CanDefeatKingBulblinDesert and (Gerudo_Desert_Bulblin_Camp_Key or ((CanDoMapGlitch and HasSword or CanDoLJA)))) or (Setting.skipArbitersEntrance equals True)"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Bulblin Camp First Chest Under Tower At Entrance",
         "Requirements": "true",
@@ -328,8 +312,7 @@
   },
   {
     "RoomName": "Outside Arbiters Grounds",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Bulblin Camp",
         "Requirements": "true",
@@ -341,8 +324,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Outside Arbiters Grounds Lantern Chest",
         "Requirements": "Lantern",
@@ -358,8 +340,7 @@
   },
   {
     "RoomName": "Mirror Chamber Lower",
-    "Exits":
-    [
+    "Exits": [
       {
         // Dynamic logic for this connection can be found in EntranceRando.cs
         "ConnectedArea": "Arbiters Grounds Boss Room",
@@ -376,8 +357,7 @@
   },
   {
     "RoomName": "Mirror Chamber Upper",
-    "Exits":
-    [
+    "Exits": [
       {
         // This is a temporary requirement since eventually whenever portals are actually checks, having the portal won't get rid of the Shadow beasts.
         "ConnectedArea": "Mirror Chamber Lower",
@@ -391,8 +371,7 @@
         "GlitchedRequirements": "(CanDefeatShadowBeast or (Shadow_Crystal and Mirror_Chamber_Portal)) and ((Setting.palaceRequirements equals Open) or ((Setting.palaceRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.palaceRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 4)) or ((Setting.palaceRequirements equals Vanilla) and CanCompleteCityinTheSky))"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Mirror Chamber Portal",
         "Requirements": "CanDefeatShadowBeast",
@@ -403,8 +382,7 @@
   },
   {
     "RoomName": "Mirror Chamber Portal",
-    "Exits":
-    [
+    "Exits": [
       {
         // This is a temporary requirement since eventually whenever portals are actually checks, having the portal won't get rid of the Shadow beasts.
         "ConnectedArea": "Mirror Chamber Upper",

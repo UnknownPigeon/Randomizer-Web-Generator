@@ -1,8 +1,7 @@
 [
   {
     "RoomName": "Lower Kakariko Village",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "((CanCompleteGoronMines) or CanSmash) and CanCompleteEldinTwilight",
@@ -79,8 +78,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Eldin Spring Underwater Chest",
         "Requirements": "CanSmash and Iron_Boots",
@@ -142,8 +140,7 @@
   },
   {
     "RoomName": "Upper Kakariko Village",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -170,8 +167,7 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Kakariko Village Bomb Shop Poe",
         "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
@@ -186,14 +182,13 @@
         "CheckName": "Kakariko Watchtower Alcove Chest",
         "Requirements": "CanSmash and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(CanSmash and CanCompleteEldinTwilight) or Shadow_Crystal"
-      }  
+      }
     ],
     "Region": "Kakariko Village"
   },
   {
     "RoomName": "Kakariko Top of Watchtower",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "true",
@@ -205,20 +200,18 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Talo Sharpshooting",
         "Requirements": "CanCompleteGoronMines and (Progressive_Bow, 1) and CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanCompleteGoronMines and (Progressive_Bow, 1) and CanCompleteEldinTwilight"
-      }  
+      }
     ],
     "Region": "Kakariko Village"
   },
   {
     "RoomName": "Kakariko Village Behind Gate",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "Gate_Keys or CanCompleteEldinTwilight", // or access to epona
@@ -234,8 +227,7 @@
   },
   {
     "RoomName": "Kakariko Renados Sanctuary Front Left Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -251,8 +243,7 @@
   },
   {
     "RoomName": "Kakariko Renados Sanctuary Front Right Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -268,8 +259,7 @@
   },
   {
     "RoomName": "Kakariko Renados Sanctuary Back Left Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -285,8 +275,7 @@
   },
   {
     "RoomName": "Kakariko Renados Sanctuary Back Right Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -302,8 +291,7 @@
   },
   {
     "RoomName": "Kakariko Renados Sanctuary",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Kakariko Renados Sanctuary Front Left Door",
         "Requirements": "true",
@@ -323,15 +311,14 @@
         "ConnectedArea": "Kakariko Renados Sanctuary Back Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
-      },     
+      },
       {
         "ConnectedArea": "Kakariko Renados Sanctuary Basement",
         "Requirements": "true",
         "GlitchedRequirements": "true"
-    }
+      }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Renados Letter",
         "Requirements": "(CanCompleteTempleofTime or (Setting.iliaQuest not_equal Vanilla)) and CanCompleteEldinTwilight",
@@ -347,36 +334,32 @@
   },
   {
     "RoomName": "Kakariko Renados Sanctuary Basement",
-    "Exits":
-    [
-        {
-            "ConnectedArea": "Kakariko Renados Sanctuary",
-            "Requirements": "true",
-            "GlitchedRequirements": "true"
-        }
+    "Exits": [
+      {
+        "ConnectedArea": "Kakariko Renados Sanctuary",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Shad Dominion Rod",
         "Requirements": "Progressive_Sky_Book and CanCompleteEldinTwilight",
         "GlitchedRequirements": "Progressive_Sky_Book and CanCompleteEldinTwilight"
-      }  
+      }
     ],
     "Region": "Kakariko Village"
-},
+  },
   {
     "RoomName": "Kakariko Malo Mart",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Kakariko Village Malo Mart Hylian Shield",
         "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
@@ -396,14 +379,13 @@
         "CheckName": "Kakariko Village Malo Mart Wooden Shield",
         "Requirements": "CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanCompleteEldinTwilight"
-      } 
+      }
     ],
     "Region": "Kakariko Village"
   },
   {
     "RoomName": "Kakariko Elde Inn Left Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -419,8 +401,7 @@
   },
   {
     "RoomName": "Kakariko Elde Inn Right Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -436,8 +417,7 @@
   },
   {
     "RoomName": "Kakariko Elde Inn",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Kakariko Elde Inn Left Door",
         "Requirements": "true",
@@ -449,20 +429,18 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Kakariko Inn Chest",
         "Requirements": "true",
         "GlitchedRequirements": "true"
-      } 
+      }
     ],
     "Region": "Kakariko Village"
   },
   {
     "RoomName": "Kakariko Bug House Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -478,8 +456,7 @@
   },
   {
     "RoomName": "Kakariko Bug House Ceiling Hole",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Kakariko Bug House",
         "Requirements": "true",
@@ -495,8 +472,7 @@
   },
   {
     "RoomName": "Kakariko Bug House",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Kakariko Bug House Door",
         "Requirements": "true",
@@ -508,20 +484,18 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Kakariko Village Female Ant",
         "Requirements": "CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanCompleteEldinTwilight"
-      } 
+      }
     ],
     "Region": "Kakariko Village"
   },
   {
     "RoomName": "Kakariko Barnes Bomb Shop Lower",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -533,8 +507,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-	  [
+    "Checks": [
       {
         "CheckName": "Barnes Bomb Bag",
         "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
@@ -545,8 +518,7 @@
   },
   {
     "RoomName": "Kakariko Barnes Bomb Shop Upper",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "true",
@@ -562,8 +534,7 @@
   },
   {
     "RoomName": "Kakariko Watchtower Lower Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "true",
@@ -579,8 +550,7 @@
   },
   {
     "RoomName": "Kakariko Watchtower Dig Spot",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "Shadow_Crystal",
@@ -596,8 +566,7 @@
   },
   {
     "RoomName": "Kakariko Watchtower Upper Door",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Kakariko Top of Watchtower",
         "Requirements": "true",
@@ -613,8 +582,7 @@
   },
   {
     "RoomName": "Kakariko Watchtower",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Kakariko Watchtower Lower Door",
         "Requirements": "true",
@@ -631,8 +599,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [    
+    "Checks": [
       {
         "CheckName": "Kakariko Watchtower Chest",
         "Requirements": "true",
@@ -643,8 +610,7 @@
   },
   {
     "RoomName": "Kakariko Graveyard",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true",
@@ -656,8 +622,7 @@
         "GlitchedRequirements": "(HasHeavyMod and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight) or ((HasHeavyMod or Zora_Armor) and ((HasBombs and (HasSword or Spinner)) or CanDoLJA or CanDoMoonBoots))"
       }
     ],
-    "Checks":
-    [ 
+    "Checks": [
       {
         "CheckName": "Kakariko Graveyard Lantern Chest",
         "Requirements": "Lantern",
@@ -707,7 +672,7 @@
         "CheckName": "Kakariko Graveyard Underwater Boulder Rupee",
         "Requirements": "(Iron_Boots or Zora_Armor) and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(Iron_Boots or Magic_Armor or Zora_Armor) and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight"
-      } 
+      }
     ],
     "Region": "Kakariko Village"
   }

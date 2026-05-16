@@ -29,8 +29,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Wooden Sword Chest",
         "Requirements": "true",
@@ -200,8 +199,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Ordon Cat Rescue",
         "Requirements": "Room.Ordon_Village and (Progressive_Fishing_Rod, 1) and CanCompleteGoats1",
@@ -245,8 +243,7 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Ordon Shield",
         "Requirements": "(((Setting.faronTwilightCleared equals False) and CanCompletePrologue) or ((Setting.faronTwilightCleared equals True) and Shadow_Crystal)) and ((Setting.bonksDoDamage equals False) or ((Setting.bonksDoDamage equals True) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairies)))",
@@ -264,8 +261,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Ordon Sword",
         "Requirements": "CanCompletePrologue or (Setting.faronTwilightCleared equals True)",
@@ -320,8 +316,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Wrestling With Bo",
         "Requirements": "true",
@@ -360,8 +355,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Herding Goats Reward",
         "Requirements": "CanCompletePrologue and CanCompleteGoats1",
@@ -395,8 +389,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Ordon Ranch Grotto Lantern Chest",
         "Requirements": "Lantern",
@@ -420,8 +413,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Ordon Spring Golden Wolf",
         "Requirements": "Shadow_Crystal and Room.Death_Mountain_Trail and CanCompletePrologue and CanCompleteFaronTwilight",

@@ -1,8 +1,7 @@
 [
   {
     "RoomName": "Lost Woods",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lost Woods Lower Battle Arena",
         "Requirements": "(CanDefeatSkullKid and Shadow_Crystal) or (Setting.skipGroveEntrance equals True)",
@@ -19,8 +18,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": 
-    [
+    "Checks": [
       {
         "CheckName": "Lost Woods Lantern Chest",
         "Requirements": "Lantern and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))",
@@ -51,8 +49,7 @@
   },
   {
     "RoomName": "Lost Woods Lower Battle Arena",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lost Woods",
         "Requirements": "true",
@@ -69,8 +66,7 @@
         "GlitchedRequirements": "CanSmash and Shadow_Crystal"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Sacred Grove Spinner Chest",
         "Requirements": "Spinner",
@@ -80,14 +76,13 @@
         "CheckName": "Lost Woods Boulder Poe",
         "Requirements": "Shadow_Crystal and CanSmash",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
-      } 
+      }
     ],
     "Region": "Sacred Grove"
   },
   {
     "RoomName": "Lost Woods Upper Battle Arena",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Sacred Grove Before Block",
         "Requirements": "CanDefeatSkullKid or (Setting.skipGroveEntrance equals True)",
@@ -98,16 +93,14 @@
   },
   {
     "RoomName": "Lost Woods Baba Serpent Grotto",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lost Woods Lower Battle Arena",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Sacred Grove Baba Serpent Grotto Chest",
         "Requirements": "CanDefeatBabaSerpent and CanKnockDownHangingBaba",
@@ -118,8 +111,7 @@
   },
   {
     "RoomName": "Sacred Grove Before Block",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lost Woods Upper Battle Arena",
         "Requirements": "true",
@@ -135,8 +127,7 @@
   },
   {
     "RoomName": "Sacred Grove Upper",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Sacred Grove Lower",
         "Requirements": "true",
@@ -152,8 +143,7 @@
   },
   {
     "RoomName": "Sacred Grove Lower",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Lost Woods Lower Battle Arena",
         "Requirements": "true",
@@ -165,8 +155,7 @@
         "GlitchedRequirements": "Room.Sacred_Grove_Before_Block or (Setting.skipGroveEntrance equals True) or CanDoJSMoonBoots"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Sacred Grove Male Snail",
         "Requirements": "(Progressive_Clawshot, 1) or Boomerang",
@@ -197,8 +186,7 @@
   },
   {
     "RoomName": "Sacred Grove Past",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Sacred Grove Past Behind Window",
         "Requirements": "CanStrikePedestal",
@@ -210,8 +198,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
       {
         "CheckName": "Sacred Grove Past Owl Statue Chest",
         "Requirements": "(Progressive_Dominion_Rod, 1)",
@@ -232,8 +219,7 @@
   },
   {
     "RoomName": "Sacred Grove Past Behind Window",
-    "Exits":
-    [
+    "Exits": [
       {
         "ConnectedArea": "Sacred Grove Past",
         "Requirements": "true",
