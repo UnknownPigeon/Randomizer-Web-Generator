@@ -120,8 +120,8 @@
           <button id="dungeonSettingsTabBtn" class="tablinks">
             Dungeon Settings
           </button>
-          <button id="excludedChecksTabBtn" class="tablinks">
-            Excluded Checks
+          <button id="detailedLogicTabBtn" class="tablinks">
+            Detailed Logic
           </button>
           <button id="startingInventoryTabBtn" class="tablinks">
             Starting Inventory
@@ -1811,19 +1811,35 @@
           </fieldset>
         </div>
 
-        <div id="excludedChecksTab" class="tabcontent">
-          <fieldset class="checkboxFieldset">
-            <legend>Excluded Checks</legend>
-            <ul
-              id="baseExcludedChecksListbox"
-              multiple="multiple"
-              size="10"
-              width="20%"
-              data-tooltip-text="Any checks selected will be excluded, meaning that they cannot contain important items. Please note that settings take priority, so if a check is excluded, but a setting has the check set to be vanilla, it will be vanilla.&#0010;"
-            >
-              <!-- CHECK_IDS -->
-            </ul>
-          </fieldset>
+        <div id="detailedLogicTab" class="tabcontent">
+          <div class="tabColumn">
+            <fieldset class="checkboxFieldset">
+              <legend>Excluded Checks</legend>
+              <ul
+                id="baseExcludedChecksListbox"
+                multiple="multiple"
+                size="10"
+                width="20%"
+                data-tooltip-text="Any checks selected will be excluded, meaning that they cannot contain important items. Please note that settings take priority, so if a check is excluded, but a setting has the check set to be vanilla, it will be vanilla.&#0010;"
+              >
+                <!-- CHECK_IDS -->
+              </ul>
+            </fieldset>
+          </div>
+          <div class="tabColumn">
+            <fieldset class="checkboxFieldset">
+              <legend>Logical Tricks</legend>
+              <ul
+                id="logicalTricksListbox"
+                multiple="multiple"
+                size="10"
+                width="20%"
+                data-tooltip-text="Any checks selected will be excluded, meaning that they cannot contain important items. Please note that settings take priority, so if a check is excluded, but a setting has the check set to be vanilla, it will be vanilla.&#0010;"
+              >
+                <!-- TRICK_IDS -->
+              </ul>
+            </fieldset>
+          </div>
         </div>
 
         <div id="startingInventoryTab" class="tabcontent">

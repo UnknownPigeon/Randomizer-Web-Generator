@@ -277,6 +277,26 @@ namespace TPRandomizer.Util
             return list;
         }
 
+        public List<string> NextLogicalTricksList()
+        {
+            List<string> list = new();
+
+            while (true)
+            {
+                int trickIdNum = NextInt(10);
+                if (trickIdNum >= 0 && trickIdNum < 0x3FF)
+                {
+                    list.Add(LogicFunctions.listOfTricks[trickIdNum]);
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return list;
+        }
+
         public UInt16 NextVlq16()
         {
             if (done || bits.Length < currentIndex + 4)

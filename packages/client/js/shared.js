@@ -268,6 +268,26 @@
     };
   }
 
+  function genLogicalTricksBits() {
+    let bits = '';
+
+    $('#logicalTricksListbox')
+      .find('input[type="checkbox"]')
+      .each(function () {
+        if ($(this).prop('checked')) {
+          const trickId = parseInt($(this).attr('data-trickId'), 10);
+          bits += numToPaddedBits(trickId, 10);
+        }
+      });
+
+    bits += '1111111111';
+
+    return {
+      type: RawSettingType.bitString,
+      bitString: bits,
+    };
+  }
+
   function genPlandoBits() {
     let bits = '';
     $('.plandoListItem').each(function () {
@@ -505,6 +525,7 @@
 
     values.push(genStartingItemsBits());
     values.push(genExcludedChecksBits());
+    values.push(genLogicalTricksBits());
     values.push(genPlandoBits());
 
     return encodeSettings(sSettingsVersion, 's', values);
@@ -1119,6 +1140,11 @@
 
     const numCheckIdBits = version >= 6 ? 10 : 9;
     res.excludedChecks = processor.nextEolList(numCheckIdBits);
+    if (version >= 7) {
+      res.logicalTricks = processor.nextEolList(10);
+    } else {
+      res.logicalTricks = [];
+    }
 
     if (version >= 5) {
       res.plando = [];

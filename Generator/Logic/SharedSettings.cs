@@ -112,6 +112,7 @@ namespace TPRandomizer
         public bool shuffleGrottoEntrances { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
+        public List<string> logicalTricks { get; set; }
         public List<(string, Item)> plandoChecks { get; set; }
 
         public SharedSettings() { }
@@ -218,6 +219,7 @@ namespace TPRandomizer
             startingItems = processor.NextItemList();
             startingItems.Sort();
             excludedChecks = processor.NextExcludedChecksList();
+            logicalTricks = processor.NextLogicalTricksList();
             // StringComparer is needed because the default sort order is
             // different on Linux and Windows
             excludedChecks.Sort(StringComparer.Ordinal);

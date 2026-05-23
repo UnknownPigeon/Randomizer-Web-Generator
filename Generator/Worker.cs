@@ -54,6 +54,11 @@ namespace TPRandomizer
                         JsonConvert.SerializeObject(CheckIdClass.GetUiNameToIdNumDict())
                     );
                     break;
+                case "print_tricks_for_ui":
+                    Console.WriteLine(
+                        JsonConvert.SerializeObject(LogicFunctions.generateTrickList())
+                    );
+                    break;
                 case "print_seed_gen_results":
                 {
                     // seedId

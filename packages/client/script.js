@@ -384,7 +384,7 @@ function initTabButtons() {
   [
     'randomizationSettingsTab',
     'gameplaySettingsTab',
-    'excludedChecksTab',
+    'detailedLogicTab',
     'startingInventoryTab',
     'plandoTab',
     'dungeonSettingsTab',
@@ -630,6 +630,19 @@ for (
 ) {
   document
     .getElementById('baseExcludedChecksListbox')
+    .getElementsByTagName('input')
+    [j].addEventListener('click', setSettingsString);
+}
+
+for (
+  var j = 0;
+  j <
+  document.getElementById('logicalTricksListbox').getElementsByTagName('input')
+    .length;
+  j++
+) {
+  document
+    .getElementById('logicalTricksListbox')
     .getElementsByTagName('input')
     [j].addEventListener('click', setSettingsString);
 }
@@ -1507,6 +1520,26 @@ function genExcludedChecksBits() {
     .each(function () {
       if ($(this).prop('checked')) {
         const itemId = parseInt($(this).attr('data-checkId'), 10);
+        bits += toPaddedBits(itemId, 9);
+      }
+    });
+
+  bits += '111111111';
+
+  return {
+    type: RawSettingType.bitString,
+    bitString: bits,
+  };
+}
+
+function genlogicalTricksBits() {
+  let bits = '';
+
+  $('#logicalTricksListbox')
+    .find('input[type="checkbox"]')
+    .each(function () {
+      if ($(this).prop('checked')) {
+        const itemId = parseInt($(this).attr('data-trickId'), 10);
         bits += toPaddedBits(itemId, 9);
       }
     });
@@ -2397,7 +2430,7 @@ function populateSSettings(s) {
   window.tpr.shared.uncheckCheckboxes([
     'randomizationSettingsTab',
     'gameplaySettingsTab',
-    'excludedChecksTab',
+    'detailedLogicTab',
     'startingInventoryTab',
     'dungeonSettingsTab',
   ]);
@@ -2509,7 +2542,14 @@ function populateSSettings(s) {
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {
     $excludedChecksParent
-      .find(`input[data-checkid="${checkNumId}"`)
+      .find(`input[data-checkId="${checkNumId}"`)
+      .prop('checked', true);
+  });
+
+  const $logicalTricksParent = $('#logicalTricksListbox');
+  s.logicalTricks.forEach((logicalTrickID) => {
+    $logicalTricksParent
+      .find(`input[data-trickId="${logicalTrickID}"`)
       .prop('checked', true);
   });
 
