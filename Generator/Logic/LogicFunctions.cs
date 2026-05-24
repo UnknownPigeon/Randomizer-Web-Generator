@@ -2648,7 +2648,7 @@ namespace TPRandomizer
                 "Defeat Shadow Beasts Without MDH",
                 "Temple of Time Activate Crystal Switches With Clawshot",
                 "City in the Sky Central Outside Ledge Chest With Clawshot",
-                "Lake Hylia Lantern Cave Without Lantern",
+                "Lake Lantern Cave Without Lantern",
                 "Eldin Lantern Cave Without Lantern",
                 "Star 1 Without Clawshot",
                 "Star 2 Without Double Clawshot",
