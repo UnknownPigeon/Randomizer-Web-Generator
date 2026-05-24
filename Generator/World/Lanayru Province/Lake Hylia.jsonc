@@ -283,27 +283,27 @@
     "Checks": [
       {
         "CheckName": "Lake Lantern Cave First Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Second Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Third Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Fourth Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Fifth Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
@@ -313,42 +313,42 @@
       },
       {
         "CheckName": "Lake Lantern Cave Seventh Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Eighth Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Ninth Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Tenth Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Eleventh Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Twelfth Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Thirteenth Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Fourteenth Chest",
-        "Requirements": "CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
@@ -358,17 +358,17 @@
       },
       {
         "CheckName": "Lake Lantern Cave First Poe",
-        "Requirements": "Shadow_Crystal and CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "Shadow_Crystal and CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Second Poe",
-        "Requirements": "Shadow_Crystal and CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "Shadow_Crystal and CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
       },
       {
         "CheckName": "Lake Lantern Cave Final Poe",
-        "Requirements": "Shadow_Crystal and CanSmash and (Lantern or Trick.Lake_Lantern_Cave_Without_Lantern)",
+        "Requirements": "Shadow_Crystal and CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
       }
     ],

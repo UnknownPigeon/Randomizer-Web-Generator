@@ -110,7 +110,7 @@ namespace TPRandomizer
             public Trick(string trick) => TrickName = trick;
 
             public override bool Evaluate() =>
-                Randomizer.SSettings.logicalTricks.Contains(TrickName);
+                Randomizer.SSettings.logicalTricks.Values.Contains(TrickName);
         }
 
         public class Conjunction : LogicAST
@@ -213,7 +213,7 @@ namespace TPRandomizer
                 }
                 else if ((m = Re(trickRegex, ref expression)) != null)
                 {
-                    thisNode = new AST.Trick(m.Groups[1].Value.Replace('_', ' '));
+                    thisNode = new AST.Trick(m.Groups[1].Value);
                 }
                 else if (expression.StartsWith('('))
                 {

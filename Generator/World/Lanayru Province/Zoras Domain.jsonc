@@ -179,11 +179,11 @@
         "GlitchedRequirements": "true"
       },
       {
-        // Glitchless exptects that you can get the sinking lure since the fish is much easier to catch with it.
+        // Glitchless exptects that you can get the sinking lure since the fish is much easier to catch with it. Sinking Lure requires Coral Earring
         // Glitched expects you to have access to rollgoal to get the frog lure.
         // Also you need access to fishing hole to change the season to summer.
         "CheckName": "Catch The Legendary Hylian Loach",
-        "Requirements": "Room.Fishing_Hole and Progressive_Fishing_Rod",
+        "Requirements": "Room.Fishing_Hole and (Progressive_Fishing_Rod, 2)",
         "GlitchedRequirements": "Room.Fishing_Hole and Room.Fishing_Hole_House"
       }
     ],

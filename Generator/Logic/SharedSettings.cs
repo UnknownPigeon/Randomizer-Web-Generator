@@ -112,7 +112,7 @@ namespace TPRandomizer
         public bool shuffleGrottoEntrances { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
-        public List<string> logicalTricks { get; set; }
+        public Dictionary<string, string> logicalTricks { get; set; }
         public List<(string, Item)> plandoChecks { get; set; }
 
         public SharedSettings() { }

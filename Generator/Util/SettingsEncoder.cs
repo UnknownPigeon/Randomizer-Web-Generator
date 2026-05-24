@@ -2,6 +2,7 @@ namespace TPRandomizer.Util
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using TPRandomizer.Assets.CLR0;
 
     public class SettingsEncoder
@@ -277,16 +278,17 @@ namespace TPRandomizer.Util
             return list;
         }
 
-        public List<string> NextLogicalTricksList()
+        public Dictionary<string, string> NextLogicalTricksList()
         {
-            List<string> list = new();
+            Dictionary<string, string> list = new();
+            List<string> tricks = LogicTricks.listOfTricks.Keys.ToList();
 
             while (true)
             {
                 int trickIdNum = NextInt(10);
                 if (trickIdNum >= 0 && trickIdNum < 0x3FF)
                 {
-                    list.Add(LogicFunctions.listOfTricks[trickIdNum]);
+                    list[tricks[trickIdNum]] = LogicTricks.listOfTricks[tricks[trickIdNum]];
                 }
                 else
                 {
