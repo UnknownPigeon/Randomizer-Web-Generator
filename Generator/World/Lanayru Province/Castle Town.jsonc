@@ -44,13 +44,13 @@
     "Checks": [
       {
         "CheckName": "STAR Prize 1",
-        "Requirements": "(Progressive_Clawshot, 1)",
+        "Requirements": "(Progressive_Clawshot, 1) or Trick.star_1_without_claw",
         "GlitchedRequirements": "(Progressive_Clawshot, 1)"
       },
       {
         "CheckName": "STAR Prize 2",
-        "Requirements": "(Progressive_Clawshot, 2)",
-        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+        "Requirements": "(Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.star_2_without_2_claws)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
       }
     ],
     "Region": "Castle Town"

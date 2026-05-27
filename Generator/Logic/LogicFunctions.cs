@@ -784,7 +784,11 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanDefeatShadowBeast()
         {
-            return HasSword() || (CanUse(Item.Shadow_Crystal) && CanMidnaCharge());
+            return HasSword()
+                || (
+                    CanUse(Item.Shadow_Crystal)
+                    && (CanMidnaCharge() || LogicTricks.isTrickEnabled("shadow_beasts_without_mdh"))
+                );
         }
 
         /// <summary>
@@ -1030,7 +1034,7 @@ namespace TPRandomizer
                 || CanUse(Item.Ball_and_Chain)
                 || CanUse(Item.Progressive_Bow)
                 || (HasShield() && GetItemCount(Item.Progressive_Hidden_Skill) >= 2)
-                || CanDoDifficultCombat() && (CanUse(Item.Shadow_Crystal))
+                || CanDoDifficultCombat() && CanUse(Item.Shadow_Crystal)
             );
         }
 
@@ -1403,7 +1407,11 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanBurnWebs()
         {
-            return CanUse(Item.Lantern) || HasBombs() || CanUse(Item.Ball_and_Chain);
+            return CanUse(Item.Lantern)
+                || (
+                    (HasBombs() || CanUse(Item.Ball_and_Chain))
+                    && LogicTricks.isTrickEnabled("can_smash_webs")
+                );
         }
 
         public static bool CanDestroyWebsWithoutLantern()
@@ -1536,7 +1544,12 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanLaunchBombs()
         {
-            return ((CanUse(Item.Boomerang) || CanUse(Item.Progressive_Bow)) && HasBombs());
+            return (
+                    (
+                        CanUse(Item.Boomerang)
+                        && LogicTricks.isTrickEnabled("launch_bombs_with_boomerang")
+                    ) || CanUse(Item.Progressive_Bow)
+                ) && HasBombs();
         }
 
         /// <summary>
@@ -2335,7 +2348,8 @@ namespace TPRandomizer
         /// </summary>
         public static bool HasHeavyMod()
         {
-            return CanUse(Item.Iron_Boots) || CanUse(Item.Magic_Armor);
+            return CanUse(Item.Iron_Boots)
+                || (CanUse(Item.Magic_Armor) && LogicTricks.isTrickEnabled("drained_MA_as_irons"));
         }
 
         /// <summary>

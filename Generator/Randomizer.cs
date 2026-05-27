@@ -976,7 +976,6 @@ namespace TPRandomizer
 
             List<Room> playthroughGraph = new();
             List<Room> availableBaseRooms = new();
-            Room availableRoom;
 
             int availableRooms = 1;
             List<Room> roomsToExplore = new();

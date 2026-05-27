@@ -9,8 +9,8 @@
       },
       {
         "ConnectedArea": "Death Mountain Trail",
-        "Requirements": "Iron_Boots or CanCompleteGoronMines",
-        "GlitchedRequirements": "Iron_Boots or CanCompleteGoronMines"
+        "Requirements": "(Iron_Boots or Trick.dm_climb_without_irons) or CanCompleteGoronMines",
+        "GlitchedRequirements": "true"
       }
     ],
     "Region": "Death Mountain"
@@ -53,7 +53,7 @@
       },
       {
         "ConnectedArea": "Death Mountain Outside Sumo Hall",
-        "Requirements": "Iron_Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
+        "Requirements": "(Iron_Boots or (Trick.geysers_shield_skip and HasShield)) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(Iron_Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {
@@ -76,17 +76,17 @@
       },
       {
         "CheckName": "Death Mountain Volcano Ledge Rupee 1",
-        "Requirements": "Iron_Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
+        "Requirements": "(Iron_Boots or (Trick.geysers_shield_skip and HasShield)) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(Iron_Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Death Mountain Volcano Ledge Rupee 2",
-        "Requirements": "Iron_Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
+        "Requirements": "(Iron_Boots or (Trick.geysers_shield_skip and HasShield)) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(Iron_Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Death Mountain Volcano Ledge Rupee 3",
-        "Requirements": "Iron_Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
+        "Requirements": "(Iron_Boots or (Trick.geysers_shield_skip and HasShield)) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(Iron_Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {

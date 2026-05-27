@@ -294,7 +294,7 @@
       },
       {
         "CheckName": "Bulblin Camp Roasted Boar",
-        "Requirements": "HasDamagingItem",
+        "Requirements": "HasDamagingItem or (Iron_Boots and Trick.camp_boar_with_irons)",
         "GlitchedRequirements": "HasDamagingItem"
       },
       {

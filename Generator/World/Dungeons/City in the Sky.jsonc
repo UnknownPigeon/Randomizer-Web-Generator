@@ -37,8 +37,8 @@
       },
       {
         "ConnectedArea": "City in The Sky Lobby",
-        "Requirements": "((Progressive_Clawshot, 1) and Iron_Boots and Shadow_Crystal) and (Setting.damageMagnification not_equal OHKO)",
-        "GlitchedRequirements": "((Progressive_Clawshot, 1) and Iron_Boots and (Shadow_Crystal or CanDoLJA)) and (Setting.damageMagnification not_equal OHKO)"
+        "Requirements": "((Progressive_Clawshot, 1) and HasHeavyMod and Shadow_Crystal) and (Setting.damageMagnification not_equal OHKO)",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) and HasHeavyMod and (Shadow_Crystal or CanDoLJA)) and (Setting.damageMagnification not_equal OHKO)"
       }
     ],
     "Checks": [
@@ -56,7 +56,7 @@
       },
       {
         "CheckName": "City in The Sky Big Key Chest",
-        "Requirements": "CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok and Shadow_Crystal and (Progressive_Clawshot or Iron_Boots)",
+        "Requirements": "CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok and Shadow_Crystal and (Progressive_Clawshot or HasHeavyMod)",
         // Either walking the ropes as wolf, clawshotting vines or doing Kai clip
         "GlitchedRequirements": "(CanDefeatKargarok and Shadow_Crystal) or ((Shadow_Crystal or CanDoLJA) and Progressive_Clawshot) or (Progressive_Clawshot, 2)"
       },
@@ -101,18 +101,18 @@
       {
         "CheckName": "City in The Sky East Wing After Dinalfos Alcove Chest",
         "Requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and CanDefeatDinalfos",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or Iron_Boots)"
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or HasHeavyMod)"
       },
       {
         "CheckName": "City in The Sky East Wing After Dinalfos Ledge Chest",
         "Requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and CanDefeatDinalfos",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or Iron_Boots)"
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or HasHeavyMod)"
       },
       {
         "CheckName": "City in The Sky Aeralfos Chest",
-        "Requirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and Iron_Boots and CanDefeatDinalfos and CanDefeatTileWorm",
+        "Requirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and HasHeavyMod and CanDefeatDinalfos and CanDefeatTileWorm",
         // You can equip Irons mid-air to bypass the tile worms
-        "GlitchedRequirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and Iron_Boots and CanDefeatDinalfos"
+        "GlitchedRequirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and HasHeavyMod and CanDefeatDinalfos"
       }
     ],
     "Region": "City in The Sky"
@@ -135,12 +135,12 @@
     "Checks": [
       {
         "CheckName": "City in The Sky Underwater West Chest",
-        "Requirements": "Iron_Boots",
+        "Requirements": "HasHeavyMod",
         "GlitchedRequirements": "HasHeavyMod"
       },
       {
         "CheckName": "City in The Sky Underwater East Chest",
-        "Requirements": "Iron_Boots",
+        "Requirements": "HasHeavyMod",
         "GlitchedRequirements": "HasHeavyMod"
       }
     ],
@@ -166,13 +166,13 @@
       },
       {
         "ConnectedArea": "City in The Sky North Wing",
-        "Requirements": "(Progressive_Clawshot, 2) and CanDefeatBabaSerpent and CanDefeatKargarok and Shadow_Crystal and Iron_Boots",
+        "Requirements": "(Progressive_Clawshot, 2) and CanDefeatBabaSerpent and CanDefeatKargarok and Shadow_Crystal and HasHeavyMod",
         // You can use only Double Claws to reach north wing. Thank Hab for this.
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
         "ConnectedArea": "City in The Sky Central Tower Second Floor",
-        "Requirements": "Room.City_in_The_Sky_Central_Tower_Second_Floor and (Progressive_Clawshot, 1) and Iron_Boots",
+        "Requirements": "Room.City_in_The_Sky_Central_Tower_Second_Floor and (Progressive_Clawshot, 1) and HasHeavyMod",
         // Fan skip
         "GlitchedRequirements": "Progressive_Clawshot and Shadow_Crystal"
       }

@@ -9,7 +9,7 @@
       },
       {
         "ConnectedArea": "Lake Hylia Lakebed Temple Entrance",
-        "Requirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (Iron_Boots and CanUseWaterBombs))",
+        "Requirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (HasHeavyMod and CanUseWaterBombs))",
         "GlitchedRequirements": "Zora_Armor or CanDoAirRefill"
       },
       {
@@ -46,7 +46,7 @@
     "Checks": [
       {
         "CheckName": "Lake Hylia Underwater Chest",
-        "Requirements": "Iron_Boots and CanCompleteLanayruTwilight",
+        "Requirements": "HasHeavyMod and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "HasHeavyMod and CanCompleteLanayruTwilight"
       },
       {
@@ -91,12 +91,12 @@
       },
       {
         "CheckName": "Lake Hylia Right Underwater Boulder Rupee",
-        "Requirements": "CanCompleteLanayruTwilight and Zora_Armor and Iron_Boots and CanUseWaterBombs",
+        "Requirements": "CanCompleteLanayruTwilight and Zora_Armor and HasHeavyMod and CanUseWaterBombs",
         "GlitchedRequirements": "CanCompleteLanayruTwilight and CanDoAirRefill"
       },
       {
         "CheckName": "Lake Hylia Left Underwater Boulder Rupee",
-        "Requirements": "CanCompleteLanayruTwilight and Zora_Armor and Iron_Boots and CanUseWaterBombs",
+        "Requirements": "CanCompleteLanayruTwilight and Zora_Armor and HasHeavyMod and CanUseWaterBombs",
         "GlitchedRequirements": "CanCompleteLanayruTwilight and CanDoAirRefill"
       }
     ],
@@ -192,8 +192,8 @@
     "Exits": [
       {
         "ConnectedArea": "Lake Hylia",
-        "Requirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (Iron_Boots and CanUseWaterBombs))",
-        "GlitchedRequirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (Iron_Boots and CanUseWaterBombs))"
+        "Requirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (HasHeavyMod and CanUseWaterBombs))",
+        "GlitchedRequirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (HasHeavyMod and CanUseWaterBombs))"
       },
       {
         "ConnectedArea": "Lakebed Temple Entrance",
@@ -215,12 +215,12 @@
     "Checks": [
       {
         "CheckName": "Lanayru Spring Underwater Left Chest",
-        "Requirements": "Iron_Boots",
+        "Requirements": "HasHeavyMod",
         "GlitchedRequirements": "HasHeavyMod"
       },
       {
         "CheckName": "Lanayru Spring Underwater Right Chest",
-        "Requirements": "Iron_Boots",
+        "Requirements": "HasHeavyMod",
         "GlitchedRequirements": "HasHeavyMod"
       },
       {
@@ -250,13 +250,13 @@
       },
       {
         "CheckName": "Lanayru Spring Upper Underwater Boulder Rupee",
-        "Requirements": "Iron_Boots and CanUseWaterBombs",
-        "GlitchedRequirements": "(Iron_Boots or Magic_Armor) and CanUseWaterBombs"
+        "Requirements": "HasHeavyMod and CanUseWaterBombs",
+        "GlitchedRequirements": "(HasHeavyMod or Magic_Armor) and CanUseWaterBombs"
       },
       {
         "CheckName": "Lanayru Spring Lower Underwater Boulder Rupee",
-        "Requirements": "Iron_Boots and CanUseWaterBombs",
-        "GlitchedRequirements": "(Iron_Boots or Magic_Armor) and CanUseWaterBombs"
+        "Requirements": "HasHeavyMod and CanUseWaterBombs",
+        "GlitchedRequirements": "HasHeavyMod and CanUseWaterBombs"
       },
       {
         "CheckName": "Catch A Greengill",
@@ -385,9 +385,10 @@
     ],
     "Checks": [
       {
+        // Shell Blades can be defeated by holding normal bombs while on the ledge.
         "CheckName": "Lake Hylia Shell Blade Grotto Chest",
-        "Requirements": "CanDefeatShellBlade",
-        "GlitchedRequirements": "CanDefeatShellBlade"
+        "Requirements": "CanDefeatShellBlade or (HasBombs and Trick.shell_blade_grotto_normal_bombs)",
+        "GlitchedRequirements": "CanDefeatShellBlade or HasBombs"
       }
     ],
     "Region": "Lake Hylia"
@@ -403,8 +404,9 @@
     ],
     "Checks": [
       {
+        // Note: We don't include Shadow Crystal in Glitched logic because It's already accounted for in CanDefeatWaterToadpoli
         "CheckName": "Lake Hylia Water Toadpoli Grotto Chest",
-        "Requirements": "CanDefeatWaterToadpoli",
+        "Requirements": "CanDefeatWaterToadpoli or (Shadow_Crystal and Trick.toadpoli_grotto_with_wolf)",
         "GlitchedRequirements": "CanDefeatWaterToadpoli"
       },
       {

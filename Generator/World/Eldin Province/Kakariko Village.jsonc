@@ -81,7 +81,7 @@
     "Checks": [
       {
         "CheckName": "Eldin Spring Underwater Chest",
-        "Requirements": "CanSmash and Iron_Boots",
+        "Requirements": "CanSmash and HasHeavyMod",
         "GlitchedRequirements": "HasHeavyMod and (CanSmash or CanDoMapGlitch)"
       },
       {
@@ -96,7 +96,7 @@
       },
       {
         "CheckName": "Kakariko Village Bomb Rock Spire Heart Piece",
-        "Requirements": "HasBombs and Boomerang and CanCompleteEldinTwilight",
+        "Requirements": "(((HasBombs or Trick.kak_rock_spire_poh_with_boomerang) and Boomerang) or (Trick.kak_rock_spire_poh_with_epona_claw and Progressive_Clawshot)) and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(CanDoMapGlitch or (CanLaunchBombs and (Boomerang or (Progressive_Clawshot, 1)))) and CanCompleteEldinTwilight"
       },
       {
@@ -111,8 +111,8 @@
       },
       {
         "CheckName": "Eldin Spring Underwater Boulder Rupee",
-        "Requirements": "(Iron_Boots or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "(Iron_Boots or Magic_Armor or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight"
+        "Requirements": "(HasHeavyMod or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(HasHeavyMod or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Kakariko Village Spring Shortcut Box Rupee 1",
@@ -180,7 +180,7 @@
       },
       {
         "CheckName": "Kakariko Watchtower Alcove Chest",
-        "Requirements": "CanSmash and CanCompleteEldinTwilight",
+        "Requirements": "(CanSmash and CanCompleteEldinTwilight) or (Trick.watchtower_alcove_chest_as_wolf and Shadow_Crystal)",
         "GlitchedRequirements": "(CanSmash and CanCompleteEldinTwilight) or Shadow_Crystal"
       }
     ],
@@ -618,7 +618,7 @@
       },
       {
         "ConnectedArea": "Lake Hylia",
-        "Requirements": "Gate_Keys and (Iron_Boots or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight",
+        "Requirements": "Gate_Keys and (HasHeavyMod or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(HasHeavyMod and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight) or ((HasHeavyMod or Zora_Armor) and ((HasBombs and (HasSword or Spinner)) or CanDoLJA or CanDoMoonBoots))"
       }
     ],
@@ -670,8 +670,8 @@
       },
       {
         "CheckName": "Kakariko Graveyard Underwater Boulder Rupee",
-        "Requirements": "(Iron_Boots or Zora_Armor) and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "(Iron_Boots or Magic_Armor or Zora_Armor) and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight"
+        "Requirements": "(HasHeavyMod or Zora_Armor) and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(HasHeavyMod or Magic_Armor or Zora_Armor) and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight"
       }
     ],
     "Region": "Kakariko Village"

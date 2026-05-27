@@ -74,8 +74,8 @@
       },
       {
         "CheckName": "Lakebed Temple Central Room Spire Chest",
-        "Requirements": "(Lakebed_Temple_Small_Key, 3) and Iron_Boots and CanLaunchBombs",
-        "GlitchedRequirements": "(((Lakebed_Temple_Small_Key, 3) and CanLaunchBombs) or (Progressive_Clawshot and HasSword)) and Iron_Boots"
+        "Requirements": "(Lakebed_Temple_Small_Key, 3) and HasHeavyMod and CanLaunchBombs",
+        "GlitchedRequirements": "(((Lakebed_Temple_Small_Key, 3) and CanLaunchBombs) or (Progressive_Clawshot and HasSword)) and HasHeavyMod"
       }
     ],
     "Region": "Lakebed Temple"
@@ -115,22 +115,22 @@
         // pass the underwater chests in order to get the key from this chest in order
         // to access the underwater chests which they just walked past. This can lead
         // to nonsensical Path hints.
-        "Requirements": "((Setting.lbtSmallKeySettings equals Vanilla) and CanDefeatDekuToad and (Lakebed_Temple_Small_Key, 2) and Zora_Armor and Iron_Boots and CanUseWaterBombs and (Progressive_Clawshot, 1)) or ((Lakebed_Temple_Small_Key,3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash)))",
+        "Requirements": "((Setting.lbtSmallKeySettings equals Vanilla) and CanDefeatDekuToad and (Lakebed_Temple_Small_Key, 2) and Zora_Armor and HasHeavyMod and CanUseWaterBombs and (Progressive_Clawshot, 1)) or ((Lakebed_Temple_Small_Key,3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash)))",
         "GlitchedRequirements": "CanDoLJA or ((Lakebed_Temple_Small_Key, 2) and (CanLaunchBombs or (Progressive_Clawshot, 1)))"
       },
       {
         "CheckName": "Lakebed Temple Before Deku Toad Underwater Left Chest",
-        "Requirements": "Zora_Armor and Iron_Boots and (Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
+        "Requirements": "Zora_Armor and HasHeavyMod and (Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
         "GlitchedRequirements": "((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and CanLaunchBombs)) and HasHeavyMod"
       },
       {
         "CheckName": "Lakebed Temple Before Deku Toad Underwater Right Chest",
-        "Requirements": "Zora_Armor and Iron_Boots and (Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
+        "Requirements": "Zora_Armor and HasHeavyMod and (Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
         "GlitchedRequirements": "((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1)))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and CanLaunchBombs) and HasHeavyMod"
       },
       {
         "CheckName": "Lakebed Temple Deku Toad Chest",
-        "Requirements": "CanDefeatDekuToad and (Lakebed_Temple_Small_Key, 3) and Zora_Armor and Iron_Boots and CanUseWaterBombs and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
+        "Requirements": "CanDefeatDekuToad and (Lakebed_Temple_Small_Key, 3) and Zora_Armor and HasHeavyMod and CanUseWaterBombs and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
         "GlitchedRequirements": "CanDefeatDekuToad and (((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1)))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and CanLaunchBombs)) and HasHeavyMod and (CanUseWaterBombs or Zora_Armor)"
       }
     ],
@@ -163,12 +163,12 @@
       },
       {
         "CheckName": "Lakebed Temple East Water Supply Small Chest",
-        "Requirements": "(Lakebed_Temple_Small_Key, 3) and ((Progressive_Clawshot, 1) or CanLaunchBombs) and CanSmash and Iron_Boots",
+        "Requirements": "(Lakebed_Temple_Small_Key, 3) and ((Progressive_Clawshot, 1) or CanLaunchBombs) and CanSmash and HasHeavyMod",
         "GlitchedRequirements": "(Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or (Progressive_Clawshot and CanSmash))"
       },
       {
         "CheckName": "Lakebed Temple East Water Supply Clawshot Chest",
-        "Requirements": "(Lakebed_Temple_Small_Key, 3) and (Progressive_Clawshot, 1) and CanSmash and Iron_Boots",
+        "Requirements": "(Lakebed_Temple_Small_Key, 3) and (Progressive_Clawshot, 1) and CanSmash and HasHeavyMod",
         "GlitchedRequirements": "(Lakebed_Temple_Small_Key, 3) and (Progressive_Clawshot, 1) and CanSmash"
       }
     ],
@@ -234,13 +234,13 @@
       },
       {
         "CheckName": "Lakebed Temple Big Key Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and CanUseWaterBombs and Zora_Armor and CanLaunchBombs and Iron_Boots",
+        "Requirements": "(Progressive_Clawshot, 1) and CanUseWaterBombs and Zora_Armor and CanLaunchBombs and HasHeavyMod",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Zora_Armor or CanDoLJA) and CanLaunchBombs"
       },
       {
         "CheckName": "Lakebed Temple West Second Floor Southwest Underwater Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and Iron_Boots and CanLaunchBombs",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and Iron_Boots and CanLaunchBombs"
+        "Requirements": "(Progressive_Clawshot, 1) and HasHeavyMod and CanLaunchBombs",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and HasHeavyMod and CanLaunchBombs"
       },
       {
         "CheckName": "Lakebed Temple West Second Floor Northeast Chest",
@@ -254,23 +254,23 @@
       },
       {
         "CheckName": "Lakebed Temple West Water Supply Small Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs and Iron_Boots",
+        "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs and HasHeavyMod",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
       },
       {
         "CheckName": "Lakebed Temple West Water Supply Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs and Iron_Boots",
+        "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs and HasHeavyMod",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
       },
       {
         "CheckName": "Catch A Greengill",
-        "Requirements": "Progressive_Fishing_Rod and Progressive_Clawshot and CanLaunchBombs and Iron_Boots",
+        "Requirements": "Progressive_Fishing_Rod and Progressive_Clawshot and CanLaunchBombs and HasHeavyMod",
         "GlitchedRequirements": "Progressive_Fishing_Rod and CanLaunchBombs and Progressive_Clawshot"
       },
       {
         // Technically there is a loach in the water supply and one in the BK room. However the one in the water supply has the simplest logical requirements and will always be met before reaching the BK room, so we use that logic for the check.
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "CanCatchBaitedFish and Progressive_Clawshot and CanLaunchBombs and Iron_Boots",
+        "Requirements": "CanCatchBaitedFish and Progressive_Clawshot and CanLaunchBombs and HasHeavyMod",
         "GlitchedRequirements": "CanCatchBaitedFish and CanLaunchBombs and Progressive_Clawshot"
       }
     ],

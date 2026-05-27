@@ -103,7 +103,7 @@
     "Checks": [
       {
         "CheckName": "Sacred Grove Baba Serpent Grotto Chest",
-        "Requirements": "CanDefeatBabaSerpent and CanKnockDownHangingBaba",
+        "Requirements": "CanDefeatBabaSerpent and (CanKnockDownHangingBaba or (Trick.baba_serpent_grotto_with_wolf and Shadow_Crystal))",
         "GlitchedRequirements": "CanDefeatBabaSerpent and (CanKnockDownHangingBaba or HasSword or Shadow_Crystal or Slingshot or Ball_and_Chain or HasBombs)"
       }
     ],
@@ -158,8 +158,8 @@
     "Checks": [
       {
         "CheckName": "Sacred Grove Male Snail",
-        "Requirements": "(Progressive_Clawshot, 1) or Boomerang",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Boomerang"
+        "Requirements": "(Progressive_Clawshot, 1) or Boomerang or (Trick.freestandings_with_bnc and Ball_and_Chain)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Boomerang or Ball_and_Chain"
       },
       {
         "CheckName": "Sacred Grove Master Sword Poe",
@@ -206,8 +206,8 @@
       },
       {
         "CheckName": "Sacred Grove Female Snail",
-        "Requirements": "(Progressive_Clawshot, 1) or Boomerang",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Boomerang"
+        "Requirements": "(Progressive_Clawshot, 1) or Boomerang or (Trick.freestandings_with_bnc and Ball_and_Chain)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Boomerang or Ball_and_Chain"
       },
       {
         "CheckName": "Sacred Grove Temple of Time Owl Statue Poe",

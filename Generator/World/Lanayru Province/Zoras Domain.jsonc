@@ -41,18 +41,18 @@
       },
       {
         "CheckName": "Upper Zoras River East Underwater Boulder Rupee",
-        "Requirements": "Iron_Boots and CanUseWaterBombs",
-        "GlitchedRequirements": "Iron_Boots and CanUseWaterBombs"
+        "Requirements": "HasHeavyMod and CanUseWaterBombs",
+        "GlitchedRequirements": "HasHeavyMod and CanUseWaterBombs"
       },
       {
         "CheckName": "Upper Zoras River Central Underwater Boulder Rupee",
-        "Requirements": "Iron_Boots and CanUseWaterBombs",
-        "GlitchedRequirements": "Iron_Boots and CanUseWaterBombs"
+        "Requirements": "HasHeavyMod and CanUseWaterBombs",
+        "GlitchedRequirements": "HasHeavyMod and CanUseWaterBombs"
       },
       {
         "CheckName": "Upper Zoras River West Underwater Boulder Rupee",
-        "Requirements": "Iron_Boots and CanUseWaterBombs",
-        "GlitchedRequirements": "Iron_Boots and CanUseWaterBombs"
+        "Requirements": "HasHeavyMod and CanUseWaterBombs",
+        "GlitchedRequirements": "HasHeavyMod and CanUseWaterBombs"
       },
       {
         "CheckName": "Upper Zoras River Ledge Boulder Rupee",
@@ -89,7 +89,7 @@
     "Checks": [
       {
         "CheckName": "Iza Helping Hand",
-        "Requirements": "Room.Upper_Zoras_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight",
+        "Requirements": "Room.Upper_Zoras_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and ((Progressive_Bow, 1) or (Boomerang and Trick.iza_1_with_boomerang)) and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "Room.Upper_Zoras_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight"
       },
       {
@@ -183,7 +183,7 @@
         // Glitched expects you to have access to rollgoal to get the frog lure.
         // Also you need access to fishing hole to change the season to summer.
         "CheckName": "Catch The Legendary Hylian Loach",
-        "Requirements": "Room.Fishing_Hole and (Progressive_Fishing_Rod, 2)",
+        "Requirements": "Room.Fishing_Hole and ((Progressive_Fishing_Rod, 2) or (Room.Fishing_Hole_House and Trick.loach_with_frog_lure))",
         "GlitchedRequirements": "Room.Fishing_Hole and Room.Fishing_Hole_House"
       }
     ],
@@ -221,8 +221,8 @@
       },
       {
         "CheckName": "Zoras Domain Chest Behind Waterfall",
-        "Requirements": "Shadow_Crystal",
-        "GlitchedRequirements": "Shadow_Crystal or CanDoBSMoonBoots or Spinner or (HasBombs and HasSword) or CanDoLJA"
+        "Requirements": "Shadow_Crystal or (CanCompleteLanayruTwilight and ((Trick.zd_waterfall_ledge_box_and_sword and HasSword) or (Spinner and Trick.zd_waterfall_ledge_spinner)))",
+        "GlitchedRequirements": "(Shadow_Crystal or CanCompleteLanayruTwilight) or CanDoBSMoonBoots or Spinner or (HasBombs and HasSword) or CanDoLJA"
       },
       {
         "CheckName": "Zoras Domain Male Dragonfly",
@@ -246,13 +246,13 @@
       },
       {
         "CheckName": "Zoras Domain Central Underwater Boulder Rupee",
-        "Requirements": "CanCompleteLanayruTwilight and Iron_Boots and CanUseWaterBombs",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight and Iron_Boots and CanUseWaterBombs"
+        "Requirements": "CanCompleteLanayruTwilight and HasHeavyMod and CanUseWaterBombs",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and HasHeavyMod and CanUseWaterBombs"
       },
       {
         "CheckName": "Zoras Domain North Underwater Boulder Rupee",
-        "Requirements": "CanCompleteLanayruTwilight and Iron_Boots and CanUseWaterBombs",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight and Iron_Boots and CanUseWaterBombs"
+        "Requirements": "CanCompleteLanayruTwilight and HasHeavyMod and CanUseWaterBombs",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and HasHeavyMod and CanUseWaterBombs"
       },
       {
         "CheckName": "Zoras Domain Shortcut Ledge Rupee",
@@ -338,18 +338,18 @@
     "Checks": [
       {
         "CheckName": "Zoras Domain Light All Torches Chest",
-        "Requirements": "Lantern and Iron_Boots",
+        "Requirements": "Lantern and HasHeavyMod",
         "GlitchedRequirements": "Lantern and HasHeavyMod"
       },
       {
         "CheckName": "Zoras Domain Extinguish All Torches Chest",
-        "Requirements": "Boomerang and Iron_Boots",
+        "Requirements": "Boomerang and HasHeavyMod",
         "GlitchedRequirements": "Boomerang and HasHeavyMod"
       },
       {
         "CheckName": "Zoras Domain Underwater Goron",
-        "Requirements": "CanUseWaterBombs and Iron_Boots and Zora_Armor and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "CanUseWaterBombs and Iron_Boots and CanCompleteLanayruTwilight"
+        "Requirements": "CanUseWaterBombs and HasHeavyMod and (Zora_Armor or Trick.underwater_goron_without_za) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanUseWaterBombs and HasHeavyMod and CanCompleteLanayruTwilight"
       },
       {
         "CheckName": "Zoras Domain Portal",
@@ -358,33 +358,33 @@
       },
       {
         "CheckName": "Zoras Domain Throne East Gate Underwater Rupee",
-        "Requirements": "CanCompleteLanayruTwilight and Iron_Boots",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor)"
+        "Requirements": "CanCompleteLanayruTwilight and HasHeavyMod",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and HasHeavyMod"
       },
       {
         "CheckName": "Zoras Domain Throne East Underwater Rupee",
-        "Requirements": "CanCompleteLanayruTwilight and (Iron_Boots or Zora_Armor)",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor or Zora_Armor)"
+        "Requirements": "CanCompleteLanayruTwilight and HasHeavyMod and (Zora_Armor or Trick.zd_underwater_rupees_without_za)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (HasHeavyMod or Zora_Armor)"
       },
       {
         "CheckName": "Zoras Domain Throne Northwest Underwater Rupee",
-        "Requirements": "CanCompleteLanayruTwilight and (Iron_Boots or Zora_Armor)",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor or Zora_Armor)"
+        "Requirements": "CanCompleteLanayruTwilight and HasHeavyMod and (Zora_Armor or Trick.zd_underwater_rupees_without_za)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (HasHeavyMod or Zora_Armor)"
       },
       {
         "CheckName": "Zoras Domain Throne South Underwater Rupee",
-        "Requirements": "CanCompleteLanayruTwilight and (Iron_Boots or Zora_Armor)",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor or Zora_Armor)"
+        "Requirements": "CanCompleteLanayruTwilight and HasHeavyMod and (Zora_Armor or Trick.zd_underwater_rupees_without_za)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (HasHeavyMod or Zora_Armor)"
       },
       {
         "CheckName": "Zoras Domain Throne West Gate Underwater Rupee",
-        "Requirements": "CanCompleteLanayruTwilight and Iron_Boots",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor)"
+        "Requirements": "CanCompleteLanayruTwilight and HasHeavyMod",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and HasHeavyMod"
       },
       {
         "CheckName": "Zoras Domain Throne West Underwater Rupee",
-        "Requirements": "CanCompleteLanayruTwilight and (Iron_Boots or Zora_Armor)",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Iron_Boots or Magic_Armor or Zora_Armor)"
+        "Requirements": "CanCompleteLanayruTwilight and HasHeavyMod and (Zora_Armor or Trick.zd_underwater_rupees_without_za)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (HasHeavyMod or Zora_Armor)"
       }
     ],
     "Region": "Zoras Domain"

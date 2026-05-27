@@ -44,7 +44,7 @@
     "Checks": [
       {
         "CheckName": "Goron Mines Crystal Switch Room Underwater Chest",
-        "Requirements": "Iron_Boots",
+        "Requirements": "HasHeavyMod",
         "GlitchedRequirements": "HasHeavyMod"
       },
       {
@@ -180,7 +180,7 @@
       },
       {
         "CheckName": "Goron Mines Outside Underwater Chest",
-        "Requirements": "(HasSword or CanUseWaterBombs) and Iron_Boots",
+        "Requirements": "(HasSword or CanUseWaterBombs) and HasHeavyMod",
         "GlitchedRequirements": "HasHeavyMod"
       },
       {

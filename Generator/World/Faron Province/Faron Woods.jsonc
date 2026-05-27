@@ -348,6 +348,11 @@
         "CheckName": "Faron Mist Poe",
         "Requirements": "Shadow_Crystal and CanCompletePrologue and CanCompleteFaronTwilight",
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteFaronTwilight"
+      },
+      {
+        "CheckName": "Faron Mist Stump Chest",
+        "Requirements": "CanCompletePrologue and Trick.mist_stump_chest_as_wolf",
+        "GlitchedRequirements": "CanCompletePrologue"
       }
     ],
     "Region": "Faron Woods"

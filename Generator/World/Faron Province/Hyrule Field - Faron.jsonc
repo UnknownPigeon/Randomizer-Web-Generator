@@ -41,7 +41,7 @@
       },
       {
         "CheckName": "Faron Field Tree Heart Piece",
-        "Requirements": "Boomerang or (Progressive_Clawshot, 1)",
+        "Requirements": "Boomerang or (Progressive_Clawshot, 1) or (Trick.freestandings_with_bnc and Ball_and_Chain)",
         "GlitchedRequirements": "Boomerang or (Progressive_Clawshot, 1) or Ball_and_Chain"
       },
       {
