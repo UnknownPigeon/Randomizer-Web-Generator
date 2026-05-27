@@ -44,13 +44,13 @@
     "Checks": [
       {
         "CheckName": "City in The Sky Central Outside Ledge Chest",
-        "Requirements": "CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok and Shadow_Crystal",
+        "Requirements": "(CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok and Shadow_Crystal) or (Progressive_Clawshot and Trick.cits_central_outside_ledge_chest_with_claw)",
         // Walk across ropes as wolf or use claw on the vines.
         "GlitchedRequirements": "(CanDefeatKargarok and CanDefeatWalltula and Shadow_Crystal) or Progressive_Clawshot"
       },
       {
         "CheckName": "City in The Sky Central Outside Poe Island Chest",
-        "Requirements": "CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok and Shadow_Crystal",
+        "Requirements": "((CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok) or (Progressive_Clawshot and Trick.cits_central_outside_ledge_chest_with_claw)) and Shadow_Crystal",
         // Either walk the ropes to the left or Claw up and then walk on the ropes
         "GlitchedRequirements": "((CanDefeatKargarok and CanDefeatWalltula) or Progressive_Clawshot) and Shadow_Crystal"
       },
@@ -85,34 +85,34 @@
     "Checks": [
       {
         "CheckName": "City in The Sky East First Wing Chest After Fans",
-        "Requirements": "(Progressive_Clawshot, 1)",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoLJA"
+        "Requirements": "(Progressive_Clawshot, 1) or Trick.cits_itemless_east_first_room",
+        "GlitchedRequirements": "true"
       },
       {
         "CheckName": "City in The Sky East Wing Lower Level Chest",
-        "Requirements": "(Progressive_Clawshot, 2) and CanDefeatDinalfos and CanDefeatTileWorm",
+        "Requirements": "(Progressive_Clawshot, 2) and (((CanDefeatDinalfos or Trick.cits_dinalfos_with_claw) and CanDefeatTileWorm) or Trick.cits_compass_chest_with_2_claws)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
         "CheckName": "City in The Sky East Tile Worm Small Chest",
-        "Requirements": "(Progressive_Clawshot,1)",
+        "Requirements": "(Progressive_Clawshot,1) or Trick.cits_itemless_east_first_room",
         "GlitchedRequirements": "(Progressive_Clawshot,1) or CanDoLJA"
       },
       {
         "CheckName": "City in The Sky East Wing After Dinalfos Alcove Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and CanDefeatDinalfos",
+        "Requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and (CanDefeatDinalfos or Trick.cits_dinalfos_with_claw)",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or HasHeavyMod)"
       },
       {
         "CheckName": "City in The Sky East Wing After Dinalfos Ledge Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and CanDefeatDinalfos",
+        "Requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and (CanDefeatDinalfos or Trick.cits_dinalfos_with_claw)",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or HasHeavyMod)"
       },
       {
         "CheckName": "City in The Sky Aeralfos Chest",
-        "Requirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and HasHeavyMod and CanDefeatDinalfos and CanDefeatTileWorm",
+        "Requirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and HasHeavyMod and (CanDefeatDinalfos or Trick.cits_dinalfos_with_claw) and CanDefeatTileWorm",
         // You can equip Irons mid-air to bypass the tile worms
-        "GlitchedRequirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and HasHeavyMod and CanDefeatDinalfos"
+        "GlitchedRequirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and HasHeavyMod"
       }
     ],
     "Region": "City in The Sky"
@@ -128,7 +128,7 @@
       },
       {
         "ConnectedArea": "City in The Sky Lobby",
-        "Requirements": "(Progressive_Clawshot, 1)",
+        "Requirements": "((Progressive_Clawshot, 1) or Progressive_Bow or (Trick.cits_entrance_with_bnc and Ball_and_Chain)) and (Progressive_Clawshot or Trick.cits_itemless_central_room)",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) or ((Progressive_Bow, 1) and CanDoLJA)"
       }
     ],
@@ -166,13 +166,13 @@
       },
       {
         "ConnectedArea": "City in The Sky North Wing",
-        "Requirements": "(Progressive_Clawshot, 2) and CanDefeatBabaSerpent and CanDefeatKargarok and Shadow_Crystal and HasHeavyMod",
+        "Requirements": "(Progressive_Clawshot, 2) and ((CanDefeatBabaSerpent and CanDefeatKargarok and Shadow_Crystal and HasHeavyMod) or Trick.cits_north_with_2_claws)",
         // You can use only Double Claws to reach north wing. Thank Hab for this.
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
         "ConnectedArea": "City in The Sky Central Tower Second Floor",
-        "Requirements": "Room.City_in_The_Sky_Central_Tower_Second_Floor and (Progressive_Clawshot, 1) and HasHeavyMod",
+        "Requirements": "(Room.City_in_The_Sky_Central_Tower_Second_Floor and (Progressive_Clawshot, 1) and HasHeavyMod) or (Progressive_Clawshot and Shadow_Crystal and Trick.cits_fan_skip)",
         // Fan skip
         "GlitchedRequirements": "Progressive_Clawshot and Shadow_Crystal"
       }

@@ -86,20 +86,20 @@
       },
       {
         "ConnectedArea": "Hyrule Castle Above Lantern Staircase",
-        "Requirements": "CanDefeatBokoblin and CanDefeatLizalfos and (Progressive_Clawshot, 2) and CanDefeatDarknut and Boomerang",
-        "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatLizalfos and Progressive_Clawshot and CanDefeatDarknut and Boomerang"
+        "Requirements": "((CanDefeatBokoblin and CanDefeatLizalfos) or (Trick.hc_skip_main_hall_barrier and HasSword)) and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_chandeliers_with_1_claw)) and CanDefeatDarknut and Boomerang",
+        "GlitchedRequirements": "HasSword and Progressive_Clawshot and CanDefeatDarknut and Boomerang"
       },
       {
         "ConnectedArea": "Hyrule Castle After Double Dinalfos",
-        "Requirements": "CanDefeatBokoblin and CanDefeatLizalfos and (Setting.hcShortcut equals True) and (Progressive_Clawshot, 2)",
-        "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatLizalfos and (Setting.hcShortcut equals True) and (Progressive_Clawshot, 2)"
+        "Requirements": "((CanDefeatBokoblin and CanDefeatLizalfos) or (Trick.hc_skip_main_hall_barrier) and HasSword) and (Setting.hcShortcut equals True) and (Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "HasSword and (Setting.hcShortcut equals True) and (Progressive_Clawshot, 2)"
       }
     ],
     "Checks": [
       {
         "CheckName": "Hyrule Castle Main Hall Northeast Chest",
-        "Requirements": "CanDefeatBokoblin and CanDefeatLizalfos and (Progressive_Clawshot, 1)",
-        "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatLizalfos and Progressive_Clawshot"
+        "Requirements": "((CanDefeatBokoblin and CanDefeatLizalfos) or (Trick.hc_skip_main_hall_barrier and Lantern)) and (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(HasSword or Lantern) and Progressive_Clawshot"
       }
     ],
     "Region": "Hyrule Castle"
@@ -298,12 +298,12 @@
       },
       {
         "ConnectedArea": "Hyrule Castle Treasure Room",
-        "Requirements": "(Hyrule_Castle_Small_Key, 3) and Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos",
+        "Requirements": "(Hyrule_Castle_Small_Key, 3) and Spinner and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_tower_climb_with_1_claw)) and CanDefeatDarknut and CanDefeatLizalfos",
         "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 3) and (Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos"
       },
       {
         "ConnectedArea": "Ganondorf Castle",
-        "Requirements": "Spinner and (Progressive_Clawshot, 2) and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key",
+        "Requirements": "Spinner and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_tower_climb_with_1_claw)) and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key",
         "GlitchedRequirements": "(Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key"
       }
     ],

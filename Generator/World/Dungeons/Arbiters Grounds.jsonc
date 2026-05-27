@@ -9,14 +9,14 @@
       },
       {
         "ConnectedArea": "Arbiters Grounds Lobby",
-        "Requirements": "(Arbiters_Grounds_Small_Key,1) and Lantern",
+        "Requirements": "(Arbiters_Grounds_Small_Key,1) and Lantern and (Progressive_Clawshot or Trick.ag_entrance_chain_without_claw)",
         "GlitchedRequirements": "(Arbiters_Grounds_Small_Key,1) and Lantern"
       }
     ],
     "Checks": [
       {
         "CheckName": "Arbiters Grounds Entrance Chest",
-        "Requirements": "CanBreakWoodenDoor",
+        "Requirements": "CanBreakWoodenDoor and (Progressive_Clawshot or Trick.ag_entrance_chain_without_claw)",
         "GlitchedRequirements": "CanBreakWoodenDoor"
       }
     ],
@@ -125,24 +125,24 @@
       },
       {
         "CheckName": "Arbiters Grounds West Chandelier Chest",
-        "Requirements": "(Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal",
+        "Requirements": "((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal) or ((Shadow_Crystal or Spinner) and Trick.ag_pillar_jump)",
         // Either coming from East Wing or doing Poe 1 Skip LJA
         "GlitchedRequirements": "((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal) or CanDoLJA"
       },
       {
         "CheckName": "Arbiters Grounds West Stalfos West Chest",
-        "Requirements": "CanBreakWoodenDoor and (Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat",
+        "Requirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or ((Shadow_Crystal or Spinner) and Trick.ag_pillar_jump))",
         "GlitchedRequirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or CanDoLJA)"
       },
       {
         "CheckName": "Arbiters Grounds West Stalfos Northeast Chest",
-        "Requirements": "CanBreakWoodenDoor and (Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat",
+        "Requirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or ((Shadow_Crystal or Spinner) and Trick.ag_pillar_jump))",
         // Either coming from East Wing or doing Poe 1 Skip LJA
         "GlitchedRequirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or CanDoLJA)"
       },
       {
         "CheckName": "Arbiters Grounds West Poe",
-        "Requirements": "Shadow_Crystal and CanSmash and (Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat",
+        "Requirements": "Shadow_Crystal and CanSmash and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or ((Shadow_Crystal or Spinner) and Trick.ag_pillar_jump))",
         // Either coming from East Wing or doing Poe 1 Skip LJA
         "GlitchedRequirements": "Shadow_Crystal and CanSmash and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or CanDoLJA)"
       }
@@ -166,7 +166,7 @@
     "Checks": [
       {
         "CheckName": "Arbiters Grounds Big Key Chest",
-        "Requirements": "(Arbiters_Grounds_Small_Key, 5) and (Progressive_Clawshot, 1) and Spinner and CanSmash",
+        "Requirements": "((Arbiters_Grounds_Small_Key, 5) and (Progressive_Clawshot, 1) and Spinner and CanSmash) or ((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal and Trick.ag_bk_with_wolf)",
         // Either going around or just doing Wolf clip.
         "GlitchedRequirements": "(((Arbiters_Grounds_Small_Key, 5) or ((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal)) and (Progressive_Clawshot, 1) and Spinner and CanSmash)"
       },

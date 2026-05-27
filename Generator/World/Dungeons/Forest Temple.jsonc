@@ -70,8 +70,8 @@
       },
       {
         "ConnectedArea": "Forest Temple Lobby",
-        "Requirements": "CanDefeatWalltula and CanDefeatBokoblin and CanBreakMonkeyCage",
-        "GlitchedRequirements": "CanDefeatWalltula and CanDefeatBokoblin and CanBreakMonkeyCage"
+        "Requirements": "(CanDefeatWalltula or Trick.ft_lobby_without_ranged_items or (Trick.ft_lobby_with_wolf and Shadow_Crystal)) and CanDefeatBokoblin and CanBreakMonkeyCage",
+        "GlitchedRequirements": "(CanDefeatWalltula or CanDefeatDekuBaba) and CanDefeatBokoblin and CanBreakMonkeyCage"
       }
     ],
     "Checks": [
@@ -98,7 +98,7 @@
       },
       {
         "ConnectedArea": "Forest Temple West Wing",
-        "Requirements": "CanBurnWebs and (((Forest_Temple_Small_Key, 2) and CanDefeatBokoblin) or (Progressive_Clawshot, 1))",
+        "Requirements": "(CanBurnWebs or (Boomerang and Trick.ft_west_wing_bombling)) and (((Forest_Temple_Small_Key, 2) and CanDefeatBokoblin) or (Progressive_Clawshot, 1))",
         "GlitchedRequirements": "CanBurnWebs and (((Forest_Temple_Small_Key, 2) and CanDefeatBokoblin) or (Progressive_Clawshot, 1) or CanDoLJA)"
       },
       {
@@ -136,7 +136,7 @@
       },
       {
         "ConnectedArea": "Forest Temple Boss Room",
-        "Requirements": "Forest_Temple_Big_Key and Boomerang and (CanFreeAllMonkeys or (Progressive_Clawshot, 1))",
+        "Requirements": "Forest_Temple_Big_Key and ((Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) or Progressive_Clawshot) and (CanFreeAllMonkeys or (Progressive_Clawshot, 1))",
         "GlitchedRequirements": "Forest_Temple_Big_Key and (CanDoLJA or (Boomerang and (CanFreeAllMonkeys or (Progressive_Clawshot, 1))))"
       }
     ],
@@ -148,23 +148,23 @@
       },
       {
         "CheckName": "Forest Temple North Deku Like Chest",
-        "Requirements": "Boomerang",
-        "GlitchedRequirements": "Boomerang or (HasBombs and HasSword and (Progressive_Clawshot, 1))"
+        "Requirements": "((Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) or Progressive_Clawshot)",
+        "GlitchedRequirements": "Boomerang or ((HasBombs and HasSword and (Progressive_Clawshot, 1) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)))"
       },
       {
         "CheckName": "Catch A Greengill",
-        "Requirements": "Progressive_Fishing_Rod and Boomerang",
-        "GlitchedRequirements": "Progressive_Fishing_Rod and (Boomerang or (HasBombs and HasSword and Progressive_Clawshot))"
+        "Requirements": "Progressive_Fishing_Rod and ((Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) or Progressive_Clawshot)",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and (Boomerang or ((HasBombs and HasSword and Progressive_Clawshot) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)))"
       },
       {
         "CheckName": "Catch An Ordon Catfish",
-        "Requirements": "CanCatchBaitedFish and Boomerang",
-        "GlitchedRequirements": "CanCatchBaitedFish and (Boomerang or (HasBombs and HasSword and Progressive_Clawshot))"
+        "Requirements": "CanCatchBaitedFish and ((Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) or Progressive_Clawshot)",
+        "GlitchedRequirements": "CanCatchBaitedFish and (Boomerang or ((HasBombs and HasSword and Progressive_Clawshot) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)))"
       },
       {
         "CheckName": "Forest Temple East Tile Worm Chest",
-        "Requirements": "CanDefeatTileWorm and CanDefeatSkulltula and CanDefeatWalltula and Boomerang and (Forest_Temple_Small_Key, 4)",
-        "GlitchedRequirements": "(HasBombs or CanDoBSMoonBoots or CanDoJSMoonBoots or Boomerang) and (Forest_Temple_Small_Key, 4)"
+        "Requirements": "((CanDefeatTileWorm and CanDefeatSkulltula and CanDefeatWalltula) or (Trick.ft_north_tile_worm_boost and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) and (Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) and (Forest_Temple_Small_Key, 4)",
+        "GlitchedRequirements": "(((HasBombs or CanDoBSMoonBoots or CanDoJSMoonBoots) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)) or Boomerang) and (Forest_Temple_Small_Key, 4)"
       }
     ],
     "Region": "Forest Temple"
@@ -179,7 +179,7 @@
       },
       {
         "ConnectedArea": "Ook",
-        "Requirements": "Boomerang",
+        "Requirements": "Boomerang or (Shadow_Crystal and Trick.ft_ook_with_midna)",
         "GlitchedRequirements": "Boomerang or Shadow_Crystal or HasSword or HasBombs"
       }
     ],

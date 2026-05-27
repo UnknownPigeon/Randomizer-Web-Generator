@@ -212,8 +212,8 @@
       },
       {
         "ConnectedArea": "Temple of Time Scales of Time",
-        "Requirements": "(Progressive_Bow, 1) and CanDefeatLizalfos and CanDefeatDinalfos",
-        "GlitchedRequirements": "(Progressive_Bow, 1) and CanDefeatLizalfos and CanDefeatDinalfos"
+        "Requirements": "((Progressive_Bow, 1) or (Progressive_Clawshot and Trick.tot_crystal_switches_with_claw)) and CanDefeatLizalfos and CanDefeatDinalfos",
+        "GlitchedRequirements": "((Progressive_Bow, 1) or Progressive_Clawshot) and CanDefeatLizalfos and CanDefeatDinalfos"
       }
     ],
     "Checks": [

@@ -52,7 +52,7 @@
       },
       {
         "ConnectedArea": "Lakebed Temple Boss Room",
-        "Requirements": "(Lakebed_Temple_Small_Key, 3) and CanLaunchBombs and (Progressive_Clawshot, 1) and Lakebed_Temple_Big_Key",
+        "Requirements": "(((Lakebed_Temple_Small_Key, 3) and CanLaunchBombs) or Trick.lbt_chandelier_drop) and (Progressive_Clawshot, 1) and (Lakebed_Temple_Big_Key or (HasSword and Trick.lbt_bk_skip))",
         "GlitchedRequirements": "((Progressive_Clawshot, 1) and ((Progressive_Sword, 1) or Lakebed_Temple_Big_Key)) or CanDoLJA"
       }
     ],
@@ -74,7 +74,7 @@
       },
       {
         "CheckName": "Lakebed Temple Central Room Spire Chest",
-        "Requirements": "(Lakebed_Temple_Small_Key, 3) and HasHeavyMod and CanLaunchBombs",
+        "Requirements": "(((Lakebed_Temple_Small_Key, 3) and CanLaunchBombs) or (Progressive_Clawshot and HasSword and Trick.lbt_chandelier_drop)) and HasHeavyMod",
         "GlitchedRequirements": "(((Lakebed_Temple_Small_Key, 3) and CanLaunchBombs) or (Progressive_Clawshot and HasSword)) and HasHeavyMod"
       }
     ],
@@ -234,7 +234,7 @@
       },
       {
         "CheckName": "Lakebed Temple Big Key Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and CanUseWaterBombs and Zora_Armor and CanLaunchBombs and HasHeavyMod",
+        "Requirements": "(Progressive_Clawshot, 1) and (CanUseWaterBombs or Trick.lbt_bk_without_bombs) and Zora_Armor and CanLaunchBombs and HasHeavyMod",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Zora_Armor or CanDoLJA) and CanLaunchBombs"
       },
       {

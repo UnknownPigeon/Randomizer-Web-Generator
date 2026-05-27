@@ -86,7 +86,7 @@
       },
       {
         "ConnectedArea": "Snowpeak Ruins Chapel",
-        "Requirements": "false",
+        "Requirements": "Trick.spr_ladder_freezard_cancel",
         // If coming from the Lobby, 2F floor clip is in logic, which explains the lack of the B&C requirement. Then you can Freezard Ladder Cancel
         "GlitchedRequirements": "true"
       },
@@ -232,7 +232,7 @@
     "Checks": [
       {
         "CheckName": "Snowpeak Ruins Lobby Chandelier Chest",
-        "Requirements": "(((Snowpeak_Ruins_Small_Key, 3) and Snowpeak_Ruins_Ordon_Goat_Cheese)) and Ball_and_Chain and Shadow_Crystal",
+        "Requirements": "(((Snowpeak_Ruins_Small_Key, 3) and Snowpeak_Ruins_Ordon_Goat_Cheese)) and Ball_and_Chain and (Shadow_Crystal or Trick.spr_lobby_chandelier_without_wolf)",
         // Vanilla, Break the ice from the lower level, or keese LJA
         "GlitchedRequirements": "((((Snowpeak_Ruins_Small_Key, 3) and Snowpeak_Ruins_Ordon_Goat_Cheese) or Progressive_Clawshot) and Ball_and_Chain) or (Shadow_Crystal and CanDoLJA)"
       },
@@ -326,7 +326,7 @@
       },
       {
         "ConnectedArea": "Snowpeak Ruins Northeast Chilfos Room Second Floor",
-        "Requirements": "Ball_and_Chain and (Progressive_Clawshot, 1) and CanDefeatChilfos",
+        "Requirements": "Ball_and_Chain and ((Progressive_Clawshot, 1) or ((Progressive_Hidden_Skill, 3) and Trick.spr_ne_chandelier_with_bs)) and CanDefeatChilfos",
         // LJA in ice block room
         "GlitchedRequirements": "(Ball_and_Chain and (Progressive_Clawshot, 1) and CanDefeatChilfos) or CanDoLJA"
       },

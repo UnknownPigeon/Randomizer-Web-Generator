@@ -1298,8 +1298,12 @@ namespace TPRandomizer
         {
             return (
                 CanUse(Item.Progressive_Bow)
-                && CanUse(Item.Iron_Boots)
-                && (HasSword() || (CanDoDifficultCombat() && CanUseBacksliceAsSword()))
+                && (CanUse(Item.Iron_Boots) || LogicTricks.isTrickEnabled("fyrus_without_irons"))
+                && (
+                    HasSword()
+                    || (CanDoDifficultCombat() && CanUseBacksliceAsSword())
+                    || LogicTricks.isTrickEnabled("fyrus_without_sword")
+                )
             );
         }
 
@@ -1312,12 +1316,16 @@ namespace TPRandomizer
                 (
                     CanUse(Item.Zora_Armor)
                     && CanUse(Item.Iron_Boots)
-                    && HasSword()
+                    && (HasSword() || LogicTricks.isTrickEnabled("morpheel_without_sword"))
                     && CanUse(Item.Progressive_Clawshot)
                 )
                 || (
                     CanDoNicheStuff()
-                    && (CanUse(Item.Progressive_Clawshot) && CanDoAirRefill() && HasSword())
+                    && (
+                        CanUse(Item.Progressive_Clawshot)
+                        && CanDoAirRefill()
+                        && (HasSword() || CanDoDifficultCombat())
+                    )
                 )
             );
         }
@@ -1389,9 +1397,38 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanDefeatGanondorf()
         {
-            return CanUse(Item.Shadow_Crystal)
+            return (
+                    CanUse(Item.Shadow_Crystal)
+                    || (
+                        (GetItemCount(Item.Progressive_Hidden_Skill) >= 5)
+                        && HasBottle()
+                        && CanGetTearsOrRareChu()
+                        && LogicTricks.isTrickEnabled("beast_ganon_without_wolf")
+                    )
+                )
                 && (GetItemCount(Item.Progressive_Sword) >= 3)
                 && CanUse(Item.Progressive_Hidden_Skill);
+        }
+
+        public static bool CanGetTearsOrRareChu()
+        {
+            return Randomizer.Checks.CheckDict["Cave of Ordeals Great Fairy Reward"].hasBeenReached
+                || (
+                    (
+                        Randomizer.Rooms.RoomDict["Lake Hylia Bridge"].ReachedByPlaythrough
+                        || Randomizer.Rooms.RoomDict[
+                            "Gerudo Desert Chu Grotto"
+                        ].ReachedByPlaythrough
+                        || Randomizer.Rooms.RoomDict["Ordon Ranch Grotto"].ReachedByPlaythrough
+                        || Randomizer.Rooms.RoomDict[
+                            "Snowpeak Ice Keese Grotto"
+                        ].ReachedByPlaythrough
+                        || (
+                            Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
+                            && CanCompleteGoronMines()
+                        )
+                    ) && CanDefeatChu()
+                );
         }
 
         /// <summary>
@@ -1592,6 +1629,15 @@ namespace TPRandomizer
                 || (
                     Randomizer.SSettings.logicRules == LogicRules.Glitched
                     && ((HasSword() && CanDoMoonBoots()) || CanDoBSMoonBoots())
+                )
+                || (LogicTricks.isTrickEnabled("hc_painting_switch_with_bombs") && HasBombs())
+                || (
+                    LogicTricks.isTrickEnabled("hc_painting_switch_with_js")
+                    && GetItemCount(Item.Progressive_Hidden_Skill) >= 6
+                )
+                || (
+                    LogicTricks.isTrickEnabled("hc_painting_switch_with_bs")
+                    && GetItemCount(Item.Progressive_Hidden_Skill) >= 3
                 )
             );
         }

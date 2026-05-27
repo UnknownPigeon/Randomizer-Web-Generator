@@ -116,73 +116,73 @@ namespace TPRandomizer
                 // Snowpeak Tricks
 
                 // Forest Temple
-                { "Forest Temple Lobby Without Ranged Items", "ft_lobby_without_ranged_items" }, // Not Implemented
-                { "Forest Temple Lobby With Wolf", "ft_lobby_with_wolf" }, // Not Implemented
-                { "Forest Temple West Wing With Bombling", "ft_west_wing_bombling" }, // Not Implemented
-                { "Forest Temple North Tile Worm Boost To Chest", "ft_north_tile_worm_boost" }, // Not Implemented
-                { "Forest Temple North Wing With Bomb Boosts", "ft_north_bomb_boosts" }, // Not Implemented
-                { "Forest Temple Ook access With Midna", "ft_ook_with_midna" }, // Not Implemented
+                { "Forest Temple Lobby Without Ranged Items", "ft_lobby_without_ranged_items" },
+                { "Forest Temple Lobby With Wolf", "ft_lobby_with_wolf" },
+                { "Forest Temple West Wing With Bombling", "ft_west_wing_bombling" },
+                { "Forest Temple North Tile Worm Boost To Chest", "ft_north_tile_worm_boost" },
+                { "Forest Temple North Wing With Bomb Boosts", "ft_north_bomb_boosts" },
+                { "Forest Temple Ook access With Midna", "ft_ook_with_midna" },
                 // Goron Mines
-                { "Defeat Fyrus Without Sword", "fyrus_without_sword" }, // Not Implemented
-                { "Defeat Fyrus Without Irons", "fyrus_without_irons" }, // Not Implemented
+                { "Defeat Fyrus Without Sword", "fyrus_without_sword" },
+                { "Defeat Fyrus Without Irons", "fyrus_without_irons" },
                 // Lakebed Temple
-                { "Lakebed Temple Chandelier Drop", "lbt_chandelier_drop" }, // Not Implemented
-                { "Lakebed Temple Big Key Chest Without Bombs", "lbt_bk_without_bombs" }, // Not Implemented
-                { "Lakebed Temple Big Key Skip", "lbt_bk_skip" }, // Not Implemented
-                { "Defeat Morpheel Without Sword", "morpheel_without_sword" }, // Not Implemented
+                { "Lakebed Temple Chandelier Drop", "lbt_chandelier_drop" },
+                { "Lakebed Temple Big Key Chest Without Bombs", "lbt_bk_without_bombs" },
+                { "Lakebed Temple Big Key Skip", "lbt_bk_skip" },
+                { "Defeat Morpheel Without Sword", "morpheel_without_sword" },
                 // Arbiters Grounds
                 {
                     "Arbiters Grounds Entrance Chain Without Clawshot",
                     "ag_entrance_chain_without_claw"
-                }, // Not Implemented
-                { "Arbiters Grounds Pillar Jump", "ag_pillar_jump" }, // Not Implemented
-                { "Arbiters Grounds Big Key With Wolf", "ag_bk_with_wolf" }, // Not Implemented
+                },
+                { "Arbiters Grounds Pillar Jump", "ag_pillar_jump" },
+                { "Arbiters Grounds Big Key With Wolf", "ag_bk_with_wolf" },
                 // Snowpeak Ruins
                 {
                     "Snowpeak Ruins Lobby Chandelier Chest Without Wolf",
                     "spr_lobby_chandelier_without_wolf"
-                }, // Not Implemented
+                },
                 {
                     "Snowpeak Ruins Northeast Chandelier Chest With Back Slice",
                     "spr_ne_chandelier_with_bs"
-                }, // Not Implemented
-                { "Snowpeak Ruins Ladder Freezard Cancel", "spr_ladder_freezard_cancel" }, // Not Implemented
+                },
+                { "Snowpeak Ruins Ladder Freezard Cancel", "spr_ladder_freezard_cancel" },
                 // Temple of Time
                 {
                     "Temple of Time Crystal Switches With Clawshot",
                     "tot_crystal_switches_with_claw"
-                }, // Not Implemented
+                },
                 // City in the Sky
                 {
                     "City in the Sky Entrance Crystal Switch With Ball and Chain",
                     "cits_entrance_with_bnc"
-                }, // Not Implemented
-                { "City in the Sky Fan Skip", "cits_fan_skip" }, // Not Implemented
-                { "City in the Sky Central Occa Room With No Items", "cits_itemless_central_room" }, // Not Implemented
+                },
+                { "City in the Sky Fan Skip", "cits_fan_skip" },
+                { "City in the Sky Central Occa Room With No Items", "cits_itemless_central_room" },
                 {
                     "City in the Sky East Wing First Room With No Items",
                     "cits_itemless_east_first_room"
-                }, // Not Implemented
-                { "City in the Sky Dinalfos Room With Clawshot", "cits_dinalfos_with_claw" }, // Not Implemented
+                },
+                { "City in the Sky Dinalfos Room With Clawshot", "cits_dinalfos_with_claw" },
                 {
                     "City in the Sky Central Outside Ledge Chest With Clawshot",
                     "cits_central_outside_ledge_chest_with_claw"
-                }, // Not Implemented
+                },
                 {
                     "City in the Sky Compass Chest With Double Clawshots",
                     "cits_compass_chest_with_2_claws"
-                }, // Not Implemented
+                },
                 { "City in the Sky North Wing With Double Clawshots", "cits_north_with_2_claws" },
                 // Palace of Twilight
 
                 // Hyrule Castle
-                { "Hyrule Castle Skip Main Hall Barrier", "hc_skip_main_hall_barrier" }, // Not Implemented
-                { "Hyrule Castle Chandeliers With Single Clawshot", "hc_chandeliers_with_1_claw" }, // Not Implemented
-                { "Hyrule Castle Painting Switch With Bombs", "hc_painting_switch_with_bombs" }, // Not Implemented
-                { "Hyrule Castle Painting Switch With Jump Strike", "hc_painting_switch_with_js" }, // Not Implemented
-                { "Hyrule Castle Painting Switch With Back Slice", "hc_painting_switch_with_bs" }, // Not Implemented
-                { "Hyrule Castle Tower Climb With Single Clawshot", "hc_tower_climb_with_1_claw" }, // Not Implemented
-                { "Defeat Dark Beast Ganon Without Wolf", "beast_ganon_without_wolf" }, // Not Implemented
+                { "Hyrule Castle Skip Main Hall Barrier", "hc_skip_main_hall_barrier" },
+                { "Hyrule Castle Chandeliers With Single Clawshot", "hc_chandeliers_with_1_claw" },
+                { "Hyrule Castle Painting Switch With Bombs", "hc_painting_switch_with_bombs" },
+                { "Hyrule Castle Painting Switch With Jump Strike", "hc_painting_switch_with_js" },
+                { "Hyrule Castle Painting Switch With Back Slice", "hc_painting_switch_with_bs" },
+                { "Hyrule Castle Tower Climb With Single Clawshot", "hc_tower_climb_with_1_claw" },
+                { "Defeat Dark Beast Ganon Without Wolf", "beast_ganon_without_wolf" },
             };
     }
 }
