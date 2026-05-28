@@ -8,7 +8,7 @@
         "GlitchedRequirements": "Room.Castle_Town_South and HasBottle and Room.Outside_Castle_Town_South"
       },
       {
-        "ConnectedArea": "South Faron Woods",
+        "ConnectedArea": "South Faron Woods Behind Field Gate",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },

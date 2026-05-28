@@ -891,6 +891,9 @@ document
 document
   .getElementById('grottoERCheckbox')
   .addEventListener('click', setSettingsString);
+document
+  .getElementById('interiorERCheckbox')
+  .addEventListener('click', setInteriorERSettings);
 
 function importSettingsString() {
   parseSettingsString(document.getElementById('settingsStringTextbox').value);
@@ -1080,15 +1083,44 @@ function setDungeonERSettings() {
     document.getElementById('mdhCheckbox').checked = true;
     document.getElementById('mdhCheckbox').disabled = true;
     document.getElementById('unpairedEntrancesCheckbox').disabled = false;
-    document.getElementById('decoupleEntrancesCheckbox').disabled = false;
   } else {
     document.getElementById('mdhCheckbox').disabled = false;
-    document.getElementById('unpairedEntrancesCheckbox').checked = false;
-    document.getElementById('decoupleEntrancesCheckbox').checked = false;
-    document.getElementById('unpairedEntrancesCheckbox').disabled = true;
-    document.getElementById('decoupleEntrancesCheckbox').disabled = true;
+    if (!document.getElementById('interiorERCheckbox').checked) {
+      document.getElementById('unpairedEntrancesCheckbox').checked = false;
+
+      document.getElementById('unpairedEntrancesCheckbox').disabled = true;
+    }
   }
+  setGeneralERSettings();
   setSettingsString();
+}
+
+function setInteriorERSettings() {
+  if (document.getElementById('interiorERCheckbox').checked) {
+    document.getElementById('unpairedEntrancesCheckbox').disabled = false;
+
+    document.getElementById('introCheckbox').checked = true;
+    document.getElementById('introCheckbox').disabled = true;
+  } else if (document.getElementById('dungeonERFieldset').value == 0) {
+    document.getElementById('unpairedEntrancesCheckbox').checked = false;
+    document.getElementById('unpairedEntrancesCheckbox').disabled = true;
+    document.getElementById('introCheckbox').disabled = false;
+  }
+  setGeneralERSettings();
+  setSettingsString();
+}
+
+function setGeneralERSettings() {
+  if (
+    !document.getElementById('interiorERCheckbox').checked &&
+    document.getElementById('dungeonERFieldset').value == 0 &&
+    !document.getElementById('grottoERCheckbox').checked
+  ) {
+    document.getElementById('decoupleEntrancesCheckbox').checked = false;
+    document.getElementById('decoupleEntrancesCheckbox').disabled = true;
+  } else {
+    document.getElementById('decoupleEntrancesCheckbox').disabled = false;
+  }
 }
 
 function setSmallKeyValues() {
@@ -2538,6 +2570,7 @@ function populateSSettings(s) {
   $('#legendaryLoachCheckbox').prop('checked', s.legendaryLoach);
   $('#chestSizeCheckbox').prop('checked', s.chestSize);
   $('#grottoERCheckbox').prop('checked', s.grottoER);
+  $('#interiorERCheckbox').prop('checked', s.interiorER);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

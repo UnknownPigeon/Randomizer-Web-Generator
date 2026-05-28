@@ -19,8 +19,8 @@ namespace TPRandomizer
         Grotto_Reverse,
         Cave,
         Cave_Reverse,
-        Door,
-        Door_Reverse,
+        Interior,
+        Interior_Reverse,
         Misc,
         Misc_Reverse,
         Mixed,
@@ -249,9 +249,13 @@ namespace TPRandomizer
             {
                 Type = EntranceType.Paired;
             }
-            if (entranceType == "Grotto")
+            else if (entranceType == "Grotto")
             {
                 Type = EntranceType.Grotto;
+            }
+            else if (entranceType == "Interior")
+            {
+                Type = EntranceType.Interior;
             }
         }
 
@@ -531,6 +535,29 @@ namespace TPRandomizer
             else
             {
                 vanillaEntranceTypes.Add(EntranceType.Grotto);
+            }
+
+            if (Randomizer.SSettings.shuffleInteriorEntrances)
+            {
+                // If we are interior entrances, loop through the entrance table and make note of all of the interior entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.Interior,
+                    GetShufflableEntrances(EntranceType.Interior, true)
+                );
+
+                if (Randomizer.SSettings.decoupleEntrances)
+                {
+                    newEntrancePools.Add(
+                        EntranceType.Interior_Reverse,
+                        GetReverseEntrances(newEntrancePools, EntranceType.Interior)
+                    );
+                    typesToDecouple.Add(EntranceType.Interior);
+                    typesToDecouple.Add(EntranceType.Interior_Reverse);
+                }
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.Interior);
             }
 
             // Set marked entrance types as decoupled
