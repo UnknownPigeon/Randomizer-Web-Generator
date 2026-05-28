@@ -1931,7 +1931,10 @@ namespace TPRandomizer
         {
             return Randomizer.SSettings.eldinTwilightCleared
                 || (
-                    Randomizer.Rooms.RoomDict["Faron Field"].ReachedByPlaythrough
+                    (
+                        Randomizer.Rooms.RoomDict["Faron Field"].ReachedByPlaythrough
+                        || CanUse(Item.Shadow_Crystal)
+                    )
                     && Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Kakariko Graveyard"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
@@ -1987,6 +1990,7 @@ namespace TPRandomizer
                             )
                         )
                     )
+                    && CanWarpMeteor()
                 );
         }
 
