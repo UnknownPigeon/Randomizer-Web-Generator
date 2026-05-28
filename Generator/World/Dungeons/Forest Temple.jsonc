@@ -136,7 +136,7 @@
       },
       {
         "ConnectedArea": "Forest Temple Boss Room",
-        "Requirements": "Forest_Temple_Big_Key and ((Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) or Progressive_Clawshot) and (CanFreeAllMonkeys or (Progressive_Clawshot, 1))",
+        "Requirements": "Forest_Temple_Big_Key and ((Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)))) and (CanFreeAllMonkeys or (Progressive_Clawshot, 1))",
         "GlitchedRequirements": "Forest_Temple_Big_Key and (CanDoLJA or (Boomerang and (CanFreeAllMonkeys or (Progressive_Clawshot, 1))))"
       }
     ],
@@ -148,17 +148,17 @@
       },
       {
         "CheckName": "Forest Temple North Deku Like Chest",
-        "Requirements": "((Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) or Progressive_Clawshot)",
+        "Requirements": "(Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy) and Progressive_Clawshot))",
         "GlitchedRequirements": "Boomerang or ((HasBombs and HasSword and (Progressive_Clawshot, 1) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)))"
       },
       {
         "CheckName": "Catch A Greengill",
-        "Requirements": "Progressive_Fishing_Rod and ((Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) or Progressive_Clawshot)",
+        "Requirements": "Progressive_Fishing_Rod and (Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy) and Progressive_Clawshot))",
         "GlitchedRequirements": "Progressive_Fishing_Rod and (Boomerang or ((HasBombs and HasSword and Progressive_Clawshot) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)))"
       },
       {
         "CheckName": "Catch An Ordon Catfish",
-        "Requirements": "CanCatchBaitedFish and ((Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) or Progressive_Clawshot)",
+        "Requirements": "CanCatchBaitedFish and (Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy) and Progressive_Clawshot))",
         "GlitchedRequirements": "CanCatchBaitedFish and (Boomerang or ((HasBombs and HasSword and Progressive_Clawshot) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)))"
       },
       {
