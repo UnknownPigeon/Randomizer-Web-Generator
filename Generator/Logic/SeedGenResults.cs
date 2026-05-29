@@ -525,10 +525,10 @@ namespace TPRandomizer
             return reqDungeonsList;
         }
 
-        private List<string> GetShuffledEntrancesStringList()
+        private Dictionary<string, string> GetShuffledEntrancesStringList()
         {
             EntranceRando entranceRando = new();
-            List<string> shuffledEntrances = new();
+            Dictionary<string, string> shuffledEntrances = new();
 
             EntranceRando.DeserializeSpawnTable();
 
@@ -554,7 +554,7 @@ namespace TPRandomizer
                         {
                             if (entry.State == entranceBytes[7])
                             {
-                                shuffledEntrances.Add("Spawn Location -> " + entry.TargetRoom);
+                                shuffledEntrances.Add("Spawn Location", entry.TargetRoom);
                             }
                         }
                     }
@@ -601,7 +601,8 @@ namespace TPRandomizer
                                                         shuffledEntrances.Add(
                                                             entry.SourceRoom
                                                                 + " -> "
-                                                                + entry2.TargetRoom
+                                                                + entry.TargetRoom,
+                                                            entry2.TargetRoom
                                                         );
                                                         /*Console.WriteLine(
                                                             entry.SourceRoom

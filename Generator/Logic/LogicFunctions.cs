@@ -1990,7 +1990,9 @@ namespace TPRandomizer
                             )
                         )
                     )
-                    && CanWarpMeteor()
+                    && CanCompleteEldinTwilight()
+                    && Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"].ReachedByPlaythrough
+                    && CanUse(Item.Shadow_Crystal)
                 );
         }
 
