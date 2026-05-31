@@ -479,7 +479,7 @@
         "GlitchedRequirements": "(Shadow_Crystal and CanCompleteFaronTwilight) or (HasBombs and CanDoLJA)"
       },
       {
-        "ConnectedArea": "Forest Temple Entrance",
+        "ConnectedArea": "FT Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }

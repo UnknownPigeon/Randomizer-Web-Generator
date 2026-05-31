@@ -1,14 +1,14 @@
 [
   {
-    "RoomName": "Kakariko Gorge",
+    "RoomName": "Kak Gorge",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Gorge Cave Entrance",
+        "ConnectedArea": "Kak Gorge Cave Entrance",
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "ConnectedArea": "Kakariko Gorge Behind Gate",
+        "ConnectedArea": "Kak Gorge Behind Gate",
         "Requirements": "CanCompleteEldinTwilight or (Room.Faron_Field) or Shadow_Crystal",
         "GlitchedRequirements": "CanCompleteEldinTwilight or (Room.Faron_Field) or Shadow_Crystal"
       },
@@ -23,59 +23,59 @@
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "ConnectedArea": "Kakariko Gorge Keese Grotto",
+        "ConnectedArea": "Kak Gorge Keese Grotto",
         "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Kakariko Gorge Owl Statue Chest",
+        "CheckName": "Kak Gorge Owl Statue Chest",
         "Requirements": "(Progressive_Dominion_Rod, 2)",
         "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) or CanDoLJA or CanDoStorage or CanDoEBMoonBoots"
       },
       {
-        "CheckName": "Kakariko Gorge Double Clawshot Chest",
+        "CheckName": "Kak Gorge Double Clawshot Chest",
         "Requirements": "(Progressive_Clawshot, 2) or (Shadow_Crystal and Trick.kak_gorge_skip_claws_with_wolf)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2) or CanDoLJA or Shadow_Crystal"
       },
       {
-        "CheckName": "Kakariko Gorge Spire Heart Piece",
+        "CheckName": "Kak Gorge Spire Heart Piece",
         "Requirements": "(Progressive_Clawshot, 1) or Boomerang",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) or Boomerang"
       },
       {
-        "CheckName": "Kakariko Gorge Owl Statue Sky Character",
+        "CheckName": "Kak Gorge Owl Statue Sky Character",
         "Requirements": "(Progressive_Dominion_Rod, 2)",
         "GlitchedRequirements": "(Progressive_Dominion_Rod, 2)"
       },
       {
-        "CheckName": "Kakariko Gorge Male Pill Bug",
+        "CheckName": "Kak Gorge Male Pill Bug",
         "Requirements": "CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Gorge Female Pill Bug",
+        "CheckName": "Kak Gorge Female Pill Bug",
         "Requirements": "CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Gorge Poe",
+        "CheckName": "Kak Gorge Poe",
         "Requirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight",
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight"
       },
       {
-        "CheckName": "Kakariko Gorge Portal",
+        "CheckName": "Kak Gorge Portal",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Kakariko Gorge Owl Statue Boulder Rupee",
+        "CheckName": "Kak Gorge Owl Statue Boulder Rupee",
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Kakariko Gorge Spire Boulder Rupee",
+        "CheckName": "Kak Gorge Spire Boulder Rupee",
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
       }
@@ -83,10 +83,10 @@
     "Region": "Hyrule Field - Eldin Province"
   },
   {
-    "RoomName": "Kakariko Gorge Cave Entrance",
+    "RoomName": "Kak Gorge Cave Entrance",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Gorge",
+        "ConnectedArea": "Kak Gorge",
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
       },
@@ -99,15 +99,15 @@
     "Region": "Hyrule Field - Eldin Province"
   },
   {
-    "RoomName": "Kakariko Gorge Behind Gate",
+    "RoomName": "Kak Gorge Behind Gate",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Gorge",
+        "ConnectedArea": "Kak Gorge",
         "Requirements": "Shadow_Crystal or Gate_Keys", // or acccess to epona
         "GlitchedRequirements": "Shadow_Crystal or Gate_Keys" // or access to epona
       },
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -118,7 +118,7 @@
     "RoomName": "Eldin Lantern Cave",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Gorge Cave Entrance",
+        "ConnectedArea": "Kak Gorge Cave Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -148,10 +148,10 @@
     "Region": "Hyrule Field - Eldin Province"
   },
   {
-    "RoomName": "Kakariko Gorge Keese Grotto",
+    "RoomName": "Kak Gorge Keese Grotto",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Gorge",
+        "ConnectedArea": "Kak Gorge",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -162,11 +162,11 @@
     "RoomName": "Eldin Field",
     "Exits": [
       {
-        "ConnectedArea": "Eldin Field Near Castle Town",
-        // When it comes time for ER, we will add (Room.Kakariko_Malo_Mart and Setting.randomizeOverworldEntrances) or  . . .
+        "ConnectedArea": "Eldin Field Near CT",
+        // When it comes time for ER, we will add (Room.Kak_Malo_Mart and Setting.randomizeOverworldEntrances) or  . . .
         // For now, it's only in logic if we have visited the other side.
-        "Requirements": "(Room.Eldin_Field_Near_Castle_Town and CanCompleteEldinTwilight and CanCompleteLanayruTwilight and Room.Kakariko_Malo_Mart) or (Setting.skipBridgeDonation equals true)",
-        "GlitchedRequirements": "((Room.Kakariko_Malo_Mart or Shadow_Crystal) and CanCompleteEldinTwilight) or (Setting.skipBridgeDonation equals true)"
+        "Requirements": "(Room.Eldin_Field_Near_CT and CanCompleteEldinTwilight and CanCompleteLanayruTwilight and Room.Kak_Malo_Mart) or (Setting.skipBridgeDonation equals true)",
+        "GlitchedRequirements": "((Room.Kak_Malo_Mart or Shadow_Crystal) and CanCompleteEldinTwilight) or (Setting.skipBridgeDonation equals true)"
       },
       {
         "ConnectedArea": "Eldin Field Lava Cave Ledge",
@@ -179,12 +179,12 @@
         "GlitchedRequirements": "(Shadow_Crystal and CanCompleteEldinTwilight) or CanDoLJA"
       },
       {
-        "ConnectedArea": "Kakariko Gorge",
+        "ConnectedArea": "Kak Gorge",
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "ConnectedArea": "Kakariko Village Behind Gate",
+        "ConnectedArea": "Kak Village Behind Gate",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
@@ -254,15 +254,15 @@
     "Region": "Hyrule Field - Eldin Province"
   },
   {
-    "RoomName": "Eldin Field Near Castle Town",
+    "RoomName": "Eldin Field Near CT",
     "Exits": [
       {
         "ConnectedArea": "Eldin Field",
-        "Requirements": "(Room.Kakariko_Malo_Mart and CanCompleteEldinTwilight and CanCompleteLanayruTwilight) or (Setting.skipBridgeDonation equals true)",
-        "GlitchedRequirements": "(Room.Kakariko_Malo_Mart and CanCompleteEldinTwilight and CanCompleteLanayruTwilight) or (Setting.skipBridgeDonation equals true)"
+        "Requirements": "(Room.Kak_Malo_Mart and CanCompleteEldinTwilight and CanCompleteLanayruTwilight) or (Setting.skipBridgeDonation equals true)",
+        "GlitchedRequirements": "(Room.Kak_Malo_Mart and CanCompleteEldinTwilight and CanCompleteLanayruTwilight) or (Setting.skipBridgeDonation equals true)"
       },
       {
-        "ConnectedArea": "Outside Castle Town East",
+        "ConnectedArea": "OCT East",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -270,14 +270,14 @@
     "Checks": [
       {
         "CheckName": "Goron Springwater Rush",
-        // Note: this check is in the "Eldin Field Near Castle Town" room which takes
+        // Note: this check is in the "Eldin Field Near CT" room which takes
         // care of a lot of the logic. The important thing is that paying the initial
         // donation is not a way to logically gain access to Lanayru. Therefore we
         // require that they already have access to the Lanayru side of the bridge to
         // avoid a confusing scenario where the player is expected to build the bridge
         // to do this check but then crossing the bridge would be going out of logic.
-        "Requirements": "CanCompleteEldinTwilight and Room.Lower_Kakariko_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kakariko_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))",
-        "GlitchedRequirements": "CanCompleteEldinTwilight and Room.Lower_Kakariko_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kakariko_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))"
+        "Requirements": "CanCompleteEldinTwilight and Room.Lower_Kak_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kak_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and Room.Lower_Kak_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kak_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))"
       }
     ],
     "Region": "Hyrule Field - Eldin Province"
@@ -324,9 +324,9 @@
         "GlitchedRequirements": "CanSmash or (CanDoMapGlitch and CanCompleteEldinTwilight and (CanCompleteLanayruTwilight or Horse_Call))"
       },
       {
-        "ConnectedArea": "Eldin Field Outside Hidden Village",
-        "Requirements": "(Room.Kakariko_Renados_Sanctuary and Wooden_Statue) or (Setting.iliaQuest equals Charm)",
-        "GlitchedRequirements": "(Room.Kakariko_Renados_Sanctuary and Wooden_Statue) or (Setting.iliaQuest equals Charm)"
+        "ConnectedArea": "Eldin Field Outside HV",
+        "Requirements": "(Room.Kak_Renados_Sanctuary and Wooden_Statue) or (Setting.iliaQuest equals Charm)",
+        "GlitchedRequirements": "(Room.Kak_Renados_Sanctuary and Wooden_Statue) or (Setting.iliaQuest equals Charm)"
       },
       {
         "ConnectedArea": "Eldin Field Grotto Platform",
@@ -342,15 +342,15 @@
     "Region": "Hyrule Field - Eldin Province"
   },
   {
-    "RoomName": "Eldin Field Outside Hidden Village",
+    "RoomName": "Eldin Field Outside HV",
     "Exits": [
       {
         "ConnectedArea": "North Eldin Field",
-        "Requirements": "Room.Kakariko_Renados_Sanctuary and Wooden_Statue",
-        "GlitchedRequirements": "Room.Kakariko_Renados_Sanctuary and Wooden_Statue"
+        "Requirements": "Room.Kak_Renados_Sanctuary and Wooden_Statue",
+        "GlitchedRequirements": "Room.Kak_Renados_Sanctuary and Wooden_Statue"
       },
       {
-        "ConnectedArea": "Hidden Village",
+        "ConnectedArea": "HV Outside",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }

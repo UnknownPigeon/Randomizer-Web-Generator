@@ -8,7 +8,7 @@
         "GlitchedRequirements": "CanSmash and CanWarpMeteor"
       },
       {
-        "ConnectedArea": "Lake Hylia Lakebed Temple Entrance",
+        "ConnectedArea": "Lake Hylia LBT Entrance",
         "Requirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (HasHeavyMod and CanUseWaterBombs))",
         "GlitchedRequirements": "Zora_Armor or CanDoAirRefill"
       },
@@ -23,7 +23,7 @@
         "GlitchedRequirements": "Aurus_Memo and CanCompleteLanayruTwilight"
       },
       {
-        "ConnectedArea": "Upper Zoras River",
+        "ConnectedArea": "UZR River",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       },
@@ -38,7 +38,7 @@
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       },
       {
-        "ConnectedArea": "City in The Sky Entrance",
+        "ConnectedArea": "CitS Entrance",
         "Requirements": "((Progressive_Sky_Book, 7) or (Setting.skipCityEntrance equals True)) and (Progressive_Clawshot, 1) and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "((Progressive_Sky_Book, 7) or (Setting.skipCityEntrance equals True)) and (Progressive_Clawshot, 1) and CanCompleteLanayruTwilight"
       }
@@ -188,7 +188,7 @@
     "Region": "Hyrule Field - Eldin"
   },
   {
-    "RoomName": "Lake Hylia Lakebed Temple Entrance",
+    "RoomName": "Lake Hylia LBT Entrance",
     "Exits": [
       {
         "ConnectedArea": "Lake Hylia",
@@ -196,7 +196,7 @@
         "GlitchedRequirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (HasHeavyMod and CanUseWaterBombs))"
       },
       {
-        "ConnectedArea": "Lakebed Temple Entrance",
+        "ConnectedArea": "LBT Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -282,92 +282,92 @@
     ],
     "Checks": [
       {
-        "CheckName": "Lake Lantern Cave First Chest",
+        "CheckName": "LLC First Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Second Chest",
+        "CheckName": "LLC Second Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Third Chest",
+        "CheckName": "LLC Third Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Fourth Chest",
+        "CheckName": "LLC Fourth Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Fifth Chest",
+        "CheckName": "LLC Fifth Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Sixth Chest",
+        "CheckName": "LLC Sixth Chest",
         "Requirements": "CanSmash and Lantern",
         "GlitchedRequirements": "CanSmash and Lantern"
       },
       {
-        "CheckName": "Lake Lantern Cave Seventh Chest",
+        "CheckName": "LLC Seventh Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Eighth Chest",
+        "CheckName": "LLC Eighth Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Ninth Chest",
+        "CheckName": "LLC Ninth Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Tenth Chest",
+        "CheckName": "LLC Tenth Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Eleventh Chest",
+        "CheckName": "LLC Eleventh Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Twelfth Chest",
+        "CheckName": "LLC Twelfth Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Thirteenth Chest",
+        "CheckName": "LLC Thirteenth Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Fourteenth Chest",
+        "CheckName": "LLC Fourteenth Chest",
         "Requirements": "CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave End Lantern Chest",
+        "CheckName": "LLC End Lantern Chest",
         "Requirements": "CanSmash and Lantern",
         "GlitchedRequirements": "CanSmash and Lantern"
       },
       {
-        "CheckName": "Lake Lantern Cave First Poe",
+        "CheckName": "LLC First Poe",
         "Requirements": "Shadow_Crystal and CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Second Poe",
+        "CheckName": "LLC Second Poe",
         "Requirements": "Shadow_Crystal and CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
       },
       {
-        "CheckName": "Lake Lantern Cave Final Poe",
+        "CheckName": "LLC Final Poe",
         "Requirements": "Shadow_Crystal and CanSmash and (Lantern or Trick.llc_no_lantern)",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
       }

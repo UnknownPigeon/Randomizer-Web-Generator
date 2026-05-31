@@ -1,6 +1,6 @@
 [
   {
-    "RoomName": "Forest Temple Boss Room",
+    "RoomName": "FT Boss Room",
     "Exits": [
       {
         "ConnectedArea": "South Faron Woods",
@@ -10,17 +10,17 @@
     ],
     "Checks": [
       {
-        "CheckName": "Forest Temple Diababa Heart Container",
+        "CheckName": "FT Diababa Heart Container",
         "Requirements": "CanDefeatDiababa",
         "GlitchedRequirements": "CanDefeatDiababa"
       },
       {
-        "CheckName": "Forest Temple Diababa",
+        "CheckName": "FT Diababa",
         "Requirements": "CanDefeatDiababa",
         "GlitchedRequirements": "CanDefeatDiababa"
       },
       {
-        "CheckName": "Forest Temple Dungeon Reward",
+        "CheckName": "FT Dungeon Reward",
         "Requirements": "CanDefeatDiababa",
         "GlitchedRequirements": "CanDefeatDiababa"
       }
@@ -28,32 +28,32 @@
     "Region": "Forest Temple"
   },
   {
-    "RoomName": "Forest Temple East Wing",
+    "RoomName": "FT East Wing",
     "Exits": [
       {
-        "ConnectedArea": "Forest Temple Lobby",
+        "ConnectedArea": "FT Lobby",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Forest Temple North Wing",
+        "ConnectedArea": "FT North Wing",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Forest Temple Second Monkey Under Bridge Chest",
+        "CheckName": "FT Second Monkey Under Bridge Chest",
         "Requirements": "(Forest_Temple_Small_Key, 4)",
         "GlitchedRequirements": "(Forest_Temple_Small_Key, 4)"
       },
       {
-        "CheckName": "Forest Temple Big Key Chest",
+        "CheckName": "FT Big Key Chest",
         "Requirements": "Boomerang",
         "GlitchedRequirements": "Boomerang"
       },
       {
-        "CheckName": "Forest Temple East Water Cave Chest",
+        "CheckName": "FT East Water Cave Chest",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -61,7 +61,7 @@
     "Region": "Forest Temple"
   },
   {
-    "RoomName": "Forest Temple Entrance",
+    "RoomName": "FT Entrance",
     "Exits": [
       {
         "ConnectedArea": "North Faron Woods",
@@ -69,14 +69,14 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Forest Temple Lobby",
+        "ConnectedArea": "FT Lobby",
         "Requirements": "(CanDefeatWalltula or Trick.ft_lobby_without_ranged_items or (Trick.ft_lobby_with_wolf and Shadow_Crystal)) and CanDefeatBokoblin and CanBreakMonkeyCage",
         "GlitchedRequirements": "(CanDefeatWalltula or CanDefeatDekuBaba) and CanDefeatBokoblin and CanBreakMonkeyCage"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Forest Temple Entrance Vines Chest",
+        "CheckName": "FT Entrance Vines Chest",
         "Requirements": "CanDefeatWalltula",
         "GlitchedRequirements": "CanDefeatWalltula"
       }
@@ -84,42 +84,42 @@
     "Region": "Forest Temple"
   },
   {
-    "RoomName": "Forest Temple Lobby",
+    "RoomName": "FT Lobby",
     "Exits": [
       {
-        "ConnectedArea": "Forest Temple Entrance",
+        "ConnectedArea": "FT Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Forest Temple East Wing",
+        "ConnectedArea": "FT East Wing",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Forest Temple West Wing",
+        "ConnectedArea": "FT West Wing",
         "Requirements": "(CanBurnWebs or (Boomerang and Trick.ft_west_wing_bombling)) and (((Forest_Temple_Small_Key, 2) and CanDefeatBokoblin) or (Progressive_Clawshot, 1))",
         "GlitchedRequirements": "CanBurnWebs and (((Forest_Temple_Small_Key, 2) and CanDefeatBokoblin) or (Progressive_Clawshot, 1) or CanDoLJA)"
       },
       {
         "ConnectedArea": "Ook",
         "Requirements": "Lantern and CanDefeatWalltula and CanDefeatBokoblin and CanBreakMonkeyCage and (Forest_Temple_Small_Key, 4)",
-        "GlitchedRequirements": "(Room.Forest_Temple_West_Wing and CanDoLJA) or (Lantern and CanDefeatBombling and CanDefeatWalltula and CanDefeatBigBaba and CanDefeatBokoblin and CanBreakMonkeyCage and (Forest_Temple_Small_Key, 4))"
+        "GlitchedRequirements": "(Room.FT_West_Wing and CanDoLJA) or (Lantern and CanDefeatBombling and CanDefeatWalltula and CanDefeatBigBaba and CanDefeatBokoblin and CanBreakMonkeyCage and (Forest_Temple_Small_Key, 4))"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Forest Temple Central Chest Behind Stairs",
+        "CheckName": "FT Central Chest Behind Stairs",
         "Requirements": "Boomerang",
         "GlitchedRequirements": "Boomerang"
       },
       {
-        "CheckName": "Forest Temple Central North Chest",
+        "CheckName": "FT Central North Chest",
         "Requirements": "Lantern",
-        "GlitchedRequirements": "Lantern or (CanDoLJA and Room.Forest_Temple_West_Wing)"
+        "GlitchedRequirements": "Lantern or (CanDoLJA and Room.FT_West_Wing)"
       },
       {
-        "CheckName": "Forest Temple Central Chest Hanging From Web",
+        "CheckName": "FT Central Chest Hanging From Web",
         "Requirements": "CanCutHangingWeb",
         "GlitchedRequirements": "CanCutHangingWeb or CanDoJSMoonBoots"
       }
@@ -127,27 +127,27 @@
     "Region": "Forest Temple"
   },
   {
-    "RoomName": "Forest Temple North Wing",
+    "RoomName": "FT North Wing",
     "Exits": [
       {
-        "ConnectedArea": "Forest Temple East Wing",
+        "ConnectedArea": "FT East Wing",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Forest Temple Boss Room",
+        "ConnectedArea": "FT Boss Room",
         "Requirements": "Forest_Temple_Big_Key and ((Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)))) and (CanFreeAllMonkeys or (Progressive_Clawshot, 1))",
         "GlitchedRequirements": "Forest_Temple_Big_Key and (CanDoLJA or (Boomerang and (CanFreeAllMonkeys or (Progressive_Clawshot, 1))))"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Forest Temple Windless Bridge Chest",
+        "CheckName": "FT Windless Bridge Chest",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Forest Temple North Deku Like Chest",
+        "CheckName": "FT North Deku Like Chest",
         "Requirements": "(Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and HasSword and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy) and Progressive_Clawshot))",
         "GlitchedRequirements": "Boomerang or ((HasBombs and HasSword and (Progressive_Clawshot, 1) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)))"
       },
@@ -162,7 +162,7 @@
         "GlitchedRequirements": "CanCatchBaitedFish and (Boomerang or ((HasBombs and HasSword and Progressive_Clawshot) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)))"
       },
       {
-        "CheckName": "Forest Temple East Tile Worm Chest",
+        "CheckName": "FT East Tile Worm Chest",
         "Requirements": "((CanDefeatTileWorm and CanDefeatSkulltula and CanDefeatWalltula) or (Trick.ft_north_tile_worm_boost and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) and (Boomerang or (Trick.ft_north_bomb_boosts and HasBombs and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy))) and (Forest_Temple_Small_Key, 4)",
         "GlitchedRequirements": "(((HasBombs or CanDoBSMoonBoots or CanDoJSMoonBoots) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)) or Boomerang) and (Forest_Temple_Small_Key, 4)"
       }
@@ -170,10 +170,10 @@
     "Region": "Forest Temple"
   },
   {
-    "RoomName": "Forest Temple West Wing",
+    "RoomName": "FT West Wing",
     "Exits": [
       {
-        "ConnectedArea": "Forest Temple Lobby",
+        "ConnectedArea": "FT Lobby",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
@@ -185,28 +185,28 @@
     ],
     "Checks": [
       {
-        "CheckName": "Forest Temple West Deku Like Chest",
+        "CheckName": "FT West Deku Like Chest",
         "Requirements": "CanDefeatWalltula",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Forest Temple Totem Pole Chest",
+        "CheckName": "FT Totem Pole Chest",
         "Requirements": "true",
         "GlitchedRequirements": "CanDefeatBombling or CanSmash"
       },
       {
-        "CheckName": "Forest Temple West Tile Worm Room Vines Chest",
+        "CheckName": "FT West Tile Worm Room Vines Chest",
         "Requirements": "true",
         "GlitchedRequirements": "CanDefeatBombling or CanSmash"
       },
       {
-        "CheckName": "Forest Temple West Tile Worm Chest Behind Stairs",
+        "CheckName": "FT West Tile Worm Chest Behind Stairs",
         "Requirements": "Boomerang",
         // Blow out the torches or clawshot bomb clip into the stairs
         "GlitchedRequirements": "Boomerang or (HasBombs and Progressive_Clawshot)"
       },
       {
-        "CheckName": "Forest Temple Big Baba Key",
+        "CheckName": "FT Big Baba Key",
         "Requirements": "CanDefeatBigBaba and CanDefeatWalltula",
         "GlitchedRequirements": "CanDefeatBigBaba"
       }
@@ -217,14 +217,14 @@
     "RoomName": "Ook",
     "Exits": [
       {
-        "ConnectedArea": "Forest Temple West Wing",
+        "ConnectedArea": "FT West Wing",
         "Requirements": "CanDefeatOok and Boomerang",
         "GlitchedRequirements": "CanDefeatOok and Boomerang"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Forest Temple Gale Boomerang",
+        "CheckName": "FT Gale Boomerang",
         "Requirements": "CanDefeatOok",
         "GlitchedRequirements": "CanDefeatOok or HasBombs"
       }

@@ -4,69 +4,69 @@
     "Exits": [
       {
         // Whenever portals are checks, this logic will hold up. If the player starts with the portal, that logic is handled elsewhere.
-        "ConnectedArea": "Gerudo Desert Cave of Ordeals Plateau",
+        "ConnectedArea": "Desert CoO Plateau",
         "Requirements": "(Progressive_Clawshot, 1) and CanDefeatShadowBeast",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanDefeatShadowBeast"
       },
       {
-        "ConnectedArea": "Gerudo Desert Basin",
+        "ConnectedArea": "Desert Basin",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Gerudo Desert Skulltula Grotto",
+        "ConnectedArea": "Desert Skulltula Grotto",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Gerudo Desert Peahat Ledge Chest",
+        "CheckName": "Desert Peahat Ledge Chest",
         "Requirements": "(Progressive_Clawshot, 1)",
         "GlitchedRequirements": "(Progressive_Clawshot, 1)"
       },
       {
-        "CheckName": "Gerudo Desert East Canyon Chest",
+        "CheckName": "Desert East Canyon Chest",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Gerudo Desert Lone Small Chest",
+        "CheckName": "Desert Lone Small Chest",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Gerudo Desert West Canyon Chest",
+        "CheckName": "Desert West Canyon Chest",
         "Requirements": "(Progressive_Clawshot, 1)",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoLJA or (Shadow_Crystal and HasBombs)"
       },
       {
-        "CheckName": "Gerudo Desert South Chest Behind Wooden Gates",
+        "CheckName": "Desert South Chest Behind Wooden Gates",
         "Requirements": "CanDefeatBulblin",
         "GlitchedRequirements": "CanDefeatBulblin"
       },
       {
-        "CheckName": "Gerudo Desert Owl Statue Chest",
+        "CheckName": "Desert Owl Statue Chest",
         "Requirements": "(Progressive_Dominion_Rod, 2)",
         "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) or CanDoLJA"
       },
       {
-        "CheckName": "Gerudo Desert Owl Statue Sky Character",
+        "CheckName": "Desert Owl Statue Sky Character",
         "Requirements": "(Progressive_Dominion_Rod, 2)",
         "GlitchedRequirements": "(Progressive_Dominion_Rod, 2)"
       },
       {
-        "CheckName": "Gerudo Desert Male Dayfly",
+        "CheckName": "Desert Male Dayfly",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Gerudo Desert Female Dayfly",
+        "CheckName": "Desert Female Dayfly",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Gerudo Desert East Poe",
+        "CheckName": "Desert East Poe",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       }
@@ -74,7 +74,7 @@
     "Region": "Gerudo Desert"
   },
   {
-    "RoomName": "Gerudo Desert Cave of Ordeals Plateau",
+    "RoomName": "Desert CoO Plateau",
     "Exits": [
       {
         "ConnectedArea": "Gerudo Desert",
@@ -82,19 +82,19 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Gerudo Desert Cave of Ordeals Floors 01-11",
+        "ConnectedArea": "CoO Floors 01-11",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Gerudo Desert Poe Above Cave of Ordeals",
+        "CheckName": "Desert Poe Above CoO",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal and (Progressive_Clawshot, 1) and CanDefeatShadowBeast"
       },
       {
-        "CheckName": "Gerudo Desert Portal",
+        "CheckName": "Desert Portal",
         "Requirements": "CanDefeatShadowBeast",
         "GlitchedRequirements": "CanDefeatShadowBeast"
       }
@@ -102,7 +102,7 @@
     "Region": "Gerudo Desert"
   },
   {
-    "RoomName": "Gerudo Desert Basin",
+    "RoomName": "Desert Basin",
     "Exits": [
       {
         "ConnectedArea": "Gerudo Desert",
@@ -110,44 +110,44 @@
         "GlitchedRequirements": "CanDefeatBulblin"
       },
       {
-        "ConnectedArea": "Gerudo Desert North East Ledge",
+        "ConnectedArea": "Desert North East Ledge",
         "Requirements": "(Progressive_Clawshot, 1)",
         "GlitchedRequirements": "(Progressive_Clawshot, 1)"
       },
       {
-        "ConnectedArea": "Gerudo Desert Outside Bulblin Camp",
+        "ConnectedArea": "Desert Outside Bulblin Camp",
         "Requirements": "CanDefeatBulblin",
         "GlitchedRequirements": "CanDefeatBulblin"
       },
       {
-        "ConnectedArea": "Gerudo Desert Chu Grotto",
+        "ConnectedArea": "Desert Chu Grotto",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Gerudo Desert Northeast Chest Behind Gates",
+        "CheckName": "Desert Northeast Chest Behind Gates",
         "Requirements": "CanDefeatBulblin",
         "GlitchedRequirements": "CanDefeatBulblin"
       },
       {
-        "CheckName": "Gerudo Desert Campfire North Chest",
+        "CheckName": "Desert Campfire North Chest",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Gerudo Desert Campfire East Chest",
+        "CheckName": "Desert Campfire East Chest",
         "Requirements": "CanDefeatBulblin",
         "GlitchedRequirements": "CanDefeatBulblin"
       },
       {
-        "CheckName": "Gerudo Desert Campfire West Chest",
+        "CheckName": "Desert Campfire West Chest",
         "Requirements": "CanDefeatBulblin",
         "GlitchedRequirements": "CanDefeatBulblin"
       },
       {
-        "CheckName": "Gerudo Desert Northwest Chest Behind Gates",
+        "CheckName": "Desert Northwest Chest Behind Gates",
         "Requirements": "CanDefeatBulblin",
         "GlitchedRequirements": "CanDefeatBulblin"
       }
@@ -155,22 +155,22 @@
     "Region": "Gerudo Desert"
   },
   {
-    "RoomName": "Gerudo Desert North East Ledge",
+    "RoomName": "Desert North East Ledge",
     "Exits": [
       {
-        "ConnectedArea": "Gerudo Desert Basin",
+        "ConnectedArea": "Desert Basin",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Gerudo Desert Rock Grotto",
+        "ConnectedArea": "Desert Rock Grotto",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Gerudo Desert North Peahat Poe",
+        "CheckName": "Desert North Peahat Poe",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal and (Progressive_Clawshot, 1)"
       }
@@ -178,10 +178,10 @@
     "Region": "Gerudo Desert"
   },
   {
-    "RoomName": "Gerudo Desert Outside Bulblin Camp",
+    "RoomName": "Desert Outside Bulblin Camp",
     "Exits": [
       {
-        "ConnectedArea": "Gerudo Desert Basin",
+        "ConnectedArea": "Desert Basin",
         "Requirements": "Room.Gerudo_Desert_Basin and CanDefeatBulblin",
         "GlitchedRequirements": "(Room.Gerudo_Desert_Basin and CanDefeatBulblin) or Shadow_Crystal"
       },
@@ -193,7 +193,7 @@
     ],
     "Checks": [
       {
-        "CheckName": "Gerudo Desert North Small Chest Before Bulblin Camp",
+        "CheckName": "Desert North Small Chest Before Bulblin Camp",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
@@ -203,7 +203,7 @@
         "GlitchedRequirements": "Shadow_Crystal"
       },
       {
-        "CheckName": "Gerudo Desert Golden Wolf",
+        "CheckName": "Desert Golden Wolf",
         "Requirements": "Shadow_Crystal and Room.Lake_Hylia",
         "GlitchedRequirements": "Shadow_Crystal and Room.Lake_Hylia"
       }
@@ -211,7 +211,7 @@
     "Region": "Gerudo Desert"
   },
   {
-    "RoomName": "Gerudo Desert Skulltula Grotto",
+    "RoomName": "Desert Skulltula Grotto",
     "Exits": [
       {
         "ConnectedArea": "Gerudo Desert",
@@ -221,7 +221,7 @@
     ],
     "Checks": [
       {
-        "CheckName": "Gerudo Desert Skulltula Grotto Chest",
+        "CheckName": "Desert Skulltula Grotto Chest",
         "Requirements": "CanDefeatSkulltula",
         "GlitchedRequirements": "CanDefeatSkulltula"
       }
@@ -229,10 +229,10 @@
     "Region": "Gerudo Desert"
   },
   {
-    "RoomName": "Gerudo Desert Chu Grotto",
+    "RoomName": "Desert Chu Grotto",
     "Exits": [
       {
-        "ConnectedArea": "Gerudo Desert Basin",
+        "ConnectedArea": "Desert Basin",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -240,27 +240,27 @@
     "Region": "Gerudo Desert"
   },
   {
-    "RoomName": "Gerudo Desert Rock Grotto",
+    "RoomName": "Desert Rock Grotto",
     "Exits": [
       {
-        "ConnectedArea": "Gerudo Desert North East Ledge",
+        "ConnectedArea": "Desert North East Ledge",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Gerudo Desert Rock Grotto Lantern Chest",
+        "CheckName": "Desert Rock Grotto Lantern Chest",
         "Requirements": "CanSmash and Lantern",
         "GlitchedRequirements": "CanSmash and Lantern"
       },
       {
-        "CheckName": "Gerudo Desert Rock Grotto First Poe",
+        "CheckName": "Desert Rock Grotto First Poe",
         "Requirements": "Shadow_Crystal and CanSmash",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
       },
       {
-        "CheckName": "Gerudo Desert Rock Grotto Second Poe",
+        "CheckName": "Desert Rock Grotto Second Poe",
         "Requirements": "Shadow_Crystal and CanSmash",
         "GlitchedRequirements": "Shadow_Crystal and CanSmash"
       }
@@ -271,12 +271,12 @@
     "RoomName": "Bulblin Camp",
     "Exits": [
       {
-        "ConnectedArea": "Gerudo Desert Outside Bulblin Camp",
+        "ConnectedArea": "Desert Outside Bulblin Camp",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Outside Arbiters Grounds",
+        "ConnectedArea": "Outside AG",
         "Requirements": "(Gerudo_Desert_Bulblin_Camp_Key and CanDefeatKingBulblinDesert) or (Setting.skipArbitersEntrance equals True)",
         "GlitchedRequirements": "(CanDefeatKingBulblinDesert and (Gerudo_Desert_Bulblin_Camp_Key or ((CanDoMapGlitch and HasSword or CanDoLJA)))) or (Setting.skipArbitersEntrance equals True)"
       }
@@ -311,7 +311,7 @@
     "Region": "Gerudo Desert"
   },
   {
-    "RoomName": "Outside Arbiters Grounds",
+    "RoomName": "Outside AG",
     "Exits": [
       {
         "ConnectedArea": "Bulblin Camp",
@@ -319,19 +319,19 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Arbiters Grounds Entrance",
+        "ConnectedArea": "AG Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Outside Arbiters Grounds Lantern Chest",
+        "CheckName": "Outside AG Lantern Chest",
         "Requirements": "Lantern",
         "GlitchedRequirements": "Lantern"
       },
       {
-        "CheckName": "Outside Arbiters Grounds Poe",
+        "CheckName": "Outside AG Poe",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       }
@@ -343,9 +343,9 @@
     "Exits": [
       {
         // Dynamic logic for this connection can be found in EntranceRando.cs
-        "ConnectedArea": "Arbiters Grounds Boss Room",
-        "Requirements": "Room.Arbiters_Grounds_Boss_Room and CanDefeatStallord",
-        "GlitchedRequirements": "Room.Arbiters_Grounds_Boss_Room and CanDefeatStallord"
+        "ConnectedArea": "AG Boss Room",
+        "Requirements": "Room.AG_Boss_Room and CanDefeatStallord",
+        "GlitchedRequirements": "Room.AG_Boss_Room and CanDefeatStallord"
       },
       {
         "ConnectedArea": "Mirror Chamber Upper",
@@ -390,7 +390,7 @@
         "GlitchedRequirements": "CanDefeatShadowBeast or (Shadow_Crystal and Mirror_Chamber_Portal)"
       },
       {
-        "ConnectedArea": "Palace of Twilight Entrance",
+        "ConnectedArea": "PoT Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }

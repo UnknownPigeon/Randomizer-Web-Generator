@@ -1,79 +1,79 @@
 [
   {
-    "RoomName": "Lower Kakariko Village",
+    "RoomName": "Lower Kak Village",
     "Exits": [
       {
-        "ConnectedArea": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kak Village",
         "Requirements": "((CanCompleteGoronMines) or CanSmash) and CanCompleteEldinTwilight",
         "GlitchedRequirements": "((CanCompleteGoronMines) or CanSmash) and CanCompleteEldinTwilight"
       },
       {
-        "ConnectedArea": "Kakariko Village Behind Gate",
+        "ConnectedArea": "Kak Village Behind Gate",
         "Requirements": "CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanCompleteEldinTwilight"
       },
       {
-        "ConnectedArea": "Kakariko Gorge Behind Gate",
+        "ConnectedArea": "Kak Gorge Behind Gate",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Graveyard",
+        "ConnectedArea": "Kak Graveyard",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Death Mountain Near Kakariko",
+        "ConnectedArea": "Death Mountain Near Kak",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary Front Left Door",
+        "ConnectedArea": "Kak Renados Sanctuary Front Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary Front Right Door",
+        "ConnectedArea": "Kak Renados Sanctuary Front Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary Back Left Door",
+        "ConnectedArea": "Kak Renados Sanctuary Back Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary Back Right Door",
+        "ConnectedArea": "Kak Renados Sanctuary Back Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Malo Mart",
+        "ConnectedArea": "Kak Malo Mart",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Elde Inn Left Door",
+        "ConnectedArea": "Kak Elde Inn Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Elde Inn Right Door",
+        "ConnectedArea": "Kak Elde Inn Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Bug House Door",
+        "ConnectedArea": "Kak Bug House Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Bug House Ceiling Hole",
+        "ConnectedArea": "Kak Bug House Ceiling Hole",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Barnes Bomb Shop Lower",
+        "ConnectedArea": "Kak Barnes Bomb Shop Lower",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -95,17 +95,17 @@
         "GlitchedRequirements": "CanCatchBaitedFish and CanSmash and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Village Bomb Rock Spire Heart Piece",
+        "CheckName": "Kak Village Bomb Rock Spire Heart Piece",
         "Requirements": "(((HasBombs or Trick.kak_rock_spire_poh_with_boomerang) and Boomerang) or (Trick.kak_rock_spire_poh_with_epona_claw and Progressive_Clawshot)) and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(CanDoMapGlitch or (CanLaunchBombs and (Boomerang or (Progressive_Clawshot, 1)))) and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Village Portal",
+        "CheckName": "Kak Village Portal",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Kakariko Village Bell Rupee",
+        "CheckName": "Kak Village Bell Rupee",
         "Requirements": "Shadow_Crystal and CanLaunchBombs and CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanLaunchBombs and (Shadow_Crystal or Boomerang) and CanCompleteEldinTwilight"
       },
@@ -115,87 +115,87 @@
         "GlitchedRequirements": "(HasHeavyMod or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Village Spring Shortcut Box Rupee 1",
+        "CheckName": "Kak Village Spring Shortcut Box Rupee 1",
         "Requirements": "CanSmash and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(CanSmash or Shadow_Crystal) and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Village Spring Shortcut Box Rupee 2",
+        "CheckName": "Kak Village Spring Shortcut Box Rupee 2",
         "Requirements": "CanSmash and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(CanSmash or Shadow_Crystal) and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Village Ant House Ledge Box Rupee",
+        "CheckName": "Kak Village Ant House Ledge Box Rupee",
         "Requirements": "Boomerang and CanCompleteEldinTwilight",
         // Either use Boomerang or use Epona OoB
         "GlitchedRequirements": "(Boomerang or Shadow_Crystal) and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Village Hot Spring Ledge Box Rupee",
+        "CheckName": "Kak Village Hot Spring Ledge Box Rupee",
         "Requirements": "(Shadow_Crystal or Boomerang) and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(Boomerang or Shadow_Crystal) and CanCompleteEldinTwilight"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Upper Kakariko Village",
+    "RoomName": "Upper Kak Village",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Top of Watchtower",
+        "ConnectedArea": "Kak Top of Watchtower",
         "Requirements": "CanCompleteGoronMines and CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanCompleteGoronMines and CanCompleteEldinTwilight"
       },
       {
-        "ConnectedArea": "Kakariko Barnes Bomb Shop Upper",
+        "ConnectedArea": "Kak Barnes Bomb Shop Upper",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Watchtower Lower Door",
+        "ConnectedArea": "Kak Watchtower Lower Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Watchtower Dig Spot",
+        "ConnectedArea": "Kak Watchtower Dig Spot",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Kakariko Village Bomb Shop Poe",
+        "CheckName": "Kak Village Bomb Shop Poe",
         "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Village Watchtower Poe",
+        "CheckName": "Kak Village Watchtower Poe",
         "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Watchtower Alcove Chest",
+        "CheckName": "Kak Watchtower Alcove Chest",
         "Requirements": "(CanSmash and CanCompleteEldinTwilight) or (Trick.watchtower_alcove_chest_as_wolf and Shadow_Crystal)",
         "GlitchedRequirements": "(CanSmash and CanCompleteEldinTwilight) or Shadow_Crystal"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Top of Watchtower",
+    "RoomName": "Kak Top of Watchtower",
     "Exits": [
       {
-        "ConnectedArea": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Watchtower Upper Door",
+        "ConnectedArea": "Kak Watchtower Upper Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -207,13 +207,13 @@
         "GlitchedRequirements": "CanCompleteGoronMines and (Progressive_Bow, 1) and CanCompleteEldinTwilight"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Village Behind Gate",
+    "RoomName": "Kak Village Behind Gate",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "Gate_Keys or CanCompleteEldinTwilight", // or access to epona
         "GlitchedRequirements": "Gate_Keys or CanCompleteEldinTwilight" // or access to epona
       },
@@ -223,97 +223,97 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Renados Sanctuary Front Left Door",
+    "RoomName": "Kak Renados Sanctuary Front Left Door",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary",
+        "ConnectedArea": "Kak Renados Sanctuary",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Renados Sanctuary Front Right Door",
+    "RoomName": "Kak Renados Sanctuary Front Right Door",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary",
+        "ConnectedArea": "Kak Renados Sanctuary",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Renados Sanctuary Back Left Door",
+    "RoomName": "Kak Renados Sanctuary Back Left Door",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary",
+        "ConnectedArea": "Kak Renados Sanctuary",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Renados Sanctuary Back Right Door",
+    "RoomName": "Kak Renados Sanctuary Back Right Door",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary",
+        "ConnectedArea": "Kak Renados Sanctuary",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Renados Sanctuary",
+    "RoomName": "Kak Renados Sanctuary",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary Front Left Door",
+        "ConnectedArea": "Kak Renados Sanctuary Front Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary Front Right Door",
+        "ConnectedArea": "Kak Renados Sanctuary Front Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary Back Left Door",
+        "ConnectedArea": "Kak Renados Sanctuary Back Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary Back Right Door",
+        "ConnectedArea": "Kak Renados Sanctuary Back Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary Basement",
+        "ConnectedArea": "Kak Renados Sanctuary Basement",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -330,13 +330,13 @@
         "GlitchedRequirements": "Ilias_Charm"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Renados Sanctuary Basement",
+    "RoomName": "Kak Renados Sanctuary Basement",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Renados Sanctuary",
+        "ConnectedArea": "Kak Renados Sanctuary",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -348,161 +348,161 @@
         "GlitchedRequirements": "Progressive_Sky_Book and CanCompleteEldinTwilight"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Malo Mart",
+    "RoomName": "Kak Malo Mart",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Kakariko Village Malo Mart Hylian Shield",
+        "CheckName": "Kak Village Malo Mart Hylian Shield",
         "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
         "GlitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
       },
       {
-        "CheckName": "Kakariko Village Malo Mart Hawkeye",
-        "Requirements": "CanCompleteGoronMines and Room.Kakariko_Top_of_Watchtower and (Progressive_Bow, 1) and CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
-        "GlitchedRequirements": "CanCompleteGoronMines and Room.Kakariko_Top_of_Watchtower and (Progressive_Bow, 1) and CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+        "CheckName": "Kak Village Malo Mart Hawkeye",
+        "Requirements": "CanCompleteGoronMines and Room.Kak_Top_of_Watchtower and (Progressive_Bow, 1) and CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
+        "GlitchedRequirements": "CanCompleteGoronMines and Room.Kak_Top_of_Watchtower and (Progressive_Bow, 1) and CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
       },
       {
-        "CheckName": "Kakariko Village Malo Mart Red Potion",
+        "CheckName": "Kak Village Malo Mart Red Potion",
         "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
         "GlitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
       },
       {
-        "CheckName": "Kakariko Village Malo Mart Wooden Shield",
+        "CheckName": "Kak Village Malo Mart Wooden Shield",
         "Requirements": "CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanCompleteEldinTwilight"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Elde Inn Left Door",
+    "RoomName": "Kak Elde Inn Left Door",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Elde Inn",
+        "ConnectedArea": "Kak Elde Inn",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Elde Inn Right Door",
+    "RoomName": "Kak Elde Inn Right Door",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Elde Inn",
+        "ConnectedArea": "Kak Elde Inn",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Elde Inn",
+    "RoomName": "Kak Elde Inn",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Elde Inn Left Door",
+        "ConnectedArea": "Kak Elde Inn Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Elde Inn Right Door",
+        "ConnectedArea": "Kak Elde Inn Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Kakariko Inn Chest",
+        "CheckName": "Kak Inn Chest",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Bug House Door",
+    "RoomName": "Kak Bug House Door",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Bug House",
+        "ConnectedArea": "Kak Bug House",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Bug House Ceiling Hole",
+    "RoomName": "Kak Bug House Ceiling Hole",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Bug House",
+        "ConnectedArea": "Kak Bug House",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Bug House",
+    "RoomName": "Kak Bug House",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Bug House Door",
+        "ConnectedArea": "Kak Bug House Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Bug House Ceiling Hole",
+        "ConnectedArea": "Kak Bug House Ceiling Hole",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Kakariko Village Female Ant",
+        "CheckName": "Kak Village Female Ant",
         "Requirements": "CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanCompleteEldinTwilight"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Barnes Bomb Shop Lower",
+    "RoomName": "Kak Barnes Bomb Shop Lower",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Barnes Bomb Shop Upper",
+        "ConnectedArea": "Kak Barnes Bomb Shop Upper",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -514,105 +514,105 @@
         "GlitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Barnes Bomb Shop Upper",
+    "RoomName": "Kak Barnes Bomb Shop Upper",
     "Exits": [
       {
-        "ConnectedArea": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Barnes Bomb Shop Lower",
+        "ConnectedArea": "Kak Barnes Bomb Shop Lower",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Watchtower Lower Door",
+    "RoomName": "Kak Watchtower Lower Door",
     "Exits": [
       {
-        "ConnectedArea": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Watchtower",
+        "ConnectedArea": "Kak Watchtower",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Watchtower Dig Spot",
+    "RoomName": "Kak Watchtower Dig Spot",
     "Exits": [
       {
-        "ConnectedArea": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kak Village",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       },
       {
-        "ConnectedArea": "Kakariko Watchtower",
+        "ConnectedArea": "Kak Watchtower",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Watchtower Upper Door",
+    "RoomName": "Kak Watchtower Upper Door",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Top of Watchtower",
+        "ConnectedArea": "Kak Top of Watchtower",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Watchtower",
+        "ConnectedArea": "Kak Watchtower",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Watchtower",
+    "RoomName": "Kak Watchtower",
     "Exits": [
       {
-        "ConnectedArea": "Kakariko Watchtower Lower Door",
+        "ConnectedArea": "Kak Watchtower Lower Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Watchtower Dig Spot",
+        "ConnectedArea": "Kak Watchtower Dig Spot",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Watchtower Upper Door",
+        "ConnectedArea": "Kak Watchtower Upper Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Kakariko Watchtower Chest",
+        "CheckName": "Kak Watchtower Chest",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Graveyard",
+    "RoomName": "Kak Graveyard",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
@@ -624,7 +624,7 @@
     ],
     "Checks": [
       {
-        "CheckName": "Kakariko Graveyard Lantern Chest",
+        "CheckName": "Kak Graveyard Lantern Chest",
         "Requirements": "Lantern",
         "GlitchedRequirements": "Lantern"
       },
@@ -649,31 +649,31 @@
         "GlitchedRequirements": "CanCatchBaitedFish and Gate_Keys and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Graveyard Male Ant",
+        "CheckName": "Kak Graveyard Male Ant",
         "Requirements": "CanCompleteEldinTwilight",
         "GlitchedRequirements": "CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Graveyard Grave Poe",
+        "CheckName": "Kak Graveyard Grave Poe",
         "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Graveyard Open Poe",
+        "CheckName": "Kak Graveyard Open Poe",
         "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight"
       },
       {
-        "CheckName": "Kakariko Graveyard Golden Wolf",
+        "CheckName": "Kak Graveyard Golden Wolf",
         "Requirements": "Shadow_Crystal and Room.Snowpeak_Climb_Upper",
         "GlitchedRequirements": "Shadow_Crystal and Room.Snowpeak_Climb_Upper"
       },
       {
-        "CheckName": "Kakariko Graveyard Underwater Boulder Rupee",
+        "CheckName": "Kak Graveyard Underwater Boulder Rupee",
         "Requirements": "(HasHeavyMod or Zora_Armor) and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(HasHeavyMod or Magic_Armor or Zora_Armor) and CanUseWaterBombs and Gate_Keys and CanCompleteEldinTwilight"
       }
     ],
-    "Region": "Kakariko Village"
+    "region": "Kakariko Village"
   }
 ]

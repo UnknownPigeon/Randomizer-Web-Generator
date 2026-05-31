@@ -1,9 +1,9 @@
 [
   {
-    "RoomName": "Death Mountain Near Kakariko",
+    "RoomName": "Death Mountain Near Kak",
     "Exits": [
       {
-        "ConnectedArea": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kak Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
@@ -19,7 +19,7 @@
     "RoomName": "Death Mountain Trail",
     "Exits": [
       {
-        "ConnectedArea": "Death Mountain Near Kakariko",
+        "ConnectedArea": "Death Mountain Near Kak",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
@@ -164,7 +164,7 @@
         "GlitchedRequirements": "Iron_Boots or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)"
       },
       {
-        "ConnectedArea": "Death Mountain Sumo Hall Goron Mines Tunnel",
+        "ConnectedArea": "Death Mountain Sumo Hall GM Tunnel",
         "Requirements": "Iron_Boots or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)",
         "GlitchedRequirements": "Iron_Boots or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)"
       }
@@ -190,7 +190,7 @@
     "Region": "Death Mountain"
   },
   {
-    "RoomName": "Death Mountain Sumo Hall Goron Mines Tunnel",
+    "RoomName": "Death Mountain Sumo Hall GM Tunnel",
     "Exits": [
       {
         // Depending on settings, the Gorons can be blocking the way into the room. If this is the case, we need to make sure we can actually move the Gorons before we consider this a valid path.
@@ -200,7 +200,7 @@
         "GlitchedRequirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True) or Spinner"
       },
       {
-        "ConnectedArea": "Goron Mines Entrance",
+        "ConnectedArea": "GM Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }

@@ -1194,10 +1194,10 @@ namespace TPRandomizer.Hints
             List<string> checkNames =
                 new()
                 {
-                    "Cave of Ordeals Floor 17 Poe",
-                    "Cave of Ordeals Floor 33 Poe",
-                    "Cave of Ordeals Floor 44 Poe",
-                    "Cave of Ordeals Great Fairy Reward",
+                    "CoO Floor 17 Poe",
+                    "CoO Floor 33 Poe",
+                    "CoO Floor 44 Poe",
+                    "CoO Great Fairy Reward",
                 };
 
             foreach (string checkName in checkNames)
@@ -1445,8 +1445,8 @@ namespace TPRandomizer.Hints
                                         false,
                                         true,
                                         areaId.type == AreaId.AreaType.Province
-                                          ? TradeChainHint.AreaType.Province
-                                          : TradeChainHint.AreaType.Zone,
+                                            ? TradeChainHint.AreaType.Province
+                                            : TradeChainHint.AreaType.Zone,
                                         DetailedCheckStatus.Unknown,
                                         CheckStatusDisplay.None
                                     );
@@ -1703,8 +1703,8 @@ namespace TPRandomizer.Hints
         private void UpdateHintedForAlwaysHints(List<string> checksToHint)
         {
             HashSet<string> checksToHintSet = ListUtils.isEmpty(checksToHint)
-              ? new()
-              : new(checksToHint);
+                ? new()
+                : new(checksToHint);
 
             foreach (string checkName in hintSettings.always.checks)
             {

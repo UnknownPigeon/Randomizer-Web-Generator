@@ -1562,14 +1562,14 @@ namespace TPRandomizer
 
             string[] bossRooms =
             {
-                "Palace of Twilight Boss Room",
-                "City in The Sky Boss Room",
-                "Temple of Time Boss Room",
-                "Snowpeak Ruins Boss Room",
-                "Arbiters Grounds Boss Room",
-                "Lakebed Temple Boss Room",
-                "Goron Mines Boss Room",
-                "Forest Temple Boss Room",
+                "PoT Boss Room",
+                "CitS Boss Room",
+                "ToT Boss Room",
+                "SPR Boss Room",
+                "AG Boss Room",
+                "LBT Boss Room",
+                "GM Boss Room",
+                "FT Boss Room",
             };
 
             string[] DungeonNames =
@@ -2103,11 +2103,11 @@ namespace TPRandomizer
                 {
                     if (LogicFunctions.CanUse(Item.Kakariko_Village_Portal))
                     {
-                        portalRooms.Add(Randomizer.Rooms.RoomDict["Lower Kakariko Village"]);
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Lower Kak Village"]);
                     }
                     if (LogicFunctions.CanUse(Item.Kakariko_Gorge_Portal))
                     {
-                        portalRooms.Add(Randomizer.Rooms.RoomDict["Kakariko Gorge"]);
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Kak Gorge"]);
                     }
                     if (LogicFunctions.CanUse(Item.Death_Mountain_Portal))
                     {
@@ -2127,15 +2127,15 @@ namespace TPRandomizer
                     }
                     if (LogicFunctions.CanUse(Item.Castle_Town_Portal))
                     {
-                        portalRooms.Add(Randomizer.Rooms.RoomDict["Outside Castle Town West"]);
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["OCT West"]);
                     }
                     if (LogicFunctions.CanUse(Item.Zoras_Domain_Portal))
                     {
-                        portalRooms.Add(Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"]);
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["ZD Throne Room"]);
                     }
                     if (LogicFunctions.CanUse(Item.Upper_Zoras_River_Portal))
                     {
-                        portalRooms.Add(Randomizer.Rooms.RoomDict["Upper Zoras River"]);
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["UZR River"]);
                     }
                 }
 
@@ -2151,9 +2151,7 @@ namespace TPRandomizer
                 {
                     if (LogicFunctions.CanUse(Item.Gerudo_Desert_Portal))
                     {
-                        portalRooms.Add(
-                            Randomizer.Rooms.RoomDict["Gerudo Desert Cave of Ordeals Plateau"]
-                        );
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["Desert CoO Plateau"]);
                     }
 
                     if (LogicFunctions.CanUse(Item.Mirror_Chamber_Portal))

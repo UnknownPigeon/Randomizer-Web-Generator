@@ -1051,7 +1051,7 @@ namespace TPRandomizer
 
         EntranceShuffleError ValidateWorld()
         {
-            if (!BackendFunctions.ValidatePlaythrough(Randomizer.Rooms.RoomDict["Root"], false))
+            if (!BackendFunctions.ValidatePlaythrough(Randomizer.Rooms.RoomDict["Root"], true))
             {
                 return EntranceShuffleError.ALL_LOCATIONS_NOT_REACHABLE;
             }
@@ -1201,7 +1201,7 @@ namespace TPRandomizer
                 if (pairedEntrance.GetParentArea().Contains(dungeon))
                 {
                     roomName = dungeon;
-                    if (dungeon == "Snowpeak Ruins")
+                    if (dungeon == "SPR")
                     {
                         roomName += " Left Door";
                     }
@@ -1263,13 +1263,13 @@ namespace TPRandomizer
                 List<string> bossRooms =
                     new()
                     {
-                        "Forest Temple Boss Room",
-                        "Goron Mines Boss Room",
-                        "Lakebed Temple Boss Room",
-                        "Snowpeak Ruins Boss Room",
-                        "Temple of Time Boss Room",
-                        "City in The Sky Boss Room",
-                        "Palace of Twilight Boss Room"
+                        "FT Boss Room",
+                        "GM Boss Room",
+                        "LM Boss Room",
+                        "SPR Boss Room",
+                        "ToT Boss Room",
+                        "CitS Boss Room",
+                        "PoT Boss Room"
                     };
                 foreach (string bossRoomName in bossRooms)
                 {
@@ -1307,7 +1307,7 @@ namespace TPRandomizer
                 == SSettings.Enums.MirrorChamberEntrance.Closed
             )
             {
-                string bossRoomName = "Arbiters Grounds Boss Room";
+                string bossRoomName = "AG Boss Room";
                 Entrance bossEntrance = Randomizer.Rooms.RoomDict[bossRoomName].Exits[0];
                 Entrance newEntrance = GetDungeonEntrance(
                         GetReverseConnectionEntrance(bossRoomName)[0]
@@ -1342,7 +1342,7 @@ namespace TPRandomizer
 
                     //TODO: Once we randomize bosses, we will need to come back and make this dynamic so it checks for any connected boss requirements and add that requirement to the input json and seed header. Just saving myself some work right now.
                     Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].Requirements +=
-                        " and CanDefeatStallord and Room.Arbiters_Grounds_Boss_Room";
+                        " and CanDefeatStallord and Room.AG_Boss_Room";
                     Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].reqsCache = null;
                     break;
                 }
@@ -1351,7 +1351,7 @@ namespace TPRandomizer
                     // Mirror Chamber Lower and AG Boss door always lead to the same place.
                     Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].SetAsShuffled();
                     Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].SetReplacedEntrance(
-                        Randomizer.Rooms.RoomDict["Arbiters Grounds After Poe Gate"].Exits[1]
+                        Randomizer.Rooms.RoomDict["AG After Poe Gate"].Exits[1]
                     );
                     break;
                 }

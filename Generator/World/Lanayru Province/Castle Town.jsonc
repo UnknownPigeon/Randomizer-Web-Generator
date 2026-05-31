@@ -1,24 +1,24 @@
 [
   {
-    "RoomName": "Castle Town West",
+    "RoomName": "CT West",
     "Exits": [
       {
-        "ConnectedArea": "Outside Castle Town West",
+        "ConnectedArea": "OCT West",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Center",
+        "ConnectedArea": "CT Center",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town South",
+        "ConnectedArea": "CT South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town STAR Game",
+        "ConnectedArea": "CT STAR Game",
         "Requirements": "CanCompleteLanayruTwilight",
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       }
@@ -33,10 +33,10 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town STAR Game",
+    "RoomName": "CT STAR Game",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town West",
+        "ConnectedArea": "CT West",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -47,49 +47,50 @@
         "Requirements": "(Progressive_Clawshot, 1) or Trick.star_1_without_claw",
         "GlitchedRequirements": "(Progressive_Clawshot, 1)"
       },
+      // To Trigger STAR 2, you have to clear STAR 1 and you have to talk to the girls outside the tent as their "eek it's HIM" dialogue, triggers STAR 2.
       {
         "CheckName": "STAR Prize 2",
-        "Requirements": "(Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.star_2_without_2_claws)",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+        "Requirements": "((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.star_2_without_2_claws)) and (Room.CT_West and CanCompleteLanayruTwilight)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Room.CT_West and CanCompleteLanayruTwilight)"
       }
     ],
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Center",
+    "RoomName": "CT Center",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town West",
+        "ConnectedArea": "CT West",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town North",
+        "ConnectedArea": "CT North",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town East",
+        "ConnectedArea": "CT East",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town South",
+        "ConnectedArea": "CT South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Goron House Left Door",
+        "ConnectedArea": "CT Goron House Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Goron House Right Door",
+        "ConnectedArea": "CT Goron House Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Malo Mart",
+        "ConnectedArea": "CT Malo Mart",
         "Requirements": "CanCompleteLanayruTwilight",
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       }
@@ -97,15 +98,15 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Goron House Left Door",
+    "RoomName": "CT Goron House Left Door",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town Center",
+        "ConnectedArea": "CT Center",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Goron House",
+        "ConnectedArea": "CT Goron House",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -113,15 +114,15 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Goron House Right Door",
+    "RoomName": "CT Goron House Right Door",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town Center",
+        "ConnectedArea": "CT Center",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Goron House",
+        "ConnectedArea": "CT Goron House",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -129,37 +130,37 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Goron House",
+    "RoomName": "CT Goron House",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town Goron House Left Door",
+        "ConnectedArea": "CT Goron House Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Goron House Right Door",
+        "ConnectedArea": "CT Goron House Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Goron House Balcony",
+        "ConnectedArea": "CT Goron House Balcony",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Castle Town Goron Shop Hylian Shield",
+        "CheckName": "CT Goron Shop Hylian Shield",
         "Requirements": "(Setting.walletSize not_equal Reduced) or Progressive_Wallet",
         "GlitchedRequirements": "(Setting.walletSize not_equal Reduced) or Progressive_Wallet"
       },
       {
-        "CheckName": "Castle Town Goron Shop Red Potion",
+        "CheckName": "CT Goron Shop Red Potion",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "Castle Town Goron Shop Lantern Oil",
+        "CheckName": "CT Goron Shop Lantern Oil",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -167,17 +168,17 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Goron House Balcony",
+    "RoomName": "CT Goron House Balcony",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town Goron House",
+        "ConnectedArea": "CT Goron House",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Castle Town Goron Shop Arrow Refill",
+        "CheckName": "CT Goron Shop Arrow Refill",
         "Requirements": "CanCompleteLanayruTwilight",
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       }
@@ -185,33 +186,33 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Malo Mart",
+    "RoomName": "CT Malo Mart",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town Center",
+        "ConnectedArea": "CT Center",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "Castle Town Malo Mart Magic Armor",
-        "Requirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village and CanBuyMagicArmor",
-        "GlitchedRequirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village and CanBuyMagicArmor"
+        "CheckName": "CT Malo Mart Magic Armor",
+        "Requirements": "Room.Kak_Malo_Mart and Room.Lower_Kak_Village and CanBuyMagicArmor",
+        "GlitchedRequirements": "Room.Kak_Malo_Mart and Room.Lower_Kak_Village and CanBuyMagicArmor"
       }
     ],
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town North",
+    "RoomName": "CT North",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town North Behind First Door",
+        "ConnectedArea": "CT North Behind First Door",
         "Requirements": "CanCompleteMDH",
         "GlitchedRequirements": "CanCompleteMDH"
       },
       {
-        "ConnectedArea": "Castle Town Center",
+        "ConnectedArea": "CT Center",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -219,39 +220,39 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town North Behind First Door",
+    "RoomName": "CT North Behind First Door",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town North",
+        "ConnectedArea": "CT North",
         "Requirements": "CanCompleteMDH",
         "GlitchedRequirements": "CanCompleteMDH"
       },
       {
-        "ConnectedArea": "Castle Town North Inside Barrier",
+        "ConnectedArea": "CT North Inside Barrier",
         "Requirements": "CanBreakHCBarrier",
         "GlitchedRequirements": "CanBreakHCBarrier"
       }
     ],
     "Checks": [
       {
-        "CheckName": "North Castle Town Golden Wolf",
-        "Requirements": "Shadow_Crystal and Room.Hidden_Village and CanCompleteMDH and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "Shadow_Crystal and Room.Hidden_Village and CanCompleteMDH and CanCompleteLanayruTwilight"
+        "CheckName": "North CT Golden Wolf",
+        "Requirements": "Shadow_Crystal and Room.HV_Outside and CanCompleteMDH and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and Room.HV_Outside and CanCompleteMDH and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town North Inside Barrier",
+    "RoomName": "CT North Inside Barrier",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town North Behind First Door",
+        "ConnectedArea": "CT North Behind First Door",
         // Barrier is one-way.
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Hyrule Castle Entrance",
+        "ConnectedArea": "HC Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -259,30 +260,30 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town East",
+    "RoomName": "CT East",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town Center",
+        "ConnectedArea": "CT Center",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Outside Castle Town East",
+        "ConnectedArea": "OCT East",
         "Requirements": "CanCompleteLanayruTwilight",
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
-        "ConnectedArea": "Castle Town South",
+        "ConnectedArea": "CT South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Left Door",
+        "ConnectedArea": "CT Doctors Office Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Right Door",
+        "ConnectedArea": "CT Doctors Office Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -290,15 +291,15 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Doctors Office Balcony",
+    "RoomName": "CT Doctors Office Balcony",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town East",
+        "ConnectedArea": "CT East",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Upper",
+        "ConnectedArea": "CT Doctors Office Upper",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -313,15 +314,15 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Doctors Office Left Door",
+    "RoomName": "CT Doctors Office Left Door",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town East",
+        "ConnectedArea": "CT East",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Entrance",
+        "ConnectedArea": "CT Doctors Office Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -329,15 +330,15 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Doctors Office Right Door",
+    "RoomName": "CT Doctors Office Right Door",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town East",
+        "ConnectedArea": "CT East",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Entrance",
+        "ConnectedArea": "CT Doctors Office Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -345,20 +346,20 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Doctors Office Entrance",
+    "RoomName": "CT Doctors Office Entrance",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town Doctors Office Left Door",
+        "ConnectedArea": "CT Doctors Office Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Right Door",
+        "ConnectedArea": "CT Doctors Office Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Lower",
+        "ConnectedArea": "CT Doctors Office Lower",
         "Requirements": "Invoice or (Setting.iliaQuest equals Statue) or (Setting.iliaQuest equals Charm)",
         "GlitchedRequirements": "Invoice or (Setting.iliaQuest equals Statue) or (Setting.iliaQuest equals Charm)"
       }
@@ -366,15 +367,15 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Doctors Office Lower",
+    "RoomName": "CT Doctors Office Lower",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town Doctors Office Entrance",
+        "ConnectedArea": "CT Doctors Office Entrance",
         "Requirements": "Invoice or (Setting.iliaQuest equals Statue) or (Setting.iliaQuest equals Charm)",
         "GlitchedRequirements": "Invoice or (Setting.iliaQuest equals Statue) or (Setting.iliaQuest equals Charm)"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Upper",
+        "ConnectedArea": "CT Doctors Office Upper",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       }
@@ -382,15 +383,15 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Doctors Office Upper",
+    "RoomName": "CT Doctors Office Upper",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town Doctors Office Lower",
+        "ConnectedArea": "CT Doctors Office Lower",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Balcony",
+        "ConnectedArea": "CT Doctors Office Balcony",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -398,46 +399,46 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town South",
+    "RoomName": "CT South",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town West",
+        "ConnectedArea": "CT West",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Center",
+        "ConnectedArea": "CT Center",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town East",
+        "ConnectedArea": "CT East",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
         // There are people blocking the way if you try to go to the south during twilight.
-        "ConnectedArea": "South Castle Town Doors",
+        "ConnectedArea": "South CT Doors",
         "Requirements": "CanCompleteLanayruTwilight",
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
-        "ConnectedArea": "Castle Town Agithas House",
+        "ConnectedArea": "CT Agithas House",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Seer House",
+        "ConnectedArea": "CT Seer House",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Jovanis House",
+        "ConnectedArea": "CT Jovanis House",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       },
       {
-        "ConnectedArea": "Castle Town Telmas Bar",
+        "ConnectedArea": "CT Telmas Bar",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -445,15 +446,15 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "South Castle Town Doors",
+    "RoomName": "South CT Doors",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town South",
+        "ConnectedArea": "CT South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Outside Castle Town South",
+        "ConnectedArea": "OCT South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -461,10 +462,10 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Agithas House",
+    "RoomName": "CT Agithas House",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town South",
+        "ConnectedArea": "CT South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -594,10 +595,10 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Seer House",
+    "RoomName": "CT Seer House",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town South",
+        "ConnectedArea": "CT South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -605,11 +606,11 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Jovanis House",
+    "RoomName": "CT Jovanis House",
     "Exits": [
       {
         // The door and the dig spot lead to the exact same entrance, so there technically is only one way out, which is always accessible.
-        "ConnectedArea": "Castle Town South",
+        "ConnectedArea": "CT South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -634,10 +635,10 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Telmas Bar",
+    "RoomName": "CT Telmas Bar",
     "Exits": [
       {
-        "ConnectedArea": "Castle Town South",
+        "ConnectedArea": "CT South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }

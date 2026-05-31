@@ -1,26 +1,26 @@
 [
   {
-    "RoomName": "City in The Sky Boss Room",
+    "RoomName": "CitS Boss Room",
     "Exits": [
       {
-        "ConnectedArea": "City in The Sky Entrance",
+        "ConnectedArea": "CitS Entrance",
         "Requirements": "CanDefeatArgorok",
         "GlitchedRequirements": "CanDefeatArgorok"
       }
     ],
     "Checks": [
       {
-        "CheckName": "City in The Sky Argorok Heart Container",
+        "CheckName": "CitS Argorok Heart Container",
         "Requirements": "CanDefeatArgorok",
         "GlitchedRequirements": "CanDefeatArgorok"
       },
       {
-        "CheckName": "City in The Sky Argorok",
+        "CheckName": "CitS Argorok",
         "Requirements": "CanDefeatArgorok",
         "GlitchedRequirements": "CanDefeatArgorok"
       },
       {
-        "CheckName": "City in The Sky Dungeon Reward",
+        "CheckName": "CitS Dungeon Reward",
         "Requirements": "CanDefeatArgorok",
         "GlitchedRequirements": "CanDefeatArgorok"
       }
@@ -28,45 +28,45 @@
     "Region": "City in The Sky"
   },
   {
-    "RoomName": "City in The Sky Central Tower Second Floor",
+    "RoomName": "CitS Central Tower Second Floor",
     "Exits": [
       {
-        "ConnectedArea": "City in The Sky West Wing",
+        "ConnectedArea": "CitS West Wing",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "ConnectedArea": "City in The Sky Lobby",
+        "ConnectedArea": "CitS Lobby",
         "Requirements": "((Progressive_Clawshot, 1) and HasHeavyMod and Shadow_Crystal) and (Setting.damageMagnification not_equal OHKO)",
         "GlitchedRequirements": "((Progressive_Clawshot, 1) and HasHeavyMod and (Shadow_Crystal or CanDoLJA)) and (Setting.damageMagnification not_equal OHKO)"
       }
     ],
     "Checks": [
       {
-        "CheckName": "City in The Sky Central Outside Ledge Chest",
+        "CheckName": "CitS Central Outside Ledge Chest",
         "Requirements": "(CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok and Shadow_Crystal) or (Progressive_Clawshot and Trick.cits_central_outside_ledge_chest_with_claw)",
         // Walk across ropes as wolf or use claw on the vines.
         "GlitchedRequirements": "(CanDefeatKargarok and CanDefeatWalltula and Shadow_Crystal) or Progressive_Clawshot"
       },
       {
-        "CheckName": "City in The Sky Central Outside Poe Island Chest",
+        "CheckName": "CitS Central Outside Poe Island Chest",
         "Requirements": "((CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok) or (Progressive_Clawshot and Trick.cits_central_outside_ledge_chest_with_claw)) and Shadow_Crystal",
         // Either walk the ropes to the left or Claw up and then walk on the ropes
         "GlitchedRequirements": "((CanDefeatKargarok and CanDefeatWalltula) or Progressive_Clawshot) and Shadow_Crystal"
       },
       {
-        "CheckName": "City in The Sky Big Key Chest",
+        "CheckName": "CitS Big Key Chest",
         "Requirements": "CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok and Shadow_Crystal and (Progressive_Clawshot or HasHeavyMod)",
         // Either walking the ropes as wolf, clawshotting vines or doing Kai clip
         "GlitchedRequirements": "(CanDefeatKargarok and Shadow_Crystal) or ((Shadow_Crystal or CanDoLJA) and Progressive_Clawshot) or (Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky Chest Below Big Key Chest",
+        "CheckName": "CitS Chest Below Big Key Chest",
         "Requirements": "CanDefeatHelmasaur",
         "GlitchedRequirements": "CanDefeatHelmasaur"
       },
       {
-        "CheckName": "City in The Sky Poe Above Central Fan",
+        "CheckName": "CitS Poe Above Central Fan",
         "Requirements": "Shadow_Crystal and CanDefeatWalltula",
         "GlitchedRequirements": "Shadow_Crystal and CanDefeatWalltula"
       }
@@ -74,42 +74,42 @@
     "Region": "City in The Sky"
   },
   {
-    "RoomName": "City in The Sky East Wing",
+    "RoomName": "CitS East Wing",
     "Exits": [
       {
-        "ConnectedArea": "City in The Sky Lobby",
+        "ConnectedArea": "CitS Lobby",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "City in The Sky East First Wing Chest After Fans",
+        "CheckName": "CitS East First Wing Chest After Fans",
         "Requirements": "(Progressive_Clawshot, 1) or Trick.cits_itemless_east_first_room",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "City in The Sky East Wing Lower Level Chest",
+        "CheckName": "CitS East Wing Lower Level Chest",
         "Requirements": "(Progressive_Clawshot, 2) and (((CanDefeatDinalfos or Trick.cits_dinalfos_with_claw) and CanDefeatTileWorm) or Trick.cits_compass_chest_with_2_claws)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky East Tile Worm Small Chest",
+        "CheckName": "CitS East Tile Worm Small Chest",
         "Requirements": "(Progressive_Clawshot,1) or Trick.cits_itemless_east_first_room",
         "GlitchedRequirements": "(Progressive_Clawshot,1) or CanDoLJA"
       },
       {
-        "CheckName": "City in The Sky East Wing After Dinalfos Alcove Chest",
+        "CheckName": "CitS East Wing After Dinalfos Alcove Chest",
         "Requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and (CanDefeatDinalfos or Trick.cits_dinalfos_with_claw)",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or HasHeavyMod)"
       },
       {
-        "CheckName": "City in The Sky East Wing After Dinalfos Ledge Chest",
+        "CheckName": "CitS East Wing After Dinalfos Ledge Chest",
         "Requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and (CanDefeatDinalfos or Trick.cits_dinalfos_with_claw)",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or HasHeavyMod)"
       },
       {
-        "CheckName": "City in The Sky Aeralfos Chest",
+        "CheckName": "CitS Aeralfos Chest",
         "Requirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and HasHeavyMod and (CanDefeatDinalfos or Trick.cits_dinalfos_with_claw) and CanDefeatTileWorm",
         // You can equip Irons mid-air to bypass the tile worms
         "GlitchedRequirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and HasHeavyMod"
@@ -118,7 +118,7 @@
     "Region": "City in The Sky"
   },
   {
-    "RoomName": "City in The Sky Entrance",
+    "RoomName": "CitS Entrance",
     "Exits": [
       {
         "ConnectedArea": "Lake Hylia",
@@ -127,19 +127,19 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "City in The Sky Lobby",
+        "ConnectedArea": "CitS Lobby",
         "Requirements": "((Progressive_Clawshot, 1) or Progressive_Bow or (Trick.cits_entrance_with_bnc and Ball_and_Chain)) and (Progressive_Clawshot or Trick.cits_itemless_central_room)",
         "GlitchedRequirements": "(Progressive_Clawshot, 1) or ((Progressive_Bow, 1) and CanDoLJA)"
       }
     ],
     "Checks": [
       {
-        "CheckName": "City in The Sky Underwater West Chest",
+        "CheckName": "CitS Underwater West Chest",
         "Requirements": "HasHeavyMod",
         "GlitchedRequirements": "HasHeavyMod"
       },
       {
-        "CheckName": "City in The Sky Underwater East Chest",
+        "CheckName": "CitS Underwater East Chest",
         "Requirements": "HasHeavyMod",
         "GlitchedRequirements": "HasHeavyMod"
       }
@@ -147,32 +147,32 @@
     "Region": "City in The Sky"
   },
   {
-    "RoomName": "City in The Sky Lobby",
+    "RoomName": "CitS Lobby",
     "Exits": [
       {
-        "ConnectedArea": "City in The Sky Entrance",
+        "ConnectedArea": "CitS Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "City in The Sky East Wing",
+        "ConnectedArea": "CitS East Wing",
         "Requirements": "Spinner and (City_in_The_Sky_Small_Key, 1)",
         "GlitchedRequirements": "Spinner and (City_in_The_Sky_Small_Key, 1)"
       },
       {
-        "ConnectedArea": "City in The Sky West Wing",
+        "ConnectedArea": "CitS West Wing",
         "Requirements": "((Progressive_Clawshot, 1) and Spinner) or (Progressive_Clawshot, 2)",
         "GlitchedRequirements": "((Progressive_Clawshot, 1) or CanDoLJA) and Spinner"
       },
       {
-        "ConnectedArea": "City in The Sky North Wing",
+        "ConnectedArea": "CitS North Wing",
         "Requirements": "(Progressive_Clawshot, 2) and ((CanDefeatBabaSerpent and CanDefeatKargarok and Shadow_Crystal and HasHeavyMod) or Trick.cits_north_with_2_claws)",
         // You can use only Double Claws to reach north wing. Thank Hab for this.
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "ConnectedArea": "City in The Sky Central Tower Second Floor",
-        "Requirements": "(Room.City_in_The_Sky_Central_Tower_Second_Floor and (Progressive_Clawshot, 1) and HasHeavyMod) or (Progressive_Clawshot and Shadow_Crystal and Trick.cits_fan_skip)",
+        "ConnectedArea": "CitS Central Tower Second Floor",
+        "Requirements": "(Room.CitS_Central_Tower_Second_Floor and (Progressive_Clawshot, 1) and HasHeavyMod) or (Progressive_Clawshot and Shadow_Crystal and Trick.cits_fan_skip)",
         // Fan skip
         "GlitchedRequirements": "Progressive_Clawshot and Shadow_Crystal"
       }
@@ -180,22 +180,22 @@
     "Region": "City in The Sky"
   },
   {
-    "RoomName": "City in The Sky North Wing",
+    "RoomName": "CitS North Wing",
     "Exits": [
       {
-        "ConnectedArea": "City in The Sky Lobby",
+        "ConnectedArea": "CitS Lobby",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "City in The Sky Boss Room",
+        "ConnectedArea": "CitS Boss Room",
         "Requirements": "(Progressive_Clawshot, 2) and CanDefeatAeralfos and City_in_The_Sky_Big_Key",
         "GlitchedRequirements": "(Progressive_Clawshot, 2) and CanDefeatAeralfos and City_in_The_Sky_Big_Key"
       }
     ],
     "Checks": [
       {
-        "CheckName": "City in The Sky Chest Behind North Fan",
+        "CheckName": "CitS Chest Behind North Fan",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 1)"
       }
@@ -203,77 +203,77 @@
     "Region": "City in The Sky"
   },
   {
-    "RoomName": "City in The Sky West Wing",
+    "RoomName": "CitS West Wing",
     "Exits": [
       {
-        "ConnectedArea": "City in The Sky Lobby",
+        "ConnectedArea": "CitS Lobby",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "ConnectedArea": "City in The Sky Central Tower Second Floor",
+        "ConnectedArea": "CitS Central Tower Second Floor",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       }
     ],
     "Checks": [
       {
-        "CheckName": "City in The Sky West Wing First Chest",
+        "CheckName": "CitS West Wing First Chest",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "City in The Sky West Wing Baba Balcony Chest",
+        "CheckName": "CitS West Wing Baba Balcony Chest",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky West Wing Narrow Ledge Chest",
+        "CheckName": "CitS West Wing Narrow Ledge Chest",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky West Wing Tile Worm Chest",
+        "CheckName": "CitS West Wing Tile Worm Chest",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky Baba Tower Top Small Chest",
+        "CheckName": "CitS Baba Tower Top Small Chest",
         "Requirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)",
         "GlitchedRequirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky Baba Tower Narrow Ledge Chest",
+        "CheckName": "CitS Baba Tower Narrow Ledge Chest",
         "Requirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)",
         "GlitchedRequirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky Baba Tower Alcove Chest",
+        "CheckName": "CitS Baba Tower Alcove Chest",
         "Requirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)",
         "GlitchedRequirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky West Garden Corner Chest",
+        "CheckName": "CitS West Garden Corner Chest",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky West Garden Lone Island Chest",
+        "CheckName": "CitS West Garden Lone Island Chest",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky West Garden Lower Chest",
+        "CheckName": "CitS West Garden Lower Chest",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky West Garden Ledge Chest",
+        "CheckName": "CitS West Garden Ledge Chest",
         "Requirements": "(Progressive_Clawshot, 2)",
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },
       {
-        "CheckName": "City in The Sky Garden Island Poe",
+        "CheckName": "CitS Garden Island Poe",
         "Requirements": "Shadow_Crystal and (Progressive_Clawshot, 2)",
         "GlitchedRequirements": "Shadow_Crystal and (Progressive_Clawshot, 2)"
       }

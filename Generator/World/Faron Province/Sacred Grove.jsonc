@@ -210,7 +210,7 @@
         "GlitchedRequirements": "(Progressive_Clawshot, 1) or Boomerang or Ball_and_Chain"
       },
       {
-        "CheckName": "Sacred Grove Temple of Time Owl Statue Poe",
+        "CheckName": "Sacred Grove ToT Owl Statue Poe",
         "Requirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 1)",
         "GlitchedRequirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 1)"
       }
@@ -226,7 +226,7 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Temple of Time Entrance",
+        "ConnectedArea": "ToT Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }

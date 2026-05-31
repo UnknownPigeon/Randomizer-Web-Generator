@@ -3,9 +3,9 @@
     "RoomName": "Faron Field",
     "Exits": [
       {
-        "ConnectedArea": "Outside Castle Town South",
-        "Requirements": "CanGetHotSpringWater and Room.Outside_Castle_Town_South",
-        "GlitchedRequirements": "Room.Castle_Town_South and HasBottle and Room.Outside_Castle_Town_South"
+        "ConnectedArea": "OCT South",
+        "Requirements": "CanGetHotSpringWater and Room.OCT_South",
+        "GlitchedRequirements": "Room.CT_South and HasBottle and Room.OCT_South"
       },
       {
         "ConnectedArea": "South Faron Woods Behind Field Gate",
@@ -13,7 +13,7 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Gorge",
+        "ConnectedArea": "Kak Gorge",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },

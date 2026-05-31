@@ -4,11 +4,11 @@
     "Exits": [
       {
         "ConnectedArea": "Snowpeak Climb Upper",
-        "Requirements": "((Setting.skipSnowpeakEntrance equals True) or (Room.Zoras_Domain and (Progressive_Fishing_Rod, 2))) and Shadow_Crystal",
-        "GlitchedRequirements": "((Setting.skipSnowpeakEntrance equals True) or (Room.Zoras_Domain and (Progressive_Fishing_Rod, 2))) or Shadow_Crystal"
+        "Requirements": "((Setting.skipSnowpeakEntrance equals True) or (Room.ZD_Waterfall_Area and (Progressive_Fishing_Rod, 2))) and Shadow_Crystal",
+        "GlitchedRequirements": "((Setting.skipSnowpeakEntrance equals True) or (Room.ZD_Waterfall_Area and (Progressive_Fishing_Rod, 2))) or Shadow_Crystal"
       },
       {
-        "ConnectedArea": "Zoras Domain Snowpeak Entrance",
+        "ConnectedArea": "ZD Snowpeak Entrance",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -254,7 +254,7 @@
     "RoomName": "Snowpeak Summit Lower Left Door",
     "Exits": [
       {
-        "ConnectedArea": "Snowpeak Ruins Left Door",
+        "ConnectedArea": "SPR Left Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
@@ -271,7 +271,7 @@
     "RoomName": "Snowpeak Summit Lower Right Door",
     "Exits": [
       {
-        "ConnectedArea": "Snowpeak Ruins Right Door",
+        "ConnectedArea": "SPR Right Door",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },

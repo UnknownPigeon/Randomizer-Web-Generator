@@ -420,7 +420,7 @@ namespace TPRandomizer.Hints
                 case WalletSize.Vanilla:
                 case WalletSize.HD:
                 {
-                    if (HintUtils.checkIsExcluded("Castle Town Malo Mart Magic Armor"))
+                    if (HintUtils.checkIsExcluded("CT Malo Mart Magic Armor"))
                     {
                         multiToMaxItems[Item.Progressive_Wallet] = 0;
                         newLogicalItems.Remove(Item.Progressive_Wallet);
@@ -784,48 +784,16 @@ namespace TPRandomizer.Hints
             List<(string, string, Zone)> exitToDungeonList =
                 new()
                 {
-                    ("North Faron Woods", "Forest Temple Entrance", Zone.Forest_Temple),
-                    (
-                        "Death Mountain Sumo Hall Goron Mines Tunnel",
-                        "Goron Mines Entrance",
-                        Zone.Goron_Mines
-                    ),
-                    (
-                        "Lake Hylia Lakebed Temple Entrance",
-                        "Lakebed Temple Entrance",
-                        Zone.Lakebed_Temple
-                    ),
-                    (
-                        "Outside Arbiters Grounds",
-                        "Arbiters Grounds Entrance",
-                        Zone.Arbiters_Grounds
-                    ),
-                    (
-                        "Snowpeak Summit Lower Left Door",
-                        "Snowpeak Ruins Left Door",
-                        Zone.Snowpeak_Ruins
-                    ),
-                    (
-                        "Snowpeak Summit Lower Right Door",
-                        "Snowpeak Ruins Right Door",
-                        Zone.Snowpeak_Ruins
-                    ),
-                    (
-                        "Sacred Grove Past Behind Window",
-                        "Temple of Time Entrance",
-                        Zone.Temple_of_Time
-                    ),
-                    ("Lake Hylia", "City in The Sky Entrance", Zone.City_in_the_Sky),
-                    (
-                        "Mirror Chamber Portal",
-                        "Palace of Twilight Entrance",
-                        Zone.Palace_of_Twilight
-                    ),
-                    (
-                        "Castle Town North Inside Barrier",
-                        "Hyrule Castle Entrance",
-                        Zone.Hyrule_Castle
-                    ),
+                    ("North Faron Woods", "FT Entrance", Zone.Forest_Temple),
+                    ("Death Mountain Sumo Hall GM Tunnel", "GM Entrance", Zone.Goron_Mines),
+                    ("Lake Hylia LBT Entrance", "LBT Entrance", Zone.Lakebed_Temple),
+                    ("Outside AG", "AG Entrance", Zone.Arbiters_Grounds),
+                    ("Snowpeak Summit Lower Left Door", "SPR Left Door", Zone.Snowpeak_Ruins),
+                    ("Snowpeak Summit Lower Right Door", "SPR Right Door", Zone.Snowpeak_Ruins),
+                    ("Sacred Grove Past Behind Window", "ToT Entrance", Zone.Temple_of_Time),
+                    ("Lake Hylia", "CitS Entrance", Zone.City_in_the_Sky),
+                    ("Mirror Chamber Portal", "PoT Entrance", Zone.Palace_of_Twilight),
+                    ("CT North Inside Barrier", "HC Entrance", Zone.Hyrule_Castle),
                 };
 
             // Build quick lookups
@@ -1007,23 +975,23 @@ namespace TPRandomizer.Hints
             dmInfo.dependentCheckNames.Add("Ordon Spring Golden Wolf");
 
             AreaCheckInfo uzrInfo = areaToCheckInfo[AreaId.Zone(Zone.Upper_Zoras_River)];
-            uzrInfo.dependentCheckNames.Add("West Hyrule Field Golden Wolf");
+            uzrInfo.dependentCheckNames.Add("OCT West Golden Wolf");
 
             AreaCheckInfo lhInfo = areaToCheckInfo[AreaId.Zone(Zone.Lake_Hylia)];
             lhInfo.dependentAreaIds.Add(AreaId.Zone(Zone.Lanayru_Spring));
             lhInfo.dependentAreaIds.Add(AreaId.Zone(Zone.Lake_Lantern_Cave));
-            lhInfo.dependentCheckNames.Add("Gerudo Desert Golden Wolf");
+            lhInfo.dependentCheckNames.Add("Desert Golden Wolf");
 
             AreaCheckInfo fwInfo = areaToCheckInfo[AreaId.Zone(Zone.Faron_Woods)];
-            fwInfo.dependentCheckNames.Add("Outside South Castle Town Golden Wolf");
+            fwInfo.dependentCheckNames.Add("OCT South Golden Wolf");
 
             AreaCheckInfo spmInfo = areaToCheckInfo[AreaId.Zone(Zone.Snowpeak_Mountain)];
-            spmInfo.dependentCheckNames.Add("Kakariko Graveyard Golden Wolf");
+            spmInfo.dependentCheckNames.Add("Kak Graveyard Golden Wolf");
             // Note: this KGY golden wolf is also manually included in the Snowpeak BeyondThisPoint
             // checksList.
 
             AreaCheckInfo hvInfo = areaToCheckInfo[AreaId.Zone(Zone.Hidden_Village)];
-            hvInfo.dependentCheckNames.Add("North Castle Town Golden Wolf");
+            hvInfo.dependentCheckNames.Add("North CT Golden Wolf");
             // We want to prevent HV from being hinted barren if the player needs to visit it for
             // the trade item. It has led to confusion in the past, but we do not want to do
             // something extreme like allowing Vanilla checks to block barren for this one case. Can
@@ -1806,7 +1774,7 @@ namespace TPRandomizer.Hints
 
     public class GoalManager
     {
-        private static readonly Goal zantBossRoomGoal = Goal.Room("Palace of Twilight Boss Room");
+        private static readonly Goal zantBossRoomGoal = Goal.Room("PoT Boss Room");
 
         private static readonly List<HashSet<Goal>> leafGoalPriorities =
             new()
@@ -1834,63 +1802,63 @@ namespace TPRandomizer.Hints
                     GoalConstants.Diababa,
                     new()
                     {
-                        Goal.Check("Forest Temple Diababa"),
-                        Goal.Check("Forest Temple Diababa Heart Container"),
-                        Goal.Check("Forest Temple Dungeon Reward"),
+                        Goal.Check("FT Diababa"),
+                        Goal.Check("FT Diababa Heart Container"),
+                        Goal.Check("FT Dungeon Reward"),
                     }
                 },
                 {
                     GoalConstants.Fyrus,
                     new()
                     {
-                        Goal.Check("Goron Mines Fyrus"),
-                        Goal.Check("Goron Mines Fyrus Heart Container"),
-                        Goal.Check("Goron Mines Dungeon Reward"),
+                        Goal.Check("GM Fyrus"),
+                        Goal.Check("GM Fyrus Heart Container"),
+                        Goal.Check("GM Dungeon Reward"),
                     }
                 },
                 {
                     GoalConstants.Morpheel,
                     new()
                     {
-                        Goal.Check("Lakebed Temple Morpheel"),
-                        Goal.Check("Lakebed Temple Morpheel Heart Container"),
-                        Goal.Check("Lakebed Temple Dungeon Reward"),
+                        Goal.Check("LBT Morpheel"),
+                        Goal.Check("LBT Morpheel Heart Container"),
+                        Goal.Check("LBT Dungeon Reward"),
                     }
                 },
                 {
                     GoalConstants.Stallord,
                     new()
                     {
-                        Goal.Check("Arbiters Grounds Stallord"),
-                        Goal.Check("Arbiters Grounds Stallord Heart Container"),
-                        Goal.Check("Arbiters Grounds Dungeon Reward"),
+                        Goal.Check("AG Stallord"),
+                        Goal.Check("AG Stallord Heart Container"),
+                        Goal.Check("AG Dungeon Reward"),
                     }
                 },
                 {
                     GoalConstants.Blizzeta,
                     new()
                     {
-                        Goal.Check("Snowpeak Ruins Blizzeta"),
-                        Goal.Check("Snowpeak Ruins Blizzeta Heart Container"),
-                        Goal.Check("Snowpeak Ruins Dungeon Reward"),
+                        Goal.Check("SPR Blizzeta"),
+                        Goal.Check("SPR Blizzeta Heart Container"),
+                        Goal.Check("SPR Dungeon Reward"),
                     }
                 },
                 {
                     GoalConstants.Armogohma,
                     new()
                     {
-                        Goal.Check("Temple of Time Armogohma"),
-                        Goal.Check("Temple of Time Armogohma Heart Container"),
-                        Goal.Check("Temple of Time Dungeon Reward"),
+                        Goal.Check("ToT Armogohma"),
+                        Goal.Check("ToT Armogohma Heart Container"),
+                        Goal.Check("ToT Dungeon Reward"),
                     }
                 },
                 {
                     GoalConstants.Argorok,
                     new()
                     {
-                        Goal.Check("City in The Sky Argorok"),
-                        Goal.Check("City in The Sky Argorok Heart Container"),
-                        Goal.Check("City in The Sky Dungeon Reward"),
+                        Goal.Check("CitS Argorok"),
+                        Goal.Check("CitS Argorok Heart Container"),
+                        Goal.Check("CitS Dungeon Reward"),
                     }
                 },
                 {
@@ -1899,19 +1867,15 @@ namespace TPRandomizer.Hints
                 },
                 {
                     GoalConstants.Zant,
-                    new()
-                    {
-                        Goal.Check("Palace of Twilight Zant"),
-                        Goal.Check("Palace of Twilight Zant Heart Container"),
-                    }
+                    new() { Goal.Check("PoT Zant"), Goal.Check("PoT Zant Heart Container"), }
                 },
                 {
                     GoalConstants.Hyrule_Castle,
-                    new() { Goal.Room("Hyrule Castle Entrance"), }
+                    new() { Goal.Room("HC Entrance"), }
                 },
                 {
                     GoalConstants.Ganondorf,
-                    new() { Goal.Check("Hyrule Castle Ganondorf"), }
+                    new() { Goal.Check("HC Ganondorf"), }
                 },
             };
 
