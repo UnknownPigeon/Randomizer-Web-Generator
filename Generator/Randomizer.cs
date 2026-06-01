@@ -2127,7 +2127,7 @@ namespace TPRandomizer
                     }
                     if (LogicFunctions.CanUse(Item.Castle_Town_Portal))
                     {
-                        portalRooms.Add(Randomizer.Rooms.RoomDict["OCT West"]);
+                        portalRooms.Add(Randomizer.Rooms.RoomDict["BCT"]);
                     }
                     if (LogicFunctions.CanUse(Item.Zoras_Domain_Portal))
                     {

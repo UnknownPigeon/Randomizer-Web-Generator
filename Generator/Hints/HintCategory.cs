@@ -56,7 +56,7 @@ namespace TPRandomizer.Hints
                         "Lanayru Field Poe Grotto Left Poe",
                         "Lanayru Field Poe Grotto Right Poe",
                         "Lanayru Field Skulltula Grotto Chest",
-                        "OCT West Helmasaur Grotto Chest",
+                        "BCT Helmasaur Grotto Chest",
                         "OCT South Tektite Grotto Chest",
                         "Lake Hylia Bridge Bubble Grotto Chest",
                         "Lake Hylia Shell Blade Grotto Chest",
@@ -357,7 +357,7 @@ namespace TPRandomizer.Hints
                         "North CT Golden Wolf",
                         "Ordon Spring Golden Wolf",
                         "OCT South Golden Wolf",
-                        "OCT West Golden Wolf"
+                        "BCT Golden Wolf"
                     }
                 },
                 {

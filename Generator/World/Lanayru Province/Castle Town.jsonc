@@ -3,7 +3,7 @@
     "RoomName": "CT West",
     "Exits": [
       {
-        "ConnectedArea": "OCT West",
+        "ConnectedArea": "BCT",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },

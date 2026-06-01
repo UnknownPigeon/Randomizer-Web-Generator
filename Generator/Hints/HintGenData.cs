@@ -975,7 +975,7 @@ namespace TPRandomizer.Hints
             dmInfo.dependentCheckNames.Add("Ordon Spring Golden Wolf");
 
             AreaCheckInfo uzrInfo = areaToCheckInfo[AreaId.Zone(Zone.Upper_Zoras_River)];
-            uzrInfo.dependentCheckNames.Add("OCT West Golden Wolf");
+            uzrInfo.dependentCheckNames.Add("BCT Golden Wolf");
 
             AreaCheckInfo lhInfo = areaToCheckInfo[AreaId.Zone(Zone.Lake_Hylia)];
             lhInfo.dependentAreaIds.Add(AreaId.Zone(Zone.Lanayru_Spring));

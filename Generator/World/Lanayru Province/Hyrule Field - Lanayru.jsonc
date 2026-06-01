@@ -23,7 +23,7 @@
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
-        "ConnectedArea": "OCT West",
+        "ConnectedArea": "BCT",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
@@ -223,10 +223,10 @@
     "Region": "Hyrule Field - Lanayru Province"
   },
   {
-    "RoomName": "OCT West",
+    "RoomName": "BCT",
     "Exits": [
       {
-        "ConnectedArea": "OCT West Grotto Ledge",
+        "ConnectedArea": "BCT Grotto Ledge",
         "Requirements": "(Progressive_Clawshot, 1)",
         "GlitchedRequirements": "Shadow_Crystal and ((Progressive_Clawshot, 1) or CanDoMapGlitch)"
       },
@@ -258,13 +258,13 @@
         "GlitchedRequirements": "(Progressive_Dominion_Rod, 2)"
       },
       {
-        "CheckName": "OCT West Male Butterfly",
+        "CheckName": "BCT Male Butterfly",
         "Requirements": "CanCompleteLanayruTwilight",
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
-        "CheckName": "OCT West Female Butterfly",
-        "Requirements": "((Progressive_Clawshot, 1) or Boomerang or Room.OCT_West_Grotto_Ledge or (Trick.freestandings_with_bnc and Ball_and_Chain)) and CanCompleteLanayruTwilight",
+        "CheckName": "BCT Female Butterfly",
+        "Requirements": "((Progressive_Clawshot, 1) or Boomerang or Room.BCT_Grotto_Ledge or (Trick.freestandings_with_bnc and Ball_and_Chain)) and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "((Progressive_Clawshot, 1) or Boomerang or CanDoMapGlitch or Ball_and_Chain) and CanCompleteLanayruTwilight"
       },
       {
@@ -273,7 +273,7 @@
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       },
       {
-        "CheckName": "OCT West Golden Wolf",
+        "CheckName": "BCT Golden Wolf",
         "Requirements": "Shadow_Crystal and Room.UZR_Ledge",
         "GlitchedRequirements": "Shadow_Crystal and Room.UZR_Ledge"
       },
@@ -283,12 +283,12 @@
         "GlitchedRequirements": "true"
       },
       {
-        "CheckName": "OCT West Northern Boulder Rupee",
+        "CheckName": "BCT Northern Boulder Rupee",
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
       },
       {
-        "CheckName": "OCT West Southern Boulder Rupee",
+        "CheckName": "BCT Southern Boulder Rupee",
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
       }
@@ -296,15 +296,15 @@
     "Region": "Hyrule Field - Lanayru Province"
   },
   {
-    "RoomName": "OCT West Grotto Ledge",
+    "RoomName": "BCT Grotto Ledge",
     "Exits": [
       {
-        "ConnectedArea": "OCT West",
+        "ConnectedArea": "BCT",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "OCT West Helmasaur Grotto",
+        "ConnectedArea": "BCT Helmasaur Grotto",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
       }
@@ -312,17 +312,17 @@
     "Region": "Hyrule Field - Lanayru Province"
   },
   {
-    "RoomName": "OCT West Helmasaur Grotto",
+    "RoomName": "BCT Helmasaur Grotto",
     "Exits": [
       {
-        "ConnectedArea": "OCT West Grotto Ledge",
+        "ConnectedArea": "BCT Grotto Ledge",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
     ],
     "Checks": [
       {
-        "CheckName": "OCT West Helmasaur Grotto Chest",
+        "CheckName": "BCT Helmasaur Grotto Chest",
         "Requirements": "CanDefeatHelmasaur or (Progressive_Clawshot and Trick.helmasaur_grotto_with_claw)",
         "GlitchedRequirements": "CanDefeatHelmasaur or Progressive_Clawshot"
       }
@@ -468,7 +468,7 @@
         "GlitchedRequirements": "CanSmash or CanDoMapGlitch"
       },
       {
-        "ConnectedArea": "OCT West",
+        "ConnectedArea": "BCT",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },

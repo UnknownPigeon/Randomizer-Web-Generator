@@ -428,12 +428,12 @@ namespace TPRandomizer.Hints
                         "Hyrule Field Amphitheater Owl Statue Chest",
                         "Hyrule Field Amphitheater Owl Statue Sky Character",
                         "Hyrule Field Amphitheater Poe",
-                        "OCT West Female Butterfly",
-                        "OCT West Golden Wolf",
-                        "OCT West Helmasaur Grotto Chest",
-                        "OCT West Male Butterfly",
-                        "OCT West Northern Boulder Rupee",
-                        "OCT West Southern Boulder Rupee"
+                        "BCT Female Butterfly",
+                        "BCT Golden Wolf",
+                        "BCT Helmasaur Grotto Chest",
+                        "BCT Male Butterfly",
+                        "BCT Northern Boulder Rupee",
+                        "BCT Southern Boulder Rupee"
                     }
                 },
                 {

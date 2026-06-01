@@ -556,7 +556,7 @@
     "Type": "Exterior",
     "SourceRoomSpawn": {
       "SourceRoom": "Lanayru Field",
-      "TargetRoom": "OCT West",
+      "TargetRoom": "BCT",
       "Stage": 57,
       "Room": 8,
       "Spawn": "00",
@@ -565,7 +565,7 @@
       "State": "FF"
     },
     "TargetRoomSpawn": {
-      "SourceRoom": "OCT West",
+      "SourceRoom": "BCT",
       "TargetRoom": "Lanayru Field",
       "Stage": 56,
       "Room": 10,
@@ -578,7 +578,7 @@
   {
     "Type": "Exterior",
     "SourceRoomSpawn": {
-      "SourceRoom": "OCT West",
+      "SourceRoom": "BCT",
       "TargetRoom": "CT West",
       "Stage": 53,
       "Room": 2,
@@ -589,7 +589,7 @@
     },
     "TargetRoomSpawn": {
       "SourceRoom": "CT West",
-      "TargetRoom": "OCT West",
+      "TargetRoom": "BCT",
       "Stage": 57,
       "Room": 8,
       "Spawn": "01",
@@ -785,7 +785,7 @@
   {
     "Type": "Exterior",
     "SourceRoomSpawn": {
-      "SourceRoom": "OCT West",
+      "SourceRoom": "BCT",
       "TargetRoom": "Lake Hylia Bridge",
       "Stage": 56,
       "Room": 12,
@@ -796,7 +796,7 @@
     },
     "TargetRoomSpawn": {
       "SourceRoom": "Lake Hylia Bridge",
-      "TargetRoom": "OCT West",
+      "TargetRoom": "BCT",
       "Stage": 57,
       "Room": 8,
       "Spawn": "02",
@@ -2409,8 +2409,8 @@
   {
     "Type": "Grotto",
     "SourceRoomSpawn": {
-      "SourceRoom": "OCT West Grotto Ledge",
-      "TargetRoom": "OCT West Helmasaur Grotto",
+      "SourceRoom": "BCT Grotto Ledge",
+      "TargetRoom": "BCT Helmasaur Grotto",
       "Stage": 35,
       "Room": 0,
       "Spawn": "00",
@@ -2419,8 +2419,8 @@
       "State": "0"
     },
     "TargetRoomSpawn": {
-      "SourceRoom": "OCT West Helmasaur Grotto",
-      "TargetRoom": "OCT West Grotto Ledge",
+      "SourceRoom": "BCT Helmasaur Grotto",
+      "TargetRoom": "BCT Grotto Ledge",
       "Stage": 57,
       "Room": 8,
       "Spawn": "05",

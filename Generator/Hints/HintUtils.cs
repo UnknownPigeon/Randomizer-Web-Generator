@@ -242,7 +242,7 @@ namespace TPRandomizer.Hints
                 },
                 {
                     SpotId.Beside_Castle_Town_Sign,
-                    new() { Goal.Room("OCT West Grotto Ledge") }
+                    new() { Goal.Room("BCT Grotto Ledge") }
                 },
                 {
                     SpotId.South_of_Castle_Town_Sign,

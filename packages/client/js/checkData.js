@@ -2544,7 +2544,7 @@ window.tpr.checkData = {
     category: ['Overworld', 'Upper Zoras River'],
     itemId: 'Upper_Zoras_River_Portal',
   },
-  'OCT West Northern Boulder Rupee': {
+  'BCT Northern Boulder Rupee': {
     category: [
       'Overworld',
       'Rupee - Hidden',
@@ -2552,7 +2552,7 @@ window.tpr.checkData = {
     ],
     itemId: 'Yellow_Rupee',
   },
-  'OCT West Southern Boulder Rupee': {
+  'BCT Southern Boulder Rupee': {
     category: [
       'Overworld',
       'Rupee - Hidden',
@@ -2560,7 +2560,7 @@ window.tpr.checkData = {
     ],
     itemId: 'Yellow_Rupee',
   },
-  'OCT West Female Butterfly': {
+  'BCT Female Butterfly': {
     category: [
       'Overworld',
       'Golden Bug',
@@ -2569,7 +2569,7 @@ window.tpr.checkData = {
     ],
     itemId: 'Female_Butterfly',
   },
-  'OCT West Golden Wolf': {
+  'BCT Golden Wolf': {
     category: [
       'Overworld',
       'Hidden Skill',
@@ -2578,11 +2578,11 @@ window.tpr.checkData = {
     ],
     itemId: 'Progressive_Hidden_Skill',
   },
-  'OCT West Helmasaur Grotto Chest': {
+  'BCT Helmasaur Grotto Chest': {
     category: ['Overworld', 'Chest', 'Hyrule Field - Lanayru Province', 'DZX'],
     itemId: 'Orange_Rupee',
   },
-  'OCT West Male Butterfly': {
+  'BCT Male Butterfly': {
     category: [
       'Overworld',
       'Golden Bug',
