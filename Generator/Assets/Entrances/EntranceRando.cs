@@ -1051,7 +1051,7 @@ namespace TPRandomizer
 
         EntranceShuffleError ValidateWorld()
         {
-            if (!BackendFunctions.ValidatePlaythrough(Randomizer.Rooms.RoomDict["Root"], true))
+            if (!BackendFunctions.ValidatePlaythrough(Randomizer.Rooms.RoomDict["Root"], false))
             {
                 return EntranceShuffleError.ALL_LOCATIONS_NOT_REACHABLE;
             }
@@ -1265,7 +1265,7 @@ namespace TPRandomizer
                     {
                         "FT Boss Room",
                         "GM Boss Room",
-                        "LM Boss Room",
+                        "LBT Boss Room",
                         "SPR Boss Room",
                         "ToT Boss Room",
                         "CitS Boss Room",

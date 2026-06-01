@@ -465,8 +465,7 @@ function onDomContentLoaded() {
   initTabButtons();
   presetsMgr.init();
 
-  setDungeonERSettings();
-  setOverworldERSettings();
+  setSettingsString();
   // Set the "Forest" dungeon item tab to be the default one open.
   openDungeon(event, 'Forest');
 
@@ -834,10 +833,10 @@ document
   .addEventListener('click', setSettingsString);
 document
   .getElementById('randomizeStartingPointCheckbox')
-  .addEventListener('click', setOverworldERSettings);
+  .addEventListener('click', setSettingsString);
 document.getElementById('iliaQuestFieldset').onchange = setSettingsString;
 document.getElementById('mirrorChamberFieldset').onchange = setSettingsString;
-document.getElementById('dungeonERFieldset').onchange = setDungeonERSettings;
+document.getElementById('dungeonERFieldset').onchange = setSettingsString;
 document
   .getElementById('unpairedEntrancesCheckbox')
   .addEventListener('click', setSettingsString);
@@ -893,7 +892,7 @@ document
   .addEventListener('click', setSettingsString);
 document
   .getElementById('interiorERCheckbox')
-  .addEventListener('click', setInteriorERSettings);
+  .addEventListener('click', setSettingsString);
 
 function importSettingsString() {
   parseSettingsString(document.getElementById('settingsStringTextbox').value);
@@ -1069,48 +1068,9 @@ function setCastleBKRequirementsValue() {
   setSettingsString();
 }
 
-function setOverworldERSettings() {
-  var overworldEREnabled = document.getElementById(
-    'randomizeStartingPointCheckbox'
-  ).checked;
-  document.getElementById('introCheckbox').checked = overworldEREnabled;
-  document.getElementById('introCheckbox').disabled = overworldEREnabled;
-  setSettingsString();
-}
-
-function setDungeonERSettings() {
-  if (document.getElementById('dungeonERFieldset').value != 0) {
-    document.getElementById('mdhCheckbox').checked = true;
-    document.getElementById('mdhCheckbox').disabled = true;
-    document.getElementById('unpairedEntrancesCheckbox').disabled = false;
-  } else {
-    document.getElementById('mdhCheckbox').disabled = false;
-    if (!document.getElementById('interiorERCheckbox').checked) {
-      document.getElementById('unpairedEntrancesCheckbox').checked = false;
-
-      document.getElementById('unpairedEntrancesCheckbox').disabled = true;
-    }
-  }
-  setGeneralERSettings();
-  setSettingsString();
-}
-
-function setInteriorERSettings() {
-  if (document.getElementById('interiorERCheckbox').checked) {
-    document.getElementById('unpairedEntrancesCheckbox').disabled = false;
-
-    document.getElementById('introCheckbox').checked = true;
-    document.getElementById('introCheckbox').disabled = true;
-  } else if (document.getElementById('dungeonERFieldset').value == 0) {
-    document.getElementById('unpairedEntrancesCheckbox').checked = false;
-    document.getElementById('unpairedEntrancesCheckbox').disabled = true;
-    document.getElementById('introCheckbox').disabled = false;
-  }
-  setGeneralERSettings();
-  setSettingsString();
-}
-
 function setGeneralERSettings() {
+  // If we have any ER enabled at all, we want to enable the option to decouple entrances,
+  // We want to skip MDH and Prologue. Otherwise, allow the settings to be changed, but disable the option to decouple entrances.
   if (
     !document.getElementById('interiorERCheckbox').checked &&
     document.getElementById('dungeonERFieldset').value == 0 &&
@@ -1118,8 +1078,25 @@ function setGeneralERSettings() {
   ) {
     document.getElementById('decoupleEntrancesCheckbox').checked = false;
     document.getElementById('decoupleEntrancesCheckbox').disabled = true;
+    document.getElementById('mdhCheckbox').disabled = false;
+    document.getElementById('introCheckbox').disabled = false;
   } else {
     document.getElementById('decoupleEntrancesCheckbox').disabled = false;
+    document.getElementById('mdhCheckbox').checked = true;
+    document.getElementById('mdhCheckbox').disabled = true;
+    document.getElementById('introCheckbox').checked = true;
+    document.getElementById('introCheckbox').disabled = true;
+  }
+
+  // If dungeon ER or interior ER are enabled, we want to allow the option to unpair entrances.
+  if (
+    document.getElementById('dungeonERFieldset').value != 0 ||
+    document.getElementById('interiorERCheckbox').checked
+  ) {
+    document.getElementById('unpairedEntrancesCheckbox').disabled = false;
+  } else {
+    document.getElementById('unpairedEntrancesCheckbox').checked = false;
+    document.getElementById('unpairedEntrancesCheckbox').disabled = true;
   }
 }
 
@@ -1169,6 +1146,7 @@ function setMapAndCompassValues() {
 }
 
 function setSettingsString() {
+  setGeneralERSettings();
   const combinedSettingsString = window.tpr.shared.genSSettingsFromUi();
   document.getElementById('combinedSettingsString').textContent =
     combinedSettingsString;

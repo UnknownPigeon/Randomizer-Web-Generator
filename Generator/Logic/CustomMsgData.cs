@@ -218,10 +218,10 @@ namespace TPRandomizer
                     { "Charlo Donation Blessing", false },
                     { "Fishing Hole Bottle", false },
                     { "Coro Bottle", true },
-                    { "Castle Town Goron Shop Red Potion", true },
-                    { "Castle Town Goron Shop Lantern Oil", true },
-                    { "Castle Town Goron Shop Arrow Refill", true },
-                    { "Castle Town Goron Shop Hylian Shield", true },
+                    { "CT Goron Shop Red Potion", true },
+                    { "CT Goron Shop Lantern Oil", true },
+                    { "CT Goron Shop Arrow Refill", true },
+                    { "CT Goron Shop Hylian Shield", true },
                 };
             public List<HintSpot> hintSpots { get; private set; } = new();
 

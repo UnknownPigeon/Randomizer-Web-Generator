@@ -1152,33 +1152,55 @@ namespace TPRandomizer
             Console.WriteLine("Placing Excluded Checks.");
             PlaceExcludedChecks(rnd);
 
-            // Once all of the items that have some restriction on their placement are placed, we then place all of the items that can
-            // be logically important (swords, clawshot, bow, etc.)
-            Console.WriteLine("Placing Important Items.");
-            PlaceItemsRestricted(
-                startingRoom,
-                Items.RandomizedImportantItems,
-                Randomizer.Items.heldItems,
-                string.Empty,
-                rnd
-            );
-
-            // Next we will place the "always" items. Basically the constants in every seed, so Heart Pieces, Heart Containers, etc.
-            // These items do not affect logic at all so there is very little constraint to this method.
-            Console.WriteLine("Placing Non Impact Items.");
-            PlaceNonImpactItems(Randomizer.Items.alwaysItems, rnd);
-
-            // Any extra checks that have not been filled at this point are filled with "junk" items such as ammunition, foolish items, etc.
-            Console.WriteLine("Placing Junk Items.");
-            PlaceJunkItems(Items.JunkItems, rnd);
-
-            // Only validate if we are not no-logic
-            if (SSettings.logicRules != LogicRules.No_Logic)
+            if (Randomizer.SSettings.logicRules != LogicRules.No_Logic)
             {
+                // Once all of the items that have some restriction on their placement are placed, we then place all of the items that can
+                // be logically important (swords, clawshot, bow, etc.)
+                Console.WriteLine("Placing Important Items.");
+                PlaceItemsRestricted(
+                    startingRoom,
+                    Items.RandomizedImportantItems,
+                    Randomizer.Items.heldItems,
+                    string.Empty,
+                    rnd
+                );
+
+                // Next we will place the "always" items. Basically the constants in every seed, so Heart Pieces, Heart Containers, etc.
+                // These items do not affect logic at all so there is very little constraint to this method.
+                Console.WriteLine("Placing Non Impact Items.");
+                PlaceNonImpactItems(Randomizer.Items.alwaysItems, rnd);
+
+                // Any extra checks that have not been filled at this point are filled with "junk" items such as ammunition, foolish items, etc.
+                Console.WriteLine("Placing Junk Items.");
+                PlaceJunkItems(Items.JunkItems, rnd);
+
+                // Only validate if we are not no-logic
                 if (!BackendFunctions.ValidatePlaythrough(startingRoom))
                 {
                     throw new ArgumentOutOfRangeException();
                 }
+            }
+            else
+            {
+                List<Item> allItems = new();
+                allItems.AddRange(Items.RandomizedImportantItems);
+                allItems.AddRange(Randomizer.Items.alwaysItems);
+                Console.WriteLine("Placing items via No Logic.");
+                while (allItems.Count > 0)
+                {
+                    Check currentCheck = Checks.CheckDict
+                        .ElementAt(rnd.Next(Checks.CheckDict.Count - 1))
+                        .Value;
+                    if (!currentCheck.itemWasPlaced)
+                    {
+                        Item itemToPlace = allItems[rnd.Next(allItems.Count - 1)];
+                        PlaceItemInCheck(itemToPlace, currentCheck);
+                        allItems.Remove(itemToPlace);
+                    }
+                }
+
+                Console.WriteLine("Placing Junk Items.");
+                PlaceJunkItems(Items.JunkItems, rnd);
             }
         }
 

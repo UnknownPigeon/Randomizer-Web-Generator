@@ -349,7 +349,7 @@ namespace TPRandomizer.Hints
                     // Note: matching main logic which expects Bow specifically even for glitched.
                     new()
                     {
-                        Goal.Room("Temple of Time Moving Wall Hallways"),
+                        Goal.Room("ToT Moving Wall Hallways"),
                         Goal.Logic("(Progressive_Bow, 1)")
                     }
                 },
@@ -373,7 +373,7 @@ namespace TPRandomizer.Hints
                     SpotId.Kakariko_Graveyard_Sign,
                     new()
                     {
-                        Goal.Room("Kakariko Graveyard"),
+                        Goal.Room("Kak Graveyard"),
                         // Note: based on logic for connection to Lake Hylia.
                         Goal.Logic(
                             "(HasBombs and (HasSword or Spinner)) or CanDoLJA or CanDoMoonBoots"
@@ -396,7 +396,7 @@ namespace TPRandomizer.Hints
                     SpotId.Forest_Temple_Sign,
                     new()
                     {
-                        Goal.Room("Forest Temple Lobby"),
+                        Goal.Room("FT Lobby"),
                         Goal.Logic(
                             "((Forest_Temple_Small_Key, 2) and CanDefeatBokoblin) or (Progressive_Clawshot, 1) or CanDoLJA"
                         )

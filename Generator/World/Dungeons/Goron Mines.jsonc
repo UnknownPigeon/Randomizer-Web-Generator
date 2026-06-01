@@ -148,7 +148,7 @@
       {
         "CheckName": "GM Main Magnet Room Top Chest",
         "Requirements": "(Progressive_Bow, 1) and Iron_Boots and CanDefeatDangoro and (Goron_Mines_Small_Key, 3)",
-        "GlitchedRequirements": "Room.Goron_Mines_Upper_East_Wing and CanDefeatDangoro and CanDefeatBeamos"
+        "GlitchedRequirements": "Room.GM_Upper_East_Wing and CanDefeatDangoro and CanDefeatBeamos"
       }
     ],
     "Region": "Goron Mines"

@@ -117,21 +117,13 @@ namespace TPRandomizer
                     new()
                     {
                         (
-                            new(
-                                "Forest Temple Ooccoo Out",
-                                "",
-                                (int)StageIDs.Faron_Woods,
-                                6,
-                                "96",
-                                "FF",
-                                ""
-                            ),
-                            "Forest Temple Entrance",
+                            new("FT Ooccoo Out", "", (int)StageIDs.Faron_Woods, 6, "96", "FF", ""),
+                            "FT Entrance",
                             "North Faron Woods"
                         ),
                         (
                             new(
-                                "Goron Mines Ooccoo Out",
+                                "GM Ooccoo Out",
                                 "",
                                 (int)StageIDs.Death_Mountain,
                                 3,
@@ -139,51 +131,27 @@ namespace TPRandomizer
                                 "FF",
                                 ""
                             ),
-                            "Goron Mines Entrance",
-                            "Death Mountain Sumo Hall Goron Mines Tunnel"
+                            "GM Entrance",
+                            "Death Mountain Sumo Hall GM Tunnel"
                         ),
                         (
-                            new(
-                                "Lakebed Temple Ooccoo Out",
-                                "",
-                                (int)StageIDs.Lake_Hylia,
-                                0,
-                                "96",
-                                "FF",
-                                ""
-                            ),
-                            "Lakebed Temple Entrance",
-                            "Lake Hylia Lakebed Temple Entrance"
+                            new("LBT Ooccoo Out", "", (int)StageIDs.Lake_Hylia, 0, "96", "FF", ""),
+                            "LBT Entrance",
+                            "Lake Hylia LBT Entrance"
                         ),
                         (
-                            new(
-                                "Arbiters Grounds Ooccoo Out",
-                                "",
-                                (int)StageIDs.Bulblin_Camp,
-                                3,
-                                "05",
-                                "FF",
-                                ""
-                            ),
-                            "Arbiters Grounds Entrance",
-                            "Outside Arbiters Grounds"
+                            new("AG Ooccoo Out", "", (int)StageIDs.Bulblin_Camp, 3, "05", "FF", ""),
+                            "AG Entrance",
+                            "Outside AG"
                         ),
                         (
-                            new(
-                                "Snowpeak Ruins Ooccoo Out",
-                                "",
-                                (int)StageIDs.Snowpeak,
-                                1,
-                                "0D",
-                                "FF",
-                                ""
-                            ),
-                            "Snowpeak Ruins Left Door",
+                            new("SPR Ooccoo Out", "", (int)StageIDs.Snowpeak, 1, "0D", "FF", ""),
+                            "SPR Left Door",
                             "Snowpeak Summit Lower Left Door"
                         ),
                         (
                             new(
-                                "Temple of Time Ooccoo Out",
+                                "ToT Ooccoo Out",
                                 "",
                                 (int)StageIDs.Sacred_Grove,
                                 1,
@@ -191,12 +159,12 @@ namespace TPRandomizer
                                 "FF",
                                 ""
                             ),
-                            "Temple of Time Entrance",
+                            "ToT Entrance",
                             "Sacred Grove Past Behind Window"
                         ),
                         (
                             new(
-                                "City in The Sky Ooccooo Out",
+                                "CitS Ooccooo Out",
                                 "",
                                 (int)StageIDs.City_in_the_Sky,
                                 16,
@@ -204,7 +172,7 @@ namespace TPRandomizer
                                 "FF",
                                 ""
                             ),
-                            "City in The Sky Entrance",
+                            "CitS Entrance",
                             "Lake Hylia"
                         ),
                     };
