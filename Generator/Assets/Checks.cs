@@ -422,6 +422,7 @@ namespace TPRandomizer
                 {
                     if (currentCheck.checkCategory.Contains("Npc"))
                     {
+                        bool isExcluded = false;
                         for (int i = 0; i < RoomFunctions.AllDungeonNames.Count(); i++)
                         {
                             if (
@@ -449,20 +450,18 @@ namespace TPRandomizer
                             )
                             {
                                 currentCheck.checkStatus = "Excluded";
+                                isExcluded = true;
                                 break;
                             }
-                            else
-                            {
-                                currentCheck.checkStatus = "Vanilla";
-                                Randomizer.Items.RandomizedImportantItems.Remove(
-                                    currentCheck.itemId
-                                );
-                                Randomizer.Items.RandomizedDungeonRegionItems.Remove(
-                                    currentCheck.itemId
-                                );
-                                Randomizer.Items.alwaysItems.Remove(currentCheck.itemId);
-                                break;
-                            }
+                        }
+                        if (!isExcluded)
+                        {
+                            currentCheck.checkStatus = "Vanilla";
+                            Randomizer.Items.RandomizedImportantItems.Remove(currentCheck.itemId);
+                            Randomizer.Items.RandomizedDungeonRegionItems.Remove(
+                                currentCheck.itemId
+                            );
+                            Randomizer.Items.alwaysItems.Remove(currentCheck.itemId);
                         }
                     }
                 }
