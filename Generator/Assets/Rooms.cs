@@ -525,6 +525,7 @@ namespace TPRandomizer
             bool isDungeonItem = false;
             bool ownDungeon = false;
             bool anyDungeon = false;
+            bool overworld = false;
 
             if (Randomizer.Items.RegionSmallKeys.Contains(itemToPlace))
             {
@@ -549,6 +550,8 @@ namespace TPRandomizer
 
                     anyDungeon = config.SmallKeySetting == SmallKeySettings.Any_Dungeon;
 
+                    overworld = config.SmallKeySetting == SmallKeySettings.Overworld;
+
                     break;
                 }
             }
@@ -566,6 +569,8 @@ namespace TPRandomizer
                     ownDungeon = config.BigKeySetting == BigKeySettings.Own_Dungeon;
 
                     anyDungeon = config.BigKeySetting == BigKeySettings.Any_Dungeon;
+
+                    overworld = config.BigKeySetting == BigKeySettings.Overworld;
 
                     break;
                 }
@@ -585,6 +590,8 @@ namespace TPRandomizer
 
                     anyDungeon = config.MapCompassSetting == MapAndCompassSettings.Any_Dungeon;
 
+                    overworld = config.MapCompassSetting == MapAndCompassSettings.Overworld;
+
                     break;
                 }
             }
@@ -599,7 +606,13 @@ namespace TPRandomizer
 
                 bool inDungeon = currentCheck.checkCategory.Contains("Dungeon");
 
-                if ((ownDungeon && sameDungeon) || (anyDungeon && inDungeon))
+                bool inOverworld = currentCheck.checkCategory.Contains("Overworld");
+
+                if (
+                    (ownDungeon && sameDungeon)
+                    || (anyDungeon && inDungeon)
+                    || (overworld && inOverworld)
+                )
                 {
                     return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
                 }

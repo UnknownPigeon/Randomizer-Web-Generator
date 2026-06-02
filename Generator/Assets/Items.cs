@@ -1456,6 +1456,7 @@ namespace TPRandomizer
                 {
                     case SmallKeySettings.Own_Dungeon:
                     case SmallKeySettings.Any_Dungeon:
+                    case SmallKeySettings.Overworld:
                     {
                         RandomizedDungeonRegionItems.AddRange(keys);
                         break;
@@ -1540,6 +1541,7 @@ namespace TPRandomizer
                 {
                     case BigKeySettings.Own_Dungeon:
                     case BigKeySettings.Any_Dungeon:
+                    case BigKeySettings.Overworld:
                     {
                         if (config.Count > 1)
                         {
@@ -1649,6 +1651,7 @@ namespace TPRandomizer
                 {
                     case MapAndCompassSettings.Own_Dungeon:
                     case MapAndCompassSettings.Any_Dungeon:
+                    case MapAndCompassSettings.Overworld:
 
                         RandomizedDungeonRegionItems.Add(config.Map);
                         RandomizedDungeonRegionItems.Add(config.Compass);

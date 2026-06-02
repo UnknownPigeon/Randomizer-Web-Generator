@@ -34,7 +34,6 @@ namespace TPRandomizer
         public SmallKeySettings citsSmallKeySettings { get; set; }
         public SmallKeySettings potSmallKeySettings { get; set; }
         public SmallKeySettings hcSmallKeySettings { get; set; }
-        public BigKeySettings bigKeySettings { get; set; }
         public BigKeySettings ftBigKeySettings { get; set; }
         public BigKeySettings gmBigKeySettings { get; set; }
         public BigKeySettings lbtBigKeySettings { get; set; }
@@ -44,7 +43,6 @@ namespace TPRandomizer
         public BigKeySettings citsBigKeySettings { get; set; }
         public BigKeySettings potBigKeySettings { get; set; }
         public BigKeySettings hcBigKeySettings { get; set; }
-        public MapAndCompassSettings mapAndCompassSettings { get; set; }
         public MapAndCompassSettings ftMapAndCompassSettings { get; set; }
         public MapAndCompassSettings gmMapAndCompassSettings { get; set; }
         public MapAndCompassSettings lbtMapAndCompassSettings { get; set; }
