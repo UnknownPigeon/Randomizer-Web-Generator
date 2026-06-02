@@ -1173,11 +1173,6 @@ namespace TPRandomizer
                 parseSetting.startingItems.Add(Item.Castle_Town_Portal);
             }
 
-            if (parseSetting.skipSnowpeakEntrance)
-            {
-                parseSetting.startingItems.Add(Item.Snowpeak_Portal);
-            }
-
             // Remove the bulblin camp key from the item pool if we have the setting to skip Bulblin Camp enabled.
             if (parseSetting.skipArbitersEntrance)
             {
