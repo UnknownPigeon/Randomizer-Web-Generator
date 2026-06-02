@@ -777,7 +777,7 @@ namespace TPRandomizer.Assets
         public static readonly byte[,] BaseRandomizerEventFlags = new byte[,]
         {
             { 0x3, 0x82 }, // Gave wooden sword to Talo. Talked to squirrel outside link's house
-            { 0x6, 0x29 }, // Tame Epona, KB1 trigger activated, Warped Kakariko Bridge Back.
+            { 0x6, 0x2D }, // Tame Epona, KB1 trigger activated, Warped Kakariko Bridge Back. Map warping unlocked
             { 0xF, 0x40 }, // Talked to Doctor for the first time.
             { 0x12, 0x8 }, // Can use Sera's Shop.
             { 0x14, 0x10 }, // Put Bo outside, ready to wrestle
@@ -824,7 +824,6 @@ namespace TPRandomizer.Assets
         public static readonly byte[,] EldinTwilightEventFlags = new byte[,]
         {
             { 0x7, 0x8 }, // Cleared Eldin Twilight
-            { 0x6, 0x4 }, // Map Warping unlocked.
         };
 
         /// <summary>
