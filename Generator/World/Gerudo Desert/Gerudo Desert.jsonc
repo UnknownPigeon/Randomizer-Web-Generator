@@ -182,8 +182,8 @@
     "Exits": [
       {
         "ConnectedArea": "Desert Basin",
-        "Requirements": "Room.Gerudo_Desert_Basin and CanDefeatBulblin",
-        "GlitchedRequirements": "(Room.Gerudo_Desert_Basin and CanDefeatBulblin) or Shadow_Crystal"
+        "Requirements": "Room.Desert_Basin and CanDefeatBulblin",
+        "GlitchedRequirements": "(Room.Desert_Basin and CanDefeatBulblin) or Shadow_Crystal"
       },
       {
         "ConnectedArea": "Bulblin Camp",
