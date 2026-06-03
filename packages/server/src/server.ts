@@ -570,6 +570,8 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [0x3e, 'Hawkeye'],
         [0x84, 'Horse_Call'],
         [0x13, 'Foolish_Item'],
+        [0x109, 'Important Item'],
+        [0x10a, 'Junk Item'],
       ];
 
       const plandoItemEls = plandoItems

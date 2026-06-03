@@ -293,15 +293,17 @@ namespace TPRandomizer
         Nothing = 0xFF,
 
         // Event items. These are not items that the player can "collect" but are used to specify major events that affect logical progression.
-        Diababa_Defeated,
-        Fyrus_Defeated,
-        Morpheel_Defeated,
-        Stallord_Defeated,
-        Blizzeta_Defeated,
-        Armogohma_Defeated,
-        Argorok_Defeated,
-        Zant_Defeated,
-        Ganondorf_Defeated,
+        Diababa_Defeated = 0x100,
+        Fyrus_Defeated = 0x101,
+        Morpheel_Defeated = 0x102,
+        Stallord_Defeated = 0x103,
+        Blizzeta_Defeated = 0x104,
+        Armogohma_Defeated = 0x105,
+        Argorok_Defeated = 0x106,
+        Zant_Defeated = 0x107,
+        Ganondorf_Defeated = 0x108,
+        Important_Item = 0x109,
+        Junk_Item = 0x10A,
     };
 
     public class ItemFunctions

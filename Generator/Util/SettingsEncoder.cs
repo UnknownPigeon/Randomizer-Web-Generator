@@ -343,12 +343,7 @@ namespace TPRandomizer.Util
                 if (checkName == null)
                     break;
 
-                int itemId = NextInt(8);
-                if (itemId > 0xFF)
-                    throw new Exception(
-                        $"Failed to parse valid itemId from plando list. Value was '{itemId}'."
-                    );
-
+                int itemId = NextInt(9);
                 list.Add((checkName, (Item)itemId));
             }
 

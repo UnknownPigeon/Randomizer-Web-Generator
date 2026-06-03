@@ -150,7 +150,7 @@ namespace TPRandomizer
 
                 // Place plando checks first
                 Console.WriteLine("Placing Plando Checks.");
-                PlacePlandoChecks();
+                PlacePlandoChecks(rnd);
 
                 Console.WriteLine("Placing Vanilla Checks.");
                 PlaceVanillaChecks();
@@ -274,7 +274,7 @@ namespace TPRandomizer
                 Randomizer.Items.heldItems.Add(startingItem);
             }
 
-            bool isPlaythroughValid = BackendFunctions.ValidatePlaythrough(startingRoom, true);
+            bool isPlaythroughValid = BackendFunctions.ValidatePlaythrough(startingRoom, false);
             if (!isPlaythroughValid || SSettings.logicRules == LogicRules.No_Logic)
             {
                 return new PlaythroughSpheres(null, null, null);
@@ -1242,14 +1242,26 @@ namespace TPRandomizer
         /// <summary>
         /// Places manually placed items where the user specifies
         /// </summary>
-        private static void PlacePlandoChecks()
+        private static void PlacePlandoChecks(Random rnd)
         {
             foreach (KeyValuePair<string, Check> checkList in Checks.CheckDict.ToList())
             {
                 Check currentCheck = checkList.Value;
                 if (currentCheck.checkStatus.Contains("Plando"))
                 {
-                    PlaceItemInCheck(currentCheck.itemId, currentCheck);
+                    Item itemToPlace = currentCheck.itemId;
+                    if (itemToPlace == Item.Important_Item)
+                    {
+                        itemToPlace = Items.RandomizedImportantItems[
+                            rnd.Next(Items.RandomizedImportantItems.Count)
+                        ];
+                        Randomizer.Items.heldItems.Remove(itemToPlace);
+                    }
+                    else if (itemToPlace == Item.Junk_Item)
+                    {
+                        itemToPlace = Items.JunkItems[rnd.Next(Items.JunkItems.Count)];
+                    }
+                    PlaceItemInCheck(itemToPlace, currentCheck);
                 }
             }
         }
@@ -1294,103 +1306,80 @@ namespace TPRandomizer
                     itemToPlace = itemsToBeRandomized[rnd.Next(itemsToBeRandomized.Count)];
 
                     // Console.WriteLine("Item to place: " + itemToPlace);
-                    itemPool.Remove(itemToPlace);
                     itemsToBeRandomized.Remove(itemToPlace);
-                    foreach (KeyValuePair<string, Check> checkList in Checks.CheckDict.ToList())
+                    // With plando modifying the item pool early on, there may be a chance that an item exists in the list of items to be shuffled, but it is not in the pool as it has already been placed.
+                    if (itemPool.Contains(itemToPlace))
                     {
-                        Check currentCheck = checkList.Value;
-                        currentCheck.hasBeenReached = false;
-                        Checks.CheckDict[currentCheck.checkName] = currentCheck;
-                    }
-
-                    // Walk through the current graph and get a list of rooms that we can currently access
-                    // If we collect any items during the playthrough, we add them to the player's inventory
-                    // and try walking through the graph again until we have collected every item that we can.
-                    do
-                    {
-                        playthroughItems.Clear();
-                        List<Room> currentPlaythroughGraph = GeneratePlaythroughGraph(startingRoom);
-                        foreach (Room graphRoom in currentPlaythroughGraph)
+                        itemPool.Remove(itemToPlace);
+                        foreach (KeyValuePair<string, Check> checkList in Checks.CheckDict.ToList())
                         {
-                            graphRoom.Visited = true;
-                            if (graphRoom.Checks != null)
-                            {
-                                for (int i = 0; i < graphRoom.Checks.Count; i++)
-                                {
-                                    // Create reference to the dictionary entry of the check whose logic we are evaluating
-                                    if (
-                                        !Checks.CheckDict.TryGetValue(
-                                            graphRoom.Checks[i].CheckName,
-                                            out Check currentCheck
-                                        )
-                                    )
-                                    {
-                                        if (
-                                            graphRoom.Checks[i].CheckName.ToString() == string.Empty
-                                        )
-                                        {
-                                            // Console.WriteLine("Room has no checks, continuing on....");
-                                            break;
-                                        }
-                                    }
-                                    if (!currentCheck.hasBeenReached)
-                                    {
-                                        if (
-                                            SSettings.logicRules == LogicRules.No_Logic
-                                            || graphRoom.Checks[i].CachedRequirements().Evaluate()
-                                        )
-                                        {
-                                            if (currentCheck.itemWasPlaced)
-                                            {
-                                                playthroughItems.Add(currentCheck.itemId);
+                            Check currentCheck = checkList.Value;
+                            currentCheck.hasBeenReached = false;
+                            Checks.CheckDict[currentCheck.checkName] = currentCheck;
+                        }
 
-                                                /*Console.WriteLine(
-                                                    "Added " + currentCheck.itemId + " to item list."
-                                                );*/
-                                            }
-                                            else
+                        // Walk through the current graph and get a list of rooms that we can currently access
+                        // If we collect any items during the playthrough, we add them to the player's inventory
+                        // and try walking through the graph again until we have collected every item that we can.
+                        do
+                        {
+                            playthroughItems.Clear();
+                            List<Room> currentPlaythroughGraph = GeneratePlaythroughGraph(
+                                startingRoom
+                            );
+                            foreach (Room graphRoom in currentPlaythroughGraph)
+                            {
+                                graphRoom.Visited = true;
+                                if (graphRoom.Checks != null)
+                                {
+                                    for (int i = 0; i < graphRoom.Checks.Count; i++)
+                                    {
+                                        // Create reference to the dictionary entry of the check whose logic we are evaluating
+                                        if (
+                                            !Checks.CheckDict.TryGetValue(
+                                                graphRoom.Checks[i].CheckName,
+                                                out Check currentCheck
+                                            )
+                                        )
+                                        {
+                                            if (
+                                                graphRoom.Checks[i].CheckName.ToString()
+                                                == string.Empty
+                                            )
                                             {
-                                                if (
-                                                    (restriction == "Region")
-                                                    && (currentCheck.checkStatus != "Plando")
-                                                )
+                                                // Console.WriteLine("Room has no checks, continuing on....");
+                                                break;
+                                            }
+                                        }
+                                        if (!currentCheck.hasBeenReached)
+                                        {
+                                            if (
+                                                SSettings.logicRules == LogicRules.No_Logic
+                                                || graphRoom.Checks[i]
+                                                    .CachedRequirements()
+                                                    .Evaluate()
+                                            )
+                                            {
+                                                if (currentCheck.itemWasPlaced)
+                                                {
+                                                    playthroughItems.Add(currentCheck.itemId);
+
+                                                    /*Console.WriteLine(
+                                                        "Added " + currentCheck.itemId + " to item list."
+                                                    );*/
+                                                }
+                                                else
                                                 {
                                                     if (
-                                                        RoomFunctions.IsRegionCheck(
-                                                            itemToPlace,
-                                                            currentCheck,
-                                                            graphRoom
-                                                        )
-                                                    )
-                                                    {
-                                                        // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
-                                                        availableChecks.Add(currentCheck.checkName);
-                                                    }
-                                                }
-                                                else if (currentCheck.checkStatus == "Ready")
-                                                {
-                                                    if (restriction == "Dungeon Rewards")
-                                                    {
-                                                        if (
-                                                            currentCheck.checkCategory.Contains(
-                                                                "Dungeon Reward"
-                                                            )
-                                                        )
-                                                        {
-                                                            // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
-                                                            availableChecks.Add(
-                                                                currentCheck.checkName
-                                                            );
-                                                        }
-                                                    }
-                                                    else if (
-                                                        Randomizer.SSettings.noSmallKeysOnBosses
+                                                        (restriction == "Region")
+                                                        && (currentCheck.checkStatus != "Plando")
                                                     )
                                                     {
                                                         if (
-                                                            !ItemFunctions.IsSmallKeyOnBossCheck(
+                                                            RoomFunctions.IsRegionCheck(
                                                                 itemToPlace,
-                                                                currentCheck
+                                                                currentCheck,
+                                                                graphRoom
                                                             )
                                                         )
                                                         {
@@ -1400,29 +1389,65 @@ namespace TPRandomizer
                                                             );
                                                         }
                                                     }
-                                                    else
+                                                    else if (currentCheck.checkStatus == "Ready")
                                                     {
-                                                        // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
-                                                        availableChecks.Add(currentCheck.checkName);
+                                                        if (restriction == "Dungeon Rewards")
+                                                        {
+                                                            if (
+                                                                currentCheck.checkCategory.Contains(
+                                                                    "Dungeon Reward"
+                                                                )
+                                                            )
+                                                            {
+                                                                // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
+                                                                availableChecks.Add(
+                                                                    currentCheck.checkName
+                                                                );
+                                                            }
+                                                        }
+                                                        else if (
+                                                            Randomizer.SSettings.noSmallKeysOnBosses
+                                                        )
+                                                        {
+                                                            if (
+                                                                !ItemFunctions.IsSmallKeyOnBossCheck(
+                                                                    itemToPlace,
+                                                                    currentCheck
+                                                                )
+                                                            )
+                                                            {
+                                                                // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
+                                                                availableChecks.Add(
+                                                                    currentCheck.checkName
+                                                                );
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
+                                                            availableChecks.Add(
+                                                                currentCheck.checkName
+                                                            );
+                                                        }
                                                     }
                                                 }
-                                            }
 
-                                            currentCheck.hasBeenReached = true;
+                                                currentCheck.hasBeenReached = true;
+                                            }
                                         }
                                     }
                                 }
                             }
-                        }
 
-                        itemPool.AddRange(playthroughItems);
-                    } while (playthroughItems.Count > 0);
-                    checkToReciveItem = Checks.CheckDict[
-                        availableChecks[rnd.Next(availableChecks.Count)].ToString()
-                    ];
-                    currentItemPool.Remove(itemToPlace);
-                    PlaceItemInCheck(itemToPlace, checkToReciveItem);
-                    availableChecks.Clear();
+                            itemPool.AddRange(playthroughItems);
+                        } while (playthroughItems.Count > 0);
+                        checkToReciveItem = Checks.CheckDict[
+                            availableChecks[rnd.Next(availableChecks.Count)].ToString()
+                        ];
+                        currentItemPool.Remove(itemToPlace);
+                        PlaceItemInCheck(itemToPlace, checkToReciveItem);
+                        availableChecks.Clear();
+                    }
                 }
 
                 itemPool.Clear();
@@ -1497,7 +1522,7 @@ namespace TPRandomizer
             check.itemWasPlaced = true;
             check.itemId = item;
 
-            // Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
+            Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
         }
 
         private static void StartOver()

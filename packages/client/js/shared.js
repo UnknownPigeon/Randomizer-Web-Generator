@@ -294,7 +294,7 @@
       const itemId = parseInt($(this).attr('data-itemid'), 10);
       const checkId = parseInt($(this).attr('data-checkid'), 10);
       bits += numToPaddedBits(checkId, 10);
-      bits += numToPaddedBits(itemId, 8);
+      bits += numToPaddedBits(itemId, 9);
     });
     if (bits.length < 1) {
       bits = '0';
@@ -759,7 +759,7 @@
         if (checkId === eolValue) {
           break;
         } else {
-          const itemId = nextXBitsAsNum(8);
+          const itemId = nextXBitsAsNum(9);
           list.push([checkId, itemId]);
         }
       }
