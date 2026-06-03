@@ -1250,7 +1250,7 @@ namespace TPRandomizer
                 if (currentCheck.checkStatus.Contains("Plando"))
                 {
                     Item itemToPlace = currentCheck.itemId;
-                    if (itemToPlace == Item.Important_Item)
+                    if (itemToPlace == Item.Major_Item)
                     {
                         itemToPlace = Items.RandomizedImportantItems[
                             rnd.Next(Items.RandomizedImportantItems.Count)
@@ -1522,7 +1522,7 @@ namespace TPRandomizer
             check.itemWasPlaced = true;
             check.itemId = item;
 
-            Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
+            // Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
         }
 
         private static void StartOver()

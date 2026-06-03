@@ -302,7 +302,7 @@ namespace TPRandomizer
         Argorok_Defeated = 0x106,
         Zant_Defeated = 0x107,
         Ganondorf_Defeated = 0x108,
-        Important_Item = 0x109,
+        Major_Item = 0x109,
         Junk_Item = 0x10A,
     };
 
