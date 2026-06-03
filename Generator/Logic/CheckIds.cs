@@ -659,6 +659,9 @@ namespace TPRandomizer
                 "Catch A Hylian Loach",
                 "Catch A Reekfish",
                 "Catch The Legendary Hylian Loach",
+                "Rollgoal 1-1",
+                "Rollgoal 1-8",
+                "Rollgoal 8-8",
                 // Add new check names right above this line. The name should
                 // match exactly with the json filename in the "Checks"
                 // directory.

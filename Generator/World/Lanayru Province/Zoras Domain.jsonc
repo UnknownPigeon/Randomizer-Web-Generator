@@ -191,6 +191,23 @@
         "GlitchedRequirements": "true"
       }
     ],
+    "Checks": [
+      {
+        "CheckName": "Rollgoal 1-1",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Rollgoal 1-8",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Rollgoal 8-8",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
     "Region": "Zoras Domain"
   },
   {

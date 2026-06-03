@@ -710,6 +710,18 @@ window.tpr.checkData = {
     category: ['Overworld', 'Fishing Hole', 'ARC', 'REL'],
     itemId: 'Empty_Bottle',
   },
+  'Rollgoal 1-1': {
+    category: ['Overworld', 'Fishing Hole'],
+    itemId: 'Nothing',
+  },
+  'Rollgoal 1-8': {
+    category: ['Overworld', 'Fishing Hole'],
+    itemId: 'Nothing',
+  },
+  'Rollgoal 8-8': {
+    category: ['Overworld', 'Fishing Hole'],
+    itemId: 'Nothing',
+  },
   'Fishing Hole Heart Piece': {
     category: ['Overworld', 'Fishing Hole', 'ARC', 'REL'],
     itemId: 'Piece_of_Heart',

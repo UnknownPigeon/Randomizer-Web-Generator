@@ -638,6 +638,9 @@ namespace TPRandomizer.Hints
                         "Catch A Hyrule Bass",
                         "Catch A Hylian Pike",
                         "Catch A Hylian Loach",
+                        "Rollgoal 1-1",
+                        "Rollgoal 1-8",
+                        "Rollgoal 8-8",
                     }
                 },
                 {
