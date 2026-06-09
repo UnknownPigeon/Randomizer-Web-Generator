@@ -95,6 +95,8 @@ namespace TPRandomizer.Assets
             { 0x0, 0x62 }, // Defeated second bulblin outside link's house
             { 0x0, 0x60 }, // Defeated Hugo
             { 0x18, 0x4B }, // Watched CS with Allies in HC.
+            { 0x15, 0xA1 }, // Unlock door in Darknut Room in ToT
+            { 0x15, 0xA3 }, // Skip small CS when darknut room door opens
         };
 
         /// <summary>
