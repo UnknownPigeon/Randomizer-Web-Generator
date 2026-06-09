@@ -511,6 +511,7 @@
       { id: 'grottoERCheckbox' },
       { id: 'interiorERCheckbox' },
       { id: 'animalConversationsCheckbox' },
+      { id: 'spawnGWolvesCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1133,6 +1134,7 @@
       processBasic({ id: 'grottoER' });
       processBasic({ id: 'interiorER' });
       processBasic({ id: 'animalConversations' });
+      processBasic({ id: 'spawnGWolves' });
     } else {
       res.fishJournals = false;
       res.legendaryLoach = false;
@@ -1140,6 +1142,7 @@
       res.grottoER = false;
       res.interiorER = false;
       res.animalConversations = false;
+      res.spawnGWolves = false;
     }
 
     res.startingItems = processor.nextEolList(9);

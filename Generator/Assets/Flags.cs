@@ -958,6 +958,11 @@ namespace TPRandomizer.Assets
             { 0x22, 0x4 }, // Got Wooden Statue
         };
 
+        public static readonly byte[,] SpawnGWolvesEventFlags = new byte[,]
+        {
+            { 0x3A, 0xFC }, // Howled at all howling stones
+        };
+
         public static readonly byte[,] CharmEventFlags = new byte[,]
         {
             { 0x23, 0x40 }, // Gave statue to Ilia
@@ -996,6 +1001,7 @@ namespace TPRandomizer.Assets
                 { 27, CharmEventFlags },
                 { 30, bridgeDonationEventFlags },
                 { 56, AnimalConversationEventFlags },
+                { 57, SpawnGWolvesEventFlags },
             };
         private static readonly SharedSettings RandomizerSettings = Randomizer.SSettings;
 
@@ -1062,6 +1068,7 @@ namespace TPRandomizer.Assets
             /* 54 */RandomizerSettings.potMapAndCompassSettings == MapAndCompassSettings.Start_With,
             /* 55 */RandomizerSettings.hcMapAndCompassSettings == MapAndCompassSettings.Start_With,
             /* 56 */!RandomizerSettings.shuffleAnimalConversations,
+            /* 57 */RandomizerSettings.spawnGWolves
         };
     }
 }

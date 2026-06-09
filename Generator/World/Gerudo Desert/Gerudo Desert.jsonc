@@ -204,8 +204,8 @@
       },
       {
         "CheckName": "Desert Golden Wolf",
-        "Requirements": "Shadow_Crystal and Room.Lake_Hylia",
-        "GlitchedRequirements": "Shadow_Crystal and Room.Lake_Hylia"
+        "Requirements": "Shadow_Crystal and (Room.Lake_Hylia or (Setting.spawnGWolves equals True))",
+        "GlitchedRequirements": "Shadow_Crystal and (Room.Lake_Hylia or (Setting.spawnGWolves equals True))"
       }
     ],
     "Region": "Gerudo Desert"

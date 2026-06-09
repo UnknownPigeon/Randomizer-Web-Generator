@@ -723,6 +723,7 @@ namespace TPRandomizer
             result.Add("shuffleGrottoEntrances", sSettings.shuffleGrottoEntrances);
             result.Add("shuffleInteriorEntrances", sSettings.shuffleInteriorEntrances);
             result.Add("shuffleAnimalConversations", sSettings.shuffleAnimalConversations);
+            result.Add("spawnGWolves", sSettings.spawnGWolves);
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);

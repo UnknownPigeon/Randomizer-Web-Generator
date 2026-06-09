@@ -896,6 +896,9 @@ document
 document
   .getElementById('interiorERCheckbox')
   .addEventListener('click', setSettingsString);
+document
+  .getElementById('spawnGWolvesCheckbox')
+  .addEventListener('click', setSettingsString);
 
 function importSettingsString() {
   parseSettingsString(document.getElementById('settingsStringTextbox').value);
@@ -2553,6 +2556,7 @@ function populateSSettings(s) {
   $('#grottoERCheckbox').prop('checked', s.grottoER);
   $('#interiorERCheckbox').prop('checked', s.interiorER);
   $('#animalConversationsCheckbox').prop('checked', s.animalConversations);
+  $('#spawnGWolvesCheckbox').prop('checked', s.spawnGWolves);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

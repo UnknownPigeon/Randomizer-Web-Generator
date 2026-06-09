@@ -274,8 +274,8 @@
       },
       {
         "CheckName": "BCT Golden Wolf",
-        "Requirements": "Shadow_Crystal and Room.UZR_Ledge",
-        "GlitchedRequirements": "Shadow_Crystal and Room.UZR_Ledge"
+        "Requirements": "Shadow_Crystal and (Room.UZR_Ledge or (Setting.spawnGWolves equals True))",
+        "GlitchedRequirements": "Shadow_Crystal and (Room.UZR_Ledge or (Setting.spawnGWolves equals True))"
       },
       {
         "CheckName": "CT Portal",
@@ -415,8 +415,8 @@
       },
       {
         "CheckName": "OCT South Golden Wolf",
-        "Requirements": "Shadow_Crystal and Room.North_Faron_Lost_Woods_Entrance",
-        "GlitchedRequirements": "Shadow_Crystal and Room.North_Faron_Lost_Woods_Entrance"
+        "Requirements": "Shadow_Crystal and (Room.North_Faron_Lost_Woods_Entrance or (Setting.spawnGWolves equals True))",
+        "GlitchedRequirements": "Shadow_Crystal and (Room.North_Faron_Lost_Woods_Entrance or (Setting.spawnGWolves equals True))"
       },
       {
         "CheckName": "OCT South Boulder Rupee",

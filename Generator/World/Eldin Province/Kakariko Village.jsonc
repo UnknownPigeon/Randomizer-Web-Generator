@@ -665,8 +665,8 @@
       },
       {
         "CheckName": "Kak Graveyard Golden Wolf",
-        "Requirements": "Shadow_Crystal and Room.Snowpeak_Climb_Upper",
-        "GlitchedRequirements": "Shadow_Crystal and Room.Snowpeak_Climb_Upper"
+        "Requirements": "Shadow_Crystal and (Room.Snowpeak_Climb_Upper or (Setting.spawnGWolves equals True))",
+        "GlitchedRequirements": "Shadow_Crystal and (Room.Snowpeak_Climb_Upper or (Setting.spawnGWolves equals True))"
       },
       {
         "CheckName": "Kak Graveyard Underwater Boulder Rupee",
