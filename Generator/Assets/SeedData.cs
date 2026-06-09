@@ -1679,6 +1679,15 @@ namespace TPRandomizer.Assets
                 ), // Patch Bo Left Door so it always opens
 
                 new ARCReplacement(
+                    "3368",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    0
+                ), // Remove Bo Actor from outside his house to prevent confusion and weird goat interactions
+
+                new ARCReplacement(
                     "1A62",
                     "00060064",
                     (byte)FileDirectory.Message,
