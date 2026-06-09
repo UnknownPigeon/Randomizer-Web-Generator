@@ -850,6 +850,9 @@ document
   .getElementById('fishJournalCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('animalConversationsCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('legendaryLoachCheckbox')
   .addEventListener('click', setSettingsString);
 document
@@ -2549,6 +2552,7 @@ function populateSSettings(s) {
   $('#chestSizeCheckbox').prop('checked', s.chestSize);
   $('#grottoERCheckbox').prop('checked', s.grottoER);
   $('#interiorERCheckbox').prop('checked', s.interiorER);
+  $('#animalConversationsCheckbox').prop('checked', s.animalConversations);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

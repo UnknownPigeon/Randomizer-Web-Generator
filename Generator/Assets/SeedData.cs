@@ -1225,6 +1225,11 @@ namespace TPRandomizer.Assets
                     {
                         continue;
                     }
+
+                    if (currentCheck.checkCategory.Contains("Animal Conversation") && !Randomizer.SSettings.shuffleAnimalConversations)
+                    {
+                        continue;
+                    }
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.itemId));
 
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.stageIDX[0]));

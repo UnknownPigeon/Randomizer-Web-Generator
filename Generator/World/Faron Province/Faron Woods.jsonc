@@ -499,6 +499,11 @@
         "CheckName": "North Faron Portal",
         "Requirements": "true",
         "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Talk To Trill As Wolf",
+        "Requirements": "Shadow_Crystal and CanCompleteFaronTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteFaronTwilight"
       }
     ],
     "Region": "Faron Woods"

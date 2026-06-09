@@ -1,5 +1,45 @@
 window.tpr = window.tpr || {};
 window.tpr.checkData = {
+  'Talk To HV Cucco': {
+    category: ['Overworld', 'Animal', 'Hidden Village'],
+    itemId: 'Nothing',
+  },
+  'Talk To Trill As Wolf': {
+    category: ['Overworld', 'Animal', 'Faron Woods'],
+    itemId: 'Nothing',
+  },
+  'Talk To CT Black And White Cat After Jovani 60': {
+    category: ['Overworld', 'Animal', 'Castle Town'],
+    itemId: 'Nothing',
+  },
+  'Talk To CT Dark Cat After MDH': {
+    category: ['Overworld', 'Animal', 'Castle Town'],
+    itemId: 'Nothing',
+  },
+  'Talk To East CT Dog': {
+    category: ['Overworld', 'Animal', 'Castle Town'],
+    itemId: 'Nothing',
+  },
+  'Talk To West CT Dog': {
+    category: ['Overworld', 'Animal', 'Castle Town'],
+    itemId: 'Nothing',
+  },
+  'Talk To Plumm As Link': {
+    category: ['Overworld', 'Animal', 'Lake Hylia'],
+    itemId: 'Nothing',
+  },
+  'Talk To Plumm As Wolf': {
+    category: ['Overworld', 'Animal', 'Lake Hylia'],
+    itemId: 'Nothing',
+  },
+  'Talk To Frog Outside Rusl House': {
+    category: ['Overworld', 'Animal', 'Ordona Province'],
+    itemId: 'Nothing',
+  },
+  'Talk To Ordon Hawk': {
+    category: ['Overworld', 'Animal', 'Ordona Province'],
+    itemId: 'Nothing',
+  },
   'Agitha Female Ant Reward': {
     category: ['Overworld', 'Npc', 'Castle Town', 'Bug Reward'],
     itemId: 'Purple_Rupee',

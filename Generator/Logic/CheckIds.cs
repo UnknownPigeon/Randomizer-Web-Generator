@@ -3,6 +3,7 @@ namespace TPRandomizer
     using System;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.Runtime.CompilerServices;
     using TPRandomizer.Util;
 
     public class CheckIdClass
@@ -662,6 +663,16 @@ namespace TPRandomizer
                 "Rollgoal 1-1",
                 "Rollgoal 1-8",
                 "Rollgoal 8-8",
+                "Talk To Frog Outside Rusl House",
+                "Talk To Ordon Hawk",
+                "Talk To Trill As Wolf",
+                "Talk To Plumm As Wolf",
+                "Talk To Plumm As Link",
+                "Talk To West CT Dog",
+                "Talk To East CT Dog",
+                "Talk To HV Cucco",
+                "Talk To CT Black And White Cat After Jovani 60",
+                "Talk To CT Dark Cat After MDH",
                 // Add new check names right above this line. The name should
                 // match exactly with the json filename in the "Checks"
                 // directory.

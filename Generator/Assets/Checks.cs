@@ -580,6 +580,14 @@ namespace TPRandomizer
                     }
                 }
 
+                if (!parseSetting.shuffleAnimalConversations)
+                {
+                    if (currentCheck.checkCategory.Contains("Animal Conversation"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
+
                 if (!parseSetting.shuffleLegendaryLoach)
                 {
                     if (currentCheck.checkCategory.Contains("Legendary Loach"))

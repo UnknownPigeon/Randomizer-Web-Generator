@@ -821,7 +821,8 @@
       Poe: true,
       'Rupee - Hidden': true,
       'Rupee - Freestanding': true,
-      'Fishing': true,
+      Fishing: true,
+      Animal: true,
     };
 
     const importantItems = {

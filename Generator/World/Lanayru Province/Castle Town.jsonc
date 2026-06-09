@@ -28,6 +28,11 @@
         "CheckName": "Charlo Donation Blessing",
         "Requirements": "CanCompleteLanayruTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
         "GlitchedRequirements": "CanCompleteLanayruTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+      },
+      {
+        "CheckName": "Talk To West CT Dog",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Castle Town"
@@ -288,6 +293,13 @@
         "GlitchedRequirements": "true"
       }
     ],
+    "Checks": [
+      {
+        "CheckName": "Talk To East CT Dog",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      }
+    ],
     "Region": "Castle Town"
   },
   {
@@ -441,6 +453,18 @@
         "ConnectedArea": "CT Telmas Bar",
         "Requirements": "true",
         "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Talk To CT Black And White Cat After Jovani 60",
+        "Requirements": "Shadow_Crystal and Room.CT_Jovanis_House and (Poe_Soul, 60) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and Room.CT_Jovanis_House and (Poe_Soul, 60) and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Talk To CT Dark Cat After MDH",
+        "Requirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Castle Town"

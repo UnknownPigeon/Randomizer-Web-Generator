@@ -186,6 +186,16 @@
         "CheckName": "Catch An Ordon Catfish",
         "Requirements": "CanCatchBaitedFish",
         "GlitchedRequirements": "CanCatchBaitedFish"
+      },
+      {
+        "CheckName": "Talk To Frog Outside Rusl House",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "Talk To Ordon Hawk",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
     "Region": "Ordona Province"

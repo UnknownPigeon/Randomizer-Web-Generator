@@ -98,6 +98,16 @@
         "CheckName": "Lake Hylia Left Underwater Boulder Rupee",
         "Requirements": "CanCompleteLanayruTwilight and Zora_Armor and HasHeavyMod and CanUseWaterBombs",
         "GlitchedRequirements": "CanCompleteLanayruTwilight and CanDoAirRefill"
+      },
+      {
+        "CheckName": "Talk To Plumm As Wolf",
+        "Requirements": "CanCompleteLanayruTwilight and Shadow_Crystal",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and Shadow_Crystal"
+      },
+      {
+        "CheckName": "Talk To Plumm As Link",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Lake Hylia"

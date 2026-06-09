@@ -722,6 +722,7 @@ namespace TPRandomizer
             result.Add("chestSizeMatchesContent", sSettings.chestSizeMatchesContent);
             result.Add("shuffleGrottoEntrances", sSettings.shuffleGrottoEntrances);
             result.Add("shuffleInteriorEntrances", sSettings.shuffleInteriorEntrances);
+            result.Add("shuffleAnimalConversations", sSettings.shuffleAnimalConversations);
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);

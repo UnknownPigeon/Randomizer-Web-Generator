@@ -858,7 +858,6 @@ namespace TPRandomizer.Assets
             { 0x20, 0x1 }, // Talked to Telma for the first time.
             { 0x5E, 0x10 }, // Midna text after beating Forest Temple.
             { 0x1D, 0x40 }, // Listened to Fyer at drained lake.
-            { 0x22, 0x1 }, // Plumm initial CS watched.
             { 0x23, 0x10 }, // STAR initial CS watched.
             { 0x26, 0x2 }, // Talked to Yeto on Snowpeak.
             { 0x28, 0x40 }, // Used Ooccoo for the first time.
@@ -883,6 +882,11 @@ namespace TPRandomizer.Assets
             { 0x6, 0x2 }, // Forest Temple Story Flag
             { 0xC, 0x40 }, // Talked to Farone after clearing Forest Temple
             { 0x5E, 0x10 }, // Midna text after Forest Temple completed
+        };
+
+        public static readonly byte[,] AnimalConversationEventFlags = new byte[,]
+        {
+            { 0x22, 0x1 }, // Plumm initial CS watched.
         };
 
         public static readonly byte[,] MDHEventFlags = new byte[,]
@@ -991,6 +995,7 @@ namespace TPRandomizer.Assets
                 { 26, WoodStatueEventFlags },
                 { 27, CharmEventFlags },
                 { 30, bridgeDonationEventFlags },
+                { 56, AnimalConversationEventFlags },
             };
         private static readonly SharedSettings RandomizerSettings = Randomizer.SSettings;
 
@@ -1056,6 +1061,7 @@ namespace TPRandomizer.Assets
             /* 53 */RandomizerSettings.citsMapAndCompassSettings == MapAndCompassSettings.Start_With,
             /* 54 */RandomizerSettings.potMapAndCompassSettings == MapAndCompassSettings.Start_With,
             /* 55 */RandomizerSettings.hcMapAndCompassSettings == MapAndCompassSettings.Start_With,
+            /* 56 */!RandomizerSettings.shuffleAnimalConversations,
         };
     }
 }

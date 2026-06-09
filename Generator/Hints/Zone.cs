@@ -215,7 +215,9 @@ namespace TPRandomizer.Hints
                         "Sera Shop Slingshot",
                         "Uli Cradle Delivery",
                         "Wooden Sword Chest",
-                        "Wrestling With Bo"
+                        "Wrestling With Bo",
+                        "Talk To Frog Outside Rusl House",
+                        "Talk To Ordon Hawk",
                     }
                 },
                 {
@@ -277,6 +279,7 @@ namespace TPRandomizer.Hints
                         "Faron Woods Coro Boulder Rupee 2",
                         "Faron Woods Coro Boulder Rupee 3",
                         "Faron Woods Coro Boulder Rupee 4",
+                        "Talk To Trill As Wolf",
                         //"Catch A Greengill",
                         //"Catch An Ordon Catfish",
                     }
@@ -396,7 +399,8 @@ namespace TPRandomizer.Hints
                         "Cats Hide and Seek Minigame",
                         "HV Poe",
                         "Ilia Charm",
-                        "Skybook From Impaz"
+                        "Skybook From Impaz",
+                        "Talk To HV Cucco",
                     }
                 },
                 {
@@ -471,7 +475,11 @@ namespace TPRandomizer.Hints
                         "CT Goron Shop Hylian Shield",
                         "CT Goron Shop Red Potion",
                         "CT Goron Shop Lantern Oil",
-                        "CT Goron Shop Arrow Refill"
+                        "CT Goron Shop Arrow Refill",
+                        "Talk To West CT Dog",
+                        "Talk To East CT Dog",
+                        "Talk To CT Black And White Cat After Jovani 60",
+                        "Talk To CT Dark Cat After MDH",
                     }
                 },
                 {
@@ -544,7 +552,9 @@ namespace TPRandomizer.Hints
                         "Lake Hylia Left Underwater Pillar Rupee",
                         "Lake Hylia Right Underwater Pillar Rupee",
                         "Lake Hylia Right Underwater Boulder Rupee",
-                        "Lake Hylia Left Underwater Boulder Rupee"
+                        "Lake Hylia Left Underwater Boulder Rupee",
+                        "Talk To Plumm As Wolf",
+                        "Talk To Plumm As Link",
                     }
                 },
                 {
