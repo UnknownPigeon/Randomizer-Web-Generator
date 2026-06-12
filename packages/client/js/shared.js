@@ -1555,52 +1555,60 @@
         { id: 'lanternColorFieldset', rgb: true },
         { id: 'lightSwordColorFieldset', rgb: true },
         // { id: 'midnaHairColorFieldset', bitLength: 1 },
-        { id: 'heartColorFieldset', rgb: true },
-        { id: 'aButtonColorFieldset', rgb: true },
-        { id: 'bButtonColorFieldset', rgb: true },
-        { id: 'xButtonColorFieldset', rgb: true },
-        { id: 'yButtonColorFieldset', rgb: true },
-        { id: 'zButtonColorFieldset', rgb: true },
+        { id: 'heartColorFieldset', rgb: true, storeIndex: true },
+        { id: 'aButtonColorFieldset', rgb: true, storeIndex: true },
+        { id: 'bButtonColorFieldset', rgb: true, storeIndex: true },
+        { id: 'xButtonColorFieldset', rgb: true, storeIndex: true },
+        { id: 'yButtonColorFieldset', rgb: true, storeIndex: true },
+        { id: 'zButtonColorFieldset', rgb: true, storeIndex: true },
         { id: 'midnaHairBaseColorFieldset', midnaHairBase: true },
         { id: 'midnaHairTipColorFieldset', midnaHairTips: true },
-        { id: 'midnaDomeRingColorFieldset', rgb: true },
+        { id: 'midnaDomeRingColorFieldset', rgb: true, storeIndex: true },
         { id: 'linkHairColorFieldset', rgb: true },
-      ].map(({ id, bitLength, rgb, midnaHairBase, midnaHairTips }) => {
-        if (bitLength) {
-          // select
-          return {
-            type: RawSettingType.xBitNum,
-            bitLength,
-            value: parseInt(getVal(id), 10),
-          };
-        } else if (rgb) {
-          const selVal = getVal(id);
-          const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
-          const value = $option[0].getAttribute('data-rgb');
-
-          return {
-            type: RawSettingType.rgb,
-            value,
-          };
-        } else if (midnaHairBase || midnaHairTips) {
-          const selVal = getVal(id);
-          const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
-          const rgbVal = $option[0].getAttribute('data-rgb');
-          const isCustomColor =
-            $option[0].getAttribute('data-custom-color') === 'true';
-
-          return {
-            type: midnaHairTips
-              ? RawSettingType.midnaHairTips
-              : RawSettingType.midnaHairBase,
-            valueNum: parseInt(selVal, 10),
-            rgbVal,
-            isCustomColor,
-          };
+      ].map(
+        ({ id, bitLength, rgb, midnaHairBase, midnaHairTips, storeIndex }) => {
+          if (bitLength) {
+            // select
+            localStorage.setItem(id, getVal(id));
+            return {
+              type: RawSettingType.xBitNum,
+              bitLength,
+              value: parseInt(getVal(id), 10),
+            };
+          } else if (rgb) {
+            const selVal = getVal(id);
+            const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
+            const value = $option[0].getAttribute('data-rgb');
+            if (storeIndex) {
+              localStorage.setItem(id, getVal(id));
+            } else {
+              localStorage.setItem(id, value);
+            }
+            return {
+              type: RawSettingType.rgb,
+              value,
+            };
+          } else if (midnaHairBase || midnaHairTips) {
+            const selVal = getVal(id);
+            const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
+            const rgbVal = $option[0].getAttribute('data-rgb');
+            const isCustomColor =
+              $option[0].getAttribute('data-custom-color') === 'true';
+            localStorage.setItem(id, rgbVal);
+            return {
+              type: midnaHairTips
+                ? RawSettingType.midnaHairTips
+                : RawSettingType.midnaHairBase,
+              valueNum: parseInt(selVal, 10),
+              rgbVal,
+              isCustomColor,
+            };
+          }
+          // checkbox
+          localStorage.setItem(id, getVal(id));
+          return getVal(id);
         }
-        // checkbox
-        return getVal(id);
-      })
+      )
     );
 
     let bitString = '';

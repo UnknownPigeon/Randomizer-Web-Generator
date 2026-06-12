@@ -260,6 +260,50 @@
 
     initCustomColorPickers();
 
+    // Attempt to load previously used values from localStorage
+
+    const arrayOfCosmeticSettings = [
+      'bgmFieldset',
+      'randomizeFanfaresCheckbox',
+      'randomizeSfxCheckbox',
+      'disableEnemyBGMCheckbox',
+      'invertCameraCheckbox',
+      'lightSwordGlowCheckbox',
+      'linkHairColorFieldsetColorPicker',
+      'hTunicHatColorFieldsetColorPicker',
+      'hTunicBodyColorFieldsetColorPicker',
+      'hTunicSkirtColorFieldsetColorPicker',
+      'zTunicHatColorFieldsetColorPicker',
+      'zTunicHelmetColorFieldsetColorPicker',
+      'zTunicBodyColorFieldsetColorPicker',
+      'zTunicScalesColorFieldsetColorPicker',
+      'zTunicBootsColorFieldsetColorPicker',
+      'msBladeColorFieldsetColorPicker',
+      'msHandleColorFieldsetColorPicker',
+      'boomerangColorFieldsetColorPicker',
+      'ironsColorFieldsetColorPicker',
+      'spinnerColorFieldsetColorPicker',
+      'woodSwordColorFieldsetColorPicker',
+      'eponaColorFieldsetColorPicker',
+      'wolfColorFieldsetColorPicker',
+      'lanternColorFieldsetColorPicker',
+      'lightSwordColorFieldsetColorPicker',
+      'heartColorFieldset',
+      'aButtonColorFieldset',
+      'bButtonColorFieldset',
+      'xButtonColorFieldset',
+      'yButtonColorFieldset',
+      'zButtonColorFieldset',
+      'midnaHairBaseColorFieldsetColorPicker',
+      'midnaHairTipColorFieldsetColorPicker',
+      'midnaDomeRingColorFieldset',
+    ];
+
+    for (let i = 0; i < arrayOfCosmeticSettings.length; i++) {
+      const elId = arrayOfCosmeticSettings[i];
+      setCosmeticSettingFromStorage(elId);
+    }
+
     function handleToggleTranslationsWarning() {
       let showTranslationsWarning = false;
       if (
@@ -295,6 +339,34 @@
     languageSelectedEvent.subscribe(() => {
       handleToggleTranslationsWarning();
     });
+  }
+
+  function setCosmeticSettingFromStorage(elId) {
+    const element = document.getElementById(elId);
+
+    if (elId.includes('ColorPicker')) {
+      // Is a custom color input.
+
+      // Set color input's value and trigger 'input' event.
+      const hexValue =
+        '#' + localStorage.getItem(elId.replace('ColorPicker', '')).slice(2);
+      element.value = hexValue;
+      element.setAttribute('value', hexValue);
+      element.dispatchEvent(new Event('input', { bubbles: true }));
+
+      // Change selected option to be the Custom one.
+      const selectEl = document.getElementById(elId.replace('ColorPicker', ''));
+      const $customOption = $(selectEl).find('option[data-custom-color]');
+      if ($customOption.length > 0) {
+        const customOption = $customOption[0];
+        $(selectEl).val(customOption.value);
+        selectEl.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+    } else if (elId.includes('Checkbox')) {
+      element.checked = localStorage.getItem(elId) === 'true';
+    } else {
+      element.selectedIndex = localStorage.getItem(elId);
+    }
   }
 
   function updateLangDisplay() {
