@@ -1230,6 +1230,11 @@ namespace TPRandomizer.Assets
                     {
                         continue;
                     }
+
+                    if (currentCheck.checkCategory.Contains("Minigame") && !Randomizer.SSettings.shuffleMinigames)
+                    {
+                        continue;
+                    }
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.itemId));
 
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.stageIDX[0]));

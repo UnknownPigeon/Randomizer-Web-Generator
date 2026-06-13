@@ -588,6 +588,14 @@ namespace TPRandomizer
                     }
                 }
 
+                if (!parseSetting.shuffleMinigames)
+                {
+                    if (currentCheck.checkCategory.Contains("Minigame"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
+
                 if (!parseSetting.shuffleLegendaryLoach)
                 {
                     if (currentCheck.checkCategory.Contains("Legendary Loach"))

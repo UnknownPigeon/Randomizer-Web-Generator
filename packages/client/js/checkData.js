@@ -365,7 +365,7 @@ window.tpr.checkData = {
     itemId: 'Green_Rupee',
   },
   'Cats Hide and Seek Minigame': {
-    category: ['Overworld', 'Npc', 'Hidden Village', 'DZX'],
+    category: ['Overworld', 'Minigame', 'Hidden Village', 'DZX'],
     itemId: 'Piece_of_Heart',
   },
   'CoO Floor 17 Poe': {
@@ -751,15 +751,15 @@ window.tpr.checkData = {
     itemId: 'Empty_Bottle',
   },
   'Rollgoal 1-1': {
-    category: ['Overworld', 'Fishing Hole'],
+    category: ['Overworld', 'Fishing Hole', 'Minigame'],
     itemId: 'Nothing',
   },
   'Rollgoal 1-8': {
-    category: ['Overworld', 'Fishing Hole'],
+    category: ['Overworld', 'Fishing Hole', 'Minigame'],
     itemId: 'Nothing',
   },
   'Rollgoal 8-8': {
-    category: ['Overworld', 'Fishing Hole'],
+    category: ['Overworld', 'Fishing Hole', 'Minigame'],
     itemId: 'Nothing',
   },
   'Fishing Hole Heart Piece': {
@@ -1116,7 +1116,7 @@ window.tpr.checkData = {
     itemId: 'Piece_of_Heart',
   },
   'Herding Goats Reward': {
-    category: ['Overworld', 'Npc', 'Ordona Province', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Ordona Province', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
   'HV Poe': {
@@ -1282,7 +1282,7 @@ window.tpr.checkData = {
     itemId: 'Filled_Bomb_Bag',
   },
   'Iza Raging Rapids Minigame': {
-    category: ['Overworld', 'Npc', 'Upper Zoras River', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Upper Zoras River', 'ARC'],
     itemId: 'Giant_Bomb_Bag',
   },
   'Jovani 20 Poe Soul Reward': {
@@ -1392,7 +1392,7 @@ window.tpr.checkData = {
     itemId: 'Female_Ant',
   },
   'Kak Village Malo Mart Hawkeye': {
-    category: ['Overworld', 'Kakariko Village', 'ARC', 'Shop'],
+    category: ['Overworld', 'Kakariko Village', 'ARC', 'Minigame'],
     itemId: 'Hawkeye',
   },
   'Kak Village Malo Mart Hylian Shield': {
@@ -2173,11 +2173,11 @@ window.tpr.checkData = {
     itemId: 'Zora_Armor',
   },
   'STAR Prize 1': {
-    category: ['Overworld', 'Npc', 'Castle Town', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Castle Town', 'ARC'],
     itemId: 'Progressive_Bow',
   },
   'STAR Prize 2': {
-    category: ['Overworld', 'Npc', 'Castle Town', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Castle Town', 'ARC'],
     itemId: 'Progressive_Bow',
   },
   'Sacred Grove Baba Serpent Grotto Chest': {
@@ -2309,7 +2309,7 @@ window.tpr.checkData = {
     itemId: 'Green_Rupee',
   },
   'Snowboard Racing Prize': {
-    category: ['Overworld', 'Npc', 'Snowpeak Province', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Snowpeak Province', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
   'Snowpeak Above Freezard Grotto Poe': {
@@ -2475,7 +2475,7 @@ window.tpr.checkData = {
     itemId: 'South_Faron_Portal',
   },
   'Talo Sharpshooting': {
-    category: ['Overworld', 'Npc', 'Kakariko Village', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Kakariko Village', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
   'Telma Invoice': {

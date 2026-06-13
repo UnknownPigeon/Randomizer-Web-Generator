@@ -853,6 +853,9 @@ document
   .getElementById('animalConversationsCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('minigameCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('legendaryLoachCheckbox')
   .addEventListener('click', setSettingsString);
 document
@@ -2557,6 +2560,7 @@ function populateSSettings(s) {
   $('#interiorERCheckbox').prop('checked', s.interiorER);
   $('#animalConversationsCheckbox').prop('checked', s.animalConversations);
   $('#spawnGWolvesCheckbox').prop('checked', s.spawnGWolves);
+  $('#minigameCheckbox').prop('checked', s.shuffleMinigames);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

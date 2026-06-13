@@ -895,6 +895,7 @@
       'Rupee - Freestanding': true,
       Fishing: true,
       Animal: true,
+      Minigame: true,
     };
 
     const importantItems = {

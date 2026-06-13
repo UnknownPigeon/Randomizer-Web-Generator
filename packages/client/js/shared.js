@@ -512,6 +512,7 @@
       { id: 'interiorERCheckbox' },
       { id: 'animalConversationsCheckbox' },
       { id: 'spawnGWolvesCheckbox' },
+      { id: 'minigameCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1135,6 +1136,7 @@
       processBasic({ id: 'interiorER' });
       processBasic({ id: 'animalConversations' });
       processBasic({ id: 'spawnGWolves' });
+      processBasic({ id: 'shuffleMinigames' });
     } else {
       res.fishJournals = false;
       res.legendaryLoach = false;
@@ -1143,6 +1145,7 @@
       res.interiorER = false;
       res.animalConversations = false;
       res.spawnGWolves = false;
+      res.shuffleMinigames = false;
     }
 
     res.startingItems = processor.nextEolList(9);
