@@ -902,6 +902,9 @@ document
 document
   .getElementById('spawnGWolvesCheckbox')
   .addEventListener('click', setSettingsString);
+document
+  .getElementById('affordableDonationsCheckbox')
+  .addEventListener('click', setSettingsString);
 
 function importSettingsString() {
   parseSettingsString(document.getElementById('settingsStringTextbox').value);
@@ -2561,6 +2564,7 @@ function populateSSettings(s) {
   $('#animalConversationsCheckbox').prop('checked', s.animalConversations);
   $('#spawnGWolvesCheckbox').prop('checked', s.spawnGWolves);
   $('#minigameCheckbox').prop('checked', s.shuffleMinigames);
+  $('#affordableDonationsCheckbox').prop('checked', s.affordableDonations);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

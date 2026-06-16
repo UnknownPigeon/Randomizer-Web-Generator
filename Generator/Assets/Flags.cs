@@ -794,8 +794,6 @@ namespace TPRandomizer.Assets
             { 0x1B, 0x38 }, // Skip Monkey Escort
             { 0x1C, 0x20 }, // Talked to Bo after opening boots chest.
             { 0x5F, 0x20 }, // Shad leaves sanctuary.
-            { 0xF7, 0x1 }, // Add 256 Rupees to Charlo.
-            { 0xF8, 0xF4 }, // Add 244 Rupees to Charlo.
             { 0x60, 0x1 }, // Talked to Fyer after Lanayru Twilight
             { 0x38, 0x80 }, // Talked to Jovani after defeating Poe.
             { 0x22, 0x8 }, // Talked to Yeto on top of the mountain after clearing SPR

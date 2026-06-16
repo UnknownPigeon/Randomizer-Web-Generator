@@ -112,6 +112,7 @@ namespace TPRandomizer
         public bool shuffleAnimalConversations { get; set; }
         public bool spawnGWolves { get; set; }
         public bool shuffleMinigames { get; set; }
+        public bool affordableDonations { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
         public Dictionary<string, string> logicalTricks { get; set; }
@@ -220,6 +221,7 @@ namespace TPRandomizer
             shuffleAnimalConversations = processor.NextBool();
             spawnGWolves = processor.NextBool();
             shuffleMinigames = processor.NextBool();
+            affordableDonations = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

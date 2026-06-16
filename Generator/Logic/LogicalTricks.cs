@@ -113,6 +113,7 @@ namespace TPRandomizer
                 { "Water Toadpoli Grotto With Wolf", "toadpoli_grotto_with_wolf" },
                 // Desert Tricks
                 { "Bulblin Camp Boar With Irons", "camp_boar_with_irons" },
+                { "CoO Fairies As Access To Springs", "coo_fairy_access" },
                 // Snowpeak Tricks
 
                 // Forest Temple

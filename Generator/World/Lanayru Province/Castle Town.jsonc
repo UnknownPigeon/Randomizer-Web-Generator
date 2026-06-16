@@ -26,8 +26,8 @@
     "Checks": [
       {
         "CheckName": "Charlo Donation Blessing",
-        "Requirements": "CanCompleteLanayruTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+        "Requirements": "CanCompleteLanayruTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet or (Setting.affordableDonations equals true))",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
         "CheckName": "Talk To West CT Dog",

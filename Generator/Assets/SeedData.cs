@@ -277,7 +277,10 @@ namespace TPRandomizer.Assets
                 }
             }
 
-            seedHeader.AddRange(Converter.GcBytes((UInt16) (2000 - randomizerSettings.maloShopDonation)));
+            int donationValue = randomizerSettings.affordableDonations
+                ? Math.Max(randomizerSettings.maloShopDonation, 1900)
+                : 2000 - randomizerSettings.maloShopDonation;
+            seedHeader.AddRange(Converter.GcBytes((UInt16) donationValue));
             seedHeader.Add(Converter.GcByte((int)randomizerSettings.castleRequirements));
             seedHeader.Add(Converter.GcByte((int)randomizerSettings.palaceRequirements));
             int mapBits = 0;
@@ -1358,13 +1361,33 @@ namespace TPRandomizer.Assets
 
             if (!Randomizer.SSettings.skipBridgeDonation)
             {
-                byte[,] donationBits = new byte[,]
+                byte[,] donationBits = Randomizer.SSettings.affordableDonations
+                ? new byte[,]
+                {
+                    { 0xF9, 0x3 }, // Add 900 rupees to Malo Mart
+                    { 0xFA, 0x84 }, 
+                }
+                : new byte[,]
                 {
                     { 0xF9, 0x1 }, // Add 256 Rupees to Malo Mart.
                     { 0xFA, 0xF4 }, // Add 244 Rupees to Malo Mart.
                 };
                 arrayOfEventFlags = BackendFunctions.ConcatFlagArrays(arrayOfEventFlags, donationBits);
             }
+
+            byte[,] charloDonationBits = Randomizer.SSettings.affordableDonations
+                ? new byte[,]
+                {
+                    { 0xF7, 0x3 },  // Add 900 rupees to Charlo
+                    { 0xF8, 0x84 },
+                }
+                : new byte[,]
+                {
+                    { 0xF7, 0x1 },  // Add 256 Rupees to Charlo
+                    { 0xF8, 0xF4 }, // Add 244 Rupees to Charlo
+                };
+
+            arrayOfEventFlags = BackendFunctions.ConcatFlagArrays(arrayOfEventFlags, charloDonationBits);
 
             arrayOfEventFlags = BackendFunctions.ConcatFlagArrays(
                 arrayOfEventFlags,
