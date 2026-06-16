@@ -108,6 +108,8 @@ namespace TPRandomizer
         public bool shuffleLegendaryLoach { get; set; }
         public bool chestSizeMatchesContent { get; set; }
         public bool shuffleGrottoEntrances { get; set; }
+        public bool shuffleCaveEntrances { get; set; }
+        public bool shuffleOneWayEntrances { get; set; }
         public bool shuffleInteriorEntrances { get; set; }
         public bool shuffleAnimalConversations { get; set; }
         public bool spawnGWolves { get; set; }
@@ -217,6 +219,8 @@ namespace TPRandomizer
             shuffleLegendaryLoach = processor.NextBool();
             chestSizeMatchesContent = processor.NextBool();
             shuffleGrottoEntrances = processor.NextBool();
+            shuffleCaveEntrances = processor.NextBool();
+            shuffleOneWayEntrances = processor.NextBool();
             shuffleInteriorEntrances = processor.NextBool();
             shuffleAnimalConversations = processor.NextBool();
             spawnGWolves = processor.NextBool();

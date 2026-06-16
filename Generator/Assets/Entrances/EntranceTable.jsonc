@@ -874,9 +874,9 @@
       "State": "FF"
     }
   },
-  // Overworld One-Way Exits
+  // One-Way Exits
   {
-    "Type": "Overworld One-Way",
+    "Type": "One-Way",
     "SourceRoomSpawn": {
       "SourceRoom": "Ordon Shield House Upper",
       "TargetRoom": "Ordon Village",
@@ -889,7 +889,7 @@
     }
   },
   {
-    "Type": "Overworld One-Way",
+    "Type": "One-Way",
     "SourceRoomSpawn": {
       "SourceRoom": "Kak Graveyard",
       "TargetRoom": "Lake Hylia",
@@ -902,7 +902,7 @@
     }
   },
   {
-    "Type": "Overworld One-Way",
+    "Type": "One-Way",
     "SourceRoomSpawn": {
       "SourceRoom": "UZR Ledge",
       "TargetRoom": "Lanayru Field",
@@ -915,7 +915,7 @@
     }
   },
   {
-    "Type": "Overworld One-Way",
+    "Type": "One-Way",
     "SourceRoomSpawn": {
       "SourceRoom": "OCT South",
       "TargetRoom": "Lake Hylia",
@@ -928,7 +928,7 @@
     }
   },
   {
-    "Type": "Overworld One-Way",
+    "Type": "One-Way",
     "SourceRoomSpawn": {
       "SourceRoom": "Lake Hylia",
       "TargetRoom": "Lake Hylia Flight By Fowl",
@@ -941,7 +941,7 @@
     }
   },
   {
-    "Type": "Overworld One-Way",
+    "Type": "One-Way",
     "SourceRoomSpawn": {
       "SourceRoom": "Lake Hylia",
       "TargetRoom": "Gerudo Desert",

@@ -897,6 +897,12 @@ document
   .getElementById('grottoERCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('caveERCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('oneWayERCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('interiorERCheckbox')
   .addEventListener('click', setSettingsString);
 document
@@ -1086,7 +1092,9 @@ function setGeneralERSettings() {
   if (
     !document.getElementById('interiorERCheckbox').checked &&
     document.getElementById('dungeonERFieldset').value == 0 &&
-    !document.getElementById('grottoERCheckbox').checked
+    !document.getElementById('grottoERCheckbox').checked &&
+    !document.getElementById('caveERCheckbox').checked &&
+    !document.getElementById('oneWayERCheckbox').checked
   ) {
     document.getElementById('decoupleEntrancesCheckbox').checked = false;
     document.getElementById('decoupleEntrancesCheckbox').disabled = true;
@@ -2560,6 +2568,8 @@ function populateSSettings(s) {
   $('#legendaryLoachCheckbox').prop('checked', s.legendaryLoach);
   $('#chestSizeCheckbox').prop('checked', s.chestSize);
   $('#grottoERCheckbox').prop('checked', s.grottoER);
+  $('#caveERCheckbox').prop('checked', s.caveER);
+  $('#oneWayERCheckbox').prop('checked', s.oneWayER);
   $('#interiorERCheckbox').prop('checked', s.interiorER);
   $('#animalConversationsCheckbox').prop('checked', s.animalConversations);
   $('#spawnGWolvesCheckbox').prop('checked', s.spawnGWolves);

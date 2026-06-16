@@ -21,6 +21,7 @@ namespace TPRandomizer
         Cave_Reverse,
         Interior,
         Interior_Reverse,
+        One_Way,
         Misc,
         Misc_Reverse,
         Mixed,
@@ -256,6 +257,14 @@ namespace TPRandomizer
             else if (entranceType == "Interior")
             {
                 Type = EntranceType.Interior;
+            }
+            else if (entranceType == "Cave")
+            {
+                Type = EntranceType.Cave;
+            }
+            else if (entranceType == "One-Way")
+            {
+                Type = EntranceType.One_Way;
             }
         }
 
@@ -535,6 +544,42 @@ namespace TPRandomizer
             else
             {
                 vanillaEntranceTypes.Add(EntranceType.Grotto);
+            }
+
+            if (Randomizer.SSettings.shuffleCaveEntrances)
+            {
+                // If we are cave entrances, loop through the entrance table and make note of all of the cave entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.Cave,
+                    GetShufflableEntrances(EntranceType.Cave, true)
+                );
+
+                if (Randomizer.SSettings.decoupleEntrances)
+                {
+                    newEntrancePools.Add(
+                        EntranceType.Cave_Reverse,
+                        GetReverseEntrances(newEntrancePools, EntranceType.Cave)
+                    );
+                    typesToDecouple.Add(EntranceType.Cave);
+                    typesToDecouple.Add(EntranceType.Cave_Reverse);
+                }
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.Cave);
+            }
+
+            if (Randomizer.SSettings.shuffleOneWayEntrances)
+            {
+                // If we are One Way entrances, loop through the entrance table and make note of all of the One Way entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.One_Way,
+                    GetShufflableEntrances(EntranceType.One_Way, true)
+                );
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.One_Way);
             }
 
             if (Randomizer.SSettings.shuffleInteriorEntrances)

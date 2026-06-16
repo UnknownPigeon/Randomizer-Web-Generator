@@ -721,6 +721,8 @@ namespace TPRandomizer
             result.Add("shuffleLegendaryLoach", sSettings.shuffleLegendaryLoach);
             result.Add("chestSizeMatchesContent", sSettings.chestSizeMatchesContent);
             result.Add("shuffleGrottoEntrances", sSettings.shuffleGrottoEntrances);
+            result.Add("shuffleCaveEntrances", sSettings.shuffleCaveEntrances);
+            result.Add("shuffleOneWayEntrances", sSettings.shuffleOneWayEntrances);
             result.Add("shuffleInteriorEntrances", sSettings.shuffleInteriorEntrances);
             result.Add("shuffleAnimalConversations", sSettings.shuffleAnimalConversations);
             result.Add("spawnGWolves", sSettings.spawnGWolves);

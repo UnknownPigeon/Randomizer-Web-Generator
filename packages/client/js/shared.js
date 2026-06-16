@@ -509,6 +509,8 @@
       { id: 'legendaryLoachCheckbox' },
       { id: 'chestSizeCheckbox' },
       { id: 'grottoERCheckbox' },
+      { id: 'caveERCheckbox' },
+      { id: 'oneWayERCheckbox' },
       { id: 'interiorERCheckbox' },
       { id: 'animalConversationsCheckbox' },
       { id: 'spawnGWolvesCheckbox' },
@@ -1134,6 +1136,8 @@
       processBasic({ id: 'legendaryLoach' });
       processBasic({ id: 'chestSize' });
       processBasic({ id: 'grottoER' });
+      processBasic({ id: 'caveER' });
+      processBasic({ id: 'oneWayER' });
       processBasic({ id: 'interiorER' });
       processBasic({ id: 'animalConversations' });
       processBasic({ id: 'spawnGWolves' });
@@ -1144,6 +1148,8 @@
       res.legendaryLoach = false;
       res.chestSize = false;
       res.grottoER = false;
+      res.caveER = false;
+      res.oneWayER = false;
       res.interiorER = false;
       res.animalConversations = false;
       res.spawnGWolves = false;
