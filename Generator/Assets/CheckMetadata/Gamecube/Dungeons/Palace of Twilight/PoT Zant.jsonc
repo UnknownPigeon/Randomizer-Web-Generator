@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Dungeon", "Palace of Twilight"],
-    "itemId": "Zant_Defeated",
-    "dataCategory": [""]
+  "checkCategory": ["Dungeon", "Palace of Twilight"],
+  "itemId": "Zant_Defeated",
+  "dataCategory": [""]
 }

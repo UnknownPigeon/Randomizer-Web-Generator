@@ -1,7 +1,7 @@
 {
-    "stageIDX": [50],
-    "flag": "4A",
-    "checkCategory": ["Overworld", "Poe", "Zoras Domain"],
-    "itemId": "Poe_Soul",
-    "dataCategory": ["Poe"]
+  "stageIDX": [50],
+  "flag": "4A",
+  "checkCategory": ["Overworld", "Poe", "Zoras Domain"],
+  "itemId": "Poe_Soul",
+  "dataCategory": ["Poe"]
 }

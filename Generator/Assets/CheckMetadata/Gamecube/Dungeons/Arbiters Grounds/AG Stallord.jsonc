@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Dungeon", "Arbiters Grounds"],
-    "itemId": "Stallord_Defeated",
-    "dataCategory": [""]
+  "checkCategory": ["Dungeon", "Arbiters Grounds"],
+  "itemId": "Stallord_Defeated",
+  "dataCategory": [""]
 }

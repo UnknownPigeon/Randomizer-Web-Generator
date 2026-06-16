@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Dungeon", "Snowpeak Ruins"],
-    "itemId": "Blizzeta_Defeated",
-    "dataCategory": [""]
+  "checkCategory": ["Dungeon", "Snowpeak Ruins"],
+  "itemId": "Blizzeta_Defeated",
+  "dataCategory": [""]
 }

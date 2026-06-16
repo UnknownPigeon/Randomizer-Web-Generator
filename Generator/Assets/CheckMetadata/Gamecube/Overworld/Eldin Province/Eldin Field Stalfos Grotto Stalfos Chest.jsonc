@@ -1,11 +1,11 @@
 {
-    "arcOffsets": ["8E8"],
-    "stageIDX": [36],
-    "roomIDX": 1,
-    "fileDirectoryType": [ 0 ],
-    "replacementType": [ 0 ],
-    "chestLowerNibble": "0",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province"],
-    "itemId": "Piece_of_Heart",
-    "dataCategory": [ "Chest", "ARC" ]
+  "arcOffsets": ["8E8"],
+  "stageIDX": [36],
+  "roomIDX": 1,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "0",
+  "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province"],
+  "itemId": "Piece_of_Heart",
+  "dataCategory": ["Chest", "ARC"]
 }

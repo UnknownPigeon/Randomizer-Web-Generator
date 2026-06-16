@@ -1,7 +1,7 @@
 {
-    "stageIDX": [46],
-    "flag": "5E",
-    "checkCategory": ["Overworld", "Poe", "Kakariko Village"],
-    "itemId": "Poe_Soul",
-    "dataCategory": ["Poe"]
+  "stageIDX": [46],
+  "flag": "5E",
+  "checkCategory": ["Overworld", "Poe", "Kakariko Village"],
+  "itemId": "Poe_Soul",
+  "dataCategory": ["Poe"]
 }

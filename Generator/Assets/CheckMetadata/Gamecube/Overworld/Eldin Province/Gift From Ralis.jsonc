@@ -1,9 +1,9 @@
 {
   "arcOffsets": ["19DF"],
   "stageIDX": [48],
-  "fileDirectoryType": [ 1 ],
-  "replacementType": [ 0 ],
-  "checkCategory": [ "Overworld", "Npc", "Kakariko Graveyard"],
+  "fileDirectoryType": [1],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Npc", "Kakariko Graveyard"],
   "itemId": "Progressive_Fishing_Rod",
-  "dataCategory": [ "ARC" ]
+  "dataCategory": ["ARC"]
 }

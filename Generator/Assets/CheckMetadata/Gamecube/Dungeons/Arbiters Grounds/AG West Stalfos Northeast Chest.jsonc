@@ -2,10 +2,10 @@
   "arcOffsets": ["6AC"],
   "stageIDX": [24],
   "roomIDX": 7,
-  "fileDirectoryType": [ 0 ],
-  "replacementType": [ 0 ],
+  "fileDirectoryType": [0],
+  "replacementType": [0],
   "chestLowerNibble": "F",
-  "checkCategory": [ "Chest", "Dungeon", "Arbiters Grounds" ],
+  "checkCategory": ["Chest", "Dungeon", "Arbiters Grounds"],
   "itemId": "Bombs_5",
-  "dataCategory": [ "Chest", "ARC" ]
+  "dataCategory": ["Chest", "ARC"]
 }

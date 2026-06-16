@@ -1,11 +1,11 @@
 {
-    "arcOffsets": ["908"],
-    "stageIDX": [36],
-    "roomIDX": 1,
-    "fileDirectoryType": [ 0 ],
-    "replacementType": [ 0 ],
-    "chestLowerNibble": "F",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province"],
-    "itemId": "Bombs_5",
-    "dataCategory": [ "Chest", "ARC" ]
+  "arcOffsets": ["908"],
+  "stageIDX": [36],
+  "roomIDX": 1,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province"],
+  "itemId": "Bombs_5",
+  "dataCategory": ["Chest", "ARC"]
 }

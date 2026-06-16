@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Overworld", "Mirror Chamber"],
-    "itemId": "Mirror_Chamber_Portal",
-    "dataCategory": [""]
+  "checkCategory": ["Overworld", "Mirror Chamber"],
+  "itemId": "Mirror_Chamber_Portal",
+  "dataCategory": [""]
 }

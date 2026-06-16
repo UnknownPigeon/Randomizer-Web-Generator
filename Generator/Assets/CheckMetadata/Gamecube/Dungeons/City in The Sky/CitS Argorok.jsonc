@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Dungeon", "City in The Sky"],
-    "itemId": "Argorok_Defeated",
-    "dataCategory": [""]
+  "checkCategory": ["Dungeon", "City in The Sky"],
+  "itemId": "Argorok_Defeated",
+  "dataCategory": [""]
 }

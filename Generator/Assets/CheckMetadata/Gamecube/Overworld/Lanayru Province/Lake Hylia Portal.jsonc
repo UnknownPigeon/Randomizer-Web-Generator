@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Overworld", "Lake Hylia"],
-    "itemId": "Lake_Hylia_Portal",
-    "dataCategory": [""]
+  "checkCategory": ["Overworld", "Lake Hylia"],
+  "itemId": "Lake_Hylia_Portal",
+  "dataCategory": [""]
 }

@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Dungeon", "Goron Mines"],
-    "itemId": "Fyrus_Defeated",
-    "dataCategory": [""]
+  "checkCategory": ["Dungeon", "Goron Mines"],
+  "itemId": "Fyrus_Defeated",
+  "dataCategory": [""]
 }

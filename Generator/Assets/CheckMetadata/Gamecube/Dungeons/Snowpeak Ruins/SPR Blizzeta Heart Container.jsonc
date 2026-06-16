@@ -1,6 +1,6 @@
 {
-    "stageIDX": [28],
-    "checkCategory": ["Heart Container", "Dungeon", "Snowpeak Ruins", "Boss"],
-    "itemId": "Heart_Container",
-    "dataCategory": ["Boss"]
+  "stageIDX": [28],
+  "checkCategory": ["Heart Container", "Dungeon", "Snowpeak Ruins", "Boss"],
+  "itemId": "Heart_Container",
+  "dataCategory": ["Boss"]
 }

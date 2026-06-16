@@ -1,11 +1,11 @@
 {
-    "arcOffsets": ["9628", "AE58"],
-    "stageIDX": [52, 52],
-    "roomIDX": 0,
-    "fileDirectoryType": [0, 0],
-    "replacementType": [0, 0],
-    "chestLowerNibble": "F",
-    "checkCategory": [ "Overworld", "Lake Hylia", "Chest" ],
-    "itemId": "Piece_of_Heart",
-    "dataCategory": ["ARC", "Chest"]
+  "arcOffsets": ["9628", "AE58"],
+  "stageIDX": [52, 52],
+  "roomIDX": 0,
+  "fileDirectoryType": [0, 0],
+  "replacementType": [0, 0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Lake Hylia", "Chest"],
+  "itemId": "Piece_of_Heart",
+  "dataCategory": ["ARC", "Chest"]
 }

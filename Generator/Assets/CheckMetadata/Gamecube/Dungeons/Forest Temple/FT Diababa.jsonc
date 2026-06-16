@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Dungeon", "Forest Temple"],
-    "itemId": "Diababa_Defeated",
-    "dataCategory": [""]
+  "checkCategory": ["Dungeon", "Forest Temple"],
+  "itemId": "Diababa_Defeated",
+  "dataCategory": [""]
 }

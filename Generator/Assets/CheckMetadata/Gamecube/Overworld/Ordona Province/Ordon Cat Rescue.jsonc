@@ -1,9 +1,9 @@
 {
-    "arcOffsets": ["370F"],
-    "stageIDX": [65],
-    "fileDirectoryType": [1],
-    "replacementType": [0],
-    "checkCategory": ["Overworld", "Npc", "Ordona Province"],
-    "itemId": "Sera_Bottle",
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["370F"],
+  "stageIDX": [65],
+  "fileDirectoryType": [1],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Npc", "Ordona Province"],
+  "itemId": "Sera_Bottle",
+  "dataCategory": ["ARC"]
 }

@@ -1,11 +1,11 @@
 {
-    "arcOffsets": ["25B0"],
-    "stageIDX": [39],
-    "roomIDX": 4,
-    "fileDirectoryType": [ 0 ],
-    "replacementType": [ 0 ],
-    "chestLowerNibble": "0",
-    "checkCategory": ["Overworld", "Chest", "Lake Hylia"],
-    "itemId": "Orange_Rupee",
-    "dataCategory": [ "Chest", "ARC" ]
+  "arcOffsets": ["25B0"],
+  "stageIDX": [39],
+  "roomIDX": 4,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "0",
+  "checkCategory": ["Overworld", "Chest", "Lake Hylia"],
+  "itemId": "Orange_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }

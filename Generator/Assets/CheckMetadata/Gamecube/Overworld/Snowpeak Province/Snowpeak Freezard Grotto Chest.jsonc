@@ -1,11 +1,11 @@
 {
-    "arcOffsets": ["F14"],
-    "stageIDX": [38],
-    "roomIDX": 3,
-    "fileDirectoryType": [ 0 ],
-    "replacementType": [ 0 ],
-    "chestLowerNibble": "F",
-    "checkCategory": ["Overworld", "Chest", "Snowpeak Province"],
-    "itemId": "Orange_Rupee",
-    "dataCategory": [ "Chest", "ARC" ]
+  "arcOffsets": ["F14"],
+  "stageIDX": [38],
+  "roomIDX": 3,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Snowpeak Province"],
+  "itemId": "Orange_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }

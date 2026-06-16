@@ -1,11 +1,11 @@
 {
-    "arcOffsets": ["2D94"],
-    "stageIDX": [39],
-    "roomIDX": 4,
-    "fileDirectoryType": [ 0 ],
-    "replacementType": [ 0 ],
-    "chestLowerNibble": "F",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Eldin Province"],
-    "itemId": "Purple_Rupee",
-    "dataCategory": [ "Chest", "ARC" ]
+  "arcOffsets": ["2D94"],
+  "stageIDX": [39],
+  "roomIDX": 4,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Hyrule Field - Eldin Province"],
+  "itemId": "Purple_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }

@@ -1,11 +1,11 @@
 {
-    "arcOffsets": ["112C"],
-    "stageIDX": [36],
-    "roomIDX": 1,
-    "fileDirectoryType": [ 0 ],
-    "replacementType": [ 0 ],
-    "chestLowerNibble": "F",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Faron Province"],
-    "itemId": "Red_Rupee",
-    "dataCategory": [ "Chest", "ARC" ]
+  "arcOffsets": ["112C"],
+  "stageIDX": [36],
+  "roomIDX": 1,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Hyrule Field - Faron Province"],
+  "itemId": "Red_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }

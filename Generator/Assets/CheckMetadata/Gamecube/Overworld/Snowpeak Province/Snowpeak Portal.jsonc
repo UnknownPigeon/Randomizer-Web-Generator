@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Overworld", "Snowpeak"],
-    "itemId": "Snowpeak_Portal",
-    "dataCategory": [""]
+  "checkCategory": ["Overworld", "Snowpeak"],
+  "itemId": "Snowpeak_Portal",
+  "dataCategory": [""]
 }

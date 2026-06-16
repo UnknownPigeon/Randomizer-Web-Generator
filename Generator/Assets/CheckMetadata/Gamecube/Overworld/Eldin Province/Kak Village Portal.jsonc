@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Overworld", "Kakariko Village"],
-    "itemId": "Kakariko_Village_Portal",
-    "dataCategory": [""]
+  "checkCategory": ["Overworld", "Kakariko Village"],
+  "itemId": "Kakariko_Village_Portal",
+  "dataCategory": [""]
 }

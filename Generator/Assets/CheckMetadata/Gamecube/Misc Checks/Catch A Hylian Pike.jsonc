@@ -1,7 +1,7 @@
 {
-    "stageIDX": [255],
-    "flag": "5020",
-    "checkCategory": [ "Overworld", "Fish Journal" ],
-    "itemId": "Nothing",
-    "dataCategory": [ "Flag" ]
+  "stageIDX": [255],
+  "flag": "5020",
+  "checkCategory": ["Overworld", "Fish Journal"],
+  "itemId": "Nothing",
+  "dataCategory": ["Flag"]
 }

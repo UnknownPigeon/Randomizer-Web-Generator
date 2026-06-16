@@ -1,5 +1,5 @@
 {
-    "checkCategory": ["Dungeon", "Hyrule Castle"],
-    "itemId": "Ganondorf_Defeated",
-    "dataCategory": [""]
+  "checkCategory": ["Dungeon", "Hyrule Castle"],
+  "itemId": "Ganondorf_Defeated",
+  "dataCategory": [""]
 }

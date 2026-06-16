@@ -1,11 +1,11 @@
 {
-    "arcOffsets": ["1EB0"],
-    "stageIDX": [35],
-    "roomIDX": 0,
-    "fileDirectoryType": [ 0 ],
-    "replacementType": [ 0 ],
-    "chestLowerNibble": "2",
-    "checkCategory": ["Overworld", "Chest", "Ordona Province"],
-    "itemId": "Purple_Rupee",
-    "dataCategory": [ "Chest", "ARC" ]
+  "arcOffsets": ["1EB0"],
+  "stageIDX": [35],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "2",
+  "checkCategory": ["Overworld", "Chest", "Ordona Province"],
+  "itemId": "Purple_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }
