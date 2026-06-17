@@ -1209,9 +1209,13 @@ namespace TPRandomizer
             // chests for small keys or poes.
             HashSet<Item> bigChestItems = new(HintConstants.baseMightBeMajorItems);
 
-            if (!sSettings.shuffleRewards)
+            if (!sSettings.shuffleFusedShadows)
             {
                 bigChestItems.Remove(Item.Progressive_Fused_Shadow);
+            }
+
+            if (!sSettings.shuffleMirrorShards)
+            {
                 bigChestItems.Remove(Item.Progressive_Mirror_Shard);
             }
 

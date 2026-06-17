@@ -7,7 +7,12 @@
   "fileDirectoryType": [3],
   "replacementType": [2],
   "relReplacementType": [0],
-  "checkCategory": ["Dungeon", "Temple of Time", "Dungeon Reward"],
+  "checkCategory": [
+    "Dungeon",
+    "Temple of Time",
+    "Dungeon Reward",
+    "Mirror Shard"
+  ],
   "itemId": "Progressive_Mirror_Shard",
   "dataCategory": ["REL", "ARC"]
 }

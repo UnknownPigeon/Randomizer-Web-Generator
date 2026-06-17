@@ -642,7 +642,8 @@ namespace TPRandomizer
             result.Add("itemScarcity", sSettings.itemScarcity.ToString());
             result.Add("damageMagnification", sSettings.damageMagnification.ToString());
             result.Add("bonksDoDamage", sSettings.bonksDoDamage);
-            result.Add("shuffleRewards", sSettings.shuffleRewards);
+            result.Add("shuffleFusedShadows", sSettings.shuffleFusedShadows);
+            result.Add("shuffleMirrorShards", sSettings.shuffleMirrorShards);
             result.Add("ftSmallKeySettings", sSettings.ftSmallKeySettings.ToString());
             result.Add("gmSmallKeySettings", sSettings.gmSmallKeySettings.ToString());
             result.Add("lbtSmallKeySettings", sSettings.lbtSmallKeySettings.ToString());

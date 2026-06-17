@@ -7,7 +7,12 @@
   "fileDirectoryType": [3],
   "replacementType": [2],
   "relReplacementType": [0],
-  "checkCategory": ["Dungeon", "Snowpeak Ruins", "Dungeon Reward"],
+  "checkCategory": [
+    "Dungeon",
+    "Snowpeak Ruins",
+    "Dungeon Reward",
+    "Mirror Shard"
+  ],
   "itemId": "Progressive_Mirror_Shard",
   "dataCategory": ["REL", "ARC"]
 }

@@ -829,7 +829,10 @@ document
   .getElementById('noSmallKeysOnBossesCheckbox')
   .addEventListener('click', setSettingsString);
 document
-  .getElementById('shuffleRewardsCheckbox')
+  .getElementById('shuffleFusedShadowsCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('shuffleMirrorShardsCheckbox')
   .addEventListener('click', setSettingsString);
 document
   .getElementById('randomizeStartingPointCheckbox')
@@ -2531,7 +2534,8 @@ function populateSSettings(s) {
   $('#itemScarcityFieldset').val(s.itemScarcity);
   $('#damageMagFieldset').val(s.damageMagnification);
   $('#bonksDoDamageCheckbox').prop('checked', s.bonksDoDamage);
-  $('#shuffleRewardsCheckbox').prop('checked', s.shuffleRewards);
+  $('#shuffleFusedShadowsCheckbox').prop('checked', s.shuffleFusedShadows);
+  $('#shuffleMirrorShardsCheckbox').prop('checked', s.shuffleMirrorShards);
   $('#openMapCheckbox').prop('checked', s.openMap);
   $('#spinnerSpeedCheckbox').prop('checked', s.increaseSpinnerSpeed);
   $('#openDotCheckbox').prop('checked', s.openDot);

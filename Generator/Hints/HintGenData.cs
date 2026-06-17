@@ -298,9 +298,13 @@ namespace TPRandomizer.Hints
 
             // Filter out conditional majorItems as appropriate:
 
-            if (!sSettings.shuffleRewards)
+            if (!sSettings.shuffleFusedShadows)
             {
                 majorItems.Remove(Item.Progressive_Fused_Shadow);
+            }
+
+            if (!sSettings.shuffleMirrorShards)
+            {
                 majorItems.Remove(Item.Progressive_Mirror_Shard);
             }
 
@@ -1105,9 +1109,13 @@ namespace TPRandomizer.Hints
 
             HashSet<Item> baseAllowedForDungeons = new() { };
 
-            if (!sSettings.shuffleRewards)
+            if (!sSettings.shuffleFusedShadows)
             {
                 baseAllowedForDungeons.Add(Item.Progressive_Fused_Shadow);
+            }
+
+            if (!sSettings.shuffleMirrorShards)
+            {
                 baseAllowedForDungeons.Add(Item.Progressive_Mirror_Shard);
             }
 

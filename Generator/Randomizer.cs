@@ -1103,20 +1103,7 @@ namespace TPRandomizer
         {
             // Dungeon rewards have a very limited item pool, so we want to place them first to prevent the generator from putting
             // an unnecessary item in one of the checks.
-            if (SSettings.shuffleRewards)
-            {
-                PlaceItemsRestricted(
-                    startingRoom,
-                    Items.ShuffledDungeonRewards,
-                    Randomizer.Items.heldItems,
-                    string.Empty,
-                    rnd
-                );
-            }
-            else
-            {
-                placeDungeonRewards(Items.ShuffledDungeonRewards, rnd);
-            }
+            placeDungeonRewards(Items.ShuffledDungeonRewards, rnd);
 
             /*
             // This is the old dungeon item placing code
@@ -2042,8 +2029,11 @@ namespace TPRandomizer
                         (
                             currentCheck.checkCategory.Contains("Dungeon Reward")
                             || (
-                                Randomizer.SSettings.shuffleRewards
-                                && (currentCheck.checkStatus == "Ready")
+                                (currentCheck.checkStatus == "Ready")
+                                && (
+                                    Randomizer.SSettings.shuffleFusedShadows
+                                    || Randomizer.SSettings.shuffleMirrorShards
+                                )
                             )
                         ) && !currentCheck.checkStatus.Contains("Plando")
                     )
@@ -2107,11 +2097,27 @@ namespace TPRandomizer
                             continue;
                         }
                     }
+                    if (
+                        currentItem == Item.Progressive_Fused_Shadow
+                        && !Randomizer.SSettings.shuffleFusedShadows
+                        && !currentCheck.checkCategory.Contains("Dungeon Reward")
+                    )
+                    {
+                        continue;
+                    }
+                    if (
+                        currentItem == Item.Progressive_Mirror_Shard
+                        && !Randomizer.SSettings.shuffleMirrorShards
+                        && !currentCheck.checkCategory.Contains("Dungeon Reward")
+                    )
+                    {
+                        continue;
+                    }
                     PlaceItemInCheck(currentItem, currentCheck);
                     // for debugging
-                    /*Console.WriteLine(
-                        "Placed Reward: " + currentItem + " in: " + currentCheck.checkName
-                    );*/
+                    /* Console.WriteLine(
+                         "Placed Reward: " + currentItem + " in: " + currentCheck.checkName
+                     );*/
                     itemsToBeRandomized.Remove(currentItem);
                     dungeonRewards.Remove(currentCheck);
                     Randomizer.Items.heldItems.Remove(currentItem);

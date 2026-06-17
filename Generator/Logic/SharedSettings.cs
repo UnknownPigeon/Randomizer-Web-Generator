@@ -78,7 +78,8 @@ namespace TPRandomizer
         public ItemScarcity itemScarcity { get; set; }
         public DamageMagnification damageMagnification { get; set; }
         public bool bonksDoDamage { get; set; }
-        public bool shuffleRewards { get; set; }
+        public bool shuffleFusedShadows { get; set; }
+        public bool shuffleMirrorShards { get; set; }
         public bool skipMajorCutscenes { get; set; }
         public bool increaseSpinnerSpeed { get; set; }
         public bool openDot { get; set; }
@@ -190,7 +191,8 @@ namespace TPRandomizer
             itemScarcity = (ItemScarcity)processor.NextInt(2);
             damageMagnification = (DamageMagnification)processor.NextInt(3);
             bonksDoDamage = processor.NextBool();
-            shuffleRewards = processor.NextBool();
+            shuffleFusedShadows = processor.NextBool();
+            shuffleMirrorShards = processor.NextBool();
             skipMajorCutscenes = processor.NextBool();
             noSmallKeysOnBosses = processor.NextBool();
             startingToD = (StartingToD)processor.NextInt(3);

@@ -8,7 +8,12 @@
   "replacementType": [2],
   "relReplacementType": [0],
   "chestLowerNibble": "F",
-  "checkCategory": ["Dungeon", "City in The Sky", "Dungeon Reward"],
+  "checkCategory": [
+    "Dungeon",
+    "City in The Sky",
+    "Dungeon Reward",
+    "Mirror Shard"
+  ],
   "itemId": "Progressive_Mirror_Shard",
   "dataCategory": ["REL", "ARC"]
 }

@@ -665,7 +665,7 @@ namespace TPRandomizer.Hints
             // Goals to bosses are only valid if it is common knowledge based on
             // the settings that the bosses themselves are required.
 
-            if (!sSettings.shuffleRewards)
+            if (!sSettings.shuffleFusedShadows && !sSettings.shuffleMirrorShards)
             {
                 // If not shuffling rewards, can simply add a goal for the boss
                 // of each required dungeon.

@@ -480,7 +480,8 @@
       { id: 'itemScarcityFieldset', bitLength: 2 },
       { id: 'damageMagFieldset', bitLength: 3 },
       { id: 'bonksDoDamageCheckbox' },
-      { id: 'shuffleRewardsCheckbox' },
+      { id: 'shuffleFusedShadowsCheckbox' },
+      { id: 'shuffleMirrorShardsCheckbox' },
       { id: 'skipMajorCutscenesCheckbox' },
       { id: 'noSmallKeysOnBossesCheckbox' },
       { id: 'todFieldset', bitLength: 3 },
@@ -1052,12 +1053,21 @@
       processBasic({ id: 'itemScarcity', bitLength: 2 });
       processBasic({ id: 'damageMagnification', bitLength: 3 });
       processBasic({ id: 'bonksDoDamage' });
-      processBasic({ id: 'shuffleRewards' });
+      // In string version 7, "shuffleRewards" was split into two seperate settings
+      if (version >= 7) {
+        processBasic({ id: 'shuffleFusedShadows' });
+        processBasic({ id: 'shuffleMirrorShards' });
+      } else {
+        const shuffleRewards = processor.nextBoolean();
+        res.shuffleFusedShadows = shuffleRewards;
+        res.shuffleMirrorShards = shuffleRewards;
+      }
     } else {
       res.itemScarcity = 0; // Vanilla
       res.damageMagnification = 1; // Vanilla
       res.bonksDoDamage = 0; // Vanilla
-      res.shuffleRewards = 0; // Vanilla
+      res.shuffleFusedShadows = 0; // Vanilla
+      res.shuffleMirrorShards = 0; // Vanilla
     }
     if (version >= 5) {
       processBasic({ id: 'skipMajorCutscenes' });
