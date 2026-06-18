@@ -909,6 +909,12 @@ document
   .getElementById('interiorERCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('exteriorERCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('bossERCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('spawnGWolvesCheckbox')
   .addEventListener('click', setSettingsString);
 document
@@ -1090,21 +1096,33 @@ function setCastleBKRequirementsValue() {
 }
 
 function setGeneralERSettings() {
-  // If we have any ER enabled at all, we want to enable the option to decouple entrances,
+  // If we have any ER enabled at all, with the exception of one-way/boss ER we want to enable the option to decouple entrances,
   // We want to skip MDH and Prologue. Otherwise, allow the settings to be changed, but disable the option to decouple entrances.
   if (
     !document.getElementById('interiorERCheckbox').checked &&
     document.getElementById('dungeonERFieldset').value == 0 &&
     !document.getElementById('grottoERCheckbox').checked &&
     !document.getElementById('caveERCheckbox').checked &&
-    !document.getElementById('oneWayERCheckbox').checked
+    !document.getElementById('exteriorERCheckbox').checked
   ) {
     document.getElementById('decoupleEntrancesCheckbox').checked = false;
     document.getElementById('decoupleEntrancesCheckbox').disabled = true;
+  } else {
+    document.getElementById('decoupleEntrancesCheckbox').disabled = false;
+  }
+
+  if (
+    !document.getElementById('interiorERCheckbox').checked &&
+    document.getElementById('dungeonERFieldset').value == 0 &&
+    !document.getElementById('grottoERCheckbox').checked &&
+    !document.getElementById('caveERCheckbox').checked &&
+    !document.getElementById('oneWayERCheckbox').checked &&
+    !document.getElementById('exteriorERCheckbox').checked &&
+    !document.getElementById('bossERCheckbox').checked
+  ) {
     document.getElementById('mdhCheckbox').disabled = false;
     document.getElementById('introCheckbox').disabled = false;
   } else {
-    document.getElementById('decoupleEntrancesCheckbox').disabled = false;
     document.getElementById('mdhCheckbox').checked = true;
     document.getElementById('mdhCheckbox').disabled = true;
     document.getElementById('introCheckbox').checked = true;
@@ -1120,6 +1138,28 @@ function setGeneralERSettings() {
   } else {
     document.getElementById('unpairedEntrancesCheckbox').checked = false;
     document.getElementById('unpairedEntrancesCheckbox').disabled = true;
+  }
+
+  // If overworld ER is enabled, we want to skip the twilights
+  if (!document.getElementById('exteriorERCheckbox').checked) {
+    document.getElementById('faronTwilightCheckbox').disabled = false;
+    document.getElementById('eldinTwilightCheckbox').disabled = false;
+    document.getElementById('lanayruTwilightCheckbox').disabled = false;
+  } else {
+    document.getElementById('faronTwilightCheckbox').disabled = true;
+    document.getElementById('eldinTwilightCheckbox').disabled = true;
+    document.getElementById('lanayruTwilightCheckbox').disabled = true;
+    document.getElementById('faronTwilightCheckbox').checked = true;
+    document.getElementById('eldinTwilightCheckbox').checked = true;
+    document.getElementById('lanayruTwilightCheckbox').checked = true;
+  }
+
+  // If cave ER is enabled, we want to skip Faron Twilight
+  if (!document.getElementById('caveERCheckbox').checked) {
+    document.getElementById('faronTwilightCheckbox').disabled = false;
+  } else {
+    document.getElementById('faronTwilightCheckbox').disabled = true;
+    document.getElementById('faronTwilightCheckbox').checked = true;
   }
 }
 
@@ -2575,6 +2615,8 @@ function populateSSettings(s) {
   $('#caveERCheckbox').prop('checked', s.caveER);
   $('#oneWayERCheckbox').prop('checked', s.oneWayER);
   $('#interiorERCheckbox').prop('checked', s.interiorER);
+  $('#exteriorERCheckbox').prop('checked', s.exteriorER);
+  $('#bossERCheckbox').prop('checked', s.bossER);
   $('#animalConversationsCheckbox').prop('checked', s.animalConversations);
   $('#spawnGWolvesCheckbox').prop('checked', s.spawnGWolves);
   $('#minigameCheckbox').prop('checked', s.shuffleMinigames);

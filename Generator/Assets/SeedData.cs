@@ -388,6 +388,7 @@ namespace TPRandomizer.Assets
                 fcSettings.lanternGlowColor.getResult().basicDataEntry == 0xFFFFFE, // Rainbow Lantern
                 fcSettings.midnaHairBaseLightWorldInactive == 0xFFFFFE, // Rainbow Midna Hair
                 fcSettings.lightSwordGlowColor.getResult().basicDataEntry == 0xFFFFFE, // Rainbow Glow
+                randomizerSettings.shuffleExteriorEntrances,
             };
 
             List<bool[]> flagArrayList = new()

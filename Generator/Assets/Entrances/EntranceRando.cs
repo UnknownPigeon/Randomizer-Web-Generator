@@ -22,6 +22,8 @@ namespace TPRandomizer
         Interior,
         Interior_Reverse,
         One_Way,
+        Exterior,
+        Exterior_Reverse,
         Misc,
         Misc_Reverse,
         Mixed,
@@ -257,6 +259,10 @@ namespace TPRandomizer
             else if (entranceType == "Interior")
             {
                 Type = EntranceType.Interior;
+            }
+            else if (entranceType == "Exterior")
+            {
+                Type = EntranceType.Exterior;
             }
             else if (entranceType == "Cave")
             {
@@ -582,6 +588,19 @@ namespace TPRandomizer
                 vanillaEntranceTypes.Add(EntranceType.One_Way);
             }
 
+            if (Randomizer.SSettings.shuffleBossEntrances)
+            {
+                // If we are shuffling Boss entrances, loop through the entrance table and make note of all of the Boss entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.Boss,
+                    GetShufflableEntrances(EntranceType.Boss, true)
+                );
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.Boss);
+            }
+
             if (Randomizer.SSettings.shuffleInteriorEntrances)
             {
                 // If we are interior entrances, loop through the entrance table and make note of all of the interior entrances and add them to the pool.
@@ -603,6 +622,29 @@ namespace TPRandomizer
             else
             {
                 vanillaEntranceTypes.Add(EntranceType.Interior);
+            }
+
+            if (Randomizer.SSettings.shuffleExteriorEntrances)
+            {
+                // If we are Exterior entrances, loop through the entrance table and make note of all of the Exterior entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.Exterior,
+                    GetShufflableEntrances(EntranceType.Exterior, true)
+                );
+
+                if (Randomizer.SSettings.decoupleEntrances)
+                {
+                    newEntrancePools.Add(
+                        EntranceType.Exterior_Reverse,
+                        GetReverseEntrances(newEntrancePools, EntranceType.Exterior)
+                    );
+                    typesToDecouple.Add(EntranceType.Exterior);
+                    typesToDecouple.Add(EntranceType.Exterior_Reverse);
+                }
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.Exterior);
             }
 
             // Set marked entrance types as decoupled
@@ -1298,9 +1340,8 @@ namespace TPRandomizer
 
         void ShuffleSpecialEntrances()
         {
-            bool shuffleBossRooms = false;
             if (
-                shuffleBossRooms
+                Randomizer.SSettings.shuffleBossEntrances
                 || (Randomizer.SSettings.shuffleDungeonEntrances != SSettings.Enums.DungeonER.Off)
             )
             {

@@ -97,6 +97,7 @@ namespace TPRandomizer.Assets
             { 0x18, 0x4B }, // Watched CS with Allies in HC.
             { 0x15, 0xA1 }, // Unlock door in Darknut Room in ToT
             { 0x15, 0xA3 }, // Skip small CS when darknut room door opens
+            { 0x9, 0x55 }, // STAR Tent intro CS.
         };
 
         /// <summary>
@@ -163,7 +164,6 @@ namespace TPRandomizer.Assets
             { 0x8, 0x45 }, // Snowpeak Summit intro CS.
             { 0x8, 0x5E }, // Midna text outside SPR.
             { 0x8, 0x5F }, // Snowpeak intro CS.
-            { 0x9, 0x55 }, // STAR Tent intro CS.
             { 0x9, 0x7D }, // Jovani House intro CS.
             { 0xA, 0x53 }, // Mirror Chamber Intro CS.
             { 0x10, 0x41 }, // Midna text after getting Boomerang.

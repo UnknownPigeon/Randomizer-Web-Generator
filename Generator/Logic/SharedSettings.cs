@@ -112,6 +112,8 @@ namespace TPRandomizer
         public bool shuffleCaveEntrances { get; set; }
         public bool shuffleOneWayEntrances { get; set; }
         public bool shuffleInteriorEntrances { get; set; }
+        public bool shuffleBossEntrances { get; set; }
+        public bool shuffleExteriorEntrances { get; set; }
         public bool shuffleAnimalConversations { get; set; }
         public bool spawnGWolves { get; set; }
         public bool shuffleMinigames { get; set; }
@@ -224,6 +226,8 @@ namespace TPRandomizer
             shuffleCaveEntrances = processor.NextBool();
             shuffleOneWayEntrances = processor.NextBool();
             shuffleInteriorEntrances = processor.NextBool();
+            shuffleExteriorEntrances = processor.NextBool();
+            shuffleBossEntrances = processor.NextBool();
             shuffleAnimalConversations = processor.NextBool();
             spawnGWolves = processor.NextBool();
             shuffleMinigames = processor.NextBool();

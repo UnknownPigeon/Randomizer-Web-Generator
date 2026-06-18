@@ -513,6 +513,8 @@
       { id: 'caveERCheckbox' },
       { id: 'oneWayERCheckbox' },
       { id: 'interiorERCheckbox' },
+      { id: 'exteriorERCheckbox' },
+      { id: 'bossERCheckbox' },
       { id: 'animalConversationsCheckbox' },
       { id: 'spawnGWolvesCheckbox' },
       { id: 'minigameCheckbox' },
@@ -1149,6 +1151,8 @@
       processBasic({ id: 'caveER' });
       processBasic({ id: 'oneWayER' });
       processBasic({ id: 'interiorER' });
+      processBasic({ id: 'exteriorER' });
+      processBasic({ id: 'bossER' });
       processBasic({ id: 'animalConversations' });
       processBasic({ id: 'spawnGWolves' });
       processBasic({ id: 'shuffleMinigames' });
@@ -1161,6 +1165,8 @@
       res.caveER = false;
       res.oneWayER = false;
       res.interiorER = false;
+      res.exteriorER = false;
+      res.bossER = false;
       res.animalConversations = false;
       res.spawnGWolves = false;
       res.shuffleMinigames = false;
