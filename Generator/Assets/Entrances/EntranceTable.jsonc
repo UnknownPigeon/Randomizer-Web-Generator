@@ -2883,8 +2883,8 @@
     "SourceRoomSpawn": {
       "SourceRoom": "SPR Chapel",
       "TargetRoom": "SPR Boss Room",
-      "Stage": 27,
-      "Room": 4,
+      "Stage": 28,
+      "Room": 50,
       "Spawn": "01",
       "SpawnType": "60",
       "Parameters": "F01F",
