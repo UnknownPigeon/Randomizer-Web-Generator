@@ -3462,6 +3462,93 @@ namespace TPRandomizer.Assets
                 //.. ModifyChestAppearanceARC(), This is still in development
             ];
 
+            if (Randomizer.SSettings.shuffleExteriorEntrances)
+            {
+                List<ARCReplacement> listOfExteriorERReplacements =
+                [
+                    new ARCReplacement(
+                        "15E",
+                        "0001F09F",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        0
+                    ), // Modify ZD Throne -> ZD Outside Spawn to use the same entrance
+                    new ARCReplacement(
+                        "16B",
+                        "0001F09F",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        0
+                    ), // Modify ZD Throne -> ZD Outside Spawn to use the same entrance
+                    new ARCReplacement(
+                        "178",
+                        "0001F09F",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        0
+                    ), // Modify ZD Throne -> ZD Outside Spawn to use the same entrance
+                    new ARCReplacement(
+                        "190",
+                        "000100F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        1
+                    ), // Modify ZD Outside -> ZD Throne Spawn to use the same entrance
+                    new ARCReplacement(
+                        "190",
+                        "000100F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        1
+                    ), // Modify ZD Outside -> ZD Throne Spawn to use the same entrance
+                    new ARCReplacement(
+                        "19D",
+                        "000100F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        1
+                    ), // Modify ZD Outside -> ZD Throne Spawn to use the same entrance
+                    new ARCReplacement(
+                        "1B7",
+                        "000700F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        1
+                    ), // Modify ZD Outside -> UZR Spawn to use the same entrance
+                    new ARCReplacement(
+                        "1DE",
+                        "000700F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        1
+                    ), // Modify ZD Outside -> UZR Spawn to use the same entrance
+                    new ARCReplacement(
+                        "221",
+                        "000A01F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Upper_Zoras_River,
+                        0
+                    ), // Modify ZD Outside <- UZR Spawn to use the same entrance
+                    new ARCReplacement(
+                        "207",
+                        "000A01F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Upper_Zoras_River,
+                        0
+                    ), // Modify ZD Outside <- UZR Spawn to use the same entrance
+                ];
+                listOfStaticReplacements.AddRange(listOfExteriorERReplacements);
+            }
             return listOfStaticReplacements;
         }
 
