@@ -1388,7 +1388,11 @@ namespace TPRandomizer.Hints
             foreach ((BigKeySettings, Item, string) tuple in dungeonData)
             {
                 BigKeySettings bkSetting = tuple.Item1;
-                if (bkSetting != BigKeySettings.Any_Dungeon && bkSetting != BigKeySettings.Anywhere)
+                if (
+                    bkSetting != BigKeySettings.Any_Dungeon
+                    && bkSetting != BigKeySettings.Overworld
+                    && bkSetting != BigKeySettings.Anywhere
+                )
                     continue;
 
                 Item bigKeyItem = tuple.Item2;
@@ -1445,8 +1449,8 @@ namespace TPRandomizer.Hints
                                         false,
                                         true,
                                         areaId.type == AreaId.AreaType.Province
-                                            ? TradeChainHint.AreaType.Province
-                                            : TradeChainHint.AreaType.Zone,
+                                          ? TradeChainHint.AreaType.Province
+                                          : TradeChainHint.AreaType.Zone,
                                         DetailedCheckStatus.Unknown,
                                         CheckStatusDisplay.None
                                     );
@@ -1703,8 +1707,8 @@ namespace TPRandomizer.Hints
         private void UpdateHintedForAlwaysHints(List<string> checksToHint)
         {
             HashSet<string> checksToHintSet = ListUtils.isEmpty(checksToHint)
-                ? new()
-                : new(checksToHint);
+              ? new()
+              : new(checksToHint);
 
             foreach (string checkName in hintSettings.always.checks)
             {

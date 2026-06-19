@@ -325,7 +325,7 @@ namespace TPRandomizer.Hints
                 majorItems.Remove(Item.Piece_of_Heart);
             }
 
-            // Small keys only major if AnyDungeon or Anywhere.
+            // Small keys only major if AnyDungeon, Overworld, or Anywhere.
             List<(SmallKeySettings, Item)> smallKeySettings =
                 new()
                 {
@@ -344,12 +344,14 @@ namespace TPRandomizer.Hints
                 SmallKeySettings skSetting = tuple.Item1;
                 if (
                     skSetting != SmallKeySettings.Any_Dungeon
+                    && skSetting != SmallKeySettings.Overworld
                     && skSetting != SmallKeySettings.Anywhere
                 )
                     majorItems.Remove(tuple.Item2);
             }
             if (
                 sSettings.sprSmallKeySettings != SmallKeySettings.Any_Dungeon
+                && sSettings.sprSmallKeySettings != SmallKeySettings.Overworld
                 && sSettings.sprSmallKeySettings != SmallKeySettings.Anywhere
             )
             {
@@ -357,7 +359,7 @@ namespace TPRandomizer.Hints
                 majorItems.Remove(Item.Snowpeak_Ruins_Ordon_Pumpkin);
             }
 
-            // Big keys only major if AnyDungeon or Anywhere.
+            // Big keys only major if AnyDungeon, Overworld, or Anywhere.
             List<(BigKeySettings, Item)> bigKeySettings =
                 new()
                 {
@@ -374,7 +376,11 @@ namespace TPRandomizer.Hints
             foreach ((BigKeySettings, Item) tuple in bigKeySettings)
             {
                 BigKeySettings bkSetting = tuple.Item1;
-                if (bkSetting != BigKeySettings.Any_Dungeon && bkSetting != BigKeySettings.Anywhere)
+                if (
+                    bkSetting != BigKeySettings.Any_Dungeon
+                    && bkSetting != BigKeySettings.Overworld
+                    && bkSetting != BigKeySettings.Anywhere
+                )
                     majorItems.Remove(tuple.Item2);
             }
 
