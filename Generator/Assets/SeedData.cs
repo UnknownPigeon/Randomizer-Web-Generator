@@ -1058,6 +1058,23 @@ namespace TPRandomizer.Assets
                     0x28EC,
                     DataFunctions.ASM_LOAD_IMMEDIATE(3, (int)Item.Wooden_Statue)
                 ),// Replace the call to setWarashibeItem with a call to offWarashibeItem
+
+                // D_A_B_GM - Armogohma
+                new RELReplacement(
+                    (int)ReplacementType.Instruction,
+                    (int)0xFF,
+                    (int)GCRelIDs.D_A_B_GM,
+                    0x45D0,
+                    DataFunctions.ASM_NOP()
+                ),// Nop out the addition of random frames to make the timer between attacks consistent.
+
+                new RELReplacement(
+                    (int)ReplacementType.Instruction,
+                    (int)0xFF,
+                    (int)GCRelIDs.D_A_B_GM,
+                    0x151C,
+                    DataFunctions.ASM_NOP()
+                ),// Nop out the bge check so that Armogohma always fires a beam once the timer reaches 0
             ];
 
             // Parse Midna hair color replacement
