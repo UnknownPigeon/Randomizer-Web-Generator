@@ -1075,6 +1075,14 @@ namespace TPRandomizer.Assets
                     0x151C,
                     DataFunctions.ASM_NOP()
                 ),// Nop out the bge check so that Armogohma always fires a beam once the timer reaches 0
+
+                new RELReplacement(
+                    (int)ReplacementType.Instruction,
+                    (int)0xFF,
+                    (int)GCRelIDs.D_A_OBJ_SHIELD,
+                    0x6F0,
+                    DataFunctions.ASM_NOP()
+                ),// Remove the Y Rot modificaiton for the hanging shield item
             ];
 
             // Parse Midna hair color replacement
