@@ -920,6 +920,28 @@ document
 document
   .getElementById('affordableDonationsCheckbox')
   .addEventListener('click', setSettingsString);
+document
+  .getElementById('ftShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+
+document
+  .getElementById('lbtShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('agShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('sprShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('citsShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('citsShortcutFanCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('potShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
 
 function importSettingsString() {
   parseSettingsString(document.getElementById('settingsStringTextbox').value);
@@ -2621,6 +2643,13 @@ function populateSSettings(s) {
   $('#spawnGWolvesCheckbox').prop('checked', s.spawnGWolves);
   $('#minigameCheckbox').prop('checked', s.shuffleMinigames);
   $('#affordableDonationsCheckbox').prop('checked', s.affordableDonations);
+  $('#ftShortcutCheckbox').prop('checked', s.ftShortcut);
+  $('#lbtShortcutCheckbox').prop('checked', s.lbtShortcut);
+  $('#agShortcutCheckbox').prop('checked', s.agShortcut);
+  $('#sprShortcutCheckbox').prop('checked', s.sprShortcut);
+  $('#citsShortcutCheckbox').prop('checked', s.citsShortcut);
+  $('#citsShortcutFanCheckbox').prop('checked', s.citsFanShortcut);
+  $('#potShortcutCheckbox').prop('checked', s.potShortcut);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

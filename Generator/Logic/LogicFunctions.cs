@@ -1645,21 +1645,22 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanBreakMonkeyCage()
         {
-            return (
-                HasSword()
-                || CanUse(Item.Iron_Boots)
-                || CanUse(Item.Spinner)
-                || CanUse(Item.Ball_and_Chain)
-                || CanUse(Item.Shadow_Crystal)
-                || HasBombs()
-                || CanUse(Item.Progressive_Bow)
-                || CanUse(Item.Progressive_Clawshot)
+            return Randomizer.SSettings.ftShortCut
                 || (
-                    CanDoNicheStuff()
-                    && HasShield()
-                    && GetItemCount(Item.Progressive_Hidden_Skill) >= 2
-                )
-            );
+                    HasSword()
+                    || CanUse(Item.Iron_Boots)
+                    || CanUse(Item.Spinner)
+                    || CanUse(Item.Ball_and_Chain)
+                    || CanUse(Item.Shadow_Crystal)
+                    || HasBombs()
+                    || CanUse(Item.Progressive_Bow)
+                    || CanUse(Item.Progressive_Clawshot)
+                    || (
+                        CanDoNicheStuff()
+                        && HasShield()
+                        && GetItemCount(Item.Progressive_Hidden_Skill) >= 2
+                    )
+                );
         }
 
         /// <summary>
@@ -1675,23 +1676,24 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanFreeAllMonkeys()
         {
-            return (
-                CanBreakMonkeyCage()
-                && (
-                    CanUse(Item.Lantern)
-                    || (
-                        (Randomizer.SSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
-                        && (HasBombs() || CanUse(Item.Iron_Boots))
+            return Randomizer.SSettings.ftShortCut
+                || (
+                    CanBreakMonkeyCage()
+                    && (
+                        CanUse(Item.Lantern)
+                        || (
+                            (Randomizer.SSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
+                            && (HasBombs() || CanUse(Item.Iron_Boots))
+                        )
                     )
-                )
-                && CanBurnWebs()
-                && CanUse(Item.Boomerang)
-                && CanDefeatBokoblin()
-                && (
-                    (GetItemCount(Item.Forest_Temple_Small_Key) >= 4)
-                    || (Randomizer.SSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
-                )
-            );
+                    && CanBurnWebs()
+                    && CanUse(Item.Boomerang)
+                    && CanDefeatBokoblin()
+                    && (
+                        (GetItemCount(Item.Forest_Temple_Small_Key) >= 4)
+                        || (Randomizer.SSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
+                    )
+                );
         }
 
         /// <summary>

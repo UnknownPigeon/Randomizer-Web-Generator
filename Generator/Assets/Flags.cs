@@ -576,6 +576,28 @@ namespace TPRandomizer.Assets
             { 0x15, 0xBF }, // statue placed in slot in room 1
         };
 
+        public static readonly byte[,] FtShortcutRegionFlags = new byte[,]
+        {
+            { 0x10, 0xE }, // Saved Monkey in front of Big Pit
+            { 0x10, 0x10 }, // saved monkey in boomerang bombling room
+            { 0x10, 0x12 }, // saved monkey in tile worm room
+            { 0x10, 0x13 }, // Saved monkey in big baba room
+            { 0x10, 0x14 }, // saved 2nd monkey
+            { 0x10, 0x15 }, // saved first monkey
+            { 0x10, 0x3D }, // outside monkey saved
+            { 0x10, 0x3E }, // saved monkey in spider cave room
+            { 0x10, 0x50 }, // freed monkey in spider room
+            { 0x10, 0x61 }, // opened cage of monkey in big baba room.
+            { 0x10, 0x74 }, // open cage of monkey in tile worm room
+            { 0x10, 0x8C }, // 5th monkey added to room before boss
+            { 0x10, 0x97 }, // 2nd monkey bokoblins killed
+            { 0x10, 0x98 }, // midna first monkey text prompt
+            { 0x10, 0xAC }, // blown up 2nd rock in boomerang bombling room
+            { 0x10, 0xAE }, // saved 5th monkey cs
+            { 0x10, 0xAA }, // opened gate to monkey in broken stairs room
+            { 0x10, 0xA8 }, // monkeys formed rope
+        };
+
         public static readonly byte[,] GmShortcutRegionFlags = new byte[,]
         {
             { 0x11, 0xBB }, // activated magnet from water before first elder
@@ -603,6 +625,45 @@ namespace TPRandomizer.Assets
             // Dangoro fight to appear on the north side of his arena. There are
             // too many nuances for it to be reasonable for glitchless logic,
             // and also every small key door would require 3 keys.
+        };
+
+        public static readonly byte[,] LbtShortcutRegionFlags = new byte[,]
+        {
+            { 0x12, 0x56 }, // Let Water Flow out of Room West Wing 2F
+            { 0x12, 0x57 }, // Let Water Flow out of Room East Wing 2F
+            { 0x12, 0x6E }, // East Wing Water Switch 4F
+            { 0x12, 0x6F }, // West Wing Water Switch 4F
+        };
+
+        public static readonly byte[,] AgShortcutRegionFlags = new byte[,]
+        {
+            { 0x13, 0x9C }, // Main room poes taking flames cs.
+            { 0x13, 0x9A }, // Close poe door
+            { 0x13, 0x7A }, // Poe flame top left present
+            { 0x13, 0x7B }, // Poe flame bottom right present
+            { 0x13, 0x7C }, // Poe flame top right present
+            { 0x13, 0x7D }, // Poe flame bottom left present
+        };
+
+        public static readonly byte[,] SprShortcutRegionFlags = new byte[,]
+        {
+            { 0x14, 0x66 }, // Killed Freezard in Courtyard 1F
+            { 0x14, 0x69 }, // Killed Freezard in Courtyard 2F
+        };
+
+        public static readonly byte[,] CitsBridgeShortcutRegionFlags = new byte[,]
+        {
+            { 0x16, 0x4C }, // Extended East Bridge
+            { 0x16, 0x4D }, // Extended West Bridge
+            { 0x16, 0x5C }, // Extended East Bridge - Close Spinner Slot
+            { 0x16, 0x5D }, // Extended West Bridge - Close Spinner Slot
+            { 0x16, 0x6D }, // Extended West Bridge CS
+            { 0x16, 0x6E }, // Extended East Bridge CS
+        };
+
+        public static readonly byte[,] CitsFanShortcutRegionFlags = new byte[,]
+        {
+            { 0x16, 0xAB }, // Activated North Fan
         };
 
         public static readonly byte[,] HcShortcutFlags = new byte[,]
@@ -771,6 +832,12 @@ namespace TPRandomizer.Assets
                 { 53, CitSMapAndCompassRegionFlags },
                 { 54, PoTMapAndCompassRegionFlags },
                 { 55, HCMapAndCompassRegionFlags },
+                { 58, FtShortcutRegionFlags },
+                { 59, LbtShortcutRegionFlags },
+                { 60, AgShortcutRegionFlags },
+                { 61, SprShortcutRegionFlags },
+                { 62, CitsBridgeShortcutRegionFlags },
+                { 63, CitsFanShortcutRegionFlags },
             };
 
         /// <summary>
@@ -1068,7 +1135,13 @@ namespace TPRandomizer.Assets
             /* 54 */RandomizerSettings.potMapAndCompassSettings == MapAndCompassSettings.Start_With,
             /* 55 */RandomizerSettings.hcMapAndCompassSettings == MapAndCompassSettings.Start_With,
             /* 56 */!RandomizerSettings.shuffleAnimalConversations,
-            /* 57 */RandomizerSettings.spawnGWolves
+            /* 57 */RandomizerSettings.spawnGWolves,
+            /* 58 */RandomizerSettings.ftShortCut,
+            /* 59 */RandomizerSettings.lbtShortCut,
+            /* 60 */RandomizerSettings.agShortCut,
+            /* 61 */RandomizerSettings.sprShortCut,
+            /* 62 */RandomizerSettings.citsBridgeShortCut,
+            /* 63 */RandomizerSettings.citsFanShortCut,
         };
     }
 }

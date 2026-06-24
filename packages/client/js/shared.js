@@ -519,6 +519,13 @@
       { id: 'spawnGWolvesCheckbox' },
       { id: 'minigameCheckbox' },
       { id: 'affordableDonationsCheckbox' },
+      { id: 'ftShortcutCheckbox' },
+      { id: 'lbtShortcutCheckbox' },
+      { id: 'agShortcutCheckbox' },
+      { id: 'sprShortcutCheckbox' },
+      { id: 'citsShortcutCheckbox' },
+      { id: 'citsShortcutFanCheckbox' },
+      { id: 'potShortcutCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1157,6 +1164,13 @@
       processBasic({ id: 'spawnGWolves' });
       processBasic({ id: 'shuffleMinigames' });
       processBasic({ id: 'affordableDonations' });
+      processBasic({ id: 'ftShortcut' });
+      processBasic({ id: 'lbtShortcut' });
+      processBasic({ id: 'agShortcut' });
+      processBasic({ id: 'sprShortcut' });
+      processBasic({ id: 'citsShortcut' });
+      processBasic({ id: 'citsFanShortcut' });
+      processBasic({ id: 'potShortcut' });
     } else {
       res.fishJournals = false;
       res.legendaryLoach = false;
@@ -1171,6 +1185,13 @@
       res.spawnGWolves = false;
       res.shuffleMinigames = false;
       res.affordableDonations = false;
+      res.ftShortcut = false;
+      res.lbtShortcut = false;
+      res.agShortcut = false;
+      res.sprShortcut = false;
+      res.citsShortcut = false;
+      res.citsFanShortcut = false;
+      res.potShortcut = false;
     }
 
     res.startingItems = processor.nextEolList(9);

@@ -118,6 +118,13 @@ namespace TPRandomizer
         public bool spawnGWolves { get; set; }
         public bool shuffleMinigames { get; set; }
         public bool affordableDonations { get; set; }
+        public bool ftShortCut { get; set; }
+        public bool lbtShortCut { get; set; }
+        public bool agShortCut { get; set; }
+        public bool sprShortCut { get; set; }
+        public bool citsBridgeShortCut { get; set; }
+        public bool citsFanShortCut { get; set; }
+        public bool potShortCut { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
         public Dictionary<string, string> logicalTricks { get; set; }
@@ -232,6 +239,13 @@ namespace TPRandomizer
             spawnGWolves = processor.NextBool();
             shuffleMinigames = processor.NextBool();
             affordableDonations = processor.NextBool();
+            ftShortCut = processor.NextBool();
+            lbtShortCut = processor.NextBool();
+            agShortCut = processor.NextBool();
+            sprShortCut = processor.NextBool();
+            citsBridgeShortCut = processor.NextBool();
+            citsFanShortCut = processor.NextBool();
+            potShortCut = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

@@ -3574,6 +3574,34 @@ namespace TPRandomizer.Assets
                 ];
                 listOfStaticReplacements.AddRange(listOfExteriorERReplacements);
             }
+
+            if (Randomizer.SSettings.agShortCut)
+            {
+                listOfStaticReplacements.Add(
+                    new ARCReplacement(
+                        "AD0",
+                        "000000FF",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Arbiters_Grounds,
+                        2
+                    ) 
+                ); // Sets the mSw switch on the poe gate actor to be 0xFF
+            }
+
+            if (Randomizer.SSettings.potShortCut)
+            {
+                listOfStaticReplacements.Add(
+                new ARCReplacement(
+                    "F74",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Palace_of_Twilight,
+                    0
+                ) // Remove the DrkMst SCOB so the player can access the central Wing without the light sword.
+                );
+            }
             return listOfStaticReplacements;
         }
 
