@@ -737,6 +737,8 @@ namespace TPRandomizer
             result.Add("shuffleAnimalConversations", sSettings.shuffleAnimalConversations);
             result.Add("spawnGWolves", sSettings.spawnGWolves);
             result.Add("shuffleMinigames", sSettings.shuffleMinigames);
+            result.Add("affordableDonations", sSettings.affordableDonations);
+            result.Add("alwaysGreatSpin", sSettings.alwaysGreatSpin);
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);

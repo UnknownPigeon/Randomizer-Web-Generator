@@ -375,7 +375,8 @@ namespace TPRandomizer.Assets
                 randomizerSettings.instantText,
                 randomizerSettings.skipMajorCutscenes,
                 fcSettings.invertCameraAxis,
-                fcSettings.lightSwordAlwaysGlows
+                fcSettings.lightSwordAlwaysGlows,
+                randomizerSettings.alwaysGreatSpin
             };
             bool[] flagsBitfieldArray =
             {

@@ -125,6 +125,7 @@ namespace TPRandomizer
         public bool citsBridgeShortCut { get; set; }
         public bool citsFanShortCut { get; set; }
         public bool potShortCut { get; set; }
+        public bool alwaysGreatSpin { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
         public Dictionary<string, string> logicalTricks { get; set; }
@@ -246,6 +247,7 @@ namespace TPRandomizer
             citsBridgeShortCut = processor.NextBool();
             citsFanShortCut = processor.NextBool();
             potShortCut = processor.NextBool();
+            alwaysGreatSpin = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

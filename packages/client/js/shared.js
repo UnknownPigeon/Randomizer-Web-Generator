@@ -526,6 +526,7 @@
       { id: 'citsShortcutCheckbox' },
       { id: 'citsShortcutFanCheckbox' },
       { id: 'potShortcutCheckbox' },
+      { id: 'greatSpinCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1171,6 +1172,7 @@
       processBasic({ id: 'citsShortcut' });
       processBasic({ id: 'citsFanShortcut' });
       processBasic({ id: 'potShortcut' });
+      processBasic({ id: 'alwaysGreatSpin' });
     } else {
       res.fishJournals = false;
       res.legendaryLoach = false;
@@ -1192,6 +1194,7 @@
       res.citsShortcut = false;
       res.citsFanShortcut = false;
       res.potShortcut = false;
+      res.alwaysGreatSpin = false;
     }
 
     res.startingItems = processor.nextEolList(9);
