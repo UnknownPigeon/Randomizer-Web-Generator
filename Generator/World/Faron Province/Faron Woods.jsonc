@@ -459,8 +459,8 @@
       },
       {
         "CheckName": "Faron Mist Cave Lantern Chest",
-        "Requirements": "Lantern",
-        "GlitchedRequirements": "Lantern"
+        "Requirements": "Lantern and CanCompleteFaronTwilight",
+        "GlitchedRequirements": "Lantern and CanCompleteFaronTwilight"
       }
     ],
     "Region": "Faron Woods"
