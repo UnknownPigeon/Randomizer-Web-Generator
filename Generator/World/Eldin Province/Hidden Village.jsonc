@@ -9,8 +9,8 @@
       },
       {
         "ConnectedArea": "HV Impaz House",
-        "Requirements": "(Progressive_Bow, 1)",
-        "GlitchedRequirements": "(Progressive_Bow, 1)"
+        "Requirements": "(Progressive_Bow, 1) and Room.Kak_Renados_Sanctuary and Wooden_Statue",
+        "GlitchedRequirements": "(Progressive_Bow, 1) and Room.Kak_Renados_Sanctuary and Wooden_Statue"
       }
     ],
     "Checks": [
