@@ -1631,8 +1631,10 @@
             const selVal = getVal(id);
             const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
             const value = $option[0].getAttribute('data-rgb');
-            if (storeIndex) {
-              localStorage.setItem(id, getVal(id));
+            const isCustomColor =
+              $option[0].getAttribute('data-custom-color') === 'true';
+            if (!isCustomColor) {
+              localStorage.setItem(id, '00' + encodeToHexByte(getVal(id)));
             } else {
               localStorage.setItem(id, value);
             }
@@ -1646,7 +1648,11 @@
             const rgbVal = $option[0].getAttribute('data-rgb');
             const isCustomColor =
               $option[0].getAttribute('data-custom-color') === 'true';
-            localStorage.setItem(id, rgbVal);
+            if (isCustomColor) {
+              localStorage.setItem(id, rgbVal);
+            } else {
+              localStorage.setItem(id, '00' + encodeToHexByte(selVal));
+            }
             return {
               type: midnaHairTips
                 ? RawSettingType.midnaHairTips
@@ -1774,3 +1780,8 @@
     callCreateGci,
   };
 })();
+
+function encodeToHexByte(value) {
+  const clamped = Math.max(0, Math.min(255, Math.round(value)));
+  return clamped.toString(16).padStart(2, '0');
+}
