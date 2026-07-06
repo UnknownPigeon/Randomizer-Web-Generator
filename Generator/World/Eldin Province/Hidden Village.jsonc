@@ -9,8 +9,8 @@
       },
       {
         "ConnectedArea": "HV Impaz House",
-        "Requirements": "(Progressive_Bow, 1) and Room.Kak_Renados_Sanctuary and Wooden_Statue",
-        "GlitchedRequirements": "(Progressive_Bow, 1) and Room.Kak_Renados_Sanctuary and Wooden_Statue"
+        "Requirements": "(Progressive_Bow, 1) and ((Room.Kak_Renados_Sanctuary and Wooden_Statue) or (Setting.iliaQuest equals Charm))",
+        "GlitchedRequirements": "(Progressive_Bow, 1) and ((Room.Kak_Renados_Sanctuary and Wooden_Statue) or (Setting.iliaQuest equals Charm))"
       }
     ],
     "Checks": [
