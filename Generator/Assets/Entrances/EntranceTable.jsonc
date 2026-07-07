@@ -2833,7 +2833,7 @@
       "TargetRoom": "FT Boss Room",
       "Stage": 7,
       "Room": 50,
-      "Spawn": "01",
+      "Spawn": "00",
       "SpawnType": "60",
       "Parameters": "F01F",
       "State": "FF"
