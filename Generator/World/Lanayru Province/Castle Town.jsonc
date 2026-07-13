@@ -241,8 +241,8 @@
     "Checks": [
       {
         "CheckName": "North CT Golden Wolf",
-        "Requirements": "Shadow_Crystal and (Room.HV_Outside or (Setting.spawnGWolves equals True)) and CanCompleteMDH and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "Shadow_Crystal and (Room.HV_Outside or (Setting.spawnGWolves equals True)) and CanCompleteMDH and CanCompleteLanayruTwilight"
+        "Requirements": "((Shadow_Crystal and Room.HV_Outside) or (Setting.spawnGWolves equals True)) and CanCompleteMDH and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "((Shadow_Crystal and Room.HV_Outside) or (Setting.spawnGWolves equals True)) and CanCompleteMDH and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Castle Town"

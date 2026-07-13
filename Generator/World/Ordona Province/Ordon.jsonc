@@ -426,8 +426,8 @@
     "Checks": [
       {
         "CheckName": "Ordon Spring Golden Wolf",
-        "Requirements": "Shadow_Crystal and (Room.Death_Mountain_Trail or (Setting.spawnGWolves equals True)) and CanCompletePrologue and CanCompleteFaronTwilight",
-        "GlitchedRequirements": "Shadow_Crystal and (Room.Death_Mountain_Trail or (Setting.spawnGWolves equals True)) and CanCompletePrologue and CanCompleteFaronTwilight"
+        "Requirements": "((Shadow_Crystal and Room.Death_Mountain_Trail) or (Setting.spawnGWolves equals True)) and CanCompletePrologue and CanCompleteFaronTwilight",
+        "GlitchedRequirements": "((Shadow_Crystal and Room.Death_Mountain_Trail) or (Setting.spawnGWolves equals True)) and CanCompletePrologue and CanCompleteFaronTwilight"
       }
     ],
     "Region": "Ordona Province"
