@@ -765,6 +765,7 @@
       const list = [];
 
       const numCheckIdBits = version >= 6 ? 10 : 9;
+      const numItemIdBits = version >= 7 ? 9 : 8;
       const eolValue = genEolValue(numCheckIdBits);
 
       while (true) {
@@ -776,7 +777,7 @@
         if (checkId === eolValue) {
           break;
         } else {
-          const itemId = nextXBitsAsNum(9);
+          const itemId = nextXBitsAsNum(numItemIdBits);
           list.push([checkId, itemId]);
         }
       }
