@@ -413,7 +413,7 @@
   function genSSettingsFromUi() {
     // Increment the version when you make changes to the format. Need to make
     // sure you don't break backwards compatibility!!
-    const sSettingsVersion = 7;
+    const sSettingsVersion = 8;
 
     const values = [
       { id: 'logicRulesFieldset', bitLength: 2 },
@@ -1175,7 +1175,6 @@
       processBasic({ id: 'citsFanShortcut' });
       processBasic({ id: 'potShortcut' });
       processBasic({ id: 'alwaysGreatSpin' });
-      processBasic({ id: 'hcSkip' });
     } else {
       res.fishJournals = false;
       res.legendaryLoach = false;
@@ -1198,6 +1197,11 @@
       res.citsFanShortcut = false;
       res.potShortcut = false;
       res.alwaysGreatSpin = false;
+    }
+
+    if (version >= 8) {
+      processBasic({ id: 'hcSkip' });
+    } else {
       res.hcSkip = false;
     }
 
