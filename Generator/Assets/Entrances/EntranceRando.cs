@@ -469,6 +469,20 @@ namespace TPRandomizer
 
             // Once all of the entrances have been shuffled correctly, we want to update the connections on all of the paired entrances.
             ShufflePairedEntrances();
+             //Skip HC
+            if (Randomizer.SSettings.hcSkip)
+            {
+                Randomizer
+                    .Rooms.RoomDict["CT North Inside Barrier"]
+                    .Exits[1]
+                    .SetAsShuffled();
+                Randomizer
+                    .Rooms.RoomDict["CT North Inside Barrier"]
+                    .Exits[1]
+                    .SetReplacedEntrance(
+                        Randomizer.Rooms.RoomDict["HC Tower Climb"].Exits[2]
+                    );
+            }
 
             // Any additional logic or special cases should be handled here
             ShuffleSpecialEntrances();

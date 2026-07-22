@@ -711,6 +711,7 @@ namespace TPRandomizer
             result.Add("citsFanShortcut", sSettings.citsFanShortCut);
             result.Add("potShortcut", sSettings.potShortCut);
             result.Add("hcShortcut", sSettings.hcShortcut);
+            result.Add("hcSkip", sSettings.hcSkip);
             result.Add("iliaQuest", sSettings.iliaQuest.ToString());
             result.Add("mirrorChamberEntrance", sSettings.mirrorChamberEntrance.ToString());
             result.Add("shuffleDungeonEntrances", sSettings.shuffleDungeonEntrances.ToString());

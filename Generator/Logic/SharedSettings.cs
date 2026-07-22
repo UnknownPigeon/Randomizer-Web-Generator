@@ -86,6 +86,7 @@ namespace TPRandomizer
         public bool noSmallKeysOnBosses { get; set; }
         public bool gmShortcut { get; set; }
         public bool hcShortcut { get; set; }
+        public bool hcSkip { get; set; }
         public StartingToD startingToD { get; set; }
         public HintDistribution hintDistribution { get; set; }
         public bool randomizeStartingPoint { get; set; }
@@ -248,6 +249,7 @@ namespace TPRandomizer
             citsFanShortCut = processor.NextBool();
             potShortCut = processor.NextBool();
             alwaysGreatSpin = processor.NextBool();
+            hcSkip = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

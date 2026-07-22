@@ -1187,6 +1187,15 @@ namespace TPRandomizer
                 // We still need a skybook for Shad
                 updateItemToCount(RandomizedImportantItems, Item.Progressive_Sky_Book, 1);
             }
+             if (parseSetting.hcSkip)
+            {
+                updateItemToCount(this.RandomizedDungeonRegionItems, Item.Hyrule_Castle_Big_Key, 0);
+                updateItemToCount(
+                    this.RandomizedDungeonRegionItems,
+                    Item.Hyrule_Castle_Small_Key,
+                    0
+                );
+            }
 
             foreach (Item startingItem in parseSetting.startingItems)
             {

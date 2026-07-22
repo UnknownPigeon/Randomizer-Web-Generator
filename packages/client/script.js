@@ -754,6 +754,9 @@ document
 document
   .getElementById('hcShortcutCheckbox')
   .addEventListener('click', setSettingsString);
+  document
+  .getElementById('hcSkipCheckbox')
+  .addEventListener('click', setSettingsString);
 document.getElementById('itemScarcityFieldset').onchange = setSettingsString;
 document.getElementById('damageMagFieldset').onchange = setSettingsString;
 document.getElementById('todFieldset').onchange = setSettingsString;
@@ -1188,6 +1191,15 @@ function setGeneralERSettings() {
   }
 }
 
+function setHcSettings() {
+  const hcSkipChecked = document.getElementById('hcSkipCheckbox').checked;
+  const hcShortcutChecked =
+    document.getElementById('hcShortcutCheckbox').checked;
+
+  document.getElementById('hcShortcutCheckbox').disabled = hcSkipChecked;
+  document.getElementById('hcSkipCheckbox').disabled = hcShortcutChecked;
+}
+
 function setSmallKeyValues() {
   const smallKeyValue = document.getElementById('smallKeyFieldset').value;
   document.getElementById('ftSmallKeyFieldset').value = smallKeyValue;
@@ -1235,6 +1247,7 @@ function setMapAndCompassValues() {
 
 function setSettingsString() {
   setGeneralERSettings();
+  setHcSettings();
   const combinedSettingsString = window.tpr.shared.genSSettingsFromUi();
   document.getElementById('combinedSettingsString').textContent =
     combinedSettingsString;
@@ -2614,6 +2627,7 @@ function populateSSettings(s) {
   $('#hiddenRupeeCheckbox').prop('checked', s.hiddenRupees);
   $('#gmShortcutCheckbox').prop('checked', s.gmShortcut);
   $('#hcShortcutCheckbox').prop('checked', s.hcShortcut);
+  $('#hcSkipCheckbox').prop('checked', s.hcSkip);
   $('#iliaQuestFieldset').val(s.iliaQuest);
   $('#mirrorChamberFieldset').val(s.mirrorChamber);
   $('#dungeonERFieldset').val(s.dungeonER).trigger('change');
