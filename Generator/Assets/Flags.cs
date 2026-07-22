@@ -304,6 +304,12 @@ namespace TPRandomizer.Assets
             { 0x18, 0xB0 }, // Unlock treasure room door.
             { 0x18, 0xA3 }, // Unlock door in south garden.
         };
+         public static readonly byte[,] lessKeyPalaceFlags = new byte[,]
+        {
+            { 0x17, 0x7B }, // Unlock door in east room 1.
+            { 0x17, 0x7C }, // Unlock door in west room 1.
+        };
+
 
         public static readonly byte[,] FTSmallKeyRegionFlags = new byte[,]
         {
@@ -838,6 +844,7 @@ namespace TPRandomizer.Assets
                 { 61, SprShortcutRegionFlags },
                 { 62, CitsBridgeShortcutRegionFlags },
                 { 63, CitsFanShortcutRegionFlags },
+                { 64, lessKeyPalaceFlags },
             };
 
         /// <summary>
@@ -1142,6 +1149,7 @@ namespace TPRandomizer.Assets
             /* 61 */RandomizerSettings.sprShortCut,
             /* 62 */RandomizerSettings.citsBridgeShortCut,
             /* 63 */RandomizerSettings.citsFanShortCut,
+            /* 64 */RandomizerSettings.lessKeyPalace,
         };
     }
 }

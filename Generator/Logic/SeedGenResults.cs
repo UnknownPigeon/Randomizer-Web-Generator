@@ -710,6 +710,7 @@ namespace TPRandomizer
             result.Add("citsBridgeShortcut", sSettings.citsBridgeShortCut);
             result.Add("citsFanShortcut", sSettings.citsFanShortCut);
             result.Add("potShortcut", sSettings.potShortCut);
+            result.Add("lessKeyPalace", sSettings.lessKeyPalace);
             result.Add("hcShortcut", sSettings.hcShortcut);
             result.Add("hcSkip", sSettings.hcSkip);
             result.Add("iliaQuest", sSettings.iliaQuest.ToString());

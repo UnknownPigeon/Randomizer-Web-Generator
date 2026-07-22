@@ -528,6 +528,7 @@
       { id: 'potShortcutCheckbox' },
       { id: 'greatSpinCheckbox' },
       { id: 'hcSkipCheckbox' },
+      { id: 'lessKeyPalaceCheckbox'},
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1201,8 +1202,10 @@
 
     if (version >= 8) {
       processBasic({ id: 'hcSkip' });
+      processBasic({ id: 'lessKeyPalace' });
     } else {
       res.hcSkip = false;
+      res.lessKeyPalace = false;
     }
 
     res.startingItems = processor.nextEolList(9);
