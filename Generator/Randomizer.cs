@@ -180,12 +180,10 @@ namespace TPRandomizer
                     break;
                 }
                 // If for some reason the assumed fill fails, we want to dump everything and start over.
-                catch (ArgumentOutOfRangeException a)
+                catch (Exception a)
                 {
-                    a = null;
                     Console.WriteLine(
-                        "/~~~~~~~~~~~~~~~~~~~~~ Generation Failure. No checks remaining, starting over..~~~~~~~~~~~~~~~~~~~~~~~~~~~~/"
-                            + a
+                        $"/~~~~~~~~~~~~~~~~~~~~~ Generation Failure. No checks remaining, starting over..~~~~~~~~~~~~~~~~~~~~~~~~~~~~/ Reason: {a}"
                     );
                     StartOver();
                     continue;
@@ -1175,14 +1173,28 @@ namespace TPRandomizer
                 Console.WriteLine("Placing items via No Logic.");
                 while (allItems.Count > 0)
                 {
-                    Check currentCheck = Checks.CheckDict
-                        .ElementAt(rnd.Next(Checks.CheckDict.Count - 1))
-                        .Value;
-                    if (!currentCheck.itemWasPlaced)
+                    List<string> availableChecks = new();
+                    foreach (KeyValuePair<string, Check> checkList in Checks.CheckDict.ToList())
+                    {
+                        Check chk = checkList.Value;
+                        if (!chk.itemWasPlaced)
+                        {
+                            availableChecks.Add(chk.checkName);
+                        }
+                    }
+                    if (availableChecks.Count > 0)
                     {
                         Item itemToPlace = allItems[rnd.Next(allItems.Count - 1)];
+                        string curChkName = availableChecks[rnd.Next(availableChecks.Count - 1)];
+                        Check currentCheck = Checks.CheckDict[curChkName];
                         PlaceItemInCheck(itemToPlace, currentCheck);
                         allItems.Remove(itemToPlace);
+                    }
+                    else
+                    {
+                        throw new Exception(
+                            $"ERROR: Mismatch between available items (count: {allItems.Count}) and available checks (count: {availableChecks.Count}). Please check your settings and try again."
+                        );
                     }
                 }
 
