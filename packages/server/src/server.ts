@@ -344,6 +344,8 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [81, 'Bomb Bag and Bombs'],
         [79, 'Giant Bomb Bag'],
         [49, 'Zora Armor'],
+        [0xd8, 'Progressive_Fused_Shadow',3],
+        [0xa5, 'Progressive_Mirror_Shard',4],
         [68, 'Progressive Clawshot'],
         [68, 'Progressive Clawshot'],
         [144, 'Aurus Memo'],
@@ -408,12 +410,15 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [0xee, 'North Faron Woods Gate Key'],
         [0xfe, 'Faron Woods Coro Key'],
         [0xe0, 'Poe Soul', 60],
+        [0x15, 'South Faron Portal'],
+        [0x3C, 'North Faron Portal'],
         [0x3b, 'Gerudo Desert Portal'],
         [0xae, 'Mirror Chamber Portal'],
         [0xaf, 'Snowpeak Portal'],
         [0xbf, 'Sacred Grove Portal'],
         [0xe8, 'Bridge of Eldin Portal'],
         [0x39, 'Upper Zoras River Portal'],
+        [0x57, 'Zora Domain Portal'],
       ];
 
       const startingItemsEls = startingItems.map((item) => {
