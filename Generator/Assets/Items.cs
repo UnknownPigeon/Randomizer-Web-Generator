@@ -1195,6 +1195,16 @@ namespace TPRandomizer
                     Item.Hyrule_Castle_Small_Key,
                     0
                 );
+                updateItemToCount(
+                    this.RandomizedDungeonRegionItems,
+                    Item.Hyrule_Castle_Dungeon_Map,
+                    0
+                );
+                updateItemToCount(
+                    this.RandomizedDungeonRegionItems,
+                    Item.Hyrule_Castle_Compass,
+                    0
+                );
             }
              if (parseSetting.lessKeyPalace)
             {
