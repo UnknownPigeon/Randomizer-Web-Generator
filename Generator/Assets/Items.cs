@@ -1124,6 +1124,7 @@ namespace TPRandomizer
                     break;
             }
 
+            int hpCount = 0;
             foreach ((string checkName, Item item) in parseSetting.plandoChecks)
             {
                 switch (item)
@@ -1141,6 +1142,20 @@ namespace TPRandomizer
                         {
                             RemoveItem(item);
                         }
+                        break;
+                    }
+                    case Item.Piece_of_Heart:
+                    {
+                        hpCount++;
+                        // If we have 5 heart pieces and have no more heart pieces to remove, start removing heart containers. 
+                        if ((hpCount == 5) && (getItemCount(this.alwaysItems, item) == 0))
+                        {
+                            RemoveItem(Item.Heart_Container);
+                            hpCount = 0;
+                            
+                        }
+                        RemoveItem(item);
+                        
                         break;
                     }
 
