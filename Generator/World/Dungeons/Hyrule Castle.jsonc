@@ -27,17 +27,17 @@
       },
       {
         "ConnectedArea": "HC Main Hall",
-        "Requirements": "(Hyrule_Castle_Small_Key, 1)",
+        "Requirements": "(Hyrule_Castle_Small_Key, 1) or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 1)"
       },
       {
         "ConnectedArea": "HC Outside West Wing",
-        "Requirements": "CanDefeatBokoblinRed",
+        "Requirements": "CanDefeatBokoblinRed or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "CanDefeatBokoblinRed"
       },
       {
         "ConnectedArea": "HC Outside East Wing",
-        "Requirements": "CanDefeatBokoblinRed",
+        "Requirements": "CanDefeatBokoblinRed or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "CanDefeatBokoblinRed"
       }
     ],
@@ -48,7 +48,7 @@
     "Exits": [
       {
         "ConnectedArea": "HC Outside East Wing",
-        "Requirements": "Shadow_Crystal",
+        "Requirements": "Shadow_Crystal or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
@@ -86,12 +86,12 @@
       },
       {
         "ConnectedArea": "HC Above Lantern Staircase",
-        "Requirements": "((CanDefeatBokoblin and CanDefeatLizalfos) or (Trick.hc_skip_main_hall_barrier and HasSword)) and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_chandeliers_with_1_claw)) and CanDefeatDarknut and Boomerang",
+        "Requirements": "(((CanDefeatBokoblin and CanDefeatLizalfos) or (Trick.hc_skip_main_hall_barrier and HasSword)) and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_chandeliers_with_1_claw)) and CanDefeatDarknut and Boomerang) or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "HasSword and Progressive_Clawshot and CanDefeatDarknut and Boomerang"
       },
       {
         "ConnectedArea": "HC After Double Dinalfos",
-        "Requirements": "((CanDefeatBokoblin and CanDefeatLizalfos) or (Trick.hc_skip_main_hall_barrier) and HasSword) and (Setting.hcShortcut equals True) and (Progressive_Clawshot, 2)",
+        "Requirements": "(((CanDefeatBokoblin and CanDefeatLizalfos) or (Trick.hc_skip_main_hall_barrier) and HasSword) and (Setting.hcShortcut equals True) and (Progressive_Clawshot, 2)) or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "HasSword and (Setting.hcShortcut equals True) and (Progressive_Clawshot, 2)"
       }
     ],
@@ -114,7 +114,7 @@
       },
       {
         "ConnectedArea": "HC Graveyard",
-        "Requirements": "Shadow_Crystal",
+        "Requirements": "Shadow_Crystal or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
@@ -165,17 +165,17 @@
     "Exits": [
       {
         "ConnectedArea": "HC Main Hall",
-        "Requirements": "CanDefeatDarknut",
+        "Requirements": "CanDefeatDarknut or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "CanDefeatDarknut"
       },
       {
         "ConnectedArea": "HC After Double Dinalfos",
-        "Requirements": "Lantern and CanDefeatDinalfos",
+        "Requirements": "(Lantern and CanDefeatDinalfos) or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "Lantern and CanDefeatDinalfos"
       },
       {
         "ConnectedArea": "HC After Double Darknuts",
-        "Requirements": "CanKnockDownHCPainting and CanDefeatLizalfos and CanDefeatDarknut",
+        "Requirements": "(CanKnockDownHCPainting and CanDefeatLizalfos and CanDefeatDarknut) or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "CanKnockDownHCPainting and CanDefeatLizalfos and CanDefeatDarknut"
       }
     ],
@@ -260,17 +260,17 @@
     "Exits": [
       {
         "ConnectedArea": "HC After Double Dinalfos",
-        "Requirements": "(Lantern and CanDefeatDinalfos) or (Setting.hcShortcut equals True)",
+        "Requirements": "(Lantern and CanDefeatDinalfos) or (Setting.hcShortcut equals True) or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "(Lantern and CanDefeatDinalfos) or (Setting.hcShortcut equals True)"
       },
       {
         "ConnectedArea": "HC After Double Darknuts",
-        "Requirements": "CanDefeatDarknut and CanDefeatLizalfos and CanKnockDownHCPainting",
+        "Requirements": "(CanDefeatDarknut and CanDefeatLizalfos and CanKnockDownHCPainting) or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "CanDefeatDarknut and CanDefeatLizalfos and CanKnockDownHCPainting"
       },
       {
         "ConnectedArea": "HC Tower Climb",
-        "Requirements": "(Hyrule_Castle_Small_Key, 2)",
+        "Requirements": "(Hyrule_Castle_Small_Key, 2) or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 2)"
       }
     ],
@@ -298,12 +298,12 @@
       },
       {
         "ConnectedArea": "HC Treasure Room",
-        "Requirements": "(Hyrule_Castle_Small_Key, 3) and Spinner and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_tower_climb_with_1_claw)) and CanDefeatDarknut and CanDefeatLizalfos",
+        "Requirements": "((Hyrule_Castle_Small_Key, 3) and Spinner and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_tower_climb_with_1_claw)) and CanDefeatDarknut and CanDefeatLizalfos) or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 3) and (Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos"
       },
       {
         "ConnectedArea": "Ganondorf Castle",
-        "Requirements": "Spinner and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_tower_climb_with_1_claw)) and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key",
+        "Requirements": "(Spinner and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_tower_climb_with_1_claw)) and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key) or (Setting.hcSkip equals True)",
         "GlitchedRequirements": "(Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key"
       }
     ],
