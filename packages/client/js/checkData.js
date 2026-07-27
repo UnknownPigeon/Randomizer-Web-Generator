@@ -944,7 +944,7 @@ window.tpr.checkData = {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Desert Poe Above Cave of Ordeals': {
+  'Desert Poe Above CoO': {
     category: ['Overworld', 'Poe', 'Gerudo Desert'],
     itemId: 'Poe_Soul',
   },
