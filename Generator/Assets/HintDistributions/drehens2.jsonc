@@ -1,0 +1,289 @@
+{
+    "starting": {
+      "spot": "midna",
+      "excludeFromGroups": true
+    },
+    "agitha": true,
+    "jovani": {
+      "minFoundSoulsForHint": 0
+    },
+    "caveOfOrdeals": true,
+    "dungeons": {
+      "bigKeyHints": true
+    },
+    "beyondPointZones": ["alias:all"],
+    "barren": {
+      "monopolizeSpots": true,
+      "ownZoneShowsAsJunkHint": false
+    },
+    "always": {
+      "monopolizeSpots": true,
+      "idealNumSpots": 5,
+      "copies": 2,
+      "groupId": "overworld"
+    },
+    //
+    "addChecks": {
+      "Lake Hylia Shell Blade Grotto Chest": ["always"]
+    },
+    "removeChecks": {
+      "PoT Collect Both Sols": ["always"],
+      "FT Gale Boomerang": ["sometimes"],
+      "CitS Aeralfos Chest": ["sometimes"]
+    },
+    "removeItems": {},
+    //
+    "groups": {
+      "overworld": ["alias:overworldZones"],
+      "requiredDungeons": ["alias:requiredDungeons"]
+    },
+    "specialHintDefs": [
+      {
+        "spot": "death_mountain_sign",
+        "hintDef": {
+          "hintType": "location",
+          "options": {
+            "canBeClaimHinted": true,
+            "vague": true,
+            "validChecks": ["Death Mountain Alcove Chest"]
+          }
+        }
+      },
+      {
+        "spot": "forest_temple_sign",
+        "hintDef": {
+          "hintType": "location",
+          "options": {
+            "canBeClaimHinted": true,
+            "validChecks": ["FT Gale Boomerang"],
+            "checkStatusDisplay": "required_info"
+          }
+        }
+      },
+      {
+        "spot": "snowpeak_ruins_sign",
+        "hintDef": {
+          "maxPicks": 1,
+          "hintDef": [
+            {
+              "hintType": "location",
+              "options": {
+                "canBeClaimHinted": true,
+                "validChecks": [
+                  "SPR Chapel Chest",
+                  "SPR Lobby Chandelier Chest",
+                  "SPR Northeast Chandelier Chest"
+                ],
+                "validItems": ["Snowpeak_Ruins_Bedroom_Key"]
+              }
+            },
+            {
+              "hintType": "location",
+              "options": {
+                "canBeClaimHinted": true,
+                "validChecks": [
+                  "SPR Chapel Chest",
+                  "SPR Lobby Chandelier Chest",
+                  "SPR Northeast Chandelier Chest"
+                ],
+            "checkStatusDisplay": "required_info"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "spot": "temple_of_time_sign",
+        "hintDef": {
+          "hintType": "location",
+          "options": {
+            "canBeClaimHinted": true,
+            "validChecks": ["ToT Lobby Lantern Chest"],
+            "checkStatusDisplay": "required_info"
+          }
+        }
+      },
+      {
+        "spot": "Palace_of_Twilight_Sign",
+        "hintDef": {
+          "hintType": "location",
+          "options": {
+            "canBeClaimHinted": true,
+            "validChecks": ["PoT Collect Both Sols"],
+            "checkStatusDisplay": "required_info"
+          }
+        }
+      }
+      // {
+      //   "spot": "Palace_of_Twilight_Sign",
+      //   "hintDef": {
+      //     "hintType": "item",
+      //     "options": {
+      //       "canBeClaimHinted": true,
+      //       "validItems": ["Palace_of_Twilight_Big_Key"],
+      //       "areaType": "category",
+      //       "validCategories": [
+      //         "Palace_of_Twilight_West_Wing",
+      //         "Palace_of_Twilight_Center_Wing",
+      //         "Palace_of_Twilight_East_Wing"
+      //       ]
+      //     }
+      //   }
+      // }
+    ],
+    "hints": [
+      {
+        "groupId": "overworld",
+        "hintDef": {
+          "copies": 2,
+          "hintDef": [
+            //Most Sword Province
+            {
+              "hintType": "numItemInArea",
+              "saveToVar": "HintCopies",
+              "options": {
+                "item": "Progressive_Sword",
+                "areaType": "province",
+                "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert", "Ordona", "Peak"],
+                "order": "desc"
+              }
+            },
+            //Least Sword Province
+            {
+              "hintType": "numItemInArea",
+              "saveToVar": "HintCopies",
+              "options": {
+                "item": "Progressive_Sword",
+                "areaType": "province",
+                "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert"],
+                "order": "asc"
+              }
+            },
+            {
+              "saveToVar": "HintCopies",
+              "hintDef": [
+                {
+                  "hintType": "path",
+                  "iterations": 3,
+                  "options": {
+                    // Each goal hinted at most once.
+                    "unhintedGoalsOnly": true,
+                    "validGoals": [
+                      "Diababa",
+                      "Fyrus",
+                      "Morpheel",
+                      "Stallord",
+                      "Blizzeta",
+                      "Armogohma",
+                      "Argorok",
+                      "Zant"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "maxPicks": 4,
+              "starting": 4,
+              "hintDef": [
+                {
+                  "hintType": "barren",
+                  "iterations": 1,
+                  "options": {
+                    "validAreas": [
+                      "Forest Temple",
+                      "Goron Mines",
+                      "Lakebed Temple",
+                      "Arbiter's Grounds",
+                      "Snowpeak Ruins",
+                      "Temple of Time",
+                      "City in the Sky",
+                      "Palace of Twilight"
+                    ]
+                  }
+                },
+                {
+                  "hintType": "barren",
+                  "iterations": 4
+                }
+              ]
+            },
+            {
+              "hintType": "barren",
+              "saveToVar": "HintCopies",
+              "options": {
+                "areaType": "category"
+              }
+            },
+            // Fill in layer with extra copies
+            {
+              "hintType": "var",
+              "copies": 1,
+              "iterations": 99,
+              "options": {
+                "varName": "HintCopies",
+                "randomOrder": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "groupId": "overworld",
+        "hintDef": {
+          "copies": 2,
+          "hintDef": [
+            {
+              "maxPicks": 6,
+              "saveToVar": "SometimesCopies",
+              "hintDef": [
+                {
+                  "hintType": "location",
+                  "namedOrder": "random",
+                  "namedProbability": 1,
+                  "minCopies": 1,
+                  "options": {
+                    "markAsSometimes": true,
+                    "namedChecks": [
+                      "FT West Tile Worm Chest Behind Stairs",
+                      "GM Outside Clawshot Chest",
+                      "CitS West Wing First Chest",
+                      "PoT Big Key Chest"
+                    ]
+                  }
+                },
+                {
+                  "hintType": "location",
+                  "namedOrder": "random",
+                  "namedProbability": 1,
+                  "minCopies": 1,
+                  "options": {
+                    "markAsSometimes": true,
+                    "namedChecks": [
+                      "AG Death Sword Chest",
+                      "ToT Darknut Chest",
+                      "CitS Aeralfos Chest"
+                    ]
+                  }
+                },
+                {
+                  "hintType": "sometimes",
+                  "iterations": 99
+                }
+              ]
+            },
+            {
+              "hintType": "var",
+              "copies": 1,
+              "iterations": 99,
+              "options": {
+                "varName": "SometimesCopies",
+                "randomOrder": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+  
