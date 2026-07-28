@@ -1644,17 +1644,17 @@ namespace TPRandomizer
                         listOfAffectedChecks[i].AddRange(bRoom.getCheckNames());
                         switch (bossRoom)
                         {
-                            case "Goron Mines Boss Room":
+                            case "GM Boss Room":
                             {
                                 listOfAffectedChecks[i].AddRange(CheckFunctions.postFyrusChecks);
                                 break;
                             }
-                            case "Snowpeak Ruins Boss Room":
+                            case "SPR Boss Room":
                             {
                                 listOfAffectedChecks[i].AddRange(CheckFunctions.postBlizettaChecks);
                                 break;
                             }
-                            case "Temple of Time Boss Room":
+                            case "ToT Boss Room":
                             {
                                 if (Randomizer.SSettings.iliaQuest == IliaQuest.Vanilla)
                                 {
