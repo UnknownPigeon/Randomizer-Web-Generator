@@ -26,7 +26,7 @@
     "Checks": [
       {
         "CheckName": "PoT Collect Both Sols",
-        "Requirements": "CanDefeatPhantomZant and (Progressive_Clawshot, 1) and CanDefeatZantHead and (Palace_of_Twilight_Small_Key, 7) and CanDefeatShadowBeast",
+        "Requirements": "CanDefeatPhantomZant and (Progressive_Clawshot, 1) and CanDefeatZantHead and ((Palace_of_Twilight_Small_Key, 7) or ((Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 5))) and CanDefeatShadowBeast",
         "GlitchedRequirements": "CanDefeatPhantomZant and (Progressive_Clawshot, 1) and CanDefeatZantHead and (Palace_of_Twilight_Small_Key, 7) and CanDefeatShadowBeast"
       }
     ],
@@ -54,17 +54,17 @@
       },
       {
         "CheckName": "PoT West Wing Second Room Central Chest",
-        "Requirements": "((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and (Progressive_Clawshot, 1)",
+        "Requirements": "(((((Palace_of_Twilight_Small_Key, 6) or (Setting.lessKeyPalace equals True)) or ((Setting.smallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and (Progressive_Clawshot, 1)",
         "GlitchedRequirements": "((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and (Progressive_Clawshot, 1)"
       },
       {
         "CheckName": "PoT West Wing Second Room Lower South Chest",
-        "Requirements": "((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and (Progressive_Clawshot, 1)",
+        "Requirements": "(((((Palace_of_Twilight_Small_Key, 6) or (Setting.lessKeyPalace equals True)) or ((Setting.smallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and (Progressive_Clawshot, 1)",
         "GlitchedRequirements": "((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and (Progressive_Clawshot, 1)"
       },
       {
         "CheckName": "PoT West Wing Second Room Southeast Chest",
-        "Requirements": "((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and (Progressive_Clawshot, 2)",
+        "Requirements": "(((((Palace_of_Twilight_Small_Key, 6) or (Setting.lessKeyPalace equals True)) or ((Setting.smallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and (Progressive_Clawshot, 2)",
         "GlitchedRequirements": "((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and (Progressive_Clawshot, 2)"
       }
     ],
@@ -92,32 +92,32 @@
       },
       {
         "CheckName": "PoT East Wing First Room East Alcove Chest",
-        "Requirements": "(Progressive_Sword, 4) or (CanDefeatPhantomZant and (Progressive_Clawshot, 1) and CanDefeatZantHead and (Palace_of_Twilight_Small_Key, 7) and CanDefeatShadowBeast)",
+        "Requirements": "(Progressive_Sword, 4) or (CanDefeatPhantomZant and (Progressive_Clawshot, 1) and CanDefeatZantHead and ((Palace_of_Twilight_Small_Key, 7) or (Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 5)) and CanDefeatShadowBeast)",
         "GlitchedRequirements": "(Progressive_Sword, 4) or (CanDefeatPhantomZant and (Progressive_Clawshot, 1) and CanDefeatZantHead and (Palace_of_Twilight_Small_Key, 7) and CanDefeatShadowBeast)"
       },
       {
         "CheckName": "PoT East Wing First Room West Alcove Chest",
-        "Requirements": "(Progressive_Sword, 4) or (CanDefeatPhantomZant and (Progressive_Clawshot, 1) and CanDefeatZantHead and (Palace_of_Twilight_Small_Key, 7) and CanDefeatShadowBeast)",
+        "Requirements": "(Progressive_Sword, 4) or (CanDefeatPhantomZant and (Progressive_Clawshot, 1) and CanDefeatZantHead and ((Palace_of_Twilight_Small_Key, 7) or (Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 5)) and CanDefeatShadowBeast)",
         "GlitchedRequirements": "(Progressive_Sword, 4) or (CanDefeatPhantomZant and (Progressive_Clawshot, 1) and CanDefeatZantHead and (Palace_of_Twilight_Small_Key, 7) and CanDefeatShadowBeast)"
       },
       {
         "CheckName": "PoT East Wing Second Room Northeast Chest",
-        "Requirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 2) and ((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))",
+        "Requirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 2) and (((((Palace_of_Twilight_Small_Key, 6) or (Setting.lessKeyPalace equals True)) or ((Setting.smallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))",
         "GlitchedRequirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 2) and ((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))"
       },
       {
         "CheckName": "PoT East Wing Second Room Northwest Chest",
-        "Requirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 1) and ((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))",
+        "Requirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 1) and (((((Palace_of_Twilight_Small_Key, 6) or (Setting.lessKeyPalace equals True)) or ((Setting.smallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))",
         "GlitchedRequirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 1) and ((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))"
       },
       {
         "CheckName": "PoT East Wing Second Room Southwest Chest",
-        "Requirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 2) and ((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))",
+        "Requirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 2) and (((((Palace_of_Twilight_Small_Key, 6) or (Setting.lessKeyPalace equals True)) or ((Setting.smallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))",
         "GlitchedRequirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 2) and ((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))"
       },
       {
         "CheckName": "PoT East Wing Second Room Southeast Chest",
-        "Requirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 2) and ((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))",
+        "Requirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 2) and (((((Palace_of_Twilight_Small_Key, 6) or (Setting.lessKeyPalace equals True)) or ((Setting.smallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))",
         "GlitchedRequirements": "CanDefeatZantHead and CanDefeatShadowBeast and (Progressive_Clawshot, 2) and ((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3)))))"
       }
     ],
@@ -133,7 +133,7 @@
       },
       {
         "ConnectedArea": "PoT Outside Room",
-        "Requirements": "(Palace_of_Twilight_Small_Key, 5) and (Progressive_Sword, 4)",
+        "Requirements": "((Palace_of_Twilight_Small_Key, 5) or (Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 3)) and (Progressive_Sword, 4)",
         "GlitchedRequirements": "(Palace_of_Twilight_Small_Key, 5) and (Progressive_Sword, 4)"
       }
     ],
@@ -156,7 +156,7 @@
       },
       {
         "ConnectedArea": "PoT North Tower",
-        "Requirements": "(Palace_of_Twilight_Small_Key, 6)",
+        "Requirements": "((Palace_of_Twilight_Small_Key, 6) or (Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 4))",
         "GlitchedRequirements": "(Palace_of_Twilight_Small_Key, 6)"
       }
     ],
@@ -184,7 +184,7 @@
       },
       {
         "ConnectedArea": "PoT Boss Room",
-        "Requirements": "CanDefeatZantHead and (Progressive_Sword, 4) and Palace_of_Twilight_Big_Key and CanDefeatShadowBeast and (Progressive_Clawshot, 1) and (Palace_of_Twilight_Small_Key, 7)",
+        "Requirements": "CanDefeatZantHead and (Progressive_Sword, 4) and Palace_of_Twilight_Big_Key and CanDefeatShadowBeast and (Progressive_Clawshot, 1) and ((Palace_of_Twilight_Small_Key, 7) or (Setting.lessKeyPalace equals True) and (Palace_of_Twilight_Small_Key, 5))",
         "GlitchedRequirements": "CanDefeatZantHead and (Progressive_Sword, 4) and Palace_of_Twilight_Big_Key and CanDefeatShadowBeast and (Progressive_Clawshot, 1) and (Palace_of_Twilight_Small_Key, 7)"
       }
     ],
