@@ -219,8 +219,8 @@
     "Exits": [
       {
         "ConnectedArea": "Mirror Chamber Lower",
-        "Requirements": "CanDefeatStallord",
-        "GlitchedRequirements": "CanDefeatStallord"
+        "Requirements": "Stallord_Defeated",
+        "GlitchedRequirements": "Stallord_Defeated"
       }
     ],
     "Checks": [
