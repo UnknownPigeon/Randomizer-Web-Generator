@@ -11,7 +11,7 @@
     "dungeons": {
       "bigKeyHints": true
     },
-    "beyondPointZones": ["alias:all"],
+    "beyondPointZones": ["Lake_Lantern_Cave", "Snowpeak_Mountain", "Goron_Mines", "Lakebed_Temple", "Arbiters_Grounds", "Temple_of_Time", "City_in_the_Sky"],
     "barren": {
       "monopolizeSpots": true,
       "ownZoneShowsAsJunkHint": false
