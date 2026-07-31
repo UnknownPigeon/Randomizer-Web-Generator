@@ -209,6 +209,18 @@
     <value>$(ap:pres-de,plural)les {cs}Statues de Hibou{ce}</value>
     <comment></comment>
   </data>
+  <data name="area.category.palace_of_twilight_center_wing" xml:space="preserve">
+    <value>$(ap:dans)la {cs}tour centrale{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.palace_of_twilight_east_wing" xml:space="preserve">
+    <value>$(ap:dans)l&apos;{cs}aile est{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.palace_of_twilight_west_wing" xml:space="preserve">
+    <value>$(ap:dans)l&apos;{cs}aile ouest{ce}</value>
+    <comment></comment>
+  </data>
   <data name="area.category.southern_desert" xml:space="preserve">
     <value>$(ap:dans)la {cs}partie sud du désert{ce}</value>
     <comment></comment>
