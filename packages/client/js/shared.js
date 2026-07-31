@@ -529,6 +529,7 @@
       { id: 'greatSpinCheckbox' },
       { id: 'hcSkipCheckbox' },
       { id: 'lessKeyPalaceCheckbox'},
+      { id: 'skipZantCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1203,6 +1204,7 @@
     if (version >= 8) {
       processBasic({ id: 'hcSkip' });
       processBasic({ id: 'lessKeyPalace' });
+      processBasic({ id: 'skipZant' });
     } else {
       res.hcSkip = false;
       res.lessKeyPalace = false;

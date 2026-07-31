@@ -813,6 +813,9 @@ namespace TPRandomizer.Hints
                 entranceToZone[tuple.Item2] = tuple.Item3;
             }
 
+            // special mapping for hc skip
+            entranceToZone["Ganondorf Castle"] = Zone.Hyrule_Castle;
+
             foreach ((string, string, Zone) tuple in exitToDungeonList)
             {
                 string srcRoom = tuple.Item1;

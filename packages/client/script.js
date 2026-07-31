@@ -949,6 +949,9 @@ document
   .getElementById('lessKeyPalaceCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('skipZantCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('greatSpinCheckbox')
   .addEventListener('click', setSettingsString);
 
@@ -2671,6 +2674,7 @@ function populateSSettings(s) {
   $('#citsShortcutFanCheckbox').prop('checked', s.citsFanShortcut);
   $('#potShortcutCheckbox').prop('checked', s.potShortcut);
   $('#lessKeyPalaceCheckbox').prop('checked', s.lessKeyPalace);
+  $('#skipZantCheckbox').prop('checked', s.skipZant);
   $('#greatSpinCheckbox').prop('checked', s.alwaysGreatSpin);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
