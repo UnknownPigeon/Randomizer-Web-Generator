@@ -128,6 +128,7 @@ namespace TPRandomizer
         public bool potShortCut { get; set; }
         public bool lessKeyPalace { get; set; }
         public bool skipZant { get; set; }
+        public bool coroKey { get; set; }
         public bool alwaysGreatSpin { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
@@ -254,6 +255,7 @@ namespace TPRandomizer
             hcSkip = processor.NextBool();
             lessKeyPalace = processor.NextBool();
             skipZant = processor.NextBool();
+            coroKey = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

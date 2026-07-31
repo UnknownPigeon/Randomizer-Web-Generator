@@ -530,6 +530,7 @@
       { id: 'hcSkipCheckbox' },
       { id: 'lessKeyPalaceCheckbox'},
       { id: 'skipZantCheckbox' },
+      { id: 'coroKeyCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1205,9 +1206,12 @@
       processBasic({ id: 'hcSkip' });
       processBasic({ id: 'lessKeyPalace' });
       processBasic({ id: 'skipZant' });
+      processBasic({ id: 'coroKey' });
     } else {
       res.hcSkip = false;
       res.lessKeyPalace = false;
+      res.skipZant = false;
+      res.coroKey = false;
     }
 
     res.startingItems = processor.nextEolList(9);

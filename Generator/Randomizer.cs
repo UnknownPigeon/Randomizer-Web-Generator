@@ -545,6 +545,8 @@ namespace TPRandomizer
                 part2Settings.Add("openDot", SSettings.openDot);
              if (SSettings.skipZant)
                 part2Settings.Add("skipZant", SSettings.skipZant);
+            if (SSettings.coroKey)
+                part2Settings.Add("coroKey", SSettings.coroKey);
 
             // Complex fields
             if (SSettings.startingItems?.Count > 0)
