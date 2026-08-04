@@ -26,6 +26,7 @@ namespace TPRandomizer.Hints.HintCreator
                 HintCategory.Southern_Desert,
                 HintCategory.Northern_Desert,
                 HintCategory.Golden_Wolf,
+                HintCategory.Lantern_Chests,
             };
 
         private static readonly Dictionary<Zone, string> dungeonZoneToRegionName =

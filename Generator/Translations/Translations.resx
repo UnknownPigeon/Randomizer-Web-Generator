@@ -169,6 +169,14 @@
     <value>$(plural)Grottos</value>
     <comment></comment>
   </data>
+  <data name="area.category.lantern_chests" xml:space="preserve">
+    <value>a {cs}spawnable lantern chests{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.category.lantern_chests$plain" xml:space="preserve">
+    <value>Spawnable Lantern Chests</value>
+    <comment></comment>
+  </data>
   <data name="area.category.llc_lantern_chests" xml:space="preserve">
     <value>a {cs}lantern chest in Lake Lantern Cave{ce}</value>
     <comment></comment>

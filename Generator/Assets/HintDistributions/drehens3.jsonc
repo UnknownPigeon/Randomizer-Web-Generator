@@ -1,0 +1,351 @@
+{
+  "starting": {
+    "spot": "midna",
+    "excludeFromGroups": true
+  },
+  "agitha": true,
+  "jovani": {
+    "minFoundSoulsForHint": 0
+  },
+  "caveOfOrdeals": true,
+  "dungeons": {
+    "bigKeyHints": true
+  },
+  "beyondPointZones": ["Lake_Lantern_Cave", "Snowpeak_Mountain", "Goron_Mines", "Lakebed_Temple", "Arbiters_Grounds", "Temple_of_Time", "City_in_the_Sky"],
+  "barren": {
+    "monopolizeSpots": true,
+    "ownZoneShowsAsJunkHint": false
+  },
+  "always": {
+    "monopolizeSpots": true,
+    "idealNumSpots": 6,
+    "copies": 3,
+    "groupId": "overworld"
+  },
+  //
+  "addChecks": {
+    "Lake Hylia Shell Blade Grotto Chest": ["always"],
+    "Sacred Grove Past Owl Statue Chest": ["sometimes"],
+    "Sacred Grove Baba Serpent Grotto Chest": ["sometimes"],
+    "Skybook From Impaz": ["always"]
+  },
+  "removeChecks": {
+    "Plumm Fruit Balloon Minigame": ["always"],
+    "Goron Springwater Rush": ["always"],
+    "PoT Collect Both Sols": ["always"],
+    "ZD Extinguish All Torches Chest": ["sometimes"],
+    "ZD Light All Torches Chest": ["sometimes"],
+    "Eldin Spring Underwater Chest": ["sometimes"],
+    "Lake Hylia Underwater Chest": ["sometimes"],
+    "AG Death Sword Chest": ["sometimes"],
+    "FT Gale Boomerang": ["sometimes"],
+    "CitS Aeralfos Chest": ["sometimes"]
+  },
+  "removeItems": {
+  },
+  //
+  "groups": {
+    "overworld": ["alias:overworldZones"],
+    "requiredDungeons": ["alias:requiredDungeons"]
+  },
+  "specialHintDefs": [
+    {
+      "spot": "death_mountain_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canBeClaimHinted": true,
+          "vague": true,
+          "validChecks": ["Death Mountain Alcove Chest"]
+        }
+      }
+    },
+    {
+      "spot": "forest_temple_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canBeClaimHinted": true,
+          "validChecks": ["FT Gale Boomerang"]
+        }
+      }
+    },
+    {
+      "spot": "snowpeak_ruins_sign",
+      "hintDef": {
+        "maxPicks": 1,
+        "hintDef": [
+          {
+            "hintType": "location",
+            "options": {
+              "canBeClaimHinted": true,
+              "validChecks": [
+                "SPR Chapel Chest",
+                "SPR Lobby Chandelier Chest",
+                "SPR Northeast Chandelier Chest"
+              ],
+              "validItems": ["Snowpeak_Ruins_Bedroom_Key"]
+            }
+          },
+          {
+            "hintType": "location",
+            "options": {
+              "canBeClaimHinted": true,
+              "validChecks": [
+                "SPR Chapel Chest",
+                "SPR Lobby Chandelier Chest",
+                "SPR Northeast Chandelier Chest"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "spot": "temple_of_time_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canBeClaimHinted": true,
+          "checkStatusDisplay": "required_info",
+          "validChecks": ["ToT Lobby Lantern Chest"]
+        }
+      }
+    },
+    {
+      "spot": "palace_of_twilight_sign",
+      "hintDef": {
+        "hintType": "location",
+        "options": {
+          "canBeClaimHinted": true,
+          "checkStatusDisplay": "required_info",
+          "validChecks": ["PoT Collect Both Sols"]
+        }
+      }
+    }
+    // {
+    //   "spot": "palace_of_Twilight_Sign",
+    //   "hintDef": {
+    //     "hintType": "item",
+    //     "options": {
+    //       "validItems": ["Palace_of_Twilight_Big_Key"],
+    //       "areaType": "category",
+    //       "validCategories": [
+    //         "Palace_of_Twilight_West_Wing",
+    //         "Palace_of_Twilight_Center_Wing",
+    //         "Palace_of_Twilight_East_Wing"
+    //       ]
+    //     }
+    //   }
+    // }
+  ],
+  "hints": [
+    {
+      "groupId": "overworld",
+      "hintDef": {
+        "copies": 2,
+        "hintDef": [
+          {
+            "hintDef": [
+              {
+                "maxPicks": 3,
+                "hintDef": [
+                  // {
+                  //   "hintType": "barren",
+                  //   "iterations": 1,
+                  //   "starting": 1,
+                  //   "options": {
+                  //     "validAreas": [
+                  //       "Forest Temple",
+                  //       "Goron Mines",
+                  //       "Lakebed Temple",
+                  //       "Arbiter's Grounds",
+                  //       "Snowpeak Ruins",
+                  //       "Temple of Time",
+                  //       "City in the Sky",
+                  //       "Palace of Twilight",
+                  //       "Hyrule Castle"
+                  //     ]
+                  //   }
+                  // },
+                  {
+                    "hintType": "barren",
+                    "iterations": 4,
+                    "starting": 4,
+                    "saveToVar": "barrenHints",
+                    "options": {
+                      "validAreas": ["alias:overworldZones"]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "maxPicks": 1,
+            "hintDef": [
+              {
+                "hintType": "importanceCount",
+                "saveToVar": "firstLayerIcHint",
+                "options": {
+                  "indicateImportant": false
+                }
+              }
+            ]
+          },
+          {
+            // Generates at most 3 hints at 1 copy each, then fills using var
+            // until 6 hint copies total.
+            "maxPicks": 6,
+            "hintDef": [
+              {
+                "maxPicks": 3,
+                "copies": 1,
+                "saveToVar": "firstLayerPathHints",
+                "hintDef": [
+                  {
+                    "hintType": "path",
+                    "iterations": 2,
+                    "options": {
+                      // Each goal hinted at most once.
+                      "unhintedGoalsOnly": true,
+                      "validGoals": [
+                        "Diababa",
+                        "Fyrus",
+                        "Morpheel",
+                        "Stallord",
+                        "Blizzeta",
+                        "Armogohma",
+                        "Argorok",
+                        "Zant"
+                      ]
+                    }
+                  }
+                ]
+              },
+              // Fill in with extra path hint copies until we have the base 6
+              // copies.
+              {
+                "hintType": "var",
+                "copies": 1,
+                "iterations": 99,
+                "options": {
+                  "varName": "firstLayerPathHints",
+                  "randomOrder": true
+                }
+              }
+            ]
+          },
+          {
+            "hintType": "numItemInArea",
+            "saveToVar": "firstLayerIcHint",
+            "options": {
+              "item": "Progressive_Sword",
+              "areaType": "province",
+              "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert", "Ordona", "Peak"],
+              "order": "desc"
+            }
+          },
+          {
+            "hintType": "numItemInArea",
+            "saveToVar": "firstLayerIcHint",
+            "options": {
+              "item": "Progressive_Sword",
+              "areaType": "province",
+              "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert"],
+              "order": "asc"
+            }
+          },
+          // Fill layer with extra copies of the IC hint and path hints. Order
+          // not random so we do an extra IC hint before the sometimes.
+          {
+            "copies": 1,
+            "iterations": 99,
+            "hintDef": [
+              {
+                "hintType": "var",
+                "options": {
+                  "varName": "firstLayerIcHint"
+                }
+              },
+              {
+                "hintType": "var",
+                "iterations": 3,
+                "options": {
+                  "varName": "firstLayerPathHints",
+                  "randomOrder": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      // 2nd layer is "sometimes" hints
+      "groupId": "overworld",
+      "hintDef": {
+        "copies": 2,
+        "hintDef": [
+          {
+            "maxPicks": 6,
+            "iterations": 2,
+            "hintDef": [
+              {
+                // Hint 1 dungeon sometimes
+                "hintDef": {
+                  "hintType": "location",
+                  "saveToVar": "2ndLayerDungeon",
+                  "options": {
+                    "markAsSometimes": true,
+                    "validChecks": [
+                      "FT West Tile Worm Chest Behind Stairs",
+                      "GM Outside Clawshot Chest",
+                      "CitS West Wing First Chest",
+                      "PoT Big Key Chest",
+                      "LBT Deku Toad Chest",
+                      "AG Death Sword Chest",
+                      "ToT Darknut Chest",
+                      "CitS Aeralfos Chest"
+                    ]
+                  }
+                }
+              },
+              {
+                "hintType": "sometimes",
+                "minCopies": 1,
+                "saveToVar": "2ndLayerSometimes",
+                "iterations": 99,
+                "options": {
+                  "prioritizeNewZones": true
+                }
+              }
+            ]
+          },
+          // Fill in layer with extra copies of the sometimes hints
+          // (prioritizing Dungeon).
+          {
+            "hintDef": [
+              {
+                "hintType": "var",
+                "copies": 1,
+                "options": {
+                  "varName": "2ndLayerDungeon"
+                }
+              },
+              {
+                "hintType": "var",
+                "copies": 1,
+                "iterations": 99,
+                "options": {
+                  "varName": "2ndLayerSometimes",
+                  "randomOrder": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -150,6 +150,8 @@ namespace TPRandomizer.SSettings.Enums
         Strong = 4,
         Very_Strong = 5,
         Season_2 = 6,
+        Drehen_s2 = 7,
+        Drehen_s3 = 8
     }
 
     public enum IliaQuest

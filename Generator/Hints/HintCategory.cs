@@ -27,6 +27,7 @@ namespace TPRandomizer.Hints
         Palace_of_Twilight_Center_Wing = 20,
         Palace_of_Twilight_West_Wing = 21,
         Palace_of_Twilight_East_Wing = 22,
+        Lantern_Chests = 23
     }
 
     public class HintCategoryUtils
@@ -381,7 +382,7 @@ namespace TPRandomizer.Hints
                         "PoT West Wing First Room Central Chest",
                         "PoT West Wing Second Room Central Chest",
                         "PoT West Wing Second Room Lower South Chest",
-                        "PoT West Wing Second Room Southeast Chest",
+                        "PoT West Wing Second Room Southeast Chest"
                     }
                 },
                 {
@@ -397,7 +398,29 @@ namespace TPRandomizer.Hints
                         "PoT East Wing Second Room Southeast Chest",
                         "PoT East Wing Second Room Southwest Chest",
                     }
-                }
+                },
+                {
+                    HintCategory.Lantern_Chests,
+                    new[]
+                    {
+                        "Ordon Ranch Grotto Lantern Chest",
+                        "Faron Mist Cave Lantern Chest",
+                        "Lost Woods Lantern Chest",
+                        "Eldin Lantern Cave Lantern Chest",
+                        "Kak Graveyard Lantern Chest",
+                        "Eldin Field Bomskit Grotto Lantern Chest",
+                        "Eldin Stockcave Lantern Chest",
+                        "Lanayru Field Skulltula Grotto Chest",
+                        "Lanayru Spring Back Room Lantern Chest",
+                        "ZD Light All Torches Chest",
+                        "Desert Rock Grotto Lantern Chest",
+                        "Outside AG Lantern Chest",
+                        "Snowpeak Cave Ice Lantern Chest",
+                        "ToT Lobby Lantern Chest",
+                        "LLC Sixth Chest",
+                        "LLC End Lantern Chest",
+                    }
+                }                
             };
 
         static HintCategoryUtils()
@@ -425,6 +448,7 @@ namespace TPRandomizer.Hints
                 { HintCategory.Palace_of_Twilight_Center_Wing, "Palace_of_Twilight_Center_Wing" },
                 { HintCategory.Palace_of_Twilight_West_Wing, "Palace_of_Twilight_West_Wing" },
                 { HintCategory.Palace_of_Twilight_East_Wing, "Palace_of_Twilight_East_Wing" },
+                { HintCategory.Lantern_Chests, "Lantern_Chests" }
             };
 
             strToEnum = new();
