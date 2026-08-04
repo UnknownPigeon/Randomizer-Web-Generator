@@ -1155,11 +1155,13 @@ namespace TPRandomizer
 
             // Handle portals
             parseSetting.startingItems.Add(Item.Ordon_Portal);
-            if (parseSetting.faronTwilightCleared)
-            {
-                parseSetting.startingItems.Add(Item.South_Faron_Portal);
-                parseSetting.startingItems.Add(Item.North_Faron_Portal);
-            }
+            // Trouver une solution pour que ça concerne que le drehen 
+
+            // if (parseSetting.faronTwilightCleared)
+            // {
+            //     parseSetting.startingItems.Add(Item.South_Faron_Portal);
+            //     parseSetting.startingItems.Add(Item.North_Faron_Portal);
+            // }
 
             if (parseSetting.eldinTwilightCleared)
             {
@@ -1170,7 +1172,8 @@ namespace TPRandomizer
 
             if (parseSetting.lanayruTwilightCleared)
             {
-                parseSetting.startingItems.Add(Item.Zoras_Domain_Portal);
+                 // Trouver une solution pour que ça concerne que le drehen 
+                //parseSetting.startingItems.Add(Item.Zoras_Domain_Portal);
                 parseSetting.startingItems.Add(Item.Lake_Hylia_Portal);
                 parseSetting.startingItems.Add(Item.Castle_Town_Portal);
             }

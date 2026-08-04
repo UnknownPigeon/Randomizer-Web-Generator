@@ -226,11 +226,11 @@
     <comment></comment>
   </data>
   <data name="area.category.palace_of_twilight_east_wing" xml:space="preserve">
-    <value>$(ap:dans)l&apos;{cs}aile Est{ce}</value>
+    <value>$(ap:dans)l&apos;{cs}aile est{ce}</value>
     <comment></comment>
   </data>
   <data name="area.category.palace_of_twilight_west_wing" xml:space="preserve">
-    <value>$(ap:dans)l&apos;{cs}aile Ouest{ce}</value>
+    <value>$(ap:dans)l&apos;{cs}aile ouest{ce}</value>
     <comment></comment>
   </data>
   <data name="area.category.southern_desert" xml:space="preserve">

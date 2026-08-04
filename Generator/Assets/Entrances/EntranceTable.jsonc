@@ -2930,6 +2930,19 @@
       "State": "FF"
     }
   },
+  {
+    "Type": "Boss Room",
+    "SourceRoomSpawn": {
+      "SourceRoom": "HC Tower Climb",
+      "TargetRoom": "Ganondorf Castle",
+      "Stage": 21,
+      "Room": 51,
+      "Spawn": "0A",
+      "SpawnType": "00",
+      "Parameters": "F01F",
+      "State": "FF"
+    }
+  },
   // Boss Room Exit
   {
     "Type": "Boss Room Exit",

@@ -603,6 +603,14 @@ namespace TPRandomizer
                         currentCheck.checkStatus = "Vanilla";
                     }
                 }
+
+                if (parseSetting.hcSkip)
+                {
+                    if (currentCheck.checkCategory.Contains("Hyrule Castle"))
+                    {
+                        currentCheck.checkStatus = "Excluded";
+                    }
+                }
             }
 
             List<string> removedQuestChecks = new();
