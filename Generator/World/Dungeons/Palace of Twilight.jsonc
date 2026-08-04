@@ -202,20 +202,20 @@
     "Exits": [
       {
         "ConnectedArea": "PoT Entrance",
-        "Requirements": "CanDefeatZant",
-        "GlitchedRequirements": "CanDefeatZant"
+        "Requirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))",
+        "GlitchedRequirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))"
       }
     ],
     "Checks": [
       {
         "CheckName": "PoT Zant Heart Container",
-        "Requirements": "CanDefeatZant",
-        "GlitchedRequirements": "CanDefeatZant"
+        "Requirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))",
+        "GlitchedRequirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))"
       },
       {
         "CheckName": "PoT Zant",
-        "Requirements": "CanDefeatZant",
-        "GlitchedRequirements": "CanDefeatZant"
+        "Requirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))",
+        "GlitchedRequirements": "(CanDefeatZant) or ((Progressive_Sword, 3) and (Setting.skipZant equals True))"
       }
     ],
     "Region": "Palace of Twilight"
