@@ -1155,13 +1155,12 @@ namespace TPRandomizer
 
             // Handle portals
             parseSetting.startingItems.Add(Item.Ordon_Portal);
-            // Trouver une solution pour que ça concerne que le drehen 
 
-            // if (parseSetting.faronTwilightCleared)
-            // {
-            //     parseSetting.startingItems.Add(Item.South_Faron_Portal);
-            //     parseSetting.startingItems.Add(Item.North_Faron_Portal);
-            // }
+            if (parseSetting.faronTwilightCleared)
+            {
+                parseSetting.startingItems.Add(Item.South_Faron_Portal);
+                parseSetting.startingItems.Add(Item.North_Faron_Portal);
+            }
 
             if (parseSetting.eldinTwilightCleared)
             {
@@ -1172,8 +1171,7 @@ namespace TPRandomizer
 
             if (parseSetting.lanayruTwilightCleared)
             {
-                 // Trouver une solution pour que ça concerne que le drehen 
-                //parseSetting.startingItems.Add(Item.Zoras_Domain_Portal);
+                parseSetting.startingItems.Add(Item.Zoras_Domain_Portal);
                 parseSetting.startingItems.Add(Item.Lake_Hylia_Portal);
                 parseSetting.startingItems.Add(Item.Castle_Town_Portal);
             }
@@ -1203,6 +1201,17 @@ namespace TPRandomizer
             {
                 updateItemToCount(this.RandomizedDungeonRegionItems, Item.Palace_of_Twilight_Small_Key, 5);
             }
+            if(parseSetting.coroKey)
+            {
+              parseSetting.startingItems.Remove(Item.South_Faron_Portal);
+              parseSetting.startingItems.Remove(Item.North_Faron_Portal);
+            }
+
+            if(parseSetting.hintDistribution == HintDistribution.Drehen_s3)
+            {
+                parseSetting.startingItems.Remove(Item.Zoras_Domain_Portal);
+            }
+
 
             foreach (Item startingItem in parseSetting.startingItems)
             {
