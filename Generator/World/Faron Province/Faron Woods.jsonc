@@ -20,7 +20,7 @@
       },
       {
         "ConnectedArea": "South Faron Woods Behind Field Gate",
-        "Requirements": "CanClearForest and CanCompleteFaronTwilight and CanCompletePrologue and (Faron_Woods_Coro_Key or (Setting.coroKey equal False))",
+        "Requirements": "CanClearForest and CanCompleteFaronTwilight and CanCompletePrologue and (Faron_Woods_Coro_Key or (Setting.coroKey equals False))",
         // There's no prologue requirement because worse case scenerio, you just gate clip
         "GlitchedRequirements": "CanClearForestGlitched and CanCompleteFaronTwilight"
       },
@@ -105,8 +105,8 @@
     "Exits": [
       {
         "ConnectedArea": "South Faron Woods",
-        "Requirements": "CanCompletePrologue and (Faron_Woods_Coro_Key or (Setting.coroKey equal False))",
-        "GlitchedRequirements": "CanCompletePrologue and (Faron_Woods_Coro_Key or (Setting.coroKey equal False))"
+        "Requirements": "CanCompletePrologue and (Faron_Woods_Coro_Key or (Setting.coroKey equals False))",
+        "GlitchedRequirements": "CanCompletePrologue and (Faron_Woods_Coro_Key or (Setting.coroKey equals False))"
       },
       {
         "ConnectedArea": "Faron Field",
