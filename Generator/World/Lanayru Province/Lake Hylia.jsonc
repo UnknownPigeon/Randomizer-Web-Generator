@@ -24,8 +24,8 @@
       },
       {
         "ConnectedArea": "UZR River",
-        "Requirements": "Shadow_Crystal",
-        "GlitchedRequirements": "Shadow_Crystal"
+        "Requirements": "false",
+        "GlitchedRequirements": "false"
       },
       {
         "ConnectedArea": "Lake Hylia Lanayru Spring",
