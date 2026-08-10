@@ -113,23 +113,23 @@
             "checkStatusDisplay": "required_info"
           }
         }
+      },
+      {
+        "spot": "Palace_of_Twilight_Sign",
+        "hintDef": {
+          "hintType": "item",
+          "options": {
+            "canBeClaimHinted": true,
+            "validItems": ["Palace_of_Twilight_Big_Key"],
+            "areaType": "category",
+            "validCategories": [
+              "Palace_of_Twilight_West_Wing",
+              "Palace_of_Twilight_Center_Wing",
+              "Palace_of_Twilight_East_Wing"
+            ]
+          }
+        }
       }
-      // {
-      //   "spot": "Palace_of_Twilight_Sign",
-      //   "hintDef": {
-      //     "hintType": "item",
-      //     "options": {
-      //       "canBeClaimHinted": true,
-      //       "validItems": ["Palace_of_Twilight_Big_Key"],
-      //       "areaType": "category",
-      //       "validCategories": [
-      //         "Palace_of_Twilight_West_Wing",
-      //         "Palace_of_Twilight_Center_Wing",
-      //         "Palace_of_Twilight_East_Wing"
-      //       ]
-      //     }
-      //   }
-      // }
     ],
     "hints": [
       {

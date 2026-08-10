@@ -122,22 +122,22 @@
           "validChecks": ["PoT Collect Both Sols"]
         }
       }
+    },
+    {
+      "spot": "palace_of_Twilight_Sign",
+      "hintDef": {
+        "hintType": "item",
+        "options": {
+          "validItems": ["Palace_of_Twilight_Big_Key"],
+          "areaType": "category",
+          "validCategories": [
+            "Palace_of_Twilight_West_Wing",
+            "Palace_of_Twilight_Center_Wing",
+            "Palace_of_Twilight_East_Wing"
+          ]
+        }
+      }
     }
-    // {
-    //   "spot": "palace_of_Twilight_Sign",
-    //   "hintDef": {
-    //     "hintType": "item",
-    //     "options": {
-    //       "validItems": ["Palace_of_Twilight_Big_Key"],
-    //       "areaType": "category",
-    //       "validCategories": [
-    //         "Palace_of_Twilight_West_Wing",
-    //         "Palace_of_Twilight_Center_Wing",
-    //         "Palace_of_Twilight_East_Wing"
-    //       ]
-    //     }
-    //   }
-    // }
   ],
   "hints": [
     {
@@ -180,6 +180,13 @@
                 ]
               }
             ]
+          },
+          {
+            "hintType": "barren",
+            "saveToVar": "firstLayerIcHint",
+            "options": {
+              "areaType": "category"
+            }
           },
           {
             "maxPicks": 1,
