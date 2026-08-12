@@ -47,12 +47,12 @@
       },
       {
         "ConnectedArea": "LBT West Wing",
-        "Requirements": "((Lakebed_Temple_Small_Key, 3) and CanSmash and (Progressive_Clawshot, 1)) or (Setting.lbtShortCut equals True)",
-        "GlitchedRequirements": "((Lakebed_Temple_Small_Key, 3) and CanSmash and (Progressive_Clawshot, 1)) or (Setting.lbtShortCut equals True)"
+        "Requirements": "((Lakebed_Temple_Small_Key, 3) and ((Setting.blownLBTRocks equals True) or CanSmash) and (Progressive_Clawshot, 1)) or (Setting.lbtShortCut equals True)",
+        "GlitchedRequirements": "((Lakebed_Temple_Small_Key, 3) and ((Setting.blownLBTRocks equals True) or CanSmash) and (Progressive_Clawshot, 1)) or (Setting.lbtShortCut equals True)"
       },
       {
         "ConnectedArea": "LBT Boss Room",
-        "Requirements": "((((Lakebed_Temple_Small_Key, 3) and CanLaunchBombs) or Trick.lbt_chandelier_drop) and (Progressive_Clawshot, 1) or (Setting.lbtShortCut equals True)) and (Lakebed_Temple_Big_Key or (HasSword and Trick.lbt_bk_skip))",
+        "Requirements": "((((Lakebed_Temple_Small_Key, 3) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)) or Trick.lbt_chandelier_drop) and (Progressive_Clawshot, 1) or (Setting.lbtShortCut equals True)) and (Lakebed_Temple_Big_Key or (HasSword and Trick.lbt_bk_skip))",
         "GlitchedRequirements": "((Progressive_Clawshot, 1) and ((Progressive_Sword, 1) or Lakebed_Temple_Big_Key)) or CanDoLJA"
       }
     ],
@@ -74,8 +74,8 @@
       },
       {
         "CheckName": "LBT Central Room Spire Chest",
-        "Requirements": "((((Lakebed_Temple_Small_Key, 3) and CanLaunchBombs) or (Progressive_Clawshot and HasSword and Trick.lbt_chandelier_drop)) or (Setting.lbtShortCut equals True)) and HasHeavyMod",
-        "GlitchedRequirements": "((((Lakebed_Temple_Small_Key, 3) and CanLaunchBombs) or (Progressive_Clawshot and HasSword)) or (Setting.lbtShortCut equals True)) and HasHeavyMod"
+        "Requirements": "((((Lakebed_Temple_Small_Key, 3) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)) or (Progressive_Clawshot and HasSword and Trick.lbt_chandelier_drop)) or (Setting.lbtShortCut equals True)) and HasHeavyMod",
+        "GlitchedRequirements": "((((Lakebed_Temple_Small_Key, 3) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)) or (Progressive_Clawshot and HasSword)) or (Setting.lbtShortCut equals True)) and HasHeavyMod"
       }
     ],
     "Region": "Lakebed Temple"
@@ -92,13 +92,13 @@
     "Checks": [
       {
         "CheckName": "LBT East Lower Waterwheel Stalactite Chest",
-        "Requirements": "CanLaunchBombs",
-        "GlitchedRequirements": "CanLaunchBombs or CanDoLJA"
+        "Requirements": "(Setting.blownLBTRocks equals True) or CanLaunchBombs",
+        "GlitchedRequirements": "((Setting.blownLBTRocks equals True) or CanLaunchBombs) or CanDoLJA"
       },
       {
         "CheckName": "LBT East Lower Waterwheel Bridge Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and (((Lakebed_Temple_Small_Key, 3) and CanLaunchBombs) or (Setting.lbtShortCut equals True))",
-        "GlitchedRequirements": "CanDoLJA or ((Progressive_Clawshot, 1) and HasBombs) or (Room.LBT_East_Wing_Second_Floor and ((Progressive_Clawshot, 1) or CanLaunchBombs) and ((Shadow_Crystal or (HasBombs and HasSword)))) or (Room.LBT_West_Wing and CanLaunchBombs)"
+        "Requirements": "(Progressive_Clawshot, 1) and (((Lakebed_Temple_Small_Key, 3) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)) or (Setting.lbtShortCut equals True))",
+        "GlitchedRequirements": "CanDoLJA or ((Progressive_Clawshot, 1) and HasBombs) or (Room.LBT_East_Wing_Second_Floor and ((Progressive_Clawshot, 1) or ((Setting.blownLBTRocks equals True) or CanLaunchBombs)) and ((Shadow_Crystal or (HasBombs and HasSword)))) or (Room.LBT_West_Wing and ((Setting.blownLBTRocks equals True) or CanLaunchBombs))"
       },
       {
         "CheckName": "LBT Before Deku Toad Alcove Chest",
@@ -115,23 +115,23 @@
         // pass the underwater chests in order to get the key from this chest in order
         // to access the underwater chests which they just walked past. This can lead
         // to nonsensical Path hints.
-        "Requirements": "(((Setting.lbtSmallKeySettings equals Vanilla) and CanDefeatDekuToad and (Lakebed_Temple_Small_Key, 2) and Zora_Armor and HasHeavyMod and CanUseWaterBombs and (Progressive_Clawshot, 1)) or ((Lakebed_Temple_Small_Key,3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash)))) or (Setting.lbtShortCut equals True)",
+        "Requirements": "(((Setting.lbtSmallKeySettings equals Vanilla) and CanDefeatDekuToad and (Lakebed_Temple_Small_Key, 2) and Zora_Armor and HasHeavyMod and ((Setting.blownLBTRocks equals True) or CanUseWaterBombs) and (Progressive_Clawshot, 1)) or ((Lakebed_Temple_Small_Key,3) and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or ((Progressive_Clawshot, 1) and CanSmash)))) or (Setting.lbtShortCut equals True)",
         "GlitchedRequirements": "CanDoLJA or ((Lakebed_Temple_Small_Key, 2) and (CanLaunchBombs or (Progressive_Clawshot, 1))) or (Setting.lbtShortCut equals True)"
       },
       {
         "CheckName": "LBT Before Deku Toad Underwater Left Chest",
-        "Requirements": "Zora_Armor and HasHeavyMod and (Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
-        "GlitchedRequirements": "((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and CanLaunchBombs)) and HasHeavyMod"
+        "Requirements": "Zora_Armor and HasHeavyMod and (Lakebed_Temple_Small_Key, 3) and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or ((Progressive_Clawshot, 1) and CanSmash))",
+        "GlitchedRequirements": "((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs))) and HasHeavyMod"
       },
       {
         "CheckName": "LBT Before Deku Toad Underwater Right Chest",
-        "Requirements": "Zora_Armor and HasHeavyMod and (Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
-        "GlitchedRequirements": "((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1)))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and CanLaunchBombs) and HasHeavyMod"
+        "Requirements": "Zora_Armor and HasHeavyMod and (Lakebed_Temple_Small_Key, 3) and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or ((Progressive_Clawshot, 1) and CanSmash))",
+        "GlitchedRequirements": "((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1)))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)) and HasHeavyMod"
       },
       {
         "CheckName": "LBT Deku Toad Chest",
-        "Requirements": "CanDefeatDekuToad and (Lakebed_Temple_Small_Key, 3) and Zora_Armor and HasHeavyMod and CanUseWaterBombs and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
-        "GlitchedRequirements": "CanDefeatDekuToad and (((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1)))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and CanLaunchBombs)) and HasHeavyMod and (CanUseWaterBombs or Zora_Armor)"
+        "Requirements": "CanDefeatDekuToad and (Lakebed_Temple_Small_Key, 3) and Zora_Armor and HasHeavyMod and ((Setting.blownLBTRocks equals True) or CanUseWaterBombs) and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or ((Progressive_Clawshot, 1) and CanSmash))",
+        "GlitchedRequirements": "CanDefeatDekuToad and (((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1)))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs))) and HasHeavyMod and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or Zora_Armor)"
       }
     ],
     "Region": "Lakebed Temple"
@@ -146,8 +146,8 @@
       },
       {
         "ConnectedArea": "LBT East Wing First Floor",
-        "Requirements": "CanLaunchBombs or (Progressive_Clawshot, 1)",
-        "GlitchedRequirements": "CanLaunchBombs or (Progressive_Clawshot, 1)"
+        "Requirements": "((Setting.blownLBTRocks equals True) or CanLaunchBombs) or (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "((Setting.blownLBTRocks equals True) or CanLaunchBombs) or (Progressive_Clawshot, 1)"
       }
     ],
     "Checks": [
@@ -158,18 +158,18 @@
       },
       {
         "CheckName": "LBT East Second Floor Southeast Chest",
-        "Requirements": "CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash)",
-        "GlitchedRequirements": "CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash)"
+        "Requirements": "((Setting.blownLBTRocks equals True) or CanLaunchBombs) or ((Progressive_Clawshot, 1) and CanSmash)",
+        "GlitchedRequirements": "((Setting.blownLBTRocks equals True) or CanLaunchBombs) or ((Progressive_Clawshot, 1) and CanSmash)"
       },
       {
         "CheckName": "LBT East Water Supply Small Chest",
-        "Requirements": "(Lakebed_Temple_Small_Key, 3) and ((Progressive_Clawshot, 1) or CanLaunchBombs) and CanSmash and HasHeavyMod",
-        "GlitchedRequirements": "(Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or (Progressive_Clawshot and CanSmash))"
+        "Requirements": "(Lakebed_Temple_Small_Key, 3) and ((Progressive_Clawshot, 1) or ((Setting.blownLBTRocks equals True) or CanLaunchBombs)) and ((Setting.blownLBTRocks equals True) or CanSmash) and HasHeavyMod",
+        "GlitchedRequirements": "(Lakebed_Temple_Small_Key, 3) and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or (Progressive_Clawshot and CanSmash))"
       },
       {
         "CheckName": "LBT East Water Supply Clawshot Chest",
-        "Requirements": "(Lakebed_Temple_Small_Key, 3) and (Progressive_Clawshot, 1) and CanSmash and HasHeavyMod",
-        "GlitchedRequirements": "(Lakebed_Temple_Small_Key, 3) and (Progressive_Clawshot, 1) and CanSmash"
+        "Requirements": "(Lakebed_Temple_Small_Key, 3) and (Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanSmash) and HasHeavyMod",
+        "GlitchedRequirements": "(Lakebed_Temple_Small_Key, 3) and (Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanSmash)"
       }
     ],
     "Region": "Lakebed Temple"
@@ -184,8 +184,8 @@
       },
       {
         "ConnectedArea": "LBT Central Room",
-        "Requirements": "Zora_Armor and CanLaunchBombs",
-        "GlitchedRequirements": "(Zora_Armor or CanDoAirRefill) and (CanLaunchBombs or CanStepClip)"
+        "Requirements": "Zora_Armor and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)",
+        "GlitchedRequirements": "(Zora_Armor or CanDoAirRefill) and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or CanStepClip)"
       }
     ],
     "Checks": [
@@ -201,8 +201,8 @@
       },
       {
         "CheckName": "LBT Stalactite Room Chest",
-        "Requirements": "CanLaunchBombs and Zora_Armor",
-        "GlitchedRequirements": "(CanLaunchBombs or CanDoLJA) and (Zora_Armor or CanDoAirRefill)"
+        "Requirements": "((Setting.blownLBTRocks equals True) or CanLaunchBombs) and Zora_Armor",
+        "GlitchedRequirements": "(((Setting.blownLBTRocks equals True) or CanLaunchBombs) or CanDoLJA) and (Zora_Armor or CanDoAirRefill)"
       }
     ],
     "Region": "Lakebed Temple"
@@ -229,49 +229,49 @@
       },
       {
         "CheckName": "LBT Underwater Maze Small Chest",
-        "Requirements": "Zora_Armor and (Progressive_Clawshot,1) and (CanLaunchBombs or (Setting.lbtShortCut equals True))",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Zora_Armor or CanDoLJA) and (CanLaunchBombs or (Setting.lbtShortCut equals True))"
+        "Requirements": "Zora_Armor and (Progressive_Clawshot,1) and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or (Setting.lbtShortCut equals True))",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Zora_Armor or CanDoLJA) and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or (Setting.lbtShortCut equals True))"
       },
       {
         "CheckName": "LBT Big Key Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and (CanUseWaterBombs or Trick.lbt_bk_without_bombs) and Zora_Armor and (CanLaunchBombs or (Setting.lbtShortCut equals True)) and HasHeavyMod",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Zora_Armor or CanDoLJA) and (CanLaunchBombs or (Setting.lbtShortCut equals True))"
+        "Requirements": "(Progressive_Clawshot, 1) and (((Setting.blownLBTRocks equals True) or CanUseWaterBombs) or Trick.lbt_bk_without_bombs) and Zora_Armor and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or (Setting.lbtShortCut equals True)) and HasHeavyMod",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Zora_Armor or CanDoLJA) and (((Setting.blownLBTRocks equals True) or CanLaunchBombs) or (Setting.lbtShortCut equals True))"
       },
       {
         "CheckName": "LBT West Second Floor Southwest Underwater Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and HasHeavyMod and CanLaunchBombs",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and HasHeavyMod and CanLaunchBombs"
+        "Requirements": "(Progressive_Clawshot, 1) and HasHeavyMod and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and HasHeavyMod and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)"
       },
       {
         "CheckName": "LBT West Second Floor Northeast Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
+        "Requirements": "(Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)"
       },
       {
         "CheckName": "LBT West Second Floor Southeast Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
+        "Requirements": "(Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)"
       },
       {
         "CheckName": "LBT West Water Supply Small Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs and HasHeavyMod",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
+        "Requirements": "(Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs) and HasHeavyMod",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)"
       },
       {
         "CheckName": "LBT West Water Supply Chest",
-        "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs and HasHeavyMod",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
+        "Requirements": "(Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs) and HasHeavyMod",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((Setting.blownLBTRocks equals True) or CanLaunchBombs)"
       },
       {
         "CheckName": "Catch A Greengill",
-        "Requirements": "Progressive_Fishing_Rod and Progressive_Clawshot and CanLaunchBombs and HasHeavyMod",
-        "GlitchedRequirements": "Progressive_Fishing_Rod and CanLaunchBombs and Progressive_Clawshot"
+        "Requirements": "Progressive_Fishing_Rod and Progressive_Clawshot and ((Setting.blownLBTRocks equals True) or CanLaunchBombs) and HasHeavyMod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and ((Setting.blownLBTRocks equals True) or CanLaunchBombs) and Progressive_Clawshot"
       },
       {
         // Technically there is a loach in the water supply and one in the BK room. However the one in the water supply has the simplest logical requirements and will always be met before reaching the BK room, so we use that logic for the check.
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "CanCatchBaitedFish and Progressive_Clawshot and CanLaunchBombs and HasHeavyMod",
-        "GlitchedRequirements": "CanCatchBaitedFish and CanLaunchBombs and Progressive_Clawshot"
+        "Requirements": "CanCatchBaitedFish and Progressive_Clawshot and ((Setting.blownLBTRocks equals True) or CanLaunchBombs) and HasHeavyMod",
+        "GlitchedRequirements": "CanCatchBaitedFish and ((Setting.blownLBTRocks equals True) or CanLaunchBombs) and Progressive_Clawshot"
       }
     ],
     "Region": "Lakebed Temple"
