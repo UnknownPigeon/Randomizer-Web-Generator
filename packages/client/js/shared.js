@@ -531,6 +531,8 @@
       { id: 'lessKeyPalaceCheckbox'},
       { id: 'skipZantCheckbox' },
       { id: 'coroKeyCheckbox' },
+      { id: 'autoRefillConsumablesCheckbox' },
+      { id: 'blownLBTRocksCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1207,11 +1209,15 @@
       processBasic({ id: 'lessKeyPalace' });
       processBasic({ id: 'skipZant' });
       processBasic({ id: 'coroKey' });
+      processBasic({ id: 'autoRefillConsumables' });
+      processBasic({ id: 'blownLBTRocks' });
     } else {
       res.hcSkip = false;
       res.lessKeyPalace = false;
       res.skipZant = false;
       res.coroKey = false;
+      res.autoRefillConsumables = false;
+      res.blownLBTRocks = false;
     }
 
     res.startingItems = processor.nextEolList(9);

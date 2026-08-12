@@ -1734,6 +1734,7 @@ namespace TPRandomizer
                         ].ReachedByPlaythrough && CanUse(Item.Progressive_Fishing_Rod)
                     )
                     || Randomizer.Rooms.RoomDict["CitS Entrance"].ReachedByPlaythrough
+                    || (Randomizer.SSettings.autoRefillConsumables)
                 )
             );
         }
@@ -1775,6 +1776,7 @@ namespace TPRandomizer
                     Randomizer.Rooms.RoomDict["CT Goron House Balcony"].ReachedByPlaythrough
                     && !Randomizer.SSettings.shuffleShopItems
                 )
+                || (Randomizer.SSettings.autoRefillConsumables)
             );
         }
 
@@ -1818,6 +1820,7 @@ namespace TPRandomizer
                     && CanDefeatChu()
                 )
                 || (Randomizer.Rooms.RoomDict["HC Graveyard"].ReachedByPlaythrough && CanSmash())
+                || (Randomizer.SSettings.autoRefillConsumables)
             );
         }
 

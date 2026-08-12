@@ -391,7 +391,8 @@ namespace TPRandomizer.Assets
                 fcSettings.lightSwordGlowColor.getResult().basicDataEntry == 0xFFFFFE, // Rainbow Glow
                 randomizerSettings.shuffleExteriorEntrances,
                 randomizerSettings.skipZant,
-                randomizerSettings.coroKey
+                randomizerSettings.coroKey,
+                randomizerSettings.autoRefillConsumables
             };
 
             List<bool[]> flagArrayList = new()

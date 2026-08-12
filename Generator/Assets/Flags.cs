@@ -533,6 +533,25 @@ namespace TPRandomizer.Assets
             { 0x4, 0x78 }, // Blew up rock in front of lakebed.
         };
 
+        public static readonly byte[,] BlownLBTRocksRegionFlags = new byte[,]
+        {
+            { 0x12, 0x78 }, // blown up second rock in room before big key
+            { 0x12, 0x79 }, // blown up first rock in room before big key
+            { 0x12, 0x85 }, // blown up rock in room before mini-boss
+            { 0x12, 0x8D }, // stalactite fell in first west room 2F
+            { 0x12, 0x8E }, // stalactite falls by itself in second room
+            { 0x12, 0x8F }, // left stalactite fell in first east room 2F
+            { 0x12, 0x90 }, // right stalactite fell in first east room 2F
+            { 0x12, 0x91 }, // blown up rock in first east room 2F
+            { 0x12, 0x92 }, // south stalactite fell in first east room 1F
+            { 0x12, 0x93 }, // north stalactite fell in first east room 1F
+            { 0x12, 0x94 }, // south-east stalactite fell second room
+            { 0x12, 0x95 }, // north east stalactite fell in second room
+            { 0x12, 0x96 }, // south Stalactite fell second room
+            { 0x12, 0x97 }, // north west stalactite fell in second room
+            { 0x12, 0x98 }, // south west stalactile fell in second room
+        };
+    
         public static readonly byte[,] OpenArbitersRegionFlags = new byte[,]
         {
             { 0xA, 0x43 }, // Explored part 9 of the Bulblin camp area
@@ -845,6 +864,7 @@ namespace TPRandomizer.Assets
                 { 62, CitsBridgeShortcutRegionFlags },
                 { 63, CitsFanShortcutRegionFlags },
                 { 64, lessKeyPalaceFlags },
+                { 65, BlownLBTRocksRegionFlags }
             };
 
         /// <summary>
@@ -1150,6 +1170,7 @@ namespace TPRandomizer.Assets
             /* 62 */RandomizerSettings.citsBridgeShortCut,
             /* 63 */RandomizerSettings.citsFanShortCut,
             /* 64 */RandomizerSettings.lessKeyPalace,
+            /* 65 */RandomizerSettings.blownLBTRocks,
         };
     }
 }
