@@ -2686,7 +2686,7 @@ function populateSSettings(s) {
   $('#skipZantCheckbox').prop('checked', s.skipZant);
   $('#coroKeyCheckbox').prop('checked', s.coroKey);
   $('#autoRefillConsumablesCheckbox').prop('checked', s.autoRefillConsumables);
-  $('#blownLBTRocksCheckbox').prop('checked', s.blownLbtRocks);
+  $('#blownLBTRocksCheckbox').prop('checked', s.blownLBTRocks);
   $('#greatSpinCheckbox').prop('checked', s.alwaysGreatSpin);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
