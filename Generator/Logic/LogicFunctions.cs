@@ -1898,7 +1898,10 @@ namespace TPRandomizer
                         "Mist Area Near Faron Woods Cave"
                     ].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Ordon Spring"].ReachedByPlaythrough
+                    && (
+                        Randomizer.Rooms.RoomDict["Ordon Spring"].ReachedByPlaythrough
+                        || CanUse(Item.Shadow_Crystal)
+                    )
                     && (
                         !Randomizer.SSettings.bonksDoDamage
                         || (
