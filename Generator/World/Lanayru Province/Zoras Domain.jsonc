@@ -411,8 +411,8 @@
       },
       {
         "CheckName": "ZD Underwater Goron",
-        "Requirements": "CanUseWaterBombs and HasHeavyMod and (Zora_Armor or Trick.underwater_goron_without_za) and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "CanUseWaterBombs and HasHeavyMod and CanCompleteLanayruTwilight"
+        "Requirements": "CanUseWaterBombs and Iron_Boots and (Zora_Armor or Trick.underwater_goron_without_za) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanUseWaterBombs and Iron_Boots and CanCompleteLanayruTwilight"
       },
       {
         "CheckName": "ZD Portal",
