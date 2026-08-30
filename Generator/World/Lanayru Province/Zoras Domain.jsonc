@@ -118,8 +118,8 @@
       },
       {
         "CheckName": "Iza Raging Rapids Minigame",
-        "Requirements": "Room.UZR_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "Room.UZR_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight"
+        "Requirements": "(Room.UZR_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight) and CanPay",
+        "GlitchedRequirements": "(Room.UZR_River and (HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))) and (Progressive_Bow, 1) and CanCompleteLanayruTwilight) and CanPay"
       }
     ],
     "Region": "Zoras Domain"
@@ -187,25 +187,25 @@
       },
       {
         "ConnectedArea": "Fishing Hole Canoe",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanPay",
+        "GlitchedRequirements": "CanPay"
       }
     ],
     "Checks": [
       {
         "CheckName": "Rollgoal 1-1",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanPay",
+        "GlitchedRequirements": "CanPay"
       },
       {
         "CheckName": "Rollgoal 1-8",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanPay",
+        "GlitchedRequirements": "CanPay"
       },
       {
         "CheckName": "Rollgoal 8-8",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanPay",
+        "GlitchedRequirements": "CanPay"
       }
     ],
     "Region": "Zoras Domain"

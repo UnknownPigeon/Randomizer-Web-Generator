@@ -26,7 +26,7 @@
     "Checks": [
       {
         "CheckName": "Charlo Donation Blessing",
-        "Requirements": "CanCompleteLanayruTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet or (Setting.affordableDonations equals true))",
+        "Requirements": "CanCompleteLanayruTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet or ((Setting.affordableDonations equals true) and CanPay))",
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
@@ -49,14 +49,14 @@
     "Checks": [
       {
         "CheckName": "STAR Prize 1",
-        "Requirements": "(Progressive_Clawshot, 1) or Trick.star_1_without_claw",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+        "Requirements": "((Progressive_Clawshot, 1) or Trick.star_1_without_claw) and CanPay",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanPay"
       },
       // To Trigger STAR 2, you have to clear STAR 1 and you have to talk to the girls outside the tent as their "eek it's HIM" dialogue, triggers STAR 2.
       {
         "CheckName": "STAR Prize 2",
-        "Requirements": "((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.star_2_without_2_claws)) and (Room.CT_West and CanCompleteLanayruTwilight)",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Room.CT_West and CanCompleteLanayruTwilight)"
+        "Requirements": "((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.star_2_without_2_claws)) and (Room.CT_West and CanCompleteLanayruTwilight) and CanPay",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Room.CT_West and CanCompleteLanayruTwilight) and CanPay"
       }
     ],
     "Region": "Castle Town"
@@ -161,13 +161,13 @@
       },
       {
         "CheckName": "CT Goron Shop Red Potion",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanPay",
+        "GlitchedRequirements": "CanPay"
       },
       {
         "CheckName": "CT Goron Shop Lantern Oil",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanPay",
+        "GlitchedRequirements": "CanPay"
       }
     ],
     "Region": "Castle Town"
@@ -184,8 +184,8 @@
     "Checks": [
       {
         "CheckName": "CT Goron Shop Arrow Refill",
-        "Requirements": "CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+        "Requirements": "CanCompleteLanayruTwilight and CanPay",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and CanPay"
       }
     ],
     "Region": "Castle Town"

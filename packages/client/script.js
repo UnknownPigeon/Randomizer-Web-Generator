@@ -964,6 +964,9 @@ document
   .getElementById('plumacessCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('lockedLWCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('greatSpinCheckbox')
   .addEventListener('click', setSettingsString);
 
@@ -2691,6 +2694,7 @@ function populateSSettings(s) {
   $('#autoRefillConsumablesCheckbox').prop('checked', s.autoRefillConsumables);
   $('#blownLBTRocksCheckbox').prop('checked', s.blownLBTRocks);
   $('#plumacessCheckbox').prop('checked', s.plumacess);
+  $('#lockedLWCheckbox').prop('checked', s.lockedLW);
   $('#greatSpinCheckbox').prop('checked', s.alwaysGreatSpin);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');

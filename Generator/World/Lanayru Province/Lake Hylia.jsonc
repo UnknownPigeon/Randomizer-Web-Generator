@@ -14,8 +14,8 @@
       },
       {
         "ConnectedArea": "Lake Hylia Flight By Fowl",
-        "Requirements": "CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+        "Requirements": "CanCompleteLanayruTwilight and CanPay",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and CanPay"
       },
       {
         "ConnectedArea": "Gerudo Desert",
@@ -117,8 +117,8 @@
     "Exits": [
       {
         "ConnectedArea": "Lake Hylia",
-        "Requirements": "CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+        "Requirements": "CanCompleteLanayruTwilight and CanPay",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and CanPay"
       },
       {
         "ConnectedArea": "Lake Hylia Bridge",
@@ -128,8 +128,8 @@
       {
         // You can use the cannon and a cucco to reach the grotto ledge without any requirements.
         "ConnectedArea": "Lake Hylia Shell Blade Grotto",
-        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight and CanPay",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight and CanPay"
       }
     ],
     "Checks": [
@@ -389,8 +389,8 @@
     "Exits": [
       {
         "ConnectedArea": "Lake Hylia Flight By Fowl",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanPay",
+        "GlitchedRequirements": "CanPay"
       }
     ],
     "Checks": [

@@ -48,7 +48,7 @@ namespace TPRandomizer
                 case Item.Progressive_Bow:
                     return CanGetArrows();
                 default:
-                    return true;
+                    return true;             
             }
         }
 
@@ -1468,6 +1468,14 @@ namespace TPRandomizer
             );
         }
 
+        public static bool CanPay()
+        {
+            return (
+                CanUse(Item.Progressive_Wallet) 
+                || Randomizer.SSettings.walletSize != WalletSize.Minimal
+            );
+        }
+
         /// <summary>
         /// summary text.
         /// </summary>
@@ -1475,7 +1483,7 @@ namespace TPRandomizer
         {
             return (
                 CanUse(Item.Hylian_Shield)
-                || (
+                || (((
                     Randomizer.Rooms.RoomDict["Kak Malo Mart"].ReachedByPlaythrough
                     && !Randomizer.SSettings.shuffleShopItems
                 )
@@ -1484,6 +1492,8 @@ namespace TPRandomizer
                     && !Randomizer.SSettings.shuffleShopItems
                 )
                 || Randomizer.Rooms.RoomDict["Death Mountain Hot Spring"].ReachedByPlaythrough
+                ) && CanPay()
+                )
             );
         }
 
@@ -1727,14 +1737,17 @@ namespace TPRandomizer
             return (
                 CanUse(Item.Filled_Bomb_Bag)
                 && (
-                    Randomizer.Rooms.RoomDict["Kak Barnes Bomb Shop Lower"].ReachedByPlaythrough
-                    || (
-                        Randomizer.Rooms.RoomDict[
-                            "Eldin Field Water Bomb Fish Grotto"
-                        ].ReachedByPlaythrough && CanUse(Item.Progressive_Fishing_Rod)
+                    (
+                        (Randomizer.Rooms.RoomDict["Kak Barnes Bomb Shop Lower"].ReachedByPlaythrough
+                            // || (
+                            //     Randomizer.Rooms.RoomDict[
+                            //         "Eldin Field Water Bomb Fish Grotto"
+                            //     ].ReachedByPlaythrough && CanUse(Item.Progressive_Fishing_Rod)
+                            // )
+                            || Randomizer.Rooms.RoomDict["CitS Entrance"].ReachedByPlaythrough)
+                        && CanPay()
                     )
-                    || Randomizer.Rooms.RoomDict["CitS Entrance"].ReachedByPlaythrough
-                    || (Randomizer.SSettings.autoRefillConsumables)
+                    || Randomizer.SSettings.autoRefillConsumables
                 )
             );
         }
@@ -1747,17 +1760,19 @@ namespace TPRandomizer
             return (
                 CanUse(Item.Filled_Bomb_Bag)
                 && (
+                    (
                     Randomizer.Rooms.RoomDict["Kak Barnes Bomb Shop Lower"].ReachedByPlaythrough
-                    || (
-                        Randomizer.Rooms.RoomDict[
-                            "Eldin Field Water Bomb Fish Grotto"
-                        ].ReachedByPlaythrough && CanUse(Item.Progressive_Fishing_Rod)
-                    )
+                    // || (
+                    //     Randomizer.Rooms.RoomDict[
+                    //         "Eldin Field Water Bomb Fish Grotto"
+                    //     ].ReachedByPlaythrough && CanUse(Item.Progressive_Fishing_Rod)
+                    // )
                     || (
                         Randomizer.Rooms.RoomDict["Kak Barnes Bomb Shop Lower"].ReachedByPlaythrough
                         && Randomizer.Rooms.RoomDict["CT Malo Mart"].ReachedByPlaythrough
                     )
-                )
+                    )
+                ) && CanPay()
             );
         }
 
@@ -1768,15 +1783,15 @@ namespace TPRandomizer
         {
             return (
                 Randomizer.Rooms.RoomDict["Lost Woods"].ReachedByPlaythrough
-                || (
+                || (((
                     CanCompleteGoronMines()
                     && Randomizer.Rooms.RoomDict["Kak Malo Mart"].ReachedByPlaythrough
                 )
                 || (
                     Randomizer.Rooms.RoomDict["CT Goron House Balcony"].ReachedByPlaythrough
                     && !Randomizer.SSettings.shuffleShopItems
-                )
-                || (Randomizer.SSettings.autoRefillConsumables)
+                )) && CanUse(Item.Progressive_Wallet)) 
+                || Randomizer.SSettings.autoRefillConsumables
             );
         }
 
@@ -1790,23 +1805,11 @@ namespace TPRandomizer
             // using the Lantern is not valid.
             return (
                 Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["South Faron Woods"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["AG Entrance"].ReachedByPlaythrough
                 || (
                     Randomizer.Rooms.RoomDict["Lake Hylia Long Cave"].ReachedByPlaythrough
                     && CanSmash()
                 )
-                || Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
-                || (
-                    CanCompleteGoronMines()
-                    && Randomizer.Rooms.RoomDict["Lower Kak Village"].ReachedByPlaythrough
-                )
-                || (
-                    Randomizer.Rooms.RoomDict["CT Goron House"].ReachedByPlaythrough
-                    && !Randomizer.SSettings.shuffleShopItems
-                )
-                || Randomizer.Rooms.RoomDict["Death Mountain Hot Spring"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["CitS Entrance"].ReachedByPlaythrough
                 || (
                     Randomizer.Rooms.RoomDict["HC Main Hall"].ReachedByPlaythrough
                     && CanDefeatBokoblin()
@@ -1820,7 +1823,22 @@ namespace TPRandomizer
                     && CanDefeatChu()
                 )
                 || (Randomizer.Rooms.RoomDict["HC Graveyard"].ReachedByPlaythrough && CanSmash())
-                || (Randomizer.SSettings.autoRefillConsumables)
+                || (
+                    (Randomizer.Rooms.RoomDict["South Faron Woods"].ReachedByPlaythrough
+                    || Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
+                    || (
+                        CanCompleteGoronMines()
+                        && Randomizer.Rooms.RoomDict["Lower Kak Village"].ReachedByPlaythrough
+                    )
+                    || (
+                        Randomizer.Rooms.RoomDict["CT Goron House"].ReachedByPlaythrough
+                        && !Randomizer.SSettings.shuffleShopItems
+                    )
+                    || Randomizer.Rooms.RoomDict["Death Mountain Hot Spring"].ReachedByPlaythrough
+                    || Randomizer.Rooms.RoomDict["CitS Entrance"].ReachedByPlaythrough)
+                    && CanPay()
+                ) 
+                || Randomizer.SSettings.autoRefillConsumables
             );
         }
 

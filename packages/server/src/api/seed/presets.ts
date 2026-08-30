@@ -66,6 +66,22 @@ export const PRESETS = [
     description:
       'Season 2 tournament settings. These are the latest tournament settings.',
   },
+  {
+    name: 'Drehen S2',
+    aliases: ['ds2', 'drehenseason2', 'tournament'],
+    origSettingsStr:
+      '8sg3z4EP99999999Caaaa_xZAqX6Jme0W1VeC0007mCa8yoUFdo-NezKKZKQZKmxbSLtIwNIwNIwN2u70u70u70u70u71_oT3rpok5GFsD8C1bIJCWIu8n03x7bhmSMuHMeBTb5bDqXYMGHSb-9uvtwU1-NuF4xaLS5DHo75bNPOjK7QSnHZQPTH1bTPstSJXIWj5emISQKYX7O8Opf90b1DEXncj9DJJ8EnQtGD4E0ODuvGeVufaXPyomG_y001_y',
+    description:
+      'Drehen s2 tournament settings.',
+  },
+  {
+    name: 'Drehen S3',
+    aliases: ['ds3', 'drehenseason3', 'tournament'],
+    origSettingsStr:
+      '8sY7H4EP99999999Caaaa_yZQ4X6KGe0W1mni0007-Ca8yoUFdo-NezKKZKQZKmxbSwNIwNIwNIuN0u70u70u70u70uF-JeUkULmg1-nf1WCgIPa2N1680VOyjU3Yt2Ar1RieRf34iWYvByJpzFo_1udSYgQZaEBAkoLZ5gWxJcACRJBg8Chjkud2b1QBHWauqf52EmGndII1A2QT3ZDQIQccGTYrkWQ8S0mRnolyaBFcM27_W00F_mG0fB0KtGAPO5EK2cy1Gu0he0KMWA5e5Ke2fm1L40hBWLHWAvW5HK2dY1ML0euWKSWAce5N82e81OX0iG0M7mB3m5Xq2mu1OR0iD0M6GB2m5XC2og1PK0ifWMKWBA85au2oQ1PC0ibWMIWB985aW2oE1PG0idWMHWB2G5X42mU1OE0i6WM30B1O5We2mI1O80i30M1GB0W5WC2nY1Om0iN0MBGB5W5_y',
+    description:
+      'Drehen s3 tournament settings.',
+  },
 ];
 
 export const PRESETS_SAFE_STR = escapeHtml(JSON.stringify(PRESETS));
