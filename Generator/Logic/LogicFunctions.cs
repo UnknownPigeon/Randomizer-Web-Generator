@@ -2331,6 +2331,7 @@ namespace TPRandomizer
                 case WalletSize.Large:
                     return true;
                 case WalletSize.Reduced:
+                case WalletSize.Minimal:
                     return GetItemCount(Item.Progressive_Wallet) >= 2;
                 default:
                     return CanUse(Item.Progressive_Wallet);

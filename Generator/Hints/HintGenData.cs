@@ -425,6 +425,7 @@ namespace TPRandomizer.Hints
             switch (sSettings.walletSize)
             {
                 case WalletSize.Reduced:
+                case WalletSize.Minimal:
                     multiToMaxItems[Item.Progressive_Wallet] = 2;
                     break;
                 case WalletSize.Vanilla:

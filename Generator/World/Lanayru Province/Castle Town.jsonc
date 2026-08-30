@@ -26,7 +26,7 @@
     "Checks": [
       {
         "CheckName": "Charlo Donation Blessing",
-        "Requirements": "CanCompleteLanayruTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet or (Setting.affordableDonations equals true))",
+        "Requirements": "CanCompleteLanayruTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet or (Setting.affordableDonations equals true))",
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
@@ -156,8 +156,8 @@
     "Checks": [
       {
         "CheckName": "CT Goron Shop Hylian Shield",
-        "Requirements": "(Setting.walletSize not_equal Reduced) or Progressive_Wallet",
-        "GlitchedRequirements": "(Setting.walletSize not_equal Reduced) or Progressive_Wallet"
+        "Requirements": "((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet",
+        "GlitchedRequirements": "((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet"
       },
       {
         "CheckName": "CT Goron Shop Red Potion",

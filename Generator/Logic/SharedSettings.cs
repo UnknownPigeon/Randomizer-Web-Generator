@@ -190,7 +190,7 @@ namespace TPRandomizer
             fastIronBoots = processor.NextBool();
             quickTransform = processor.NextBool();
             transformAnywhere = processor.NextBool();
-            walletSize = (WalletSize)processor.NextInt(2);
+            walletSize = (WalletSize)processor.NextInt(3);
             modifyShopModels = processor.NextBool();
             trapFrequency = (TrapFrequency)processor.NextInt(3);
             barrenDungeons = processor.NextBool();

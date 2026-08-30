@@ -362,18 +362,18 @@
     "Checks": [
       {
         "CheckName": "Kak Village Malo Mart Hylian Shield",
-        "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
-        "GlitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+        "Requirements": "CanCompleteEldinTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet)",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet)"
       },
       {
         "CheckName": "Kak Village Malo Mart Hawkeye",
-        "Requirements": "CanCompleteGoronMines and Room.Kak_Top_of_Watchtower and (Progressive_Bow, 1) and CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
-        "GlitchedRequirements": "CanCompleteGoronMines and Room.Kak_Top_of_Watchtower and (Progressive_Bow, 1) and CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+        "Requirements": "CanCompleteGoronMines and Room.Kak_Top_of_Watchtower and (Progressive_Bow, 1) and CanCompleteEldinTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet)",
+        "GlitchedRequirements": "CanCompleteGoronMines and Room.Kak_Top_of_Watchtower and (Progressive_Bow, 1) and CanCompleteEldinTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet)"
       },
       {
         "CheckName": "Kak Village Malo Mart Red Potion",
-        "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
-        "GlitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+        "Requirements": "CanCompleteEldinTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet)",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet)"
       },
       {
         "CheckName": "Kak Village Malo Mart Wooden Shield",
@@ -510,8 +510,8 @@
     "Checks": [
       {
         "CheckName": "Barnes Bomb Bag",
-        "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
-        "GlitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+        "Requirements": "CanCompleteEldinTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet)",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet)"
       }
     ],
     "region": "Kakariko Village"

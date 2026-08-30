@@ -17,6 +17,7 @@ namespace TPRandomizer.SSettings.Enums
         Vanilla = 1,
         HD = 2,
         Large = 3,
+        Minimal = 4,
     }
 
     public enum CastleRequirements

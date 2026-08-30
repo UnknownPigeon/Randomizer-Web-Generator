@@ -1064,7 +1064,10 @@ namespace TPRandomizer
                     {
                         updateItemToCount(RandomizedImportantItems, Item.Progressive_Wallet, 1);
                     }
-                    else if (Randomizer.SSettings.walletSize >= WalletSize.HD)
+                    else if (
+                        Randomizer.SSettings.walletSize == WalletSize.HD
+                        || Randomizer.SSettings.walletSize == WalletSize.Large
+                    )
                     {
                         updateItemToCount(RandomizedImportantItems, Item.Progressive_Wallet, 0);
                     }

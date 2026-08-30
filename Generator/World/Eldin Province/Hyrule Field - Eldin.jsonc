@@ -276,8 +276,8 @@
         // require that they already have access to the Lanayru side of the bridge to
         // avoid a confusing scenario where the player is expected to build the bridge
         // to do this check but then crossing the bridge would be going out of logic.
-        "Requirements": "CanCompleteEldinTwilight and Room.Lower_Kak_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kak_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))",
-        "GlitchedRequirements": "CanCompleteEldinTwilight and Room.Lower_Kak_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kak_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))"
+        "Requirements": "CanCompleteEldinTwilight and Room.Lower_Kak_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kak_Malo_Mart and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet)))",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and Room.Lower_Kak_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kak_Malo_Mart and (((Setting.walletSize not_equal Reduced) and (Setting.walletSize not_equal Minimal)) or Progressive_Wallet)))"
       }
     ],
     "Region": "Hyrule Field - Eldin Province"

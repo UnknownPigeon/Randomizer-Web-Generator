@@ -462,7 +462,7 @@
       { id: 'fastIBCheckbox' },
       { id: 'quickTransformCheckbox' },
       { id: 'transformAnywhereCheckbox' },
-      { id: 'walletSizeFieldset', bitLength: 2 },
+      { id: 'walletSizeFieldset', bitLength: 3 },
       { id: 'modifyShopModelsCheckbox' },
       { id: 'trapItemFieldset', bitLength: 3 },
       { id: 'barrenCheckbox' },
@@ -983,8 +983,9 @@
     processBasic({ id: 'fastIronBoots' });
     processBasic({ id: 'quickTransform' });
     processBasic({ id: 'transformAnywhere' });
-    if (version >= 6) {
-      // `increaseWalletCapacity` changed from a checkbox to a select
+    if (version >= 8) {
+      processBasic({ id: 'walletSize', bitLength: 3 });
+    } else if (version >= 6) {
       processBasic({ id: 'walletSize', bitLength: 2 });
     } else {
       const walletSize = {
