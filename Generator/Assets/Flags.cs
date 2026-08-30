@@ -98,6 +98,7 @@ namespace TPRandomizer.Assets
             { 0x15, 0xA1 }, // Unlock door in Darknut Room in ToT
             { 0x15, 0xA3 }, // Skip small CS when darknut room door opens
             { 0x9, 0x55 }, // STAR Tent intro CS.
+            { 0x14, 0x56 }, // Watched CS of Yeta entering boss room.
         };
 
         /// <summary>
@@ -394,7 +395,6 @@ namespace TPRandomizer.Assets
             { 0x13, 0xED }, // Got Arbiter's Grounds Big Key.
             { 0x14, 0x57 }, // Unlocked Snowpeak Ruins Boss Door.
             { 0x14, 0xED }, // Got Snowpeak Ruins Big Key.
-            { 0x14, 0x56 }, // Watched CS of Yeta entering boss room.
             { 0x15, 0x7F }, // Unlocked Temple of Time Boss Door.
             { 0x15, 0xED }, // Got Temple of Time Big Key.
             { 0x16, 0x58 }, // Unlocked City in The Sky Boss Door.

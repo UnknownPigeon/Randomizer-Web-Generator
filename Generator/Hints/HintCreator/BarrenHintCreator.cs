@@ -376,13 +376,13 @@ namespace TPRandomizer.Hints.HintCreator
                     List<string> result = new(bRoom.getCheckNames());
                     switch (bossRoom)
                     {
-                        case "Goron Mines Boss Room":
+                         case "GM Boss Room":
                             result.AddRange(CheckFunctions.postFyrusChecks);
                             break;
-                        case "Snowpeak Ruins Boss Room":
+                         case "SPR Boss Room":
                             result.AddRange(CheckFunctions.postBlizettaChecks);
                             break;
-                        case "Temple of Time Boss Room":
+                       case "ToT Boss Room":
                             result.AddRange(CheckFunctions.postArmogohmaChecks);
                             break;
                     }
