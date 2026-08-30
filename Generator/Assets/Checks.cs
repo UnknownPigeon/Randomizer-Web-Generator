@@ -278,6 +278,14 @@ namespace TPRandomizer
 
         public static List<string> postBlizettaChecks = new() { "Snowboard Racing Prize", };
 
+        public static List<string> plumAccessChecks =
+            new()
+            {
+                "Plumm Fruit Balloon Minigame",
+                "Talk To Plumm As Wolf",
+                "Talk To Plumm As Link",
+            };
+
         public static List<string> postArmogohmaChecks =
             new()
             {
@@ -607,6 +615,13 @@ namespace TPRandomizer
                 if (parseSetting.hcSkip)
                 {
                     if (currentCheck.checkCategory.Contains("Hyrule Castle"))
+                    {
+                        currentCheck.checkStatus = "Excluded";
+                    }
+                }
+                if (parseSetting.plumacess)
+                {
+                    if (plumAccessChecks.Contains(currentCheck.checkName))
                     {
                         currentCheck.checkStatus = "Excluded";
                     }

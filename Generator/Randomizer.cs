@@ -549,6 +549,8 @@ namespace TPRandomizer
                 part2Settings.Add("coroKey", SSettings.coroKey);
             if (SSettings.autoRefillConsumables)
                 part2Settings.Add("autoRefillConsumables", SSettings.autoRefillConsumables);
+            if (SSettings.plumacess)
+                part2Settings.Add("plumacess", SSettings.plumacess);
 
             // Complex fields
             if (SSettings.startingItems?.Count > 0)

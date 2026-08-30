@@ -360,6 +360,13 @@ namespace TPRandomizer
                 }
             }
 
+            if (sSettings.plumacess)
+            {
+                allowedUnreachableChecks.Add("Plumm Fruit Balloon Minigame");
+                allowedUnreachableChecks.Add("Talk To Plumm As Wolf");
+                allowedUnreachableChecks.Add("Talk To Plumm As Link");
+            }
+
             return allowedUnreachableChecks;
         }
 

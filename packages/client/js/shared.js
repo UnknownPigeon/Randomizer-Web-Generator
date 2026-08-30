@@ -533,6 +533,7 @@
       { id: 'coroKeyCheckbox' },
       { id: 'autoRefillConsumablesCheckbox' },
       { id: 'blownLBTRocksCheckbox' },
+      { id: 'plumacessCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1211,6 +1212,7 @@
       processBasic({ id: 'coroKey' });
       processBasic({ id: 'autoRefillConsumables' });
       processBasic({ id: 'blownLBTRocks' });
+      processBasic({ id: 'plumacess' });
     } else {
       res.hcSkip = false;
       res.lessKeyPalace = false;
@@ -1218,6 +1220,7 @@
       res.coroKey = false;
       res.autoRefillConsumables = false;
       res.blownLBTRocks = false;
+      res.plumacess = false;
     }
 
     res.startingItems = processor.nextEolList(9);

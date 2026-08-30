@@ -132,6 +132,7 @@ namespace TPRandomizer
         public bool autoRefillConsumables { get; set; }
         public bool blownLBTRocks { get; set; }
         public bool alwaysGreatSpin { get; set; }
+        public bool plumacess { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
         public Dictionary<string, string> logicalTricks { get; set; }
@@ -260,6 +261,7 @@ namespace TPRandomizer
             coroKey = processor.NextBool();
             autoRefillConsumables = processor.NextBool();
             blownLBTRocks = processor.NextBool();
+            plumacess = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

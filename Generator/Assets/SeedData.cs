@@ -392,7 +392,8 @@ namespace TPRandomizer.Assets
                 randomizerSettings.shuffleExteriorEntrances,
                 randomizerSettings.skipZant,
                 randomizerSettings.coroKey,
-                randomizerSettings.autoRefillConsumables
+                randomizerSettings.autoRefillConsumables,
+                randomizerSettings.plumacess
             };
 
             List<bool[]> flagArrayList = new()

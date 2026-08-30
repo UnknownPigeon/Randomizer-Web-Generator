@@ -961,6 +961,9 @@ document
   .getElementById('blownLBTRocksCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('plumacessCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('greatSpinCheckbox')
   .addEventListener('click', setSettingsString);
 
@@ -2687,6 +2690,7 @@ function populateSSettings(s) {
   $('#coroKeyCheckbox').prop('checked', s.coroKey);
   $('#autoRefillConsumablesCheckbox').prop('checked', s.autoRefillConsumables);
   $('#blownLBTRocksCheckbox').prop('checked', s.blownLBTRocks);
+  $('#plumacessCheckbox').prop('checked', s.plumacess);
   $('#greatSpinCheckbox').prop('checked', s.alwaysGreatSpin);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');

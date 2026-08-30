@@ -24,8 +24,8 @@
       },
       {
         "ConnectedArea": "UZR River",
-        "Requirements": "false",
-        "GlitchedRequirements": "false"
+        "Requirements": "Shadow_Crystal and (Setting.plumacess equals False)",
+        "GlitchedRequirements": "Shadow_Crystal and (Setting.plumacess equals False)"
       },
       {
         "ConnectedArea": "Lake Hylia Lanayru Spring",
@@ -101,13 +101,13 @@
       },
       {
         "CheckName": "Talk To Plumm As Wolf",
-        "Requirements": "CanCompleteLanayruTwilight and Shadow_Crystal",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight and Shadow_Crystal"
+        "Requirements": "CanCompleteLanayruTwilight and Shadow_Crystal and (Setting.plumacess equals False)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and Shadow_Crystal and (Setting.plumacess equals False)"
       },
       {
         "CheckName": "Talk To Plumm As Link",
-        "Requirements": "CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+        "Requirements": "CanCompleteLanayruTwilight and (Setting.plumacess equals False)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and (Setting.plumacess equals False)"
       }
     ],
     "Region": "Lake Hylia"
