@@ -59,6 +59,14 @@ export const PRESETS = [
       'Season 1 tournament settings. Good for a quick seed or to learn racing basics.',
   },
   {
+    name: 'Drehen Debug',
+    origSettingsStr:
+      '8sQ3_4EP99999999Caaaa_xZAqX6Jme0W1VeC0007mCa8yoUFdo-NezKKZKQZKmxbSLtIwNIwNIwN2u70u70u70u70u71_oT3rpok5GFsD8C1bIJCWIu8n03x7bhmSMuHMeBTb5bDqXYMGHSb-9uvtwU1-NuF4xaLS5DHo75bNPOjK7QSnHZQPTH1bTPstSJXIWj5emISQKYX7O8Opf90b1DEXncj9DJJ8EnQtGD4E0ODuvGeVufaXPyomG_y00133_m',
+    description:
+      'Drehen debug settings.',
+  },
+
+  {
     name: 'Season 2',
     aliases: ['s2', 'season2', 'tournament'],
     origSettingsStr:
