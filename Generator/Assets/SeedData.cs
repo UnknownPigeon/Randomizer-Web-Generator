@@ -393,7 +393,8 @@ namespace TPRandomizer.Assets
                 randomizerSettings.skipZant,
                 randomizerSettings.coroKey,
                 randomizerSettings.autoRefillConsumables,
-                randomizerSettings.plumacess
+                randomizerSettings.plumacess,
+                randomizerSettings.lockedLW
             };
 
             List<bool[]> flagArrayList = new()

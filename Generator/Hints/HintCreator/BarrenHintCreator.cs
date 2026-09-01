@@ -27,8 +27,9 @@ namespace TPRandomizer.Hints.HintCreator
                 HintCategory.Northern_Desert,
                 HintCategory.Golden_Wolf,
                 HintCategory.Lantern_Chests,
+                HintCategory.Lakebed_Temple_Underwater,
             };
-
+        
         private static readonly Dictionary<Zone, string> dungeonZoneToRegionName =
             new()
             {
@@ -90,6 +91,20 @@ namespace TPRandomizer.Hints.HintCreator
                     "validAreas",
                     null
                 );
+
+                //
+                List<string> validCategoryStrList = HintSettingUtils.getOptionalStringList(
+                    options,
+                    "validCategories",
+                    null
+                );
+                if (validCategoryStrList != null)
+                {
+                    inst.areaType = AreaId.AreaType.Category;
+                    validAreaStrList = validCategoryStrList;
+                }
+                //
+
                 if (validAreaStrList != null)
                 {
                     inst.validAreas = new();
@@ -425,7 +440,7 @@ namespace TPRandomizer.Hints.HintCreator
                             result.Add(AreaId.Category(category));
                         }
                         break;
-                    }
+                    }        
                     default:
                         throw new Exception(
                             $"Failed to provide default baseAreaIds for areaType '{areaType}'."

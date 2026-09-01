@@ -474,8 +474,8 @@
       },
       {
         "ConnectedArea": "Lake Hylia Flight By Fowl",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanPay",
+        "GlitchedRequirements": "CanPay"
       },
       {
         "ConnectedArea": "Faron Field",

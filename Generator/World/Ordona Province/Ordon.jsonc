@@ -58,8 +58,8 @@
       },
       {
         "ConnectedArea": "Ordon Seras Shop",
-        "Requirements": "CanCompleteGoats1",
-        "GlitchedRequirements": "CanCompleteGoats1"
+        "Requirements": "CanCompleteGoats1 and CanPay",
+        "GlitchedRequirements": "CanCompleteGoats1 and CanPay"
       },
       {
         "ConnectedArea": "Ordon Shield House Lower",

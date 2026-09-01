@@ -377,8 +377,8 @@
       },
       {
         "CheckName": "Kak Village Malo Mart Wooden Shield",
-        "Requirements": "CanCompleteEldinTwilight",
-        "GlitchedRequirements": "CanCompleteEldinTwilight"
+        "Requirements": "CanCompleteEldinTwilight and CanPay",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and CanPay"
       }
     ],
     "region": "Kakariko Village"

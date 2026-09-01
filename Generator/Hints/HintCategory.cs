@@ -27,7 +27,8 @@ namespace TPRandomizer.Hints
         Palace_of_Twilight_Center_Wing = 20,
         Palace_of_Twilight_West_Wing = 21,
         Palace_of_Twilight_East_Wing = 22,
-        Lantern_Chests = 23
+        Lantern_Chests = 23,
+        Lakebed_Temple_Underwater = 24
     }
 
     public class HintCategoryUtils
@@ -420,7 +421,16 @@ namespace TPRandomizer.Hints
                         "LLC Sixth Chest",
                         "LLC End Lantern Chest",
                     }
-                }                
+                },
+                {
+                    HintCategory.Lakebed_Temple_Underwater,
+                    new[]
+                    {
+                        "LBT Before Deku Toad Underwater Left Chest",
+                        "LBT Before Deku Toad Underwater Right Chest",
+                        "LBT West Second Floor Southwest Underwater Chest",
+                    }
+                },
             };
 
         static HintCategoryUtils()
@@ -448,7 +458,8 @@ namespace TPRandomizer.Hints
                 { HintCategory.Palace_of_Twilight_Center_Wing, "Palace_of_Twilight_Center_Wing" },
                 { HintCategory.Palace_of_Twilight_West_Wing, "Palace_of_Twilight_West_Wing" },
                 { HintCategory.Palace_of_Twilight_East_Wing, "Palace_of_Twilight_East_Wing" },
-                { HintCategory.Lantern_Chests, "Lantern_Chests" }
+                { HintCategory.Lantern_Chests, "Lantern_Chests" },
+                { HintCategory.Lakebed_Temple_Underwater, "Lakebed_Temple_Underwater"}
             };
 
             strToEnum = new();

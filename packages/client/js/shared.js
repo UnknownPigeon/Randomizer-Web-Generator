@@ -534,6 +534,7 @@
       { id: 'autoRefillConsumablesCheckbox' },
       { id: 'blownLBTRocksCheckbox' },
       { id: 'plumacessCheckbox' },
+      { id: 'lockedLWCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1214,6 +1215,7 @@
       processBasic({ id: 'autoRefillConsumables' });
       processBasic({ id: 'blownLBTRocks' });
       processBasic({ id: 'plumacess' });
+      processBasic({ id: 'lockedLW' });
     } else {
       res.hcSkip = false;
       res.lessKeyPalace = false;
@@ -1222,6 +1224,7 @@
       res.autoRefillConsumables = false;
       res.blownLBTRocks = false;
       res.plumacess = false;
+      res.lockedLW = false;
     }
 
     res.startingItems = processor.nextEolList(9);
