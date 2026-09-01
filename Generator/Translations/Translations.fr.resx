@@ -161,6 +161,10 @@
     <value>$(ap:dans,plural)les {cs}Grottes secrètes{ce}</value>
     <comment></comment>
   </data>
+  <data name="area.category.lakebed_temple_underwater" xml:space="preserve">
+    <value>$(ap:dans)les {cs}3 coffres sous l&apos;eau{ce} de ce Donjon</value>
+    <comment></comment>
+  </data>
   <data name="area.category.lantern_chests" xml:space="preserve">
     <value>$(ap:dans)un {cs}Coffre qui apparait en allumant des torches{ce}</value>
     <comment></comment>

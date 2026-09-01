@@ -101,6 +101,17 @@ namespace TPRandomizer.Assets
             { 0x14, 0x56 }, // Watched CS of Yeta entering boss room.
         };
 
+        public static readonly byte[,] OpenCTMaloMartRegionFlags = new byte[,]
+        {
+            { 0x9, 0x73 }, // malo mart posters on shop
+        };
+
+        public static readonly byte[,] OpenCTMaloMartEventFlags = new byte[,]
+        {
+            { 0x22, 0x10 }, // Malo Mart Castle Town branch is open
+            { 0x0F, 0x10 }, // Funded Castle Town Malo Mart
+        };
+
         /// <summary>
         /// summary text.
         /// </summary>
@@ -864,7 +875,8 @@ namespace TPRandomizer.Assets
                 { 62, CitsBridgeShortcutRegionFlags },
                 { 63, CitsFanShortcutRegionFlags },
                 { 64, lessKeyPalaceFlags },
-                { 65, BlownLBTRocksRegionFlags }
+                { 65, BlownLBTRocksRegionFlags },
+                { 66, OpenCTMaloMartRegionFlags },
             };
 
         /// <summary>
@@ -1096,6 +1108,7 @@ namespace TPRandomizer.Assets
                 { 30, bridgeDonationEventFlags },
                 { 56, AnimalConversationEventFlags },
                 { 57, SpawnGWolvesEventFlags },
+                { 66, OpenCTMaloMartEventFlags },
             };
         private static readonly SharedSettings RandomizerSettings = Randomizer.SSettings;
 
@@ -1171,6 +1184,7 @@ namespace TPRandomizer.Assets
             /* 63 */RandomizerSettings.citsFanShortCut,
             /* 64 */RandomizerSettings.lessKeyPalace,
             /* 65 */RandomizerSettings.blownLBTRocks,
+            /* 66 */RandomizerSettings.maloShopDonation == 0
         };
     }
 }

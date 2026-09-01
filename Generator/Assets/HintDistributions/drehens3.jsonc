@@ -71,6 +71,17 @@
       }
     },
     {
+      "spot": "lakebed_temple_sign",
+      "hintDef": {
+        "hintType": "barren",
+        "options": {
+          "areaType": "category",
+          "canBeClaimHinted": true,
+          "validCategories": ["Lakebed_Temple_Underwater"]
+        }
+      }
+    },
+    {
       "spot": "snowpeak_ruins_sign",
       "hintDef": {
         "maxPicks": 1,
@@ -185,7 +196,17 @@
             "hintType": "barren",
             "saveToVar": "firstLayerIcHint",
             "options": {
-              "areaType": "category"
+              "areaType": "category",
+              "validCategories" :
+              [
+                "Grotto",
+                "Mist",
+                "Owl_Statue",
+                "Underwater",
+                "Southern_Desert",
+                "Northern_Desert",
+                "Lantern_Chests"
+              ]
             }
           },
           {
@@ -206,7 +227,7 @@
             "maxPicks": 6,
             "hintDef": [
               {
-                "maxPicks": 3,
+                "maxPicks": 2,
                 "copies": 1,
                 "saveToVar": "firstLayerPathHints",
                 "hintDef": [
@@ -296,13 +317,13 @@
         "hintDef": [
           {
             "maxPicks": 6,
-            "iterations": 2,
             "hintDef": [
               {
                 // Hint 1 dungeon sometimes
                 "hintDef": {
                   "hintType": "location",
                   "saveToVar": "2ndLayerDungeon",
+                  "iterations": 2,
                   "options": {
                     "markAsSometimes": true,
                     "validChecks": [
@@ -310,7 +331,6 @@
                       "GM Outside Clawshot Chest",
                       "CitS West Wing First Chest",
                       "PoT Big Key Chest",
-                      "LBT Deku Toad Chest",
                       "AG Death Sword Chest",
                       "ToT Darknut Chest",
                       "CitS Aeralfos Chest"

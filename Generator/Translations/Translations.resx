@@ -169,6 +169,10 @@
     <value>$(plural)Grottos</value>
     <comment></comment>
   </data>
+  <data name="area.category.lakebed_temple_underwater" xml:space="preserve">
+    <value>this Dungeon{cs} 3 underwater chests{ce}</value>
+    <comment></comment>
+  </data>
   <data name="area.category.lantern_chests" xml:space="preserve">
     <value>a {cs}spawnable lantern chests{ce}</value>
     <comment></comment>
