@@ -18,8 +18,8 @@
   },
   "always": {
     "monopolizeSpots": true,
-    "idealNumSpots": 6,
-    "copies": 3,
+    "idealNumSpots": 4,
+    "copies": 2,
     "groupId": "overworld"
   },
   //
@@ -154,7 +154,7 @@
     {
       "groupId": "overworld",
       "hintDef": {
-        "copies": 2,
+        "copies": 3,
         "hintDef": [
           {
             "hintDef": [
@@ -181,8 +181,8 @@
                   // },
                   {
                     "hintType": "barren",
-                    "iterations": 4,
-                    "starting": 4,
+                    "iterations": 3,
+                    "starting": 3,
                     "saveToVar": "barrenHints",
                     "options": {
                       "validAreas": ["alias:overworldZones"]
@@ -194,7 +194,7 @@
           },
           {
             "hintType": "barren",
-            "saveToVar": "firstLayerIcHint",
+            "saveToVar": "firstLayerHint",
             "options": {
               "areaType": "category",
               "validCategories" :
@@ -214,7 +214,7 @@
             "hintDef": [
               {
                 "hintType": "importanceCount",
-                "saveToVar": "firstLayerIcHint",
+                "saveToVar": "firstLayerHint",
                 "options": {
                   "indicateImportant": false
                 }
@@ -222,14 +222,11 @@
             ]
           },
           {
-            // Generates at most 3 hints at 1 copy each, then fills using var
-            // until 6 hint copies total.
-            "maxPicks": 6,
             "hintDef": [
               {
                 "maxPicks": 2,
-                "copies": 1,
-                "saveToVar": "firstLayerPathHints",
+                "copies": 3,
+                "saveToVar": "firstLayerHint",
                 "hintDef": [
                   {
                     "hintType": "path",
@@ -250,23 +247,12 @@
                     }
                   }
                 ]
-              },
-              // Fill in with extra path hint copies until we have the base 6
-              // copies.
-              {
-                "hintType": "var",
-                "copies": 1,
-                "iterations": 99,
-                "options": {
-                  "varName": "firstLayerPathHints",
-                  "randomOrder": true
-                }
               }
             ]
           },
           {
             "hintType": "numItemInArea",
-            "saveToVar": "firstLayerIcHint",
+            "saveToVar": "firstLayerHint",
             "options": {
               "item": "Progressive_Sword",
               "areaType": "province",
@@ -275,33 +261,13 @@
             }
           },
           {
-            "hintType": "numItemInArea",
-            "saveToVar": "firstLayerIcHint",
-            "options": {
-              "item": "Progressive_Sword",
-              "areaType": "province",
-              "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert"],
-              "order": "asc"
-            }
-          },
-          // Fill layer with extra copies of the IC hint and path hints. Order
-          // not random so we do an extra IC hint before the sometimes.
-          {
             "copies": 1,
             "iterations": 99,
             "hintDef": [
               {
                 "hintType": "var",
                 "options": {
-                  "varName": "firstLayerIcHint"
-                }
-              },
-              {
-                "hintType": "var",
-                "iterations": 3,
-                "options": {
-                  "varName": "firstLayerPathHints",
-                  "randomOrder": true
+                  "varName": "firstLayerHint"
                 }
               }
             ]
@@ -310,16 +276,27 @@
       }
     },
     {
-      // 2nd layer is "sometimes" hints
+      // 2nd layer
       "groupId": "overworld",
       "hintDef": {
-        "copies": 2,
         "hintDef": [
           {
+            "copies": 3,
+            "hintType": "numItemInArea",
+            "saveToVar": "2ndLayerDungeon",
+            "options": {
+              "item": "Progressive_Sword",
+              "areaType": "province",
+              "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert"],
+              "order": "asc"
+            }
+          },
+          {
+            "copies": 2,
             "maxPicks": 6,
             "hintDef": [
               {
-                // Hint 1 dungeon sometimes
+                // Hint 2 dungeon sometimes
                 "hintDef": {
                   "hintType": "location",
                   "saveToVar": "2ndLayerDungeon",
@@ -349,8 +326,6 @@
               }
             ]
           },
-          // Fill in layer with extra copies of the sometimes hints
-          // (prioritizing Dungeon).
           {
             "hintDef": [
               {

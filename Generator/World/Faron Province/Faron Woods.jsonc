@@ -475,8 +475,8 @@
       },
       {
         "ConnectedArea": "North Faron Lost Woods Entrance",
-        "Requirements": "CanCompleteFaronTwilight and (((Setting.lockedLW equals False) or Boomerang) or Shadow_Crystal)",
-        "GlitchedRequirements": "(Shadow_Crystal and CanCompleteFaronTwilight and ((Setting.lockedLW equals False) or Boomerang)) or (HasBombs and CanDoLJA)"
+        "Requirements": "CanCompleteFaronTwilight and (((Setting.lockedLW equals True) and Boomerang) or ((Setting.lockedLW equals False) and Shadow_Crystal))",
+        "GlitchedRequirements": "(CanCompleteFaronTwilight and ((Setting.lockedLW equals False) or Boomerang)) or ((Setting.lockedLW equals False) and ((HasBombs and CanDoLJA) or Shadow_Crystal))"
       },
       {
         "ConnectedArea": "FT Entrance",
