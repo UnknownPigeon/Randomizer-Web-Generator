@@ -8,10 +8,11 @@ function initSecrets(): void {
     jwtSecret = fs.readFileSync('/run/secrets/jwt_secret', 'utf8').trim();
     apiSecret = fs.readFileSync('/run/secrets/api_secret', 'utf8').trim();
   } else {
-    jwtSecret = 'example_secret_key';
-    apiSecret = 'example_secret_key';
+    jwtSecret = process.env.JWT_SECRET ?? '';
+    apiSecret = process.env.API_SECRET ?? '';
   }
 }
+
 
 function getJwtSecret(): string {
   if (!jwtSecret) {
