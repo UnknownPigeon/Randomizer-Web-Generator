@@ -58,6 +58,7 @@ export const PRESETS = [
     description:
       'Season 1 tournament settings. Good for a quick seed or to learn racing basics.',
   },
+  
   {
     name: 'Season 2',
     aliases: ['s2', 'season2', 'tournament'],
@@ -68,7 +69,6 @@ export const PRESETS = [
   },
   {
     name: 'Drehen S2',
-    aliases: ['ds2', 'drehenseason2', 'tournament'],
     origSettingsStr:
       '8sQ3_4EP99999999Caaaa_xZAqX6Jme0W1VeC0007mCa8yoUFdo-NezKKZKQZKmxbSLtIwNIwNIwN2u70u70u70u70u71_oT3rpok5GFsD8C1bIJCWIu8n03x7bhmSMuHMeBTb5bDqXYMGHSb-9uvtwU1-NuF4xaLS5DHo75bNPOjK7QSnHZQPTH1bTPstSJXIWj5emISQKYX7O8Opf90b1DEXncj9DJJ8EnQtGD4E0ODuvGeVufaXPyomG_y00133_m',
     description:
@@ -76,7 +76,6 @@ export const PRESETS = [
   },
   {
     name: 'Drehen S3.1',
-    aliases: ['ds3', 'drehenseason3', 'tournament'],
     origSettingsStr:
       '8sQ7M4EP99999999Caaaa_yZQ4X6KGe0W1m0C00W7-Ca8yoUFdo-NezKKZKQZKmxbSLtIwNIwNIwN2u70u70u70u70u71_oT3rpok5GFsD8C1bIJCWIu8n03x7bhmSMuHMeBTb3T8Oba4N9VYUVf-NuF4xaLJKSXnPLsIiOjK7QSnHZQPTH1bTjt4uKeBHQC4d6b8eHs26CwIG9GJJeSPhIJKqo3iMjq3H3W63UEL_aXPyomG_y00124CF_WW1IM0fkWKomASe5Du2Xm1NG0ej0KBGAfG5JW2g81MN0gZ0Lp0AYe5F42ig1Hn0ev0LDGAkG5GG2n21OW0iFWM7WB3e5Xm2ms1OQ0iCWM5WB2O5bK2oe1PJ0if0MKGB9m5aq2oO1PB0ib0MIGB905aS2oW1PF0iZ0M4WB285Wy2mS1OD0i60M2mB1G5Wa2mG1O60i2WM10B0O5Z42nW1Ok0iMWMB0B_u',
     description:
@@ -84,7 +83,6 @@ export const PRESETS = [
   },
   {
     name: 'Drehen S3.2',
-    aliases: ['ds3', 'drehenseason3', 'tournament'],
     origSettingsStr:
       '8s25W4EP99999999Caaaa_yZQ4X6KGe0W1m0C00W7-Ca8yoUFdo-NezKKZKQZKmxbSwNIwNIwNIuN0u70u70u70u70uF-JeUkULmg1-nf1WCgIPa2N1680VOyjU3Yt2Ar1RieGo_4y_JylmTpibOnQeEqRGoksxXWauqf52EmGndII1A2QT3ZDQIQccGTYrcY33_92p__W008GXX_-8GB405Xy2my1OT0iE0M6mB3G5Xa2mi1OJ0igWML0BAO5b82oY1PE0icWMJ0B9O5ae2oI1P80iZWMK0B9u5aO2ma1OH0i7WM3WB1e5Wm2mM1OA0i4WM20B0m5WK2m81O30iOWMC0B5m5Yq2nO1V_',
     description:
