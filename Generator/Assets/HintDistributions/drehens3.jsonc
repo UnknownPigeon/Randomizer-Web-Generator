@@ -185,10 +185,24 @@
                     "starting": 3,
                     "saveToVar": "barrenHints",
                     "options": {
-                      "validAreas": ["alias:overworldZones"]
+                      "validAreas": ["alias:allminusfishjournal"]
                     }
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "hintDef": [
+              {
+                "hintType": "importanceCount",
+                "iterations": 1,
+                "starting": 1,
+                "options": {
+                  "areaType": "zone",
+                  "indicateImportant": true,
+                  "validAreas": ["Fish Journal Zone"]
+                }
               }
             ]
           },
@@ -210,27 +224,14 @@
             }
           },
           {
-            "maxPicks": 1,
             "hintDef": [
               {
-                "hintType": "importanceCount",
-                "saveToVar": "firstLayerHint",
-                "options": {
-                  "indicateImportant": false
-                }
-              }
-            ]
-          },
-          {
-            "hintDef": [
-              {
-                "maxPicks": 2,
                 "copies": 3,
                 "saveToVar": "firstLayerHint",
                 "hintDef": [
                   {
                     "hintType": "path",
-                    "iterations": 2,
+                    "iterations": 3,
                     "options": {
                       // Each goal hinted at most once.
                       "unhintedGoalsOnly": true,
@@ -256,7 +257,7 @@
             "options": {
               "item": "Progressive_Sword",
               "areaType": "province",
-              "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert", "Ordona", "Peak"],
+              "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert", "Ordona", "Peak", "Fish_Journal_Province"],
               "order": "desc"
             }
           },
@@ -280,7 +281,7 @@
       "groupId": "overworld",
       "hintDef": {
         "hintDef": [
-          {
+          {     
             "copies": 3,
             "hintType": "numItemInArea",
             "saveToVar": "2ndLayerDungeon",

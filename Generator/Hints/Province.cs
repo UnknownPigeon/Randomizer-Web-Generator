@@ -19,11 +19,12 @@ namespace TPRandomizer.Hints
         Desert = 5,
         Peak = 6,
         Dungeon = 7,
+        Fish_Journal_Province = 8,
     }
 
     public class ProvinceUtils
     {
-        public static readonly byte NumBitsToEncode = 3;
+        public static readonly byte NumBitsToEncode = 4;
         private static Dictionary<Province, string> enumToStr;
         private static readonly Dictionary<Province, HashSet<Zone>> provinceToZones =
             new()
@@ -88,6 +89,10 @@ namespace TPRandomizer.Hints
                         Zone.Palace_of_Twilight,
                         Zone.Hyrule_Castle,
                     }
+                },
+                {
+                    Province.Fish_Journal_Province,
+                    new() { Zone.Fish_Journal_Zone, }
                 }
             };
         private static Dictionary<Zone, Province> zoneToProvince;
@@ -160,6 +165,7 @@ namespace TPRandomizer.Hints
                     Province.Desert,
                     Province.Peak,
                     Province.Dungeon,
+                    Province.Fish_Journal_Province,
                 };
             foreach (Province province in validProvinces)
             {

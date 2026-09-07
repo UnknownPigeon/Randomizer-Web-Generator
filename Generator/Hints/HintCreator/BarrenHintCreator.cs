@@ -583,6 +583,54 @@ namespace TPRandomizer.Hints.HintCreator
                     }
                     break;
                 }
+                case "allminusfishjournal":
+                {
+                    HashSet<Zone> allminusfishjournal =
+                        new()
+                        {
+                            Zone.Ordon,
+                            Zone.Sacred_Grove,
+                            Zone.Faron_Field,
+                            Zone.Faron_Woods,
+                            Zone.Kakariko_Gorge,
+                            Zone.Kakariko_Village,
+                            Zone.Kakariko_Graveyard,
+                            Zone.Eldin_Field,
+                            Zone.North_Eldin,
+                            Zone.Death_Mountain,
+                            Zone.Hidden_Village,
+                            Zone.Lanayru_Field,
+                            Zone.Beside_Castle_Town,
+                            Zone.South_of_Castle_Town,
+                            Zone.Castle_Town,
+                            Zone.Agithas_Castle,
+                            Zone.Great_Bridge_of_Hylia,
+                            Zone.Lake_Hylia,
+                            Zone.Lake_Lantern_Cave,
+                            Zone.Lanayru_Spring,
+                            Zone.Zoras_Domain,
+                            Zone.Upper_Zoras_River,
+                            Zone.Gerudo_Desert,
+                            Zone.Bulblin_Camp,
+                            Zone.Snowpeak_Mountain,
+                            Zone.Cave_of_Ordeals,
+                            Zone.Forest_Temple,
+                            Zone.Goron_Mines,
+                            Zone.Lakebed_Temple,
+                            Zone.Arbiters_Grounds,
+                            Zone.Snowpeak_Mountain,
+                            Zone.Temple_of_Time,
+                            Zone.City_in_the_Sky,
+                            Zone.Palace_of_Twilight,
+                            Zone.Hyrule_Castle,
+                        };
+
+                    foreach (Zone zone in allminusfishjournal)
+                    {
+                        result.Add(AreaId.Zone(zone));
+                    }
+                    break;
+                }
                 default:
                     throw new Exception($"Failed to resolve alias '{alias}'.");
             }

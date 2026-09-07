@@ -581,6 +581,7 @@ namespace TPRandomizer.Hints
                 { "City in the Sky", Province.Dungeon },
                 { "Palace of Twilight", Province.Dungeon },
                 { "Hyrule Castle", Province.Dungeon },
+                { "Fish Journal Zone", Province.Fish_Journal_Province}
             };
 
         public static readonly Dictionary<string, SpotId> hintZoneToHintSpotLocation =
@@ -748,6 +749,7 @@ namespace TPRandomizer.Hints
                 { Province.Desert, "Desert" },
                 { Province.Peak, "Peak" },
                 { Province.Dungeon, "Dungeon" },
+                { Province.Fish_Journal_Province, "Fish_Journal_Province"},
             };
 
         // Gets inited using `provinceToString`.

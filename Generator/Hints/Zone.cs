@@ -41,6 +41,7 @@ namespace TPRandomizer.Hints
         City_in_the_Sky = 33,
         Palace_of_Twilight = 34,
         Hyrule_Castle = 35,
+        Fish_Journal_Zone = 36
     }
 
     public class ZoneUtils
@@ -625,7 +626,7 @@ namespace TPRandomizer.Hints
                         "ZD Top Ledge Rupee",
                         "ZD Vine Ledge Rupee",
                         "ZD Waterfall Ledge Rupee",
-                        "Catch A Reekfish",
+                        // "Catch A Reekfish",
                     }
                 },
                 {
@@ -642,12 +643,12 @@ namespace TPRandomizer.Hints
                         "UZR Central Underwater Boulder Rupee",
                         "UZR West Underwater Boulder Rupee",
                         "UZR Ledge Boulder Rupee",
-                        "Catch The Legendary Hylian Loach",
-                        "Catch A Greengill",
-                        "Catch An Ordon Catfish",
-                        "Catch A Hyrule Bass",
-                        "Catch A Hylian Pike",
-                        "Catch A Hylian Loach",
+                        // "Catch The Legendary Hylian Loach",
+                        // "Catch A Greengill",
+                        // "Catch An Ordon Catfish",
+                        // "Catch A Hyrule Bass",
+                        // "Catch A Hylian Pike",
+                        // "Catch A Hylian Loach",
                         "Rollgoal 1-1",
                         "Rollgoal 1-8",
                         "Rollgoal 8-8",
@@ -1006,6 +1007,20 @@ namespace TPRandomizer.Hints
                         "HC West Courtyard North Small Chest"
                     }
                 },
+                {
+                    "Fish Journal Zone",
+                    new[]
+                    {
+                        "Catch A Greengill",
+                        "Catch An Ordon Catfish",
+                        "Catch A Hyrule Bass",
+                        "Catch A Hylian Pike",
+                        "Catch A Hylian Loach",
+                        "Catch A Reekfish",
+                        "Catch The Legendary Hylian Loach",
+                    }
+                },
+
             };
 
         static ZoneUtils()
@@ -1047,6 +1062,7 @@ namespace TPRandomizer.Hints
                 { Zone.City_in_the_Sky, "City in the Sky" },
                 { Zone.Palace_of_Twilight, "Palace of Twilight" },
                 { Zone.Hyrule_Castle, "Hyrule Castle" },
+                { Zone.Fish_Journal_Zone, "Fish Journal Zone"}
             };
 
             strToEnum = new();
