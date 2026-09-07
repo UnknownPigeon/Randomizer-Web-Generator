@@ -547,10 +547,12 @@ namespace TPRandomizer
                 part2Settings.Add("coroKey", SSettings.coroKey);
             if (SSettings.autoRefillConsumables)
                 part2Settings.Add("autoRefillConsumables", SSettings.autoRefillConsumables);
-            if (SSettings.plumacess)
-                part2Settings.Add("plumacess", SSettings.plumacess);
+            if (SSettings.plumAcess)
+                part2Settings.Add("plumAcess", SSettings.plumAcess);
             if (SSettings.lockedLW)
                 part2Settings.Add("lockedLW", SSettings.lockedLW);
+            if (SSettings.canDropOilBottle)
+                part2Settings.Add("canDropOilBottle", SSettings.canDropOilBottle);
 
             // Complex fields
             if (SSettings.startingItems?.Count > 0)

@@ -376,7 +376,8 @@ namespace TPRandomizer.Assets
                 randomizerSettings.skipMajorCutscenes,
                 fcSettings.invertCameraAxis,
                 fcSettings.lightSwordAlwaysGlows,
-                randomizerSettings.alwaysGreatSpin
+                randomizerSettings.alwaysGreatSpin,
+                randomizerSettings.canDropOilBottle
             };
             bool[] flagsBitfieldArray =
             {
@@ -393,7 +394,7 @@ namespace TPRandomizer.Assets
                 randomizerSettings.skipZant,
                 randomizerSettings.coroKey,
                 randomizerSettings.autoRefillConsumables,
-                randomizerSettings.plumacess,
+                randomizerSettings.plumAcess,
                 randomizerSettings.lockedLW
             };
 

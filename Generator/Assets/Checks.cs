@@ -619,7 +619,7 @@ namespace TPRandomizer
                         currentCheck.checkStatus = "Excluded";
                     }
                 }
-                if (parseSetting.plumacess)
+                if (parseSetting.plumAcess)
                 {
                     if (plumAccessChecks.Contains(currentCheck.checkName))
                     {

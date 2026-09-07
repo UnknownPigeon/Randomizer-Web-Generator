@@ -694,8 +694,9 @@ namespace TPRandomizer
             result.Add("coroKey", sSettings.coroKey);
             result.Add("autoRefillConsumables", sSettings.autoRefillConsumables);
             result.Add("blownLBTRocks", sSettings.blownLBTRocks);
-            result.Add("plumacess", sSettings.plumacess);
+            result.Add("plumAcess", sSettings.plumAcess);
             result.Add("lockedLW", sSettings.lockedLW);
+            result.Add("canDropOilBottle", sSettings.canDropOilBottle);
             result.Add("totEntrance", sSettings.totEntrance.ToString());
             result.Add("skipCityEntrance", sSettings.skipCityEntrance);
             result.Add("instantText", sSettings.instantText);

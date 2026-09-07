@@ -967,6 +967,9 @@ document
   .getElementById('lockedLWCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('canDropOilBottleCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('greatSpinCheckbox')
   .addEventListener('click', setSettingsString);
 
@@ -2693,8 +2696,9 @@ function populateSSettings(s) {
   $('#coroKeyCheckbox').prop('checked', s.coroKey);
   $('#autoRefillConsumablesCheckbox').prop('checked', s.autoRefillConsumables);
   $('#blownLBTRocksCheckbox').prop('checked', s.blownLBTRocks);
-  $('#plumacessCheckbox').prop('checked', s.plumacess);
+  $('#plumacessCheckbox').prop('checked', s.plumAcess);
   $('#lockedLWCheckbox').prop('checked', s.lockedLW);
+  $('#canDropOilBottleCheckbox').prop('checked', s.canDropOilBottle);
   $('#greatSpinCheckbox').prop('checked', s.alwaysGreatSpin);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');

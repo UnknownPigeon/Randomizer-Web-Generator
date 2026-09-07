@@ -535,6 +535,7 @@
       { id: 'blownLBTRocksCheckbox' },
       { id: 'plumacessCheckbox' },
       { id: 'lockedLWCheckbox' },
+      { id: 'canDropOilBottleCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -1214,8 +1215,9 @@
       processBasic({ id: 'coroKey' });
       processBasic({ id: 'autoRefillConsumables' });
       processBasic({ id: 'blownLBTRocks' });
-      processBasic({ id: 'plumacess' });
+      processBasic({ id: 'plumAcess' });
       processBasic({ id: 'lockedLW' });
+      processBasic({ id: 'canDropOilBottle' });
     } else {
       res.hcSkip = false;
       res.lessKeyPalace = false;
@@ -1223,8 +1225,9 @@
       res.coroKey = false;
       res.autoRefillConsumables = false;
       res.blownLBTRocks = false;
-      res.plumacess = false;
+      res.plumAcess = false;
       res.lockedLW = false;
+      res.canDropOilBottle = false;
     }
 
     res.startingItems = processor.nextEolList(9);
