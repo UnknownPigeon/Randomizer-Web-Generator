@@ -1095,6 +1095,30 @@ namespace TPRandomizer.Assets
                     0x6F0,
                     DataFunctions.ASM_NOP()
                 ),// Remove the Y Rot modificaiton for the hanging shield item
+
+                 new RELReplacement(
+                    (int)ReplacementType.Instruction,
+                    (int)0xFF,
+                    (int)GCRelIDs.D_A_MG_FISH,
+                    0x46BC,
+                    DataFunctions.ASM_NOP()
+                ), // patch fishing rng 1
+
+                 new RELReplacement(
+                    (int)ReplacementType.Instruction,
+                    (int)0xFF,
+                    (int)GCRelIDs.D_A_MG_FISH,
+                    0x46DC,
+                    DataFunctions.ASM_NOP()
+                ), // patch fishing rng 2
+                
+                new RELReplacement(
+                    (int)ReplacementType.Instruction,
+                    (int)0xFF,
+                    (int)GCRelIDs.D_A_MG_FISH,
+                    0x47B8,
+                    DataFunctions.ASM_BRANCH(0x10)
+                ), // patch fishing rng 3
             ];
 
             // Parse Midna hair color replacement
