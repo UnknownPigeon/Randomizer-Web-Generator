@@ -430,6 +430,9 @@ namespace TPRandomizer.Hints.HintCreator
                         // Pick all valid zones
                         foreach (KeyValuePair<string, string[]> pair in ZoneUtils.zoneNameToChecks)
                         {
+                            Console.WriteLine(pair.Key);
+                            if (pair.Key == "Fish Journal Zone")
+                                continue;
                             result.Add(AreaId.ZoneStr(pair.Key));
                         }
                         break;

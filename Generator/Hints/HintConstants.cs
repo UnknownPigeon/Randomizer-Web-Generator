@@ -832,6 +832,17 @@ namespace TPRandomizer.Hints
                 Item.Hyrule_Castle_Dungeon_Map,
             };
 
+        public static readonly HashSet<string> invalidSpolChecks =
+            new()
+            {
+                "Catch A Greengill",
+                "Catch An Ordon Catfish",
+                "Catch A Hyrule Bass",
+                "Catch A Hylian Pike",
+                "Catch A Hylian Loach",
+                "Catch A Reekfish",
+                "Catch The Legendary Hylian Loach"
+            };
         static HintConstants()
         {
             singleCheckItems = HintConstants.bugsToRewardChecksMap.ToDictionary(
