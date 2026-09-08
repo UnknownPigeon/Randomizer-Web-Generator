@@ -200,7 +200,7 @@
                 "starting": 1,
                 "options": {
                   "areaType": "zone",
-                  "indicateImportant": true,
+                  "indicateImportant": false,
                   "validAreas": ["Fish Journal Zone"]
                 }
               }
