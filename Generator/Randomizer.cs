@@ -1365,10 +1365,12 @@ namespace TPRandomizer
                                         if (!currentCheck.hasBeenReached)
                                         {
                                             if (
-                                                SSettings.logicRules == LogicRules.No_Logic
-                                                || graphRoom.Checks[i]
-                                                    .CachedRequirements()
-                                                    .Evaluate()
+                                                (
+                                                    SSettings.logicRules == LogicRules.No_Logic
+                                                    || graphRoom.Checks[i]
+                                                        .CachedRequirements()
+                                                        .Evaluate()
+                                                ) && !graphRoom.Checks[i].IsIsolated
                                             )
                                             {
                                                 if (currentCheck.itemWasPlaced)
@@ -1533,7 +1535,7 @@ namespace TPRandomizer
             check.itemWasPlaced = true;
             check.itemId = item;
 
-            // Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
+            Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
         }
 
         private static void StartOver()
@@ -1695,10 +1697,11 @@ namespace TPRandomizer
             Console.WriteLine("Checking Required Dungeons!");
             // Now loop through all dungeons and validate the necessity of every check related to the dungeon.
 
-            Dictionary<string, Item> checkData = new();
+
             List<Item> requiredItems = new();
             for (int i = 0; i < listOfRequiredDungeons.GetLength(0); i++)
             {
+                Dictionary<string, Item> checkData = new();
                 // If HCBK is locked by dungeons or if HC is not shuffled and barrier also requires dungeons, then all dungeons are required by default
                 if (
                     (
@@ -1740,12 +1743,12 @@ namespace TPRandomizer
                         }
                     }
                 }
-            }
 
-            // After we are done, we want to restore any checks that were listed as "unrequired"
-            foreach (KeyValuePair<string, Item> pair in checkData)
-            {
-                Randomizer.Checks.CheckDict[pair.Key].itemId = pair.Value;
+                // After we are done, we want to restore any checks that were listed as "unrequired"
+                foreach (KeyValuePair<string, Item> pair in checkData)
+                {
+                    Randomizer.Checks.CheckDict[pair.Key].itemId = pair.Value;
+                }
             }
 
             // Next we want to account for items that are multiple and list the dungeon as required as we don't want to assume player preference.
@@ -1790,8 +1793,16 @@ namespace TPRandomizer
                                 // checks in unrequired barren dungeons to not
                                 // be marked as "Excluded-Unrequired".
 
-                                //Console.WriteLine(check + " is now excluded");
-                                Checks.CheckDict[check].checkStatus = "Excluded-Unrequired";
+
+                                if (CheckFunctions.IsolatableChecks.Contains(check))
+                                {
+                                    IsolateUnrequiredDungeonCheck(check, DungeonNames[i]);
+                                }
+                                else
+                                {
+                                    Console.WriteLine(check + " is now excluded");
+                                    Checks.CheckDict[check].checkStatus = "Excluded-Unrequired";
+                                }
                             }
                         }
                     }
@@ -2238,6 +2249,29 @@ namespace TPRandomizer
                 }
             }
             return portalRooms;
+        }
+
+        private static void IsolateUnrequiredDungeonCheck(string checkName, string dungeonName)
+        {
+            foreach (KeyValuePair<string, Room> roomList in Randomizer.Rooms.RoomDict.ToList())
+            {
+                Room currentRoom = roomList.Value;
+                if (currentRoom.Region != null)
+                {
+                    if (currentRoom.Region.Contains(dungeonName) && (currentRoom.Checks != null))
+                    {
+                        foreach (CheckData checkData in currentRoom.Checks)
+                        {
+                            if (checkData.CheckName == checkName)
+                            {
+                                checkData.IsIsolated = true;
+                                Console.WriteLine($"{checkData.CheckName}  is isolated");
+                                Randomizer.Rooms.RoomDict[currentRoom.RoomName] = currentRoom;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
