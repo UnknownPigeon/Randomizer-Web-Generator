@@ -278,44 +278,8 @@ namespace TPRandomizer.Hints
 
         public bool CanBeHinted(HintGenData genData)
         {
-            SharedSettings parseSetting = genData.sSettings;
-            var dungeonBkSettings = new[]
-            {
-                parseSetting.ftBigKeySettings,
-                parseSetting.gmBigKeySettings,
-                parseSetting.lbtBigKeySettings,
-                parseSetting.agBigKeySettings,
-                parseSetting.sprBigKeySettings,
-                parseSetting.totBigKeySettings,
-                parseSetting.citsBigKeySettings,
-                parseSetting.potBigKeySettings,
-                parseSetting.hcBigKeySettings,
-            };
-
-            Zone[] dungeonZones =
-            {
-                Zone.Forest_Temple,
-                Zone.Goron_Mines,
-                Zone.Lakebed_Temple,
-                Zone.Arbiters_Grounds,
-                Zone.Snowpeak_Ruins,
-                Zone.Temple_of_Time,
-                Zone.City_in_the_Sky,
-                Zone.Palace_of_Twilight,
-                Zone.Hyrule_Castle
-            };
-            // Even if a dungeon is hinted barren, we still want to include the
-            // hint for OwnDungeon big keys.
-            for (int i = 0; i < dungeonZones.Count(); i++)
-            {
-                if (
-                    (
-                        dungeonBkSettings[i] != BigKeySettings.Own_Dungeon
-                        || (zone != dungeonZones[i])
-                    ) && genData.hinted.hintedBarrenZones.Contains(zone)
-                )
-                    return false;
-            }
+            if (genData.IsBeyondThisPointHintBlocked(zone))
+                return false;
             return canHintFunc(genData, zone);
         }
     }
@@ -581,7 +545,7 @@ namespace TPRandomizer.Hints
                 { "City in the Sky", Province.Dungeon },
                 { "Palace of Twilight", Province.Dungeon },
                 { "Hyrule Castle", Province.Dungeon },
-                { "Fish Journal Zone", Province.Fish_Journal_Province}
+                { "Fish Journal Zone", Province.Fish_Journal_Province }
             };
 
         public static readonly Dictionary<string, SpotId> hintZoneToHintSpotLocation =
@@ -749,7 +713,7 @@ namespace TPRandomizer.Hints
                 { Province.Desert, "Desert" },
                 { Province.Peak, "Peak" },
                 { Province.Dungeon, "Dungeon" },
-                { Province.Fish_Journal_Province, "Fish_Journal_Province"},
+                { Province.Fish_Journal_Province, "Fish_Journal_Province" },
             };
 
         // Gets inited using `provinceToString`.
@@ -843,6 +807,7 @@ namespace TPRandomizer.Hints
                 "Catch A Reekfish",
                 "Catch The Legendary Hylian Loach"
             };
+
         static HintConstants()
         {
             singleCheckItems = HintConstants.bugsToRewardChecksMap.ToDictionary(
