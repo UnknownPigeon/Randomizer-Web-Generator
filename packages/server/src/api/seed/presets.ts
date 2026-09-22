@@ -58,10 +58,10 @@ export const PRESETS = [
     description:
       'Season 1 tournament settings. Good for a quick seed or to learn racing basics.',
   },
-  
+
   {
     name: 'Season 2',
-    aliases: ['s2', 'season2', 'tournament'],
+    aliases: ['s2', 'season2'],
     origSettingsStr:
       '6s28H2kPC_v6592PDAa1W536qP8HvayVFbylHwej6er6fXtFuTgvVkXqkbqkbqkbmk1mE1mE1mE1mE1mE1mE1mE3_aw7fN2enf1WCgIPa2N1680VOyjU3WYjGoY2Ba_JylmlnFBKcev3Yohii6LQA7Ms16h2TvudSYhH0qYm95OHpYamf298q1nBh639OZQWvy5GMheaqQOo9CBeEeG1P_56G35gWxJcACRJBg8Chjkud2b62JZIaK8x136T984e9fqECrf9gQP1s1QBIrWmdRe6Y71l7A53_5CaBFcMRf34i27_qg0WG1IM1JT1JB1Jb1JU1Gu1NG1HQ1Gj1LA1Ku1L41MN1L61NC1KL1Jn1ML1Hn1Ho1Kr1Lo1K41OX1OW1OV1OU1OT1OS1OR1OQ1OP1OM1OJ1PL1PK1PJ1PI1PH1PE1PD1PC1PB1PA1P91P81P71PG1PF1P61OI1OH1OF1OE1OD1OC1OB1OA1O91O81O61O51O41O31On1Om1Ok1Oj1Oi1Mm1qK1Zh1Yh1M31V_',
     description:
@@ -69,7 +69,6 @@ export const PRESETS = [
   },
   {
     name: 'Drehen S2',
-    aliases: ['tournament'],
     origSettingsStr:
       '8s23U46P99999999Caaaa_xZAqX6Jm80W1pwC0107n6I4UPF7pvVBqUgATokAxfTBfTBfTBXS3WS3WS3WS3WS3W_vEXwvvN2e7x6a60of9cG9S4OW1zZoruEBS8hK5koX3ByJnplqy3ylmbPtE2x9M0snQeEqRGokixRk62JZIaK8x136T984e9fqECrf9gQP1sBMQ8C6FBilI-53_5CaBFkasV_W008OV-',
     description:
@@ -80,8 +79,7 @@ export const PRESETS = [
     aliases: ['tournament'],
     origSettingsStr:
       '8sY5k4EP99999999Caaaa_yZQ4X6KGu0W1m0DW1W7x6I4UPF7pvVBqUgAHRk7QkAxfTBfTBfTBXS3WS3WS3WS3WS3W_vEXwvvN2e7x6a60of9cG9S4OW1zZoruEBS8hK5koX3ByJpzFo_1tE2x9M0snQeEqRGoksxXWauqf52EmGndII1A2QT3ZDQIQccGTYrcY33UcFBilI-_oGi-wJP_-000X267_uX0iG0M7mB3m5Xq2mu1OR0iD0M6GB2m5XC2og1PK0ifWMKWBA85au2oQ1PC0ibWMIWB985aW2oE1PG0idWMHWB2G5X42mU1OE0i6WM30B1O5We2mI1O80i30M1GB0W5WC2nY1Om0iN0MBGB5W5_y',
-    description:
-      'Drehen S3 Tournament settings',
+    description: 'Drehen S3 Tournament settings',
   },
 ];
 
