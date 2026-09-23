@@ -2370,7 +2370,7 @@ namespace TPRandomizer
         }
 
         /// <summary>
-        /// Check for a usable bottle (requires lantern to avoid issues with lantern oil in all bottles)
+        /// Check for a usable bottle (requires lantern or canDropOilBottle setting to avoid issues with lantern oil in all bottles)
         /// </summary>
         public static bool HasBottle()
         {
@@ -2379,7 +2379,7 @@ namespace TPRandomizer
                     || CanUse(Item.Sera_Bottle)
                     || CanUse(Item.Jovani_Bottle)
                     || CanUse(Item.Coro_Bottle)
-                ) && CanUse(Item.Lantern);
+                ) && (CanUse(Item.Lantern) || Randomizer.SSettings.canDropOilBottle);
         }
 
         public static bool HasBottles()
